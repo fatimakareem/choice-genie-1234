@@ -35,14 +35,24 @@
               <div class="card-content">
 
                 <div class="col-md-4  col-sm-3 col-xs-5 plan-detail text-center">
-                  <a href="{{data.profileurl}}" target="_blank">
+                  <a href="{{data.profileurl}}" target="_blank" class="margin-top">
 
                     <img src="{{data.profile_logo}}" alt="{{data.title}}" />
                   </a>
 
 
-                  <img src="{{data.rating_logo}}" />
-                  <br>
+                  <div class="stars">
+                    <i style="margin: -6px 67px 0px -69px;
+                    font-size: 29px;
+                    color: red;
+                    position: absolute;
+                    top: 112px;
+                    left: 55px;"
+                     class="fa fa-trash-o" type="submit" value="Delete" (click)="btnDeleteClick(data.id)" data-toggle="modal" data-target="#myModal3"
+                     >
+                    </i>
+                    <img src="{{data.rating_logo}}" />
+                    </div>
                   <!-- <input type="checkbox"value="{{data.id}}"name="id"[(ngModel)]=id>{{data.id}} -->
                   <!-- <br> <star-rating-comp [size]="'large'" [starType]="'svg'" [rating]="" [(ngModel)]="rating"></star-rating-comp>  -->
                   <!-- <mat-checkbox name="deleteid"[(ngModel)]=deleteid value="{{data.id}}">{{data.deleteid}}</mat-checkbox> -->
@@ -53,9 +63,7 @@
                   <button type="submit" class="btn btn-rose" (click)="deletedata()">Delete</button> -->
 
                   <!-- <input type="text" [(ngModel)]="data.id" value="{{data.id}}" name="{{data.id}}"/>{{data.id}} -->
-                  <i class="fa fa-trash-o" type="submit" value="Delete" (click)="btnDeleteClick(data.id)" data-toggle="modal" data-target="#myModal3"
-                    style="color:red">
-                  </i>
+                  
 
 
                   <div class="modal fade" id="myModal3" role="dialog">
@@ -73,15 +81,15 @@
                           <p>Do you want to Delete this Task?</p>
                         </div>
                         <div class="modal-footer">
-                          <button type="button" class="btn btn-default" (click)="deleteClick(dataId)" data-dismiss="modal" style="background: red;
+                          <button type="button" class="btn btn-rose" (click)="deleteClick(dataId)" data-dismiss="modal" style="
                         color: white;
-                        border: red;
+                       
                         width: 20%;
                         height: 45px;
                         font-size: 18px;">Delete</button>
-                          <button type="button" class="btn btn-default" data-dismiss="modal" style="background: gray;
+                          <button type="button" class="btn btn-rose" data-dismiss="modal" style="
                         color: white;
-                        border: gray;
+                       
                         width: 20%;
                         height: 45px;
                         font-size: 18px;">Cancel</button>
@@ -308,12 +316,11 @@ text-align: center;">
                   </h3>
                   <h3 class="text-center">{{data.phone}}</h3>
                   <!-- (click)="openDialog(data.id)" -->
-                  <button class="btn btn-rose" style="display:block; margin: 0 auto;">
+                  <button class="btn btn-rose button-social">
                     <a style="color:white" href="{{data.profileurl}}" target="_blank">Signup </a>
                     <i class="material-icons">bubble_chart</i>
                   </button>
-                  <br>
-                  <button type="submit" class="btn btn-rose" style="display:block; margin: 0 auto;" (click)="btnEditClick(data.id)" data-toggle="modal"
+                  <button type="submit" class="btn btn-rose button-social" (click)="btnEditClick(data.id)" data-toggle="modal"
                     data-target="#myModal2">
                     Edit
                   </button>

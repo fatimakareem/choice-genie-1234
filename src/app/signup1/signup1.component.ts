@@ -8,7 +8,7 @@ import { SimpleGlobal } from 'ng2-simple-global';
 import { ResponseContentType } from '@angular/http/src/enums';
 import { FormBuilder, Validators, NgControl, RadioControlValueAccessor, FormControl, FormGroup } from '@angular/forms';
 import { HttpClient, HttpResponse, HttpHeaders } from "@angular/common/http";
-// import swal from 'sweetalert2'; 
+ import swal from 'sweetalert2'; 
 import { MatSelect } from '@angular/material';
 import { PasswordValidation } from './password-validator.component';
 
@@ -64,29 +64,9 @@ export class Signup1Component implements OnInit {
 
     });
   }
-  sweetalertsignup1() {
-    // swal({
-    //     text: "Register Successflluy!",
-    //     title: "Choice Genie",
-    //     type: "success",
-    //     showConfirmButton: false,
-    //     //     confirmButtonColor: "#DD6B55",
-    //     timer: 1200,
-    //     confirmButtonText: "OK",
-
-    // })
-    this.router.navigate(['/pages/login'])
-    {
-
-      // swal("Login Successflluy!", "Choice Genie", "success", ).then(function () {
-      //     this.router.navigate(['/home'])
-      // });
-
-
-      // this.router.navigate(['/home'])  
-
-    };
-  } onChange(e) {
+  
+  
+   onChange(e) {
     alert(e)
   }
   check(e) {
@@ -205,27 +185,27 @@ export class Signup1Component implements OnInit {
         // this.next = Res[0].next;
 
         console.log(this.model);
-        // swal({
-        //   text: "Register Successflluy!",
-        //   title: "Choice Genie",
-        //   type: "success",
-        //   showConfirmButton: false,
-        //   //     confirmButtonColor: "#DD6B55",
-        //   timer: 1200,
-        //   confirmButtonText: "OK",
+        swal({
+          text: "Register Successflluy!",
+          title: "Choice Genie",
+          type: "success",
+          showConfirmButton: false,
+          //     confirmButtonColor: "#DD6B55",
+          timer: 1200,
+          confirmButtonText: "OK",
 
-        // })
+        })
 
         this.router.navigate(['/pages/login'])
       },
         error => {
-          // console.log(error);
-          // this.toastr.error(error, null, {toastLife: 5000});
-          // swal(
-          //   'Invalid',
-          //   'Please Try Again!',
-          //   'error'
-          // )
+          console.log(error);
+        //  this.toastr.error(error, null, {toastLife: 5000});
+          swal(
+            'Invalid',
+            'Please Try Again!',
+            'error'
+          )
 
           //     //    this.state = Res[0].state;
           //     //this.sg['products'] = Res.json()['Results'];

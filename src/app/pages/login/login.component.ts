@@ -7,7 +7,7 @@ import { ActivatedRoute, Router, RouterModule } from "@angular/router";
 import { SimpleGlobal } from 'ng2-simple-global';
 import { ResponseContentType } from '@angular/http/src/enums';
 import { Console } from '@angular/core/src/console';
-// import swal from 'sweetalert2';
+import swal from 'sweetalert2';
 import { TOUCHEND_HIDE_DELAY } from '@angular/material';
 // import { HomeRoutes } from '../../home/home.routing';
 
@@ -76,25 +76,24 @@ export class LoginComponent implements OnInit {
           //  console.log("user",data);
           this._serv.login(this.login.value.username, this.login.value.password).subscribe(
             data => {
-              // console.log(data);
-              // swal(
-              //   'Successfully! Logged in',
-              //   '',
-              //   'success'
-              // )
+              console.log(data);
+              swal(
+                'Successfully! Logged in',
+                '',
+                'success'
+              )
               // this.toastr.success('Successfully!', 'Logged in',{toastLife: 5000});
-              // let url = 'dashboard';
-              // this._nav.navigate([url]);
+              this.router.navigate(['/dashboard/'+ this.username]);
 
             },
             error => {
-              // console.log(error);
-              // this.toastr.error(error, null, {toastLife: 5000});
-              // swal(
-              //   'Invalid',
-              //   'Username OR Password',
-              //   'error'
-              // )
+              console.log(error);
+             // this.toastr.error(error, null, {toastLife: 5000});
+              swal(
+                'Invalid',
+                'Username OR Password',
+                'error'
+              )
            
             });
 
@@ -116,9 +115,7 @@ export class LoginComponent implements OnInit {
     }
   }
 
-  onSubmit(){
-    this.router.navigate(['/dashboard/'+ this.username]);
-  }
+ 
 
   foremail() {
     // swal({

@@ -694,9 +694,9 @@ background: goldenrod;
     margin: 15px 0;}
     .products-area .plan-detail img {
       width: 170px;
+      margin-bottom: 22px;
       height: auto;
-      display: block;
-      margin: 40px auto 0;
+      
     }
     .products-area .card .card-content {
       overflow: hidden;
@@ -1409,15 +1409,30 @@ h3 {
 .vanders{
   position: relative;
 }
+.drop-downs{
+  height: auto;
+    top: 20px;
+    position: absolute;
+    min-height: 200px;
+    width: 300px;
+    display: none;
+    z-index: 9;
+}
 .nav-vanders{
   display: none !important;
-    position: absolute;
-    background: white;
-    width: 148px;
-    padding: 10px 0 !important;
-    top: 22px;
-    left: -10px;
+  position: absolute;
+  background: white;
+  padding: 10px 0 !important;
+  top: 22px;
+  left: -10px;
+  border-radius: 8px;
+  min-width: 234px;
+  margin-top: 8px !important;
 
+
+}
+.vanders:hover .drop-downs{
+  display: block !important;
 }
 .vanders:hover .nav-vanders{
   display: block !important;
@@ -1427,4 +1442,29 @@ h3 {
     margin-top: 10px !important;
     margin-left: 10px !important;
     display: block !important;
+}
+.dashbord-custom{
+  font-weight: 500;
+}
+.dashbord-custom li:hover{
+  color:#e53935;
+}
+.dashbord-custom li a{
+  color:#555555;
+}
+.dashbord-custom li a:hover{
+  color:#e53935
+}
+.stars{
+  width: 100%;
+}
+.margin-top{
+  margin-top: 67px;
+}
+.button-social{
+    margin: 0 auto !important;
+    display: block !important;
+    margin-bottom: 10px !important;
+    width: 150px !important
+    ;
 }
