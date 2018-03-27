@@ -87,9 +87,9 @@ export class HomeComponent implements OnInit {
         
         
         this.premiseIdData();
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(this.setPosition.bind(this));
-        };
+        // if (navigator.geolocation) {
+        //     navigator.geolocation.getCurrentPosition(this.setPosition.bind(this));
+        // };
 
         // $('.slick-testimonal').slick({
         //     slidesToShow: 2,

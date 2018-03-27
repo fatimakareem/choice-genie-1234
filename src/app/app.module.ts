@@ -1,4 +1,4 @@
-import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; // this is needed!
 import { RouterModule } from '@angular/router';
 import { HttpModule } from '@angular/http';
@@ -85,6 +85,7 @@ import { SuperloginComponent } from './pages/superlogin/superlogin.component';
 import { SuperLoginService } from './pages/superlogin/superlogin.service';
 import { DeleteService } from './dashboard/delete.service';
 import {EditService} from './dashboard/edit.service';
+import { OverviewComponent } from './overview/overview.component';
 // import { UsersignupComponent } from './usersignup/usersignup.component';
 
 // import { MainloginService } from './mainadmin/mainlogin/mainlogin.service';
@@ -168,6 +169,7 @@ export class MaterialModule {}
     // UsersignupComponent,
     //UserloginComponent,
     SuperloginComponent,
+    // OverviewComponent
       ],
   providers: [
     HomeService,

@@ -26,12 +26,13 @@
 
             <div class="col-sm-12">
               <div class="card-header card-header-text" data-background-color="rose">
-
+               
                 <h4 class="card-title">{{data.title}} </h4>
 
               </div>
 
               <div class="card-content">
+                  <!-- <input type="checkbox" [(ngModel)]="id" value="{{data.id}}" name="{{data.id}}" [checked]="data.id" />{{data.id}} -->
                 <div class="col-md-4  col-sm-3 col-xs-5 plan-detail text-center">
                   <a href="{{data.profileurl}}" target="_blank">
 
@@ -57,7 +58,7 @@
                   <!--class="product-price"-->
                   <div class="">
 
-                    <h3 *ngFor="let items of data.price_rate" class="text-center id-{{items}}">
+                    <h3 *ngFor="let items of data.price_rate" class="text-center">
                       {{items}}¢
                     </h3>
                   </div>

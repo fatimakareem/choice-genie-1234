@@ -47,6 +47,7 @@ export const AppRoutes: Routes = [
               path: 'commercial',
               loadChildren: './commercial/commercial.module#CommercialModule'
           },
+         
           {
               path: 'residential',
               loadChildren: './residential/residential.module#ResidentialModule'
@@ -95,6 +96,14 @@ export const AppRoutes: Routes = [
             path: 'Terms-of-use-and-Privacy',
             loadChildren: './terms/terms.module#termsModule'
           },
+          {
+            path: 'features-comparison',
+            loadChildren: './features-comparison/features.module#FeatureModule'
+        },
+        {
+            path: 'overview',
+            loadChildren: './overview/overview.module#OverViewModule'
+        },
           {
             path: 'contactus',
             loadChildren: './contactus/contactus.module#contactusModule'
