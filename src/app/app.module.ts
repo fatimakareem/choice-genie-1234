@@ -78,8 +78,15 @@ import { CompanyService } from './company.service';
 import { DashboardService } from './dashboard/dashboard.service';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { StepperOverviewExample } from './signup/stepper-overview-example';
+// import { UsersignupComponent } from './usersignup/usersignup.component';
+// import { UserloginComponent } from './pages/userlogin/userlogin.component';
+import { UserLoginService } from './pages/userlogin/userlogin.service';
+import { SuperloginComponent } from './pages/superlogin/superlogin.component';
+import { SuperLoginService } from './pages/superlogin/superlogin.service';
 import { DeleteService } from './dashboard/delete.service';
 import {EditService} from './dashboard/edit.service';
+// import { UsersignupComponent } from './usersignup/usersignup.component';
+
 // import { MainloginService } from './mainadmin/mainlogin/mainlogin.service';
 
 @NgModule({
@@ -158,6 +165,9 @@ export class MaterialModule {}
     UserSidebarComponent,
     AboutComponent,
     StepperOverviewExample,
+    // UsersignupComponent,
+    //UserloginComponent,
+    SuperloginComponent,
       ],
   providers: [
     HomeService,
@@ -168,10 +178,12 @@ export class MaterialModule {}
     LoginService,
     PagerService,
     DashboardService,
-    DeleteService,
+    UserLoginService,
+    SuperLoginService,
+    ResidentialService,
     EditService,
-    // MainloginService,
-ResidentialService
+    DeleteService,
+
   ],
   bootstrap: [AppComponent],
   schemas: [

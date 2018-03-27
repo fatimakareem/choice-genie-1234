@@ -1,0 +1,99 @@
+<div class="flash-background" >
+  <div class="container">
+    <div class="row">
+      <div class="col-md-5 form-center">
+        <div class="form-body">
+          <div class="flash-header">
+        <h2>Log In to Your Account</h2>
+        <!-- <div>
+          <a href="#" class="fb-icon" ><i class="fa fa-facebook"></i></a>
+          <a href="#" class="twit-icon"><i class="fa fa-twitter"></i></a>
+          <a href="#" class="ggle-plus"><i class="fa fa-google-plus"></i></a>
+        </div> -->
+      </div>
+
+
+      <div class="tab-content">
+          <div id="sectionA" class="tab-pane fade in active">
+          <div class="innter-form">
+                <form [formGroup]="login">
+
+                        <div class="input-group">
+                               
+                                <div class="form-group label-floating singup-feilds-padding" [ngClass]="displayFieldCss(login, 'username')">
+                                    <label class="control-label">User Name</label>
+                                    <!-- <mat-form-field> -->
+                                    <input matInput type="text" id="username" class="form-control signup-input-font " formControlName="username"[(ngModel)]="username">
+                                    <!-- <mat-error *ngIf="login.controls.username.value == ''">
+                                            <strong>Username cannot be empty</strong>
+                                        </mat-error> -->
+
+                                    <!-- </mat-form-field> -->
+                                    <!-- <input type="text" class="form-control" name="username" [(ngModel)]="username"> -->
+                                </div>
+                            </div>
+              
+            <div class="input-group">
+                   
+                    <div class="form-group label-floating singup-feilds-padding" [ngClass]="displayFieldCss(login, 'password')">
+                        <label class="control-label" style>Password</label>
+                        <!-- <mat-form-field> -->
+                        <input matInput type="password" id="password" class="form-control signup-input-font " formControlName="password" [(ngModel)]="password">
+                        <!-- <mat-error *ngIf="login.controls.password.value == ''">
+                                <strong>Password cannot be empty</strong>
+                            </mat-error> -->
+
+                        <!-- </mat-form-field> -->
+                        <!-- <input type="password" class="form-control" name="password" [(ngModel)]="password"> -->
+                    </div>
+                </div>
+
+                <!-- <div > <mat-checkbox>Stay signed in</mat-checkbox></div><br> -->
+                <button type="submit" class="signup-login-button" (click)="onLogin();onSubmit()">LOGIN</button>
+            <!-- <button type="submit" class="btn btn-rose btn-wd btn-lg" (click)="onLogin()">LOGIN</button> -->
+
+             <!-- <a routerLink="/forgot" class="signup-already-login" style="display: inline-block;">Forgot Password ?</a><br>
+                <span class="signup-already-login"  style="display: inline-block;">Dont Have An Account? &nbsp; </span>
+                 <a routerLink="/signup" class="signup-already-login">Sign up</a> -->
+
+              </form>
+              </div>
+              <!--<div class="social-login">-->
+              <!--<p>- - - - - - - - - - - Login - - - - - - - - - - </p>-->
+          <!--<ul>-->
+              <!--<li><a href=""><i class="fa fa-facebook"></i> Facebook</a></li>-->
+              <!--<li><a href=""><i class="fa fa-google-plus"></i> Google+</a></li>-->
+              <!--<li><a href=""><i class="fa fa-twitter"></i> Twitter</a></li>-->
+              <!--</ul>-->
+              <!--</div>-->
+              <div class="clearfix"></div>
+          </div>
+          
+          <div id="sectionB" class="tab-pane fade">
+        <div class="innter-form">
+              <form class="sa-innate-form" method="post">
+              <label>Name</label>
+              <input type="text" name="username">
+              <label>Email Address</label>
+              <input type="text" name="username">
+              <label>Password</label>
+              <input type="password" name="password">
+              <button type="submit">Join now</button>
+              <p>By clicking Join now, you agree to hifriends's User Agreement, Privacy Policy, and Cookie Policy.</p>
+              </form>
+              </div>
+              <!--<div class="social-login">-->
+
+        <!--<ul>-->
+              <!--<li><a href=""><i class="fa fa-facebook"></i> Facebook</a></li>-->
+              <!--<li><a href=""><i class="fa fa-google-plus"></i> Google+</a></li>-->
+              <!--<li><a href=""><i class="fa fa-twitter"></i> Twitter</a></li>-->
+        <!--</ul>-->
+              <!--</div>-->
+          </div>
+      </div>
+      </div>
+      </div>
+  </div>
+  </div>
+</div>

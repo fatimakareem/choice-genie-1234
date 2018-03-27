@@ -8,6 +8,10 @@ import {NormalLayoutComponent} from "./layouts/normal/normal-layout.component";
 import {StepperOverviewExample} from "./signup/stepper-overview-example";
 import { LoginComponent } from './pages/login/login.component';
 import { TermsComponent } from './terms/terms.component';
+import { UsersignupComponent } from './usersignup/usersignup.component';
+import { UserloginComponent } from './pages/userlogin/userlogin.component';
+import { Component } from '@angular/core';
+import { SuperloginComponent } from './pages/superlogin/superlogin.component';
  
 
 export const AppRoutes: Routes = [
@@ -16,8 +20,10 @@ export const AppRoutes: Routes = [
         redirectTo: 'home',
         pathMatch: 'full',
     },
-    {path: "home", component: HomeComponent},
-    // {path: "mainlogin", component: MainloginComponent},
+    {path: "", component: HomeComponent},
+    // {path: "usersignup", component: UsersignupComponent},
+    // {path:"userlogin", component:UserloginComponent},
+    {path:"superlogin", component:SuperloginComponent},
   
     
 
@@ -47,6 +53,10 @@ export const AppRoutes: Routes = [
           },
          
           {
+            path: 'usersignup',
+            loadChildren: './usersignup/usersignup.module#userSignupModule'
+        },
+        {
             path: 'signup',
             loadChildren: './signup/signup.module#SignupModule'
         },
@@ -57,14 +67,14 @@ export const AppRoutes: Routes = [
               path: 'signup/:id/:product',
               loadChildren: './signup/signup.module#SignupModule'
           },
-          {
-            path: 'register',
-            loadChildren: './signup1/signup1.module#Signup1Module'
-        },
-          {
-            path: "new-product",
-            loadChildren: './admin/new-product/new-product.module#NewProductModule'
-          },
+        //   {
+        //     path: 'register',
+        //     loadChildren: './signup1/signup1.module#Signup1Module'
+        // },
+        //   {
+        //     path: "new-product",
+        //     loadChildren: './admin/new-product/new-product.module#NewProductModule'
+        //   },
           {
             path: 'admin/search-customer',
             loadChildren: './admin/search-customer/search-customer.module#SearchCustomerModule'
@@ -72,7 +82,15 @@ export const AppRoutes: Routes = [
           {
             path: 'login',
             loadChildren: './pages/login/login.module#LoginModule'
+          }, {
+            path: 'userlogin',
+            loadChildren: './pages/userlogin/userlogin.module#LoginModule'
           },
+          {
+            path: 'register',
+            loadChildren: './signup1/signup1.module#Signup1Module'
+        },
+          
           {
             path: 'Terms-of-use-and-Privacy',
             loadChildren: './terms/terms.module#termsModule'
@@ -100,6 +118,10 @@ export const AppRoutes: Routes = [
                 path: 'dashboard/:username',
                 loadChildren: './dashboard/dashboard.module#DashboardModule'
             },
+            {
+                path: "new-product",
+                loadChildren: './admin/new-product/new-product.module#NewProductModule'
+              },
             // {
             //     path: 'dashboard',
             //     loadChildren: './dashboard/dashboard.module#DashboardModule'
