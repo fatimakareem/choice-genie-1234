@@ -15,8 +15,8 @@ import { TOUCHEND_HIDE_DELAY } from '@angular/material';
 import { FormBuilder, FormGroup, Validators, FormControl, AbstractControl } from '@angular/forms';
 import { PasswordValidation } from './password-validator.component';
 import { ResidentialService } from './residential.service';
+declare var $: any;
 
-declare var $;
 declare interface ValidatorFn {
   (c: AbstractControl): {
     [key: string]: any;

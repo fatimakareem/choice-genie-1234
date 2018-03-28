@@ -6,7 +6,7 @@ import { LocationStrategy, PlatformLocation, Location } from '@angular/common';
 import 'rxjs/add/operator/filter';
 import { NavbarComponent } from '../../shared/navbar/navbar.component';
 
-declare var $;
+declare const $: any;
 
 @Component({
   selector: 'app-layout',

@@ -2,7 +2,7 @@
 
 import { Component } from '@angular/core';
 
-declare var $;
+declare const $: any;
 
 @Component({
     selector: 'app-notifications-cmp',

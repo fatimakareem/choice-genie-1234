@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-declare var $;
+declare const $: any;
 
 //Metadata
 export interface RouteInfo {

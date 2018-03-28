@@ -15,7 +15,7 @@ import { FormBuilder, FormGroup, Validators, FormControl, AbstractControl } from
 import { PasswordValidation } from './password-validator.component';
 import { UserLoginService } from './userlogin.service';
 import { DataService } from '../../data.service';
-declare var $;
+declare var $: any;
 declare interface ValidatorFn {
   (c: AbstractControl): {
     [key: string]: any;
