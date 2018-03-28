@@ -32,7 +32,7 @@ declare interface DataTable {
     dataRows: string[][];
 }
 
-declare var $: any;
+declare const $: any;
 
 /** Error when invalid control is dirty, touched, or submitted. */
 export class MyErrorStateMatcher implements ErrorStateMatcher {

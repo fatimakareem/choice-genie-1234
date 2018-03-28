@@ -10,7 +10,7 @@ import { PagerService } from '../pager.service';
 import { HttpClient, HttpResponse, HttpHeaders } from "@angular/common/http";
 import { AfterContentInit } from '@angular/core/src/metadata/lifecycle_hooks';
 
-declare var $;
+declare const $: any;
 
 @Component({
   selector: 'app-user-sidebar',

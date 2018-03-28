@@ -4,8 +4,8 @@ import { DateAdapter } from '@angular/material';
 
 declare const require: any;
 
+declare const $: any;
 
-declare var $;
 @Component({
     selector: 'app-extendedforms-cmp',
     templateUrl: 'extendedforms.component.html',

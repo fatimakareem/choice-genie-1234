@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-declare var $;
+declare var $: any;
 
 @Component({
     selector: 'app-lock-cmp',
