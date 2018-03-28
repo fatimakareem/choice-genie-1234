@@ -18,7 +18,7 @@ import { DataService } from '../data.service';
 // import { HttpClient, HttpResponse, HttpHeaders } from "@angular/common/http";
 // import { Http } from '@angular/http/src/http';
 
-declare const $: any;
+declare var $;
 
 export class errorMatcher implements ErrorStateMatcher {
     isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {

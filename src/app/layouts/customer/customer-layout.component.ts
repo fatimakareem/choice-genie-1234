@@ -7,7 +7,7 @@ import 'rxjs/add/operator/filter';
 import { NavbarComponent } from '../../shared/navbar/navbar.component';
 import {HomeService} from "../../home/home.service";
 
-declare const $: any;
+declare var $;
 
 @Component({
   selector: 'app-layout',

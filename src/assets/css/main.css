@@ -1443,8 +1443,20 @@ h3 {
     margin-left: 10px !important;
     display: block !important;
 }
+<<<<<<< HEAD
 .dashbord-custom{
   font-weight: 500;
+=======
+/* footer css start */
+.footer-1 .social-link a:hover {
+  color: #46355C
+}
+
+.footer-upper {
+  padding: 50px 0;
+  background: #282828;
+  box-shadow: 0 0 10px #999
+>>>>>>> 5e2e1ac7f182f708114833b32f8e24c7eaf2bea3
 }
 .dashbord-custom li:hover{
   color:#e53935;
@@ -2071,6 +2083,7 @@ section {
   min-height: 260px;
   padding: 30px 20px;
   text-align: center;
+<<<<<<< HEAD
   }
   .desc-banner .card > img {
   margin: 0 0 30px;
@@ -2132,3 +2145,102 @@ section {
   transition: all 
 }
 /* footer end */
+=======
+  margin: 40px 0 0 0
+}
+
+.subscribe-form .email {
+  background-color: #FDFDFD;
+  border: none;
+  border-radius: 100px;
+  outline: none;
+  width: 60%;
+  padding: 8px 25px;
+  box-shadow: none;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  transition: all .3s;
+  margin-right: 10px
+}
+
+.subscribe-form .email:focus {
+  background-color: #FDFDFD
+}
+
+.subscribe-form input {
+  color: #222;
+  padding: 0
+}
+
+.subscribe-form .submit-btn {
+  font-size: 14px;
+  border: none;
+  border-radius: 100px;
+  margin: 0;
+  padding: 8px 25px;
+  border-color: #0378fc;
+  background-color: #0378fc;
+  color: #fff;
+  outline: none;
+  -webkit-transition: 300ms;
+  -moz-transition: 300ms;
+  transition: 300ms
+}
+
+.subscribe-form .submit-btn:hover {
+  border-color: #0378fc;
+  box-shadow: 0 0 1px #0378fc;
+  -webkit-transition: 300ms;
+  -moz-transition: 300ms;
+  transition: 300ms
+}
+.newsletter-p{
+  color:#7c7c7c;
+}
+.subscribe-form input {
+  color: #222;
+  padding: 0
+}
+.partnership input {
+  font-size: 18px!important
+}
+
+.partnership input::-webkit-input-placeholder {
+  font-size: 18px!important
+}
+.form-control {
+  border: 0;
+  border-bottom: 1px solid transparent;
+  background: #fff;
+  border-radius: 3px;
+  height: 45px;
+  -webkit-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .1);
+  -moz-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .1);
+  -ms-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .1);
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .1);
+  font-weight:600;
+}
+
+.form-control:focus {
+  border-color: #bf095d;
+  -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, .1);
+  -moz-box-shadow: 0 1px 0 rgba(0, 0, 0, .1);
+  -ms-box-shadow: 0 1px 0 rgba(0, 0, 0, .1);
+  box-shadow: 0 1px 0 rgba(0, 0, 0, .1)
+}
+
+.form-group {
+  margin-bottom: 25px
+}
+
+.form-group.submit-btn {
+  margin-bottom: 0
+}
+
+textarea.form-control {
+  height: 150px
+}
+
+/* footer css end */
+>>>>>>> 5e2e1ac7f182f708114833b32f8e24c7eaf2bea3

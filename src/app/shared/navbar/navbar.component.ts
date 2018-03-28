@@ -8,7 +8,7 @@ const misc: any = {
     disabled_collapse_init: 0,
 };
 
-declare var $: any;
+declare var $;
 @Component({
     selector: 'app-navbar-cmp',
     templateUrl: 'navbar.component.html'

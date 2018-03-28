@@ -41,9 +41,9 @@
 
               <div class="col-sm-6">
                 <div class="form-group">
-                  <h5 class="control-label">Zipcode*</h5>
+                  <h5 class="control-label">First Name</h5>
                   <mat-form-field>
-                    <input matInput placeholder="Zipcode" [formControl]="signupForm.controls['zipcode']" required [(ngModel)]="model.zipcode">
+                    <input matInput placeholder="First Name" [formControl]="signupForm.controls['fname']" required [(ngModel)]="model.fname">
                     <!-- <mat-error *ngIf="secondFormGroup.controls.lName.value == ''"><strong>Cannot be empty</strong></mat-error>
   <mat-error *ngIf="secondFormGroup.controls.lName.dirty && !secondFormGroup.controls.lName.value"> Special characters not allowed</mat-error> -->
                   </mat-form-field>
@@ -52,11 +52,24 @@
               <br class="clearfix" />
               <div class="col-sm-6">
                 <div class="form-group">
-                  <h5 class="control-label">Utility Area*</h5>
+                  <h5 class="control-label">Last Name</h5>
                   <mat-form-field>
-                    <input matInput placeholder="Utility Area" [formControl]="signupForm.controls['utilityarea']" required [(ngModel)]="model.utilityarea">
+                    <input matInput placeholder="Last Name" [formControl]="signupForm.controls['lname']" required [(ngModel)]="model.lname">
                     <!-- <mat-error *ngIf="secondFormGroup.controls.lName.value == ''"><strong>Cannot be empty</strong></mat-error>
   <mat-error *ngIf="secondFormGroup.controls.lName.dirty && !secondFormGroup.controls.lName.value"> Special characters not allowed</mat-error> -->
+                  </mat-form-field>
+                </div>
+              </div>
+              <br class="clearfix" />
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <h5 class="control-label">Date Of Birth</h5>
+                  <mat-form-field>
+                      <input matInput [matDatepicker]="picker" placeholder="Choose a date" (click)="picker.open()" (focus)="picker.open()"  [formControl]="signupForm.controls['dob']" required [(ngModel)]="model.dob">
+                      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                      <mat-datepicker #picker></mat-datepicker>
+                    <!-- <input matInput placeholder="Date Of Birth" [formControl]="signupForm.controls['dob']" required [(ngModel)]="model.dob"> -->
+                    <!-- <mat-error *ngIf="secondFormGroup.controls.Country.dirty && !secondFormGroup.controls.Country.value"> Special characters not allowed</mat-error> -->
                   </mat-form-field>
                 </div>
               </div>
@@ -76,7 +89,7 @@
                 <div class="form-group">
                   <h5 class="control-label">Phone No</h5>
                   <mat-form-field>
-                    <input matInput placeholder="Phone No" [formControl]="signupForm.controls['Phone']" required [(ngModel)]="model.Phone">
+                    <input matInput placeholder="Phone No" [formControl]="signupForm.controls['phone']" required [(ngModel)]="model.phone">
                     <!-- <mat-error *ngIf="secondFormGroup.controls.Phone_No.dirty && !secondFormGroup.controls.Phone_No.value"> Special characters not allowed</mat-error> -->
                   </mat-form-field>
                 </div>
@@ -117,9 +130,19 @@
               <br class="clearfix" />
               <div class="col-sm-6">
                 <div class="form-group">
-                  <h5 class="control-label">Company Title</h5>
+                  <h5 class="control-label">City</h5>
                   <mat-form-field>
-                    <input matInput placeholder="Company Title" [formControl]="signupForm.controls['username']" required [(ngModel)]="model.username">
+                    <input matInput placeholder="City" [formControl]="signupForm.controls['city']" required [(ngModel)]="model.city">
+                    <!-- <mat-error *ngIf="secondFormGroup.controls.Country.dirty && !secondFormGroup.controls.Country.value"> Special characters not allowed</mat-error> -->
+                  </mat-form-field>
+                </div>
+              </div>
+              <br class="clearfix" />
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <h5 class="control-label">User Name</h5>
+                  <mat-form-field>
+                    <input matInput placeholder="User Name" [formControl]="signupForm.controls['username']" required [(ngModel)]="model.username">
                   </mat-form-field>
                 </div>
               </div>

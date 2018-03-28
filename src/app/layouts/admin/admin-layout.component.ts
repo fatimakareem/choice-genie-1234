@@ -6,8 +6,7 @@ import { LocationStrategy, PlatformLocation, Location } from '@angular/common';
 import 'rxjs/add/operator/filter';
 import { NavbarComponent } from '../../shared/navbar/navbar.component';
 
-declare const $: any;
-
+declare var $;
 @Component({
   selector: 'app-layout',
   templateUrl: './admin-layout.component.html'
