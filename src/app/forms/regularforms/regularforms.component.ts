@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-declare var $: any;
+declare var $;
 
 @Component({
     selector: 'app-regularforms-cmp',

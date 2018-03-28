@@ -2,7 +2,7 @@
 
 import { Component, OnInit } from '@angular/core';
 // declare const swal: any;
-declare const $: any;
+declare var $;
 
 @Component({
     selector: 'app-calendar-cmp',

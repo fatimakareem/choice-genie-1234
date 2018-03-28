@@ -2,7 +2,7 @@
 
 import { Component, OnInit } from '@angular/core';
 
-declare var $: any;
+declare var $;
 
 @Component({
     selector: 'app-vector-maps-cmp',

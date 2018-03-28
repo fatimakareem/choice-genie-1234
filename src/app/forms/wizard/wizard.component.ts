@@ -2,7 +2,7 @@
 
 import { Component, OnInit, OnChanges, AfterViewInit, SimpleChanges } from '@angular/core';
 
-declare const $: any;
+declare var $;
 interface FileReaderEventTarget extends EventTarget {
     result: string;
 }

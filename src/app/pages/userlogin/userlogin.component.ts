@@ -15,7 +15,7 @@ import { FormBuilder, FormGroup, Validators, FormControl, AbstractControl } from
 import { PasswordValidation } from './password-validator.component';
 import { UserLoginService } from './userlogin.service';
 import { DataService } from '../../data.service';
-declare var $: any;
+declare var $;
 declare interface ValidatorFn {
   (c: AbstractControl): {
     [key: string]: any;
@@ -79,13 +79,18 @@ export class UserloginComponent implements OnInit {
           this._serv.login(this.login.value.username, this.login.value.password).subscribe(
             data => {
               console.log(data);
-              swal(
-                'Successfully! Logged in',
-                '',
-                'success'
-              )
+              swal({
+                text: "Login Successflluy!",
+                title: "Choice Genie",
+                type: "success",
+                showConfirmButton: false,
+                //     confirmButtonColor: "#DD6B55",
+                timer: 1200,
+                confirmButtonText: "OK",
+      
+              })
             //  this.toastr.success('Successfully!', 'Logged in',{toastLife: 5000});
-              let url = '/home';
+              let url = '/';
               this._nav.navigate([url]);
 
             },

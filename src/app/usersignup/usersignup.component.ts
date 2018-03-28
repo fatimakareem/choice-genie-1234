@@ -9,7 +9,7 @@ import { SimpleGlobal } from 'ng2-simple-global';
 import { ResponseContentType } from '@angular/http/src/enums';
 import { FormBuilder, Validators, NgControl, RadioControlValueAccessor, FormControl, FormGroup } from '@angular/forms';
 import { HttpClient, HttpResponse, HttpHeaders } from "@angular/common/http";
-// import swal from 'sweetalert2'; 
+ import swal from 'sweetalert2'; 
 import { MatSelect } from '@angular/material';
 // import { PasswordValidation } from './password-validator.component';
 
@@ -49,46 +49,28 @@ export class UsersignupComponent implements OnInit {
 
   ngOnInit() {
     this.states();
-    this.signupuserdata();
+   
     // this.city();
     this.signupForm = this.fb.group({
-      'zipcode': ['', Validators.compose([Validators.required, , Validators.pattern(this.digitsOnly)])],
-      'utilityarea': ['', Validators.compose([Validators.required])],
+      'fname': ['', Validators.compose([Validators.required])],
+      'lname': ['', Validators.compose([Validators.required])],
+
+      // 'zipcode': ['', Validators.compose([Validators.required, , Validators.pattern(this.digitsOnly)])],
+     // 'utilityarea': ['', Validators.compose([Validators.required])],
       'email': ['', Validators.compose([Validators.required, Validators.pattern(this.email)])],
       'username': ['', Validators.compose([Validators.required, Validators.pattern(/^[a-zA-Z_\- ]+$/)])],
-      'Phone': ['', Validators.compose([Validators.required, Validators.pattern(this.digitsOnly)])],
-      // 'dob': ['', Validators.compose([Validators.required])],
+      'phone': ['', Validators.compose([Validators.required, Validators.pattern(this.digitsOnly)])],
+      'dob': ['', Validators.compose([Validators.required])],
       'state': ['', Validators.compose([Validators.required, Validators.pattern(this.normalPattern)])],
       'country': ['', Validators.compose([Validators.required, Validators.pattern(this.normalPattern)])],
-      // 'city': ['', Validators.compose([Validators.required, Validators.pattern(this.normalPattern)])],
+      'city': ['', Validators.compose([Validators.required, Validators.pattern(this.normalPattern)])],
       'password': ['', Validators.compose([Validators.required, Validators.minLength(6)])],
       'confirmpassword': ['', Validators.compose([Validators.required, Validators.minLength(6)])],
 
     });
   }
-  sweetalertsignup1() {
-    // swal({
-    //     text: "Register Successflluy!",
-    //     title: "Choice Genie",
-    //     type: "success",
-    //     showConfirmButton: false,
-    //     //     confirmButtonColor: "#DD6B55",
-    //     timer: 1200,
-    //     confirmButtonText: "OK",
-
-    // })
-    this.router.navigate(['/pages/login'])
-    {
-
-      // swal("Login Successflluy!", "Choice Genie", "success", ).then(function () {
-      //     this.router.navigate(['/home'])
-      // });
-
-
-      // this.router.navigate(['/home'])  
-
-    };
-  } onChange(e) {
+  
+   onChange(e) {
     alert(e)
   }
   check(e) {
@@ -207,27 +189,27 @@ export class UsersignupComponent implements OnInit {
         // this.next = Res[0].next;
 
         console.log(this.model);
-        // swal({
-        //   text: "Register Successflluy!",
-        //   title: "Choice Genie",
-        //   type: "success",
-        //   showConfirmButton: false,
-        //   //     confirmButtonColor: "#DD6B55",
-        //   timer: 1200,
-        //   confirmButtonText: "OK",
+        swal({
+          text: "Register Successflluy!",
+          title: "Choice Genie",
+          type: "success",
+          showConfirmButton: false,
+          //     confirmButtonColor: "#DD6B55",
+          timer: 1200,
+          confirmButtonText: "OK",
 
-        // })
+        })
 
-        this.router.navigate(['/pages/login'])
+        this.router.navigate(['/userlogin'])
       },
         error => {
-          // console.log(error);
-          // this.toastr.error(error, null, {toastLife: 5000});
-          // swal(
-          //   'Invalid',
-          //   'Please Try Again!',
-          //   'error'
-          // )
+          console.log(error);
+         // this.toastr.error(error, null, {toastLife: 5000});
+          swal(
+            'Invalid',
+            'Please Try Again!',
+            'error'
+          )
 
           //     //    this.state = Res[0].state;
           //     //this.sg['products'] = Res.json()['Results'];

@@ -1443,7 +1443,6 @@ h3 {
     margin-left: 10px !important;
     display: block !important;
 }
-<<<<<<< HEAD
 /* footer css start */
 .footer-1 .social-link a:hover {
   color: #46355C
@@ -1787,30 +1786,3 @@ textarea.form-control {
 }
 
 /* footer css end */
-=======
-.dashbord-custom{
-  font-weight: 500;
-}
-.dashbord-custom li:hover{
-  color:#e53935;
-}
-.dashbord-custom li a{
-  color:#555555;
-}
-.dashbord-custom li a:hover{
-  color:#e53935
-}
-.stars{
-  width: 100%;
-}
-.margin-top{
-  margin-top: 67px;
-}
-.button-social{
-    margin: 0 auto !important;
-    display: block !important;
-    margin-bottom: 10px !important;
-    width: 150px !important
-    ;
-}
->>>>>>> 98b594f20b261a4988f129a91051a3bd1e07a56b
