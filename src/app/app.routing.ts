@@ -100,12 +100,12 @@ export const AppRoutes: Routes = [
             path: 'features-comparison',
             loadChildren: './features-comparison/features.module#FeatureModule'
         },
+        // {
+        //     path: 'how-it-works',
+        //     loadChildren: './how-it-works/how.module#HowModule'
+        // },
         {
             path: 'how-it-works',
-            loadChildren: './how-it-works/how.module#HowModule'
-        },
-        {
-            path: 'overview',
             loadChildren: './overview/overview.module#OverViewModule'
         },
           {

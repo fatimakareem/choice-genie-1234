@@ -7989,7 +7989,7 @@
    .card .card-title {
      margin-top: 0;
      margin-bottom: 3px; }
-     .card .card-title:not(.card-calendar .card-title) {
+     .card .card-title:not( .card-calendar .card-title) {
        margin-top: 0;
        margin-bottom: 5px; 
       }
