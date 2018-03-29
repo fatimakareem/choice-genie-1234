@@ -75,7 +75,7 @@ import { ResidentialService } from './residential/residential-dialog2/residentia
 import { ContactusComponent } from './contactus/contactus.component';
 import { PagerService } from './pager.service';
 import { CompanyService } from './company.service';
-import { DashboardService } from './dashboard/dashboard.service';
+
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { StepperOverviewExample } from './signup/stepper-overview-example';
 // import { UsersignupComponent } from './usersignup/usersignup.component';
@@ -180,7 +180,7 @@ export class MaterialModule {}
     // SweetAlertService,
     LoginService,
     PagerService,
-    DashboardService,
+   
     UserLoginService,
     SuperLoginService,
     ResidentialService,

@@ -131,6 +131,7 @@ export const AppRoutes: Routes = [
                 path: 'dashboard/:username',
                 loadChildren: './dashboard/dashboard.module#DashboardModule'
             },
+          
             {
                 path: "new-product",
                 loadChildren: './admin/new-product/new-product.module#NewProductModule'

@@ -84,7 +84,7 @@ export class LoginComponent implements OnInit {
               )
               // this.toastr.success('Successfully!', 'Logged in',{toastLife: 5000});
               this.router.navigate(['/dashboard/'+ this.username]);
-
+             
             },
             error => {
               console.log(error);
