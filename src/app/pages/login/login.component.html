@@ -27,5 +27,115 @@
         </form>
       </div>
     </div>
+<<<<<<< HEAD
   </div>
   
+=======
+    <div class="collapse navbar-collapse" id="menu-example">
+    <ul class="nav navbar-nav navbar-right">
+    <li>
+    <a href="/dashboard">
+    <i class="material-icons">dashboard</i> Dashboard
+    </a>
+    </li>
+    <li class="">
+    <a href="/pages/register">
+    <i class="material-icons">person_add</i> Register
+    </a>
+    </li>
+    <li class=" active ">
+    <a href="/pages/login">
+    <i class="material-icons">fingerprint</i> Login
+    </a>
+    </li>
+    <li class="">
+    <a href="/pages/lock">
+    <i class="material-icons">lock_open</i> Lock
+    </a>
+    </li>
+    </ul>
+    </div>
+    </div>
+    </nav> -->
+    <div class="full-page login-page" filter-color="black">
+        <!--  you can change the color of the filter page using: data-color="blue | purple | green | orange | red | rose " -->
+        <div class="content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 col-sm-6 col-md-offset-4 col-sm-offset-3">
+                        <!-- <form method="#" action="#">  -->
+                        <form [formGroup]="login">
+                            <div class="card card-login card-hidden">
+                                <div class="card-header text-center" data-background-color="rose">
+
+
+
+                                    <h4 class="card-title">Login</h4>
+                                    <div class="social-line">
+
+                                    </div>
+                                </div>
+                                <!-- <p class="category text-center">
+    Or Be Classical
+    </p> -->
+                                <div class="card-content">
+                                    <div class="input-group">
+                                        <span class="input-group-addon">
+                                            <i class="material-icons">face</i>
+                                        </span>
+                                        <div class="form-group label-floating" [ngClass]="displayFieldCss(login, 'username')">
+                                            <label class="control-label">User Name</label>
+                                            <!-- <mat-form-field> -->
+                                            <input matInput type="text" id="username" class="form-control" formControlName="username"[(ngModel)]="username">
+                                            <!-- <mat-error *ngIf="login.controls.username.value == ''">
+                                                    <strong>Username cannot be empty</strong>
+                                                </mat-error> -->
+
+                                            <!-- </mat-form-field> -->
+                                            <!-- <input type="text" class="form-control" name="username" [(ngModel)]="username"> -->
+                                        </div>
+                                    </div>
+                                    <!-- <div class="input-group">
+    <span class="input-group-addon">
+    <i class="material-icons">email</i>
+    </span>
+    <div class="form-group label-floating">
+    <label class="control-label">Email address</label>
+    <input type="email" class="form-control">
+    </div>
+    </div> -->
+
+                                    <div class="input-group">
+                                        <span class="input-group-addon">
+                                            <i class="material-icons">lock_outline</i>
+                                        </span>
+                                        <div class="form-group label-floating" [ngClass]="displayFieldCss(login, 'password')">
+                                            <label class="control-label">Password</label>
+                                            <!-- <mat-form-field> -->
+                                            <input matInput type="password" id="password" class="form-control" formControlName="password" [(ngModel)]="password">
+                                            <!-- <mat-error *ngIf="login.controls.password.value == ''">
+                                                    <strong>Password cannot be empty</strong>
+                                                </mat-error> -->
+
+                                            <!-- </mat-form-field> -->
+                                            <!-- <input type="password" class="form-control" name="password" [(ngModel)]="password"> -->
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class=" text-center">
+                                    <button type="submit" class="btn btn-rose btn-wd btn-lg" (click)="onLogin()">LOGIN</button>
+                                    <!-- <button> <a href="/dashboard">
+                                        <i class="material-icons">dashboard</i> Dashboard
+                                        </a></button> -->
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+      
+            <div class="full-page-background" style="background-image: url(../../../assets/img/123.jpg) "></div>
+    </div>
+</div>
+>>>>>>> 11f89abf3f1818afa91c2ff8cfa37232c5f9e081

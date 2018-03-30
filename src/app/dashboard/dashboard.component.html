@@ -42,15 +42,7 @@
 
 
                   <div class="stars">
-                    <i style="margin: -6px 67px 0px -69px;
-                    font-size: 29px;
-                    color: red;
-                    position: absolute;
-                    top: 112px;
-                    left: 55px;"
-                     class="fa fa-trash-o" type="submit" value="Delete" (click)="btnDeleteClick(data.id)" data-toggle="modal" data-target="#myModal3"
-                     >
-                    </i>
+                   
                     <img src="{{data.rating_logo}}" />
                     </div>
                   <!-- <input type="checkbox"value="{{data.id}}"name="id"[(ngModel)]=id>{{data.id}} -->
@@ -137,18 +129,18 @@ text-align: center;">
 
                               <!-- <div class="card-content"> -->
                               <!-- <lable>{{data.id}}</lable> -->
-                              <div class="col-md-6 col-sm-6">
+                              <!-- <div class="col-md-6 col-sm-6">
                                 <div class="input-group">
 
 
 
-                                  <!-- <input class="form-control" type="text" > -->
+                                
                                   <mat-form-field>
                                     <input matInput placeholder="ID" name="id" [(ngModel)]=id />
 
                                   </mat-form-field>
                                 </div>
-                              </div>
+                              </div> -->
                               <div class="col-md-6 col-sm-6">
                                 <div class="input-group">
 
@@ -288,7 +280,7 @@ text-align: center;">
                                 </div>
                               </div>
                               <!-- </div> -->
-                              <div class="footer text-center">
+                              <div class=" text-center">
                                 <button type="submit" class="btn btn-rose" (click)="editClick(PId)" data-dismiss="modal">Update</button>
 
                                 <button type="button" class="btn btn-rose" data-dismiss="modal">Cancel</button>
@@ -310,21 +302,36 @@ text-align: center;">
                 </div>
                 <br>
                 <div class="col-md-4 col-sm-3 col-xs-7 term">
-
+                  <div  class="text-center">
+                  <i style="
+                    font-size: 29px;
+                    color: red;
+                   "
+                     class="fa fa-trash-o" type="submit" value="Delete" (click)="btnDeleteClick(data.id)" data-toggle="modal" data-target="#myModal3"
+                     >
+                    </i>
+                   
+                  <i style="padding:center;
+                  font-size: 29px;
+                  color: red;
+                  "
+                   class="fa fa-edit" type="submit" value="Edit" type="submit"  (click)="btnEditClick(data.id)" data-toggle="modal"
+                  data-target="#myModal2">
+                 
+              </i>
+            </div>
                   <h3 class="text-center">
                     <b> Call now</b>
                   </h3>
                   <h3 class="text-center">{{data.phone}}</h3>
                   <!-- (click)="openDialog(data.id)" -->
+                  <div class="text-center">
                   <button class="btn btn-rose button-social">
-                    <a style="color:white" href="{{data.profileurl}}" target="_blank">Signup </a>
+                    <a  style="color:white;text-align: center;" href="{{data.profileurl}}" target="_blank">Signup </a>
                     <i class="material-icons">bubble_chart</i>
                   </button>
-                  <button type="submit" class="btn btn-rose button-social" (click)="btnEditClick(data.id)" data-toggle="modal"
-                    data-target="#myModal2">
-                    Edit
-                  </button>
-
+                 
+                </div>
                 </div>
                 <!-- <div class="col-md-3 col-sm-3 col-xs-7 term top-margin-25">
         (click)="signUp(data.product_id)"
