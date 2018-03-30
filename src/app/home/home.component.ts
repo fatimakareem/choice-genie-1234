@@ -18,7 +18,7 @@ import { DataService } from '../data.service';
 // import { HttpClient, HttpResponse, HttpHeaders } from "@angular/common/http";
 // import { Http } from '@angular/http/src/http';
 
-declare const $: any;
+declare var $;
 
 export class errorMatcher implements ErrorStateMatcher {
     isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
@@ -33,8 +33,8 @@ export class errorMatcher implements ErrorStateMatcher {
     providers: [
         // { provide: CarouselConfig, useValue: { interval: 3500, noPause: true, showIndicators: true } }
       ]
-    
-    
+
+
 })
 
 export class HomeComponent implements OnInit {
@@ -51,7 +51,7 @@ export class HomeComponent implements OnInit {
     public products: any;
 
     constructor(private obj: HomeService, private router: Router, private route: ActivatedRoute, public sg: SimpleGlobal, private data: DataService, private Http: Http) {
-      
+
     }
 
 
@@ -63,7 +63,7 @@ export class HomeComponent implements OnInit {
     //  public model: any = {};
     public results: any;
     public zip;
-   
+
     promo = new FormControl('', [
         Validators.pattern(this.digitsOnly)
     ]);
@@ -76,7 +76,7 @@ export class HomeComponent implements OnInit {
         // this.Http.get('https://maps.googleapis.com/maps/api/geocode/json?latlng='+position.coords['latitude']+','+position.coords['longitude']+'&sensor=true&key=AIzaSyBHbxM2yDXYy-BUEHhaRJb-cx0Ch91EhT0')
         // this.Http.get('https://maps.googleapis.com/maps/api/geocode/json?latlng='+position.coords['latitude']+','+position.coords['longitude']+'&sensor=true&key=AIzaSyBHbxM2yDXYy-BUEHhaRJb-cx0Ch91EhT0')
         this.Http.get('http://api.geonames.org/findNearbyPostalCodesJSON?lat='+position.coords['latitude']+'&lng='+position.coords['longitude']+'&username=usman.khanbrain &sensor=true&radius=1.5 &maxRows=1')
-            
+
         .subscribe(Res => {
                 console.log(Res.json());
             })
@@ -84,8 +84,8 @@ export class HomeComponent implements OnInit {
         console.log(position.coords);
     }
     ngOnInit() {
-        
-        
+
+
         this.premiseIdData();
         // if (navigator.geolocation) {
         //     navigator.geolocation.getCurrentPosition(this.setPosition.bind(this));
@@ -105,19 +105,19 @@ export class HomeComponent implements OnInit {
         prevArrow: '<button class="slick-arrow leftArrow btn-slider btn-slider-left"><i class="fa fa-angle-left"></i></button>',
         nextArrow: '<button class="slick-arrow rightArrow btn-slider btn-slider-right"><i class="fa fa-angle-right"></i></button>'
       });
-      $('.mainSlider').on('beforeChange', function(event, slick, currentSlide, nextSlide){
-        $('.slide-heading').animateCss('fadeInDown');
-        $('.para-1').animateCss('fadeInUp');
-  
+
+      $('.slick-testimonal').on('beforeChange', function(event, slick, currentSlide, nextSlide) {
+        $('.slider-tagline').hide(10);
+        $('.slider-tagline').show(5);
       });
-  
-  
-  
+
+
+
 
         //alert("i am here")
 
     }
-  
+
     premiseIdData() {
 
         let headers = new Headers();
@@ -131,7 +131,7 @@ export class HomeComponent implements OnInit {
                 // localStorage.setItem("signedupcompanyid", this.product_id);
                 //localStorage.setItem("consumerPremiseID", this.premiseID);
 
-                //   return JSON.parse(localStorage.getItem("premiseID"))   
+                //   return JSON.parse(localStorage.getItem("premiseID"))
                 this.sg['products'] = Res.json()['Results'];
                 this.data.changeProducts(this.sg['products']);
                 for (let prod of this.sg['products']) {
@@ -141,10 +141,10 @@ export class HomeComponent implements OnInit {
                     prod["price_rate"] = prod["price_rate"].split('..', 3000);
                   }
 
-                
+
                 setTimeout(function(){
                     $('.autoplay').slick({
-           
+
                         slidesToShow: 3,
                         slidesToScroll: 1,
                         autoplay: true,
@@ -157,4 +157,3 @@ export class HomeComponent implements OnInit {
             });
     }
 }
-

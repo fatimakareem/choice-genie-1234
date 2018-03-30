@@ -22,7 +22,8 @@
         "styles.scss",
         "../node_modules/bootstrap/dist/css/bootstrap.css",
         "./assets/sass/material-dashboard.scss",
-        "../node_modules/slick-carousel/slick/slick.css"
+        "../node_modules/slick-carousel/slick/slick.css",
+        "../node_modules/animate.css/animate.css"
       ],
       "scripts": [
         "../node_modules/jquery/dist/jquery.js",

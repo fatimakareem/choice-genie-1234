@@ -87,6 +87,7 @@ import { DeleteService } from './dashboard/delete.service';
 import {EditService} from './dashboard/edit.service';
 import { OverviewComponent } from './overview/overview.component';
 import { HowItWorksComponent } from './how-it-works/how-it-works.component';
+// import { ContactComponent } from './contact/contact.component';
 // import { UsersignupComponent } from './usersignup/usersignup.component';
 
 // import { MainloginService } from './mainadmin/mainlogin/mainlogin.service';

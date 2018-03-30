@@ -5,36 +5,43 @@
       <div class="row">
         <div class="slick-testimonal normal-slider bg-slider">
           <div class="slider-img">
-              <img src="../../assets/img/home-4.jpg" alt="image description" style="height:500px"/>
+
+            <img src="../../assets/img/home-4.jpg" alt="image description" style="height:570px; position: relative" />
+            <p class="slider-tagline animated fadeInDown">Hundreds of Dollars per year On-Average Savings to the Energy Consumer:-
+              <br> This Genie does it ALL for you!</p>
           </div>
           <div class="slider-img">
-              <img src="../../assets/img/home-5.jpg" alt="image description"style="height:500px" />
+            <img src="../../assets/img/home-5.jpg" alt="image description" style="height:570px" />
+            <p class="slider-tagline animated fadeInUp">With ChoiceGenie’s Vendor Matching AI, Bidding Engine, Product Showcase, Realtime Chat & a whole lot more, ChoiceGenie
+              goes the Extra Mile for a Trust-Based Energy Shopping Experience!</p>
           </div>
           <div class="slider-img">
-              <img src="../../assets/img/home-6.jpg" alt="image description"style="height:500px" />
+            <img src="../../assets/img/home-6.jpg" alt="image description" style="height:570px" />
+            <p class="slider-tagline animated fadeInLeft">Shop with a ROAR: ChoiceGenie is The Next Generation Energy Comparative Shopping Engine – A Super Fast, Super
+              Easy Time n’ Money Saving Experience!</p>
           </div>
         </div>
       </div>
-        <!-- 
+      <!--
       <carousel>
   <slide>
-    
+
 
     <img src="assets/img/home-4.jpg" alt="First slide" style="display: block; width: 100%; height:500px;">
     <div class="carousel-caption d-none d-md-block">
-      
+
     </div>
   </slide>
   <slide>
     <img src="assets/img/home-5.jpg" alt="Second slide" style="display: block; width: 100%; height:500px;">
     <div class="carousel-caption d-none d-md-block">
-      
+
     </div>
   </slide>
   <slide>
     <img src="assets/img/home-6.jpg" alt="Third slide" style="display: block; width: 100%; height:500px;">
     <div class="carousel-caption d-none d-md-block">
-      
+
     </div>
   </slide>
 </carousel> -->
@@ -57,11 +64,11 @@
       </ngx-carousel> -->
 
 
-      <div class="form-home" >
-        <div class="container-fluid" >
+      <div class="form-home">
+        <div class="container-fluid">
           <form (ngSubmit)="onSubmit(f)" #f="ngForm" class="form-zip">
-            <div class="card" style="height: 200px">
-              <div class="card-header card-header-text" data-background-color="rose">
+            <div class="card wow fadeInRight margintop" data-wow-duration="2s" style="height: 160px">
+              <div class="card-header card-header-text wow fadeInLeft" data-wow-duration="2s" data-background-color="rose">
                 <h4 class="card-title">Compare Rates Now!</h4>
               </div>
               <div class="clearfix">
@@ -107,21 +114,21 @@
     <section class="choose-criteria">
       <div class="container">
         <ul>
-          <li>
+          <li class="wow bounceInLeft" data-wow-duration="2s">
             <a routerLink="/residential">
               <i class="material-icons">explore</i>
               <h4>Residential</h4>
               <p>Get premium quality service at great prices.</p>
             </a>
           </li>
-          <li>
+          <li class="wow  fadeInUp" data-wow-duration="2s">
             <a routerLink="/commercial">
               <i class="material-icons">polymer</i>
               <h4>Commercial</h4>
               <p>Proven solutions for a change.</p>
             </a>
           </li>
-          <li>
+          <li class="wow  bounceInRight" data-wow-duration="2s">
             <a routerLink="/pages/login">
               <i class="material-icons">lock_open</i>
               <h4>Member Login</h4>
@@ -277,16 +284,16 @@
     <!-- </div> -->
     <!-- </section> -->
 
-    <section class="interest-area">
+    <section class="interest-area ">
 
-      <div class="container">
+      <div class="container ">
         <!-- <h3 class="text-center">Search By Area</h3> -->
         <table style="margin: 15px; border-left: 5px solid #787878;">
 
           <tbody>
             <tr>
               <td style="color: #787878;">
-                <h1 style="color: #787878; font-size: 25px;">&nbsp;&nbsp;WE OFFER LOW ELECTRICITY RATES</h1>
+                <h1 style="color: #787878; font-size: 25px;" class="wow bounceInRight" data-wow-duration="2s">&nbsp;&nbsp;WE OFFER LOW ELECTRICITY RATES</h1>
               </td>
             </tr>
             <style>
@@ -297,9 +304,10 @@
             </style>
             <tr>
               <td style="color: #787878; line-height: 25px; font-weight: normal; font-size: 14px; margin-left: 15px;">
-                <p>
-                  <span>Built on decades of industry experience, innovation and inspiration,ChoiceGenie is an Artificially Intelligent Comparative Shopping App for residential and commercial electric services.
-                    Genie is a Texas-based electricity company founded on the idea that electricity should be affordable and contribute to where you live. Want
+                <p class="wow  bounceInUp">
+                  <span>Built on decades of industry experience, innovation and inspiration,ChoiceGenie is an Artificially Intelligent
+                    Comparative Shopping App for residential and commercial electric services. Genie is a Texas-based electricity
+                    company founded on the idea that electricity should be affordable and contribute to where you live. Want
                     to make a difference in your community? Sign up for a low electricity rate and we’ll make a charitable
                     contribution on your behalf. It’s that simple.</span>
                 </p>
@@ -316,13 +324,13 @@
 
         <div class="container">
 
-          <h2 class="text-center">Plans in your Area</h2>
+          <h2 class="text-center  wow  fadeInLeft">Plans in your Area</h2>
           <div class="container">
             <!-- <img src="../../assets/img/choicegenie banner-01.png" width="100%" height="100%"  alt="image description" /> -->
             <div class="autoplay">
 
 
-              <div class="item" *ngFor="let data of sg['products']; let i = index" class="autoplay-item {{ (i == 0) ? 'active' : ''}}">
+              <div class="item  " *ngFor="let data of sg['products']; let i = index" class="autoplay-item {{ (i == 0) ? 'active' : ''}}">
                 <div class="col-md-12">
 
                   <div class="card">
@@ -333,7 +341,7 @@
 
                     <div class="card-body">
                       <h4 class="card-title">{{data.title}}</h4>
-                      
+
                       <!-- <h3 *ngFor="let items of data.price_rate" class="text-center">
                         {{items}}$
                       </h3> -->
@@ -342,10 +350,12 @@
                       <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
                       <!-- <a class="btn btn-primary">Button</a> -->
                     </div>
-                     <!-- <p   class="card-text" *ngFor="let itemss of data.plan_information">{{itemss}}</p> -->
-                     <a style="color:white" href="{{data.profileurl}}" target="_blank" >    <button class="btn btn-rose"> Signup 
-                      <!-- <i class="material-icons">bubble_chart</i> -->
-                    </button></a>
+                    <!-- <p   class="card-text" *ngFor="let itemss of data.plan_information">{{itemss}}</p> -->
+                    <a style="color:white" href="{{data.profileurl}}" target="_blank">
+                      <button class="btn btn-rose"> Signup
+                        <!-- <i class="material-icons">bubble_chart</i> -->
+                      </button>
+                    </a>
                     <!-- </div> -->
 
                   </div>
@@ -362,28 +372,28 @@
 
               <!-- <div class="item" *ngFor="let data of sg['products']; let i = index"class="autoplay-item {{ (i == 0) ? 'active' : ''}}">
               <div class="">
-  
+
             <div class="col-md-12">
-              <div class="card"> 
-                
+              <div class="card">
+
                       <img class="img-fluid" src={{data.profile_logo}}>
                   <div class="card-body">
-  
+
                       <h4 class="card-title">
                           <a href ="#pablo">{{data.title}}</a>
                         </h4>
                         <div class="card-description">
                             {{data.title}}
                         </div>
-                        <h4>{{data.price_rate}}</h4>        
-                        
-                         
+                        <h4>{{data.price_rate}}</h4>
+
+
                   </div>
-                 
+
               </div>
-              
+
           </div>
-          
+
            </div>
            </div> -->
 
@@ -714,20 +724,20 @@
         <ul class="fourcolumns">
 
           <li>
-            <div class="holder icons"  style="height: 350px" >
-                <!-- <img src="../../assets/img/Billing-icon.png"/> -->
-                <a class="img-holder">
-                    <i class="material-icons">credit_card</i>
-                  </a>
+            <div class="holder icons wow  fadeInRight" style="height: 350px">
+              <!-- <img src="../../assets/img/Billing-icon.png"/> -->
+              <a class="img-holder">
+                <i class="material-icons">credit_card</i>
+              </a>
               <h3>Billing Solutions</h3>
               <div class="txt-holder">
-               <p>Pay lower energy rates by selecting the plans of your choice.</p>
+                <p>Pay lower energy rates by selecting the plans of your choice.</p>
               </div>
 
             </div>
           </li>
           <li>
-            <div class="holder icons" style="height: 350px">
+            <div class="holder icons wow  fadeInUp" style="height: 350px">
               <a class="img-holder">
                 <i class="material-icons">face</i>
               </a>
@@ -739,19 +749,19 @@
             </div>
           </li>
           <li>
-            <div class="holder icons "style="height: 350px">
+            <div class="holder icons  wow  fadeInUp" style="height: 350px">
               <a class="img-holder">
                 <i class="material-icons">autorenew</i>
               </a>
               <h3>Connections</h3>
               <div class="txt-holder">
-             <p>Directly establish communication with electricity providers concerning their electricity plans.</p>
+                <p>Directly establish communication with electricity providers concerning their electricity plans.</p>
               </div>
 
             </div>
           </li>
           <li>
-            <div class="holder icons " style="height: 350px">
+            <div class="holder icons   wow  fadeInLeft " style="height: 350px">
               <a class="img-holder">
                 <i class="material-icons">home</i>
               </a>
@@ -762,8 +772,8 @@
 
             </div>
           </li>
-      
-        
+
+
         </ul>
       </div>
     </section>
@@ -799,4 +809,4 @@
     </section>
   </div>
 </div>
-<app-footer-cmp></app-footer-cmp> 
+<app-footer-cmp></app-footer-cmp>
