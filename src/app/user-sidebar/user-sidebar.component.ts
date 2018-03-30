@@ -9,6 +9,7 @@ import { DataService } from '../data.service';
 import { PagerService } from '../pager.service';
 import { HttpClient, HttpResponse, HttpHeaders } from "@angular/common/http";
 import { AfterContentInit } from '@angular/core/src/metadata/lifecycle_hooks';
+import { Subscription } from 'rxjs/Subscription';
 
 declare const $: any;
 
@@ -25,6 +26,7 @@ declare const $: any;
   localVar;
   renewable;
   model;
+  
   // min;
   // max;
   // price;
@@ -40,13 +42,21 @@ declare const $: any;
   items;
   title;
   mySelect;
+  private sub: Subscription;
+  private zip: any;
   ngOnInit() {
   this.data.currentProducts.subscribe(products => this.sg['products'] = products)
   
   this.zip_code = this.sg['product_zipcode'];
   //this.months();
     
+//   this.sub = this.route.params.subscribe(params => {
+//     //this.zip = +params['zipCode'];
+//     this.zip_code= +params['zipcode'];
+//    // this.setPage(1);
 
+
+// });
   }
   ngAfterContentInit() {
     // console.log(this.eUsage);

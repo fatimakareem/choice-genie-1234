@@ -87,6 +87,10 @@ import { DeleteService } from './dashboard/delete.service';
 import {EditService} from './dashboard/edit.service';
 import { OverviewComponent } from './overview/overview.component';
 import { HowItWorksComponent } from './how-it-works/how-it-works.component';
+import { FaqsComponent } from './faqs/faqs.component';
+import { BecomeapartnerComponent } from './becomeapartner/becomeapartner.component';
+import { ChoiceandsavingComponent } from './choiceandsaving/choiceandsaving.component';
+import { WhyChocieGenieComponent } from './why-chocie-genie/why-chocie-genie.component';
 // import { ContactComponent } from './contact/contact.component';
 // import { UsersignupComponent } from './usersignup/usersignup.component';
 
