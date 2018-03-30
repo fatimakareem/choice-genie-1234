@@ -42,9 +42,9 @@
 
 
                   <div class="stars">
-                   
+
                     <img src="{{data.rating_logo}}" />
-                    </div>
+                  </div>
                   <!-- <input type="checkbox"value="{{data.id}}"name="id"[(ngModel)]=id>{{data.id}} -->
                   <!-- <br> <star-rating-comp [size]="'large'" [starType]="'svg'" [rating]="" [(ngModel)]="rating"></star-rating-comp>  -->
                   <!-- <mat-checkbox name="deleteid"[(ngModel)]=deleteid value="{{data.id}}">{{data.deleteid}}</mat-checkbox> -->
@@ -55,7 +55,7 @@
                   <button type="submit" class="btn btn-rose" (click)="deletedata()">Delete</button> -->
 
                   <!-- <input type="text" [(ngModel)]="data.id" value="{{data.id}}" name="{{data.id}}"/>{{data.id}} -->
-                  
+
 
 
                   <div class="modal fade" id="myModal3" role="dialog">
@@ -118,7 +118,8 @@ opacity: 1;">&times;</button>
                           </div>
                           <div class="modal-body" style="font-size: 18px;
 text-align: center;">
-                            <form (ngSubmit)="onSubmit()" #f="ngForm">
+
+                            <form [formGroup]="updata">
                               <!-- (ngSubmit)="onSubmit(f)" #f="ngForm" class="form-zip" -->
                               <!-- <div class="card card-login"> -->
                               <div class="card-header text-center" data-background-color="rose">
@@ -302,36 +303,34 @@ text-align: center;">
                 </div>
                 <br>
                 <div class="col-md-4 col-sm-3 col-xs-7 term">
-                  <div  class="text-center">
-                  <i style="
+                  <div class="text-center">
+                    <i style="
                     font-size: 29px;
                     color: red;
-                   "
-                     class="fa fa-trash-o" type="submit" value="Delete" (click)="btnDeleteClick(data.id)" data-toggle="modal" data-target="#myModal3"
-                     >
+                   " class="fa fa-trash-o" type="submit" value="Delete" (click)="btnDeleteClick(data.id)" data-toggle="modal"
+                      data-target="#myModal3">
                     </i>
-                   
-                  <i style="padding:center;
+
+                    <i style="padding:center;
                   font-size: 29px;
                   color: red;
-                  "
-                   class="fa fa-edit" type="submit" value="Edit" type="submit"  (click)="btnEditClick(data.id)" data-toggle="modal"
-                  data-target="#myModal2">
-                 
-              </i>
-            </div>
+                  " class="fa fa-edit" type="submit" value="Edit" type="submit" (click)="btnEditClick(data.id)" data-toggle="modal"
+                      data-target="#myModal2">
+
+                    </i>
+                  </div>
                   <h3 class="text-center">
                     <b> Call now</b>
                   </h3>
                   <h3 class="text-center">{{data.phone}}</h3>
                   <!-- (click)="openDialog(data.id)" -->
                   <div class="text-center">
-                  <button class="btn btn-rose button-social">
-                    <a  style="color:white;text-align: center;" href="{{data.profileurl}}" target="_blank">Signup </a>
-                    <i class="material-icons">bubble_chart</i>
-                  </button>
-                 
-                </div>
+                    <button class="btn btn-rose button-social">
+                      <a style="color:white;text-align: center;" href="{{data.profileurl}}" target="_blank">Signup </a>
+                      <i class="material-icons">bubble_chart</i>
+                    </button>
+
+                  </div>
                 </div>
                 <!-- <div class="col-md-3 col-sm-3 col-xs-7 term top-margin-25">
         (click)="signUp(data.product_id)"

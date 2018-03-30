@@ -3,7 +3,7 @@ import { Config } from "../Config";
 import { Subscription } from 'rxjs/Subscription';
 import { CompanyService } from "../company.service";
 import { ErrorStateMatcher, MAT_DIALOG_DATA, MatDialog, MatDialogRef } from "@angular/material";
-import { NgForm, FormControl, Validators, FormGroupDirective } from "@angular/forms";
+
 import { Pipe, PipeTransform } from "@angular/core";
 // import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 import { Headers, Http, Response } from '@angular/http';
@@ -22,6 +22,7 @@ import { PageEvent } from '@angular/material';
 import { DeleteService } from './delete.service';
 import { DataService } from '../data.service';
 import { EditService } from './edit.service';
+import { NgForm,FormBuilder, FormGroup, Validators, FormControl, AbstractControl,FormGroupDirective } from '@angular/forms';
 
 
 
@@ -51,7 +52,7 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
 })
 export class DashboardComponent implements OnInit, AfterViewInit {
     constructor(private route: ActivatedRoute, private https: HttpClient, private newService: DeleteService,private serve:EditService,
-        private router: Router, private http: Http, private pagerService: PagerService, private homeService: HomeService, private sg: SimpleGlobal, private obj: HomeService, private dialog: MatDialog, private dataa: DataService, private companyService: CompanyService) {
+        private formBuilder: FormBuilder,  private router: Router, private http: Http, private pagerService: PagerService, private homeService: HomeService, private sg: SimpleGlobal, private obj: HomeService, private dialog: MatDialog, private dataa: DataService, private companyService: CompanyService) {
 
     }
 
@@ -247,7 +248,7 @@ export class DashboardComponent implements OnInit, AfterViewInit {
         console.log('edit' + id);
 
         //Calling Delete Service
-        this.serve.editTodoList(id).subscribe(data => {
+        this.serve.editTodoList(this.updata.value).subscribe(data => {
             console.log(data);
 
             this.route.params.subscribe(params => {
@@ -299,9 +300,25 @@ export class DashboardComponent implements OnInit, AfterViewInit {
     //     // }
     // }
     private Sub: Subscription;
+    updata : FormGroup;
     // constructor(private navbarTitleService: NavbarTitleService) { }
     public ngOnInit() {
-        this.route.params.subscribe(params => {
+        this.updata = this.formBuilder.group({
+            zipcode: ['', Validators.compose([Validators.required])],
+            cancelation_fee: ['', Validators.compose([Validators.required])],
+            fact_sheet: ['', Validators.compose([Validators.required])],
+            phone: ['', Validators.compose([Validators.required])],
+            id: ['', Validators.required],
+            plan_information: ['',  Validators.compose([Validators.required])],
+            price_rate: ['', Validators.compose([Validators.required])],
+            profile_logo: ['', Validators.compose([Validators.required])],
+            profileurl: ['', Validators.required],
+            rating_logo: ['',  Validators.compose([Validators.required])],
+            sign_up: ['', Validators.compose([Validators.required])],
+            terms_of_service: ['',  Validators.compose([Validators.required])],
+            title: ['', Validators.compose([Validators.required])],
+        },);         
+           this.route.params.subscribe(params => {
 
 
             //  console.log('paramsssssssssss',params['username'])

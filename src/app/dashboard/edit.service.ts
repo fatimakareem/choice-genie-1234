@@ -8,25 +8,25 @@ export class EditService {
   constructor(private http: Http) { }
   
 
-editTodoList(id) {
+editTodoList(obj) {
   console.log('mmmmmmmmmmmmmmmmmmmmm');
-  console.log(id)
+  console.log(obj)
   const headers = new Headers();
   headers.append('Content-Type', 'application/json');
-  return this.http.put(Config.api + 'dataup/'+ id , JSON.stringify({
-    "zipcode":id.zipcode,
-    "cancelation_fee":id.cancelation_fee,
-    "fact_sheet":id.fact_sheet,
-    "phone":id.phone, 
-    "id":id.id,
-    "plan_information":id.plan_information,
-    "price_rate":id.price_rate,
-    "profile_logo":id.profile_logo,
-    "profileurl":id.profileurl,
-    "rating_logo":id.rating_logo,
-    "sign_up":id.sign_up,
-    "terms_of_service":id.terms_of_service,
-    "title":id.title,
+  return this.http.put('http://192.168.30.41:9000/choice/dataup/'+ obj.id , JSON.stringify({
+    "zipcode":obj.zipcode,
+    "cancelation_fee":obj.cancelation_fee,
+    "fact_sheet":obj.fact_sheet,
+    "phone":obj.phone, 
+    "id":obj.id,
+    "plan_information":obj.plan_information,
+    "price_rate":obj.price_rate,
+    "profile_logo":obj.profile_logo,
+    "profileurl":obj.profileurl,
+    "rating_logo":obj.rating_logo,
+    "sign_up":obj.sign_up,
+    "terms_of_service":obj.terms_of_service,
+    "title":obj.title,
     
   }), 
   {headers: headers}).map((response: Response) => response.json());
