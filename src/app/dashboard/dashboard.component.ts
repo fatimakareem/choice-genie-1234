@@ -135,13 +135,13 @@ export class DashboardComponent implements OnInit, AfterViewInit {
     // }
     modal:any=[];
     editdata: any = [];
-    setPage(username) {
+    setPage(username,page: number) {
         // alert("username")
         //  console.log("usernameeeeeeeeeeeee",username)
 
         const Results = {};
       
-        this.companyService.searchProduct(username).subscribe(Response => {
+        this.companyService.searchProduct(username,page).subscribe(Response => {
             // console.log(Response.id);
             // this.id = Response.id;
             console.log('service');       // localStorage.setItem('products',response['Results']);
@@ -164,7 +164,7 @@ export class DashboardComponent implements OnInit, AfterViewInit {
             this.allItems = this.sg['products'];
             // console.clear()
             console.log(Response['Total Result']);
-            //  this.pager = this.pagerService.getPager(Response['Total Result'], page, 10);
+             this.pager = this.pagerService.getPager(Response['Total Result'], page, 10);
             //this.setPage(1);
             // initialize to page 1
             // console.log(this.sg['products']);
@@ -221,7 +221,7 @@ export class DashboardComponent implements OnInit, AfterViewInit {
 
 
                 //  console.log('paramsssssssssss',params['username'])
-                this.setPage(params['username'])
+                this.setPage(params['username'],1)
                 //  this.setPage(1)
     
             });
@@ -266,7 +266,7 @@ console.log("TS OBJECT",this.modal);
 
 
                 //  console.log('paramsssssssssss',params['username'])
-                this.setPage(params['username'])
+                this.setPage(params['username'],1)
                 //  this.setPage(1)
     
             });
@@ -335,7 +335,8 @@ console.log("TS OBJECT",this.modal);
 
 
             //  console.log('paramsssssssssss',params['username'])
-            this.setPage(params['username'])
+            this.setPage(params['username'],1)
+            console.log(params['username'],1)
             //  this.setPage(1)
 
         });
