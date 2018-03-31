@@ -22,8 +22,10 @@ import { PageEvent } from '@angular/material';
 import { DeleteService } from './delete.service';
 import { DataService } from '../data.service';
 import { EditService } from './edit.service';
-import { NgForm,FormBuilder, FormGroup, Validators, FormControl, AbstractControl,FormGroupDirective } from '@angular/forms';
+import { NgForm,FormBuilder, FormGroup, Validators, FormControl, AbstractControl,FormGroupDirective,RadioControlValueAccessor } from '@angular/forms';
 
+import swal from 'sweetalert2';
+import {NgControl} from '@angular/forms';
 
 
 
@@ -131,17 +133,20 @@ export class DashboardComponent implements OnInit, AfterViewInit {
 
     //     seq2 = 0;
     // }
+    modal:any=[];
+    editdata: any = [];
     setPage(username) {
         // alert("username")
         //  console.log("usernameeeeeeeeeeeee",username)
 
-        const Results = {}
-
+        const Results = {};
+      
         this.companyService.searchProduct(username).subscribe(Response => {
             // console.log(Response.id);
             // this.id = Response.id;
             console.log('service');       // localStorage.setItem('products',response['Results']);
             this.sg['products'] = Response['Results'];
+            this.editdata=Response['Results'];
             console.log(this.sg['products']);
             for (let prod of this.sg['products']) {
                 this.id = prod["id"];
@@ -152,6 +157,7 @@ export class DashboardComponent implements OnInit, AfterViewInit {
                 prod["price_rate"] = prod["price_rate"].split('..', 3000);
 
             }
+
             this.dataa.changeProducts(this.sg['products']);
             this.prod_loaded = true;
             this.prods_loaded = true;
@@ -246,11 +252,16 @@ export class DashboardComponent implements OnInit, AfterViewInit {
 
     editClick(id) {
         console.log('edit' + id);
-
+console.log("TS OBJECT",this.modal);
         //Calling Delete Service
-        this.serve.editTodoList(this.updata.value).subscribe(data => {
+        this.serve.editTodoList( this.modal,id).subscribe(data => {
             console.log(data);
-
+            swal({
+                type: 'success',
+                title: 'Updated Your Profile',
+                showConfirmButton: false,
+                timer: 1500
+              })
             this.route.params.subscribe(params => {
 
 
@@ -300,24 +311,26 @@ export class DashboardComponent implements OnInit, AfterViewInit {
     //     // }
     // }
     private Sub: Subscription;
-    updata : FormGroup;
+    form;
+    updataForm : FormGroup;
     // constructor(private navbarTitleService: NavbarTitleService) { }
     public ngOnInit() {
-        this.updata = this.formBuilder.group({
-            zipcode: ['', Validators.compose([Validators.required])],
-            cancelation_fee: ['', Validators.compose([Validators.required])],
-            fact_sheet: ['', Validators.compose([Validators.required])],
-            phone: ['', Validators.compose([Validators.required])],
-            id: ['', Validators.required],
-            plan_information: ['',  Validators.compose([Validators.required])],
-            price_rate: ['', Validators.compose([Validators.required])],
-            profile_logo: ['', Validators.compose([Validators.required])],
-            profileurl: ['', Validators.required],
-            rating_logo: ['',  Validators.compose([Validators.required])],
-            sign_up: ['', Validators.compose([Validators.required])],
-            terms_of_service: ['',  Validators.compose([Validators.required])],
-            title: ['', Validators.compose([Validators.required])],
-        },);         
+        
+        this.updataForm = this.formBuilder.group({
+            'zipcode': ['', Validators.compose([Validators.required])],
+            'cancelation_fee': ['', Validators.compose([Validators.required])],
+            'fact_sheet': ['', Validators.compose([Validators.required])],
+            'phone': ['', Validators.compose([Validators.required])],
+            'id': ['', Validators.required],
+            'plan_information': ['',  Validators.compose([Validators.required])],
+            'price_rate': ['', Validators.compose([Validators.required])],
+            'profile_logo': ['', Validators.compose([Validators.required])],
+            'profileurl': ['', Validators.required],
+            'rating_logo': ['',  Validators.compose([Validators.required])],
+            'sign_up': ['', Validators.compose([Validators.required])],
+            'terms_of_service': ['',  Validators.compose([Validators.required])],
+            'title': ['', Validators.compose([Validators.required])],
+        });
            this.route.params.subscribe(params => {
 
 

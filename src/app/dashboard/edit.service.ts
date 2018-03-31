@@ -8,17 +8,16 @@ export class EditService {
   constructor(private http: Http) { }
   
 
-editTodoList(obj) {
+editTodoList(obj,id) {
   console.log('mmmmmmmmmmmmmmmmmmmmm');
-  console.log(obj)
+  console.log(" service object",obj)
   const headers = new Headers();
   headers.append('Content-Type', 'application/json');
-  return this.http.put('http://192.168.30.41:9000/choice/dataup/'+ obj.id , JSON.stringify({
+  return this.http.put('http://192.168.30.41:9000/choice/dataup/'+ id , JSON.stringify({
     "zipcode":obj.zipcode,
     "cancelation_fee":obj.cancelation_fee,
     "fact_sheet":obj.fact_sheet,
     "phone":obj.phone, 
-    "id":obj.id,
     "plan_information":obj.plan_information,
     "price_rate":obj.price_rate,
     "profile_logo":obj.profile_logo,
@@ -26,7 +25,7 @@ editTodoList(obj) {
     "rating_logo":obj.rating_logo,
     "sign_up":obj.sign_up,
     "terms_of_service":obj.terms_of_service,
-    "title":obj.title,
+    "title":obj.title
     
   }), 
   {headers: headers}).map((response: Response) => response.json());

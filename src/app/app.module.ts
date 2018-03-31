@@ -91,6 +91,7 @@ import { FaqsComponent } from './faqs/faqs.component';
 import { BecomeapartnerComponent } from './becomeapartner/becomeapartner.component';
 import { ChoiceandsavingComponent } from './choiceandsaving/choiceandsaving.component';
 import { WhyChocieGenieComponent } from './why-chocie-genie/why-chocie-genie.component';
+import { RandomService } from './random.service';
 // import { ContactComponent } from './contact/contact.component';
 // import { UsersignupComponent } from './usersignup/usersignup.component';
 
@@ -191,7 +192,7 @@ export class MaterialModule {}
     ResidentialService,
     EditService,
     DeleteService,
-
+RandomService,
   ],
   bootstrap: [AppComponent],
   schemas: [
