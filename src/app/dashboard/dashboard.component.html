@@ -118,14 +118,8 @@ opacity: 1;">&times;</button>
                           </div>
                           <div class="modal-body" style="font-size: 18px;
 text-align: center;">
-<<<<<<< HEAD
-
-                            <form >
-                              
-=======
                             <form (ngSubmit)="onSubmit(f)" #f="ngForm">
                               <!-- (ngSubmit)="onSubmit(f)" #f="ngForm" class="form-zip" -->
->>>>>>> 6f889a396a0d669fe0705e3e712b465853b2cf75
                               <!-- <div class="card card-login"> -->
                               <div class="card-header text-center" data-background-color="rose">
                                 <h4 class="card-title">Edit Your product</h4>
@@ -147,7 +141,6 @@ text-align: center;">
                                   </mat-form-field>
                                 </div>
                               </div> -->
-                             
                               <div class="col-md-6 col-sm-6">
                                 <div class="input-group">
 
@@ -155,8 +148,8 @@ text-align: center;">
 
                                   <!-- <input class="form-control" type="text" > -->
                                   <mat-form-field>
-                                    <input matInput placeholder="Title" name="title" value ="{{data.title}}" required [(ngModel)]="modal.title"/>
-{{data.title}}
+                                    <input matInput placeholder="Title" name="title"required [(ngModel)]="modal.title"/>
+
                                   </mat-form-field>
                                 </div>
                               </div>
@@ -167,8 +160,8 @@ text-align: center;">
 
                                   <!-- <input class="form-control" type="text" > -->
                                   <mat-form-field>
-                                    <input matInput placeholder="Profile url" name="profileurl" value="{{data.profileurl}}" [(ngModel)]="modal.profileurl" />
-                                    {{data.profileurl}}
+                                    <input matInput placeholder="Profile url" name="profileurl" [(ngModel)]="modal.profileurl" />
+
                                   </mat-form-field>
                                 </div>
                               </div>
@@ -179,8 +172,8 @@ text-align: center;">
 
                                   <!-- <input class="form-control" type="text" > -->
                                   <mat-form-field>
-                                    <input matInput placeholder="Profile Logo" name="profile_logo" value="{{data.profile_logo}}" [(ngModel)]="modal.profile_logo" />
-                                    {{data.profile_logo}}
+                                    <input matInput placeholder="Profile Logo" name="profile_logo" [(ngModel)]="modal.profile_logo" />
+
                                   </mat-form-field>
                                 </div>
                               </div>
@@ -191,8 +184,8 @@ text-align: center;">
 
                                   <!-- <input class="form-control" type="text" > -->
                                   <mat-form-field>
-                                    <input matInput placeholder="Rating_logo" name="rating_logo" value="{{data.rating_logo}}" [(ngModel)]="modal.rating_logo" />
-                                    {{data.rating_logo}}
+                                    <input matInput placeholder="Rating_logo" name="rating_logo" [(ngModel)]="modal.rating_logo" />
+
                                   </mat-form-field>
                                 </div>
                               </div>
@@ -203,8 +196,8 @@ text-align: center;">
 
                                   <!-- <input class="form-control" type="text" > -->
                                   <mat-form-field>
-                                    <input matInput placeholder="Plan_Information" name="plan_information" value="{{data.plan_information}}" [(ngModel)]="modal.plan_information" />
-                                    {{data.plan_information}}
+                                    <input matInput placeholder="Plan_Information" name="plan_information" [(ngModel)]="modal.plan_information" />
+
                                   </mat-form-field>
                                 </div>
                               </div>
@@ -215,8 +208,8 @@ text-align: center;">
 
                                   <!-- <input class="form-control" type="text" > -->
                                   <mat-form-field>
-                                    <input matInput placeholder="Price Rate" name="price_rate" value="{{data.plan_information}}" [(ngModel)]="modal.price_rate" />
-                                    {{data.plan_information}}
+                                    <input matInput placeholder="Price Rate" name="price_rate" [(ngModel)]="modal.price_rate" />
+
                                   </mat-form-field>
                                 </div>
                               </div>
@@ -226,8 +219,8 @@ text-align: center;">
 
                                   <!-- <input class="form-control" type="text" > -->
                                   <mat-form-field>
-                                    <input matInput placeholder="Cancelation Fee" name="cancelation_fee" value="{{data.cancelation_fee}}" [(ngModel)]="modal.cancelation_fee" />
-                                    {{data.cancelation_fee}}
+                                    <input matInput placeholder="Cancelation Fee" name="cancelation_fee" [(ngModel)]="modal.cancelation_fee" />
+
                                   </mat-form-field>
                                 </div>
                               </div>
@@ -237,8 +230,8 @@ text-align: center;">
 
                                   <!-- <input class="form-control" type="text" > -->
                                   <mat-form-field>
-                                    <input matInput placeholder="Fact Sheet" name="fact_sheet" value="{{data.fact_sheet}}" [(ngModel)]="modal.fact_sheet" />
-                                    {{data.fact_sheet}}
+                                    <input matInput placeholder="Fact Sheet" name="fact_sheet" [(ngModel)]="modal.fact_sheet" />
+
                                   </mat-form-field>
                                 </div>
                               </div>
@@ -248,8 +241,8 @@ text-align: center;">
 
                                   <!-- <input class="form-control" type="text" > -->
                                   <mat-form-field>
-                                    <input matInput placeholder="Term of Service" name="terms_of_service" value="{{data.fact_sheet}}" [(ngModel)]="modal.terms_of_service" />
-                                    {{data.fact_sheet}}
+                                    <input matInput placeholder="Term of Service" name="terms_of_service" [(ngModel)]="modal.terms_of_service" />
+
                                   </mat-form-field>
                                 </div>
                               </div>
@@ -259,8 +252,8 @@ text-align: center;">
 
                                   <!-- <input class="form-control" type="text" > -->
                                   <mat-form-field>
-                                    <input matInput placeholder="Phone No" name="phone" value="{{data.phone}}" [(ngModel)]="modal.phone" />
-                                    <!-- {{data.phone}} -->
+                                    <input matInput placeholder="Phone No" name="phone" [(ngModel)]="modal.phone" />
+
                                   </mat-form-field>
                                 </div>
                               </div>
@@ -270,8 +263,8 @@ text-align: center;">
 
                                   <!-- <input class="form-control" type="text" > -->
                                   <mat-form-field>
-                                    <input matInput placeholder="Sign Up" name="sign_up" value="{{data.sign_up}}" [(ngModel)]="modal.sign_up" />
-                                    <!-- {{data.sign_up}} -->
+                                    <input matInput placeholder="Sign Up" name="sign_up" [(ngModel)]="modal.sign_up" />
+
                                   </mat-form-field>
                                 </div>
                               </div>
@@ -281,8 +274,8 @@ text-align: center;">
 
                                   <!-- <input class="form-control" type="text" > -->
                                   <mat-form-field>
-                                    <input matInput placeholder="Zipcode" name="zipcode" value="{{data.zipcode}}" [(ngModel)]="modal.zipcode" />
-                                    <!-- {{data.zipcode}} -->
+                                    <input matInput placeholder="Zipcode" name="zipcode" [(ngModel)]="modal.zipcode" />
+
                                   </mat-form-field>
                                 </div>
                               </div>

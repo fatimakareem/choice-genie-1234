@@ -13,7 +13,7 @@ editTodoList(obj,id) {
   console.log(" service object",obj)
   const headers = new Headers();
   headers.append('Content-Type', 'application/json');
-  return this.http.put('http://192.168.30.41:9000/choice/dataup/'+ id , JSON.stringify({
+  return this.http.put('http://192.168.30.52:9000/choice/dataup/'+ id , JSON.stringify({
     "zipcode":obj.zipcode,
     "cancelation_fee":obj.cancelation_fee,
     "fact_sheet":obj.fact_sheet,

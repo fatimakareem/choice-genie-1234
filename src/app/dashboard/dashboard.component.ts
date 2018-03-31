@@ -262,22 +262,22 @@ console.log("TS OBJECT",this.modal);
                 showConfirmButton: false,
                 timer: 1500
               })
-            this.route.params.subscribe(params => {
+            // this.route.params.subscribe(params => {
 
 
-                //  console.log('paramsssssssssss',params['username'])
-                this.setPage(params['username'],1)
-                //  this.setPage(1)
+            //     //  console.log('paramsssssssssss',params['username'])
+            //     this.setPage(params['username'],1)
+            //     //  this.setPage(1)
     
-            });
-            //  alert("junaid");
-            // this.data.currentProducts.subscribe(products => this.sg['products'] = products)
-            // this.data.currentProducts
-            this.Sub = this.route.params.subscribe(params => {
-                this.username = +params['username'];
-                //  this.setPage(1)
-                // alert(this.username);
-            });
+            // });
+            // //  alert("junaid");
+            // // this.data.currentProducts.subscribe(products => this.sg['products'] = products)
+            // // this.data.currentProducts
+            // this.Sub = this.route.params.subscribe(params => {
+            //     this.username = +params['username'];
+            //     //  this.setPage(1)
+            //     // alert(this.username);
+            // });
 
         }, error => {
         });
