@@ -11,6 +11,7 @@ import { HttpClient, HttpResponse, HttpHeaders } from "@angular/common/http";
 import { AfterContentInit } from '@angular/core/src/metadata/lifecycle_hooks';
 import { Subscription } from 'rxjs/Subscription';
 import {RandomService} from '../random.service';
+import { HomeService } from '../home/home.service';
 
 declare const $: any;
 
@@ -33,7 +34,7 @@ declare const $: any;
   // max;
   // price;
   constructor(private https: HttpClient,private http: Http, private route: ActivatedRoute,
-     private sg: SimpleGlobal, private data: DataService,private someserv:RandomService) {
+     private sg: SimpleGlobal, private data: DataService,private someserv:RandomService,private obj: HomeService,private pagerService: PagerService) {
   //    if (this.sg['gv']) {
   //      this.localVar = this.sg['gv'];
   // }
@@ -41,9 +42,10 @@ declare const $: any;
   private allItems: any[];
   prod_loaded = false;
   prods_loaded = false;
-  zip_code;
+  private zip_code :any;
   items;
   title;
+  pager: any = {};
   mySelect;
   private sub: Subscription;
   private zip: any;
@@ -51,18 +53,17 @@ declare const $: any;
 
   ngOnInit() {
     //this.someserv.telecast.subscribe(message=> this.message = message);
-  this.data.currentProducts.subscribe(products => this.sg['products'] = products)
-  
-  this.zip_code = this.sg['product_zipcode'];
+    this.sub = this.route.params.subscribe(params => {
+      this.zip_code = +params['zip_code'];
+      console.log();
+     this.setPage(1);
+
+
+  });
+   
   //this.months();
     
-//   this.sub = this.route.params.subscribe(params => {
-//     //this.zip = +params['zipCode'];
-//     this.zip_code= +params['zipcode'];
-//    // this.setPage(1);
-
-
-// });
+ 
   }
   ngAfterContentInit() {
     // console.log(this.eUsage);
@@ -227,6 +228,47 @@ declare const $: any;
     prod["price_rate"] = prod["price_rate"].split('..', 3000);
     }
     });}
+    setPage(page: number) {
+      if (page < 1 || page > this.pager.totalPages) {
+          return;
+      }
+      const Results = {}
+
+      this.obj.searchProducts(this.zip, page).subscribe(response => {
+          // localStorage.setItem('products',response['Results']);
+
+
+          this.sg['products'] = response['Results'];
+          // console.log(this.sg['products']);
+          for (let prod of this.sg['products']) {
+              //console.log(prod["plan_information"])
+              //console.log(prod["price_rate"])
+              prod["plan_information"] = prod["plan_information"].split(',,', 3000);
+              prod["price_rate"] = prod["price_rate"].split('..', 3000);
+
+          }
+
+          this.data.changeProducts(this.sg['products']);
+          this.prod_loaded = true;
+          this.prods_loaded = true;
+          //  this.allItems = this.sg['products'];
+          //console.clear()
+          // console.log(response['Total Result']);
+          this.pager = this.pagerService.getPager(response['Total Result'], page, 10);
+
+          //this.setPage(1);
+          // initialize to page 1
+          // console.log(this.sg['products']);
+
+      }
+
+
+      );
+
+
+      // this.pagedItems = this.allItems.slice(this.pager.startIndex, this.pager.endIndex + 1);
+
+  }
   //    fetchprice() {
   //     // this.route.params.subscribe(params => {
   //    //   let zip =  this.sg['product_zipcode'];
