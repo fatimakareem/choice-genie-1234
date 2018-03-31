@@ -47,7 +47,22 @@ export const AppRoutes: Routes = [
               path: 'commercial',
               loadChildren: './commercial/commercial.module#CommercialModule'
           },
-         
+          {
+            path: 'Become-a-partner',
+            loadChildren: './becomeapartner/becomeapartner.module#BecomeapartnerModule'
+        },
+        {
+            path: 'Faqs',
+            loadChildren: './faqs/faqs.module#FaqsModule'
+        },
+        {
+            path: 'Why-Choice-Genie',
+            loadChildren: './why-chocie-genie/whychoicegenie.module#WhyModule'
+        },
+        {
+            path: 'Choice-and-Saving',
+            loadChildren: './choiceandsaving/choiceandsaving.module#ChoiceandsavingModule'
+        },
           {
               path: 'residential',
               loadChildren: './residential/residential.module#ResidentialModule'

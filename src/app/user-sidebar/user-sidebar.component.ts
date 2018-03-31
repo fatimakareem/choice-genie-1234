@@ -9,6 +9,8 @@ import { DataService } from '../data.service';
 import { PagerService } from '../pager.service';
 import { HttpClient, HttpResponse, HttpHeaders } from "@angular/common/http";
 import { AfterContentInit } from '@angular/core/src/metadata/lifecycle_hooks';
+import { Subscription } from 'rxjs/Subscription';
+import {RandomService} from '../random.service';
 
 declare const $: any;
 
@@ -25,10 +27,13 @@ declare const $: any;
   localVar;
   renewable;
   model;
+
+  
   // min;
   // max;
   // price;
-  constructor(private https: HttpClient,private http: Http, private route: ActivatedRoute, private sg: SimpleGlobal, private data: DataService) {
+  constructor(private https: HttpClient,private http: Http, private route: ActivatedRoute,
+     private sg: SimpleGlobal, private data: DataService,private someserv:RandomService) {
   //    if (this.sg['gv']) {
   //      this.localVar = this.sg['gv'];
   // }
@@ -40,13 +45,24 @@ declare const $: any;
   items;
   title;
   mySelect;
+  private sub: Subscription;
+  private zip: any;
+  
+
   ngOnInit() {
+    //this.someserv.telecast.subscribe(message=> this.message = message);
   this.data.currentProducts.subscribe(products => this.sg['products'] = products)
   
   this.zip_code = this.sg['product_zipcode'];
   //this.months();
     
+//   this.sub = this.route.params.subscribe(params => {
+//     //this.zip = +params['zipCode'];
+//     this.zip_code= +params['zipcode'];
+//    // this.setPage(1);
 
+
+// });
   }
   ngAfterContentInit() {
     // console.log(this.eUsage);

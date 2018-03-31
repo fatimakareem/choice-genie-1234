@@ -8,6 +8,7 @@ import { applyRedirects } from "@angular/router/src/apply_redirects";
 import { Router } from "@angular/router";
 
 
+
 import { Config } from "../Config";
 import { ActivatedRoute, RouterModule } from "@angular/router";
 
@@ -38,6 +39,7 @@ export class errorMatcher implements ErrorStateMatcher {
 })
 
 export class HomeComponent implements OnInit {
+
     zipCode = '';
     //matcher = new errorMatcher();
     product_id;
@@ -57,6 +59,7 @@ export class HomeComponent implements OnInit {
 
     onSubmit(f: NgForm) {
         this.router.navigate(['/products/' + this.zipCode]);
+
     }
 
     digitsOnly = '^[0-9,-]+$';
@@ -97,7 +100,7 @@ export class HomeComponent implements OnInit {
 
     $('.slick-testimonal').slick({
         slidesToShow: 1,
-        autoplay: true,
+        // autoplay: true,
         autoplaySpeed: 7000,
         pauseOnFocus: false,
         pauseOnHover: false,
