@@ -95,6 +95,7 @@ import { RandomService } from './random.service';
 import { SuperadminComponent } from './layouts/superadmin/superadmin.component';
 import { SupersiderbarComponent } from './supersiderbar/supersiderbar.component';
 import { SuperuserService } from './superdashboard/superuser.service';
+import { LoaderModule } from './loader/loader.module';
 
 // import { ContactComponent } from './contact/contact.component';
 // import { UsersignupComponent } from './usersignup/usersignup.component';
@@ -162,6 +163,7 @@ export class MaterialModule {}
     FooterModule,
     // CarouselModule.forRoot(),
     BrowserModule,
+    LoaderModule,
    //IonicModule.forRoot(AppRoutes),
   //  HttpClientModule
   ],
