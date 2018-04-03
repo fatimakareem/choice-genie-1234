@@ -92,15 +92,11 @@ import { BecomeapartnerComponent } from './becomeapartner/becomeapartner.compone
 import { ChoiceandsavingComponent } from './choiceandsaving/choiceandsaving.component';
 import { WhyChocieGenieComponent } from './why-chocie-genie/why-chocie-genie.component';
 import { RandomService } from './random.service';
-<<<<<<< HEAD
-import { SideBarService } from './user-sidebar/side-bar.service';
-=======
 import { SuperadminComponent } from './layouts/superadmin/superadmin.component';
 import { SupersiderbarComponent } from './supersiderbar/supersiderbar.component';
 import { SuperuserService } from './superdashboard/superuser.service';
 import { LoaderModule } from './loader/loader.module';
 
->>>>>>> d2e088fda4b3fce6ec83b99c9f74e097b024405b
 // import { ContactComponent } from './contact/contact.component';
 // import { UsersignupComponent } from './usersignup/usersignup.component';
 
@@ -198,7 +194,7 @@ export class MaterialModule {}
     // SweetAlertService,
     LoginService,
     PagerService,
-    SideBarService,
+    
     UserLoginService,
     SuperLoginService,
     ResidentialService,
