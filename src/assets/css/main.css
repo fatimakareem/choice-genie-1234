@@ -121,13 +121,12 @@ app-header {
   display: block; }
 .logo img {
   width: 100%;
-  height: 100px;
-  margin-top: -9px;
-  margin-left: -10px;
+  padding: 19px 10px;
+
 }
 
 .nav-home ul {
-      margin-right: 60px;
+      margin-right: 19px !important;
       font-weight: 700;
       padding: 30px 0 0 !important;
       display: inline;
@@ -135,7 +134,8 @@ app-header {
   .nav-home ul li {
     display: inline-block;
     vertical-align: middle;
-    margin: 0 0 0 20px;
+    margin: 0 0 0 12px;
+
    }
   .nav-home ul a {
     -webkit-transition: all 0.2s ease;
@@ -1397,27 +1397,41 @@ h3 {
                            width: 60px;
 }
 .btn-slider-left{
-  top: 150px;
-  left: 50px;
+  height: 47px;
+  width: 47px;
+  border-radius: 100%;
+  background: #cc0000 !important;
+  top: 100px;
+  left: -60px;
   z-index: 1;
   position: absolute;
   background: none;
   border: none;
-  font-size: 50px;
-  color: #8a8a8a;
+  font-size: 28px;
+  color: #ffffff;
+}
+.btn-slider-left i{
+  margin-right: 3px;
 }
 .btn-slider-right{
-  top: 150px;
-  right: 50px;
+  height: 47px;
+  width: 47px;
+  border-radius: 100%;
+  background: #cc0000 !important;
+  top: 100px;
+  right: -53px;
   z-index: 1;
   position: absolute;
   background: none;
   border: none;
-  font-size: 50px;
-  color: #8a8a8a;
+  font-size: 28px;
+  color: #ffffff;
+}
+.btn-slider-right i{
+  margin-left: 3px;
 }
 .btn-slider:hover{
-  color: #fff;
+  background: #b00a0a !important;
 }
 .bg-slider{
   width: 100% !important;
@@ -1427,7 +1441,6 @@ h3 {
 }
 .vanders{
   position: relative;
-  padding: 0px 0px 30px;
 }
 .drop-downs{
   height: auto;
@@ -2513,7 +2526,7 @@ section {
   height: 75vh;
   position: relative;
   background: #000;
-  background-image: url(../../assets/img/about-banner.jpg);
+  background-image: url(../../assets/img/about-banner.png);
   background-repeat: no-repeat;
   background-size: cover;
   text-align: center;
@@ -3011,12 +3024,15 @@ li.pinterest:hover {
 
 /* header fixed start*/
 .navbar-nav > li > a {
-  padding: 30px 0px !important;
   text-transform: uppercase;
+  font-size:20px !important;
 }
 .nav-home ul li :hover {
   color: #e53935;
   text-decoration: none;
+}
+.navbar-right {
+  float: none;
 }
 /* header fixed end */
 
@@ -3340,3 +3356,80 @@ h1, .entry-title {
   padding-right: 20px;
 }
 /*header signup border*/
+
+
+.content-box-01 {
+  background:url("../../assets/img/texas.jpg");
+  background-position:center;
+  width: 100%;
+  overflow-x: hidden;
+  position: relative;
+  z-index: 1;
+}
+.content-box-01::before {
+  background-color:rgba(0, 0, 0, 0.66);
+  position: absolute;
+  top:0;
+  left:0;
+  right: 0;
+  bottom: 0;
+  content: '';
+  z-index: -1;
+}
+/* .content-box-01::after {
+  content: '';
+  display: table;
+  clear: both;
+} */
+.title-02 {
+  font-size: 54px !important;
+  line-height: 32px;
+  font-weight: 700 !important;
+  text-shadow: 0px 6px 10px #3b171b;
+  color: #ffffff;
+  margin: 0 0 46px !important;
+}
+.choiecegenie-offers{
+  font-size: 54px !important;
+  line-height: 32px;
+  font-weight: 700 !important;
+  text-shadow: 0px 6px 10px #aeaeae;
+  color: #414142;
+  margin: 30px 0 46px !important;
+}
+.title-02 span {
+  font-weight: 500;
+}
+.padding-bottom-63{
+  padding: 60px 0px;
+}
+
+/*texas section home page start*/
+.texas-heading{
+  color: #ffffff;
+}
+.texas-img{
+  width: 48%;
+  display: inline-block;
+  vertical-align: top;
+}
+.texas-text{
+  margin-left: 2%;
+  width: 48.2456140351%;
+  line-height: 1.4;
+  display: inline-block;
+  vertical-align: top;
+}
+.texas-text > p{
+  line-height: 28px;
+}
+.texas-text > p > a{
+  color: #cc0000;
+}
+.texas-inline{
+  padding: 50px 20px;
+}
+.texas-sub-heading{
+  font-size: 22px;
+}
+/*texas section home page end*/

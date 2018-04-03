@@ -1,3 +1,4 @@
+
 import { Component, OnInit } from '@angular/core';
 import { ErrorStateMatcher } from '@angular/material/core';
 import { FormControl, FormGroupDirective, NgForm, Validators } from '@angular/forms';
@@ -6,7 +7,6 @@ import { Subscription } from 'rxjs/Subscription';
 import { Http, Response, Headers } from '@angular/http';
 import { applyRedirects } from "@angular/router/src/apply_redirects";
 import { Router } from "@angular/router";
-
 
 
 import { Config } from "../Config";
@@ -39,7 +39,6 @@ export class errorMatcher implements ErrorStateMatcher {
 })
 
 export class HomeComponent implements OnInit {
-
     zipCode = '';
     //matcher = new errorMatcher();
     product_id;
@@ -59,7 +58,6 @@ export class HomeComponent implements OnInit {
 
     onSubmit(f: NgForm) {
         this.router.navigate(['/products/' + this.zipCode]);
-
     }
 
     digitsOnly = '^[0-9,-]+$';
@@ -87,6 +85,21 @@ export class HomeComponent implements OnInit {
         console.log(position.coords);
     }
     ngOnInit() {
+      $('.slick-date').slick({
+        slidesToShow: 3,
+        autoplaySpeed: 1500,
+        autoplay: true,
+        prevArrow: '<button class="slick-arrow leftArrow btn-slider btn-slider-left"><i class="fa fa-angle-left"></i></button>',
+        nextArrow: '<button class="slick-arrow rightArrow btn-slider btn-slider-right"><i class="fa fa-angle-right"></i></button>',
+        responsive: [
+          {
+            breakpoint: 400,
+            settings: {
+              slidesToShow: 1
+            }
+          }
+        ]
+      });
 
 
         this.premiseIdData();
@@ -100,7 +113,7 @@ export class HomeComponent implements OnInit {
 
     $('.slick-testimonal').slick({
         slidesToShow: 1,
-        // autoplay: true,
+        autoplay: true,
         autoplaySpeed: 7000,
         pauseOnFocus: false,
         pauseOnHover: false,
@@ -150,7 +163,7 @@ export class HomeComponent implements OnInit {
 
                         slidesToShow: 3,
                         slidesToScroll: 1,
-                        autoplay: true,
+                        // autoplay: true,
                        //prevArrow:'<button class="w3-button w3-display-left" onclick="plusDivs(-1)">&#10094;</button>',
                      //   nextArrow:'<button class="w3-button w3-display-right" onclick="plusDivs(+1)">&#10095;</button>'
                         prevArrow:'<button _ngcontent-c0="" ngxcarouselprev="" class="leftRs buttons btn btn-rose btn-xs" style="display: block;"><i _ngcontent-c0="" class="material-icons">keyboard_arrow_left</i> </button>',
@@ -160,3 +173,4 @@ export class HomeComponent implements OnInit {
             });
     }
 }
+

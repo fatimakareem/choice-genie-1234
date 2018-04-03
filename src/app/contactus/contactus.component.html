@@ -12,28 +12,30 @@
         </div><!-- end section-title -->
         <div class="row">
           <div class="col-md-6" style="border-right: 1px solid #cccccc">
-        <form class="example-form">
+        <form class="example-form"  [formGroup]="signupForm" *ngIf="signupForm">
           <mat-form-field class="example-full-width">
-            <input matInput placeholder="Enter Your Name">
+              <!-- <input matInput placeholder="Zipcode" [formControl]="signupForm.controls['zipcode']" required [(ngModel)]="model.zipcode"> -->
+                 
+            <input matInput placeholder="Enter Your Name" [formControl]="signupForm.controls['name']"  [(ngModel)]="model.name">
           </mat-form-field>
           <mat-form-field class="example-full-width">
-            <input matInput placeholder="Enter Your Email">
+            <input matInput placeholder="Enter Your Email" [formControl]="signupForm.controls['email']" required [(ngModel)]="model.email">
           </mat-form-field>
           <mat-form-field class="example-full-width">
-            <input matInput placeholder="Enter Your Phone Number">
+            <input matInput placeholder="Enter Your Phone Number" [formControl]="signupForm.controls['mobno']" required [(ngModel)]="model.mobno">
           </mat-form-field>
           <mat-form-field class="example-full-width">
-            <input matInput placeholder="Enter Subject">
+            <input matInput placeholder="Enter Subject" >
           </mat-form-field>
         </form>
           </div>
           <div class="col-md-6">
             <mat-form-field>
-              <textarea  matInput placeholder="Enter Your Messege"  matAutosizeMinRows="2" matAutosizeMaxRows="5" style="height: 265px !important;">
+              <textarea  matInput placeholder="Enter Your Messege"  matAutosizeMinRows="2" matAutosizeMaxRows="5" style="height: 265px !important;" [formControl]="signupForm.controls['msg']" required [(ngModel)]="model.msg">
 
               </textarea>
             </mat-form-field>
-            <button class="btn  pull-right" style="background-color: #e53935">Send Messege</button>
+            <button class="btn  pull-right" style="background-color: #e53935" (click)="Contactuserdata()">Send Messege</button>
           </div>
         </div>
 
