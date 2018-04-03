@@ -12,6 +12,7 @@ import { UsersignupComponent } from './usersignup/usersignup.component';
 import { UserloginComponent } from './pages/userlogin/userlogin.component';
 import { Component } from '@angular/core';
 import { SuperloginComponent } from './pages/superlogin/superlogin.component';
+import { SuperadminComponent } from './layouts/superadmin/superadmin.component';
  
 
 export const AppRoutes: Routes = [
@@ -138,7 +139,16 @@ export const AppRoutes: Routes = [
     //     path: 'dashboard',
     //     redirectTo: 'dashboard'
     // },
-    
+    {
+        path: '',
+        component: SuperadminComponent,
+        children: [
+            {
+                path: 'superdashboard',
+                loadChildren: './superdashboard/superdashboard.module#SuperDashboardModule'
+            },
+        ]
+    },          
     {
         path: '',
         component: AdminLayoutComponent,
@@ -180,7 +190,9 @@ export const AppRoutes: Routes = [
                 loadChildren: './timeline/timeline.module#TimelineModule'
             }
         ]
-    }, {
+    }, 
+    
+    {
         path: '',
         component: AuthLayoutComponent,
         children: [

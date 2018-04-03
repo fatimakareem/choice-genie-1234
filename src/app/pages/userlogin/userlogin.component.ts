@@ -7,14 +7,14 @@ import { ActivatedRoute, Router, RouterModule } from "@angular/router";
 import { SimpleGlobal } from 'ng2-simple-global';
 import { ResponseContentType } from '@angular/http/src/enums';
 import { Console } from '@angular/core/src/console';
- import swal from 'sweetalert2';
+import swal from 'sweetalert2';
 import { TOUCHEND_HIDE_DELAY } from '@angular/material';
 // import { HomeRoutes } from '../../home/home.routing';
 
 import { FormBuilder, FormGroup, Validators, FormControl, AbstractControl } from '@angular/forms';
 import { PasswordValidation } from './password-validator.component';
-import { UserLoginService } from './userlogin.service';
 import { DataService } from '../../data.service';
+import { UserLoginService } from './userlogin.service';
 declare var $: any;
 declare interface ValidatorFn {
   (c: AbstractControl): {
@@ -32,14 +32,12 @@ declare interface User {
   idDestination?: string;
   optionsCheckboxes?: boolean;
 }
-
 @Component({
   selector: 'app-userlogin',
   templateUrl: './userlogin.component.html',
   styleUrls: ['./userlogin.component.scss']
 })
 export class UserloginComponent implements OnInit {
-
   public typeValidation: User;
   register: FormGroup;
   login: FormGroup;
@@ -79,20 +77,14 @@ export class UserloginComponent implements OnInit {
           this._serv.login(this.login.value.username, this.login.value.password).subscribe(
             data => {
               console.log(data);
-              swal({
-                text: "Login Successflluy!",
-                title: "Choice Genie",
-                type: "success",
-                showConfirmButton: false,
-                //     confirmButtonColor: "#DD6B55",
-                timer: 1200,
-                confirmButtonText: "OK",
-      
-              })
-            //  this.toastr.success('Successfully!', 'Logged in',{toastLife: 5000});
-              let url = '/';
-              this._nav.navigate([url]);
-
+              swal(
+                'Successfully! Logged in',
+                '',
+                'success'
+              )
+              // this.toastr.success('Successfully!', 'Logged in',{toastLife: 5000});
+              this.router.navigate(['/superdashboard/']);
+             
             },
             error => {
               console.log(error);
@@ -122,6 +114,8 @@ export class UserloginComponent implements OnInit {
       this.validateAllFormFields(this.login);
     }
   }
+
+ 
 
   foremail() {
     // swal({
@@ -228,5 +222,4 @@ export class UserloginComponent implements OnInit {
       body.classList.remove('nav-open');
     }
   }
-
 }
