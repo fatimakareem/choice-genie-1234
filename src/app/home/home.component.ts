@@ -58,6 +58,8 @@ export class HomeComponent implements OnInit {
 
 
     onSubmit(f: NgForm) {
+      
+
         this.router.navigate(['/products/' + this.zipCode]);
 
     }

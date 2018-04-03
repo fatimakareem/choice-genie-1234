@@ -54,7 +54,7 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
 })
 export class DashboardComponent implements OnInit, AfterViewInit {
     constructor(private route: ActivatedRoute, private https: HttpClient, private newService: DeleteService,private serve:EditService,
-        private formBuilder: FormBuilder,  private router: Router, private http: Http, private pagerService: PagerService, private homeService: HomeService, private sg: SimpleGlobal, private obj: HomeService, private dialog: MatDialog, private dataa: DataService, private companyService: CompanyService) {
+        private formBuilder: FormBuilder,  private router: Router, private http: Http, private pagerService: PagerService, private homeService: HomeService, private sg: SimpleGlobal,private dialog: MatDialog, private dataa: DataService, private companyService: CompanyService) {
 
     }
 
@@ -133,7 +133,7 @@ export class DashboardComponent implements OnInit, AfterViewInit {
 
     //     seq2 = 0;
     // }
-    modal:any=[];
+    obj:any=[];
     editdata: any = [];
     setPage(username,page: number) {
         // alert("username")
@@ -239,22 +239,46 @@ export class DashboardComponent implements OnInit, AfterViewInit {
      //   window.location.reload();
 
     }
-    PId = '';
+    catagoryId = '';
    // list = 'Hello';
-
+   title='';
+   cancelation_fee='';
+            fact_sheet='';
+            phone='';
+            plan_information='';
+            price_rate='';
+            profile_logo='';
+            profileurl='';
+            rating_logo='';
+            sign_up='';
+            terms_of_service='';
+          
     //Event Binding of Delete Buttons
-    btnEditClick(id) {
-        this.PId = id;
-        console.log('id : ' + this.PId);
+    btnEditClick(id,val1,val2,val3,val4,val5,val6,val7,val8,val9,val10,val11) {
+        this.catagoryId = id;
+        this.title=val1;
+        this.cancelation_fee=val2;
+        this.fact_sheet=val3;
+        this.phone=val4;
+        this.plan_information=val5;
+        this.price_rate=val6;
+        this.profile_logo=val7;
+        this.profileurl=val8;
+        this.rating_logo=val9;
+        this.sign_up=val10;
+        this.terms_of_service=val11;
+       
+        console.log(val1,val2,val3,val4,val5,val6,val7,val8,val9,val10,val11)
+        console.log('id : ' + this.catagoryId );
     }
 
     //Event Binding of PopUp Delete Modal
 
-    editClick(id) {
-        console.log('edit' + id);
-console.log("TS OBJECT",this.modal);
+    editClick(updatedtitle,updatedsign_up,updatedphone,updatedterms_of_service,updatedfact_sheet,updatedcancelation_fee,updatedprice_rate,updatedplan_information,updatedrating_logo,updatedprofile_logo,updatedprofileurl) {
+        console.log('edit' +updatedtitle,updatedsign_up,updatedphone,updatedterms_of_service,updatedfact_sheet,updatedcancelation_fee,updatedprice_rate,updatedplan_information,updatedrating_logo,updatedprofile_logo,updatedprofileurl);
+console.log("TS OBJECT",updatedtitle,updatedsign_up,updatedphone,updatedterms_of_service,updatedfact_sheet,updatedcancelation_fee,updatedprice_rate,updatedplan_information,updatedrating_logo,updatedprofile_logo,updatedprofileurl);
         //Calling Delete Service
-        this.serve.editTodoList( this.modal,id).subscribe(data => {
+        this.serve.editTodoList( this.catagoryId,updatedtitle,updatedsign_up,updatedphone,updatedterms_of_service,updatedfact_sheet,updatedcancelation_fee,updatedprice_rate,updatedplan_information,updatedrating_logo,updatedprofile_logo,updatedprofileurl).subscribe(data => {
             console.log(data);
             swal({
                 type: 'success',
@@ -317,19 +341,19 @@ console.log("TS OBJECT",this.modal);
     public ngOnInit() {
         
         this.updataForm = this.formBuilder.group({
-            'zipcode': ['', Validators.compose([Validators.required])],
-            'cancelation_fee': ['', Validators.compose([Validators.required])],
-            'fact_sheet': ['', Validators.compose([Validators.required])],
-            'phone': ['', Validators.compose([Validators.required])],
-            'id': ['', Validators.required],
-            'plan_information': ['',  Validators.compose([Validators.required])],
-            'price_rate': ['', Validators.compose([Validators.required])],
-            'profile_logo': ['', Validators.compose([Validators.required])],
-            'profileurl': ['', Validators.required],
-            'rating_logo': ['',  Validators.compose([Validators.required])],
-            'sign_up': ['', Validators.compose([Validators.required])],
-            'terms_of_service': ['',  Validators.compose([Validators.required])],
-            'title': ['', Validators.compose([Validators.required])],
+          
+            cancelation_fee: ['', Validators.compose([Validators.required])],
+            fact_sheet: ['', Validators.compose([Validators.required])],
+            phone: ['', Validators.compose([Validators.required])],
+            id: ['', Validators.required],
+            plan_information: ['',  Validators.compose([Validators.required])],
+            price_rate: ['', Validators.compose([Validators.required])],
+            profile_logo: ['', Validators.compose([Validators.required])],
+            profileurl: ['', Validators.required],
+            rating_logo: ['',  Validators.compose([Validators.required])],
+            sign_up: ['', Validators.compose([Validators.required])],
+            terms_of_service: ['',  Validators.compose([Validators.required])],
+            title: ['', Validators.compose([Validators.required])],
         });
            this.route.params.subscribe(params => {
 

@@ -92,6 +92,7 @@ import { BecomeapartnerComponent } from './becomeapartner/becomeapartner.compone
 import { ChoiceandsavingComponent } from './choiceandsaving/choiceandsaving.component';
 import { WhyChocieGenieComponent } from './why-chocie-genie/why-chocie-genie.component';
 import { RandomService } from './random.service';
+import { SideBarService } from './user-sidebar/side-bar.service';
 // import { ContactComponent } from './contact/contact.component';
 // import { UsersignupComponent } from './usersignup/usersignup.component';
 
@@ -186,7 +187,7 @@ export class MaterialModule {}
     // SweetAlertService,
     LoginService,
     PagerService,
-   
+    SideBarService,
     UserLoginService,
     SuperLoginService,
     ResidentialService,
