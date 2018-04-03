@@ -102,8 +102,8 @@
                   <!--class="product-price"-->
                   <div class="">
 
-                    <h3 *ngFor="let items of data.price_rate" class="text-center">
-                      {{items}}¢
+                    <h3 class="text-center">
+                      {{ data.price_rate }}¢
                     </h3>
 
 
@@ -147,8 +147,8 @@ text-align: center;">
 
 
                                   <!-- <input class="form-control" type="text" > -->
-                                  <mat-form-field>
-                                    <input matInput placeholder="Title" name="title"required [(ngModel)]="modal.title"/>
+                                  <mat-form-field >
+                                    <input matInput   placeholder="Title" name="data.title"value="{{data.title}}" class="form-control"  required  #updatedtitle/>
 
                                   </mat-form-field>
                                 </div>
@@ -160,7 +160,7 @@ text-align: center;">
 
                                   <!-- <input class="form-control" type="text" > -->
                                   <mat-form-field>
-                                    <input matInput placeholder="Profile url" name="profileurl" [(ngModel)]="modal.profileurl" />
+                                    <input matInput placeholder="Profile url" name="data.profileurl"value="{{data.profileurl}}" class="form-control" #updatedprofileurl/>
 
                                   </mat-form-field>
                                 </div>
@@ -172,7 +172,7 @@ text-align: center;">
 
                                   <!-- <input class="form-control" type="text" > -->
                                   <mat-form-field>
-                                    <input matInput placeholder="Profile Logo" name="profile_logo" [(ngModel)]="modal.profile_logo" />
+                                    <input matInput placeholder="Profile Logo" name="data.profile_logo"value="{{data.profile_logo}}" class="form-control" #updatedprofile_logo />
 
                                   </mat-form-field>
                                 </div>
@@ -184,7 +184,7 @@ text-align: center;">
 
                                   <!-- <input class="form-control" type="text" > -->
                                   <mat-form-field>
-                                    <input matInput placeholder="Rating_logo" name="rating_logo" [(ngModel)]="modal.rating_logo" />
+                                    <input matInput placeholder="Rating_logo" name="data.rating_logo"value="{{data.rating_logo}}"  class="form-control" #updatedrating_logo />
 
                                   </mat-form-field>
                                 </div>
@@ -196,7 +196,7 @@ text-align: center;">
 
                                   <!-- <input class="form-control" type="text" > -->
                                   <mat-form-field>
-                                    <input matInput placeholder="Plan_Information" name="plan_information" [(ngModel)]="modal.plan_information" />
+                                    <input matInput placeholder="Plan_Information" name="data.plan_information" class="form-control" value="{{data.plan_information}}"#updatedplan_information />
 
                                   </mat-form-field>
                                 </div>
@@ -208,7 +208,7 @@ text-align: center;">
 
                                   <!-- <input class="form-control" type="text" > -->
                                   <mat-form-field>
-                                    <input matInput placeholder="Price Rate" name="price_rate" [(ngModel)]="modal.price_rate" />
+                                    <input matInput placeholder="Price Rate" name="data.price_rate" class="form-control" value="{{data.price_rate}}" #updatedprice_rate/>
 
                                   </mat-form-field>
                                 </div>
@@ -219,7 +219,7 @@ text-align: center;">
 
                                   <!-- <input class="form-control" type="text" > -->
                                   <mat-form-field>
-                                    <input matInput placeholder="Cancelation Fee" name="cancelation_fee" [(ngModel)]="modal.cancelation_fee" />
+                                    <input matInput placeholder="Cancelation Fee" name="data.cancelation_fee" class="form-control" value="{{data.cancelation_fee}}"  #updatedcancelation_fee/>
 
                                   </mat-form-field>
                                 </div>
@@ -230,7 +230,7 @@ text-align: center;">
 
                                   <!-- <input class="form-control" type="text" > -->
                                   <mat-form-field>
-                                    <input matInput placeholder="Fact Sheet" name="fact_sheet" [(ngModel)]="modal.fact_sheet" />
+                                    <input matInput placeholder="Fact Sheet" name="data.fact_sheet" class="form-control" value="{{data.fact_sheet}}"  #updatedfact_sheet/>
 
                                   </mat-form-field>
                                 </div>
@@ -241,7 +241,7 @@ text-align: center;">
 
                                   <!-- <input class="form-control" type="text" > -->
                                   <mat-form-field>
-                                    <input matInput placeholder="Term of Service" name="terms_of_service" [(ngModel)]="modal.terms_of_service" />
+                                    <input matInput placeholder="Term of Service" name="data.terms_of_service" class="form-control" value="{{data.terms_of_service}}" #updatedterms_of_service />
 
                                   </mat-form-field>
                                 </div>
@@ -252,7 +252,7 @@ text-align: center;">
 
                                   <!-- <input class="form-control" type="text" > -->
                                   <mat-form-field>
-                                    <input matInput placeholder="Phone No" name="phone" [(ngModel)]="modal.phone" />
+                                    <input matInput placeholder="Phone No" name="data.phone"class="form-control" value="{{data.phone}}"#updatedphone/>
 
                                   </mat-form-field>
                                 </div>
@@ -263,25 +263,25 @@ text-align: center;">
 
                                   <!-- <input class="form-control" type="text" > -->
                                   <mat-form-field>
-                                    <input matInput placeholder="Sign Up" name="sign_up" [(ngModel)]="modal.sign_up" />
+                                    <input matInput placeholder="Sign Up" name="data.sign_up" class="form-control" value="{{data.sign_up}}" #updatedsign_up />
 
                                   </mat-form-field>
                                 </div>
                               </div>
-                              <div class="col-md-6 col-sm-6">
-                                <div class="input-group">
+                              <!-- <div class="col-md-6 col-sm-6">
+                                <div class="input-group"> -->
 
 
                                   <!-- <input class="form-control" type="text" > -->
-                                  <mat-form-field>
-                                    <input matInput placeholder="Zipcode" name="zipcode" [(ngModel)]="modal.zipcode" />
+                                  <!-- <mat-form-field>
+                                    <input matInput placeholder="Zipcode" name="data.zipcode" class="form-control" value="{{data.zipcode}}" #zipcode />
 
                                   </mat-form-field>
                                 </div>
-                              </div>
+                              </div> -->
                               <!-- </div> -->
                               <div class=" text-center">
-                                <button type="submit" class="btn btn-rose" (click)="editClick(PId)" data-dismiss="modal">Update</button>
+                                <button type="submit" class="btn btn-rose" (click)="editClick(updatedtitle.value,updatedsign_up.value,updatedphone.value,updatedterms_of_service.value,updatedfact_sheet.value,updatedcancelation_fee.value,updatedprice_rate.value,updatedplan_information.value,updatedrating_logo.value,updatedprofile_logo.value,updatedprofileurl.value)" data-dismiss="modal">Update</button>
 
                                 <button type="button" class="btn btn-rose" data-dismiss="modal">Cancel</button>
                                 <!-- <button class="btn btn-rose btn-wd btn-lg" type="submit" (click)="onSubmit()" >Search</button> -->
@@ -315,7 +315,7 @@ text-align: center;">
                   font-size: 29px;
                   color: red;
                   "
-                   class="fa fa-edit" type="submit" value="Edit" type="submit"  (click)="btnEditClick(data.id)" data-toggle="modal"
+                   class="fa fa-edit" type="submit" value="Edit" type="submit"  (click)="btnEditClick(data.id,data.title,data.sign_up,data.phone,data.terms_of_service.value,data.fact_sheet,data.cancelation_fee,data.price_rate,data.plan_information,data.rating_logo,data.profile_logo,data.profileurl)" data-toggle="modal"
                   data-target="#myModal2">
                  
               </i>

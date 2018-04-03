@@ -12,6 +12,7 @@ import { AfterContentInit } from '@angular/core/src/metadata/lifecycle_hooks';
 import { Subscription } from 'rxjs/Subscription';
 import {RandomService} from '../random.service';
 import { HomeService } from '../home/home.service';
+//import { SideBarService } from './side-bar.service';
 
 declare const $: any;
 
@@ -49,20 +50,19 @@ declare const $: any;
   mySelect;
   private sub: Subscription;
   private zip: any;
-  
+  id;
 
   ngOnInit() {
     //this.someserv.telecast.subscribe(message=> this.message = message);
-    this.sub = this.route.params.subscribe(params => {
-      this.zip_code = +params['zip_code'];
-      console.log();
-     this.setPage(1);
+  //   this.sub = this.route.params.subscribe(params => {
+  //     this.zip_code = +params['zip_code'];
+  //     console.log();
+  //    this.setPage(1);
 
 
-  });
+  // });
    
   //this.months();
-    
  
   }
   ngAfterContentInit() {
@@ -129,7 +129,7 @@ declare const $: any;
   //this.http.get(Config.api + 'monthly/' + this.zip_code + '',{ headers: headers })
   // this.http.get(Config.api + 'filter/' + this.zip_code + '',{ headers: headers })
   
-  this.http.post(Config.api + 'filter/' + this.zip_code + '', {"month": this.months+" Month", "custom":"['2','8']"},{ headers: headers })
+  this.http.post(Config.api + 'filter/' + this.zip_code +'',this.months ,{ headers: headers })
   .subscribe(Res => {
   this.sg['products'] = Res.json()['Results'];
   this.data.changeProducts(this.sg['products']);
@@ -190,35 +190,22 @@ declare const $: any;
   });
   }
   
-  fetchmonth() {
-  // this.route.params.subscribe(params => {
-  //   let zip =  this.sg['product_zipcode'];
-  let headers = new Headers();
-  headers.append('Content-Type', 'application/json');
-  // this.http.get(Config.api + 'data_against_zipcode/' + this.zip_code + '', { headers: headers }),
-  this.http.get(Config.api + 'monthly/' + this.zip_code + '/'+ this.months+'',{ headers: headers })
-  
-  // this.http.post(Config.api + 'monthly/' + this.zip_code + '/' + this.months + '',{"month": this.months+" Month","custom":"['2','8']"},{ headers: headers })
-  .subscribe(Res => {
-  this.sg['products'] = Res.json()['Results'];
-  this.data.changeProducts(this.sg['products']);
-  for (let prod of this.sg['products']) {
-  // console.log(prod["plan_information"])
-  // console.log(prod["price_rate"])
-  prod["plan_information"] = prod["plan_information"].split(',,', 3000);
-  prod["price_rate"] = prod["price_rate"].split('..', 3000);
-  }
-  });}
-  fetchmutimonth() {
+ 
+  fetchmutimonth(months) {
     // this.route.params.subscribe(params => {
     //   let zip =  this.sg['product_zipcode'];
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     // this.http.get(Config.api + 'data_against_zipcode/' + this.zip_code + '', { headers: headers }),
-    this.http.get('http://192.168.30.52:9000/choice/multimonth/'+ this.zip_code + '/'+ this.months+'/',{ headers: headers })
+    this.http.post('http://192.168.30.52:9000/choice/multimonth/'+ this.zip_code +'/', JSON.stringify({
+   
+      "Month":months,
+      
+    }),{ headers: headers })
     
     // this.http.post(Config.api + 'monthly/' + this.zip_code + '/' + this.months + '',{"month": this.months+" Month","custom":"['2','8']"},{ headers: headers })
     .subscribe(Res => {
+      console.log(Res)
     this.sg['products'] = Res.json()['Results'];
     this.data.changeProducts(this.sg['products']);
     for (let prod of this.sg['products']) {
@@ -227,48 +214,9 @@ declare const $: any;
     prod["plan_information"] = prod["plan_information"].split(',,', 3000);
     prod["price_rate"] = prod["price_rate"].split('..', 3000);
     }
+
     });}
-    setPage(page: number) {
-      if (page < 1 || page > this.pager.totalPages) {
-          return;
-      }
-      const Results = {}
-
-      this.obj.searchProducts(this.zip, page).subscribe(response => {
-          // localStorage.setItem('products',response['Results']);
-
-
-          this.sg['products'] = response['Results'];
-          // console.log(this.sg['products']);
-          for (let prod of this.sg['products']) {
-              //console.log(prod["plan_information"])
-              //console.log(prod["price_rate"])
-              prod["plan_information"] = prod["plan_information"].split(',,', 3000);
-              prod["price_rate"] = prod["price_rate"].split('..', 3000);
-
-          }
-
-          this.data.changeProducts(this.sg['products']);
-          this.prod_loaded = true;
-          this.prods_loaded = true;
-          //  this.allItems = this.sg['products'];
-          //console.clear()
-          // console.log(response['Total Result']);
-          this.pager = this.pagerService.getPager(response['Total Result'], page, 10);
-
-          //this.setPage(1);
-          // initialize to page 1
-          // console.log(this.sg['products']);
-
-      }
-
-
-      );
-
-
-      // this.pagedItems = this.allItems.slice(this.pager.startIndex, this.pager.endIndex + 1);
-
-  }
+  
   //    fetchprice() {
   //     // this.route.params.subscribe(params => {
   //    //   let zip =  this.sg['product_zipcode'];

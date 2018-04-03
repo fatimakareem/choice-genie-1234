@@ -194,7 +194,7 @@ export class MaterialModule {}
     // SweetAlertService,
     LoginService,
     PagerService,
-   
+    
     UserLoginService,
     SuperLoginService,
     ResidentialService,
