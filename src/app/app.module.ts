@@ -46,7 +46,8 @@ import {
 } from '@angular/material';
 
 
-
+import { SuperadminComponent } from './layouts/superadmin/superadmin.component';
+import { SupersiderbarComponent } from './supersiderbar/supersiderbar.component';
 import { AppComponent } from './app.component';
 import { SimpleGlobal } from 'ng2-simple-global';
 import { SidebarModule } from './sidebar/sidebar.module';
@@ -92,8 +93,7 @@ import { BecomeapartnerComponent } from './becomeapartner/becomeapartner.compone
 import { ChoiceandsavingComponent } from './choiceandsaving/choiceandsaving.component';
 import { WhyChocieGenieComponent } from './why-chocie-genie/why-chocie-genie.component';
 import { RandomService } from './random.service';
-import { SuperadminComponent } from './layouts/superadmin/superadmin.component';
-import { SupersiderbarComponent } from './supersiderbar/supersiderbar.component';
+
 import { SuperuserService } from './superdashboard/superuser.service';
 import { LoaderModule } from './loader/loader.module';
 
@@ -164,6 +164,7 @@ export class MaterialModule {}
     // CarouselModule.forRoot(),
     BrowserModule,
     LoaderModule,
+
    //IonicModule.forRoot(AppRoutes),
   //  HttpClientModule
   ],
@@ -178,7 +179,7 @@ export class MaterialModule {}
     // HomeComponent,
     HeaderComponent,
     UserSidebarComponent,
-    SupersiderbarComponent,
+    // SupersiderbarComponent,
     AboutComponent,
     StepperOverviewExample,
     // UsersignupComponent,

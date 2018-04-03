@@ -43,7 +43,7 @@ declare const $: any;
   private allItems: any[];
   prod_loaded = false;
   prods_loaded = false;
-  private zip_code :any;
+  public zip_code :any;
   items;
   title;
   pager: any = {};
