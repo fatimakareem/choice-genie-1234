@@ -14,20 +14,23 @@
             <p _ngcontent-c4="" class="lead" style="color: #fff;">Transform your collaborative dimension to a whole new level.</p>
             <div _ngcontent-c4="" class="contact_form">
             <div _ngcontent-c4="" id="message"></div>
+           
               <div _ngcontent-c4="" class="col-mat-12">
                 <mat-form-field>
-                  <input matInput placeholder="Enter Your Name">
+                            
+       
+                  <input matInput placeholder="Enter Your Name"[formControl]="signupForm.controls['name']"   [(ngModel)]="model.name" >
                 </mat-form-field>
                 <mat-form-field>
-                  <input matInput placeholder="Enter Your Email">
+                  <input matInput placeholder="Enter Your Email" [formControl]="signupForm.controls['email']"   [(ngModel)]="model.email">
                 </mat-form-field>
                 <mat-form-field>
-                  <input matInput placeholder="Enter Institution Name">
+                  <input matInput placeholder="Enter Company Name" [formControl]="signupForm.controls['partnername']"   [(ngModel)]="model.partnername">
                 </mat-form-field>
                 <mat-form-field>
-                  <textarea matInput placeholder="How Can We Partner"></textarea>
+                  <textarea matInput placeholder="How Can We Partner" [formControl]="signupForm.controls['desc']"   [(ngModel)]="model.desc"></textarea>
                 </mat-form-field>
-                <button class="btn btn-danger" style="float: right;">Send Messege</button>
+                <button class="btn btn-danger" style="float: right;" (click)="becomeapartnerdata()">Send Messege</button>
               </div>
             </div>
           </form>
