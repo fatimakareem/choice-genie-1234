@@ -3,8 +3,13 @@
     <ul>
       <li>
         <div class="text-center">
+<<<<<<< HEAD
+          <button type="button" class="btn btn-rose" (click)="fetchmutimonth(value1,value2,value3,value4,value5,value6,value7)">
+            Search
+=======
           <button type="button" class="btn btn-rose" (click)="fetchmutimonth(months)">
           Search
+>>>>>>> 979ea7eb3fec355a07771de7edc80f193da4fcbf
             <i class="material-icons" title="Use these filters to set your preferences. Get rid of the plans you don’t want to see and only show those that fit your needs.">search</i>
           </button>
         </div>
@@ -99,23 +104,82 @@
       <!-- </div> -->
       <!-- </li> -->
       <li>
-        <h5>Contract Length &nbsp;&nbsp;&nbsp;
+        
+         <h5>  Contract Length</h5>
+         
+          <!--  /.filter-category__heading -->
+         
+            <!-- ngRepeat: term in filters.terms -->
+          
+            <!-- end ngRepeat: term in filters.terms -->
+            <div>
+              <label >
+                <input type="checkbox"class="form-control" value="36 Months" checked="value.active" checked="checked" name="36 Months" (ngModelChange)="check($event)" #value1>36 Months
+              </label>
+
+            </div>
+            <!-- end ngRepeat: term in filters.terms -->
+            <div>
+              <label >
+                <input type="checkbox" class="form-control" value="24 Months" checked="value.active" checked="checked" name="24 Months" (ngModelChange)="check($event)" #value2>24 Months
+              </label>
+
+            </div>
+            <div>
+                <label >
+                  <input type="checkbox" class="form-control" value="18 Months" checked="value.active" checked="checked" name="18 Months" (ngModelChange)="check($event)" #value3>18 Months
+                </label>
+  
+              </div>
+            <!-- end ngRepeat: term in filters.terms -->
+            <div>
+              <label >
+                <input type="checkbox" class="form-control" value="14 Months" checked="value.active" checked="checked" name="14 Months" (ngModelChange)="check($event)" #value4>14 Months
+              </label>
+
+            </div>
+            <!-- end ngRepeat: term in filters.terms -->
+            <div>
+              <label>
+                <input type="checkbox"class="form-control" value="12 Months" checked="value.active" checked="checked" name="12 Months" (ngModelChange)="check($event)" #value5>12 Months
+              </label>
+
+            </div>
+            <!-- end ngRepeat: term in filters.terms -->
+            <div>
+              <label >
+                <input type="checkbox"class="form-control" value="6 Months" checked="value.active" checked="checked" name="6 Months" (ngModelChange)="check($event)" #value6>6 Months
+              </label>
+
+            </div>
+            <!-- end ngRepeat: term in filters.terms -->
+            <div>
+              <label>
+                <input type="checkbox"class="form-control" value="4 Months" checked="value.active" checked="checked" name="4 Months" (ngModelChange)="check($event)" #value7>4 Months
+              </label>
+
+
+            </div>
+          </li>
+            <!--  /.filter-category__heading -->
+          
+          <!-- <h5>Contract Length &nbsp;&nbsp;&nbsp;
           <i class="fa fa-info-circle" aria-hidden="true" title="If you choose a plan with a long contract period, you may be subject to an early cancellation fee if you decide to change plans prior to the expiration of the contract period.Plans that are shorter give you more flexibility to switch, but they only lock in your set rate for a short amount of time.Month-to-Month plans are usually Variable or Indexed offers.."></i>
-        </h5>
-        <!-- <mat-form-field> -->
-        <mat-select placeholder="In Months" (ngModelChange)="check($event)" [(ngModel)]="months" name="months" [multiple]="true">
+        </h5> -->
+          <!-- <mat-form-field> -->
+          <!-- <mat-select placeholder="In Months" (ngModelChange)="check($event)" [(ngModel)]="selectedvalue"  >
           <mat-option value="5 Months" style="font-size: 20px">5 Months</mat-option>
           <mat-option value="6 Months" style="font-size: 20px">6 Months</mat-option>
           <mat-option value="12 Months" style="font-size: 20px">12 Months</mat-option>
           <mat-option value="18 Months" style="font-size: 20px">18 Months</mat-option>
           <mat-option value="24 Months" style="font-size: 20px">24 Months</mat-option>
-          <mat-option value="36 Months" style="font-size: 20px">36 Months</mat-option>
+          <mat-option value="36 Months" style="font-size: 20px">36 Months</mat-option> -->
           <!-- <mat-option *ngFor="let x of usage" [value]="x.value">
   {{ x.viewValue }}
   </mat-option> -->
-        </mat-select>
-        <!-- </mat-form-field> -->
-      </li>
+          <!-- </mat-select> -->
+          <!-- </mat-form-field> -->
+     
       <!-- <li>
   <h5>Company Name
   
@@ -173,8 +237,7 @@
       </li>
       <li>
         <h5>Prepaid Plans &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          <i class="fa fa-info-circle" aria-hidden="true"
-            title="Prepaid plans provide service on a “pay-as-you-go” basis. These plans require close monitoring or accurately estimating your monthly electric use to avoid disconnection.."></i>
+          <i class="fa fa-info-circle" aria-hidden="true" title="Prepaid plans provide service on a “pay-as-you-go” basis. These plans require close monitoring or accurately estimating your monthly electric use to avoid disconnection.."></i>
         </h5>
         <div class="radio">
           <label>
@@ -225,4 +288,4 @@
   </li> -->
     </ul>
   </nav>
-</div>
+  </div>

@@ -23,7 +23,7 @@ declare const $: any;
 
   export class UserSidebarComponent implements OnInit, AfterContentInit {
   eUsage;
-  months;
+ 
   cUsage;
   message: string;
   localVar;
@@ -122,7 +122,7 @@ this.zip_code = localStorage.getItem('zip');
   //      });
   
   //     }
-  
+  months;
   fetchProducts() {
   // this.route.params.subscribe(params => {
   //   let zip =  this.sg['product_zipcode'];
@@ -194,21 +194,30 @@ this.zip_code = localStorage.getItem('zip');
   }
   
  
-  fetchmutimonth(months) {
+
+  fetchmutimonth(value1,value2,value3,value4,value5,value6,value7) {
     // this.route.params.subscribe(params => {
     //   let zip =  this.sg['product_zipcode'];
+   console.log(value1,value2,value3,value4,value5,value6,value7,'tttttttttttt')
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     // this.http.get(Config.api + 'data_against_zipcode/' + this.zip_code + '', { headers: headers }),
     this.http.post('http://192.168.30.52:9000/choice/multimonth/'+ this.zip_code +'/', JSON.stringify({
-   
-      "Month":months,
-      
-    }),{ headers: headers })
-    
+      "plan_information1": value1,
+      "plan_information2": value2,
+      "plan_information3": value3,
+      "plan_information4": value4,
+      "plan_information5": value5,
+      "plan_information6": value6,
+      "plan_information7": value7,
+      }
+      ),{ headers: headers })
+ 
     // this.http.post(Config.api + 'monthly/' + this.zip_code + '/' + this.months + '',{"month": this.months+" Month","custom":"['2','8']"},{ headers: headers })
     .subscribe(Res => {
       console.log(Res)
+       //console.log(selectedvalue)
+      // console.log(plan_information)
     this.sg['products'] = Res.json()['Results'];
     this.data.changeProducts(this.sg['products']);
     for (let prod of this.sg['products']) {
