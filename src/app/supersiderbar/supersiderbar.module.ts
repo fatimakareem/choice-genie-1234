@@ -6,8 +6,8 @@ import { SupersiderbarComponent } from './supersiderbar.component';
 
 @NgModule({
     imports: [ RouterModule, CommonModule ],
-    declarations: [ SupersiderbarComponent ],
-    exports: [ SupersiderbarComponent ]
+    declarations: [ ],
+    exports: [ ]
 })
 
 export class SidebarModule {}
