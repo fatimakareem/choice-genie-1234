@@ -1,74 +1,103 @@
-
 <div class="main-content custom" style="background: #ffffff">
 
-    <!-- <div class="container-fluid"> -->
-    <div class="row">
-      <div class="col-sm-12">
-  
-        <div class="page-title">
-          <span>user details </span>
-  
-        </div>
-<div class="ptb-80" >
-  <div class="container container-fluid comparison-div-padding">
-    <!-- <div class="text-center appio-center-heading pb-20">
+  <!-- <div class="container-fluid"> -->
+  <div class="row">
+    <div class="col-sm-12">
+
+      <div class="page-title">
+        <span>user details </span>
+
+      </div>
+      <div class="ptb-80">
+        <div class="container comparison-div-padding" style="margin-left:-15px">
+          <!-- <div class="text-center appio-center-heading pb-20">
       <h2>Why ChoiceGenie?</h2>
       <span _ngcontent-c4="" class="bordered-icon"><i _ngcontent-c4="" class="fa fa-square"></i></span>
       <p class="text-center"> We, the engineers at ChoiceGenie have devised bleeding edge Machine Learning (ML) and proprietary Artificially Intelligent (AI) algorithms to bring you a next generation Artificially Intelligent Comparative Shopping Marketplace for Energy Vendors/Products. Our technology is bleeding edge and was engineered with a singular goal: Save the consumer Time n’ Money. </p>
     </div> -->
-    <div class="com-table">
+          <div class="com-table-2">
 
-      <table class="table table-bordered table-striped">
-        <thead>
-        <tr>
-          <th class="text-center">User ID</th>
-          <th class="text-center">Zip Code</th>
-          <th class="text-center">Utility Area</th>
-          <th class="text-center">UserName</th>
-          <th class="text-center">Password</th>
-          <th class="text-center">Phone</th>
-          <th class="text-center">State</th>
-          <th class="text-center">Email</th>
-          <th class="text-center">Country</th>
-        </tr>
-        </thead>
-        <tbody *ngIf="data;else no_data_templ">
-        <tr *ngFor="let item of data; let i = index">
-          <td style="font-size: 20px;">{{item.id}}</td>
-          <td style="font-size: 20px;">{{item.zipcode}}</td>
-          <td style="font-size: 20px;">{{item.utilityarea}}</td>
-          <td style="font-size: 20px;">{{item.username}}</td>
-          <td style="font-size: 20px;">{{item.password}}</td>
-          <td style="font-size: 20px;">{{item.Phone}}</td>
-          <td style="font-size: 20px;">{{item.state}}</td>
-          <td style="font-size: 20px;">{{item.email}}</td>
-          <td style="font-size: 20px;">{{item.country}}</td>
-        </tr>
-        </tbody>
-      </table>
-  <span>
-            <ng-template #no_data_templ>
+            <table class="table table-bordered table-striped">
+              <thead>
+                <tr>
+                  <th class="text-center">User ID</th>
+                  <th class="text-center">Zip Code</th>
+                  <th class="text-center">Utility Area</th>
+                  <th class="text-center">UserName</th>
+                  <th class="text-center">Password</th>
+                  <th class="text-center">Phone</th>
+                  <th class="text-center">State</th>
+                  <th class="text-center">Email</th>
+                  <th class="text-center">Country</th>
+                  <th class="text-center">Status</th>
+                </tr>
+              </thead>
+              <tbody *ngIf="data;else no_data_templ">
+                <tr *ngFor="let item of data; let i = index">
+                  <td style="font-size: 20px;">{{item.id}}</td>
+                  <td style="font-size: 20px;">{{item.zipcode}}</td>
+                  <td style="font-size: 20px;">{{item.utilityarea}}</td>
+                  <td style="font-size: 20px;">{{item.username}}</td>
+                  <td style="font-size: 20px;">{{item.password}}</td>
+                  <td style="font-size: 20px;">{{item.Phone}}</td>
+                  <td style="font-size: 20px;">{{item.state}}</td>
+                  <td style="font-size: 20px;">{{item.email}}</td>
+                  <td style="font-size: 20px;">{{item.country}}</td>
+                  <td style="font-size: 20px;">{{item.status}}</td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="container">
+              <div class="text-center">
+                <!-- <h1>Angular 2 - Pagination Example with logic like Google</h1> -->
 
-              <!-- <img src="../../assets/img/no_Record.png" style="width: 250px;height:200px" > -->
-              <h1 style="height:1000px;width:1000px;padding:200px">
+                <!-- items being paged -->
+                <div *ngFor="let item of pagedItems">{{item.name}}</div>
 
-                <!-- <b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;No Record Found</b> -->
-              </h1>
-            </ng-template>
-          </span>
+                <!-- pager -->
+                <ul *ngIf="pager.pages && pager.pages.length" class="pagination">
+                  <li [ngClass]="{hide:pager.currentPage === 1}">
+                    <a (click)="premiseIdData(1)" class="btn btn-rose">First</a>
+                  </li>
+                  <li [ngClass]="{hide:pager.currentPage === 1}">
+                    <a (click)="premiseIdData(pager.currentPage - 1)" class="btn btn-rose">Previous</a>
+                  </li>
+                  <li *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}">
+                    <a (click)="premiseIdData(page)" class="btn btn-rose">{{page}}</a>
+                  </li>
+                  <li [ngClass]="{hide:pager.currentPage === pager.totalPages}">
+                    <a (click)="premiseIdData(pager.currentPage + 1)" class="btn btn-rose" type="Next">Next</a>
+                  </li>
+                  <li [ngClass]="{hide:pager.currentPage === pager.totalPages}">
+                    <a (click)="premiseIdData(pager.totalPages)" class="btn btn-rose" type="Last">Last</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <span>
+              <ng-template #no_data_templ>
 
+                <!-- <img src="../../assets/img/no_Record.png" style="width: 250px;height:200px" > -->
+                <h1 style="height:1000px;width:1000px;padding:200px">
+
+                  <!-- <b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;No Record Found</b> -->
+                </h1>
+              </ng-template>
+            </span>
+
+          </div>
+
+        </div>
+      </div>
     </div>
-    
   </div>
-</div>
-</div>
-</div>
+
 </div>
 <!-- 
 <div class="main-content custom"> -->
 
-  <!-- <div class="container-fluid"> -->
-  <!-- <div class="row">
+<!-- <div class="container-fluid"> -->
+<!-- <div class="row">
     <div class="col-sm-12">
 
       <div class="page-title">
@@ -111,7 +140,7 @@
 
 
 
-    <!-- <div class="mat-paginator-page-size">
+<!-- <div class="mat-paginator-page-size">
                   <div class="mat-paginator-page-size-label">{{_intl.itemsPerPageLabel}}</div>
                   <mat-form-field *ngIf="_displayedPageSizeOptions.length > 1" class="mat-paginator-page-size-select">
                     <mat-select [value]="pageSize" [aria-label]="_intl.itemsPerPageLabel" (change)="_changePageSize($event.value)">

@@ -59,6 +59,7 @@ export class SuperviewcontactComponent implements OnInit {
     private formBuilder: FormBuilder,  private router: Router, private http: Http, private pagerService: PagerService, private homeService: HomeService,
      private sg: SimpleGlobal, private obj: HomeService, private dialog: MatDialog, private dataa: DataService, private superuserservice: SuperviewcontactService) {
 
+      
 }
 pageSizeOptions;
 
@@ -67,8 +68,7 @@ pager: any = {};
 home: any = {};
 id: number;
 page: any[];
-
-// paged items
+ 
 pagedItems: any[];
 private sub: Subscription;
 private zip: any;
@@ -76,7 +76,6 @@ prod_loaded = false;
 prods_loaded = false;
 localVar;
 public products: any;
-rating;
 closeResult: string;
  
 modal:any=[];
@@ -84,72 +83,37 @@ editdata: any = [];
 result3:any=[];
 
 data;
-public username;
-
-dataId = '';
-list = 'Hello';
-
-
+ 
+ 
+//http://192.168.30.52:9000/choice/contactfilter/
 
 
  ngOnInit() {
    // this.showresult();
 
-    this.premiseIdData();
+   this.premiseIdData(1);
    //alert(  this.premiseIdData())
 
 }
+ 
 
-premiseIdData() {
+premiseIdData(page: number) {
+  if (page < 1 || page > this.pager.totalPages) {
+      return;
+  }
+  let headers = new Headers();
+  headers.append('Content-Type', 'application/json');
+  //   this.http.get(Config.api + 'data_against_zipcode/' + this.zip_code + '', { headers: headers }),
+  this.http.get(Config.api + 'contactfilter/' + '?page=' + page, { headers: headers }).subscribe(Res => {
+      console.log(Res);
+      this.pager = this.pagerService.getPager(Res['Results'], page, 10);
 
-    let headers = new Headers();
-    headers.append('Content-Type', 'application/json');
-    //   this.http.get(Config.api + 'data_against_zipcode/' + this.zip_code + '', { headers: headers }),
-    this.http.get('http://192.168.30.52:9000/choice/contactfilter/', { headers: headers })    .subscribe(Res => {
-            console.log(Res);
+      this.data = Res.json()['Results'];
 
-        
-         this. data = Res.json()['Results'];
-           // this.data.changeProducts(this.sg['products']);
-            // for (let prod of this.sg['products']) {
-            //     // console.log(prod["plan_information"])
-            //     // console.log(prod["price_rate"])
-            //     prod["plan_information"] = prod["plan_information"].split(',,', 3000);
-            //     prod["price_rate"] = prod["price_rate"].split('..', 3000);
-            //   }
+       
 
 
-           
-        });
-// }
-// ngAfterViewInit() {
-//   const breakCards = true;
-//   if (breakCards === true) {
-//       // We break the cards headers if there is too much stress on them :-)
-//       $('[data-header-animation="true"]').each(function () {
-//           const $fix_button = $(this);
-//           const $card = $(this).parent('.card');
-//           $card.find('.fix-broken-card').click(function () {
-//               const $header = $(this).parent().parent().siblings('.card-header, .card-image');
-//               $header.removeClass('hinge').addClass('fadeInDown');
-
-//               $card.attr('data-count', 0);
-
-//               setTimeout(function () {
-//                   $header.removeClass('fadeInDown animate');
-//               }, 480);
-//           });
-
-//           $card.mouseenter(function () {
-//               const $this = $(this);
-//               const hover_count = parseInt($this.attr('data-count'), 10) + 1 || 0;
-//               $this.attr('data-count', hover_count);
-//               if (hover_count >= 20) {
-//                   $(this).children('.card-header, .card-image').addClass('hinge animated');
-//               }
-//           });
-//       });
-//   }
-// }
+  });
+  // this.pagedItems = this.allItems.slice(this.pager.startIndex, this.pager.endIndex + 1);
 }
 }

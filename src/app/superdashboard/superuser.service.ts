@@ -5,24 +5,24 @@ import {Config} from "../Config";
 @Injectable()
 export class SuperuserService {
 
-
+  months:any[];
 username;
   constructor(private https: Http) {}
 id;
 
-  searchProduct(username,page) {
-
-  //http://192.168.30.52:9000/choice/dashboard/
-    return this.https.get('http://192.168.30.52:9000/choice/dashboard/' ) .map((response: Response)  => response.json() );
- // return this.https.get('http://192.168.30.52:9000/choice/mydata/'+ username + '/').map((response: Response) => response.json());
-
-    }
-    Superuser() {
-      const headers = new Headers();
-      headers.append('Content-Type', 'application/json');
-      return this.https.get('http://192.168.30.52:9000/choice/dashboard/', {headers:headers}).map((response: Response) => response.json());
-    }
+searchProducts(page) {
+  console.log(page)
+ // return this.http.get(Config.api+'data_against_zipcode/' + id +'?page='+page).map((response: Response) => response.json());
+   return this.https.get('http://192.168.30.52:9000/choice/dashboard/'+'?page='+page).map((response: Response) => response.json());
+}
     
 }
+//http://192.168.30.52:9000/choice/dashboard/?page=2
+ 
+   
+
+ 
+ 
+
 
 
