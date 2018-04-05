@@ -511,11 +511,12 @@ text-align: center;">
 </div>
 <!-- <div>
             <div> -->
-<div class="container">
+
   <div class="text-center">
     <!-- <h1>Angular 2 - Pagination Example with logic like Google</h1> -->
-
-    <!-- items being paged -->
+    <div class="products-area" *ngIf="prod_loaded">
+        <ng-container class="card" *ngFor="let data of sg['products']; let i = index">
+    <!-- items being paged --><div *ngIf="i<1">
     <div *ngFor="let item of pagedItems">{{item.name}}</div>
 
     <!-- pager -->
@@ -524,23 +525,22 @@ text-align: center;">
         <a (click)="setPage(1)" class="btn btn-rose">First</a>
       </li>
       <li [ngClass]="{hide:pager.currentPage === 1}">
-        <a (click)="setPage(pager.currentPage - 1)" class="btn btn-rose">Previous</a>
+        <a (click)="setPage(data.title.trim(),pager.currentPage - 1)" class="btn btn-rose">Previous</a>
       </li>
       <li *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}">
-        <a (click)="setPage(page)" class="btn btn-rose">{{page}}</a>
+        <a (click)="setPage(data.title.trim(),page)" class="btn btn-rose">{{page}}</a>
       </li>
       <li [ngClass]="{hide:pager.currentPage === pager.totalPages}">
-        <a (click)="setPage(pager.currentPage + 1)" class="btn btn-rose" type="Next">Next</a>
+        <a (click)="setPage(data.title.trim(),pager.currentPage + 1)" class="btn btn-rose" type="Next">Next</a>
       </li>
       <li [ngClass]="{hide:pager.currentPage === pager.totalPages}">
-        <a (click)="setPage(pager.totalPages)" class="btn btn-rose" type="Last">Last</a>
+        <a (click)="setPage(data.title.trim(),pager.totalPages)" class="btn btn-rose" type="Last">Last</a>
       </li>
     </ul>
   </div>
+</ng-container>
 </div>
-
-
-
+  </div>
 
 
 

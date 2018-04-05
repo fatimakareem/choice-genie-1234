@@ -225,7 +225,56 @@ declare const $: any;
     }
 
     });}
-  
+    nullplan() {
+      // this.route.params.subscribe(params => {
+      //   let zip =  this.sg['product_zipcode'];
+      if(true){
+      let headers = new Headers();
+      headers.append('Content-Type', 'application/json');
+      this.http.get('http://192.168.30.52:9000/choice/planmin/' + this.zip_code + '', { headers: headers })
+      //this.http.get(Config.api + 'monthly/' + this.zip_code + '',{ headers: headers })
+      // this.http.get(Config.api + 'filter/' + this.zip_code + '',{ headers: headers })
+      
+      //  this.http.post(Config.api + 'filter/' + this.zip_code + '', {"month": this.months+" Month", "custom":"['2','8']"},{ headers: headers })
+      .subscribe(Res => {
+      this.sg['products'] = Res.json()['Results'];
+      //this.data.changeProducts(this.sg['products']);
+      //this.allItems = this.sg['products'];
+      for (let prod of this.sg['products']) {
+      // console.log(prod["plan_information"])
+      console.log(prod["minumum_usage_fee"])
+      prod["plan_information"] = prod["plan_information"].split(',,', 3000);
+      prod["price_rate"] = prod["price_rate"].split('..', 3000);
+      }
+      });
+    }
+      }
+      fullplan() {
+if(true){
+        // this.route.params.subscribe(params => {
+        //   let zip =  this.sg['product_zipcode'];
+        let headers = new Headers();
+        headers.append('Content-Type', 'application/json');
+        this.http.get('http://192.168.30.52:9000/choice/planfull/' + this.zip_code + '', { headers: headers })
+        //this.http.get(Config.api + 'monthly/' + this.zip_code + '',{ headers: headers })
+        // this.http.get(Config.api + 'filter/' + this.zip_code + '',{ headers: headers })
+        
+        //  this.http.post(Config.api + 'filter/' + this.zip_code + '', {"month": this.months+" Month", "custom":"['2','8']"},{ headers: headers })
+        .subscribe(Res => {
+        this.sg['products'] = Res.json()['Results'];
+        this.data.changeProducts(this.sg['products']);
+        this.allItems = this.sg['products'];
+        for (let prod of this.sg['products']) {
+        // console.log(prod["plan_information"])
+        console.log(prod["minumum_usage_fee"])
+        prod["plan_information"] = prod["plan_information"].split(',,', 3000);
+        prod["price_rate"] = prod["price_rate"].split('..', 3000);
+        prod["minumum_usage_fee"] = prod["minumum_usage_fee"];
+
+        }
+        });
+      }
+        }
   //    fetchprice() {
   //     // this.route.params.subscribe(params => {
   //    //   let zip =  this.sg['product_zipcode'];
