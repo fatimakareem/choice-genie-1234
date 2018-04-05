@@ -101,56 +101,70 @@
       <li>
         
          <h5>  Contract Length</h5>
-         
-          <!--  /.filter-category__heading -->
+        
          
             <!-- ngRepeat: term in filters.terms -->
           
             <!-- end ngRepeat: term in filters.terms -->
             <div>
               <label >
-                <input type="checkbox"class="form-control" value="36 Months" checked="value.active" checked="checked" name="36 Months" (ngModelChange)="check($event)" #value1>36 Months
+                  <input type="checkbox"class="form-control" value="36 Months" checked="value.active" checked="checked" name="36 Months" (ngModelChange)="check($event)" #value1>36 Months
+              
+                <!-- <input type="checkbox"class="form-control" value="36 Months" checked="value.active" checked="checked" name="36 Months" (ngModelChange)="check($event)" #value1>36 Months -->
               </label>
 
             </div>
             <!-- end ngRepeat: term in filters.terms -->
             <div>
               <label >
-                <input type="checkbox" class="form-control" value="24 Months" checked="value.active" checked="checked" name="Months24" (ngModelChange)="check(Months24)" #value2>24 Months
+                  <input type="checkbox" class="form-control" value="24 Months" checked="value.active" checked="checked"  name="Months24"  #value2>24 Months
+             
+                <!-- <input type="checkbox" class="form-control" value="24 Months" checked="value.active" checked="checked" name="Months24" (ngModelChange)="check(Months24)" #value2>24 Months -->
               </label>
 
             </div>
             <div>
                 <label >
-                  <input type="checkbox" class="form-control" value="18 Months" checked="value.active" checked="checked" name="18 Months" (ngModelChange)="check($event)" #value3>18 Months
+                    <input type="checkbox" class="form-control" value="18 Months" checked="value.active" checked="checked" name="18 Months" (ngModelChange)="check($event)" #value3>18 Months
+               
+                  <!-- <input type="checkbox" class="form-control" value="18 Months" checked="value.active" checked="checked" name="18 Months" (ngModelChange)="check($event)" #value3>18 Months -->
                 </label>
   
               </div>
             <!-- end ngRepeat: term in filters.terms -->
             <div>
               <label >
-                <input type="checkbox" class="form-control" value="14 Months" checked="value.active" checked="checked" name="14 Months" (ngModelChange)="check($event)" #value4>14 Months
+                  <input type="checkbox" class="form-control" value="14 Months" checked="value.active" checked="checked"  name="14 Months"  (ngModelChange)="check($event)" #value4>14 Months
+             
+                <!-- <input type="checkbox" class="form-control" value="14 Months" checked="value.active" checked="checked" name="14 Months" (ngModelChange)="check($event)" #value4>14 Months -->
               </label>
 
             </div>
             <!-- end ngRepeat: term in filters.terms -->
             <div>
               <label>
-                <input type="checkbox"class="form-control" value="12 Months" checked="value.active" checked="checked" name="12 Months" (ngModelChange)="check($event)" #value5>12 Months
+                  <input type="checkbox"class="form-control" value="12 Months" checked="value.active" checked="checked"name="12 Months" (ngModelChange)="check($event)" #value5>12 Months
+              
+
+                <!-- <input type="checkbox"class="form-control" value="12 Months" checked="value.active" checked="checked" name="12 Months" (ngModelChange)="check($event)" #value5>12 Months -->
               </label>
 
             </div>
             <!-- end ngRepeat: term in filters.terms -->
             <div>
               <label >
-                <input type="checkbox"class="form-control" value="6 Months" checked="value.active" checked="checked" name="6 Months" (ngModelChange)="check($event)" #value6>6 Months
+                  <input type="checkbox"class="form-control" value="6 Months" checked="value.active" checked="checked"  name="6 Months" (ngModelChange)="check($event)" #value6>6 Months
+            
+                <!-- <input type="checkbox"class="form-control" value="6 Months" checked="value.active" checked="checked" name="6 Months" (ngModelChange)="check($event)" #value6>6 Months -->
               </label>
 
             </div>
             <!-- end ngRepeat: term in filters.terms -->
             <div>
               <label>
-                <input type="checkbox"class="form-control" value="4 Months" checked="value.active" checked="checked" name="4 Months" (ngModelChange)="check($event)" #value7>4 Months
+                  <input type="checkbox"class="form-control" value="4 Months" checked="value.active" checked="checked"name="4 Months" (ngModelChange)="check($event)" #value7>4 Months
+            
+                <!-- <input type="checkbox"class="form-control" value="4 Months" checked="value.active" checked="checked" name="4 Months" (ngModelChange)="check($event)" #value7>4 Months -->
               </label>
 
 
@@ -272,7 +286,7 @@
       </li>
       <li>
         <div class="text-center">
-          <button type="button" class="btn btn-rose" (click)="fetchProducts();fetchmonth();fetchrenewable();fetchzip()"> Search
+          <button type="button" class="btn btn-rose" (click)="fetchProducts();fetchrenewable();fetchzip()"> Search
             <i class="material-icons" title="Use these filters to set your preferences. Get rid of the plans you don’t want to see and only show those that fit your needs.">search</i>
           </button>
         </div>
