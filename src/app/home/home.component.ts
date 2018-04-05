@@ -60,6 +60,7 @@ export class HomeComponent implements OnInit {
       
 
         this.router.navigate(['/products/' + this.zipCode]);
+        localStorage.setItem('zip', this.zipCode);
     }
 
     digitsOnly = '^[0-9,-]+$';

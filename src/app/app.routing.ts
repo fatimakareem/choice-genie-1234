@@ -147,6 +147,14 @@ export const AppRoutes: Routes = [
                 path: 'superdashboard',
                 loadChildren: './superdashboard/superdashboard.module#SuperDashboardModule'
             },
+            {
+                path: 'superdashboard/superviewcontact',
+                loadChildren: './superviewcontact/superviewcontact.module#superviewcontactModule'
+            },//superviewbecomeModuleng superpartnerModule
+            {
+                path: 'sviewapartner',
+                loadChildren: './sviewapartner/sviewapartner.module#partnerModule'
+            }
         ]
     },          
     {
@@ -161,16 +169,8 @@ export const AppRoutes: Routes = [
             {
                 path: "new-product",
                 loadChildren: './admin/new-product/new-product.module#NewProductModule'
-              },
-            // {
-            //     path: 'dashboard',
-            //     loadChildren: './dashboard/dashboard.module#DashboardModule'
-            // },
-            // {
-            //     path: 'dashboard/:username',
-            //     loadChildren: './dashboard/dashboard.module#DashboardModule'
-            // },
-             {
+            },
+            {
                 path: 'components',
                 loadChildren: './components/components.module#ComponentsModule'
             }, {

@@ -51,6 +51,8 @@ declare const $: any;
   private sub: Subscription;
   private zip: any;
   id;
+  public zipCode: any;
+
 
   ngOnInit() {
     //this.someserv.telecast.subscribe(message=> this.message = message);
@@ -58,7 +60,8 @@ declare const $: any;
   //     this.zip_code = +params['zip_code'];
   //     console.log();
   //    this.setPage(1);
-
+this.zip_code = localStorage.getItem('zip');
+//alert(this.zip_code);
 
   // });
    

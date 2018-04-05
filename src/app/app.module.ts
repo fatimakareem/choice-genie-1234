@@ -96,11 +96,12 @@ import { RandomService } from './random.service';
 
 import { SuperuserService } from './superdashboard/superuser.service';
 import { LoaderModule } from './loader/loader.module';
+import { SuperviewcontactComponent } from './superviewcontact/superviewcontact.component';
+import { SviewapartnerComponent } from './sviewapartner/sviewapartner.component';
+import { SviewapartnerService } from './sviewapartner/sviewapartner.service';
+import { SuperviewcontactService } from './superviewcontact/superviewcontact.service';
+ 
 
-// import { ContactComponent } from './contact/contact.component';
-// import { UsersignupComponent } from './usersignup/usersignup.component';
-
-// import { MainloginService } from './mainadmin/mainlogin/mainlogin.service';
 
 @NgModule({
   exports: [
@@ -138,7 +139,7 @@ import { LoaderModule } from './loader/loader.module';
     FormsModule,
     MatFormFieldModule
   ],
-  declarations: [ ],
+  declarations: [],
 
 })
 export class MaterialModule {}
@@ -179,13 +180,12 @@ export class MaterialModule {}
     // HomeComponent,
     HeaderComponent,
     UserSidebarComponent,
-    // SupersiderbarComponent,
+    SupersiderbarComponent,
     AboutComponent,
     StepperOverviewExample,
-    // UsersignupComponent,
-    //UserloginComponent,
+   
     SuperloginComponent,
-    // OverviewComponent
+ 
       ],
   providers: [
     HomeService,
@@ -202,6 +202,8 @@ export class MaterialModule {}
     EditService,
     DeleteService,
     SuperuserService,
+    SviewapartnerService,
+    SuperviewcontactService,
 
 RandomService,
   ],

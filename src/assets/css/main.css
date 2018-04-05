@@ -2526,7 +2526,7 @@ section {
   height: 75vh;
   position: relative;
   background: #000;
-  background-image: url(../../assets/img/about-banner.png);
+  background-image: url(../../assets/img/about-banner.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   text-align: center;
@@ -2819,6 +2819,7 @@ li.pinterest:hover {
   margin: 0 0 80px;
   overflow-x: scroll;
 }
+
 .appio-center-heading span.bordered-icon {
   color: #31aae2;
   padding: 0 10px;
@@ -2860,6 +2861,24 @@ li.pinterest:hover {
   padding: 25px 0 !important;
   font-weight: 700 !important;
 }
+.com-table-2 table th {
+  background-color: #cc0000;
+  color: #fff;
+  font-size: 22px !important;
+  padding: 25px 0 !important;
+  font-weight: 700 !important;
+}
+.com-table-2 strong {
+  font-weight: 700 !important;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 20px;
+  vertical-align: baseline;
+}
+.com-table-2 table th {
+  min-width: 80px;
+}
 .com-table strong {
   font-weight: 700 !important;
   margin: 0;
@@ -2868,8 +2887,16 @@ li.pinterest:hover {
   font-size: 20px;
   vertical-align: baseline;
 }
+.com-table-2 .fa-check {
+  color: #00cd00;
+  font-size: 21px;
+}
 .com-table .fa-check {
   color: #00cd00;
+  font-size: 21px;
+}
+.com-table-2 .fa-times {
+  color: #cd0a0e;
   font-size: 21px;
 }
 .com-table .fa-times {

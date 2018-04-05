@@ -70,7 +70,7 @@ export class BecomeapartnerComponent implements OnInit {
 
     headers.append('Content-Type', 'application/json');
     // this.http.get(Config.api + 'data_against_zipcode/' + this.zip_code + '', { headers: headers }),
-    this.http.post('http://192.168.30.52:9000/choice/becomepartner/',this.model , { headers: headers })
+    this.http.post(Config.api + 'becomepartner/',this.model , { headers: headers })
 
 
      .subscribe(Res => {

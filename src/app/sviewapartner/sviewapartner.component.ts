@@ -23,69 +23,69 @@ import { PageEvent } from '@angular/material';
 // import { DeleteService } from './delete.service';
 import { DataService } from '../data.service';
 // import { EditService } from './edit.service';
-import { NgForm, FormBuilder, FormGroup, Validators, FormControl, AbstractControl, FormGroupDirective, RadioControlValueAccessor } from '@angular/forms';
+import { NgForm,FormBuilder, FormGroup, Validators, FormControl, AbstractControl,FormGroupDirective,RadioControlValueAccessor } from '@angular/forms';
 
 import swal from 'sweetalert2';
-import { NgControl } from '@angular/forms';
-import { SuperuserService } from './superuser.service';
-// import { SuperuserService } from './superuser.service';
-
+import {NgControl} from '@angular/forms';
+import { SviewapartnerService } from './sviewapartner.service';
+ 
 
 
 declare interface DataTable {
-    headerRow: string[];
-    footerRow: string[];
-    dataRows: string[][];
+  headerRow: string[];
+  footerRow: string[];
+  dataRows: string[][];
 }
 
 declare const $: any;
 
 /** Error when invalid control is dirty, touched, or submitted. */
 export class MyErrorStateMatcher implements ErrorStateMatcher {
-    isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
-        const isSubmitted = form && form.submitted;
-        return !!(control && control.invalid && (control.dirty || control.touched || isSubmitted));
-    }
+  isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
+      const isSubmitted = form && form.submitted;
+      return !!(control && control.invalid && (control.dirty || control.touched || isSubmitted));
+  }
 
 
 }
 
 
+// import { SuperuserService } from './superuser.service';
 
 @Component({
-    selector: 'app-superdashboard',
-    templateUrl: './superdashboard.component.html',
-    styleUrls: ['./superdashboard.component.scss']
+  selector: 'app-sviewapartner',
+  templateUrl: './sviewapartner.component.html',
+  styleUrls: ['./sviewapartner.component.scss']
 })
-export class SuperdashboardComponent implements OnInit {
-    constructor(private route: ActivatedRoute, private https: HttpClient,
-        private formBuilder: FormBuilder, private router: Router, private http: Http, private pagerService: PagerService,
-        private sg: SimpleGlobal, private obj: SuperuserService, private dialog: MatDialog, private dataa: DataService, private superuserservice: SuperuserService) {
+export class SviewapartnerComponent implements OnInit {
+  constructor(private route: ActivatedRoute, private https: HttpClient,
+    private formBuilder: FormBuilder,  private router: Router, private http: Http, private pagerService: PagerService, private homeService: HomeService,
+     private sg: SimpleGlobal, private obj: HomeService, private dialog: MatDialog, private dataa: DataService, private superuserservice: SviewapartnerService) {
 
-    }
-    // pageSizeOptions;
+}
+pageSizeOptions;
 
-    private allItems: any[];
-    pager: any = {};
-    home: any = {};
-    id: number;
-    page: any[];
+private allItems: any[];
+pager: any = {};
+home: any = {};
+id: number;
+page: any[];
 
-    // paged items
-    pagedItems: any[];
-    private sub: Subscription;
-    private zip: any;
-    prod_loaded = false;
-    prods_loaded = false;
-    localVar;
-    public products: any;
-    rating;
-    closeResult: string;
+// paged items
+pagedItems: any[];
+private sub: Subscription;
+private zip: any;
+prod_loaded = false;
+prods_loaded = false;
+localVar;
+public products: any;
+rating;
+closeResult: string;
+ 
+modal:any=[];
+editdata: any = [];
+result3:any=[];
 
-    modal: any = [];
-    editdata: any = [];
-    result3: any = [];
-     
 data;
 public username;
 
@@ -94,17 +94,15 @@ list = 'Hello';
 
 
 
- 
-private Sub: Subscription;
-form;
-updataForm: FormGroup;
-ngOnInit() {
-    // this.showresult();
-  //  this.setPage(1);
-    this.premiseIdData(1);
-   // alert(this.premiseIdData(1))
+
+ ngOnInit() {
+   // this.showresult();
+
+   this.premiseIdData(1);
+   //alert(  this.premiseIdData())
 
 }
+//http://192.168.30.52:9000/choice/partnerfilter/
 
 premiseIdData(page: number) {
     if (page < 1 || page > this.pager.totalPages) {
@@ -113,18 +111,16 @@ premiseIdData(page: number) {
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     //   this.http.get(Config.api + 'data_against_zipcode/' + this.zip_code + '', { headers: headers }),
-    this.http.get(Config.api + 'dashboard/' + '?page=' + page, { headers: headers }).subscribe(Res => {
+    this.http.get(Config.api + 'partnerfilter/' + '?page=' + page, { headers: headers }).subscribe(Res => {
         console.log(Res);
         this.pager = this.pagerService.getPager(Res['Results'], page, 10);
-
-        this.data = Res.json()['Results'];
-
+  
+        this.data = Res.json()['Results']; 
          
-
-
+  
+  
     });
     // this.pagedItems = this.allItems.slice(this.pager.startIndex, this.pager.endIndex + 1);
-}
-
+  }
 
 }
