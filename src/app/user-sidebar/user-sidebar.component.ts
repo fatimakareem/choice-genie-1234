@@ -12,6 +12,7 @@ import { AfterContentInit } from '@angular/core/src/metadata/lifecycle_hooks';
 import { Subscription } from 'rxjs/Subscription';
 import {RandomService} from '../random.service';
 import { HomeService } from '../home/home.service';
+import { error } from 'selenium-webdriver';
 //import { SideBarService } from './side-bar.service';
 
 declare const $: any;
@@ -192,24 +193,38 @@ this.zip_code = localStorage.getItem('zip');
   
   });
   }
-  
- 
+  month1='';
+month2='';
+month3='';
+month4='';
+month5='';
+month6='';
+month7='';
 
-  fetchmutimonth(value1,value2,value3,value4,value5,value6,value7) {
+  fetchmutimonth(months1,months2,months3,months4,months5,months6,months7) {
+    
+    this.month1="36 Months"
+    this.month2="24 Months"
+    this.month3="18 Months"
+    this.month4="14 Months"
+    this.month5="12 Months"
+    this.month6="6 Months"
+    this.month7="5 Months"
+    console.log(this.month1)
     // this.route.params.subscribe(params => {
     //   let zip =  this.sg['product_zipcode'];
-   console.log(value1,value2,value3,value4,value5,value6,value7,'tttttttttttt')
+   console.log(months1,months2,months3,months4,months5,months6,months7,'tttttttttttt')
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     // this.http.get(Config.api + 'data_against_zipcode/' + this.zip_code + '', { headers: headers }),
-    this.http.post('http://192.168.30.52:9000/choice/multimonth/'+ this.zip_code +'/', JSON.stringify({
-      "plan_information1": value1,
-      "plan_information2": value2,
-      "plan_information3": value3,
-      "plan_information4": value4,
-      "plan_information5": value5,
-      "plan_information6": value6,
-      "plan_information7": value7,
+    this.http.post(Config.api+'multimonth/'+ this.zip_code +'/', JSON.stringify({
+      "plan_information1": months1,
+      "plan_information2": months2,
+      "plan_information3": months3,
+      "plan_information4": months4,
+      "plan_information5": months5,
+      "plan_information6": months6,
+      "plan_information7": months7,
       }
       ),{ headers: headers })
  
@@ -228,47 +243,59 @@ this.zip_code = localStorage.getItem('zip');
     }
 
     });}
-    nullplan() {
+    aChecked = false;
+    bChecked = false;
+    nullplan(){
+     
       // this.route.params.subscribe(params => {
       //   let zip =  this.sg['product_zipcode'];
-      if(true){
+      if(!this.aChecked){
       let headers = new Headers();
       headers.append('Content-Type', 'application/json');
-      this.http.get('http://192.168.30.52:9000/choice/planmin/' + this.zip_code + '', { headers: headers })
+      this.http.get(Config.api+'planmin/' + this.zip_code + '', { headers: headers })
       //this.http.get(Config.api + 'monthly/' + this.zip_code + '',{ headers: headers })
       // this.http.get(Config.api + 'filter/' + this.zip_code + '',{ headers: headers })
       
       //  this.http.post(Config.api + 'filter/' + this.zip_code + '', {"month": this.months+" Month", "custom":"['2','8']"},{ headers: headers })
       .subscribe(Res => {
+        console.log(Res,'hhhhhhhhhhhhhhhhhhh')
       this.sg['products'] = Res.json()['Results'];
-      //this.data.changeProducts(this.sg['products']);
-      //this.allItems = this.sg['products'];
+      this.data.changeProducts(this.sg['products']);
+      this.allItems = this.sg['products'];
       for (let prod of this.sg['products']) {
-      // console.log(prod["plan_information"])
+      console.log(prod["plan_information"])
       console.log(prod["minumum_usage_fee"])
       prod["plan_information"] = prod["plan_information"].split(',,', 3000);
       prod["price_rate"] = prod["price_rate"].split('..', 3000);
       }
       });
+    }else(error=>{
+      console.log(error)
     }
+    
+    );
       }
+      
       fullplan() {
-if(true){
+     
+if(!this.bChecked){
+
         // this.route.params.subscribe(params => {
         //   let zip =  this.sg['product_zipcode'];
         let headers = new Headers();
         headers.append('Content-Type', 'application/json');
-        this.http.get('http://192.168.30.52:9000/choice/planfull/' + this.zip_code + '', { headers: headers })
+        this.http.get(Config.api+'planfull/' + this.zip_code + '', { headers: headers })
         //this.http.get(Config.api + 'monthly/' + this.zip_code + '',{ headers: headers })
         // this.http.get(Config.api + 'filter/' + this.zip_code + '',{ headers: headers })
         
         //  this.http.post(Config.api + 'filter/' + this.zip_code + '', {"month": this.months+" Month", "custom":"['2','8']"},{ headers: headers })
         .subscribe(Res => {
+          console.log(Res)
         this.sg['products'] = Res.json()['Results'];
         this.data.changeProducts(this.sg['products']);
         this.allItems = this.sg['products'];
         for (let prod of this.sg['products']) {
-        // console.log(prod["plan_information"])
+        console.log(prod["plan_information"])
         console.log(prod["minumum_usage_fee"])
         prod["plan_information"] = prod["plan_information"].split(',,', 3000);
         prod["price_rate"] = prod["price_rate"].split('..', 3000);
@@ -276,7 +303,11 @@ if(true){
 
         }
         });
+      }else(error=>{
+        console.log(error)
       }
+      
+      );
         }
   //    fetchprice() {
   //     // this.route.params.subscribe(params => {

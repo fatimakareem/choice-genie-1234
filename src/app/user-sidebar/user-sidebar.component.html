@@ -3,7 +3,7 @@
     <ul>
       <li>
         <div class="text-center">
-          <button type="button" class="btn btn-rose" (click)="fetchmutimonth(value1,value2,value3,value4,value5,value6,value7)">
+          <button type="button" class="btn btn-rose" (click)="nullplan(); fullplan();fetchmutimonth(months1,months2,months3,months4,months5,months6,months7)">
             Search
             <i class="material-icons" title="Use these filters to set your preferences. Get rid of the plans you don’t want to see and only show those that fit your needs.">search</i>
           </button>
@@ -109,48 +109,48 @@
             <!-- end ngRepeat: term in filters.terms -->
             <div>
               <label >
-                <input type="checkbox"class="form-control" value="36 Months" checked="value.active" checked="checked" name="36 Months" (ngModelChange)="check($event)" #value1>36 Months
+                <input type="text" value="36 Months"class="form-control"name="36 Months"  [(ngModel)]=months1 />36 Months
               </label>
 
             </div>
             <!-- end ngRepeat: term in filters.terms -->
             <div>
               <label >
-                <input type="checkbox" class="form-control" value="24 Months" checked="value.active" checked="checked" name="Months24" (ngModelChange)="check(Months24)" #value2>24 Months
+                <input type="text" value="24 Months" class="form-control"name="24 Months" [(ngModel)]=months2 />24 Months
               </label>
 
             </div>
             <div>
                 <label >
-                  <input type="checkbox" class="form-control" value="18 Months" checked="value.active" checked="checked" name="18 Months" (ngModelChange)="check($event)" #value3>18 Months
+                  <input type="text"  value="18 Months" class="form-control"name="18 Months"  [(ngModel)]=months3 >18 Months
                 </label>
   
               </div>
             <!-- end ngRepeat: term in filters.terms -->
             <div>
               <label >
-                <input type="checkbox" class="form-control" value="14 Months" checked="value.active" checked="checked" name="14 Months" (ngModelChange)="check($event)" #value4>14 Months
+                <input type="text"  value="14 Months" class="form-control"name="14 Months"[(ngModel)]=months4>14 Months
               </label>
 
             </div>
             <!-- end ngRepeat: term in filters.terms -->
             <div>
               <label>
-                <input type="checkbox"class="form-control" value="12 Months" checked="value.active" checked="checked" name="12 Months" (ngModelChange)="check($event)" #value5>12 Months
+                <input type="text" value="12 Months" class="form-control"name="12 Months" [(ngModel)]=months5>12 Months
               </label>
 
             </div>
             <!-- end ngRepeat: term in filters.terms -->
             <div>
               <label >
-                <input type="checkbox"class="form-control" value="6 Months" checked="value.active" checked="checked" name="6 Months" (ngModelChange)="check($event)" #value6>6 Months
+                <input type="text" value="6 Months" class="form-control"name="6 Months" [(ngModel)]=months6>6 Months
               </label>
 
             </div>
             <!-- end ngRepeat: term in filters.terms -->
             <div>
               <label>
-                <input type="checkbox"class="form-control" value="4 Months" checked="value.active" checked="checked" name="4 Months" (ngModelChange)="check($event)" #value7>4 Months
+                <input type="text" value="4 Months" class="form-control"name="4 Months" [(ngModel)]=months7>4 Months
               </label>
 
 
@@ -199,12 +199,12 @@
         </h5>
         <div class="radio">
           <label>
-            <input type="radio" name="pricingbiling" checked=true (click)="fullplan()"(ngModelChange)="check($event)"> Show All Plans
+            <input type="radio" id="chckbx" (change)="bChecked = $event.target.checked">  Plans without minimum usage Fee/Credits
           </label>
         </div>
         <div class="radio">
           <label>
-            <input type="radio" name="pricingbiling" (click)="nullplan()"(ngModelChange)="check($event)"> Plans without minimum usage Fee/Credits
+            <input type="radio"id="chckbx" (change)="aChecked = $event.target.checked">Show All Plans
           </label>
         </div>
       </li>

@@ -91,7 +91,7 @@ export class NewProductComponent implements OnInit {
     let headers = new HttpHeaders();
     headers.append('Content-Type', 'application/json');
     // this.http.get(Config.api + 'data_against_zipcode/' + this.zip_code + '', { headers: headers }),
-    this.http.post('http://192.168.30.189:9000/choice/addproduct/', this.model, { headers: headers })
+    this.http.post(Config.api+'addproduct/', this.model, { headers: headers })
       .subscribe(Res => {
         console.log(Res);
         // this.next = Res[0].next;
