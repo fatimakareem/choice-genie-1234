@@ -13,7 +13,7 @@ editTodoList(id,updatedtitle,updatedsign_up,updatedphone,updatedterms_of_service
   console.log(" service object",id,updatedtitle,updatedsign_up,updatedphone,updatedterms_of_service,updatedfact_sheet,updatedcancelation_fee,updatedprice_rate,updatedplan_information,updatedrating_logo,updatedprofile_logo,updatedprofileurl)
   const headers = new Headers();
   headers.append('Content-Type', 'application/json');
-  return this.http.put('http://192.168.30.41:9000/choice/dataup/'+ id , JSON.stringify({
+  return this.http.put(Config.api+'dataup/'+ id , JSON.stringify({
    
     "cancelation_fee":updatedcancelation_fee,
     "fact_sheet":updatedfact_sheet,
