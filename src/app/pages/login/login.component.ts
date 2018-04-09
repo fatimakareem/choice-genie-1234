@@ -46,7 +46,7 @@ export class LoginComponent implements OnInit {
   private toggleButton: any;
   private sidebarVisible: boolean;
   private nativeElement: Node;
-  public username:any[];
+  public username;
 
   password;
 
@@ -84,7 +84,8 @@ export class LoginComponent implements OnInit {
               )
               // this.toastr.success('Successfully!', 'Logged in',{toastLife: 5000});
               this.router.navigate(['/dashboard/'+ this.username]);
-             
+              localStorage.setItem('username', this.username);
+
             },
             error => {
               console.log(error);

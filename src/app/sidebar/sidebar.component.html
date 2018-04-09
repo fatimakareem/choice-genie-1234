@@ -28,7 +28,7 @@
                                     <b class="caret"></b>
                                 </span> -->
                             </a>
-                            <div class="clearfix"></div>
+                            
                             <!-- <div class="collapse" id="collapseExample">
                                 <ul class="nav">
                                     <li>
@@ -51,29 +51,40 @@
                                     </li>
                                 </ul>
                             </div> -->
-
+                            <!-- <div class="products-area" *ngIf="prod_loaded;else no_data_templ"> -->
+                                  
                       
-                                <ul class="nav">
-                                   
-                                    <li>
-                                        <a (click)="backClicked()">
-                                        
-                                             <span class="sidebar-normal"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dashboard</span>
-                                         </a>
-                                     </li>
+                                <ul class=" vander-side-bar">
+                                    
+                                        <li>
+                                         
+                                                <ng-container class="card" *ngFor="let data of sg['products']; let i = index">
+                                                        <div *ngIf="i<1" class="sidebar-profile-img">
+                                               
+                                                                <a href="/dashboard/{{data.title}}">
+                                                        <img src="{{data.profile_logo}}"  >
+                                                    </a>
+                                                     </div>
+                                                    </ng-container>
+                                              
+                                        </li>
+                                        <li>
+                                                <input type="text" [value]="username" style="color:white;font-size:150%;text-align:center" >
+                                            </li>
+                                    
+                                  
                                     
                                    
                                     <li>
                                        <a href="/new-product">
                                        
-                                            <span class="sidebar-normal"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Add New Product</span>
+                                            <span class="sidebar-normal">Add New Product</span>
                                         </a>
                                     </li>
                                    
                                 </ul>
-                          
-                    </div>
-
+                          </div>
+               
 
 
         

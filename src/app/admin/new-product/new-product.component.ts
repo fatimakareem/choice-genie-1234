@@ -25,7 +25,7 @@ export class NewProductComponent implements OnInit {
   normalPattern = '[a-zA-Z0-9_.-]+?';
   digitsOnly = '^[0-9,-]+$';
   email = '^\\w+([\\.-]?\\w+)*@\\w+([\\.-]?\\w+)*(\\.\\w{2,3})+$';
-
+  public username;
   flag = true;
   date = new FormControl(new Date());
 
@@ -37,7 +37,9 @@ export class NewProductComponent implements OnInit {
   
   ngOnInit() {
     // this.company();
-    
+    localStorage.setItem('username', this.username);
+  //  this.username = localStorage.getItem('username')
+    console.log(this.username)
     this.signupForm = this.fb.group({
       'zipcode': ['', Validators.compose([Validators.required, Validators.pattern(this.normalPattern)])],
       'utilityarea': ['', Validators.compose([Validators.required, Validators.pattern(this.normalPattern)])],

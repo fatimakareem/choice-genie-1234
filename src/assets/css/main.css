@@ -3463,3 +3463,25 @@ h1, .entry-title {
   font-size: 22px;
 }
 /*texas section home page end*/
+
+/* sidebar profile pic */
+.sidebar .nav{
+  padding: 0px !important;
+}
+.sidebar-profile-img{
+   background-color: aliceblue;
+  border-radius: 100px;
+  width: 150px;
+  margin-left: 55px;
+  height: 150px;
+}
+.sidebar-profile-img > a > img {
+  width: 87%;
+  margin: 48px 11px;
+}
+.vander-side-bar >li >a{
+text-align: center
+}
+.vander-side-bar > li{
+  width:100%;
+}

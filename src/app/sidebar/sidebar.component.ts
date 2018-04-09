@@ -159,7 +159,7 @@ export class SidebarComponent implements OnInit {
     home: any = {};
     id: number;
     page: any[];
-
+    public username :any;
     // paged items
     pagedItems: any[];
     private sub: Subscription;
@@ -212,18 +212,38 @@ export class SidebarComponent implements OnInit {
         }
         return true;
     };
-    public username;
+    fetchProducts() {
+        // this.route.params.subscribe(params => {
+        //   let zip =  this.sg['product_zipcode'];
+        let headers = new Headers();
+        headers.append('Content-Type', 'application/json');
+        // this.http.get(Config.api + 'data_against_zipcode/' + this.zip_code + '', { headers: headers }),
+        //this.http.get(Config.api + 'monthly/' + this.zip_code + '',{ headers: headers })
+        // this.http.get(Config.api + 'filter/' + this.zip_code + '',{ headers: headers })
+        
+        this.http.get(Config.api +'mydata/'+ this.username +'/' ,{ headers: headers })
+        .subscribe(Res => {
+        this.sg['products'] = Res.json()['Results'];
+        
+        });
+        
+        } 
     private Sub: Subscription;
     ngOnInit() {
        
-           
+       
+     
+        this.username = localStorage.getItem('username')
+        console.log(this.username)
+       this. fetchProducts()
+      //  localStorage.setItem('username', this.username);
             //  alert("junaid");
             // this.data.currentProducts.subscribe(products => this.sg['products'] = products)
             // this.data.currentProducts
            
-        this.menuItems = ROUTES.filter(menuItem => menuItem);
+        // this.menuItems = ROUTES.filter(menuItem => menuItem);
         
-                    console.log(this.menuItems);
+        //             console.log(this.menuItems);
     }
     // updatePS(): void  {
     //     if (window.matchMedia(`(min-width: 960px)`).matches && !this.isMac()) {
