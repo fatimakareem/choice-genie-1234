@@ -11,15 +11,6 @@ import { HttpClient, HttpResponse, HttpHeaders } from "@angular/common/http";
  import swal from 'sweetalert2'; 
 import { MatSelect } from '@angular/material';
 import { PasswordValidation } from './password-validator.component';
-
-//import { FormControl, FormGroup } from '@angular/forms';
-//import { signupdataService } from '../signup1/signupdata.service';
-//import { signupuserdata } from "./signup1data.service";
-// import { modelGroupProvider } from '@angular/forms/src/directives/ng_model_group';
-// import { TOUCHEND_HIDE_DELAY } from '@angular/material';
-
-//import {signupuserdata} from './signup1data.service';
-
 @Component({
   selector: 'app-signup1',
   templateUrl: './signup1.component.html',
@@ -44,7 +35,8 @@ export class Signup1Component implements OnInit {
   emailexist: boolean = false;
 
 
-  constructor(public router: Router, private fb: FormBuilder, private http: HttpClient, private route: ActivatedRoute, private sg: SimpleGlobal) { }
+  constructor(public router: Router, private fb: FormBuilder, private http: HttpClient, private route: ActivatedRoute,
+     private sg: SimpleGlobal) { }
 
   ngOnInit() {
     this.states();
@@ -69,6 +61,18 @@ export class Signup1Component implements OnInit {
    onChange(e) {
     alert(e)
   }
+
+  isFieldValid(form: FormGroup, field: string) {
+    return !form.get(field).valid && form.get(field).touched;
+  }
+ 
+  displayFieldCss(form: FormGroup, field: string) {
+    return {
+      'has-error': this.isFieldValid(form, field),
+      'has-feedback': this.isFieldValid(form, field)
+    };
+  }
+
   check(e) {
     console.log(this.model)
   }

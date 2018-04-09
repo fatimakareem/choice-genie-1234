@@ -37,12 +37,21 @@
   </mat-form-field>
   </div>
   </div> -->
+  <!-- <div class="form-group" [ngClass]="displayFieldCss(register, 'firstname')">
+    <mat-form-field>
+      <input matInput type="text" id="firstname" formControlName="firstname" placeholder="First Name" required />
+       
+        <mat-error *ngIf="register.controls.firstname.value == ''"><strong>First name cannot be empty</strong></mat-error>
+    </mat-form-field>
+</div> -->
 
               <div class="col-sm-6">
-                <div class="form-group">
+                <div class="form-group" [ngClass]="displayFieldCss(signupForm, 'zipcode')">
                   <h5 class="control-label">Zipcode*</h5>
                   <mat-form-field>
                     <input matInput placeholder="Zipcode" [formControl]="signupForm.controls['zipcode']" required [(ngModel)]="model.zipcode">
+                    <mat-error *ngIf="signupForm.controls.zipcode.value == ''"><strong>ZipCode cannot be empty</strong></mat-error>
+   
                     <!-- <mat-error *ngIf="secondFormGroup.controls.lName.value == ''"><strong>Cannot be empty</strong></mat-error>
   <mat-error *ngIf="secondFormGroup.controls.lName.dirty && !secondFormGroup.controls.lName.value"> Special characters not allowed</mat-error> -->
                   </mat-form-field>
