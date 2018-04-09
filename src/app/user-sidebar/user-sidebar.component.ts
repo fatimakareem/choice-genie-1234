@@ -30,6 +30,7 @@ declare const $: any;
   localVar;
   renewable;
   model;
+ 
 
   
   // min;
@@ -193,24 +194,24 @@ this.zip_code = localStorage.getItem('zip');
   
   });
   }
-  month1='';
-month2='';
-month3='';
-month4='';
-month5='';
-month6='';
-month7='';
-
+  months1="36 Months";
+months2='24 Months';
+months3='18 Months';
+months4='14 Months';
+months5='12 Months';
+months6='6 Months';
+months7='5 Months';
+name = 'Pardeep Jain';
   fetchmutimonth(months1,months2,months3,months4,months5,months6,months7) {
     
-    this.month1="36 Months"
-    this.month2="24 Months"
-    this.month3="18 Months"
-    this.month4="14 Months"
-    this.month5="12 Months"
-    this.month6="6 Months"
-    this.month7="5 Months"
-    console.log(this.month1)
+    this.months1="36 Months"
+    this.months2="24 Months"
+    this.months3="18 Months"
+    this.months4="14 Months"
+    this.months5="12 Months"
+    this.months6="6 Months"
+    this.months7="5 Months"
+    console.log(this.months1)
     // this.route.params.subscribe(params => {
     //   let zip =  this.sg['product_zipcode'];
    console.log(months1,months2,months3,months4,months5,months6,months7,'tttttttttttt')
