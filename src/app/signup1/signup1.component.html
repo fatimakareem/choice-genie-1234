@@ -1,11 +1,12 @@
+
 <div class="main-content signup-main">
   <div class="container">
     <h3 class="text-center">Tell Us About
       <strong>Yourself</strong>
     </h3>
     <hr>
-    <div class="alert alert-rose alert-wit'h-icon" data-notify="container">
-      <i class="material-icons" data-notify="icon">notifications</i>
+    <div class="alert alert-rose alert-wit'h-icon vander-signup-heading" data-notify="container">
+      <i class="fa fa-bell"></i>
       <span data-notify="message">Any Enrollment Request including move-in or a switch can only be made by service applicant or the applicant's authorized
         agent.
         <br> If you are not an authorized individual, please do not submit your request using this portal.
@@ -40,7 +41,6 @@
 
               <div class="col-sm-6">
                 <div class="form-group">
-                  <h5 class="control-label">Zipcode*</h5>
                   <mat-form-field>
                     <input matInput placeholder="Zipcode" [formControl]="signupForm.controls['zipcode']" required [(ngModel)]="model.zipcode">
                     <!-- <mat-error *ngIf="secondFormGroup.controls.lName.value == ''"><strong>Cannot be empty</strong></mat-error>
@@ -51,8 +51,7 @@
               <br class="clearfix" />
               <div class="col-sm-6">
                 <div class="form-group">
-                  <h5 class="control-label">Utility Area*</h5>
-                  <mat-form-field>
+                               <mat-form-field>
                     <input matInput placeholder="Utility Area" [formControl]="signupForm.controls['utilityarea']" required [(ngModel)]="model.utilityarea">
                     <!-- <mat-error *ngIf="secondFormGroup.controls.lName.value == ''"><strong>Cannot be empty</strong></mat-error>
   <mat-error *ngIf="secondFormGroup.controls.lName.dirty && !secondFormGroup.controls.lName.value"> Special characters not allowed</mat-error> -->
@@ -62,7 +61,6 @@
               <br class="clearfix" />
               <div class="col-sm-6">
                 <div class="form-group">
-                  <h5 class="control-label">Email</h5>
                   <mat-form-field>
                     <input matInput placeholder="Email" [formControl]="signupForm.controls['email']" required [(ngModel)]="model.email" name="email">
                     <!-- <mat-error *ngIf="secondFormGroup.controls.Email.dirty && !secondFormGroup.controls.Email.value"> Special characters not allowed</mat-error> -->
@@ -73,8 +71,7 @@
               <br class="clearfix" />
               <div class="col-sm-6">
                 <div class="form-group">
-                  <h5 class="control-label">Phone No</h5>
-                  <mat-form-field>
+                          <mat-form-field>
                     <input matInput placeholder="Phone No" [formControl]="signupForm.controls['Phone']" required [(ngModel)]="model.Phone">
                     <!-- <mat-error *ngIf="secondFormGroup.controls.Phone_No.dirty && !secondFormGroup.controls.Phone_No.value"> Special characters not allowed</mat-error> -->
                   </mat-form-field>
@@ -83,9 +80,7 @@
               <br class="clearfix" />
               <div class="col-sm-6">
                 <div class="form-group">
-                  <h5 class="control-label">State</h5>
-
-                  <!-- <mat-form-field>
+                           <!-- <mat-form-field>
   <input matInput placeholder="State" [formControl]="signupForm.controls['state']" required [(ngModel)]="model.state" >
   <mat-error *ngIf="secondFormGroup.controls.State.dirty && !secondFormGroup.controls.State.value"> Special characters not allowed</mat-error>
   </mat-form-field> -->
@@ -106,7 +101,6 @@
               <br class="clearfix" />
               <div class="col-sm-6">
                 <div class="form-group">
-                  <h5 class="control-label">Country</h5>
                   <mat-form-field>
                     <input matInput placeholder="Country" [formControl]="signupForm.controls['country']" required [(ngModel)]="model.country">
                     <!-- <mat-error *ngIf="secondFormGroup.controls.Country.dirty && !secondFormGroup.controls.Country.value"> Special characters not allowed</mat-error> -->
@@ -116,8 +110,7 @@
               <br class="clearfix" />
               <div class="col-sm-6">
                 <div class="form-group">
-                  <h5 class="control-label">Company Title</h5>
-                  <mat-form-field>
+                               <mat-form-field>
                     <input matInput placeholder="Company Title" [formControl]="signupForm.controls['username']" required [(ngModel)]="model.username">
                   </mat-form-field>
                 </div>
@@ -125,7 +118,6 @@
               <br class="clearfix" />
               <div class="col-sm-6">
                 <div class="form-group">
-                  <h5 class="control-label">Password</h5>
                   <mat-form-field>
                     <input matInput placeholder="Password" type="password" [formControl]="signupForm.controls['password']" required [(ngModel)]="model.password">
                     <!-- <mat-error *ngIf="secondFormGroup.controls.Password.dirty && !secondFormGroup.controls.Password.value"> Special characters not allowed</mat-error> -->
@@ -135,9 +127,8 @@
               <br class="clearfix" />
               <div class="col-sm-6">
                 <div class="form-group">
-                  <h5 class="control-label">Confirm Password</h5>
                   <mat-form-field>
-                    <input matInput placeholder="Confirm Password" type="password" [formControl]="signupForm.controls['confirmpassword']" 
+                    <input matInput placeholder="Confirm Password" type="password" [formControl]="signupForm.controls['confirmpassword']"
                       [(ngModel)]="model.confirmpassword">
                     <!-- <mat-error *ngIf="secondFormGroup.controls.Confirm_Password.dirty && !secondFormGroup.controls.Confirm_Password.value"> Special characters not allowed</mat-error> -->
                   </mat-form-field>

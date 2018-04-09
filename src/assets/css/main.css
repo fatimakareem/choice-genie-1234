@@ -580,7 +580,7 @@ background-color: #ffffff;}
 .success-for-business {
   font-size: 18px;
   line-height: 25px;
-  background-image: url("../../assets/img/home-5.jpg");
+  background-image: url("../../assets/img/how.jpg") !important;
   background-size: cover;
   background-repeat: no-repeat;
   color: #fefefe;
@@ -1485,7 +1485,13 @@ h3 {
 .footer-1 .social-link a:hover {
   color: #46355C
   }
-
+.newsletter-p{
+  color: #7c7c7c;
+  font-size: 12px !important;
+  text-align: justify;
+  line-height: 18px;
+  font-weight: 600 !important;
+}
   .footer-upper {
   padding: 50px 0;
   background: #282828;
@@ -1494,7 +1500,8 @@ h3 {
 
   .footer-upper h2 {
   font-size: 28px;
-  color: #fff
+  color: #fff;
+  text-align:center;
   }
 
   .footer-upper .social-link {
@@ -1776,9 +1783,7 @@ h3 {
   -moz-transition: 300ms;
   transition: 300ms
   }
-  .newsletter-p{
-  color:#7c7c7c;
-  }
+
   .subscribe-form input {
   color: #222;
   padding: 0
@@ -1822,7 +1827,17 @@ h3 {
   textarea.form-control {
   height: 150px
   }
-
+.footer-android-icon{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.social-widget ul li {
+  display: inline-block;
+}
+.android-icon {
+  height: 60px;
+}
   /* footer css end */
 
 /* how it Works start */
@@ -1867,6 +1882,7 @@ section {
   padding: 30px 10px;
   margin-bottom: 20px;
   min-height: 475px;
+  text-align: center;
 }
 .how-it-works-box:hover {
   cursor: pointer;
@@ -1885,7 +1901,6 @@ section {
 }
 .how-it-works-box >p {
   font-size: 16px !important;
-  text-align: left;
   font-weight: 400;
   margin: 0;
 }
@@ -2541,9 +2556,6 @@ section {
   width: 45%;
   display: inline-block;
 }
-.right-about-divs span {
-  line-height: 20px;
-}
 .about-section{
   position: relative;
   background-color: #ffffff;
@@ -2556,16 +2568,17 @@ section {
 }
 .about-text {
   font-size: 18px;
-  /* text-align: justify; */
+  text-align: justify;
   font-weight: 500;
-  /* padding-left: 20px; */
+  padding-left: 20px;
+  width: 100%;
 }
 .about-section >p {
   margin: 0 0 10px;
 }
 .about-pagge-gif{
   width: 100%;
-  padding-top: 30px;
+  padding-top: 70px;
 }
 /*about page end*/
 
@@ -2812,11 +2825,8 @@ li.pinterest:hover {
 }
 .appio-center-heading >h2{
   font-size: 42px;
-  line-height: 50px;
-  margin: 0 0 10px;
   font-weight: 600;
   position: relative;
-  margin-bottom: 0;
 }
 .com-table {
   margin: 0 0 80px;
@@ -3464,6 +3474,7 @@ h1, .entry-title {
 }
 /*texas section home page end*/
 
+<<<<<<< HEAD
 /* sidebar profile pic */
 .sidebar .nav{
   padding: 0px !important;
@@ -3485,3 +3496,59 @@ text-align: center
 .vander-side-bar > li{
   width:100%;
 }
+=======
+/**Choie And savings start**/
+.choice-saving{
+  padding: 50px;
+  font-weight:700;
+}
+.img-holder-c-s {
+  width: 110px;
+  height: 110px;
+  font-size: 60px;
+  line-height: 110px;
+  border: 1px solid;
+  border-radius: 100%;
+  margin: 0 0 20px;
+}
+.img-holder-c-s > i {
+  font-size: 100px;
+}
+/**Choie And savings start**/
+
+.slick-slide img{
+  border-radius: 10px;
+}
+/**Choie And savings end**/
+
+/*vanders signup css start*/
+.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-placeholder, .mat-form-field-empty.mat-form-field-placeholder, mat-form-field.mat-form-field {
+  font-size: 24px;
+  font-weight: 700;
+  color: #333;
+}
+.vander-signup-heading {
+  background: #cc0000 !important;
+  /* background-color: #25B7D3; */
+  color: #ffffff !important;
+  border-radius: 3px;
+  box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(233, 30, 99, 0.4);
+  position: relative;
+}
+.vander-signup-heading > i{
+  position: absolute;
+  font-size: 50px;
+}
+.vander-signup-heading > i {
+  position: absolute;
+  /* top: 0; */
+  background: white;
+  border-radius: 50px;
+  width: 35px;
+  height: 35px;
+  padding: 8px;
+  margin-top: -37px;
+  font-size: 20px;
+  color: #cc0000 !important;
+}
+>>>>>>> ede5eda15694845bbf488553932f09d3603df221
