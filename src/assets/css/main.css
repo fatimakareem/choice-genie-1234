@@ -3496,3 +3496,35 @@ h1, .entry-title {
 .slick-slide img{
   border-radius: 10px;
 }
+/**Choie And savings end**/
+
+/*vanders signup css start*/
+.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-placeholder, .mat-form-field-empty.mat-form-field-placeholder, mat-form-field.mat-form-field {
+  font-size: 24px;
+  font-weight: 700;
+  color: #333;
+}
+.vander-signup-heading {
+  background: #cc0000 !important;
+  /* background-color: #25B7D3; */
+  color: #ffffff !important;
+  border-radius: 3px;
+  box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(233, 30, 99, 0.4);
+  position: relative;
+}
+.vander-signup-heading > i{
+  position: absolute;
+  font-size: 50px;
+}
+.vander-signup-heading > i {
+  position: absolute;
+  /* top: 0; */
+  background: white;
+  border-radius: 50px;
+  width: 35px;
+  height: 35px;
+  padding: 8px;
+  margin-top: -37px;
+  font-size: 20px;
+  color: #cc0000 !important;
+}
