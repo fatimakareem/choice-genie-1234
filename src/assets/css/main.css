@@ -3474,27 +3474,6 @@ h1, .entry-title {
 }
 /*texas section home page end*/
 
-/* sidebar profile pic */
-.sidebar .nav{
-  padding: 0px !important;
-}
-.sidebar-profile-img{
-   background-color: aliceblue;
-  border-radius: 100px;
-  width: 150px;
-  margin-left: 55px;
-  height: 150px;
-}
-.sidebar-profile-img > a > img {
-  width: 87%;
-  margin: 48px 11px;
-}
-.vander-side-bar >li >a{
-text-align: center
-}
-.vander-side-bar > li{
-  width:100%;
-}
 /**Choie And savings start**/
 .choice-saving{
   padding: 50px;
@@ -3532,12 +3511,12 @@ text-align: center
   border-radius: 3px;
   box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(233, 30, 99, 0.4);
   position: relative;
-}
-.vander-signup-heading > i{
+  }
+  .vander-signup-heading > i{
   position: absolute;
   font-size: 50px;
-}
-.vander-signup-heading > i {
+  }
+  .vander-signup-heading > i {
   position: absolute;
   /* top: 0; */
   background: white;
@@ -3548,4 +3527,4 @@ text-align: center
   margin-top: -37px;
   font-size: 20px;
   color: #cc0000 !important;
-}
+  }

@@ -9,7 +9,7 @@ import { SimpleGlobal } from 'ng2-simple-global';
 import { ResponseContentType } from '@angular/http/src/enums';
 import { FormBuilder, Validators, NgControl, RadioControlValueAccessor, FormControl, FormGroup } from '@angular/forms';
 import { HttpClient, HttpResponse, HttpHeaders } from "@angular/common/http";
- import swal from 'sweetalert2'; 
+import swal from 'sweetalert2';
 import { MatSelect } from '@angular/material';
 
 
@@ -41,14 +41,14 @@ export class UsersignupComponent implements OnInit {
 
   ngOnInit() {
     this.states();
-   
+
     // this.city();
     this.signupForm = this.fb.group({
       'fname': ['', Validators.compose([Validators.required])],
       'lname': ['', Validators.compose([Validators.required])],
 
       // 'zipcode': ['', Validators.compose([Validators.required, , Validators.pattern(this.digitsOnly)])],
-     // 'utilityarea': ['', Validators.compose([Validators.required])],
+      // 'utilityarea': ['', Validators.compose([Validators.required])],
       'email': ['', Validators.compose([Validators.required, Validators.pattern(this.email)])],
       'username': ['', Validators.compose([Validators.required, Validators.pattern(/^[a-zA-Z_\- ]+$/)])],
       'phone': ['', Validators.compose([Validators.required, Validators.pattern(this.digitsOnly)])],
@@ -61,8 +61,8 @@ export class UsersignupComponent implements OnInit {
 
     });
   }
-  
-   onChange(e) {
+
+  onChange(e) {
     alert(e)
   }
   check(e) {
@@ -134,52 +134,45 @@ export class UsersignupComponent implements OnInit {
         // this.state = Res[0].state;
         this.city = Res;
 
-
-        // this.data.changeProducts(this.sg['products']);
-
       });
   }
-  // Email() {
-  //   // alert(this.premiseID.toString().length)
-  //   //  alert('hello');
-  //   console.log("CHOICE GENIE",this.model);
+  Email() {
 
-  //   let headers = new HttpHeaders();
-  //   headers.append('Content-Type', 'application/json');
-  //   // this.http.get(Config.api + 'data_against_zipcode/' + this.zip_code + '', { headers: headers }),
-  //   this.http.put('https:/127.0.0.1:8000/authenticade_code/'+ this.model.state + '',{ headers: headers })
-
-  //       //  this.http.get(Config.api + 'signup/'+ this.zip_code +'', {headers: headers})
-  //       .subscribe(Res => {
-  //           console.log(Res);
-  //           console.log(this.model);
-  //           //  this.sQuestion = Res[0].sQuestion;
-  //           // this.state = Res[0].state;
-
-
-
-  //           // this.data.changeProducts(this.sg['products']);
-
-  //       });
-
-  // }
-  signupuserdata() {
-    //alert('hello');
     console.log("CHOICE GENIE", this.model);
 
     let headers = new HttpHeaders();
+    headers.append('Content-Type','application/json');
+    this.http.post(Config.api+'authenticade_code/',JSON.stringify(this.model.email) + '', { headers: headers })
 
 
-    headers.append('Content-Type', 'application/json');
-    // this.http.get(Config.api + 'data_against_zipcode/' + this.zip_code + '', { headers: headers }),
-    this.http.post(Config.api +'signup1/', this.model, { headers: headers })
-
-
-      //   // this.http.post(Config.api + 'signup/'+ this.zip_code +'', {"premiseid": this.premiseID +'', {headers: headers})
       .subscribe(Res => {
         console.log(Res);
-        // this.next = Res[0].next;
+        console.log(this.model.email);
 
+
+      });
+
+  }
+  validateAllFormFields(formGroup: FormGroup) {
+    Object.keys(formGroup.controls).forEach(field => {
+      // console.log(field);
+      const control = formGroup.get(field);
+      if (control instanceof FormControl) {
+        control.markAsTouched({ onlySelf: true });
+      } else if (control instanceof FormGroup) {
+        this.validateAllFormFields(control);
+      }
+    });
+  }
+  signupuserdata() {
+    //alert('hello');
+    
+    console.log("CHOICE GENIE", this.model);
+    let headers = new HttpHeaders();
+    headers.append('Content-Type', 'application/json');
+    this.http.post(Config.api + 'signup1/', this.model, { headers: headers })
+      .subscribe(Res => {
+        console.log(Res);
         console.log(this.model);
         swal({
           text: "Register Successflluy!",
@@ -195,29 +188,15 @@ export class UsersignupComponent implements OnInit {
         this.router.navigate(['/userlogin'])
       },
         error => {
+          this.validateAllFormFields(this.model);
           console.log(error);
-         // this.toastr.error(error, null, {toastLife: 5000});
-          swal(
-            'Invalid',
-            'Please Try Again!',
-            'error'
-          )
-
+         
           //     //    this.state = Res[0].state;
           //     //this.sg['products'] = Res.json()['Results'];
           //     //this.data.changeProducts(this.sg['products']);
           //   f.resetForm();
         });
-    //}
-
-    //    this.state = Res[0].state;
-    //this.sg['products'] = Res.json()['Results'];
-    //this.data.changeProducts(this.sg['products']);
-
-
-    //}
-
-
+     
   }
 
 
