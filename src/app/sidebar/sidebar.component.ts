@@ -147,7 +147,7 @@ export const ROUTES: RouteInfo[] = [{
 export class SidebarComponent implements OnInit {
     public menuItems: any[];
     constructor(private route: ActivatedRoute, private https: HttpClient, private newService: DeleteService,private serve:EditService,
-        private location: Location, private router: Router, private http: Http, private pagerService: PagerService, private homeService: HomeService, private sg: SimpleGlobal, private obj: HomeService, private dialog: MatDialog, private dataa: DataService, private companyService: CompanyService) {
+        private location: Location, private router: Router, private http: Http, private pagerService: PagerService, private homeService: HomeService, public sg: SimpleGlobal, private obj: HomeService, private dialog: MatDialog, private dataa: DataService, private companyService: CompanyService) {
 
     }
     backClicked() {
