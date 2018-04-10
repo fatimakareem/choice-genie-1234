@@ -24,7 +24,7 @@ export const AppRoutes: Routes = [
     {path: "", component: HomeComponent},
     // {path: "usersignup", component: UsersignupComponent},
     // {path:"userlogin", component:UserloginComponent},
-    {path:"superlogin", component:SuperloginComponent},
+    // {path:"superlogin", component:SuperloginComponent},
   
     
 
@@ -96,11 +96,15 @@ export const AppRoutes: Routes = [
           {
             path: 'admin/search-customer',
             loadChildren: './admin/search-customer/search-customer.module#SearchCustomerModule'
+          },  {
+            path: 'superlogin',
+            loadChildren: './pages/superlogin/superlogin.module#LoginModule'
           },
           {
             path: 'login',
             loadChildren: './pages/login/login.module#LoginModule'
-          }, {
+          },
+           {
             path: 'userlogin',
             loadChildren: './pages/userlogin/userlogin.module#LoginModule'
           },

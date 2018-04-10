@@ -184,7 +184,7 @@ export class MaterialModule {}
     AboutComponent,
     StepperOverviewExample,
    
-    SuperloginComponent,
+   
  
       ],
   providers: [

@@ -83,7 +83,7 @@ export class UserloginComponent implements OnInit {
                 'success'
               )
               // this.toastr.success('Successfully!', 'Logged in',{toastLife: 5000});
-              this.router.navigate(['/superdashboard/']);
+              this.router.navigate(['/']);
              
             },
             error => {
