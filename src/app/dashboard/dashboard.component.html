@@ -158,7 +158,7 @@ text-align: center;">
 
                                   <!-- <input class="form-control" type="text" > -->
                                   <mat-form-field >
-                                    <input matInput   placeholder="Title" name="data.title"value="{{data.title}}" class="form-control"  required  #updatedtitle/>
+                                    <input matInput   placeholder="Title" name="data.title"value="{{data.title}}"   required  #updatedtitle/>
 
                                   </mat-form-field>
                                 </div>
@@ -170,7 +170,7 @@ text-align: center;">
 
                                   <!-- <input class="form-control" type="text" > -->
                                   <mat-form-field>
-                                    <input matInput placeholder="Profile url" name="data.profileurl"value="{{data.profileurl}}" class="form-control" #updatedprofileurl/>
+                                    <input matInput placeholder="Profile url" name="data.profileurl"value="{{data.profileurl}}" #updatedprofileurl/>
 
                                   </mat-form-field>
                                 </div>
@@ -182,7 +182,7 @@ text-align: center;">
 
                                   <!-- <input class="form-control" type="text" > -->
                                   <mat-form-field>
-                                    <input matInput placeholder="Profile Logo" name="data.profile_logo"value="{{data.profile_logo}}" class="form-control" #updatedprofile_logo />
+                                    <input matInput placeholder="Profile Logo" name="data.profile_logo"value="{{data.profile_logo}}" #updatedprofile_logo />
 
                                   </mat-form-field>
                                 </div>
@@ -194,7 +194,7 @@ text-align: center;">
 
                                   <!-- <input class="form-control" type="text" > -->
                                   <mat-form-field>
-                                    <input matInput placeholder="Rating_logo" name="data.rating_logo"value="{{data.rating_logo}}"  class="form-control" #updatedrating_logo />
+                                    <input matInput placeholder="Rating_logo" name="data.rating_logo"value="{{data.rating_logo}}"  #updatedrating_logo />
 
                                   </mat-form-field>
                                 </div>
@@ -206,7 +206,7 @@ text-align: center;">
 
                                   <!-- <input class="form-control" type="text" > -->
                                   <mat-form-field>
-                                    <input matInput placeholder="Plan_Information" name="data.plan_information" class="form-control" value="{{data.plan_information}}"#updatedplan_information />
+                                    <input matInput placeholder="Plan_Information" name="data.plan_information"  value="{{data.plan_information}}"#updatedplan_information />
 
                                   </mat-form-field>
                                 </div>
@@ -218,7 +218,7 @@ text-align: center;">
 
                                   <!-- <input class="form-control" type="text" > -->
                                   <mat-form-field>
-                                    <input matInput placeholder="Price Rate" name="data.price_rate" class="form-control" value="{{data.price_rate}}" #updatedprice_rate/>
+                                    <input matInput placeholder="Price Rate" name="data.price_rate" value="{{data.price_rate}}" #updatedprice_rate/>
 
                                   </mat-form-field>
                                 </div>
@@ -229,7 +229,7 @@ text-align: center;">
 
                                   <!-- <input class="form-control" type="text" > -->
                                   <mat-form-field>
-                                    <input matInput placeholder="Cancelation Fee" name="data.cancelation_fee" class="form-control" value="{{data.cancelation_fee}}"  #updatedcancelation_fee/>
+                                    <input matInput placeholder="Cancelation Fee" name="data.cancelation_fee" value="{{data.cancelation_fee}}"  #updatedcancelation_fee/>
 
                                   </mat-form-field>
                                 </div>
@@ -240,7 +240,7 @@ text-align: center;">
 
                                   <!-- <input class="form-control" type="text" > -->
                                   <mat-form-field>
-                                    <input matInput placeholder="Fact Sheet" name="data.fact_sheet" class="form-control" value="{{data.fact_sheet}}"  #updatedfact_sheet/>
+                                    <input matInput placeholder="Fact Sheet" name="data.fact_sheet"value="{{data.fact_sheet}}"  #updatedfact_sheet/>
 
                                   </mat-form-field>
                                 </div>
@@ -251,7 +251,7 @@ text-align: center;">
 
                                   <!-- <input class="form-control" type="text" > -->
                                   <mat-form-field>
-                                    <input matInput placeholder="Term of Service" name="data.terms_of_service" class="form-control" value="{{data.terms_of_service}}" #updatedterms_of_service />
+                                    <input matInput placeholder="Term of Service" name="data.terms_of_service"  value="{{data.terms_of_service}}" #updatedterms_of_service />
 
                                   </mat-form-field>
                                 </div>
@@ -262,7 +262,7 @@ text-align: center;">
 
                                   <!-- <input class="form-control" type="text" > -->
                                   <mat-form-field>
-                                    <input matInput placeholder="Phone No" name="data.phone"class="form-control" value="{{data.phone}}"#updatedphone/>
+                                    <input matInput placeholder="Phone No" name="data.phone" value="{{data.phone}}"#updatedphone/>
 
                                   </mat-form-field>
                                 </div>
@@ -273,7 +273,7 @@ text-align: center;">
 
                                   <!-- <input class="form-control" type="text" > -->
                                   <mat-form-field>
-                                    <input matInput placeholder="Sign Up" name="data.sign_up" class="form-control" value="{{data.sign_up}}" #updatedsign_up />
+                                    <input matInput placeholder="Sign Up" name="data.sign_up"  value="{{data.sign_up}}" #updatedsign_up />
 
                                   </mat-form-field>
                                 </div>
@@ -410,8 +410,8 @@ text-align: center;">
 
               <br>
 
-              <div class="col-sm-12 ">
-                <h3>Minimum Usage Fee</h3>
+              <div class="col-sm-6 ">
+                <h3 style="padding:0 20px;background:#cecece">Minimum Usage Fee</h3>
                 <p *ngIf="data.minumum_usage_fee;else no_data_temp6">
                   {{data.minumum_usage_fee}}
                 </p>
@@ -420,7 +420,10 @@ text-align: center;">
                   <!-- <img src="../../assets/img/no_Record.png" style="width: 250px;height:200px" > -->
                   <h4>&nbsp;&nbsp;&nbsp;&nbsp; -------------</h4>
                 </ng-template>
-                <h3>Special Terms</h3>
+              
+              </div>
+              <div class="col-sm-6 ">
+              <h3 style="padding:0 20px;background:#cecece">Special Terms</h3>
                 <p *ngIf="data.specialterms;else no_data_temp2">
                   {{data.specialterms}}
                 </p>
@@ -430,7 +433,7 @@ text-align: center;">
                   <!-- <img src="../../assets/img/no_Record.png" style="width: 250px;height:200px" > -->
                   <h4>&nbsp;&nbsp;&nbsp;&nbsp; -------------</h4>
                 </ng-template>
-              </div>
+                </div>
 
               <div class="col-sm-12">
                 <!--<h4>Rates Detail:</h4>-->

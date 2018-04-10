@@ -1,191 +1,158 @@
-<nav class="navbar navbar-expand-lg ">
-    <!-- <div class="container-fluid"> -->
-    <div class="navbar-minimize">
-        <button id="minimizeSidebar" class="btn btn-round btn-white btn-fill btn-just-icon">
-            <i class="material-icons visible-on-sidebar-regular">more_vert</i>
-            <i class="material-icons visible-on-sidebar-mini">view_list</i>
+<div class="header-home">
+    <nav class="nav-home navbar-transparent">
+      <!-- <div class="container container-fluid"> -->
+      <div class="navbar-header" >
+        <button class="navbar-toggle" data-target="#menu-example" data-toggle="collapse" type="button">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
         </button>
-    </div>
-    <!-- <div class="navbar-header">
-        <button type="button" class="navbar-toggle" (click)="sidebarToggle()">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="{{getPath()}}"> {{getTitle()}} </a>
-    </div> -->
-    <div class="collapse navbar-collapse">
-        <!-- <div *ngIf="isMobileMenu()"> -->
-            <ul class="nav navbar-nav navbar-right" style="
-                display:  inherit; ">
-                <!-- <li>
-                    <a href="#pablo" class="dropdown-toggle" data-toggle="dropdown">
-                        <i class="material-icons">dashboard</i>
-                        <p class="hidden-lg hidden-md">Dashboard</p>
-                    </a>
-                </li> -->
-
-                <li class="vanders">
-                    <a routerLink="/">
-                        <i class="material-icons">home</i> Why CHOICEGENIE ?
-                    </a>
-                    <div class="drop-downs">
-                        <ul class="nav-vanders dashbord-custom">
-                      
-                                <li>
-                                  <a href="/how-it-works">How It Works?</a>
-                                </li>
-                                <li>
-                                  <a routerlink="/">FAQs</a>
-                                </li>
-                                <li>
-                                  <a href="/what-is-ChoiceGenie">What is ChoiceGenie?</a>
-                                </li>
-                                <li>
-                                  <a routerlink="" href="/">Who are We?</a>
-                                </li>
-                                <li>
-                                  <a routerlink="" href="/features-comparison">COMPARISON MATRIX</a>
-                                </li>
-                                <li>
-                                  <a routerlink="" href="/">Become a Partner</a>
-                                </li>
-                                <li>
-                                  <a routerlink="" href="/">Choice and Savings</a>
-                                </li>
-                                <li>
-                                  <a routerlink="" href="/contactus">Establish Contact</a>
-                                </li>
-                            
-                        </ul>
-                    </div>
-                </li>
-                <!-- <li>
-                                    <a routerLink="">
-                                     Vendors
-                        
-                                    
-                                    </a>
-                                  </li> -->
-
+       
+      </div>
+      <div class="collapse navbar-collapse" id="menu-example">
+        <ul class="navbar-nav navbar-right" style="padding:30px 0px !important">
+          <li class="vanders">
+            <a routerLink="/">
+              <i class="material-icons">home</i> Why ChoiceGenie ?
+              <i class="fa fa-caret-down"></i>
+            </a>
+            <div class="drop-downs">
+            <ul class="nav-vanders  why-choiegenie-sublist">
                 <li>
-                    <a routerLink="/residential">
-                        <i class="material-icons">dashboard </i> Residential
-                    </a>
-                </li>
-
-
-                <li class="">
-                    <a routerLink="/commercial">
-                        <i class="material-icons">person_add </i> Commercial
-                    </a>
-                </li>
-                <!-- <li>
-                                <a routerLink="/new-product">
-                                  REPs
-                    
-                                </a>
-                              </li> -->
-                <!-- <li class="">
-                                <a routerLink="/mainlogin">
-                                  <i class="material-icons">fingerprint </i> login2
-                                </a>
-                              </li> -->
-
-                <li class="vanders">
-                    <a href="/login">
-                        <i class="material-icons">face</i>
-                        Vendors </a>
-                    <div class="drop-downs">
-                        <ul class="nav-vanders dashbord-custom">
-                            <li class="/login">
-                                <a routerLink="/login">
-                                    <i class="material-icons">fingerprint</i> login
-                                </a>
-                            </li>
-                            <li class="">
-                                <a routerLink="/register">
-                                    <i class="material-icons">lock_open</i> Sign Up
-                                </a>
-
-                            </li>
-                        </ul>
-                    </div>
-                </li>
-
-                <li class="">
-                    <a routerLink="/usersignup">
-                        <i class="material-icons">lock_open</i>Sign Up
-                    </a>
-                    <li class="">
-                        |
-                        <!-- <a routerLink="/usersignup"> -->
-                        <!-- <i class="material-icons">lock_open</i>Sign Up -->
-                        <!-- </a> -->
-                    </li>
-                    <li class="/userlogin">
-                        <a routerLink="/userlogin">
-                            <i class="material-icons">fingerprint</i> login
-                        </a>
-                    </li>
-                    <li class="">
-                        <a routerLink="/">
-                            <i class="material-icons">android</i>
-                        </a>
-                    </li>
-                    <li class="">
-                        <a routerLink="/">
-                            <i class="fa fa-apple"></i>
-                        </a>
-                    </li>
+                    <a routerLink="/Why-Choice-Genie">
+                      <i class="fa fa-question-circle-o"></i>
+  
+                      Why ChoiceGenie?</a>
+                  </li>
+              <li>
+                <a routerLink="/how-it-works">
+                  <i class="fa fa-fire"></i>
+                  How It Works?</a>
+              </li>
+              <li>
+                <a routerLink="/Faqs">
+                  <i class="fa fa-leanpub"></i>
+                  FAQs</a>
+              </li>
+              <li>
+                <a routerLink="/what-is-ChoiceGenie">
+                  <i class="fa fa-leaf"></i>
+                  What is ChoiceGenie?</a>
+              </li>
+              <li>
+                <a routerLink="/" >
+                  <i class="fa fa-question-circle-o"></i>
+                  Who are We?</a>
+              </li>
+              <li>
+                <a routerLink="/features-comparison" >
+                  <i class=" fa fa-language"></i>
+                  Comparison Matrix</a>
+              </li>
+              <li>
+                <a routerLink="/Become-a-partner" >
+                  <i class=" fa fa-group"></i>
+                  Become a Partner</a>
+              </li>
+              <li>
+                <a routerLink="/Choice-and-Saving" >
+                  <i class=" fa fa-cubes"></i>
+                  Choice and Savings</a>
+              </li>
+              <li>
+                <a routerLink="/contactus" >
+                  <i class="fa fa-address-book-o"></i>
+                  Establish Contact</a>
+              </li>
             </ul>
-            <!-- <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <i class="material-icons">notifications</i>
-                            <span class="notification">5</span>
-                            <p class="hidden-lg hidden-md">
-                                Notifications
-                                <b class="caret"></b>
-                            </p>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li>
-                                <a href="#">Mike John responded to your email</a>
-                            </li>
-                            <li>
-                                <a href="#">You have 5 new tasks</a>
-                            </li>
-                            <li>
-                                <a href="#">You're now friend with Andrew</a>
-                            </li>
-                            <li>
-                                <a href="#">Another Notification</a>
-                            </li>
-                            <li>
-                                <a href="#">Another One</a>
-                            </li>
-                        </ul>
-                    </li> -->
-            <!-- <li>
-                        <a href="#pablo" class="dropdown-toggle" data-toggle="dropdown">
-                            <i class="material-icons">person</i>
-                            <p class="hidden-lg hidden-md">Profile</p>
-                        </a>
-                    </li>
-                    <li class="separator hidden-lg hidden-md"></li> -->
-
-            <!-- <form class="navbar-form navbar-right" role="search">
-                    <div class="form-group form-search is-empty">
-                        <input type="text" class="form-control" placeholder="Search">
-                        <span class="material-input"></span>
-                    </div>
-                    <button type="submit" class="btn btn-white btn-round btn-just-icon">
-                        <i class="material-icons">search</i>
-                        <div class="ripple-container"></div>
-                    </button>
-                </form> -->
-        <!-- </div> -->
-    </div>
-    <!-- </div> -->
-</nav>
+            </div>
+          </li>
+          <!-- <li>
+                  <a routerLink="">
+                   Vendors
+  
+  
+                  </a>
+                </li> -->
+  
+          <li>
+            <a routerLink="/residential">
+              <i class="material-icons">dashboard </i> Residential
+            </a>
+          </li>
+  
+  
+          <li class="">
+            <a routerLink="/commercial">
+              <i class="material-icons">person_add </i> Commercial
+            </a>
+          </li>
+  
+          <!-- <li>
+              <a routerLink="/new-product">
+                REPs
+  
+              </a>
+            </li> -->
+          <!-- <li class="">
+              <a routerLink="/mainlogin">
+                <i class="material-icons">fingerprint </i> login2
+              </a>
+            </li> -->
+  
+          <li class="vanders">
+            <a href="/login">
+              <i class="material-icons">
+                face
+              </i>
+              Vendors
+              <i class="fa fa-caret-down"></i>
+            </a>
+              <div class="drop-downs">
+            <ul class="nav-vanders">
+              <li class="/login">
+                <a routerLink="/login">
+                  <i class="material-icons">fingerprint</i> login
+                </a>
+              </li>
+              <li class="">
+                <a routerLink="/register">
+                  <i class="material-icons">lock_open</i> Sign Up
+                </a>
+  
+              </li>
+            </ul>
+          </div>
+          </li>
+  
+          <li class="border-right-signup">
+            <a routerLink="/usersignup">
+              <i class="material-icons">lock_open</i>Sign Up
+            </a>
+            <!--<li class="">-->
+              <!--|-->
+              <!--&lt;!&ndash; <a routerLink="/usersignup"> &ndash;&gt;-->
+              <!--&lt;!&ndash; <i class="material-icons">lock_open</i>Sign Up &ndash;&gt;-->
+              <!--&lt;!&ndash; </a> &ndash;&gt;-->
+            <!--</li>-->
+            <li class="/userlogin">
+              <a routerLink="/userlogin">
+                <i class="material-icons">fingerprint</i> login
+              </a>
+            </li>
+            <li class="">
+              <a routerLink="/">
+                <i class="material-icons">android</i>
+              </a>
+            </li>
+            <li class="">
+              <a routerLink="/">
+                <i class="fa fa-apple"></i>
+              </a>
+            </li>
+        </ul>
+      </div>
+      <!-- </div> -->
+    </nav>
+  </div>
