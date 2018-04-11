@@ -22,6 +22,7 @@ export const AppRoutes: Routes = [
         pathMatch: 'full',
     },
     {path: "", component: HomeComponent},
+    
     // {path: "usersignup", component: UsersignupComponent},
     // {path:"userlogin", component:UserloginComponent},
     // {path:"superlogin", component:SuperloginComponent},
@@ -57,6 +58,11 @@ export const AppRoutes: Routes = [
             path: 'Faqs',
             loadChildren: './faqs/faqs.module#FaqsModule'
         },
+        // {
+        //     path: 'changepassword',
+        //     loadChildren: './change-password/change-password.module#ChangePasswordModule'
+        // },
+       
         {
             path: 'Why-Choice-Genie',
             loadChildren: './why-chocie-genie/whychoicegenie.module#WhyModule'
@@ -173,6 +179,10 @@ export const AppRoutes: Routes = [
             {
                 path: "new-product",
                 loadChildren: './admin/new-product/new-product.module#NewProductModule'
+            },
+            {
+                path: 'ChangePassword',
+                loadChildren: './changepassword/changepassword.module#ChangePasswordModule'
             },
             {
                 path: 'components',

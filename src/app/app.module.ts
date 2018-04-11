@@ -100,6 +100,8 @@ import { SuperviewcontactComponent } from './superviewcontact/superviewcontact.c
 import { SviewapartnerComponent } from './sviewapartner/sviewapartner.component';
 import { SviewapartnerService } from './sviewapartner/sviewapartner.service';
 import { SuperviewcontactService } from './superviewcontact/superviewcontact.service';
+import { ChangepasswordComponent } from './changepassword/changepassword.component';
+ 
  
 
 
@@ -182,6 +184,7 @@ export class MaterialModule {}
     UserSidebarComponent,
     SupersiderbarComponent,
     AboutComponent,
+    // ChangePasswordComponent,
     StepperOverviewExample,
    
    
