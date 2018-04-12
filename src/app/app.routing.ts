@@ -158,6 +158,10 @@ export const AppRoutes: Routes = [
                 loadChildren: './superdashboard/superdashboard.module#SuperDashboardModule'
             },
             {
+                path: 'SuperChangePassword',
+                loadChildren: './superchangepassword/superchangepassword.module#ChangePasswordModule'
+            },
+            {
                 path: 'superdashboard/superviewcontact',
                 loadChildren: './superviewcontact/superviewcontact.module#superviewcontactModule'
             },//superviewbecomeModuleng superpartnerModule
@@ -193,10 +197,12 @@ export const AppRoutes: Routes = [
             },  {
                 path: 'maps',
                 loadChildren: './maps/maps.module#MapsModule'
-            },  {
-                path: 'calendar',
-                loadChildren: './calendar/calendar.module#CalendarModule'
-            }, {
+            }, 
+            //  {
+            //     path: 'calendar',
+            //     loadChildren: './calendar/calendar.module#CalendarModule'
+            // },
+             {
                 path: '',
                 loadChildren: './userpage/user.module#UserModule'
             }, {

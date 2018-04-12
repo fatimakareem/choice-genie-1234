@@ -15,7 +15,7 @@
             <input matInput id="username" placeholder="Enter Username" formControlName="username" [(ngModel)]="username">
           </mat-form-field>
           <mat-form-field [ngClass]="displayFieldCss(login, 'password')">
-            <input matInput id="password" placeholder="Enter Your Password" formControlName="password" [(ngModel)]="password">
+            <input matInput type="password" id="password" placeholder="Enter Your Password" formControlName="password" [(ngModel)]="password">
           </mat-form-field>
           <mat-checkbox>
             Stay signed in

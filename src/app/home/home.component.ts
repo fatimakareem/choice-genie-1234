@@ -76,16 +76,14 @@ export class HomeComponent implements OnInit {
     ]);
     location = {};
     setPosition(position) {
-        this.location = position.coords;
-        // this.Http.get('https://maps.googleapis.com/maps/api/geocode/json?latlng='+position.coords['latitude']+','+position.coords['longitude']+'&sensor=true&key=AIzaSyBHbxM2yDXYy-BUEHhaRJb-cx0Ch91EhT0')
-        // this.Http.get('https://maps.googleapis.com/maps/api/geocode/json?latlng='+position.coords['latitude']+','+position.coords['longitude']+'&sensor=true&key=AIzaSyBHbxM2yDXYy-BUEHhaRJb-cx0Ch91EhT0')
-        this.Http.get('http://api.geonames.org/findNearbyPostalCodesJSON?lat='+position.coords['latitude']+'&lng='+position.coords['longitude']+'&username=usman.khanbrain &sensor=true&radius=1.5 &maxRows=1')
+        //this.location = position.coords;
+         //this.Http.get('http://api.geonames.org/findNearbyPostalCodesJSON?lat='+position.coords['latitude']+'&lng='+position.coords['longitude']+'&username=usman.khanbrain &sensor=true&radius=1.5 &maxRows=1')
 
-        .subscribe(Res => {
-                console.log(Res.json());
-            })
+      //  .subscribe(Res => {
+            //    console.log(Res.json());
+           // })
 
-        console.log(position.coords);
+        //console.log(position.coords);
     }
     ngOnInit() {
       $('.slick-date').slick({
@@ -105,7 +103,7 @@ export class HomeComponent implements OnInit {
       });
 
 
-        this.premiseIdData();
+       // this.premiseIdData();
         // if (navigator.geolocation) {
         //     navigator.geolocation.getCurrentPosition(this.setPosition.bind(this));
         // };
@@ -137,43 +135,43 @@ export class HomeComponent implements OnInit {
 
     }
 
-    premiseIdData() {
+    // premiseIdData() {
 
-        let headers = new Headers();
-        headers.append('Content-Type', 'application/json');
-        //   this.http.get(Config.api + 'data_against_zipcode/' + this.zip_code + '', { headers: headers }),
-        this.Http.get(Config.api + 'data_against_zipcode/75001', { headers: headers })
-            .subscribe(Res => {
-                console.log(Res);
+    //     let headers = new Headers();
+    //     headers.append('Content-Type', 'application/json');
+    //     //   this.http.get(Config.api + 'data_against_zipcode/' + this.zip_code + '', { headers: headers }),
+    //     this.Http.get(Config.api + 'data_against_zipcode/75001', { headers: headers })
+    //         .subscribe(Res => {
+    //             console.log(Res);
 
-                // localStorage.setItem("signupDetails", JSON.stringify(Res));
-                // localStorage.setItem("signedupcompanyid", this.product_id);
-                //localStorage.setItem("consumerPremiseID", this.premiseID);
+    //             // localStorage.setItem("signupDetails", JSON.stringify(Res));
+    //             // localStorage.setItem("signedupcompanyid", this.product_id);
+    //             //localStorage.setItem("consumerPremiseID", this.premiseID);
 
-                //   return JSON.parse(localStorage.getItem("premiseID"))
-                this.sg['products'] = Res.json()['Results'];
-                this.data.changeProducts(this.sg['products']);
-                for (let prod of this.sg['products']) {
-                    // console.log(prod["plan_information"])
-                    // console.log(prod["price_rate"])
-                    prod["plan_information"] = prod["plan_information"].split(',,', 3000);
-                    prod["price_rate"] = prod["price_rate"].split('..', 3000);
-                  }
+    //             //   return JSON.parse(localStorage.getItem("premiseID"))
+    //             this.sg['products'] = Res.json()['Results'];
+    //             this.data.changeProducts(this.sg['products']);
+    //             for (let prod of this.sg['products']) {
+    //                 // console.log(prod["plan_information"])
+    //                 // console.log(prod["price_rate"])
+    //                 prod["plan_information"] = prod["plan_information"].split(',,', 3000);
+    //                 prod["price_rate"] = prod["price_rate"].split('..', 3000);
+    //               }
 
 
-                setTimeout(function(){
-                    $('.autoplay').slick({
+    //             setTimeout(function(){
+    //                 $('.autoplay').slick({
 
-                        slidesToShow: 3,
-                        slidesToScroll: 1,
-                        // autoplay: true,
-                       //prevArrow:'<button class="w3-button w3-display-left" onclick="plusDivs(-1)">&#10094;</button>',
-                     //   nextArrow:'<button class="w3-button w3-display-right" onclick="plusDivs(+1)">&#10095;</button>'
-                        prevArrow:'<button _ngcontent-c0="" ngxcarouselprev="" class="leftRs buttons btn btn-rose btn-xs" style="display: block;"><i _ngcontent-c0="" class="material-icons">keyboard_arrow_left</i> </button>',
-                        nextArrow:'<button _ngcontent-c0="" ngxcarouselnext="" class="rightRs buttons btn btn-rose btn-xs" style="display: block;"><i _ngcontent-c0="" class="material-icons">keyboard_arrow_right</i> </button>'
-                      });
-                }, 50);
-            });
-    }
+    //                     slidesToShow: 3,
+    //                     slidesToScroll: 1,
+    //                     // autoplay: true,
+    //                    //prevArrow:'<button class="w3-button w3-display-left" onclick="plusDivs(-1)">&#10094;</button>',
+    //                  //   nextArrow:'<button class="w3-button w3-display-right" onclick="plusDivs(+1)">&#10095;</button>'
+    //                     prevArrow:'<button _ngcontent-c0="" ngxcarouselprev="" class="leftRs buttons btn btn-rose btn-xs" style="display: block;"><i _ngcontent-c0="" class="material-icons">keyboard_arrow_left</i> </button>',
+    //                     nextArrow:'<button _ngcontent-c0="" ngxcarouselnext="" class="rightRs buttons btn btn-rose btn-xs" style="display: block;"><i _ngcontent-c0="" class="material-icons">keyboard_arrow_right</i> </button>'
+    //                   });
+    //             }, 50);
+    //         });
+    // }
 }
 

@@ -11,6 +11,7 @@ import { FormBuilder, Validators, NgControl, RadioControlValueAccessor, FormCont
 import { HttpClient, HttpResponse, HttpHeaders } from "@angular/common/http";
 import swal from 'sweetalert2';
 import { MatSelect } from '@angular/material';
+ 
 
 
 @Component({
@@ -37,7 +38,7 @@ export class UsersignupComponent implements OnInit {
   emailexist: boolean = false;
 
 
-  constructor(public router: Router, private fb: FormBuilder, private http: HttpClient, private route: ActivatedRoute, private sg: SimpleGlobal) { }
+  constructor(public router: Router, private fb: FormBuilder,  private http: HttpClient, private route: ActivatedRoute, private sg: SimpleGlobal) { }
 
   ngOnInit() {
     this.states();
@@ -68,31 +69,37 @@ export class UsersignupComponent implements OnInit {
   check(e) {
     console.log(this.model)
   }
-  emailauthentication() {
+
+  email1;
+  emailexist1() {
     // alert(this.premiseID.toString().length)
     //  alert('hello');
-    console.log(this.model.email);
+    console.log("CHocie Genie",this.model.email);
 
     let headers = new HttpHeaders();
     headers.append('Content-Type', 'application/json');
     // this.http.get(Config.api + 'data_against_zipcode/' + this.zip_code + '', { headers: headers }),
-    this.http.post(Config.api + 'code/' + this.model.username, { headers: headers })
+    this.http.get(Config.api + 'email_exist/'+this.model.email, { headers: headers })
 
       //  this.http.get(Config.api + 'signup/'+ this.zip_code +'', {headers: headers})
-      .subscribe(Res => {
-        console.log(Res);
-        //     this.state= Res[0].state;
-        //  Res[0].state=this.model;
-        //  this.email = Res;
+      .subscribe(data => {
+        console.log(data);
+
+        this.email1=data;
+
+        console.log(this.model.email);
         // swal({
-        //   type: 'success',
-        //   title: 'Please check your email for Account Activation Instructions',
+        //   text: "Register Successflluy!",
+        //   title: "Choice Genie",
+        //   type: "success",
         //   showConfirmButton: false,
-        //   timer: 1500
+        //   //     confirmButtonColor: "#DD6B55",
+        //   timer: 1200,
+        //   confirmButtonText: "OK",
+
         // })
 
-        // this.data.changeProducts(this.sg['products']);
-
+        
       });
   }
 
@@ -102,7 +109,6 @@ export class UsersignupComponent implements OnInit {
     // if(this.premiseID&&this.premiseID.toString().length===17) {
     let headers = new HttpHeaders();
     headers.append('Content-Type', 'application/json');
-    // this.http.get(Config.api + 'data_against_zipcode/' + this.zip_code + '', { headers: headers }),
     this.http.get(Config.api + 'state/', { headers: headers })
 
       //  this.http.get(Config.api + 'signup/'+ this.zip_code +'', {headers: headers})
@@ -110,11 +116,7 @@ export class UsersignupComponent implements OnInit {
         console.log(Res);
         //     this.state= Res[0].state;
         //  Res[0].state=this.model;
-        this.state = Res;
-
-
-        // this.data.changeProducts(this.sg['products']);
-
+        this.state = Res;        
       });
   }
   cities() {
@@ -170,7 +172,7 @@ export class UsersignupComponent implements OnInit {
     console.log("CHOICE GENIE", this.model);
     let headers = new HttpHeaders();
     headers.append('Content-Type', 'application/json');
-    this.http.post(Config.api + 'signup1/', this.model, { headers: headers })
+    this.http.post(Config.api + 'userregister/', this.model, { headers: headers })
       .subscribe(Res => {
         console.log(Res);
         console.log(this.model);

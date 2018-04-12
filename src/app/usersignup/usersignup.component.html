@@ -78,13 +78,23 @@
                 <div class="form-group">
 
                   <mat-form-field>
-                    <input matInput placeholder="Email" [formControl]="signupForm.controls['email']" required [(ngModel)]="model.email" name="email">
+                    <input matInput placeholder="Email"     required [formControl]="signupForm.controls['email']"  [(ngModel)]="model.email"   />
+<!--                    
+                    <mat-select placeholder="state" (ngModelChange)="check($event)" required [formControl]="signupForm.controls['state']" [(ngModel)]="model.state">
+
+                   
+                   
+                    <input matInput type="text" id="email"  (ngModelChange)="emailCheck(email1.value)"  formControlName="email"
+                    #email1 placeholder="Email" required /> -->
                     <!-- <mat-error *ngIf="secondFormGroup.controls.Email.dirty && !secondFormGroup.controls.Email.value"> Special characters not allowed</mat-error> -->
                   </mat-form-field>
+                  <div *ngIf="email1" class="alert alert-danger">
+                    This username already exist.
+                  </div>
                 </div>
               </div>
 
-              <br class="clearfix" />
+             <br class="clearfix" />
               <div class="col-sm-6">
                 <div class="form-group">
 
@@ -93,7 +103,7 @@
                     <!-- <mat-error *ngIf="secondFormGroup.controls.Phone_No.dirty && !secondFormGroup.controls.Phone_No.value"> Special characters not allowed</mat-error> -->
                   </mat-form-field>
                 </div>
-              </div>
+              </div>  
               <br class="clearfix" />
               <div class="col-sm-6">
                 <div class="form-group">
@@ -105,6 +115,8 @@
   </mat-form-field> -->
                   <mat-form-field>
 
+                    <!-- <input matInput placeholder="Phone No" [formControl]="signupForm.controls['state']" required [(ngModel)]="model.state"> -->
+                  
                     <mat-select placeholder="state" (ngModelChange)="check($event)" required [formControl]="signupForm.controls['state']" [(ngModel)]="model.state">
 
                       <mat-option *ngFor="let s of state" [value]="s.state">
@@ -161,8 +173,8 @@
                 <div class="form-group">
 
                   <mat-form-field>
-                    <input matInput placeholder="Confirm Password" type="password" [formControl]="signupForm.controls['confirmpassword']" required
-                      [(ngModel)]="model.confirmpassword">
+                    <input matInput placeholder="Confirm Password" type="password" [formControl]="signupForm.controls['password']" required
+                      [(ngModel)]="model.password">
                     <!-- <mat-error *ngIf="secondFormGroup.controls.Confirm_Password.dirty && !secondFormGroup.controls.Confirm_Password.value"> Special characters not allowed</mat-error> -->
                   </mat-form-field>
                 </div>
@@ -177,7 +189,7 @@
 
               <div class="form-group">
                 <button class="btn btn-lrg btn-rose btn-fill btn-wd" style="width:100%; border-radius:50px;font-size:24px !important;" type="submit"
-                  (click)="signupuserdata();Email()">Register</button>
+                  (click)="signupuserdata();emailexist1() ">Register</button>
               </div>
             </div>
           </div>
