@@ -78,31 +78,51 @@ export class UsersignupComponent implements OnInit {
 
     let headers = new HttpHeaders();
     headers.append('Content-Type', 'application/json');
-    // this.http.get(Config.api + 'data_against_zipcode/' + this.zip_code + '', { headers: headers }),
     this.http.get(Config.api + 'email_exist/'+this.model.email, { headers: headers })
-
-      //  this.http.get(Config.api + 'signup/'+ this.zip_code +'', {headers: headers})
+ 
       .subscribe(data => {
         console.log(data);
 
         this.email1=data;
 
         console.log(this.model.email);
-        // swal({
-        //   text: "Register Successflluy!",
-        //   title: "Choice Genie",
-        //   type: "success",
-        //   showConfirmButton: false,
-        //   //     confirmButtonColor: "#DD6B55",
-        //   timer: 1200,
-        //   confirmButtonText: "OK",
-
-        // })
+       
 
         
       });
   }
-
+  usernameexist;
+  userexist() {
+    //alert('hello');
+    console.log("CHOICE GENIE", this.model.username);
+    
+    let headers = new HttpHeaders();
+    
+    
+    headers.append('Content-Type', 'application/json');
+    // this.http.get(Config.api + 'data_against_zipcode/' + this.zip_code + '', { headers: headers }),
+    this.http.get(Config.api +'usernameexist/'+ this.model.username +'/', { headers: headers })
+    
+    
+    //   // this.http.post(Config.api + 'signup/'+ this.zip_code +'', {"premiseid": this.premiseID +'', {headers: headers})
+    .subscribe(data => {
+    console.log(data);
+    // this.next = Res[0].next;
+    this.usernameexist=data
+    console.log(this.model.username);
+    
+    },
+    error => {
+    console.log(error);
+    //  this.toastr.error(error, null, {toastLife: 5000});
+    swal(
+    'Invalid',
+    'User Already Exist! or May be Some Error!',
+    'error'
+    )
+    
+    });
+    }
   states() {
     // alert(this.premiseID.toString().length)
     //  alert('hello');
@@ -187,7 +207,7 @@ export class UsersignupComponent implements OnInit {
 
         })
 
-        this.router.navigate(['/userlogin'])
+      //  this.router.navigate(['/userlogin'])
       },
         error => {
           this.validateAllFormFields(this.model);
