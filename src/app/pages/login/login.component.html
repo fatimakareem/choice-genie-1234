@@ -32,7 +32,7 @@
                   <div class="modal-body" style="font-size: 18px;
                   text-align: center;">
                   <h3>Enter Your Email</h3>
-                  <input type="text" placeholder="Enter Your Email" class="form-control" [(ngModel)]="email" name="email" style="font-size: 20px">
+                  <input type="text" placeholder="Enter Your Email" class="form-control" [(ngModel)]="Email" name="Email" style="font-size: 20px">
                   </div>
                   <div class="modal-footer">
                     <button type="button" class="btn btn-rose"  data-dismiss="modal" style="
@@ -40,7 +40,7 @@
                  
                   width: 20%;
                   height: 45px;
-                  font-size: 18px;">Submit</button>
+                  font-size: 18px;" (click)="forgetpass(Email)">Submit</button>
                     <button type="button" class="btn btn-rose" data-dismiss="modal" style="
                   color: white;
                  

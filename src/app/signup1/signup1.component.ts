@@ -189,27 +189,74 @@ export class Signup1Component implements OnInit {
         // this.next = Res[0].next;
 
         console.log(this.model);
-        swal({
-          text: "Register Successflluy!",
-          title: "Choice Genie",
-          type: "success",
-          showConfirmButton: false,
-          //     confirmButtonColor: "#DD6B55",
-          timer: 1200,
-          confirmButtonText: "OK",
+        // swal({
+        //   text: "Register Successflluy!",
+        //   title: "Choice Genie",
+        //   type: "success",
+        //   showConfirmButton: false,
+        //   //     confirmButtonColor: "#DD6B55",
+        //   timer: 1200,
+        //   confirmButtonText: "OK",
 
-        })
+        // })
 
         this.router.navigate(['/pages/login'])
       },
         error => {
           console.log(error);
         //  this.toastr.error(error, null, {toastLife: 5000});
-          swal(
-            'Invalid',
-            'Please Try Again!',
-            'error'
-          )
+          // swal(
+          //   'Invalid',
+          //   'Please Try Again!',
+          //   'error'
+          // )
+
+          //     //    this.state = Res[0].state;
+          //     //this.sg['products'] = Res.json()['Results'];
+          //     //this.data.changeProducts(this.sg['products']);
+          //   f.resetForm();
+        });
+    //}
+
+    //    this.state = Res[0].state;
+    //this.sg['products'] = Res.json()['Results'];
+    //this.data.changeProducts(this.sg['products']);
+
+
+    //}
+
+
+  }
+  
+  usernameexist;
+  usernameCheck(username1) {
+    //alert('hello');
+    console.log("CHOICE GENIE", this.model.username);
+
+    let headers = new HttpHeaders();
+
+
+    headers.append('Content-Type', 'application/json');
+    // this.http.get(Config.api + 'data_against_zipcode/' + this.zip_code + '', { headers: headers }),
+    this.http.get(Config.api +'usernameexist/'+ username1 +'/', { headers: headers })
+
+
+      //   // this.http.post(Config.api + 'signup/'+ this.zip_code +'', {"premiseid": this.premiseID +'', {headers: headers})
+      .subscribe(data => {
+        console.log(data);
+        // this.next = Res[0].next;
+       this.usernameexist=data
+        console.log(this.model.username);
+       
+      },
+        error => {
+          console.log(error);
+        //  this.toastr.error(error, null, {toastLife: 5000});
+          // swal(
+          //   'Invalid',
+          //   'User Already Exist! or May be Some Error!',
+          //   'error'
+          // )
 
           //     //    this.state = Res[0].state;
           //     //this.sg['products'] = Res.json()['Results'];

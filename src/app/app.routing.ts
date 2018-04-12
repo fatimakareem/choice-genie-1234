@@ -138,6 +138,10 @@ export const AppRoutes: Routes = [
           {
             path: 'contactus',
             loadChildren: './contactus/contactus.module#contactusModule'
+        },
+        {
+            path: 'forgetpassword',
+            loadChildren: './forgetpassword/forgetpassword.module#ForgetpasswordModule'
         }
         ]
     },
