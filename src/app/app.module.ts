@@ -101,6 +101,9 @@ import { SviewapartnerComponent } from './sviewapartner/sviewapartner.component'
 import { SviewapartnerService } from './sviewapartner/sviewapartner.service';
 import { SuperviewcontactService } from './superviewcontact/superviewcontact.service';
 import { ChangepasswordComponent } from './changepassword/changepassword.component';
+import { SuperchangepasswordComponent } from './superchangepassword/superchangepassword.component';
+ 
+ 
 import { ChangepasswordService } from './changepassword.service';
  
 
@@ -207,6 +210,7 @@ export class MaterialModule {}
     SuperuserService,
     SviewapartnerService,
     SuperviewcontactService,
+ 
     ChangepasswordService,
 
 RandomService,

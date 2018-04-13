@@ -15,7 +15,7 @@
               <input matInput id="username" placeholder="Enter Username" formControlName="username" [(ngModel)]="username">
             </mat-form-field>
             <mat-form-field [ngClass]="displayFieldCss(login, 'password')">
-              <input matInput id="password" placeholder="Enter Your Password" formControlName="password" [(ngModel)]="password">
+              <input matInput type="password" id="password" placeholder="Enter Your Password" formControlName="password" [(ngModel)]="password">
             </mat-form-field>
             <mat-checkbox>
               Stay signed in
@@ -31,8 +31,13 @@
                   </div>
                   <div class="modal-body" style="font-size: 18px;
                   text-align: center;">
+                  <!-- [(ngModel)]="email" name="email" -->
                   <h3>Enter Your Email</h3>
+<<<<<<< HEAD
+                  <input type="text" placeholder="Enter Your Email" class="form-control"  style="font-size: 20px">
+=======
                   <input type="text" placeholder="Enter Your Email" class="form-control" [(ngModel)]="Email" name="Email" style="font-size: 20px">
+>>>>>>> cff17cbc93a00c1e2cec9a70056460216558a8ac
                   </div>
                   <div class="modal-footer">
                     <button type="button" class="btn btn-rose"  data-dismiss="modal" style="
