@@ -32,8 +32,7 @@ export class Signup1Component implements OnInit {
   flag = true;
   date = new FormControl(new Date());
 
-  emailexist: boolean = false;
-
+  emailexist: boolean = true;
 
   constructor(public router: Router, private fb: FormBuilder, private http: HttpClient, private route: ActivatedRoute,
      private sg: SimpleGlobal) { }
@@ -227,8 +226,28 @@ export class Signup1Component implements OnInit {
 
 
   }
-  
-  usernameexist;
+  emailCheck(email1) {
+    // alert(this.premiseID.toString().length)
+    //  alert('hello');
+    console.log("CHocie Genie",this.model.email);
+    
+    let headers = new HttpHeaders();
+    headers.append('Content-Type', 'application/json');
+    this.http.get(Config.api + 'email_exist/'+ email1+'/', { headers: headers })
+    
+    .subscribe(data => {
+    console.log(data);
+    console.log(data['status'],'hhhhhhhhhhhhhhh')
+    this.emailexist=data['status'];
+    
+    console.log(this.model.email);
+    
+    
+    
+    });
+    }
+ usernameexist:boolean = true;
+// usernameexist;
   usernameCheck(username1) {
     //alert('hello');
     console.log("CHOICE GENIE", this.model.username);
@@ -245,11 +264,15 @@ export class Signup1Component implements OnInit {
       .subscribe(data => {
         console.log(data);
         // this.next = Res[0].next;
-       this.usernameexist=data
-        console.log(this.model.username);
+        console.log(data['status'],'hhhhhhhhhhhhhhh')
+      // if ( this.usernameexist=false){
+       this.usernameexist = data['status']
+        // }
+      //  console.log(this.usernameexist);
        
       },
         error => {
+       //   this.usernameexist=error['status']
           console.log(error);
         //  this.toastr.error(error, null, {toastLife: 5000});
           // swal(

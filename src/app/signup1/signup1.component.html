@@ -1,4 +1,3 @@
-
 <div class="main-content signup-main">
   <div class="container">
     <h3 class="text-center">Tell Us About
@@ -51,7 +50,7 @@
               <br class="clearfix" />
               <div class="col-sm-6">
                 <div class="form-group">
-                               <mat-form-field>
+                  <mat-form-field>
                     <input matInput placeholder="Utility Area" [formControl]="signupForm.controls['utilityarea']" required [(ngModel)]="model.utilityarea">
                     <!-- <mat-error *ngIf="secondFormGroup.controls.lName.value == ''"><strong>Cannot be empty</strong></mat-error>
   <mat-error *ngIf="secondFormGroup.controls.lName.dirty && !secondFormGroup.controls.lName.value"> Special characters not allowed</mat-error> -->
@@ -59,19 +58,34 @@
                 </div>
               </div>
               <br class="clearfix" />
+
+
+
               <div class="col-sm-6">
                 <div class="form-group">
+
                   <mat-form-field>
-                    <input matInput placeholder="Email" [formControl]="signupForm.controls['email']" required [(ngModel)]="model.email" name="email">
-                    <!-- <mat-error *ngIf="secondFormGroup.controls.Email.dirty && !secondFormGroup.controls.Email.value"> Special characters not allowed</mat-error> -->
+                    <input matInput placeholder="Email" required [formControl]="signupForm.controls['email']"#email1  (ngModelChange)="emailCheck(email1.value)" [(ngModel)]="model.email" />
+
+
                   </mat-form-field>
+                  <div *ngIf="emailexist!=true" class="alert alert-danger">
+                    This email already exist.
+                  </div>
+                  <!-- <ng-template #no_data_temp2>
+                    <div class="alert alert-danger"> This email already exist. </div>
+                                      
+                                       
+                                      </ng-template> -->
                 </div>
               </div>
+
+
 
               <br class="clearfix" />
               <div class="col-sm-6">
                 <div class="form-group">
-                          <mat-form-field>
+                  <mat-form-field>
                     <input matInput placeholder="Phone No" [formControl]="signupForm.controls['Phone']" required [(ngModel)]="model.Phone">
                     <!-- <mat-error *ngIf="secondFormGroup.controls.Phone_No.dirty && !secondFormGroup.controls.Phone_No.value"> Special characters not allowed</mat-error> -->
                   </mat-form-field>
@@ -80,7 +94,7 @@
               <br class="clearfix" />
               <div class="col-sm-6">
                 <div class="form-group">
-                           <!-- <mat-form-field>
+                  <!-- <mat-form-field>
   <input matInput placeholder="State" [formControl]="signupForm.controls['state']" required [(ngModel)]="model.state" >
   <mat-error *ngIf="secondFormGroup.controls.State.dirty && !secondFormGroup.controls.State.value"> Special characters not allowed</mat-error>
   </mat-form-field> -->
@@ -102,24 +116,29 @@
               <div class="col-sm-6">
                 <div class="form-group">
                   <mat-form-field>
-                    <input matInput placeholder="Country" [formControl]="signupForm.controls['country']"   required [(ngModel)]="model.country">
+                    <input matInput placeholder="Country" [formControl]="signupForm.controls['country']" required [(ngModel)]="model.country">
                     <!-- <mat-error *ngIf="secondFormGroup.controls.Country.dirty && !secondFormGroup.controls.Country.value"> Special characters not allowed</mat-error> -->
                   </mat-form-field>
-                  
+
                 </div>
               </div>
               <br class="clearfix" />
               <div class="col-sm-6">
                 <div class="form-group">
-                               <mat-form-field>
+                  <mat-form-field>
+
+                    <input matInput placeholder="Company Title" [formControl]="signupForm.controls['username']" (ngModelChange)="usernameCheck(username1.value)"
+                      #username1 required [(ngModel)]="model.username">
+
+                  </mat-form-field>
+                  <div *ngIf="usernameexist!= true" class="alert alert-danger">
+                    This username already exist.
+                  </div>
+                  <!-- <ng-template #no_data_temp1>
+<div class="alert alert-danger"> This username already exist. </div>
                    
-                                <input matInput placeholder="Company Title" [formControl]="signupForm.controls['username']"  (ngModelChange)="usernameCheck(username1.value)" #username1  required [(ngModel)]="model.username">
-                                
-                              </mat-form-field>
-                              <div *ngIf="usernameexist" class="alert alert-danger">
-                                This username already exist.
-                              </div> 
-                  
+                    
+                  </ng-template> -->
                 </div>
               </div>
               <br class="clearfix" />
@@ -135,8 +154,7 @@
               <div class="col-sm-6">
                 <div class="form-group">
                   <mat-form-field>
-                    <input matInput placeholder="Confirm Password" type="password" [formControl]="signupForm.controls['confirmpassword']"
-                      [(ngModel)]="model.confirmpassword">
+                    <input matInput placeholder="Confirm Password" type="password" [formControl]="signupForm.controls['confirmpassword']" [(ngModel)]="model.confirmpassword">
                     <!-- <mat-error *ngIf="secondFormGroup.controls.Confirm_Password.dirty && !secondFormGroup.controls.Confirm_Password.value"> Special characters not allowed</mat-error> -->
                   </mat-form-field>
                 </div>
@@ -151,7 +169,7 @@
 
               <div class="form-group">
                 <button class="btn btn-lrg btn-rose btn-fill btn-wd" style="width:100%; border-radius:50px;font-size:24px !important;" type="submit"
-                  (click)="signupuserdata();userexist()">Register</button>
+                  (click)="signupuserdata()">Register</button>
               </div>
             </div>
           </div>

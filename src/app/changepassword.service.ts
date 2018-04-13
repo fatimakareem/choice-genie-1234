@@ -19,7 +19,7 @@ export class ChangepasswordService {
      
       "currentPassword":oldpass,
      " newPassword":pass1, 
-      "newPassword2":pass2,
+      "newpassword2":pass2,
       
     }), 
     {headers: headers}).map((response: Response) => response.json());
