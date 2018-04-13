@@ -35,7 +35,7 @@ export class UsersignupComponent implements OnInit {
   flag = true;
   date = new FormControl(new Date());
 
-  emailexist: boolean = false;
+  emailexist: boolean = true;
 
 
   constructor(public router: Router, private fb: FormBuilder,  private http: HttpClient, private route: ActivatedRoute, private sg: SimpleGlobal) { }
@@ -71,58 +71,97 @@ export class UsersignupComponent implements OnInit {
   }
 
   email1;
-  emailexist1() {
-    // alert(this.premiseID.toString().length)
-    //  alert('hello');
-    console.log("CHocie Genie",this.model.email);
+  // emailexist1() {
+  //   // alert(this.premiseID.toString().length)
+  //   //  alert('hello');
+  //   console.log("CHocie Genie",this.model.email);
 
-    let headers = new HttpHeaders();
-    headers.append('Content-Type', 'application/json');
-    this.http.get(Config.api + 'email_exist/'+this.model.email, { headers: headers })
+  //   let headers = new HttpHeaders();
+  //   headers.append('Content-Type', 'application/json');
+  //   this.http.get(Config.api + 'email_exist/'+this.model.email, { headers: headers })
  
-      .subscribe(data => {
-        console.log(data);
+  //     .subscribe(data => {
+  //       console.log(data);
 
-        this.email1=data;
+  //       this.email1=data;
 
-        console.log(this.model.email);
+  //       console.log(this.model.email);
        
 
         
-      });
-  }
-  usernameexist;
-  userexist() {
-    //alert('hello');
-    console.log("CHOICE GENIE", this.model.username);
+  //     });
+  // }
+  emailCheck(email1) {
+    // alert(this.premiseID.toString().length)
+    //  alert('hello');
+    console.log("CHocie Genie",this.model.email);
     
     let headers = new HttpHeaders();
-    
-    
     headers.append('Content-Type', 'application/json');
-    // this.http.get(Config.api + 'data_against_zipcode/' + this.zip_code + '', { headers: headers }),
-    this.http.get(Config.api +'usernameexist/'+ this.model.username +'/', { headers: headers })
+    this.http.get(Config.api + 'email_exist/'+ email1+'/', { headers: headers })
     
-    
-    //   // this.http.post(Config.api + 'signup/'+ this.zip_code +'', {"premiseid": this.premiseID +'', {headers: headers})
     .subscribe(data => {
     console.log(data);
-    // this.next = Res[0].next;
-    this.usernameexist=data
-    console.log(this.model.username);
+    console.log(data['status'],'hhhhhhhhhhhhhhh')
+    this.emailexist=data['status'];
     
-    },
-    error => {
-    console.log(error);
-    //  this.toastr.error(error, null, {toastLife: 5000});
-    swal(
-    'Invalid',
-    'User Already Exist! or May be Some Error!',
-    'error'
-    )
+    console.log(this.model.email);
+    
+    
     
     });
     }
+    usernameexist:boolean = true;
+    // usernameexist;
+      usernameCheck(username1) {
+        //alert('hello');
+        console.log("CHOICE GENIE", this.model.username);
+    
+        let headers = new HttpHeaders();
+    
+    
+        headers.append('Content-Type', 'application/json');
+        // this.http.get(Config.api + 'data_against_zipcode/' + this.zip_code + '', { headers: headers }),
+        this.http.get(Config.api +'usernameexist/'+ username1 +'/', { headers: headers })
+    
+    
+          //   // this.http.post(Config.api + 'signup/'+ this.zip_code +'', {"premiseid": this.premiseID +'', {headers: headers})
+          .subscribe(data => {
+            console.log(data);
+            // this.next = Res[0].next;
+            console.log(data['status'],'hhhhhhhhhhhhhhh')
+          // if ( this.usernameexist=false){
+           this.usernameexist = data['status']
+            // }
+          //  console.log(this.usernameexist);
+           
+          },
+            error => {
+           //   this.usernameexist=error['status']
+              console.log(error);
+            //  this.toastr.error(error, null, {toastLife: 5000});
+              // swal(
+              //   'Invalid',
+              //   'User Already Exist! or May be Some Error!',
+              //   'error'
+              // )
+    
+              //     //    this.state = Res[0].state;
+              //     //this.sg['products'] = Res.json()['Results'];
+              //     //this.data.changeProducts(this.sg['products']);
+              //   f.resetForm();
+            });
+        //}
+    
+        //    this.state = Res[0].state;
+        //this.sg['products'] = Res.json()['Results'];
+        //this.data.changeProducts(this.sg['products']);
+    
+    
+        //}
+    
+    
+      }
   states() {
     // alert(this.premiseID.toString().length)
     //  alert('hello');

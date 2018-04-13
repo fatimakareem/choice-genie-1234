@@ -58,14 +58,12 @@
                 </div>
               </div>
               <br class="clearfix" />
-
-
-
               <div class="col-sm-6">
                 <div class="form-group">
 
                   <mat-form-field>
-                    <input matInput placeholder="Email" required [formControl]="signupForm.controls['email']"#email1  (ngModelChange)="emailCheck(email1.value)" [(ngModel)]="model.email" />
+                    <input matInput placeholder="Email" required [formControl]="signupForm.controls['email']" #email1 (ngModelChange)="emailCheck(email1.value)"
+                      [(ngModel)]="model.email" />
 
 
                   </mat-form-field>
