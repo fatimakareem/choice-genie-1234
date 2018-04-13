@@ -2,7 +2,7 @@ import { Component, OnInit, ElementRef } from '@angular/core';
 import { Headers, Http, Response } from '@angular/http';
 import 'rxjs/add/operator/map';
 import { Config } from '../../Config';
-
+import { HttpClient, HttpResponse, HttpHeaders } from "@angular/common/http";
 import { ActivatedRoute, Router, RouterModule } from "@angular/router";
 import { SimpleGlobal } from 'ng2-simple-global';
 import { ResponseContentType } from '@angular/http/src/enums';
@@ -50,8 +50,16 @@ export class UserloginComponent implements OnInit {
 
   password;
 
+  // constructor(public router: Router, private element: ElementRef, private http: Http, private route: ActivatedRoute,
+  //   private sg: SimpleGlobal, private _nav: Router, private _serv: UserLoginService, private formBuilder: FormBuilder) {
+  //   this.nativeElement = element.nativeElement;
+  //   this.sidebarVisible = false;
+
+  // }
+
+
   constructor(public router: Router, private element: ElementRef, private http: Http, private route: ActivatedRoute,
-    private sg: SimpleGlobal, private _nav: Router, private _serv: UserLoginService, private formBuilder: FormBuilder) {
+    private sg: SimpleGlobal, private _nav: Router, private _serv: UserLoginService, private formBuilder: FormBuilder, private https: HttpClient) {
     this.nativeElement = element.nativeElement;
     this.sidebarVisible = false;
 
@@ -66,6 +74,8 @@ export class UserloginComponent implements OnInit {
       'has-feedback': this.isFieldValid(form, field)
     };
   }
+
+
   onLogin() {
     // console.log(this.login);
     if (this.login.valid) {
@@ -83,8 +93,10 @@ export class UserloginComponent implements OnInit {
                 'success'
               )
               // this.toastr.success('Successfully!', 'Logged in',{toastLife: 5000});
+             // this.router.navigate(['/dashboard/'+ this.username]);
               this.router.navigate(['/']);
-             
+              //localStorage.setItem('username', this.username);
+
             },
             error => {
               console.log(error);
@@ -115,8 +127,6 @@ export class UserloginComponent implements OnInit {
     }
   }
 
- 
-
   foremail() {
     // swal({
     //   title: 'Enter email address',
@@ -126,6 +136,53 @@ export class UserloginComponent implements OnInit {
     //   this.forgetPassword(email)
 
     // })
+  }
+  model: any = {};
+  forgetpass(Email) {
+    //alert('hello');
+    console.log("CHOICE GENIE", this.username);
+
+    let headers = new HttpHeaders();
+
+
+    headers.append('Content-Type', 'application/json');
+    // this.http.get(Config.api + 'data_against_zipcode/' + this.zip_code + '', { headers: headers }),
+    this.https.post(Config.api +'forget_password/' + this.username +'/', JSON.stringify({ "email":Email}), { headers: headers })
+
+
+      //   // this.http.post(Config.api + 'signup/'+ this.zip_code +'', {"premiseid": this.premiseID +'', {headers: headers})
+      .subscribe(Res => {
+        this.router.navigate(['/forgetpassword/']);
+        console.log(Res);
+        // this.next = Res[0].next;
+
+        console.log(this.username);
+       
+      },
+        error => {
+          console.log(error);
+        //  this.toastr.error(error, null, {toastLife: 5000});
+          swal(
+            'Invalid',
+            'User Already Exist! or May be Some Error!',
+            'error'
+          )
+
+          //     //    this.state = Res[0].state;
+          //     //this.sg['products'] = Res.json()['Results'];
+          //     //this.data.changeProducts(this.sg['products']);
+          //   f.resetForm();
+        });
+    //}
+
+    //    this.state = Res[0].state;
+    //this.sg['products'] = Res.json()['Results'];
+    //this.data.changeProducts(this.sg['products']);
+
+
+    //}
+
+
   }
 
   forgetPassword(pass) {
@@ -178,34 +235,7 @@ export class UserloginComponent implements OnInit {
       $('.card').removeClass('card-hidden');
     }, 700);
   }
-  // sweetalertlogin() {
-  //     swal({
-  //         text: "Login Successflluy!",
-  //         title: "Choice Genie",
-  //         type: "success",
-  //         showConfirmButton: false,
-  //         //     confirmButtonColor: "#DD6B55",
-  //         timer: 1200,
-  //         confirmButtonText: "OK",
-
-  //     })
-  //         this.router.navigate(['/home'])
-  // }
-
-  // login(username:any, password:any) {
-
-  //     // this.route.params.subscribe(params => {
-  //     //   let zip =  this.sg['product_zipcode'];
-  //     let headers = new Headers();
-  //     headers.append('Content-Type', 'application/json');
-  //     // this.http.get(Config.api + 'data_against_zipcode/' + this.zip_code + '', { headers: headers }),
-  //     this.http.put(Config.api + 'login/', { "username": this.username, "password": this.password }, { headers: headers })
-
-  //         // this.http.post(Config.api + 'monthly/' + this.zip_code + '/' + this.months + '',{"month": this.months+" Month","custom":"['2','8']"},{ headers: headers })
-  //         .subscribe(Res =>
-
-  //         });
-  // }
+  
   sidebarToggle() {
     var toggleButton = this.toggleButton;
     var body = document.getElementsByTagName('body')[0];
