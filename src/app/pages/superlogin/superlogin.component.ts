@@ -2,7 +2,7 @@ import { Component, OnInit, ElementRef } from '@angular/core';
 import { Headers, Http, Response } from '@angular/http';
 import 'rxjs/add/operator/map';
 import { Config } from '../../Config';
-
+import { HttpClient, HttpResponse, HttpHeaders } from "@angular/common/http";
 import { ActivatedRoute, Router, RouterModule } from "@angular/router";
 import { SimpleGlobal } from 'ng2-simple-global';
 import { ResponseContentType } from '@angular/http/src/enums';
@@ -48,16 +48,21 @@ export class SuperloginComponent implements OnInit {
   private toggleButton: any;
   private sidebarVisible: boolean;
   private nativeElement: Node;
-  public username:any[];
+  public username;
 
   password;
-
   constructor(public router: Router, private element: ElementRef, private http: Http, private route: ActivatedRoute,
-    private sg: SimpleGlobal, private _nav: Router, private _serv: SuperLoginService, private formBuilder: FormBuilder) {
+    private sg: SimpleGlobal, private _nav: Router, private _serv: SuperLoginService, private formBuilder: FormBuilder, private https: HttpClient) {
     this.nativeElement = element.nativeElement;
     this.sidebarVisible = false;
 
   }
+  // constructor(public router: Router, private element: ElementRef, private http: Http, private route: ActivatedRoute,
+  //   private sg: SimpleGlobal, private _nav: Router, private _serv: SuperLoginService, private formBuilder: FormBuilder) {
+  //   this.nativeElement = element.nativeElement;
+  //   this.sidebarVisible = false;
+
+  // }
   isFieldValid(form: FormGroup, field: string) {
     return !form.get(field).valid && form.get(field).touched;
   }
@@ -86,7 +91,9 @@ export class SuperloginComponent implements OnInit {
               )
               // this.toastr.success('Successfully!', 'Logged in',{toastLife: 5000});
               this.router.navigate(['/superdashboard/']);
-             
+             // this.router.navigate(['/dashboard/'+ this.username]);
+              localStorage.setItem('username', this.username);
+
             },
             error => {
               console.log(error);
@@ -116,9 +123,55 @@ export class SuperloginComponent implements OnInit {
       this.validateAllFormFields(this.login);
     }
   }
+  model: any = {};
+  forgetpass(Email) {
+    //alert('hello');
+    console.log("CHOICE GENIE", this.username);
 
- 
+    let headers = new HttpHeaders();
 
+
+    headers.append('Content-Type', 'application/json');
+    // this.http.get(Config.api + 'data_against_zipcode/' + this.zip_code + '', { headers: headers }),
+    this.https.post(Config.api +'forget_password/' + this.username +'/', JSON.stringify({ "email":Email}), { headers: headers })
+
+
+      //   // this.http.post(Config.api + 'signup/'+ this.zip_code +'', {"premiseid": this.premiseID +'', {headers: headers})
+      .subscribe(Res => {
+        this.router.navigate(['/forgetpassword/'+ this.username]);
+        console.log(Res);
+        // this.next = Res[0].next;
+
+        console.log(this.username);
+       
+      },
+        error => {
+          console.log(error);
+        //  this.toastr.error(error, null, {toastLife: 5000});
+          swal(
+            'Invalid',
+            'User Already Exist! or May be Some Error!',
+            'error'
+          )
+
+          //     //    this.state = Res[0].state;
+          //     //this.sg['products'] = Res.json()['Results'];
+          //     //this.data.changeProducts(this.sg['products']);
+          //   f.resetForm();
+        });
+    //}
+
+    //    this.state = Res[0].state;
+    //this.sg['products'] = Res.json()['Results'];
+    //this.data.changeProducts(this.sg['products']);
+
+
+    //}
+
+
+  }
+
+   
   foremail() {
     // swal({
     //   title: 'Enter email address',

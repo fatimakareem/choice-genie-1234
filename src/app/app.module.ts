@@ -105,6 +105,7 @@ import { SuperchangepasswordComponent } from './superchangepassword/superchangep
  
  
 import { ChangepasswordService } from './changepassword.service';
+import { SuperchangepaswwordService } from './superchangepassword/superchangepaswword.service';
  
 
 
@@ -212,6 +213,7 @@ export class MaterialModule {}
     SuperviewcontactService,
  
     ChangepasswordService,
+    SuperchangepaswwordService,
 
 RandomService,
   ],
