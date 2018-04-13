@@ -69,14 +69,14 @@
 
 
                   </mat-form-field>
-                  <div *ngIf="emailexist;else no_data_temp2" class="alert alert-danger">
+                  <div *ngIf="emailexist!=true" class="alert alert-danger">
                     This email already exist.
                   </div>
-                  <ng-template #no_data_temp2>
+                  <!-- <ng-template #no_data_temp2>
                     <div class="alert alert-danger"> This email already exist. </div>
-                                        <!-- <img src="../../assets/img/no_Record.png" style="width: 250px;height:200px" > -->
-                                        <h4>&nbsp;&nbsp;&nbsp;&nbsp; ---</h4>
-                                      </ng-template>
+                                      
+                                       
+                                      </ng-template> -->
                 </div>
               </div>
 
@@ -134,11 +134,11 @@
                   <div *ngIf="usernameexist!= true" class="alert alert-danger">
                     This username already exist.
                   </div>
-                  <ng-template #no_data_temp1>
+                  <!-- <ng-template #no_data_temp1>
 <div class="alert alert-danger"> This username already exist. </div>
-                    <!-- <img src="../../assets/img/no_Record.png" style="width: 250px;height:200px" > -->
-                    <h4>&nbsp;&nbsp;&nbsp;&nbsp; ---</h4>
-                  </ng-template>
+                   
+                    
+                  </ng-template> -->
                 </div>
               </div>
               <br class="clearfix" />

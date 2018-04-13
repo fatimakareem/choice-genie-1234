@@ -32,7 +32,7 @@ export class Signup1Component implements OnInit {
   flag = true;
   date = new FormControl(new Date());
 
-  emailexist: boolean = false;
+  emailexist: boolean = true;
 
   constructor(public router: Router, private fb: FormBuilder, private http: HttpClient, private route: ActivatedRoute,
      private sg: SimpleGlobal) { }
@@ -246,7 +246,7 @@ export class Signup1Component implements OnInit {
     
     });
     }
- usernameexist:boolean = false;
+ usernameexist:boolean = true;
 // usernameexist;
   usernameCheck(username1) {
     //alert('hello');
