@@ -1,9 +1,11 @@
 import { Injectable } from '@angular/core';
 import {Headers, Http, Response} from '@angular/http';
 import 'rxjs/add/operator/map'
-import {Config} from "./Config";
+import {Config} from "../Config";
 @Injectable()
-export class ChangepasswordService {
+
+@Injectable()
+export class SuperchangepaswwordService {
 
  
   constructor(private http: Http) { }
@@ -24,11 +26,5 @@ export class ChangepasswordService {
     }), 
     {headers: headers}).map((response: Response) => response.json());
     }
-  
-  }
 
-  
-
-
-
-  
+}
