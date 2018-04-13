@@ -131,7 +131,7 @@ export class LoginComponent implements OnInit {
 
       //   // this.http.post(Config.api + 'signup/'+ this.zip_code +'', {"premiseid": this.premiseID +'', {headers: headers})
       .subscribe(Res => {
-        this.router.navigate(['/forgetpassword/'+ this.username]);
+        this.router.navigate(['/forgetpassword/']);
         console.log(Res);
         // this.next = Res[0].next;
 
