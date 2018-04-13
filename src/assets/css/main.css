@@ -696,9 +696,7 @@ background: goldenrod;
   .products-area .plan-detail {
     font-size: 18px;
     line-height: 22px;
-    text-align: justify; 
-    padding-top: 50px;
-  }
+    text-align: justify; }
   .products-area .card {
     padding: 0 15px 20px;
     margin: 15px 0;}
@@ -1376,10 +1374,7 @@ h3 {
 
 
 /*# sourceMappingURL=main.css.map */
-.terms-container-wrapper {
-  background: #ffffff;
-  padding-top: 30px;
-}
+
 
 #myBtn {
   display: block;
@@ -1387,24 +1382,23 @@ h3 {
    position: fixed;
    bottom: 5px;
    z-index: 99;
-     right: 10px;
-       border: none;
-         outline: none !important;
-           background-color: #214147;
-              color: white;
-                cursor: pointer;
-                   padding: 10px;
-                      border-radius: 50%;
-                         height: 60px !important;
-                           width: 60px;
+  right: 10px;border: none;
+  outline: none !important;
+   background-color: #214147;
+  color: white;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 50%;
+  height: 60px !important;
+  width: 60px;
 }
 .btn-slider-left{
   height: 47px;
   width: 47px;
   border-radius: 100%;
   background: #cc0000 !important;
-  top: 100px;
-  left: -60px;
+  top: 39%;
+  left: -5%;
   z-index: 1;
   position: absolute;
   background: none;
@@ -1420,8 +1414,8 @@ h3 {
   width: 47px;
   border-radius: 100%;
   background: #cc0000 !important;
-  top: 100px;
-  right: -53px;
+  top: 39%;
+  right: -4%;
   z-index: 1;
   position: absolute;
   background: none;
@@ -1596,13 +1590,12 @@ h3 {
 
   .list-contact li i {
   width: 25px;
-  text-align: center;
-  color: #f80000;
+  text-align: center
   }
   .list-social {
   font-size: 25px;
-  text-align: center;
   padding: 10px 0;
+    text-align: center;
   }
 
   .list-social li {
@@ -3019,7 +3012,7 @@ li.pinterest:hover {
 
 /*Faq CSS Start*/
 .section {
-  padding: 120px 0;
+  padding: 28px 0;
   position: relative;
 }
 .section-title-2 {
@@ -3035,6 +3028,8 @@ li.pinterest:hover {
   font-size: 48px;
 }
  /*Faq CSS end*/
+
+ /*become a partner start*/
  .partner-holder {
   background-image: url(../../assets/img/partnership.jpg);
   background-repeat: no-repeat;
@@ -3042,7 +3037,7 @@ li.pinterest:hover {
   padding: 30px 0;
 }
 .partner-holder .mat-form-field-placeholder, .partner-holder .mat-input-element {
-  color: #fefefe;
+  color: #ffffff !important;
 }
 .mat-input-element {
   font: inherit;
@@ -3064,11 +3059,16 @@ li.pinterest:hover {
   padding: 10px 10px;
   height: 140px!important;
 }
- /* Become a Partner */
+.become{
+  width: 50%;
+  float: right;
+}
 
-/* header fixed start*/
+/* Become a Partner end */
+
+/* header css fixed start*/
 .navbar-nav > li > a {
-  font-size:24px !important;
+  font-size:20px !important;
 }
 .nav-home ul li :hover {
   color: #e53935;
@@ -3077,7 +3077,11 @@ li.pinterest:hover {
 .navbar-right {
   float: none;
 }
-/* header fixed end */
+.why-choiegenie-sublist >li >a >i{
+  font-size: 15px;
+}
+
+/* header css fixed end */
 
 /*download Apple and Android Button  on Slider*/
 .download-here {
@@ -3477,27 +3481,6 @@ h1, .entry-title {
 }
 /*texas section home page end*/
 
-/* sidebar profile pic */
-.sidebar .nav{
-  padding: 0px !important;
-}
-.sidebar-profile-img{
-   background-color: aliceblue;
-  border-radius: 100px;
-  width: 150px;
-  margin-left: 55px;
-  height: 150px;
-}
-.sidebar-profile-img > a > img {
-  width: 87%;
-  margin: 48px 11px;
-}
-.vander-side-bar >li >a{
-text-align: center
-}
-.vander-side-bar > li{
-  width:100%;
-}
 /**Choie And savings start**/
 .choice-saving{
   padding: 50px;
@@ -3552,6 +3535,325 @@ text-align: center
   font-size: 20px;
   color: #cc0000 !important;
 }
-.tablefixed >tbody >tr >td{
+
+/*Terms and conditons css start*/
+
+.terms-container-wrapper{
+  padding-top: 50px;
+  background-color: #ffffff;
+}
+.terms-condition-wrapper{
+  box-shadow: 0 1px 1px 1px #888;
+  padding: 30px 30px !important;
+  margin-bottom: 20px;
+  border-radius: 5px;
+}
+.terms-condition-wrapper > h1{
+  color: #c00;
+  font-weight: 500;
   text-align: center;
+  font-size: 30px;
+}
+.terms-condition-wrapper h3{
+  text-align: justify;
+  font-size: 19px !important;
+  line-height: 25px;
+}
+.terms-condition-wrapper h4{
+  font-size:17px !important;
+}
+.terms-condition-wrapper h2 {
+  color: #c00;
+  font-weight: 500;
+  font-size: 30px;
+}
+.terms-condition-wrapper p {
+  text-align: justify;
+  font-size: 16px;
+  line-height: 25px;
+  color: #000000;
+  font-weight: 400;
+}
+.terms-condition-wrapper ul li{
+  font-size: 16px;
+  line-height: 25px;
+  color: #000000;
+  font-weight: 400;
+}
+.terms-condition-wrapper hr {
+  width: 80px;
+  border-width: 2px;
+  margin: 0px auto;
+  border-color: #02b6ff;
+  padding-bottom: 50px;
+}
+
+/*
+ * --------------------------------------------------
+ * 3. Responsiveness/media queries
+ *--------------------------------------------------
+ */
+
+
+/* Extra small devices (phones, less than 768px) */
+
+
+/* No media query since this is the default in Bootstrap */
+
+
+@media (min-width: 576px) {
+  /* Small devices (576px and up) */
+}
+
+@media (min-width: 768px) {
+  /* Medium devices (768px and up) */
+}
+
+@media (min-width: 992px) {
+  /* Large devices (992px and up) */
+}
+
+@media (min-width: 1200px) {
+  /* X-Large devices (1200px and up) */
+}
+
+
+/* max-width */
+@media (max-width: 320px) {
+  .fixed-width{
+    width: 100%;
+  }
+  .choice-saving  h2{
+    font-size: 32px;
+  }
+}
+@media (max-width: 575px) {
+  /* Small devices (575px and down) */
+
+
+}
+
+@media (max-width: 768px) {
+  /* Medium devices (767px and down) */
+  .pw-solutions{
+    padding: 0px;
+  }
+  .choiecegenie-offers{
+    font-size: 35px !important;
+    padding-bottom: 0px;
+  }
+  .texas-heading{
+    font-size: 19px;
+  }
+  .texas-img{
+    width: 100%;
+  }
+  .texas-text{
+    width: 100%;
+  }
+  .title-02{
+    font-size: 35px !important;
+  }
+  .become  >  h1{
+    font-size: 41px !important;
+  }
+  .widget > h2{
+    font-size: 21px;
+  }
+  .text-center > h3 {
+  }
+  .full-width-title::before, .full-width-title::after{
+    background-color: white;
+  }
+  #myBtn{
+    display: none !important;
+  }
+ .become{
+  float: none;
+  margin: 0 auto;
+ }
+ .login-form-1-header h3 {
+  font-size: 17px !important;
+ }
+ .logic-from-1-sl > li{
+  margin: 15px 25px 0px 7px;
+ }
+ .logic-from-1-sl > li > a{
+   font-size: 25px;
+ }
+ .login-form-1-body > a{
+   font-size: 15px;
+ }
+ .login-form-1-body > div{
+   font-size: 14px;
+ }
+ .login-form-1-body button{
+  font-size: 29px;
+  padding: 10px;
+ }
+
+}
+@media (max-width: 425px) {
+  /* Small devices (425px and down) */
+  .home-columns .home-column{
+    margin: 24px 0px;
+    width: 100%;
+  }
+  .card{
+    display: none !important;
+  }
+  h1, .entry-title{
+    font-size: 2.8rem;
+  }
+  .intro-subtitle{
+    font-size: 2rem;
+  }
+  .full-width-title::before, .full-width-title::after{
+    display: none !important;
+  }
+  .search-bg__title{
+    font-size: 18px;
+  }
+  #main-bg-slider .item img{
+    height: 300px !important;
+  }
+  #main-bg-slider .item {
+    height: 300px !important;
+  }
+  .become{
+    width: 100%;
+  }
+  .choice-saving{
+    padding: 0px;
+  }
+  .faqs h1{
+    font-size: 30px;
+  }
+  .faqs h3{
+    font-size: 17px  !important;
+  }
+}
+@media (max-width: 1024px) {
+  /* Large devices (992px and down) */
+  .nav-home ul li{
+    margin: 0 0 0 5px;
+  }
+  .navbar-nav > li > a{
+    font-size: 13px !important;
+  }
+  .slick-slide img{
+    width: 100%;
+  }
+  .search-bg__title{
+    font-size: 23px;
+  }
+  #main-bg-slider .item{
+    height: 380px;
+  }
+  .form-zip{
+    margin-top: 80px !important;
+  }
+  #main-bg-slider .item img{
+    height: 380px;
+  }
+  .texas-text > p {
+    line-height: 20px;
+    font-weight: 300;
+    font-size: 14px;
+  }
+  .texas-inline {
+    padding: 20px 0px;
+  }
+  .title-02{
+    font-size: 45px;
+  }
+  .how-it-works-box >p{
+    font-size: 14px !important;
+  }
+  .how-it-works-box >h3{
+    font-size: 18px !important;
+  }
+  .how-it-works-box > img{
+    width: 100px !important;
+  }
+  .pw-solutions ul li h3{
+    font-weight: 900 !important;
+    font-size: 18px !important;
+  }
+  .pw-solutions ul li .img-holder .material-icons{
+    width: 75px;
+    height: 75px;
+    font-size: 40px;
+    line-height: 78px;
+  }
+  .about-title{
+    font-size: 24px;
+  }
+  .right-about-divs  .display{
+    display: none;
+  }
+  .right-about-divs  p{
+    font-size: 15px;
+    font-weight: 500;
+  }
+  .left-about-divs{
+    margin-top: 90px;
+  }
+  .left-about-divs p{
+    font-size: 15px;
+    font-weight: 500;
+  }
+  .widget h2 {
+    font-size: 1.6em;
+  }
+}
+
+@media (max-width: 1246px) {
+  /* X-Large devices (1200px and down) */
+  .nav-home ul{
+    margin-right: 19px !important;
+  }
+  .nav-home ul li {
+    margin: 0 0 0 5px;
+  }
+  .navbar-nav > li > a {
+    font-size: 13px !important;
+  }
+
+}
+@media only screen and (max-width : 768px) {
+
+  .animated {
+    -o-transition-property: none !important;
+
+    -moz-transition-property: none !important;
+
+    -ms-transition-property: none !important;
+
+    -webkit-transition-property: none !important;
+
+    transition-property: none !important;
+
+    -o-transform: none !important;
+
+    -moz-transform: none !important;
+
+    -ms-transform: none !important;
+
+    -webkit-transform: none !important;
+
+    transform: none !important;
+
+    -webkit-animation: none !important;
+
+    -moz-animation: none !important;
+
+    -o-animation: none !important;
+
+    -ms-animation: none !important;
+
+    animation: none !important;
+
+  }
+
 }
