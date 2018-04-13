@@ -126,7 +126,7 @@ export class LoginComponent implements OnInit {
 
     headers.append('Content-Type', 'application/json');
     // this.http.get(Config.api + 'data_against_zipcode/' + this.zip_code + '', { headers: headers }),
-    this.https.post(Config.api +'forget_password/' + this.username +'/', JSON.stringify({ "email":Email}), { headers: headers })
+    this.https.post(Config.api +'forget_password/' + this.username , JSON.stringify({ "email":Email}), { headers: headers })
 
 
       //   // this.http.post(Config.api + 'signup/'+ this.zip_code +'', {"premiseid": this.premiseID +'', {headers: headers})
