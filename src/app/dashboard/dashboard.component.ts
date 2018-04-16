@@ -56,7 +56,9 @@ export class DashboardComponent implements OnInit, AfterViewInit {
     constructor(private route: ActivatedRoute, private https: HttpClient, private newService: DeleteService,private serve:EditService,
         private formBuilder: FormBuilder,  private router: Router, private http: Http, private pagerService: PagerService, private homeService: HomeService, private sg: SimpleGlobal,private dialog: MatDialog, private dataa: DataService, private companyService: CompanyService) {
 
-    }
+            this.username = localStorage.getItem('username');
+
+        }
 
 
     // array of all items to be paged
@@ -81,13 +83,14 @@ export class DashboardComponent implements OnInit, AfterViewInit {
      
     obj:any=[];
     editdata: any = [];
-    setPage(username,page: number) {
+    setPage(page: number) {
         // alert("username")
-        //  console.log("usernameeeeeeeeeeeee",username)
+        this.username = localStorage.getItem('username');
+         console.log("usernameeeeeeeeeeeee",this.username)
 
         const Results = {};
       
-        this.companyService.searchProduct(username,page).subscribe(Response => {
+        this.companyService.searchProduct(this.username,page).subscribe(Response => {
             // console.log(Response.id);
             // this.id = Response.id;
             console.log('service');       // localStorage.setItem('products',response['Results']);
@@ -120,31 +123,7 @@ export class DashboardComponent implements OnInit, AfterViewInit {
     }
     data;
     public username;
-    // updatedata() {
-    //     // alert(this.premiseID.toString().length)
-    //     // alert('hello');
-
-    //     let headers = new HttpHeaders();
-    //     headers.append('Content-Type', 'application/json');
-    //     // this.http.get(Config.api + 'data_against_zipcode/' + this.zip_code + '', { headers: headers }),
-    //     //  this.https.put(Config.api + 'dataup/'+ this.id +'' , { headers: headers })
-    //     this.https.put('http://192.168.30.52:9000/choice/dataup/' + this.id + '', { headers: headers })
-    //         .subscribe(Res => {
-    //             console.log(Res);
-    //             // this.city = Res[0].city;
-    //             // this.state = Res[0].state;
-    //             // localStorage.setItem("signupDetails", JSON.stringify(Res));
-    //             // localStorage.setItem("signedupcompanyid", this.product_id);
-    //             // localStorage.setItem("consumerPremiseID", this.premiseID);
-
-    //             //   return JSON.parse(localStorage.getItem("premiseID"))
-    //             // this.sg['products'] = Res.json()['Results'];
-    //             // this.data.changeProducts(this.sg['products']);
-
-    //         });
-
-    // }
-    //initialization of variables
+   
     dataId = '';
     list = 'Hello';
 
@@ -163,20 +142,20 @@ export class DashboardComponent implements OnInit, AfterViewInit {
         this.newService.DeleteTodoList(id).subscribe(data => {
             console.log(data);
 
-            this.route.params.subscribe(params => {
+            // this.route.params.subscribe(params => {
 
 
-                //  console.log('paramsssssssssss',params['username'])
-                this.setPage(params['username'],1)
-                //  this.setPage(1)
+            //     //  console.log('paramsssssssssss',params['username'])
+            //     this.setPage(this.username,1)
+            //     //  this.setPage(1)
     
-            });
+            // });
             //  alert("junaid");
             // this.data.currentProducts.subscribe(products => this.sg['products'] = products)
             // this.data.currentProducts
             this.Sub = this.route.params.subscribe(params => {
                 this.username = +params['username'];
-                //  this.setPage(1)
+                 this.setPage(1)
                 // alert(this.username);
             });
 
@@ -255,37 +234,14 @@ console.log("TS OBJECT",updatedtitle,updatedsign_up,updatedphone,updatedterms_of
 
     }
 
-    // deletedata() {
-    //     // alert(this.premiseID.toString().length)
-    //     // alert('hello');
-    //     // if (this.data.id.checked) {
-
-    //     let headers = new HttpHeaders();
-    //     headers.append('Content-Type', 'application/json');
-    //     // this.http.get(Config.api + 'data_against_zipcode/' + this.zip_code + '', { headers: headers }),
-    //     this.https.delete(Config.api + 'mydata/' + this.id + '', { headers: headers })
-    //         //this.https.put('http://192.168.30.52:9000/choice/dataup/'+ this.id +'' , { headers: headers })
-    //         .subscribe(Res => {
-    //             console.log(Res);
-    //             // this.city = Res[0].city;
-    //             // this.state = Res[0].state;
-    //             // localStorage.setItem("signupDetails", JSON.stringify(Res));
-    //             // localStorage.setItem("signedupcompanyid", this.product_id);
-    //             // localStorage.setItem("consumerPremiseID", this.premiseID);
-
-    //             //   return JSON.parse(localStorage.getItem("premiseID"))
-    //             // this.sg['products'] = Res.json()['Results'];
-    //             // this.data.changeProducts(this.sg['products']);
-
-    //         });
-    //     // }
-    // }
+   
     private Sub: Subscription;
     form;
     updataForm : FormGroup;
     // constructor(private navbarTitleService: NavbarTitleService) { }
     public ngOnInit() {
-        
+        this.username = localStorage.getItem('username')
+        console.log(this.username)
         this.updataForm = this.formBuilder.group({
           
             cancelation_fee: ['', Validators.compose([Validators.required])],
@@ -301,20 +257,21 @@ console.log("TS OBJECT",updatedtitle,updatedsign_up,updatedphone,updatedterms_of
             terms_of_service: ['',  Validators.compose([Validators.required])],
             title: ['', Validators.compose([Validators.required])],
         });
-           this.route.params.subscribe(params => {
+        //    this.route.params.subscribe(params => {
 
 
-            //  console.log('paramsssssssssss',params['username'])
-            this.setPage(params['username'],1)
-            console.log(params['username'],1)
-            //  this.setPage(1)
+        //     //  console.log('paramsssssssssss',params['username'])
+        //     this.setPage(params['username'],1)
+        //     console.log(params['username'],1)
+            
 
-        });
+        // });
         //  alert("junaid");
         // this.data.currentProducts.subscribe(products => this.sg['products'] = products)
         // this.data.currentProducts
         this.Sub = this.route.params.subscribe(params => {
             this.username = +params['username'];
+            this.setPage(1)
             //  this.setPage(1)
             // alert(this.username);
         });

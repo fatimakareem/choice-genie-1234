@@ -8,8 +8,6 @@ import { FormsModule, ReactiveFormsModule, NgForm, FormBuilder, FormGroup, Valid
 import { CommonModule } from '@angular/common';
 import {MatFormFieldModule} from '@angular/material/form-field';
 // import { SweetAlertService } from 'ng2-sweetalert2';
-
-
 import {
   MatAutocompleteModule,
   MatButtonModule,
@@ -42,10 +40,7 @@ import {
   MatToolbarModule,
   MatTooltipModule,
   MatStepperModule,
-
 } from '@angular/material';
-
-
 import { SuperadminComponent } from './layouts/superadmin/superadmin.component';
 import { SupersiderbarComponent } from './supersiderbar/supersiderbar.component';
 import { AppComponent } from './app.component';
@@ -57,7 +52,6 @@ import { AdminLayoutComponent } from './layouts/admin/admin-layout.component';
 import { AuthLayoutComponent } from './layouts/auth/auth-layout.component';
 import { CustomerLayoutComponent } from './layouts/customer/customer-layout.component';
 import { NormalLayoutComponent } from './layouts/normal/normal-layout.component';
-
 import { AppRoutes } from './app.routing';
 import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
@@ -76,7 +70,6 @@ import { ResidentialService } from './residential/residential-dialog2/residentia
 import { ContactusComponent } from './contactus/contactus.component';
 import { PagerService } from './pager.service';
 import { CompanyService } from './company.service';
-
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { StepperOverviewExample } from './signup/stepper-overview-example';
 // import { UsersignupComponent } from './usersignup/usersignup.component';
@@ -94,7 +87,6 @@ import { ChoiceandsavingComponent } from './choiceandsaving/choiceandsaving.comp
 import { WhyChocieGenieComponent } from './why-chocie-genie/why-chocie-genie.component';
 import { RandomService } from './random.service';
 import { ActiveService } from './active.service';
-
 import { SuperuserService } from './superdashboard/superuser.service';
 import { LoaderModule } from './loader/loader.module';
 import { SuperviewcontactComponent } from './superviewcontact/superviewcontact.component';
@@ -103,13 +95,8 @@ import { SviewapartnerService } from './sviewapartner/sviewapartner.service';
 import { SuperviewcontactService } from './superviewcontact/superviewcontact.service';
 import { ChangepasswordComponent } from './changepassword/changepassword.component';
 import { SuperchangepasswordComponent } from './superchangepassword/superchangepassword.component';
- 
- 
 import { ChangepasswordService } from './changepassword.service';
 import { SuperchangepaswwordService } from './superchangepassword/superchangepaswword.service';
- 
-
-
 @NgModule({
   exports: [
     MatAutocompleteModule,
@@ -191,9 +178,6 @@ export class MaterialModule {}
     AboutComponent,
     // ChangePasswordComponent,
     StepperOverviewExample,
-   
-   
- 
       ],
   providers: [
     HomeService,
@@ -203,7 +187,6 @@ export class MaterialModule {}
     // SweetAlertService,
     LoginService,
     PagerService,
-    
     UserLoginService,
     SuperLoginService,
     ResidentialService,
@@ -215,7 +198,6 @@ export class MaterialModule {}
     ActiveService,
     ChangepasswordService,
     SuperchangepaswwordService,
-
 RandomService,
   ],
   bootstrap: [AppComponent],

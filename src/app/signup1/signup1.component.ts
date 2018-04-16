@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { Headers, Http, Response } from '@angular/http';
 import 'rxjs/add/operator/map'
-
+import {ErrorStateMatcher, MatStepper} from '@angular/material';
 import { Config } from "../Config";
 import { ActivatedRoute, Router } from "@angular/router";
 import { SimpleGlobal } from 'ng2-simple-global';
 import { ResponseContentType } from '@angular/http/src/enums';
 import { FormBuilder, Validators, NgControl, RadioControlValueAccessor, FormControl, FormGroup } from '@angular/forms';
 import { HttpClient, HttpResponse, HttpHeaders } from "@angular/common/http";
- import swal from 'sweetalert2'; 
+import swal from 'sweetalert2'; 
 import { MatSelect } from '@angular/material';
 import { PasswordValidation } from './password-validator.component';
 @Component({
@@ -16,7 +16,6 @@ import { PasswordValidation } from './password-validator.component';
   templateUrl: './signup1.component.html',
   styleUrls: ['./signup1.component.scss']
 })
-
 export class Signup1Component implements OnInit {
   state;
   city;
@@ -28,15 +27,11 @@ export class Signup1Component implements OnInit {
   normalPattern = '[a-zA-Z0-9_.-]+?';
   digitsOnly = '^[0-9,-]+$';
   email = '^\\w+([\\.-]?\\w+)*@\\w+([\\.-]?\\w+)*(\\.\\w{2,3})+$';
-
   flag = true;
   date = new FormControl(new Date());
-
   emailexist: boolean = true;
-
   constructor(public router: Router, private fb: FormBuilder, private http: HttpClient, private route: ActivatedRoute,
      private sg: SimpleGlobal) { }
-
   ngOnInit() {
     this.states();
     // this.city();
@@ -52,10 +47,11 @@ export class Signup1Component implements OnInit {
       // 'city': ['', Validators.compose([Validators.required, Validators.pattern(this.normalPattern)])],
       'password': ['', Validators.compose([Validators.required, Validators.minLength(6)])],
       'confirmpassword': ['', Validators.compose([Validators.required, Validators.minLength(6)])],
-
-    });
+    },
+    {
+      validator: PasswordValidation.MatchPassword // your validation method
+  });
   }
-  
   
    onChange(e) {
     alert(e)

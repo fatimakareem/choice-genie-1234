@@ -154,6 +154,8 @@
             <mat-form-field>
               <input matInput placeholder="Confirm Password" type="password" [formControl]="signupForm.controls['confirmpassword']" [(ngModel)]="model.confirmpassword">
               <!-- <mat-error *ngIf="secondFormGroup.controls.Confirm_Password.dirty && !secondFormGroup.controls.Confirm_Password.value"> Special characters not allowed</mat-error> -->
+              <mat-error *ngIf="(signupForm.controls.confirmpassword.value != signupForm.controls.password.value) || signupForm.controls.confirmpassword.value == ''"><strong>Password must match
+              </strong></mat-error>    
             </mat-form-field>
           </div>
         </div>
