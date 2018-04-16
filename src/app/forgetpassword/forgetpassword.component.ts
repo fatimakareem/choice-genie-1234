@@ -34,7 +34,7 @@ export class ForgetpasswordComponent implements OnInit {
     // this.http.get(Config.api + 'data_against_zipcode/' + this.zip_code + '', { headers: headers }),
     this.http.post(Config.api +'reset_password/', JSON.stringify({ 'pass1':pass1,
     'pass2':pass2,
-    'code':code,}), { headers: headers })
+    'code':code,}), { headers: headers }).map((response: Response) => response.json())
 
 
       //   // this.http.post(Config.api + 'signup/'+ this.zip_code +'', {"premiseid": this.premiseID +'', {headers: headers})
