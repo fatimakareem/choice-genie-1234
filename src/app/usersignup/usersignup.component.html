@@ -27,17 +27,6 @@
 
 
             <div class="row">
-
-              <!-- <div class="col-sm-6">
-  <div class="form-group">
-  <label class="control-label">Middle Name</label>
-  <mat-form-field>
-  <input matInput placeholder="Middle Name" formControlName="mName"  [(ngModel)]="model.middle_name">
-  <mat-error *ngIf="secondFormGroup.controls.mName.dirty && !secondFormGroup.controls.mName.value"> Special characters not allowed</mat-error>
-  </mat-form-field>
-  </div>
-  </div> -->
-
               <div class="col-sm-6">
                 <div class="form-group">
 
@@ -78,14 +67,13 @@
                 <div class="form-group">
 
                   <mat-form-field>
-                    <input matInput placeholder="Email" required [formControl]="signupForm.controls['email']" #email1 (ngModelChange)="emailCheck(email1.value)"
-                      [(ngModel)]="model.email" />
-
+                    <input matInput placeholder="Email" required [formControl]="signupForm.controls['email']" [(ngModel)]="model.email">
+                      <!-- (ngModelChange)="emailCheck(email1.value)" #email1  -->
 
                   </mat-form-field>
-                  <div *ngIf="emailexist!=true" class="alert alert-danger">
+                  <!-- <div *ngIf="emailexist!=true" class="alert alert-danger">
                     This email already exist.
-                  </div>
+                  </div> -->
                   <!-- <ng-template #no_data_temp2>
                     <div class="alert alert-danger"> This email already exist. </div>
                                       
@@ -176,13 +164,13 @@
                 <div class="form-group">
                   <mat-form-field>
 
-                    <input matInput placeholder="Company Title" [formControl]="signupForm.controls['username']" (ngModelChange)="usernameCheck(username1.value)"
-                      #username1 required [(ngModel)]="model.username">
-
+                    <input matInput placeholder="User Name" [formControl]="signupForm.controls['username']"  required [(ngModel)]="model.username">
+                    <!-- (ngModelChange)="usernameCheck(username1.value)"
+                    #username1 -->
                   </mat-form-field>
-                  <div *ngIf="usernameexist!= true" class="alert alert-danger">
+                  <!-- <div *ngIf="usernameexist!= true" class="alert alert-danger">
                     This username already exist.
-                  </div>
+                  </div> -->
                   <!-- <ng-template #no_data_temp1>
 <div class="alert alert-danger"> This username already exist. </div>
                    
@@ -233,7 +221,7 @@
 
               <div class="form-group">
                 <button class="btn btn-lrg btn-rose btn-fill btn-wd" style="width:100%; border-radius:50px;font-size:24px !important;" type="submit"
-                  (click)="signupuserdata();emailexist1();userexist() ">Register</button>
+                  (click)="signupuserdata() ">Register</button>
               </div>
             </div>
           </div>

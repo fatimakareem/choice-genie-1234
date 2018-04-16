@@ -11,7 +11,8 @@ import { FormBuilder, Validators, NgControl, RadioControlValueAccessor, FormCont
 import { HttpClient, HttpResponse, HttpHeaders } from "@angular/common/http";
 import swal from 'sweetalert2';
 import { MatSelect } from '@angular/material';
- 
+import { LoginService } from '../pages/login/login.service';
+
 
 
 @Component({
@@ -35,10 +36,10 @@ export class UsersignupComponent implements OnInit {
   flag = true;
   date = new FormControl(new Date());
 
-  emailexist: boolean = true;
+ // emailexist: boolean = true;
 
 
-  constructor(public router: Router, private fb: FormBuilder,  private http: HttpClient, private route: ActivatedRoute, private sg: SimpleGlobal) { }
+  constructor( private _serv: LoginService,public router: Router, private fb: FormBuilder,  private http: HttpClient, private route: ActivatedRoute, private sg: SimpleGlobal) { }
 
   ngOnInit() {
     this.states();
@@ -91,77 +92,77 @@ export class UsersignupComponent implements OnInit {
         
   //     });
   // }
-  emailCheck(email1) {
-    // alert(this.premiseID.toString().length)
-    //  alert('hello');
-    console.log("CHocie Genie",this.model.email);
+  // emailCheck(email1) {
+  //   // alert(this.premiseID.toString().length)
+  //   //  alert('hello');
+  //   console.log("CHocie Genie",this.model.email);
     
-    let headers = new HttpHeaders();
-    headers.append('Content-Type', 'application/json');
-    this.http.get(Config.api + 'email_exist/'+ email1+'/', { headers: headers })
+  //   let headers = new HttpHeaders();
+  //   headers.append('Content-Type', 'application/json');
+  //   this.http.get(Config.api + 'email_exist/'+ email1+'/', { headers: headers })
     
-    .subscribe(data => {
-    console.log(data);
-    console.log(data['status'],'hhhhhhhhhhhhhhh')
-    this.emailexist=data['status'];
+  //   .subscribe(data => {
+  //   console.log(data);
+  //   console.log(data['status'],'hhhhhhhhhhhhhhh')
+  //   this.emailexist=data['status'];
     
-    console.log(this.model.email);
-    
-    
-    
-    });
-    }
-    usernameexist:boolean = true;
-    // usernameexist;
-      usernameCheck(username1) {
-        //alert('hello');
-        console.log("CHOICE GENIE", this.model.username);
-    
-        let headers = new HttpHeaders();
+  //   console.log(this.model.email);
     
     
-        headers.append('Content-Type', 'application/json');
-        // this.http.get(Config.api + 'data_against_zipcode/' + this.zip_code + '', { headers: headers }),
-        this.http.get(Config.api +'usernameexist/'+ username1 +'/', { headers: headers })
+    
+  //   });
+  //   }
+    // usernameexist:boolean = true;
+    // // usernameexist;
+    //   usernameCheck(username1) {
+    //     //alert('hello');
+    //     console.log("CHOICE GENIE", this.model.username);
+    
+    //     let headers = new HttpHeaders();
     
     
-          //   // this.http.post(Config.api + 'signup/'+ this.zip_code +'', {"premiseid": this.premiseID +'', {headers: headers})
-          .subscribe(data => {
-            console.log(data);
-            // this.next = Res[0].next;
-            console.log(data['status'],'hhhhhhhhhhhhhhh')
-          // if ( this.usernameexist=false){
-           this.usernameexist = data['status']
-            // }
-          //  console.log(this.usernameexist);
+    //     headers.append('Content-Type', 'application/json');
+    //     // this.http.get(Config.api + 'data_against_zipcode/' + this.zip_code + '', { headers: headers }),
+    //     this.http.get(Config.api +'usernameexist/'+ username1 +'/', { headers: headers })
+    
+    
+    //       //   // this.http.post(Config.api + 'signup/'+ this.zip_code +'', {"premiseid": this.premiseID +'', {headers: headers})
+    //       .subscribe(data => {
+    //         console.log(data);
+    //         // this.next = Res[0].next;
+    //         console.log(data['status'],'hhhhhhhhhhhhhhh')
+    //       // if ( this.usernameexist=false){
+    //        this.usernameexist = data['status']
+    //         // }
+    //       //  console.log(this.usernameexist);
            
-          },
-            error => {
-           //   this.usernameexist=error['status']
-              console.log(error);
-            //  this.toastr.error(error, null, {toastLife: 5000});
-              // swal(
-              //   'Invalid',
-              //   'User Already Exist! or May be Some Error!',
-              //   'error'
-              // )
+    //       },
+    //         error => {
+    //        //   this.usernameexist=error['status']
+    //           console.log(error);
+    //         //  this.toastr.error(error, null, {toastLife: 5000});
+    //           // swal(
+    //           //   'Invalid',
+    //           //   'User Already Exist! or May be Some Error!',
+    //           //   'error'
+    //           // )
     
-              //     //    this.state = Res[0].state;
-              //     //this.sg['products'] = Res.json()['Results'];
-              //     //this.data.changeProducts(this.sg['products']);
-              //   f.resetForm();
-            });
-        //}
+    //           //     //    this.state = Res[0].state;
+    //           //     //this.sg['products'] = Res.json()['Results'];
+    //           //     //this.data.changeProducts(this.sg['products']);
+    //           //   f.resetForm();
+    //         });
+    //     //}
     
-        //    this.state = Res[0].state;
-        //this.sg['products'] = Res.json()['Results'];
-        //this.data.changeProducts(this.sg['products']);
-    
-    
-        //}
+    //     //    this.state = Res[0].state;
+    //     //this.sg['products'] = Res.json()['Results'];
+    //     //this.data.changeProducts(this.sg['products']);
     
     
-      }
+    //     //}
+    
+    
+    //   }
   states() {
     // alert(this.premiseID.toString().length)
     //  alert('hello');
@@ -225,12 +226,41 @@ export class UsersignupComponent implements OnInit {
       }
     });
   }
+  login(name,password){
+  
+     
+            this._serv.login(name,password).subscribe(
+              data => {
+                console.log(data);
+                // swal(
+                //   'Successfully! Logged in',
+                //   '',
+                //   'success'
+                // )
+              
+                // this.router.navigate(['/dashboard/'+ this.username]);
+                // localStorage.setItem('username', this.username);
+  
+              },
+              error => {
+                this.router.navigate(['/userlogin/']);
+                console.log(error);
+             
+                swal(
+                  'Invalid',
+                  'Username OR Password',
+                  'error'
+                )
+             
+              });
+  
+  }
   signupuserdata() {
     //alert('hello');
     
     console.log("CHOICE GENIE", this.model);
     let headers = new HttpHeaders();
-    headers.append('Content-Type', 'application/json');
+    headers.append('Content-Type','application/json');
     this.http.post(Config.api + 'userregister/', this.model, { headers: headers })
       .subscribe(Res => {
         console.log(Res);

@@ -40,6 +40,7 @@ declare interface User {
 export class UserloginComponent implements OnInit {
   public typeValidation: User;
   register: FormGroup;
+  Email;
   login: FormGroup;
   type: FormGroup;
   test: Date = new Date();

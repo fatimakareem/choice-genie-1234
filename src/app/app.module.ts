@@ -93,6 +93,7 @@ import { BecomeapartnerComponent } from './becomeapartner/becomeapartner.compone
 import { ChoiceandsavingComponent } from './choiceandsaving/choiceandsaving.component';
 import { WhyChocieGenieComponent } from './why-chocie-genie/why-chocie-genie.component';
 import { RandomService } from './random.service';
+import { ActiveService } from './active.service';
 
 import { SuperuserService } from './superdashboard/superuser.service';
 import { LoaderModule } from './loader/loader.module';
@@ -211,7 +212,7 @@ export class MaterialModule {}
     SuperuserService,
     SviewapartnerService,
     SuperviewcontactService,
- 
+    ActiveService,
     ChangepasswordService,
     SuperchangepaswwordService,
 
