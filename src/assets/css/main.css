@@ -697,7 +697,9 @@ background: goldenrod;
   .products-area .plan-detail {
     font-size: 18px;
     line-height: 22px;
-    text-align: justify; }
+    text-align: justify; 
+    padding-top: 50px;
+  }
   .products-area .card {
     padding: 0 15px 20px;
     margin: 15px 0;}
@@ -1375,7 +1377,10 @@ h3 {
 
 
 /*# sourceMappingURL=main.css.map */
-
+.terms-container-wrapper {
+  background: #ffffff;
+  padding-top: 30px;
+}
 
 #myBtn {
   display: block;
@@ -1383,23 +1388,24 @@ h3 {
    position: fixed;
    bottom: 5px;
    z-index: 99;
-  right: 10px;border: none;
-  outline: none !important;
-   background-color: #214147;
-  color: white;
-  cursor: pointer;
-  padding: 10px;
-  border-radius: 50%;
-  height: 60px !important;
-  width: 60px;
+     right: 10px;
+       border: none;
+         outline: none !important;
+           background-color: #214147;
+              color: white;
+                cursor: pointer;
+                   padding: 10px;
+                      border-radius: 50%;
+                         height: 60px !important;
+                           width: 60px;
 }
 .btn-slider-left{
   height: 47px;
   width: 47px;
   border-radius: 100%;
   background: #cc0000 !important;
-  top: 39%;
-  left: -5%;
+  top: 100px;
+  left: -60px;
   z-index: 1;
   position: absolute;
   background: none;
@@ -1415,8 +1421,8 @@ h3 {
   width: 47px;
   border-radius: 100%;
   background: #cc0000 !important;
-  top: 39%;
-  right: -4%;
+  top: 100px;
+  right: -53px;
   z-index: 1;
   position: absolute;
   background: none;
@@ -1591,12 +1597,13 @@ h3 {
 
   .list-contact li i {
   width: 25px;
-  text-align: center
+  text-align: center;
+  color: #f80000;
   }
   .list-social {
   font-size: 25px;
+  text-align: center;
   padding: 10px 0;
-    text-align: center;
   }
 
   .list-social li {
@@ -3016,7 +3023,7 @@ li.pinterest:hover {
 
 /*Faq CSS Start*/
 .section {
-  padding: 28px 0;
+  padding: 120px 0;
   position: relative;
 }
 .section-title-2 {
@@ -3032,8 +3039,6 @@ li.pinterest:hover {
   font-size: 48px;
 }
  /*Faq CSS end*/
-
- /*become a partner start*/
  .partner-holder {
   background-image: url(../../assets/img/partnership.jpg);
   background-repeat: no-repeat;
@@ -3041,7 +3046,7 @@ li.pinterest:hover {
   padding: 30px 0;
 }
 .partner-holder .mat-form-field-placeholder, .partner-holder .mat-input-element {
-  color: #ffffff !important;
+  color: #fefefe;
 }
 .mat-input-element {
   font: inherit;
@@ -3063,16 +3068,11 @@ li.pinterest:hover {
   padding: 10px 10px;
   height: 140px!important;
 }
-.become{
-  width: 50%;
-  float: right;
-}
+ /* Become a Partner */
 
-/* Become a Partner end */
-
-/* header css fixed start*/
+/* header fixed start*/
 .navbar-nav > li > a {
-  font-size:20px !important;
+  font-size:24px !important;
 }
 .nav-home ul li :hover {
   color: #e53935;
@@ -3081,11 +3081,7 @@ li.pinterest:hover {
 .navbar-right {
   float: none;
 }
-.why-choiegenie-sublist >li >a >i{
-  font-size: 15px;
-}
-
-/* header css fixed end */
+/* header fixed end */
 
 /*download Apple and Android Button  on Slider*/
 .download-here {
@@ -3485,6 +3481,27 @@ h1, .entry-title {
 }
 /*texas section home page end*/
 
+/* sidebar profile pic */
+.sidebar .nav{
+  padding: 0px !important;
+}
+.sidebar-profile-img{
+   background-color: aliceblue;
+  border-radius: 100px;
+  width: 150px;
+  margin-left: 55px;
+  height: 150px;
+}
+.sidebar-profile-img > a > img {
+  width: 87%;
+  margin: 48px 11px;
+}
+.vander-side-bar >li >a{
+text-align: center
+}
+.vander-side-bar > li{
+  width:100%;
+}
 /**Choie And savings start**/
 .choice-saving{
   padding: 50px;
@@ -3527,23 +3544,9 @@ h1, .entry-title {
   margin-bottom: 40px;
   box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(233, 30, 99, 0.4);
 }
-
-/*Terms and conditons css start*/
-
-.terms-container-wrapper{
-  padding-top: 50px;
-  background-color: #ffffff;
-}
-.terms-condition-wrapper{
-  box-shadow: 0 1px 1px 1px #888;
-  padding: 30px 30px !important;
-  margin-bottom: 20px;
-  border-radius: 5px;
-}
-.terms-condition-wrapper > h1{
-  color: #c00;
-  font-weight: 500;
+.tablefixed >tbody >tr >td{
   text-align: center;
+<<<<<<< HEAD
   font-size: 30px;
 }
 .terms-condition-wrapper h3{
@@ -3887,4 +3890,6 @@ h1, .entry-title {
 
   }
 
+=======
+>>>>>>> 9ed1e91cff3a54a298b32823617238dc47bddb51
 }

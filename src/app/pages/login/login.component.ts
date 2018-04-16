@@ -214,8 +214,7 @@ Email;
       // We can use more than one validator per field. If we want to use more than one validator we have to wrap our array of validators with a Validators.compose function. Here we are using a required, minimum length and maximum length validator.
       password: ['', Validators.compose([Validators.required])],
      Email:['', Validators.compose([])],
-     // Email:['', Validators.compose([Validators.required])],
-    });
+   });
     var navbar: HTMLElement = this.element.nativeElement;
     this.toggleButton = navbar.getElementsByClassName('navbar-toggle')[0];
 
