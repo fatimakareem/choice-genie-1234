@@ -20,7 +20,9 @@ export class ForgetpasswordComponent implements OnInit {
 
   constructor(public router: Router, private fb: FormBuilder, private http: HttpClient, private route: ActivatedRoute,
     private sg: SimpleGlobal) { }
-
+    pass1;
+    pass2;
+    code;
   ngOnInit() {
   }
   forgetpass(pass1,pass2,code) {

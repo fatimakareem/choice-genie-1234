@@ -48,6 +48,7 @@ export class LoginComponent implements OnInit {
   private sidebarVisible: boolean;
   private nativeElement: Node;
   public username;
+Email;
 
   password;
 
@@ -160,8 +161,44 @@ export class LoginComponent implements OnInit {
 
   }
 
+<<<<<<< HEAD
  
  
+=======
+  foremail() {
+    // swal({
+    //   title: 'Enter email address',
+    //   input: 'email',
+    //   inputPlaceholder: 'Enter your email address'
+    // }).then((email) => {
+    //   this.forgetPassword(email)
+
+    // })
+  }
+
+  // forgetPassword(pass) {
+  //   // console.log("pass",pass.value['email']);
+  //   this._serv.forget_password(pass).subscribe(
+  //     data => {
+  //       // swal({
+  //       //   type: 'success',
+  //       //   html: 'Password Reset instructions have been sent to your email. '
+  //       // })
+  //       // console.log(data);
+  //       // this.toastr.info(data.msg, null, {toastLife: 5000});
+  //     },
+  //     error => {
+  //       // console.log(error);
+  //       // swal(
+  //       //   'Invalid email ',
+  //       //   'Or user does not exist!',
+  //       //   'error'
+  //       // )
+  //     }
+  //   )
+
+  // }
+>>>>>>> b0eb58303692d0f5599de0d9fa3a7183f69d2efc
 
   validateAllFormFields(formGroup: FormGroup) {
     Object.keys(formGroup.controls).forEach(field => {
@@ -182,7 +219,7 @@ export class LoginComponent implements OnInit {
       // We can use more than one validator per field. If we want to use more than one validator we have to wrap our array of validators with a Validators.compose function. Here we are using a required, minimum length and maximum length validator.
       password: ['', Validators.compose([Validators.required])],
      Email:['', Validators.compose([])],
-    });
+   });
     var navbar: HTMLElement = this.element.nativeElement;
     this.toggleButton = navbar.getElementsByClassName('navbar-toggle')[0];
 
