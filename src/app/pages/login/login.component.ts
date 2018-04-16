@@ -71,11 +71,7 @@ Email;
   onLogin() {
     // console.log(this.login);
     if (this.login.valid) {
-      //console.log(this.login.value);
-      // console.log('form submitted');
-      // this._serv.login_authenticate(this.login.value.username,this.login.value.password).subscribe(
-      //   data => {
-          //  console.log("user",data);
+    
           this._serv.login(this.login.value.username, this.login.value.password).subscribe(
             data => {
               console.log(data);
@@ -122,14 +118,14 @@ Email;
     //alert('hello');
     console.log("CHOICE GENIE", this.username);
 
-    let headers = new HttpHeaders();
+    let headers = new HttpHeaders({'Authorization': 'JWT ' + this.username.token});
 
 
     headers.append('Content-Type', 'application/json');
     // this.http.get(Config.api + 'data_against_zipcode/' + this.zip_code + '', { headers: headers }),
-    this.https.post(Config.api +'forget_password/' + this.username , JSON.stringify({ "email":Email}), { headers: headers })
-
-
+   // this.https.post(Config.api +'forget_password/' + this.username , JSON.stringify({ "email":Email}), { headers: headers })
+    this.https.post(Config.api +'forget_password/' + this.username ,{ "email":Email}, { headers: headers })
+   
       //   // this.http.post(Config.api + 'signup/'+ this.zip_code +'', {"premiseid": this.premiseID +'', {headers: headers})
       .subscribe(Res => {
         this.router.navigate(['/forgetpassword/']);
@@ -217,6 +213,7 @@ Email;
       username: ['', Validators.compose([Validators.required])],
       // We can use more than one validator per field. If we want to use more than one validator we have to wrap our array of validators with a Validators.compose function. Here we are using a required, minimum length and maximum length validator.
       password: ['', Validators.compose([Validators.required])],
+     Email:['', Validators.compose([])],
      // Email:['', Validators.compose([Validators.required])],
     });
     var navbar: HTMLElement = this.element.nativeElement;

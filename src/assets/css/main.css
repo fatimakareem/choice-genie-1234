@@ -671,7 +671,8 @@ background: goldenrod;
 
 .main-content {
   padding: 40px 0 0;
-  overflow: hidden; }
+  overflow: hidden;
+}
   .main-content.custom {
     margin-top: 0 !important;
     padding: 0; }
@@ -1900,6 +1901,8 @@ section {
   font-size: 16px !important;
   font-weight: 400;
   margin: 0;
+  text-align: left;
+  padding-left: 6px;
 }
 /* how it Works End */
 
@@ -2585,7 +2588,7 @@ section {
 }
 
 .login-form-1-center{
-  width: 35%;
+  width: 40%;
   margin: 120px auto;
 }
 
@@ -2700,6 +2703,7 @@ section {
   text-align: center;
   margin: 10px 0 5px 0;
   font-size: 18px;
+  font-weight: bold;
 }
 
 .login-form-1-body > div > a{
@@ -3516,24 +3520,12 @@ h1, .entry-title {
   /* background-color: #25B7D3; */
   color: #ffffff !important;
   border-radius: 3px;
+  font-size: 16px;
+  line-height: 25px;
+  padding: 15px 25px;
+  font-weight: 600;
+  margin-bottom: 40px;
   box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(233, 30, 99, 0.4);
-  position: relative;
-}
-.vander-signup-heading > i{
-  position: absolute;
-  font-size: 50px;
-}
-.vander-signup-heading > i {
-  position: absolute;
-  /* top: 0; */
-  background: white;
-  border-radius: 50px;
-  width: 35px;
-  height: 35px;
-  padding: 8px;
-  margin-top: -37px;
-  font-size: 20px;
-  color: #cc0000 !important;
 }
 
 /*Terms and conditons css start*/
@@ -3587,6 +3579,37 @@ h1, .entry-title {
   border-color: #02b6ff;
   padding-bottom: 50px;
 }
+/*Terms css end */
+/*Signup Form Fixeddd start*/
+.signup-form-fixed{
+  display: inline-block;
+  position: absolute;
+  left: 3%;
+  margin-top: -17px;
+  padding: 13px 17px;
+  border-radius: 5px;
+  box-shadow: 0px 4px 10px #ccc;
+  color: #ffffff;
+  background: #cc0000 !important;
+}
+.card-content-fixed{
+  padding:0px 20px;
+  margin-bottom: 20px;
+  box-shadow: 0px -10px 15px #ccc;
+  position: relative;
+  background-color: #ffffff;
+  border-radius: 5px
+}
+.card-title-fixed{
+  display:inline-block;
+  margin-left: 77px;
+  font-size: 24px;
+}
+
+
+
+/*Signup Form Fixeddd End*/
+
 
 /*
  * --------------------------------------------------
@@ -3660,38 +3683,26 @@ h1, .entry-title {
   .widget > h2{
     font-size: 21px;
   }
-  .text-center > h3 {
-  }
+  /* .text-center > h3 {
+  } */
   .full-width-title::before, .full-width-title::after{
     background-color: white;
   }
   #myBtn{
     display: none !important;
   }
- .become{
-  float: none;
-  margin: 0 auto;
- }
- .login-form-1-header h3 {
-  font-size: 17px !important;
- }
- .logic-from-1-sl > li{
-  margin: 15px 25px 0px 7px;
- }
- .logic-from-1-sl > li > a{
-   font-size: 25px;
- }
- .login-form-1-body > a{
-   font-size: 15px;
- }
- .login-form-1-body > div{
-   font-size: 14px;
- }
- .login-form-1-body button{
-  font-size: 29px;
-  padding: 10px;
- }
-
+  .login-form-1-center{
+    width:50%;
+  }
+  .logo img{
+    width: 60%;
+    padding: 9px 0px;
+  }
+  .navbar-fixed-top
+  {
+    position: relative;
+    top: auto;
+  }
 }
 @media (max-width: 425px) {
   /* Small devices (425px and down) */
@@ -3712,13 +3723,16 @@ h1, .entry-title {
     display: none !important;
   }
   .search-bg__title{
-    font-size: 18px;
+    font-size: 14px !important;
+  }
+  #main-bg-slider .download-here > a > img{
+    width: 80px;
   }
   #main-bg-slider .item img{
-    height: 300px !important;
+    height: 250px !important;
   }
   #main-bg-slider .item {
-    height: 300px !important;
+    height: 250px !important;
   }
   .become{
     width: 100%;
@@ -3732,15 +3746,34 @@ h1, .entry-title {
   .faqs h3{
     font-size: 17px  !important;
   }
+  .login-form-1-center{
+    width:100%;
+  }
+  .login-form-1-header>.logic-from-1-sl > li{
+    margin: 5px 20px;
+  }
+  .logic-from-1-sl > li > a{
+    font-size: 25px;
+  }
+  .login-form-1-header >h3{
+    font-size: 18px !important;
+  }
+  .signup-header-text{
+    font-size:18px;
+  }
+  .login-form-1-body button{
+    font-size: 27px;
+    padding: 10px;
+  }
 }
 @media (max-width: 1024px) {
   /* Large devices (992px and down) */
   .nav-home ul li{
     margin: 0 0 0 5px;
   }
-  .navbar-nav > li > a{
-    font-size: 13px !important;
-  }
+  /* .navbar-nav > li > a{
+
+  } */
   .slick-slide img{
     width: 100%;
   }
@@ -3803,9 +3836,7 @@ h1, .entry-title {
     font-size: 15px;
     font-weight: 500;
   }
-  .widget h2 {
-    font-size: 1.6em;
-  }
+
 }
 
 @media (max-width: 1246px) {
