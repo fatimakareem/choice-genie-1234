@@ -1,4 +1,3 @@
-
 <div class="main-content signup-main">
   <div class="container">
     <h3 class="text-center">Tell Us About
@@ -65,9 +64,10 @@
                 <div class="form-group">
 
                   <mat-form-field>
-                      <input matInput [matDatepicker]="picker" placeholder="Choose a date" (click)="picker.open()" (focus)="picker.open()"  [formControl]="signupForm.controls['dob']" required [(ngModel)]="model.dob">
-                      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                      <mat-datepicker #picker></mat-datepicker>
+                    <input matInput [matDatepicker]="picker" placeholder="Choose a date" (click)="picker.open()" (focus)="picker.open()" [formControl]="signupForm.controls['dob']"
+                      required [(ngModel)]="model.dob">
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
                     <!-- <input matInput placeholder="Date Of Birth" [formControl]="signupForm.controls['dob']" required [(ngModel)]="model.dob"> -->
                     <!-- <mat-error *ngIf="secondFormGroup.controls.Country.dirty && !secondFormGroup.controls.Country.value"> Special characters not allowed</mat-error> -->
                   </mat-form-field>
@@ -75,6 +75,26 @@
               </div>
               <br class="clearfix" />
               <div class="col-sm-6">
+                <div class="form-group">
+
+                  <mat-form-field>
+                    <input matInput placeholder="Email" required [formControl]="signupForm.controls['email']" #email1 (ngModelChange)="emailCheck(email1.value)"
+                      [(ngModel)]="model.email" />
+
+
+                  </mat-form-field>
+                  <div *ngIf="emailexist!=true" class="alert alert-danger">
+                    This email already exist.
+                  </div>
+                  <!-- <ng-template #no_data_temp2>
+                    <div class="alert alert-danger"> This email already exist. </div>
+                                      
+                                       
+                                      </ng-template> -->
+                </div>
+              </div>
+
+              <!-- <div class="col-sm-6">
                 <div class="form-group">
 
                   <mat-form-field>
@@ -86,9 +106,9 @@
                     This username already exist.
                   </div>
                 </div>
-              </div>
+              </div> -->
 
-             <br class="clearfix" />
+              <br class="clearfix" />
               <div class="col-sm-6">
                 <div class="form-group">
 
@@ -97,7 +117,7 @@
                     <!-- <mat-error *ngIf="secondFormGroup.controls.Phone_No.dirty && !secondFormGroup.controls.Phone_No.value"> Special characters not allowed</mat-error> -->
                   </mat-form-field>
                 </div>
-              </div>  
+              </div>
               <br class="clearfix" />
               <div class="col-sm-6">
                 <div class="form-group">
@@ -110,7 +130,7 @@
                   <mat-form-field>
 
                     <!-- <input matInput placeholder="Phone No" [formControl]="signupForm.controls['state']" required [(ngModel)]="model.state"> -->
-                  
+
                     <mat-select placeholder="state" (ngModelChange)="check($event)" required [formControl]="signupForm.controls['state']" [(ngModel)]="model.state">
 
                       <mat-option *ngFor="let s of state" [value]="s.state">
@@ -154,6 +174,24 @@
               </div> -->
               <div class="col-sm-6">
                 <div class="form-group">
+                  <mat-form-field>
+
+                    <input matInput placeholder="Company Title" [formControl]="signupForm.controls['username']" (ngModelChange)="usernameCheck(username1.value)"
+                      #username1 required [(ngModel)]="model.username">
+
+                  </mat-form-field>
+                  <div *ngIf="usernameexist!= true" class="alert alert-danger">
+                    This username already exist.
+                  </div>
+                  <!-- <ng-template #no_data_temp1>
+<div class="alert alert-danger"> This username already exist. </div>
+                   
+                    
+                  </ng-template> -->
+                </div>
+              </div>
+              <!-- <div class="col-sm-6">
+                <div class="form-group">
                 <mat-form-field>
                 
                 <input matInput placeholder="User Name" [formControl]="signupForm.controls['username']" required [(ngModel)]="model.username">
@@ -164,7 +202,7 @@
                 </div>
                 
                 </div>
-                </div>
+                </div> -->
               <br class="clearfix" />
               <div class="col-sm-6">
                 <div class="form-group">
@@ -180,8 +218,7 @@
                 <div class="form-group">
 
                   <mat-form-field>
-                    <input matInput placeholder="Confirm Password" type="password" [formControl]="signupForm.controls['password']" required
-                      [(ngModel)]="model.password">
+                    <input matInput placeholder="Confirm Password" type="password" [formControl]="signupForm.controls['password']" required [(ngModel)]="model.password">
                     <!-- <mat-error *ngIf="secondFormGroup.controls.Confirm_Password.dirty && !secondFormGroup.controls.Confirm_Password.value"> Special characters not allowed</mat-error> -->
                   </mat-form-field>
                 </div>
