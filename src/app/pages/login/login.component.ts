@@ -160,39 +160,8 @@ export class LoginComponent implements OnInit {
 
   }
 
-  foremail() {
-    // swal({
-    //   title: 'Enter email address',
-    //   input: 'email',
-    //   inputPlaceholder: 'Enter your email address'
-    // }).then((email) => {
-    //   this.forgetPassword(email)
-
-    // })
-  }
-
-  forgetPassword(pass) {
-    // console.log("pass",pass.value['email']);
-    this._serv.forget_password(pass).subscribe(
-      data => {
-        // swal({
-        //   type: 'success',
-        //   html: 'Password Reset instructions have been sent to your email. '
-        // })
-        // console.log(data);
-        // this.toastr.info(data.msg, null, {toastLife: 5000});
-      },
-      error => {
-        // console.log(error);
-        // swal(
-        //   'Invalid email ',
-        //   'Or user does not exist!',
-        //   'error'
-        // )
-      }
-    )
-
-  }
+ 
+ 
 
   validateAllFormFields(formGroup: FormGroup) {
     Object.keys(formGroup.controls).forEach(field => {
