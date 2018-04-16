@@ -212,11 +212,7 @@ export class LoginComponent implements OnInit {
       username: ['', Validators.compose([Validators.required])],
       // We can use more than one validator per field. If we want to use more than one validator we have to wrap our array of validators with a Validators.compose function. Here we are using a required, minimum length and maximum length validator.
       password: ['', Validators.compose([Validators.required])],
-<<<<<<< HEAD
      Email:['', Validators.compose([])],
-=======
-     // Email:['', Validators.compose([Validators.required])],
->>>>>>> d9d3a09215a7208c2b299fcd9eaf9d2957b5c7b8
     });
     var navbar: HTMLElement = this.element.nativeElement;
     this.toggleButton = navbar.getElementsByClassName('navbar-toggle')[0];
