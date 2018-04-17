@@ -12,6 +12,7 @@ import { HttpClient, HttpResponse, HttpHeaders } from "@angular/common/http";
 import swal from 'sweetalert2';
 import { MatSelect } from '@angular/material';
 import { LoginService } from '../pages/login/login.service';
+import { PasswordValidation } from './password-validator.component';
 
 
 
@@ -31,15 +32,15 @@ export class UsersignupComponent implements OnInit {
   model: any = {};
   normalPattern = '[a-zA-Z0-9_.-]+?';
   digitsOnly = '^[0-9,-]+$';
-  email = '^\\w+([\\.-]?\\w+)*@\\w+([\\.-]?\\w+)*(\\.\\w{2,3})+$';
-
+  email = '^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$';
+  usernameOnly = '[a-zA-Z0-9_.]+';
   flag = true;
   date = new FormControl(new Date());
 
- // emailexist: boolean = true;
+  emailexist: boolean = true;
+  usernameexist: boolean = true;
 
-
-  constructor( private _serv: LoginService,public router: Router, private fb: FormBuilder,  private http: HttpClient, private route: ActivatedRoute, private sg: SimpleGlobal) { }
+  constructor(private _serv: LoginService, public router: Router, private fb: FormBuilder, private http: HttpClient, private route: ActivatedRoute, private sg: SimpleGlobal) { }
 
   ngOnInit() {
     this.states();
@@ -52,7 +53,8 @@ export class UsersignupComponent implements OnInit {
       // 'zipcode': ['', Validators.compose([Validators.required, , Validators.pattern(this.digitsOnly)])],
       // 'utilityarea': ['', Validators.compose([Validators.required])],
       'email': ['', Validators.compose([Validators.required, Validators.pattern(this.email)])],
-      'username': ['', Validators.compose([Validators.required, Validators.pattern(/^[a-zA-Z_\- ]+$/)])],
+      'username': ['', Validators.compose([Validators.required, Validators.pattern(this.usernameOnly)])],
+      // username: ['', Validators.compose([Validators.required, Validators.pattern(this.usernameOnly)])],
       'phone': ['', Validators.compose([Validators.required, Validators.pattern(this.digitsOnly)])],
       'dob': ['', Validators.compose([Validators.required])],
       'state': ['', Validators.compose([Validators.required, Validators.pattern(this.normalPattern)])],
@@ -61,7 +63,10 @@ export class UsersignupComponent implements OnInit {
       'password': ['', Validators.compose([Validators.required, Validators.minLength(6)])],
       'confirmpassword': ['', Validators.compose([Validators.required, Validators.minLength(6)])],
 
-    });
+    },
+  {
+    validator: PasswordValidation.MatchPassword // your validation method
+});
   }
 
   onChange(e) {
@@ -72,97 +77,78 @@ export class UsersignupComponent implements OnInit {
   }
 
   email1;
-  // emailexist1() {
-  //   // alert(this.premiseID.toString().length)
-  //   //  alert('hello');
-  //   console.log("CHocie Genie",this.model.email);
+  
+  emailCheck(email1) {
+    // alert(this.premiseID.toString().length)
+    //  alert('hello');
+    console.log("CHocie Genie", this.model.email);
 
-  //   let headers = new HttpHeaders();
-  //   headers.append('Content-Type', 'application/json');
-  //   this.http.get(Config.api + 'email_exist/'+this.model.email, { headers: headers })
+    let headers = new HttpHeaders();
+    headers.append('Content-Type', 'application/json');
+    this.http.get(Config.api + 'email_exist/' + email1 + '/', { headers: headers })
+
+      .subscribe(data => {
+        console.log(data);
+        console.log(data['status'], 'hhhhhhhhhhhhhhh')
+        this.emailexist = data['status'];
+
+        console.log(this.model.email);
+
+
+
+      });
+  }
  
-  //     .subscribe(data => {
-  //       console.log(data);
+  // usernameexist;
+  usernameCheck(username1) {
+    //alert('hello');
+    console.log("CHOICE GENIE", this.model.username);
 
-  //       this.email1=data;
+    let headers = new HttpHeaders();
 
-  //       console.log(this.model.email);
-       
 
-        
-  //     });
-  // }
-  // emailCheck(email1) {
-  //   // alert(this.premiseID.toString().length)
-  //   //  alert('hello');
-  //   console.log("CHocie Genie",this.model.email);
-    
-  //   let headers = new HttpHeaders();
-  //   headers.append('Content-Type', 'application/json');
-  //   this.http.get(Config.api + 'email_exist/'+ email1+'/', { headers: headers })
-    
-  //   .subscribe(data => {
-  //   console.log(data);
-  //   console.log(data['status'],'hhhhhhhhhhhhhhh')
-  //   this.emailexist=data['status'];
-    
-  //   console.log(this.model.email);
-    
-    
-    
-  //   });
-  //   }
-    // usernameexist:boolean = true;
-    // // usernameexist;
-    //   usernameCheck(username1) {
-    //     //alert('hello');
-    //     console.log("CHOICE GENIE", this.model.username);
-    
-    //     let headers = new HttpHeaders();
-    
-    
-    //     headers.append('Content-Type', 'application/json');
-    //     // this.http.get(Config.api + 'data_against_zipcode/' + this.zip_code + '', { headers: headers }),
-    //     this.http.get(Config.api +'usernameexist/'+ username1 +'/', { headers: headers })
-    
-    
-    //       //   // this.http.post(Config.api + 'signup/'+ this.zip_code +'', {"premiseid": this.premiseID +'', {headers: headers})
-    //       .subscribe(data => {
-    //         console.log(data);
-    //         // this.next = Res[0].next;
-    //         console.log(data['status'],'hhhhhhhhhhhhhhh')
-    //       // if ( this.usernameexist=false){
-    //        this.usernameexist = data['status']
-    //         // }
-    //       //  console.log(this.usernameexist);
-           
-    //       },
-    //         error => {
-    //        //   this.usernameexist=error['status']
-    //           console.log(error);
-    //         //  this.toastr.error(error, null, {toastLife: 5000});
-    //           // swal(
-    //           //   'Invalid',
-    //           //   'User Already Exist! or May be Some Error!',
-    //           //   'error'
-    //           // )
-    
-    //           //     //    this.state = Res[0].state;
-    //           //     //this.sg['products'] = Res.json()['Results'];
-    //           //     //this.data.changeProducts(this.sg['products']);
-    //           //   f.resetForm();
-    //         });
-    //     //}
-    
-    //     //    this.state = Res[0].state;
-    //     //this.sg['products'] = Res.json()['Results'];
-    //     //this.data.changeProducts(this.sg['products']);
-    
-    
-    //     //}
-    
-    
-    //   }
+    headers.append('Content-Type', 'application/json');
+    // this.http.get(Config.api + 'data_against_zipcode/' + this.zip_code + '', { headers: headers }),
+    this.http.get(Config.api + 'usernameexist/' + username1 + '/', { headers: headers })
+
+
+      //   // this.http.post(Config.api + 'signup/'+ this.zip_code +'', {"premiseid": this.premiseID +'', {headers: headers})
+      .subscribe(data => {
+        console.log(data);
+        // this.next = Res[0].next;
+        console.log(data['status'], 'hhhhhhhhhhhhhhh')
+        // if ( this.usernameexist=false){
+        this.usernameexist = data['status']
+        // }
+        //  console.log(this.usernameexist);
+
+      },
+        error => {
+          //   this.usernameexist=error['status']
+          console.log(error);
+          //  this.toastr.error(error, null, {toastLife: 5000});
+          // swal(
+          //   'Invalid',
+          //   'User Already Exist! or May be Some Error!',
+          //   'error'
+          // )
+
+          //     //    this.state = Res[0].state;
+          //     //this.sg['products'] = Res.json()['Results'];
+          //     //this.data.changeProducts(this.sg['products']);
+          //   f.resetForm();
+        });
+    //}
+
+    //    this.state = Res[0].state;
+    //this.sg['products'] = Res.json()['Results'];
+    //this.data.changeProducts(this.sg['products']);
+
+
+    //}
+
+
+  }
   states() {
     // alert(this.premiseID.toString().length)
     //  alert('hello');
@@ -176,7 +162,7 @@ export class UsersignupComponent implements OnInit {
         console.log(Res);
         //     this.state= Res[0].state;
         //  Res[0].state=this.model;
-        this.state = Res;        
+        this.state = Res;
       });
   }
   cities() {
@@ -203,8 +189,8 @@ export class UsersignupComponent implements OnInit {
     console.log("CHOICE GENIE", this.model);
 
     let headers = new HttpHeaders();
-    headers.append('Content-Type','application/json');
-    this.http.post(Config.api+'authenticade_code/',JSON.stringify(this.model.email) + '', { headers: headers })
+    headers.append('Content-Type', 'application/json');
+    this.http.post(Config.api + 'authenticade_code/', JSON.stringify(this.model.email) + '', { headers: headers })
 
 
       .subscribe(Res => {
@@ -226,41 +212,41 @@ export class UsersignupComponent implements OnInit {
       }
     });
   }
-  login(name,password){
-  
-     
-            this._serv.login(name,password).subscribe(
-              data => {
-                console.log(data);
-                // swal(
-                //   'Successfully! Logged in',
-                //   '',
-                //   'success'
-                // )
-              
-                // this.router.navigate(['/dashboard/'+ this.username]);
-                // localStorage.setItem('username', this.username);
-  
-              },
-              error => {
-                this.router.navigate(['/userlogin/']);
-                console.log(error);
-             
-                swal(
-                  'Invalid',
-                  'Username OR Password',
-                  'error'
-                )
-             
-              });
-  
+  login(name, password) {
+
+
+    this._serv.login(name, password).subscribe(
+      data => {
+        console.log(data);
+        // swal(
+        //   'Successfully! Logged in',
+        //   '',
+        //   'success'
+        // )
+
+        // this.router.navigate(['/dashboard/'+ this.username]);
+        // localStorage.setItem('username', this.username);
+
+      },
+      error => {
+        this.router.navigate(['/userlogin/']);
+        console.log(error);
+
+        swal(
+          'Invalid',
+          'Username OR Password',
+          'error'
+        )
+
+      });
+
   }
   signupuserdata() {
     //alert('hello');
-    
+    //console.log("main form",this.signupForm.value)
     console.log("CHOICE GENIE", this.model);
     let headers = new HttpHeaders();
-    headers.append('Content-Type','application/json');
+    headers.append('Content-Type', 'application/json');
     this.http.post(Config.api + 'userregister/', this.model, { headers: headers })
       .subscribe(Res => {
         console.log(Res);
@@ -275,19 +261,19 @@ export class UsersignupComponent implements OnInit {
           confirmButtonText: "OK",
 
         })
-
-      //  this.router.navigate(['/userlogin'])
+        //  f.resetForm();
+         this.router.navigate(['/userlogin'])
       },
         error => {
           this.validateAllFormFields(this.model);
           console.log(error);
-         
+
           //     //    this.state = Res[0].state;
           //     //this.sg['products'] = Res.json()['Results'];
           //     //this.data.changeProducts(this.sg['products']);
           //   f.resetForm();
         });
-     
+
   }
 
 

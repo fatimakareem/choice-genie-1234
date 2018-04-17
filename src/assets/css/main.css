@@ -3527,7 +3527,7 @@ h1, .entry-title {
   margin-bottom: 40px;
   box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(233, 30, 99, 0.4);
 }
-<<<<<<< HEAD
+
 
 /*Terms and conditons css start*/
 
@@ -3593,10 +3593,8 @@ h1, .entry-title {
   color: #ffffff;
   background: #cc0000 !important;
 }
-=======
 .tablefixed >tbody >tr >td{
   text-align: center;
-<<<<<<< HEAD
   font-size: 30px;
 }
 .terms-condition-wrapper h3{
@@ -3645,7 +3643,6 @@ h1, .entry-title {
   color: #ffffff;
   background: #cc0000 !important;
 }
->>>>>>> b0eb58303692d0f5599de0d9fa3a7183f69d2efc
 .card-content-fixed{
   padding:0px 20px;
   margin-bottom: 20px;
@@ -3737,13 +3734,9 @@ h1, .entry-title {
   .widget > h2{
     font-size: 21px;
   }
-<<<<<<< HEAD
-  .text-center > h3 {
-  }
-=======
+  
   /* .text-center > h3 {
   } */
->>>>>>> b0eb58303692d0f5599de0d9fa3a7183f69d2efc
   .full-width-title::before, .full-width-title::after{
     background-color: white;
   }
@@ -3830,15 +3823,10 @@ h1, .entry-title {
   .nav-home ul li{
     margin: 0 0 0 5px;
   }
-<<<<<<< HEAD
-  .navbar-nav > li > a{
-
-  }
-=======
+   
   /* .navbar-nav > li > a{
 
   } */
->>>>>>> b0eb58303692d0f5599de0d9fa3a7183f69d2efc
   .slick-slide img{
     width: 100%;
   }
@@ -3952,10 +3940,5 @@ h1, .entry-title {
 
   }
 
-<<<<<<< HEAD
+
 }
-=======
-=======
->>>>>>> 9ed1e91cff3a54a298b32823617238dc47bddb51
-}
->>>>>>> b0eb58303692d0f5599de0d9fa3a7183f69d2efc

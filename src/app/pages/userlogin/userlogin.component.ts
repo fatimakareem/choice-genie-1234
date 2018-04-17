@@ -47,7 +47,7 @@ export class UserloginComponent implements OnInit {
   private toggleButton: any;
   private sidebarVisible: boolean;
   private nativeElement: Node;
-  public username:any[];
+  public username;
 
   password;
 
@@ -143,14 +143,14 @@ export class UserloginComponent implements OnInit {
     //alert('hello');
     console.log("CHOICE GENIE", this.username);
 
-    let headers = new HttpHeaders();
+    let headers = new HttpHeaders({'Authorization': 'JWT ' + this.username.token});
 
 
     headers.append('Content-Type', 'application/json');
     // this.http.get(Config.api + 'data_against_zipcode/' + this.zip_code + '', { headers: headers }),
-    this.https.post(Config.api +'forget_password/' + this.username +'/', JSON.stringify({ "email":Email}), { headers: headers })
-
-
+   // this.https.post(Config.api +'forget_password/' + this.username , JSON.stringify({ "email":Email}), { headers: headers })
+    this.https.post(Config.api +'forget_password/' + this.username ,{ "email":Email}, { headers: headers })
+   
       //   // this.http.post(Config.api + 'signup/'+ this.zip_code +'', {"premiseid": this.premiseID +'', {headers: headers})
       .subscribe(Res => {
         this.router.navigate(['/forgetpassword/']);
@@ -186,29 +186,7 @@ export class UserloginComponent implements OnInit {
 
   }
 
-  forgetPassword(pass) {
-    // console.log("pass",pass.value['email']);
-    this._serv.forget_password(pass).subscribe(
-      data => {
-        // swal({
-        //   type: 'success',
-        //   html: 'Password Reset instructions have been sent to your email. '
-        // })
-        // console.log(data);
-        // this.toastr.info(data.msg, null, {toastLife: 5000});
-      },
-      error => {
-        // console.log(error);
-        // swal(
-        //   'Invalid email ',
-        //   'Or user does not exist!',
-        //   'error'
-        // )
-      }
-    )
-
-  }
-
+  
   validateAllFormFields(formGroup: FormGroup) {
     Object.keys(formGroup.controls).forEach(field => {
       // console.log(field);
