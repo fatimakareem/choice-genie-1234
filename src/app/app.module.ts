@@ -96,13 +96,9 @@ import { ChangepasswordComponent } from './changepassword/changepassword.compone
 import { SuperchangepasswordComponent } from './superchangepassword/superchangepassword.component';
 import { ChangepasswordService } from './changepassword.service';
 import { SuperchangepaswwordService } from './superchangepassword/superchangepaswword.service';
-<<<<<<< HEAD
 import { DeletecontactService } from './superviewcontact/deletecontact.service';
 import { DeleteviewapartnerService } from './sviewapartner/deleteviewapartner.service';
 import { SuperupdateService } from './superdashboard/superupdate.service';
-=======
-// import { ActivateaccountComponent } from './activateaccount/activateaccount.component';
->>>>>>> fb68daccbcd40f0d520b92ffbaa3817015bae1e7
 @NgModule({
   exports: [
     MatAutocompleteModule,
