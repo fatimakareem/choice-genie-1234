@@ -28,6 +28,7 @@ import { NgForm, FormBuilder, FormGroup, Validators, FormControl, AbstractContro
 import swal from 'sweetalert2';
 import { NgControl } from '@angular/forms';
 import { SuperuserService } from './superuser.service';
+import { SuperupdateService } from './superupdate.service';
 // import { SuperuserService } from './superuser.service';
 
 
@@ -60,9 +61,10 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
 export class SuperdashboardComponent implements OnInit {
     constructor(private route: ActivatedRoute, private https: HttpClient,
         private formBuilder: FormBuilder, private router: Router, private http: Http, private pagerService: PagerService,
-        private sg: SimpleGlobal, private obj: SuperuserService, private dialog: MatDialog, private dataa: DataService, private superuserservice: SuperuserService) {
+        private sg: SimpleGlobal, private serve:SuperupdateService,private obj: SuperuserService, private dialog: MatDialog, private dataa: DataService, private superuserservice: SuperuserService) {
 
     }
+    
     // pageSizeOptions;
 
     private allItems: any[];
@@ -87,8 +89,7 @@ export class SuperdashboardComponent implements OnInit {
     result3: any = [];
      
 data;
-public username;
-
+// public username;
 dataId = '';
 list = 'Hello';
 
@@ -105,7 +106,74 @@ ngOnInit() {
    // alert(this.premiseIdData(1))
 
 }
+catagoryId="";
+zipcode="";
+utilityarea="";
+username="";
+password="";
+phone="";
+state="";
+email="";
+country="";
+status="";
 
+
+
+btnEditClick(id,val1,val2,val3,val4,val5,val6,val7,val8,val9) {
+    this.catagoryId = id;
+    this.zipcode=val1;
+    this.utilityarea=val2;
+    this.username=val3;
+    this.password=val4;
+    this.phone=val5;
+    this.state=val6;
+    this.email=val7;
+    this.country=val8;
+    this.status=val9;
+    
+   
+    console.log(val1,val2,val3,val4,val5,val6,val7,val8,val9)
+    console.log('id : ' + this.catagoryId );
+}
+
+//Event Binding of PopUp Delete Modal
+
+editClick(updatedzipcode,updatedutilityarea,updatedusername,updatedphone,updatedstate,updatedemail,updatedcountry,updatedstatus) {
+    console.log('edit' +updatedzipcode,updatedutilityarea,updatedusername,updatedphone,updatedstate,updatedemail,updatedcountry,updatedstatus);
+console.log("TS OBJECT",updatedzipcode,updatedutilityarea,updatedusername,updatedphone,updatedstate,updatedemail,updatedcountry,updatedstatus);
+    //Calling Delete Service
+    this.serve.editTodoList( this.catagoryId,updatedzipcode,updatedutilityarea,updatedusername,updatedphone,updatedstate,updatedemail,updatedcountry,updatedstatus).subscribe(data => {
+        console.log(data);
+        swal({
+            type: 'success',
+            title: 'Updated Your Profile',
+            showConfirmButton: false,
+            timer: 1500
+            
+          })
+          this.premiseIdData(1);
+        // this.route.params.subscribe(params => {
+
+
+        //     //  console.log('paramsssssssssss',params['username'])
+        //     this.setPage(params['username'],1)
+        //     //  this.setPage(1)
+
+        // });
+        // //  alert("junaid");
+        // // this.data.currentProducts.subscribe(products => this.sg['products'] = products)
+        // // this.data.currentProducts
+        // this.Sub = this.route.params.subscribe(params => {
+        //     this.username = +params['username'];
+        //     //  this.setPage(1)
+        //     // alert(this.username);
+        // });
+
+    }, error => {
+    });
+  //  window.location.reload();
+
+}
 premiseIdData(page: number) {
     if (page < 1 || page > this.pager.totalPages) {
         return;
@@ -113,7 +181,7 @@ premiseIdData(page: number) {
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     //   this.http.get(Config.api + 'data_against_zipcode/' + this.zip_code + '', { headers: headers }),
-    this.http.get(Config.api + 'dashboard/' + '?page=' + page, { headers: headers }).subscribe(Res => {
+    this.http.get('http://192.168.30.193:9000/choice/dashboard/' + '?page=' + page, { headers: headers }).subscribe(Res => {
         console.log(Res);
         this.pager = this.pagerService.getPager(Res['Results'], page, 10);
 

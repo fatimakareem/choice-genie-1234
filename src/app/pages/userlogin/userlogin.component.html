@@ -33,7 +33,7 @@
                 text-align: center;">
                 <!-- [(ngModel)]="email" name="email" -->
                 <h3>Enter Your Email</h3>
-                <input type="text" placeholder="Enter Your Email" class="form-control" [(ngModel)]="Email" name="Email" style="font-size: 20px">
+                <input type="text" placeholder="Enter Your Email" class="form-control" [(ngModel)]="Email" formControlName="Email" style="font-size: 20px">
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-rose"  data-dismiss="modal" style="
@@ -52,7 +52,7 @@
               </div>
             </div>
           </div>
-          <div>Don't have an account?<a routerLink="/usersignup"> Sign Up </a></div>
+          <div>Don't have an account?<a routerLink="/register"> Sign Up </a></div>
         </div>
       </form>
     </div>

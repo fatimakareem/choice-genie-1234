@@ -27,7 +27,8 @@ import { NgForm,FormBuilder, FormGroup, Validators, FormControl, AbstractControl
 
 import swal from 'sweetalert2';
 import {NgControl} from '@angular/forms';
-import { SviewapartnerService } from './sviewapartner.service';
+import { DeleteviewapartnerService } from './deleteviewapartner.service';
+ 
  
 
 
@@ -60,7 +61,7 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
 export class SviewapartnerComponent implements OnInit {
   constructor(private route: ActivatedRoute, private https: HttpClient,
     private formBuilder: FormBuilder,  private router: Router, private http: Http, private pagerService: PagerService, private homeService: HomeService,
-     private sg: SimpleGlobal, private obj: HomeService, private dialog: MatDialog, private dataa: DataService, private superuserservice: SviewapartnerService) {
+     private sg: SimpleGlobal, private obj: HomeService, private dialog: MatDialog, private dataa: DataService,private newService: DeleteviewapartnerService) {
 
 }
 pageSizeOptions;
@@ -88,9 +89,9 @@ result3:any=[];
 
 data;
 public username;
-
 dataId = '';
 list = 'Hello';
+ 
 
 
 
@@ -102,6 +103,24 @@ list = 'Hello';
    //alert(  this.premiseIdData())
 
 }
+btnDeleteClick(id) {
+  this.dataId = id;
+  console.log('id : ' + this.dataId);
+} 
+deleteClick(id) {
+  console.log('delete' + id);
+
+  //Calling Delete Service
+  this.newService.DeleteTodoList(id).subscribe(data => {
+      console.log(data);
+      this.premiseIdData(1);
+     
+  }, 
+  error => {
+  });
+//   window.location.reload();
+
+} 
 //http://192.168.30.52:9000/choice/partnerfilter/
 
 premiseIdData(page: number) {

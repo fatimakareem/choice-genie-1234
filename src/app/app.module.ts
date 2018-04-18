@@ -91,13 +91,18 @@ import { SuperuserService } from './superdashboard/superuser.service';
 import { LoaderModule } from './loader/loader.module';
 import { SuperviewcontactComponent } from './superviewcontact/superviewcontact.component';
 import { SviewapartnerComponent } from './sviewapartner/sviewapartner.component';
-import { SviewapartnerService } from './sviewapartner/sviewapartner.service';
-import { SuperviewcontactService } from './superviewcontact/superviewcontact.service';
+ 
 import { ChangepasswordComponent } from './changepassword/changepassword.component';
 import { SuperchangepasswordComponent } from './superchangepassword/superchangepassword.component';
 import { ChangepasswordService } from './changepassword.service';
 import { SuperchangepaswwordService } from './superchangepassword/superchangepaswword.service';
+<<<<<<< HEAD
+import { DeletecontactService } from './superviewcontact/deletecontact.service';
+import { DeleteviewapartnerService } from './sviewapartner/deleteviewapartner.service';
+import { SuperupdateService } from './superdashboard/superupdate.service';
+=======
 // import { ActivateaccountComponent } from './activateaccount/activateaccount.component';
+>>>>>>> fb68daccbcd40f0d520b92ffbaa3817015bae1e7
 @NgModule({
   exports: [
     MatAutocompleteModule,
@@ -186,7 +191,6 @@ export class MaterialModule {}
     CompanyService,
     SimpleGlobal,
     DataService,
-    // SweetAlertService,
     LoginService,
     PagerService,
     UserLoginService,
@@ -195,11 +199,13 @@ export class MaterialModule {}
     EditService,
     DeleteService,
     SuperuserService,
-    SviewapartnerService,
-    SuperviewcontactService,
     ActiveService,
     ChangepasswordService,
+    DeletecontactService,
     SuperchangepaswwordService,
+    DeleteviewapartnerService,
+    SuperupdateService,
+
 RandomService,
   ],
   bootstrap: [AppComponent],
