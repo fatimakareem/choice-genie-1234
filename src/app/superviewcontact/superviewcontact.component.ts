@@ -27,7 +27,9 @@ import { NgForm,FormBuilder, FormGroup, Validators, FormControl, AbstractControl
 
 import swal from 'sweetalert2';
 import {NgControl} from '@angular/forms';
-import { SuperviewcontactService } from './superviewcontact.service';
+ 
+import { DeletecontactService } from './deletecontact.service';
+ 
 // import { SviewapartnerService } from './sviewapartner.service';
 
 
@@ -56,8 +58,8 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
 })
 export class SuperviewcontactComponent implements OnInit {
   constructor(private route: ActivatedRoute, private https: HttpClient,
-    private formBuilder: FormBuilder,  private router: Router, private http: Http, private pagerService: PagerService, private homeService: HomeService,
-     private sg: SimpleGlobal, private obj: HomeService, private dialog: MatDialog, private dataa: DataService, private superuserservice: SuperviewcontactService) {
+    private formBuilder: FormBuilder,  private router: Router, private http: Http, private newService: DeletecontactService,private pagerService: PagerService, private homeService: HomeService,
+     private sg: SimpleGlobal, private obj: HomeService, private dialog: MatDialog, private dataa: DataService) {
 
       
 }
@@ -81,7 +83,8 @@ closeResult: string;
 modal:any=[];
 editdata: any = [];
 result3:any=[];
-
+dataId = '';
+list = 'Hello';
 data;
  
  
@@ -95,7 +98,24 @@ data;
    //alert(  this.premiseIdData())
 
 }
- 
+btnDeleteClick(id) {
+  this.dataId = id;
+  console.log('id : ' + this.dataId);
+} 
+deleteClick(id) {
+  console.log('delete' + id);
+
+  //Calling Delete Service
+  this.newService.DeleteTodoList(id).subscribe(data => {
+      console.log(data);
+      this.premiseIdData(1);
+     
+  }, 
+  error => {
+  });
+//   window.location.reload();
+
+}  
 
 premiseIdData(page: number) {
   if (page < 1 || page > this.pager.totalPages) {
@@ -108,12 +128,9 @@ premiseIdData(page: number) {
       console.log(Res);
       this.pager = this.pagerService.getPager(Res['Results'], page, 10);
 
-      this.data = Res.json()['Results'];
-
-       
-
-
+      this.data = Res.json()['Results'];  
   });
   // this.pagedItems = this.allItems.slice(this.pager.startIndex, this.pager.endIndex + 1);
 }
+
 }

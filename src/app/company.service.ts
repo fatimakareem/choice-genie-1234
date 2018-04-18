@@ -13,8 +13,8 @@ id;
 username;
   searchProduct(username,page) {
     console.log(username)
-  let headers = new Headers({'Authorization': 'JWT ' + username.token});
-   
+    //let headers = new Headers({'Authorization': 'JWT ' + username.token});
+    let headers = new Headers();
   // headers.append('Content-Type', 'application/json');
   // headers.append('Access-Control-Allow-Headers', 'Content-Type');
   // headers.append('Access-Control-Allow-Methods', 'GET');
