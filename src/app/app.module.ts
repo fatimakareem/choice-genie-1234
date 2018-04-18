@@ -97,6 +97,7 @@ import { ChangepasswordComponent } from './changepassword/changepassword.compone
 import { SuperchangepasswordComponent } from './superchangepassword/superchangepassword.component';
 import { ChangepasswordService } from './changepassword.service';
 import { SuperchangepaswwordService } from './superchangepassword/superchangepaswword.service';
+// import { ActivateaccountComponent } from './activateaccount/activateaccount.component';
 @NgModule({
   exports: [
     MatAutocompleteModule,
@@ -178,6 +179,7 @@ export class MaterialModule {}
     AboutComponent,
     // ChangePasswordComponent,
     StepperOverviewExample,
+    
       ],
   providers: [
     HomeService,

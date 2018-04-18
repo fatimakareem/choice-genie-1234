@@ -105,7 +105,7 @@
             </mat-form-field>
           </div>
         </div>
-
+        <input matInput placeholder="status" [formControl]="signupForm.controls['status']" required [value]="status" [(ngModel)]="model.status" hidden="true">
         <br class="clearfix" />
         <div class="col-sm-6">
           <div class="form-group">

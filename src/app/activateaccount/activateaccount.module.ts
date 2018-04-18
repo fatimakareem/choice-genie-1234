@@ -2,21 +2,23 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-// import { MdModule } from '../md/md.module';
 import { MaterialModule } from '../app.module';
 
-import { ForgetpasswordComponent } from './forgetpassword.component';
-import { ForgetpasswordRoutes } from './forgetpassword.routing';
+
+import {ActivateaccountComponent} from "./activateaccount.component";
+import {Activateaccount} from './activateaccount.routing';
 
 @NgModule({
     imports: [
         CommonModule,
-        RouterModule.forChild(ForgetpasswordRoutes),
+        RouterModule.forChild(Activateaccount),
         FormsModule,
-        // MdModule,
         MaterialModule
     ],
-    declarations: [ForgetpasswordComponent]
+    declarations: [
+        ActivateaccountComponent,
+    ],
+    entryComponents: []
 })
 
-export class ForgetpasswordModule {}
+export class ActivateAccountModule {}

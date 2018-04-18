@@ -13,7 +13,8 @@ import { UserloginComponent } from './pages/userlogin/userlogin.component';
 import { Component } from '@angular/core';
 import { SuperloginComponent } from './pages/superlogin/superlogin.component';
 import { SuperadminComponent } from './layouts/superadmin/superadmin.component';
- 
+import { ActivateaccountComponent } from './activateaccount/activateaccount.component';
+
 
 export const AppRoutes: Routes = [
     {
@@ -26,8 +27,13 @@ export const AppRoutes: Routes = [
     // {path: "usersignup", component: UsersignupComponent},
     // {path:"userlogin", component:UserloginComponent},
     // {path:"superlogin", component:SuperloginComponent},
-  
-    
+    // {
+    //     path: 'activateaccount/:query1',
+    //     //redirectTo: 'activateaccount/:query1',
+    //     pathMatch: 'full'
+      
+    // },
+   
 
     {
         path: '',
@@ -50,6 +56,8 @@ export const AppRoutes: Routes = [
               path: 'commercial',
               loadChildren: './commercial/commercial.module#CommercialModule'
           },
+          {path: "activateaccount/:query1",
+          loadChildren: './activateaccount/activateaccount.module#ActivateAccountModule'},
           {
             path: 'privacy',
             loadChildren: './privacy/privacy.module#PrivacyModule'
@@ -144,8 +152,8 @@ export const AppRoutes: Routes = [
             loadChildren: './contactus/contactus.module#contactusModule'
         },
         {
-            path: 'forgetpassword',
-            loadChildren: './forgetpassword/forgetpassword.module#ForgetpasswordModule'
+            path: 'forget_password/:qurey',
+            loadChildren: './forget_password/forget_password.module#ForgetpasswordModule'
         }
         ]
     },

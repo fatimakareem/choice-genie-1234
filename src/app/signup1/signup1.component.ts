@@ -28,6 +28,7 @@ export class Signup1Component implements OnInit {
   digitsOnly = '^[0-9,-]+$';
   email = '^\\w+([\\.-]?\\w+)*@\\w+([\\.-]?\\w+)*(\\.\\w{2,3})+$';
   flag = true;
+  status: boolean = true;
   date = new FormControl(new Date());
   emailexist: boolean = true;
   constructor(public router: Router, private fb: FormBuilder, private http: HttpClient, private route: ActivatedRoute,
@@ -44,6 +45,7 @@ export class Signup1Component implements OnInit {
       // 'dob': ['', Validators.compose([Validators.required])],
       'state': ['', Validators.compose([Validators.required, Validators.pattern(this.normalPattern)])],
       'country': ['', Validators.compose([Validators.required, Validators.pattern(this.normalPattern)])],
+      'status': ['', Validators.compose([])],
       // 'city': ['', Validators.compose([Validators.required, Validators.pattern(this.normalPattern)])],
       'password': ['', Validators.compose([Validators.required, Validators.minLength(6)])],
       'confirmpassword': ['', Validators.compose([Validators.required, Validators.minLength(6)])],
@@ -175,7 +177,7 @@ export class Signup1Component implements OnInit {
 
     headers.append('Content-Type', 'application/json');
     // this.http.get(Config.api + 'data_against_zipcode/' + this.zip_code + '', { headers: headers }),
-    this.http.post(Config.api +'companysignin/', this.model, { headers: headers })
+    this.http.post('http://192.168.30.193:9000/choice/companysignin/', this.model, { headers: headers })
 
 
       //   // this.http.post(Config.api + 'signup/'+ this.zip_code +'', {"premiseid": this.premiseID +'', {headers: headers})
@@ -195,7 +197,7 @@ export class Signup1Component implements OnInit {
 
         // })
 
-        this.router.navigate(['/pages/login'])
+        this.router.navigate(['/login/'])
       },
         error => {
           console.log(error);

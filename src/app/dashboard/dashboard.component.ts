@@ -83,14 +83,14 @@ export class DashboardComponent implements OnInit, AfterViewInit {
      
     obj:any=[];
     editdata: any = [];
-    setPage(page: number) {
+    setPage(username,page: number) {
         // alert("username")
         this.username = localStorage.getItem('username');
          console.log("usernameeeeeeeeeeeee",this.username)
 
         const Results = {};
       
-        this.companyService.searchProduct(this.username,page).subscribe(Response => {
+        this.companyService.searchProduct(username,page).subscribe(Response => {
             // console.log(Response.id);
             // this.id = Response.id;
             console.log('service');       // localStorage.setItem('products',response['Results']);
@@ -142,20 +142,20 @@ export class DashboardComponent implements OnInit, AfterViewInit {
         this.newService.DeleteTodoList(id).subscribe(data => {
             console.log(data);
 
-            // this.route.params.subscribe(params => {
+            this.route.params.subscribe(params => {
 
 
-            //     //  console.log('paramsssssssssss',params['username'])
-            //     this.setPage(this.username,1)
-            //     //  this.setPage(1)
+                //  console.log('paramsssssssssss',params['username'])
+                this.setPage(this.username,1)
+                //  this.setPage(1)
     
-            // });
+            });
             //  alert("junaid");
             // this.data.currentProducts.subscribe(products => this.sg['products'] = products)
             // this.data.currentProducts
             this.Sub = this.route.params.subscribe(params => {
                 this.username = +params['username'];
-                 this.setPage(1)
+                
                 // alert(this.username);
             });
 
@@ -240,7 +240,7 @@ console.log("TS OBJECT",updatedtitle,updatedsign_up,updatedphone,updatedterms_of
     updataForm : FormGroup;
     // constructor(private navbarTitleService: NavbarTitleService) { }
     public ngOnInit() {
-        this.username = localStorage.getItem('username')
+      //  this.username = localStorage.getItem('username')
         console.log(this.username)
         this.updataForm = this.formBuilder.group({
           
@@ -257,21 +257,21 @@ console.log("TS OBJECT",updatedtitle,updatedsign_up,updatedphone,updatedterms_of
             terms_of_service: ['',  Validators.compose([Validators.required])],
             title: ['', Validators.compose([Validators.required])],
         });
-        //    this.route.params.subscribe(params => {
+           this.route.params.subscribe(params => {
 
 
-        //     //  console.log('paramsssssssssss',params['username'])
-        //     this.setPage(params['username'],1)
-        //     console.log(params['username'],1)
+            //  console.log('paramsssssssssss',params['username'])
+            this.setPage(params['username'],1)
+            console.log(params['username'],1)
             
 
-        // });
+        });
         //  alert("junaid");
         // this.data.currentProducts.subscribe(products => this.sg['products'] = products)
         // this.data.currentProducts
         this.Sub = this.route.params.subscribe(params => {
             this.username = +params['username'];
-            this.setPage(1)
+           // this.setPage(1)
             //  this.setPage(1)
             // alert(this.username);
         });
