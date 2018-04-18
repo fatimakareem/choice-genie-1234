@@ -12,9 +12,9 @@ import { HttpClient, HttpResponse, HttpHeaders } from "@angular/common/http";
 import { MatSelect } from '@angular/material';
 
 @Component({
-  selector: 'app-forgetpassword',
-  templateUrl: './forgetpassword.component.html',
-  styleUrls: ['./forgetpassword.component.scss']
+  selector: 'app-forget_password',
+  templateUrl: './forget_password.component.html',
+  styleUrls: ['./forget_password.component.scss']
 })
 export class ForgetpasswordComponent implements OnInit {
 
@@ -22,21 +22,36 @@ export class ForgetpasswordComponent implements OnInit {
     private sg: SimpleGlobal) { }
     pass1;
     pass2;
-    code;
+    qurey;
+    sub;
   ngOnInit() {
+    this.route.params.subscribe(params => {
+this.qurey=params['qurey']
+
+       console.log('paramsssssssssss',this.qurey)
+     
+      console.log(params['qurey'],1)
+      
+
+  });
+    this.sub = this.route.params.subscribe ( params => {
+      console.log('params',params['query'])
+     // this.forgetpass(params['query']) 
+        });
   }
-  forgetpass(pass1,pass2,code) {
+  forgetpass(qurey) {
     //alert('hello');
-   console.log(pass1,pass2,code)
+   console.log(qurey,"ffffffffffffffffff")
 
     let headers = new HttpHeaders();
 
 
     headers.append('Content-Type', 'application/json');
     // this.http.get(Config.api + 'data_against_zipcode/' + this.zip_code + '', { headers: headers }),
-    this.http.post(Config.api +'reset_password/', JSON.stringify({ 'pass1':pass1,
-    'pass2':pass2,
-    'code':code,}), { headers: headers }).map((response: Response) => response.json())
+    this.http.post(Config.api +'reset_password/', {'pass1':this.pass1,
+    'pass2':this.pass2,
+    'code': this.qurey
+  }, { headers: headers })
 
 
       //   // this.http.post(Config.api + 'signup/'+ this.zip_code +'', {"premiseid": this.premiseID +'', {headers: headers})

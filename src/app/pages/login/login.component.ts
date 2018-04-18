@@ -118,7 +118,7 @@ Email;
     //alert('hello');
     console.log("CHOICE GENIE", this.username);
 
-    let headers = new HttpHeaders({'Authorization': 'JWT ' + this.username.token});
+    let headers = new HttpHeaders();
 
 
     headers.append('Content-Type', 'application/json');
