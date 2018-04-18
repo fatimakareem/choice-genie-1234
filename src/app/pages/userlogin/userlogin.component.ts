@@ -85,6 +85,8 @@ export class UserloginComponent implements OnInit {
       // this._serv.login_authenticate(this.login.value.username,this.login.value.password).subscribe(
       //   data => {
           //  console.log("user",data);
+          this._serv.isactivated(this.login.value.username).subscribe(
+            data => {
           this._serv.login(this.login.value.username, this.login.value.password).subscribe(
             data => {
               console.log(data);
@@ -109,7 +111,18 @@ export class UserloginComponent implements OnInit {
               )
            
             });
-
+          },
+          error => {
+            // console.log("eer",error);
+          
+           //  this.toastr.error(error.status, null, {toastLife: 5000});
+           swal(
+             'Error',
+            'User does not exist',
+            'error'
+          )
+          }
+        );
        // },
         // error => {
         //   // console.log("eer",error);
