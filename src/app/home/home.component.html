@@ -2,7 +2,7 @@
 <app-header></app-header>
 <div class="wrapper">
   <div class="home-main">
-    <div id="main-bg-slider" class="carousel slide carousel-fade slider-main" data-ride="carousel" data-interval="false">
+    <div id="main-bg-slider" class="carousel slide carousel-fade slider-main" data-ride="carousel" data-interval="8000">
       <!--download store icons-->
       <div class="download-here">
         <a href="#">
@@ -14,7 +14,7 @@
       </div>
 
       <div class="carousel-inner">
-        <div class="item active">
+        <div class="item active af-color">
           <label class="search-bg__title animated fadeInDown">Shop with a ROAR: ChoiceGenie is The Next Generation Energy Comparative Shopping Engine – A Super Fast, Super Easy Time n’ Money Saving Experience!</label>
           <img src="../../assets/img/1.jpg" alt="" />
         </div>
@@ -41,10 +41,10 @@
         <span class="sr-only">Next</span>
       </a>
       <div class="form-home">
-        <div class="container-fluid">
+        <div class="container-fluid container-margin">
           <form (ngSubmit)="onSubmit(f)" #f="ngForm" class="form-zip">
-            <div class="card wow fadeInRight margintop" data-wow-duration="2s" style="height: 160px">
-              <div class="card-header card-header-text wow fadeInLeft" data-wow-duration="2s" data-background-color="rose">
+            <div class="card wow fadeInRight margintop form-zip-height" data-wow-duration="2s" >
+              <div class="card-header card-header-text wow fadeInLeft card-responsive " data-wow-duration="2s" data-background-color="rose">
                 <h4 class="card-title">Compare Rates Now!</h4>
               </div>
               <div class="clearfix">
@@ -60,7 +60,7 @@
                 </div>
                 <div class="col-md-6 col-sm-6 pull-right text-right">
                   <div class="form-group">
-                    <button type="submit" class="btn btn-rose">Submit</button>
+                    <button type="submit" class="btn btn-rose compare-rates-button">Compare Now</button>
                   </div>
                 </div>
               </div>
@@ -172,7 +172,7 @@
         <ul class="fourcolumns">
 
           <li class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-            <div class="holder icons wow  fadeInRight" style="height: 350px">
+            <div class="holder icons wow  fadeInRight cg-offers" >
               <!-- <img src="../../assets/img/Billing-icon.png"/> -->
               <a class="img-holder">
                 <i class="material-icons">credit_card</i>
@@ -185,7 +185,7 @@
             </div>
           </li>
           <li class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-            <div class="holder icons wow  fadeInUp" style="height: 350px">
+            <div class="holder icons wow  fadeInUp cg-offers" >
               <a class="img-holder">
                 <i class="material-icons">face</i>
               </a>
@@ -197,7 +197,7 @@
             </div>
           </li>
           <li class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-            <div class="holder icons  wow  fadeInUp" style="height: 350px">
+            <div class="holder icons  wow  fadeInUp cg-offers">
               <a class="img-holder">
                 <i class="material-icons">autorenew</i>
               </a>
@@ -209,7 +209,7 @@
             </div>
           </li>
           <li class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-            <div class="holder icons   wow  fadeInLeft " style="height: 350px">
+            <div class="holder icons   wow  fadeInLeft cg-offers" >
               <a class="img-holder">
                 <i class="material-icons">home</i>
               </a>

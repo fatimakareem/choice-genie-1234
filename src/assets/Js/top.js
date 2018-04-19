@@ -4,6 +4,6 @@ jQuery(document).ready(function(){
     // $("#mySelect").change(function(){
     //     alert($(this).val());
     // });
-  new WOW().init();
+  // new WOW().init();
 });
 

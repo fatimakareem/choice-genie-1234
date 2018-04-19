@@ -17,10 +17,11 @@ export class LoginService {
     loaded: boolean = false;
     login(username: string, password: string) {
         const headers = new Headers();
+      //  const headers = new Headers({'Authorization': 'JWT ' + username.token});
         headers.append('Content-Type', 'application/json');
         //return this.http.get(Config.api+'data_against_zipcode/'+id+'?page='+page).map((response: Response) => response.json());
         // return this._http5.post(Config.api+'user-token-auth/',
-        return this._http5.post(Config.api + 'login/',
+        return this._http5.post(Config.api + 'usersignin/',
             JSON.stringify({ username: username, password: password }), { headers: headers })
             .map((response: Response) => {
                 let user = { username: username, token: response.json().token };
@@ -33,13 +34,22 @@ export class LoginService {
     }
 
 
-    login_authenticate(username: string, password: string) {
-        return this._http5.post(Config.api + 'login/', {
-            'username': username,
-            'password': password
-        }).map((res: Response) => res.json())
+    // login_authenticate(username: string, password: string) {
+    //     return this._http5.post(Config.api + 'login/', {
+    //         'username': username,
+    //        // 'password': password
+    //     }).map((res: Response) => res.json())
+    // }
+     
+    
+    
+    login_authenticate(username){
+        return this._http5.post(Config.api+'usersignin/',{
+            'username':username,
+           // 'password': password
+        }).map((res: Response) => res.json() ) 
     }
-
+    
 
 
     // post_service(obj) {

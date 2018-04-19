@@ -49,6 +49,7 @@ export class SuperloginComponent implements OnInit {
   private sidebarVisible: boolean;
   private nativeElement: Node;
   public username;
+  hide=true;
 
   password;
   constructor(public router: Router, private element: ElementRef, private http: Http, private route: ActivatedRoute,
@@ -57,12 +58,6 @@ export class SuperloginComponent implements OnInit {
     this.sidebarVisible = false;
 
   }
-  // constructor(public router: Router, private element: ElementRef, private http: Http, private route: ActivatedRoute,
-  //   private sg: SimpleGlobal, private _nav: Router, private _serv: SuperLoginService, private formBuilder: FormBuilder) {
-  //   this.nativeElement = element.nativeElement;
-  //   this.sidebarVisible = false;
-
-  // }
   isFieldValid(form: FormGroup, field: string) {
     return !form.get(field).valid && form.get(field).touched;
   }
@@ -72,6 +67,39 @@ export class SuperloginComponent implements OnInit {
       'has-error': this.isFieldValid(form, field),
       'has-feedback': this.isFieldValid(form, field)
     };
+  }
+  loginUser(e){
+    e.preventDefault();
+    var username = e.target.elements[0].value;
+    var password = e.target.elements[1].value;
+    console.log(username,password);
+    if(username == 'admin' && password =='admin') {
+    
+    swal(
+      'Successfully! Logged in',
+      '',
+      'success'
+    )
+    this.router.navigate(['/superdashboard/']);
+    localStorage.setItem('username', this.username);
+   
+  }   
+           
+          else{
+            error => {
+              console.log(error);
+             // this.toastr.error(error, null, {toastLife: 5000});
+              swal(
+                'Invalid',
+                'Username OR Password',
+                'error'
+              )
+           
+            };
+            
+          }
+
+
   }
   onLogin() {
     // console.log(this.login);
@@ -126,29 +154,6 @@ export class SuperloginComponent implements OnInit {
 
    
   
-
-  forgetPassword(pass) {
-    // console.log("pass",pass.value['email']);
-    this._serv.forget_password(pass).subscribe(
-      data => {
-        // swal({
-        //   type: 'success',
-        //   html: 'Password Reset instructions have been sent to your email. '
-        // })
-        // console.log(data);
-        // this.toastr.info(data.msg, null, {toastLife: 5000});
-      },
-      error => {
-        // console.log(error);
-        // swal(
-        //   'Invalid email ',
-        //   'Or user does not exist!',
-        //   'error'
-        // )
-      }
-    )
-
-  }
 
   validateAllFormFields(formGroup: FormGroup) {
     Object.keys(formGroup.controls).forEach(field => {

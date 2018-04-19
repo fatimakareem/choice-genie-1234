@@ -14,6 +14,7 @@ import { Component } from '@angular/core';
 import { SuperloginComponent } from './pages/superlogin/superlogin.component';
 import { SuperadminComponent } from './layouts/superadmin/superadmin.component';
 import { ActivateaccountComponent } from './activateaccount/activateaccount.component';
+import { AuthguardService } from './authguard.service';
 
 
 export const AppRoutes: Routes = [
@@ -190,10 +191,12 @@ export const AppRoutes: Routes = [
     {
         path: '',
         component: AdminLayoutComponent,
+      //  canActivate: [AuthguardService], 
         children: [
             {
                 path: 'dashboard/:username',
-                loadChildren: './dashboard/dashboard.module#DashboardModule'
+                loadChildren: './dashboard/dashboard.module#DashboardModule',
+               // canActivate: [AuthguardService]
             },
           
             {

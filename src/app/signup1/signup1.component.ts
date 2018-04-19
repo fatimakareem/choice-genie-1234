@@ -31,6 +31,7 @@ export class Signup1Component implements OnInit {
   status: boolean = true;
   date = new FormControl(new Date());
   emailexist: boolean = true;
+  hide = true;
   constructor(public router: Router, private fb: FormBuilder, private http: HttpClient, private route: ActivatedRoute,
      private sg: SimpleGlobal) { }
   ngOnInit() {

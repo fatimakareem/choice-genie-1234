@@ -11,12 +11,16 @@
             </ul>
           </div>
           <div class="login-form-1-body">
+          
             <mat-form-field [ngClass]="displayFieldCss(login, 'username')">
               <input matInput id="username" placeholder="Enter Username" formControlName="username" [(ngModel)]="username">
             </mat-form-field>
             <mat-form-field [ngClass]="displayFieldCss(login, 'password')">
-              <input matInput type="password" id="password" placeholder="Enter Your Password" formControlName="password" [(ngModel)]="password">
+              <input matInput type="password" id="password" [type]="hide ? 'password' : 'text'"  placeholder="Enter Your Password" formControlName="password" [(ngModel)]="password">
+              <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+           
             </mat-form-field>
+
             <mat-checkbox>
               Stay signed in
             </mat-checkbox>

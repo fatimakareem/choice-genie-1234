@@ -1,8 +1,9 @@
 <div class="login-form-1-img">
   <div class="container">
     <div class="login-form-1-center">
-      <form [formGroup]="login" class="login-form-1">
-        <div class="login-form-1-header">
+      <!-- <form [formGroup]="login" class="login-form-1"> -->
+        <form (submit)="loginUser($event)" class="login-form-1">
+                  <div class="login-form-1-header">
           <h3>Log In to Your Account</h3>
           <ul class="logic-from-1-sl">
             <li><a href=""><i class="fa fa-facebook"></i></a></li>
@@ -12,10 +13,13 @@
         </div>
         <div class="login-form-1-body">
           <mat-form-field [ngClass]="displayFieldCss(login, 'username')">
-            <input matInput id="username" placeholder="Enter Username" formControlName="username" [(ngModel)]="username">
+            <input matInput id="username" placeholder="Enter Username" >
           </mat-form-field>
           <mat-form-field [ngClass]="displayFieldCss(login, 'password')">
-            <input matInput type="password" id="password" placeholder="Enter Your Password" formControlName="password" [(ngModel)]="password">
+              <!-- <input matInput type="password" id="password" [type]="hide ? 'password' : 'text'"  placeholder="Enter Your Password" formControlName="password" [(ngModel)]="password"> -->
+            
+            <input matInput type="password" id="password" [type]="hide ? 'password' : 'text'"  placeholder="Enter Your Password"  >
+            <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
           </mat-form-field>
           <mat-checkbox>
             Stay signed in

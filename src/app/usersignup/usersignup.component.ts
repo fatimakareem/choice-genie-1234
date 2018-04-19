@@ -36,7 +36,7 @@ export class UsersignupComponent implements OnInit {
   usernameOnly = '[a-zA-Z0-9_.]+';
   flag = true;
   date = new FormControl(new Date());
-
+  hide=true;
   emailexist: boolean = true;
   usernameexist: boolean = true;
 

@@ -49,6 +49,7 @@ export class UserloginComponent implements OnInit {
   private nativeElement: Node;
   public username;
   password;
+  hide=true;
  
 
   constructor(public router: Router, private element: ElementRef, private http: Http, private route: ActivatedRoute,
