@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Headers, Http, Response } from '@angular/http';
 import 'rxjs/add/operator/map'
+import {ErrorStateMatcher, MatStepper} from '@angular/material';
 
 import { Config } from "../Config";
 import { ActivatedRoute, Router } from "@angular/router";
@@ -10,6 +11,7 @@ import { FormBuilder, Validators, NgControl, RadioControlValueAccessor, FormCont
 import { HttpClient, HttpResponse, HttpHeaders } from "@angular/common/http";
  import swal from 'sweetalert2'; 
 import { MatSelect } from '@angular/material';
+import { PasswordValidation } from './password-validator.component';
 
 @Component({
   selector: 'app-forget_password',
@@ -24,7 +26,11 @@ export class ForgetpasswordComponent implements OnInit {
     pass2;
     qurey;
     sub;
+  
   ngOnInit() {
+   
+  
+  
     this.route.params.subscribe(params => {
 this.qurey=params['qurey']
 
@@ -77,11 +83,7 @@ this.qurey=params['qurey']
           //     //this.data.changeProducts(this.sg['products']);
           //   f.resetForm();
         });
-    //}
-
-    //    this.state = Res[0].state;
-    //this.sg['products'] = Res.json()['Results'];
-    //this.data.changeProducts(this.sg['products']);
+   
 
 
     //}
