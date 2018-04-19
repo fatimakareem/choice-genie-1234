@@ -244,13 +244,13 @@ name = 'Pardeep Jain';
     }
 
     });}
-    aChecked = false;
-    bChecked = false;
+    aChecked:boolean = false;
+    bChecked:boolean = false;
     nullplan(){
-     
+     console.log(this.aChecked)
       // this.route.params.subscribe(params => {
       //   let zip =  this.sg['product_zipcode'];
-      if(!this.aChecked){
+      if(this.aChecked){
       let headers = new Headers();
       headers.append('Content-Type', 'application/json');
       this.http.get(Config.api+'planmin/' + this.zip_code + '', { headers: headers })
@@ -270,16 +270,19 @@ name = 'Pardeep Jain';
       prod["price_rate"] = prod["price_rate"].split('..', 3000);
       }
       });
+     
     }else(error=>{
       console.log(error)
+     
     }
-    
+   
     );
+    
       }
       
       fullplan() {
-     
-if(!this.bChecked){
+     console.log(this.bChecked)
+if(this.bChecked){
 
         // this.route.params.subscribe(params => {
         //   let zip =  this.sg['product_zipcode'];
