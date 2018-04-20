@@ -179,7 +179,7 @@ export const AppRoutes: Routes = [
                 loadChildren: './superchangepassword/superchangepassword.module#ChangePasswordModule'
             },
             {
-                path: 'superdashboard/superviewcontact',
+                path: 'superviewcontact',
                 loadChildren: './superviewcontact/superviewcontact.module#superviewcontactModule'
             },//superviewbecomeModuleng superpartnerModule
             {

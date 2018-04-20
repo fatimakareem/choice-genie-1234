@@ -87,7 +87,7 @@ import { ChoiceandsavingComponent } from './choiceandsaving/choiceandsaving.comp
 import { WhyChocieGenieComponent } from './why-chocie-genie/why-chocie-genie.component';
 import { RandomService } from './random.service';
 import { ActiveService } from './active.service';
-import { SuperuserService } from './superdashboard/superuser.service';
+ 
 import { LoaderModule } from './loader/loader.module';
 import { SuperviewcontactComponent } from './superviewcontact/superviewcontact.component';
 import { SviewapartnerComponent } from './sviewapartner/sviewapartner.component';
@@ -198,7 +198,6 @@ export class MaterialModule {}
     ResidentialService,
     EditService,
     DeleteService,
-    SuperuserService,
     ActiveService,
     ChangepasswordService,
     DeletecontactService,

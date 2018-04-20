@@ -153,42 +153,91 @@ Email;
   //     this.validateAllFormFields(this.login);
   //   }
   // }
-  onLogin() {
-    alert("loginis ture");
-    // console.log(this.login);
-    if (this.login.valid) {
-      alert("loginis Flase");
-      // console.log(this.login.value);
-      // console.log('form submitted');
-     // this._serv.login_authenticate(this.login.value.username).subscribe(
-       // data => {
-                  //  if(data.status == true)
-                  //    {
-                    //  this._nav.navigate(['/dashboard/'+ this.username]);
-                      //this.router.navigate([this.returnUrl]);
+  // onLogin() {
+  //   alert("loginis ture");
+  //   // console.log(this.login);
+  //   if (this.login.valid) {
+  //     alert("loginis Flase");
+  //     // console.log(this.login.value);
+  //     // console.log('form submitted');
+  //    // this._serv.login_authenticate(this.login.value.username).subscribe(
+  //      // data => {
+  //                 //  if(data.status == true)
+  //                 //    {
+  //                   //  this._nav.navigate(['/dashboard/'+ this.username]);
+  //                     //this.router.navigate([this.returnUrl]);
                      
                     
-     //console.log("user",data);
+  //    //console.log("user",data);
+  //        this._serv.login(this.login.value.username,this.login.value.password).subscribe(
+  //          data => {
+  //        // this._nav.navigate(['/dashboard/'+ this.username]);
+  //   console.log(data);
+  //   swal({
+  //       type: 'success',
+  //       title: 'Successfully Logged in',
+  //       showConfirmButton: false,
+  //       timer: 1500
+  //       });
+        
+  //   // this.toastr.success('Successfully!', 'Logged in',{toastLife: 5000});   
+  //  // let url = '/';
+  //   //this._nav.navigate(['/dashboard/'+ this.username]);
+  //   this.router.navigate(['/dashboard/'+ this.username]);
+  //          localStorage.setItem('username', this.username);
+    
+  //          },
+  //     error => {
+        
+  //       swal(
+  //         'Invalid',
+  //         'Username OR Password',
+  //         'error'
+  //       )
+       
+  //     });
+  //   //}
+  //     //},
+  //       error => {
+  //        swal(
+  //          'Error',
+  //         'User does not exist',
+  //         'error'
+  //       )
+  //       }
+      
+  //     }
+  //         else {
+  //     this.validateAllFormFields(this.login);
+  //   }
+  // }
+  onLogin() {
+    // console.log(this.login);
+    if (this.login.valid) {
+      // console.log(this.login.value);
+      // console.log('form submitted');
+      this._serv.login_authenticate(this.login.value.username,this.login.value.password).subscribe(
+        data => {
+      //  console.log("user",data);
          this._serv.login(this.login.value.username,this.login.value.password).subscribe(
            data => {
-         // this._nav.navigate(['/dashboard/'+ this.username]);
-    console.log(data);
+    // console.log(data);
     swal({
         type: 'success',
         title: 'Successfully Logged in',
         showConfirmButton: false,
         timer: 1500
         });
-        
     // this.toastr.success('Successfully!', 'Logged in',{toastLife: 5000});   
-   // let url = '/';
-    //this._nav.navigate(['/dashboard/'+ this.username]);
-    this.router.navigate(['/dashboard/'+ this.username]);
-           localStorage.setItem('username', this.username);
+    //let url = 'find-bids';
+    //this._nav.navigate([url]);
+    this._nav.navigate(['/dashboard/'+ this.username]);
+    localStorage.setItem('username', this.username);
     
            },
       error => {
-        
+        // console.log(error);
+        // this.toastr.error(error, null, {toastLife: 5000});
         swal(
           'Invalid',
           'Username OR Password',
@@ -196,16 +245,19 @@ Email;
         )
        
       });
-    //}
-      //},
+ 
+        },
         error => {
+          // console.log("eer",error);
+        
+         //  this.toastr.error(error.status, null, {toastLife: 5000});
          swal(
            'Error',
           'User does not exist',
           'error'
         )
         }
-      
+      );
       }
           else {
       this.validateAllFormFields(this.login);

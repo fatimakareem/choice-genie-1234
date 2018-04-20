@@ -39,14 +39,14 @@ export class LoginService {
     //         'username': username,
     //        // 'password': password
     //     }).map((res: Response) => res.json())
-    // }
+    // }usersignin
      
     
     
-    login_authenticate(username){
+    login_authenticate(username: string, password: string){
         return this._http5.post(Config.api+'usersignin/',{
             'username':username,
-           // 'password': password
+            'password': password
         }).map((res: Response) => res.json() ) 
     }
     

@@ -27,7 +27,7 @@ import { NgForm, FormBuilder, FormGroup, Validators, FormControl, AbstractContro
 
 import swal from 'sweetalert2';
 import { NgControl } from '@angular/forms';
-import { SuperuserService } from './superuser.service';
+
 import { SuperupdateService } from './superupdate.service';
 import { DeletesuperdashboardService } from './deletesuperdashboard.service';
 
@@ -64,7 +64,7 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
 export class SuperdashboardComponent implements OnInit {
     constructor(private route: ActivatedRoute, private https: HttpClient,
         private fb: FormBuilder, private router: Router, private http: Http, private pagerService: PagerService,
-        private sg: SimpleGlobal, private newService: DeletesuperdashboardService, private serve: SuperupdateService, private obj: SuperuserService, private dialog: MatDialog, private dataa: DataService, private superuserservice: SuperuserService) {
+        private sg: SimpleGlobal, private newService: DeletesuperdashboardService, private serve: SuperupdateService,  private dialog: MatDialog, private dataa: DataService) {
 
     }
 

@@ -47,7 +47,7 @@ export class Signup1Component implements OnInit {
       'state': ['', Validators.compose([Validators.required, Validators.pattern(this.normalPattern)])],
       'country': ['', Validators.compose([Validators.required, Validators.pattern(this.normalPattern)])],
       'status': ['', Validators.compose([])],
-      // 'city': ['', Validators.compose([Validators.required, Validators.pattern(this.normalPattern)])],
+      'company_title': ['', Validators.compose([Validators.required, Validators.pattern(this.normalPattern)])],
       'password': ['', Validators.compose([Validators.required, Validators.minLength(6)])],
       'confirmpassword': ['', Validators.compose([Validators.required, Validators.minLength(6)])],
     },
@@ -178,9 +178,9 @@ export class Signup1Component implements OnInit {
 
     headers.append('Content-Type', 'application/json');
     // this.http.get(Config.api + 'data_against_zipcode/' + this.zip_code + '', { headers: headers }),
-    this.http.post('http://192.168.30.193:9000/choice/companysignin/', this.model, { headers: headers })
+    //this.http.post('http://192.168.30.193:9000/choice/companysignin/', this.model, { headers: headers })
 
-
+    this.http.post(Config.api+'companysignup/', this.model, { headers: headers })
       //   // this.http.post(Config.api + 'signup/'+ this.zip_code +'', {"premiseid": this.premiseID +'', {headers: headers})
       .subscribe(Res => {
         console.log(Res);

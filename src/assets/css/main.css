@@ -165,7 +165,7 @@ app-header {
   margin: 0 auto;
   max-width: 400px;
   opacity: 0.8;
-  margin-top: 200px !important;
+  margin-top: 163px !important;
 }
 
 .packages-holder {
@@ -612,7 +612,9 @@ background-color: #ffffff;}
     padding: 45px 20px 20px;
     border-radius: 5px;
     text-align: center;
-    min-height: 320px; }
+    min-height: 320px;
+    border-bottom: none;
+  }
     .success-for-business .icon-box:hover {
 background: goldenrod;
 /* background-color: transparent; */
@@ -693,7 +695,10 @@ background: goldenrod;
 } */
 .products-area {
   font-size: 15px;
-  line-height: 19px; }
+  line-height: 19px;
+  padding: 3% 2%;
+  width: 79%;
+  float: right;}
   .products-area .card-title small {
     color: inherit; }
   .products-area .plan-detail {
@@ -823,8 +828,8 @@ background: goldenrod;
     line-height: 21px; }
 
 .page-title {
-  margin: 0 0 25px;
-  /* text-align: center; */
+  margin: 0 0 50px;
+   /*text-align: center;*/
 }
   .page-title span {
     font-size: 30px;
@@ -1367,12 +1372,19 @@ h3 {
   margin: 0 0 0 30px; }
 
 .new-product-holder {
-  padding: 30px 0; }
+  padding: 30px;
+  float: right;
+  width: 79%;}
   .new-product-holder > .container {
     background: #fff;
     padding: 20px 15px 0; }
   .new-product-holder .mat-form-field {
     width: 100% !important; }
+.new-product-form{
+  background: white;
+  box-shadow: 0 0 15px #ccc;
+  border-radius: 5px;
+}
 
 
 
@@ -1612,9 +1624,20 @@ h3 {
   color: #fff;
   }
 
-  .list-social li a:hover {
-  color: #f80000;
+  /*.list-social li a:hover {*/
+  /*color: #f80000;*/
+  /*}*/
+  .list-social >li >a >.fa-facebook:hover{
+    transition: 0.3s;
+    color: #428bca;
+
   }
+  .list-social >li >a >.fa-twitter:hover{
+    color: #5bc0de;
+  }
+.list-social >li >a >.fa-pinterest:hover{
+  color: #d34836;
+}
   .footer {
   /*background-image:-moz-linear-gradient(-29deg,rgb(88,86,214) 0%,rgb(255,45,85) 100%);background-image:-webkit-linear-gradient(-29deg,rgb(88,86,214) 0%,rgb(255,45,85) 100%);background-image:-ms-linear-gradient(-29deg,rgb(88,86,214) 0%,rgb(255,45,85) 100%)}.footer .social-link{position: relative;z-index:1}.footer .social-link a{color:#fff;font-weight:700*/
   background: #1d1d1d;
@@ -1903,6 +1926,7 @@ section {
 .how-it-works-box >p {
   font-size: 16px !important;
   font-weight: 400;
+  line-height: 24px;
   margin: 0;
   text-align: left;
   padding-left: 6px;
@@ -3218,7 +3242,8 @@ h1, .entry-title {
 .home-columns .home-column-title {
   background-color: #cc0000;
   color: #fff;
-  font-size: 15px;
+  font-size: 22px;
+  font-size: 2.2rem;
   font-weight: 600;
   margin: 0;
   padding: 5px 10px;
@@ -3586,6 +3611,7 @@ h1, .entry-title {
   padding-bottom: 50px;
 }
 /*Terms css end */
+
 /*Signup Form Fixeddd start*/
 .signup-form-fixed{
   display: inline-block;
@@ -3632,6 +3658,7 @@ input[type=text]{
 /*Signup Form Fixeddd End*/
 
 /*sidebar css new*/
+
 
 @import url(http://fonts.googleapis.com/css?family=Oxygen:400,700);
 
@@ -3786,10 +3813,10 @@ div#wrapper {
   padding:0;
 }
 
-.width {
-  width:920px;
-  margin: 0 auto;
-}
+/*.width {*/
+  /*width:920px;*/
+  /*margin: 0 auto;*/
+/*}*/
 
 
 
@@ -3842,16 +3869,16 @@ section#content {
   padding: 20px;
   background-color: #fff;
 }
-.column-left {
-  float:left;
-}
+/*.column-left {*/
+  /*float:left;*/
+/*}*/
 .column-right {
   float:right;
 }
-aside#sidebar {
-  width:300px;
+/*aside#sidebar {*/
+  /*width:300px;*/
 
-}
+/*}*/
 nav#mainnav ul {
   padding: 0;
   margin: 0;
@@ -3900,7 +3927,7 @@ aside#sidebar h4 {
 article {
   padding: 10px 10px 30px;
   font-size: 0.95em;
-  /* border-bottom: 1px solid #eee; */
+  border-bottom: 1px solid #eee;
 }
 
 article h2 {
@@ -4044,7 +4071,34 @@ section#boody{
   line-height: 33px;
   font-weight: 400;
 }
+/*dashboard footer*/
+.dashboard-footer .container{
+  width: 100%;
+  max-width: 100%;
+}
+.sidebar-profile-img{
+  width: 55%;
+  height: 55%;
+  margin: 0 auto;
+  border-radius: 100%;
+  background: #ffffff;
+  box-shadow: 0px 0px 18px #cc0000;
 
+}
+.sidebar-profile-img >a >img{
+  width: 90%;
+  margin: 36% 5%;
+}
+#mainnav >ul >li >input{
+  font-size: 30px;
+  font-weight: 400;
+
+  padding: 5% 15%;
+  color: #ffffff;
+}
+.ng-star-inserted{
+  margin: 0 auto;
+}
 /*
  * --------------------------------------------------
  * 3. Responsiveness/media queries
@@ -4126,7 +4180,7 @@ section#boody{
     display: none !important;
   }
   .login-form-1-center{
-    width:50%;
+    width:80%;
   }
   .logo img{
     width: 70%;
