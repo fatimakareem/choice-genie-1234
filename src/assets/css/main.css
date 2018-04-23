@@ -4099,6 +4099,12 @@ section#boody{
 .ng-star-inserted{
   margin: 0 auto;
 }
+.products-area-products{
+  font-size: 15px;
+    line-height: 19px;
+    width: 98%;
+    float: right;
+}
 /*
  * --------------------------------------------------
  * 3. Responsiveness/media queries
