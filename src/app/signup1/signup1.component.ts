@@ -47,7 +47,7 @@ export class Signup1Component implements OnInit {
       'state': ['', Validators.compose([Validators.required, Validators.pattern(this.normalPattern)])],
       'country': ['', Validators.compose([Validators.required, Validators.pattern(this.normalPattern)])],
       'status': ['', Validators.compose([])],
-      'company_title': ['', Validators.compose([Validators.required, Validators.pattern(this.normalPattern)])],
+      'title': ['', Validators.compose([Validators.required, Validators.pattern(this.normalPattern)])],
       'password': ['', Validators.compose([Validators.required, Validators.minLength(6)])],
       'confirmpassword': ['', Validators.compose([Validators.required, Validators.minLength(6)])],
     },

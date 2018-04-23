@@ -141,11 +141,11 @@ export class SuperdashboardComponent implements OnInit {
     state = "";
     email = "";
     country = "";
-    //status="";
+   // status="";
 
 
 
-    btnEditClick(id, val1, val2, val3, val4, val5, val6, val7, val8, val9) {
+    btnEditClick(id, val9, val2, val3, val4, val5, val6, val7, val8, val1) {
         this.catagoryId = id;
         this.zipcode = val1;
         this.utilityarea = val2;
@@ -163,12 +163,12 @@ export class SuperdashboardComponent implements OnInit {
     }
 
     //Event Binding of PopUp Delete Modal
-
-    editClick(updatedzipcode, updatedutilityarea, updatedusername, updatedphone, updatedstate, updatedemail, updatedcountry, updatedstatus) {
-        console.log('edit' + updatedzipcode, updatedutilityarea, updatedusername, updatedphone, updatedstate, updatedemail, updatedcountry, updatedstatus);
-        console.log("TS OBJECT", updatedzipcode, updatedutilityarea, updatedusername, updatedphone, updatedstate, updatedemail, updatedcountry, updatedstatus);
+    // item.id,item.zipcode,item.utilityarea,item.title,item.Phone,item.state,item.country,item.status,item.user
+    editClick(updatedzipcode,updatedutilityarea,updatedtitle,updatedphone,updatedstate,updatedcountry,updatedstatus,updateduser) {
+        console.log('edit' + updatedzipcode,updatedutilityarea,updatedtitle,updatedphone,updatedstate,updatedcountry,updatedstatus,updateduser);
+        console.log("TS OBJECT",updatedzipcode,updatedutilityarea,updatedtitle,updatedphone,updatedstate,updatedcountry,updatedstatus,updateduser);
         //Calling Delete Service
-        this.serve.editTodoList(this.catagoryId, updatedzipcode, updatedutilityarea, updatedusername, updatedphone, updatedstate, updatedemail, updatedcountry, updatedstatus).subscribe(data => {
+        this.serve.editTodoList(this.catagoryId,updatedzipcode,updatedutilityarea,updatedtitle,updatedphone,updatedstate,updatedcountry,updatedstatus,updateduser).subscribe(data => {
             console.log(data);
             swal({
                 type: 'success',
