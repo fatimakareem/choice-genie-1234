@@ -216,8 +216,8 @@ Email;
     if (this.login.valid) {
       // console.log(this.login.value);
       // console.log('form submitted');
-      this._serv.login_authenticate(this.login.value.username,this.login.value.password).subscribe(
-        data => {
+      // this._serv.login_authenticate(this.login.value.username,this.login.value.password).subscribe(
+      //   data => {
       //  console.log("user",data);
          this._serv.login(this.login.value.username,this.login.value.password).subscribe(
            data => {
@@ -246,7 +246,7 @@ Email;
        
       });
  
-        },
+        // },
         error => {
           // console.log("eer",error);
         
@@ -257,7 +257,7 @@ Email;
           'error'
         )
         }
-      );
+      // );
       }
           else {
       this.validateAllFormFields(this.login);
