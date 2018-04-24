@@ -184,13 +184,8 @@ Email;
     if (this.login.valid) {
       // console.log(this.login.value);
       // console.log('form submitted');
-<<<<<<< HEAD
-      // this._serv.login_authenticate(this.login.value.username,this.login.value.password).subscribe(
-      //   data => {
-=======
       this._serv.login_authenticate(this.login.value.username,this.login.value.password,this.login.value.title).subscribe(
         data => {
->>>>>>> d525ab127f13112e5ffb9eaa7ea3e05c941424ca
       //  console.log("user",data);
          this._serv.login(this.login.value.username,this.login.value.password,this.login.value.title).subscribe(
            data => {
@@ -206,8 +201,8 @@ Email;
     //this._nav.navigate([url]);
     // this._nav.navigate(['/dashboard/'+ this.title]);
     // localStorage.setItem('username', this.title);
-    this._nav.navigate(['/dashboard/'+ this.username]);
-    localStorage.setItem('username', this.username);
+    this._nav.navigate(['/dashboard/'+ this.title]);
+    localStorage.setItem('title', this.title);
     
            },
       error => {
@@ -221,7 +216,7 @@ Email;
        
       });
  
-        // },
+         },
         error => {
           // console.log("eer",error);
         
@@ -232,7 +227,7 @@ Email;
           'error'
         )
         }
-      // );
+      );
       }
           else {
       this.validateAllFormFields(this.login);

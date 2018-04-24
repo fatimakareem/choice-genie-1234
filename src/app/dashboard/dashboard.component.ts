@@ -56,7 +56,7 @@ export class DashboardComponent implements OnInit, AfterViewInit {
     constructor(private route: ActivatedRoute, private https: HttpClient, private newService: DeleteService,private serve:EditService,
         private formBuilder: FormBuilder,  private router: Router, private http: Http, private pagerService: PagerService, private homeService: HomeService, private sg: SimpleGlobal,private dialog: MatDialog, private dataa: DataService, private companyService: CompanyService) {
 
-            this.username = localStorage.getItem('username');
+            this.title = localStorage.getItem('username');
 
         }
 
@@ -83,14 +83,14 @@ export class DashboardComponent implements OnInit, AfterViewInit {
      
     obj:any=[];
     editdata: any = [];
-    setPage(username,page: number) {
+    setPage(title,page: number) {
         // alert("username")
-        this.username = localStorage.getItem('username');
-         console.log("usernameeeeeeeeeeeee",this.username)
+        this.title = localStorage.getItem('title');
+         console.log("usernameeeeeeeeeeeee",this.title)
 
         const Results = {};
       
-        this.companyService.searchProduct(username,page).subscribe(Response => {
+        this.companyService.searchProduct(title,page).subscribe(Response => {
             // console.log(Response.id);
             // this.id = Response.id;
             console.log('service');       // localStorage.setItem('products',response['Results']);
@@ -122,7 +122,7 @@ export class DashboardComponent implements OnInit, AfterViewInit {
         //   this.pagedItems = this.allItems.slice(this.pager.startIndex, this.pager.endIndex + 1);
     }
     data;
-    public username;
+   // public title;
    
     dataId = '';
     list = 'Hello';
@@ -142,19 +142,19 @@ export class DashboardComponent implements OnInit, AfterViewInit {
         this.newService.DeleteTodoList(id).subscribe(data => {
             console.log(data);
 
-            this.route.params.subscribe(params => {
+            // this.route.params.subscribe(params => {
 
 
                 //  console.log('paramsssssssssss',params['username'])
-                this.setPage(this.username,1)
+                this.setPage(this.title,1)
                 //  this.setPage(1)
     
-            });
+            // });
             //  alert("junaid");
             // this.data.currentProducts.subscribe(products => this.sg['products'] = products)
             // this.data.currentProducts
             this.Sub = this.route.params.subscribe(params => {
-                this.username = +params['username'];
+                this.title = +params['title'];
                 
                 // alert(this.username);
             });
@@ -166,7 +166,7 @@ export class DashboardComponent implements OnInit, AfterViewInit {
     }
     catagoryId = '';
    // list = 'Hello';
-   title='';
+   title;
    cancelation_fee='';
             fact_sheet='';
             phone='';
@@ -240,8 +240,8 @@ console.log("TS OBJECT",updatedtitle,updatedsign_up,updatedphone,updatedterms_of
     updataForm : FormGroup;
     // constructor(private navbarTitleService: NavbarTitleService) { }
     public ngOnInit() {
-      //  this.username = localStorage.getItem('username')
-        console.log(this.username)
+      // this.title = localStorage.getItem('title')
+        console.log(this.title,'gggggggggggggggg')
         this.updataForm = this.formBuilder.group({
           
             cancelation_fee: ['', Validators.compose([Validators.required])],
@@ -257,20 +257,20 @@ console.log("TS OBJECT",updatedtitle,updatedsign_up,updatedphone,updatedterms_of
             terms_of_service: ['',  Validators.compose([Validators.required])],
             title: ['', Validators.compose([Validators.required])],
         });
-           this.route.params.subscribe(params => {
+        //    this.route.params.subscribe(params => {
 
 
             //  console.log('paramsssssssssss',params['username'])
-            this.setPage(params['username'],1)
-            console.log(params['username'],1)
+            this.setPage(this.title,1)
+            console.log(this.title,1)
             
 
-        });
+        // });
         //  alert("junaid");
         // this.data.currentProducts.subscribe(products => this.sg['products'] = products)
         // this.data.currentProducts
         this.Sub = this.route.params.subscribe(params => {
-            this.username = +params['username'];
+            this.title = +params['title'];
            // this.setPage(1)
             //  this.setPage(1)
             // alert(this.username);

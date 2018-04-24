@@ -7,18 +7,18 @@ export class CompanyService {
 
 
 
-  constructor(private https: Http) {
+  constructor(private https: Http) {  this.title = localStorage.getItem('title');
 }
 id;
-username;
-  searchProduct(username,page) {
-    console.log(username)
+title;
+  searchProduct(title,page) {
+    console.log(this.title)
    // let headers = new Headers({'Authorization': 'JWT ' + username.token});
    let headers = new Headers();
   // headers.append('Content-Type', 'application/json');
   // headers.append('Access-Control-Allow-Headers', 'Content-Type');
   // headers.append('Access-Control-Allow-Methods', 'GET');
-    return this.https.get(Config.api +'mydata/'+ username +'/'+'?page='+page, {headers: headers} ) .map((response: Response)  => response.json() );
+    return this.https.get(Config.api +'mydata/'+ this.title +'/'+'?page='+page, {headers: headers} ) .map((response: Response)  => response.json() );
  // return this.https.get('http://192.168.30.52:9000/choice/mydata/'+ username + '/').map((response: Response) => response.json());
 
     }
