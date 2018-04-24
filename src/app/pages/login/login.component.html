@@ -12,6 +12,9 @@
           </div>
           <div class="login-form-1-body">
           
+              <mat-form-field [ngClass]="displayFieldCss(login, 'title')">
+                  <input matInput id="title" placeholder="Enter title" formControlName="title" [(ngModel)]="title">
+                </mat-form-field>title
             <mat-form-field [ngClass]="displayFieldCss(login, 'username')">
               <input matInput id="username" placeholder="Enter Username" formControlName="username" [(ngModel)]="username">
             </mat-form-field>

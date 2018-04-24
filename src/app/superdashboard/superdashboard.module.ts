@@ -14,6 +14,7 @@ import { SuperdashboardComponent } from './superdashboard.component';
         CommonModule,
         RouterModule.forChild(SuperDashboardRoutes),
         FormsModule,
+        ReactiveFormsModule,
         // MdModule,
         MaterialModule
     ],

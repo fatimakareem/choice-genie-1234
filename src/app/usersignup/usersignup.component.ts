@@ -213,35 +213,7 @@ export class UsersignupComponent implements OnInit {
       }
     });
   }
-  login(name, password) {
-
-
-    this._serv.login(name, password).subscribe(
-      data => {
-        console.log(data);
-        // swal(
-        //   'Successfully! Logged in',
-        //   '',
-        //   'success'
-        // )
-
-        // this.router.navigate(['/dashboard/'+ this.username]);
-        // localStorage.setItem('username', this.username);
-
-      },
-      error => {
-        this.router.navigate(['/userlogin/']);
-        console.log(error);
-
-        swal(
-          'Invalid',
-          'Username OR Password',
-          'error'
-        )
-
-      });
-
-  }
+ 
   signupuserdata() {
     //alert('hello');
     //console.log("main form",this.signupForm.value)

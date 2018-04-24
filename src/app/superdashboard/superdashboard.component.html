@@ -23,7 +23,7 @@
                   <th class="text-center">User ID</th>
                   <th class="text-center">Zip Code</th>
                   <th class="text-center">Utility Area</th>
-                  <th class="text-center">UserName</th>
+                  <th class="text-center">Company Name</th>
                   <!-- <th class="text-center">Password</th> -->
                   <th class="text-center">Phone</th>
                   <th class="text-center">State</th>
@@ -37,19 +37,29 @@
                   <td style="font-size: 20px;">{{item.id}}</td>
                   <td style="font-size: 20px;">{{item.zipcode}}</td>
                   <td style="font-size: 20px;">{{item.utilityarea}}</td>
-                  <td style="font-size: 20px;">{{item.username}}</td>
+                  <td style="font-size: 20px;">{{item.title}}</td>
                   <!-- <td style="font-size: 20px;">{{item.password}}</td> -->
                   <td style="font-size: 20px;">{{item.Phone}}</td>
                   <td style="font-size: 20px;">{{item.state}}</td>
                   <td style="font-size: 20px;">{{item.email}}</td>
                   <td style="font-size: 20px;">{{item.country}}</td>
                   <td style="font-size: 20px;">{{item.status}}</td>
+                  <td style="font-size: 20px;">{{item.user}}</td>
                   <td style="font-size: 20px;">
                     <form (ngSubmit)="onSubmit(f)" #f="ngForm">
-                      <input matInput placeholder="status" name="status" value="status" required #updatedstatus hidden="true" />
+
+                        <!-- id.value,updatedzipcode.value,updatedutilityarea.value,updatedtitle.value,updatedphone.value,updatedstate.value,updatedcountry.value,updatedstatus.value,updateduser.value -->
+                      <input matInput name="item.zipcode" value="{{item.zipcode}}"[hidden]="true" required #updatedzipcode/>
+                      <input matInput  name="item.utilityarea" value="{{item.utilityarea}}"[hidden]="true" required #updatedutilityarea/>
+                      <input matInput  name="item.title" value="{{item.title}}" required [hidden]="true" #updatedtitle/>
+                      <input matInput  name="item.Phone" value="{{item.Phone}}" required [hidden]="true" #updatedphone/>
+                      <input matInput name="item.state" value="{{item.state}}" required [hidden]="true" #updatedstate/>
+                      <input matInput name="item.country" value="{{item.country}}" [hidden]="true" required #updatedcountry/>
+                      <input matInput  name="item.status" [value]="status" required [hidden]="true" #updatedstatus/>
+                      <input matInput  name="item.user" value="{{item.user}}" required [hidden]="true" #updateduser/>
 
                       <!-- <input matInput placeholder="status" [formControl]="signupForm.controls['status']" required [value]="status" [(ngModel)]="model.status" hidden="true"> -->
-                      <button type="submit" class="btn btn-rose" (click)="btnEditClick(item.id,item.status);editClick(updatedstatus.value)">Update</button>
+                      <button type="submit" class="btn btn-rose" (click)="btnEditClick(item.id,item.zipcode,item.utilityarea,item.title,item.Phone,item.state,item.country,item.status,item.user);editClick(updatedzipcode.value,updatedutilityarea.value,updatedtitle.value,updatedphone.value,updatedstate.value,updatedcountry.value,updatedstatus.value,updateduser.value)">Update</button>
                     </form>
                   </td>
                   <td style="font-size: 20px;">

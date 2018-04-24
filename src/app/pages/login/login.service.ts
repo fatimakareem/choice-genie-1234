@@ -15,14 +15,14 @@ export class LoginService {
     constructor(private _http5: Http) { }
 
     loaded: boolean = false;
-    login(username: string, password: string) {
+    login(username: string, password: string, title :string) {
         const headers = new Headers();
       //  const headers = new Headers({'Authorization': 'JWT ' + username.token});
         headers.append('Content-Type', 'application/json');
         //return this.http.get(Config.api+'data_against_zipcode/'+id+'?page='+page).map((response: Response) => response.json());
         // return this._http5.post(Config.api+'user-token-auth/',
-        return this._http5.post(Config.api + 'usersignin/',
-            JSON.stringify({ username: username, password: password }), { headers: headers })
+        return this._http5.post(Config.api + 'loginCompany/',
+            JSON.stringify({ username: username, password: password,title :title }), { headers: headers })
             .map((response: Response) => {
                 let user = { username: username, token: response.json().token };
 
@@ -43,10 +43,11 @@ export class LoginService {
      
     
     
-    login_authenticate(username: string, password: string){
-        return this._http5.post(Config.api+'usersignin/',{
+    login_authenticate(username: string, password: string, title :string){
+        return this._http5.post(Config.api+'loginCompany/',{
             'username':username,
-            'password': password
+            'password': password,
+            'title': title
         }).map((res: Response) => res.json() ) 
     }
     

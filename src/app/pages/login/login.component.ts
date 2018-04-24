@@ -61,6 +61,7 @@ export class LoginComponent implements OnInit {
   private sidebarVisible: boolean;
   private nativeElement: Node;
 public username;
+public title;
   //username?: string; 
  // login : FormGroup; 
 Email;
@@ -119,40 +120,7 @@ Email;
  
   //  }
   
-  // onLogin() {
-  //   // console.log(this.login);
-  //   if (this.login.valid) {
-    
-  //         this._serv.login(this.login.value.username, this.login.value.password).subscribe(
-  //           data => {
-  //             console.log(data);
-  //             swal(
-  //               'Successfully! Logged in',
-  //               '',
-  //               'success'
-  //             )
-  //             // this.toastr.success('Successfully!', 'Logged in',{toastLife: 5000});
-  //             this.router.navigate(['/dashboard/'+ this.username]);
-  //             localStorage.setItem('username', this.username);
-
-  //           },
-  //           error => {
-  //             console.log(error);
-  //            // this.toastr.error(error, null, {toastLife: 5000});
-  //             swal(
-  //               'Invalid',
-  //               'Username OR Password',
-  //               'error'
-  //             )
-           
-  //           });
-
-        
-  //   }
-  //   else {
-  //     this.validateAllFormFields(this.login);
-  //   }
-  // }
+   
   // onLogin() {
   //   alert("loginis ture");
   //   // console.log(this.login);
@@ -216,10 +184,15 @@ Email;
     if (this.login.valid) {
       // console.log(this.login.value);
       // console.log('form submitted');
+<<<<<<< HEAD
       // this._serv.login_authenticate(this.login.value.username,this.login.value.password).subscribe(
       //   data => {
+=======
+      this._serv.login_authenticate(this.login.value.username,this.login.value.password,this.login.value.title).subscribe(
+        data => {
+>>>>>>> d525ab127f13112e5ffb9eaa7ea3e05c941424ca
       //  console.log("user",data);
-         this._serv.login(this.login.value.username,this.login.value.password).subscribe(
+         this._serv.login(this.login.value.username,this.login.value.password,this.login.value.title).subscribe(
            data => {
     // console.log(data);
     swal({
@@ -231,6 +204,8 @@ Email;
     // this.toastr.success('Successfully!', 'Logged in',{toastLife: 5000});   
     //let url = 'find-bids';
     //this._nav.navigate([url]);
+    // this._nav.navigate(['/dashboard/'+ this.title]);
+    // localStorage.setItem('username', this.title);
     this._nav.navigate(['/dashboard/'+ this.username]);
     localStorage.setItem('username', this.username);
     
@@ -334,6 +309,7 @@ Email;
       username: ['', Validators.compose([Validators.required])],
       // We can use more than one validator per field. If we want to use more than one validator we have to wrap our array of validators with a Validators.compose function. Here we are using a required, minimum length and maximum length validator.
       password: ['', Validators.compose([Validators.required])],
+      title: ['', Validators.compose([Validators.required])],
      Email:['', Validators.compose([])],
    });
     var navbar: HTMLElement = this.element.nativeElement;
