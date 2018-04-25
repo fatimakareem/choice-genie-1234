@@ -126,7 +126,7 @@ export class DashboardComponent implements OnInit, AfterViewInit {
    
     dataId = '';
     list = 'Hello';
-
+    
     //Event Binding of Delete Buttons
     btnDeleteClick(id) {
         this.dataId = id;

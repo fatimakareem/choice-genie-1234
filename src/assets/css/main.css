@@ -3859,7 +3859,7 @@ header div.tagline a {
 /** body **/
 section#body {
   padding: 0;
-  background: #2f2f2f;
+  background: #282828;
 }
 
 
@@ -3984,8 +3984,19 @@ footer p a:hover { color:#333; border-bottom-color: #333; }
 .clear {
   display: block;
 }
-
-
+.super-sidebar-profile-img{
+  width: 150px;
+  height: 150px;
+  margin: 0 auto;
+  border-radius: 100%;
+  background: #ffffff;
+  box-shadow: 0px 0px 18px #cc0000;
+}
+.super-sidebar-profile-img >a >img {
+  width: 93%;
+  margin: 5px 5px;
+  border-radius: 100%;
+}
 
 
 

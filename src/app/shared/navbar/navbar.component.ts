@@ -2,13 +2,33 @@ import { Component, OnInit, Renderer, ViewChild, ElementRef, Directive } from '@
 import { ROUTES } from '../.././sidebar/sidebar.component';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Location, LocationStrategy, PathLocationStrategy } from '@angular/common';
+import { Subscription } from 'rxjs/Subscription';
+ 
+import { ErrorStateMatcher, MAT_DIALOG_DATA, MatDialog, MatDialogRef } from "@angular/material";
+import { NgForm, FormControl, Validators, FormGroupDirective } from "@angular/forms";
+import { Pipe, PipeTransform } from "@angular/core";
+// import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
+import { Headers, Http, Response } from '@angular/http';
+ 
+import { ResponseContentType } from '@angular/http/src/enums';
+import { Console } from '@angular/core/src/console';
+// import {Config} from "../Config";
+import { HttpClient, HttpResponse, HttpHeaders } from "@angular/common/http";
+import { jsonpCallbackContext } from '@angular/common/http/src/module';
+ 
+import { SimpleGlobal } from 'ng2-simple-global';
+// import { ValueUnwrapper } from '@angular/core/src/change_detection/change_detection_util';
+//import { Http } from '@angular/http/src/http';
+import { PageEvent } from '@angular/material';
+ 
+declare const $: any;
 const misc: any = {
     navbar_menu_visible: 0,
     active_collapse: true,
     disabled_collapse_init: 0,
 };
 
-declare var $;
+ 
 @Component({
     selector: 'app-navbar-cmp',
     templateUrl: 'navbar.component.html'
@@ -16,19 +36,27 @@ declare var $;
 
 export class NavbarComponent implements OnInit {
     private listTitles: any[];
-    location: Location;
+   // location: Location;
     private nativeElement: Node;
     private toggleButton: any;
     private sidebarVisible: boolean;
 
     @ViewChild('app-navbar-cmp') button: any;
+    constructor(private route: ActivatedRoute, private https: HttpClient, 
+        private location: Location, private router: Router, private http: Http,    
+        public sg: SimpleGlobal,  private dialog: MatDialog, private element: ElementRef  ) {
 
-    constructor(location: Location, private renderer: Renderer, private element: ElementRef) {
+   // }
+//    constructor(location: Location, private renderer: Renderer, private element: ElementRef) {
         this.location = location;
         this.nativeElement = element.nativeElement;
         this.sidebarVisible = false;
     }
-
+    logout(){
+        localStorage.clear();
+        this.router.navigate(['/']);
+      //  console.log("logout"); 
+      }
     ngOnInit() {
         this.listTitles = ROUTES.filter(listTitle => listTitle);
 

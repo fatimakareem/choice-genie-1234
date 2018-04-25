@@ -111,7 +111,7 @@ export class UserloginComponent implements OnInit {
            //  this.toastr.error(error.status, null, {toastLife: 5000});
            swal(
              'Error',
-            'User does not exist',
+            'User does not exist Please Check Your email for activation registation',
             'error'
           )
           }

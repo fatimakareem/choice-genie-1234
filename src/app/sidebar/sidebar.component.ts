@@ -212,6 +212,11 @@ export class SidebarComponent implements OnInit {
         }
         return true;
     };
+    logout(){
+        localStorage.clear();
+        this.router.navigate(['/']);
+      //  console.log("logout"); 
+      }
     fetchProducts() {
         // this.route.params.subscribe(params => {
         //   let zip =  this.sg['product_zipcode'];
@@ -233,7 +238,7 @@ export class SidebarComponent implements OnInit {
        
        
      
-        this.username = localStorage.getItem('username')
+        this.username = localStorage.getItem('title')
         console.log(this.username)
        this. fetchProducts()
       //  localStorage.setItem('username', this.username);

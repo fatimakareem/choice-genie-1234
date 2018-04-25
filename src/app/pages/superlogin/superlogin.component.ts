@@ -73,14 +73,14 @@ export class SuperloginComponent implements OnInit {
     var username = e.target.elements[0].value;
     var password = e.target.elements[1].value;
     console.log(username,password);
-    if(username == 'shahg' && password =='admin123') {
+    if(username == 'admin' && password =='admin123') {
     
     swal(
       'Successfully! Logged in',
       '',
       'success'
     )
-    this.router.navigate(['/superdashboard/']);
+    this.router.navigate(['/superdashboard']);
     localStorage.setItem('username', this.username);
    
   }   
