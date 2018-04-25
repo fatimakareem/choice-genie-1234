@@ -40,6 +40,7 @@ export class NavbarComponent implements OnInit {
     private nativeElement: Node;
     private toggleButton: any;
     private sidebarVisible: boolean;
+    public username :any;
 
     @ViewChild('app-navbar-cmp') button: any;
     constructor(private route: ActivatedRoute, private https: HttpClient, 
@@ -58,6 +59,9 @@ export class NavbarComponent implements OnInit {
       //  console.log("logout"); 
       }
     ngOnInit() {
+        this.username = localStorage.getItem('title')
+        console.log(this.username);
+
         this.listTitles = ROUTES.filter(listTitle => listTitle);
 
         const navbar: HTMLElement = this.element.nativeElement;
