@@ -48,7 +48,7 @@ export class SuperloginComponent implements OnInit {
   private toggleButton: any;
   private sidebarVisible: boolean;
   private nativeElement: Node;
-  public username;
+  public username="admin";
   hide=true;
 
   password;

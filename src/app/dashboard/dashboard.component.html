@@ -22,7 +22,7 @@
               <div class="page-title">
                 <span>Product Search</span>
               </div>
-              <div class="card" *ngFor="let data of sg['products']; let i = index">
+              <div class="card" *ngFor="let data of allItems; let i = index">
                 <div class="row">
         
                   <div class="col-sm-12">
@@ -366,7 +366,7 @@
                       <h3 style="padding:0 20px;background:#cecece">Plan Information</h3>
                       <div class="text-justify" >
         
-                        <p *ngFor="let itemss of data.plan_information">
+                        <p *ngFor="let itemss of data?.plan_information">
                           {{itemss}}
                         </p>
                       </div>
