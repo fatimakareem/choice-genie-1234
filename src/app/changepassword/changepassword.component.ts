@@ -29,22 +29,7 @@ console.log("TS OBJECT",);
             showConfirmButton: false,
             timer: 1500
           })
-        // this.route.params.subscribe(params => {
-
-
-        //     //  console.log('paramsssssssssss',params['username'])
-        //     this.setPage(params['username'],1)
-        //     //  this.setPage(1)
-
-        // });
-        // //  alert("junaid");
-        // // this.data.currentProducts.subscribe(products => this.sg['products'] = products)
-        // // this.data.currentProducts
-        // this.Sub = this.route.params.subscribe(params => {
-        //     this.username = +params['username'];
-        //     //  this.setPage(1)
-        //     // alert(this.username);
-        // });
+      
 
     }, error => {
      

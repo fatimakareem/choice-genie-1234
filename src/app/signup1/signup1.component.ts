@@ -6,7 +6,7 @@ import { Config } from "../Config";
 import { ActivatedRoute, Router } from "@angular/router";
 import { SimpleGlobal } from 'ng2-simple-global';
 import { ResponseContentType } from '@angular/http/src/enums';
-import { FormBuilder, Validators, NgControl, RadioControlValueAccessor, FormControl, FormGroup } from '@angular/forms';
+import { FormBuilder, Validators, NgControl, RadioControlValueAccessor, FormControl, FormGroup,AbstractControl } from '@angular/forms';
 import { HttpClient, HttpResponse, HttpHeaders } from "@angular/common/http";
 import swal from 'sweetalert2'; 
 import { MatSelect } from '@angular/material';
@@ -17,7 +17,7 @@ import { PasswordValidation } from './password-validator.component';
   styleUrls: ['./signup1.component.scss']
 })
 export class Signup1Component implements OnInit {
-  state;
+  state:any=[];
   city;
   username;
   confirmpassword;
@@ -101,7 +101,7 @@ export class Signup1Component implements OnInit {
 
       });
   }
-
+//state: FormControl = new FormControl();
   states() {
     // alert(this.premiseID.toString().length)
     //  alert('hello');
@@ -110,7 +110,7 @@ export class Signup1Component implements OnInit {
     headers.append('Content-Type', 'application/json');
     // this.http.get(Config.api + 'data_against_zipcode/' + this.zip_code + '', { headers: headers }),
     this.http.get(Config.api + 'state/', { headers: headers })
-
+ 
       //  this.http.get(Config.api + 'signup/'+ this.zip_code +'', {headers: headers})
       .subscribe(Res => {
         console.log(Res);

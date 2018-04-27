@@ -80,12 +80,12 @@ export class DashboardComponent implements OnInit, AfterViewInit {
     public products: any;
     rating;
     closeResult: string;
-     
+     public username;
     obj:any=[];
     editdata: any = [];
     setPage(title,page: number) {
         // alert("username")
-        this.title = localStorage.getItem('title');
+        this.title = localStorage.getItem('username');
          console.log("usernameeeeeeeeeeeee",this.title)
 
         const Results = {};
@@ -93,13 +93,11 @@ export class DashboardComponent implements OnInit, AfterViewInit {
         this.companyService.searchProduct(title,page).subscribe(Response => {
             // console.log(Response.id);
             // this.id = Response.id;
-            console.log('service');       // localStorage.setItem('products',response['Results']);
+            console.log('service');       
             this.sg['products'] = Response['Results'];
-            this.editdata=Response['Results'];
+           
             console.log(this.sg['products']);
             for (let prod of this.sg['products']) {
-                this.id = prod["id"];
-                console.log(prod["id"])
                 //console.log(prod["plan_information"])
                 //console.log(prod["price_rate"])
                 prod["plan_information"] = prod["plan_information"].split(',,', 3000);
@@ -114,12 +112,10 @@ export class DashboardComponent implements OnInit, AfterViewInit {
             // console.clear()
             console.log(Response['Total Result']);
              this.pager = this.pagerService.getPager(Response['Total Result'], page, 10);
-            //this.setPage(1);
-            // initialize to page 1
-            // console.log(this.sg['products']);
+           
 
         });
-        //   this.pagedItems = this.allItems.slice(this.pager.startIndex, this.pager.endIndex + 1);
+      
     }
     data;
    // public title;
@@ -142,23 +138,9 @@ export class DashboardComponent implements OnInit, AfterViewInit {
         this.newService.DeleteTodoList(id).subscribe(data => {
             console.log(data);
 
-            // this.route.params.subscribe(params => {
-
-
-                //  console.log('paramsssssssssss',params['username'])
+         
                 this.setPage(this.title,1)
-                //  this.setPage(1)
-    
-            // });
-            //  alert("junaid");
-            // this.data.currentProducts.subscribe(products => this.sg['products'] = products)
-            // this.data.currentProducts
-            this.Sub = this.route.params.subscribe(params => {
-                this.title = +params['title'];
-                
-                // alert(this.username);
-            });
-
+               
         }, error => {
         });
      //   window.location.reload();
@@ -211,22 +193,7 @@ console.log("TS OBJECT",updatedtitle,updatedsign_up,updatedphone,updatedterms_of
                 showConfirmButton: false,
                 timer: 1500
               })
-            // this.route.params.subscribe(params => {
-
-
-            //     //  console.log('paramsssssssssss',params['username'])
-            //     this.setPage(params['username'],1)
-            //     //  this.setPage(1)
-    
-            // });
-            // //  alert("junaid");
-            // // this.data.currentProducts.subscribe(products => this.sg['products'] = products)
-            // // this.data.currentProducts
-            // this.Sub = this.route.params.subscribe(params => {
-            //     this.username = +params['username'];
-            //     //  this.setPage(1)
-            //     // alert(this.username);
-            // });
+           
 
         }, error => {
         });
@@ -240,7 +207,7 @@ console.log("TS OBJECT",updatedtitle,updatedsign_up,updatedphone,updatedterms_of
     updataForm : FormGroup;
     // constructor(private navbarTitleService: NavbarTitleService) { }
     public ngOnInit() {
-      // this.title = localStorage.getItem('title')
+      this.title = localStorage.getItem('username')
         console.log(this.title,'gggggggggggggggg')
         this.updataForm = this.formBuilder.group({
           
@@ -257,32 +224,10 @@ console.log("TS OBJECT",updatedtitle,updatedsign_up,updatedphone,updatedterms_of
             terms_of_service: ['',  Validators.compose([Validators.required])],
             title: ['', Validators.compose([Validators.required])],
         });
-        //    this.route.params.subscribe(params => {
-
-
-            //  console.log('paramsssssssssss',params['username'])
             this.setPage(this.title,1)
             console.log(this.title,1)
             
 
-        // });
-        //  alert("junaid");
-        // this.data.currentProducts.subscribe(products => this.sg['products'] = products)
-        // this.data.currentProducts
-        this.Sub = this.route.params.subscribe(params => {
-            this.title = +params['title'];
-           // this.setPage(1)
-            //  this.setPage(1)
-            // alert(this.username);
-        });
-        // this.setPage();
-        //  console.log()
-
-        //    console.log("fatimaaaaaaaaaaaaaaaaaaaaaaaaaaa")
-    
-
-         
- 
     }
     ngAfterViewInit() {
         const breakCards = true;

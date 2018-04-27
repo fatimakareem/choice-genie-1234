@@ -103,7 +103,7 @@
               </a>
             </li> -->
   
-          <li class="vanders" style="border-right: 2px solid #ccc; padding-right: 10px;">
+          <li class="vanders" style="border-right: 2px solid #ccc; padding-right: 10px;" *ngIf="!check_login()">
             <a>
               <i class="material-icons">fingerprint</i>
               Login
@@ -129,7 +129,7 @@
             </ul>
           </div>
           </li>
-          <li class="vanders">
+          <li class="vanders"*ngIf="!check_login()">
             <a>
               <i class="material-icons">
                 lock_open
@@ -170,6 +170,36 @@
                 <i class="fa fa-apple"></i>
               </a>
             </li>
+            <li class="vanders"*ngIf="check_login()">
+                <a>
+                  <i class="material-icons">account_circle</i> My ChoiceGenie
+                </a>
+                <div  class="drop-downs">
+                  <ul class="nav-vanders  why-choiegenie-sublist">
+                      <li>
+                          <a>
+                            <i class="material-icons">unarchive</i> <input style="font-size: 20px; margin-left: 5px;" type="text" [value]="username" readonly>
+                          </a>
+                        </li>
+                      <li>
+                          <a routerLink="/ChangePassword">
+                            <i class="material-icons">unarchive</i> Change Password
+                          </a>
+                        </li>
+                    <li>
+                      <a (click) = "logout()">
+                        <i class="material-icons">lock</i>Logout
+                      </a>
+                    </li>
+                    
+                    <!-- <li>
+                      <a routerLink="/mycourses">
+                        <i class="material-icons">library_books</i> My Library
+                      </a>
+                    </li> -->
+                    </ul>
+                </div>
+              </li>
         </ul>
       </div>
       <!-- </div> -->

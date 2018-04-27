@@ -91,7 +91,7 @@ export class UserloginComponent implements OnInit {
               // this.toastr.success('Successfully!', 'Logged in',{toastLife: 5000});
              // this.router.navigate(['/dashboard/'+ this.username]);
               this.router.navigate(['/']);
-              //localStorage.setItem('username', this.username);
+              localStorage.setItem('username', this.username);
 
             },
             error => {
@@ -149,7 +149,7 @@ export class UserloginComponent implements OnInit {
     //alert('hello');
     console.log("CHOICE GENIE", this.username);
 
-    let headers = new HttpHeaders({'Authorization': 'JWT ' + this.username.token});
+    let headers = new HttpHeaders();
 
 
     headers.append('Content-Type', 'application/json');

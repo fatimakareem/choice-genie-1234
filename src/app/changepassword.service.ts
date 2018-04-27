@@ -10,7 +10,7 @@ export class ChangepasswordService {
   
 
   changepsd(username,oldpass,pass1,pass2) {
-    console.log('mmmmmmmmmmmmmmmmmmmmm');
+   
     console.log(" service object",username,oldpass,pass1,pass2)
     const headers = new Headers({'Authorization': 'JWT ' + username.token});
     headers.append('Content-Type', 'application/json');

@@ -7,7 +7,7 @@ export class CompanyService {
 
 
 
-  constructor(private https: Http) {  this.title = localStorage.getItem('title');
+  constructor(private https: Http) {  this.title = localStorage.getItem('username');
 }
 id;
 title;
