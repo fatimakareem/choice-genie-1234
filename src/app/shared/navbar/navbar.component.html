@@ -171,33 +171,7 @@
               <i class="fa fa-apple"></i>
             </a>
           </li>
-        <li class="" style="border-right: 2px solid #ccc; padding-right: 10px;">
-            <a>
-                <i _ngcontent-c1="" class="material-icons">person</i>
-              Hi              
-              <!-- <i class="fa fa-caret-down"></i> -->
-              <span class="float-right" style="width: 125px;"><input style="font-size: 20px; margin-left: 5px;" type="text" [value]="username" readonly></span>
-            </a>
-              <!-- <div class="drop-downs"> -->
-            <!-- <ul class="nav-vanders"> -->
-              <!-- <li class="/login">
-                <a routerLink="/login">
-                  <i class="material-icons">face</i> Vendor
-                </a>
-              </li>
-              <li class="">
-                <a routerLink="/userlogin">
-                  <i class="material-icons">face</i> User
-                </a>
-              </li>
-              <li class="/superlogin">
-                <a routerLink="/superlogin">
-                  <i class="material-icons">face</i> Super Admin
-                </a>
-              </li> -->
-            <!-- </ul> -->
-          <!-- </div> -->
-          </li>
+        
           <!-- <li class=""> -->
             <!-- <a> -->
               <!-- <i class="material-icons">
@@ -210,12 +184,37 @@
              
           <!-- </li> -->
       
-        <li>
-            <a (click) = "logout()" >
-                <i _ngcontent-c1="" class="material-icons">lock</i>
-                Logout</a>
-  
-          </li>
+        
+          <li class="vanders"*ngIf="check_login()">
+              <a>
+                <i class="material-icons">account_circle</i> My ChoiceGenie
+              </a>
+              <div  class="drop-downs">
+                <ul class="nav-vanders  why-choiegenie-sublist">
+                    <li>
+                        <a>
+                          <i class="material-icons">unarchive</i> <input style="font-size: 20px; margin-left: 5px;" type="text" [value]="username" readonly>
+                        </a>
+                      </li>
+                    <li>
+                        <a routerLink="/ChangePassword">
+                          <i class="material-icons">unarchive</i> Change Password
+                        </a>
+                      </li>
+                  <li>
+                    <a (click) = "logout()">
+                      <i class="material-icons">lock</i>Logout
+                    </a>
+                  </li>
+                  
+                  <!-- <li>
+                    <a routerLink="/mycourses">
+                      <i class="material-icons">library_books</i> My Library
+                    </a>
+                  </li> -->
+                  </ul>
+              </div>
+            </li>
       </ul>
     </div>
     <!-- </div> -->

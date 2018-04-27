@@ -71,6 +71,10 @@ export const AppRoutes: Routes = [
             path: 'Faqs',
             loadChildren: './faqs/faqs.module#FaqsModule'
         },
+        {
+            path: 'ChangePassword',
+            loadChildren: './changepassword/changepassword.module#ChangePasswordModule'
+        },
         // {
         //     path: 'changepassword',
         //     loadChildren: './change-password/change-password.module#ChangePasswordModule'
@@ -203,10 +207,7 @@ export const AppRoutes: Routes = [
                 path: "new-product",
                 loadChildren: './admin/new-product/new-product.module#NewProductModule'
             },
-            {
-                path: 'ChangePassword',
-                loadChildren: './changepassword/changepassword.module#ChangePasswordModule'
-            },
+            
             {
                 path: 'components',
                 loadChildren: './components/components.module#ComponentsModule'

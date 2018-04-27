@@ -53,13 +53,21 @@ export class NavbarComponent implements OnInit {
         this.nativeElement = element.nativeElement;
         this.sidebarVisible = false;
     }
+    check_login() {
+        if (localStorage.getItem('username')) {
+          let local = localStorage.getItem('username');
+          return true;
+        }
+          else {
+          return false;    }
+      }
     logout(){
         localStorage.clear();
         this.router.navigate(['/']);
       //  console.log("logout"); 
       }
     ngOnInit() {
-        this.username = localStorage.getItem('title')
+        this.username = localStorage.getItem('username')
         console.log(this.username);
 
         this.listTitles = ROUTES.filter(listTitle => listTitle);

@@ -183,7 +183,7 @@ export class SuperdashboardComponent implements OnInit {
         }, error => {
         });
         //  window.location.reload();
-
+     
     }
     premiseIdData(page: number) {
         if (page < 1 || page > this.pager.totalPages) {

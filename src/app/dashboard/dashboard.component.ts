@@ -80,13 +80,13 @@ export class DashboardComponent implements OnInit, AfterViewInit {
     public products: any;
     rating;
     closeResult: string;
-     
+     public username;
     obj:any=[];
     editdata: any = [];
     setPage(title,page: number) {
         // alert("username")
-        this.title = localStorage.getItem('title');
-         console.log("usernameeeeeeeeeeeee",this.title)
+        this.title = localStorage.getItem('username');
+         console.log("usernameeeeeeeeeeeee",this.username)
 
         const Results = {};
       
@@ -95,11 +95,9 @@ export class DashboardComponent implements OnInit, AfterViewInit {
             // this.id = Response.id;
             console.log('service');       // localStorage.setItem('products',response['Results']);
             this.sg['products'] = Response['Results'];
-            this.editdata=Response['Results'];
+            //this.editdata=Response['Results'];
             console.log(this.sg['products']);
             for (let prod of this.sg['products']) {
-                this.id = prod["id"];
-                console.log(prod["id"])
                 //console.log(prod["plan_information"])
                 //console.log(prod["price_rate"])
                 prod["plan_information"] = prod["plan_information"].split(',,', 3000);
@@ -258,7 +256,6 @@ console.log("TS OBJECT",updatedtitle,updatedsign_up,updatedphone,updatedterms_of
             title: ['', Validators.compose([Validators.required])],
         });
         //    this.route.params.subscribe(params => {
-
 
             //  console.log('paramsssssssssss',params['username'])
             this.setPage(this.title,1)

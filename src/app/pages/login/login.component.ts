@@ -202,7 +202,7 @@ Email;
     // this._nav.navigate(['/dashboard/'+ this.title]);
     // localStorage.setItem('username', this.title);
     this._nav.navigate(['/dashboard/'+ this.title]);
-    localStorage.setItem('title', this.title);
+    localStorage.setItem('username', this.title);
     
            },
       error => {
