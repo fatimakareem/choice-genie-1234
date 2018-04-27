@@ -42,7 +42,7 @@ this.qurey=params['qurey']
   });
     this.sub = this.route.params.subscribe ( params => {
       console.log('params',params['query'])
-     // this.forgetpass(params['query']) 
+    
         });
   }
   forgetpass(qurey) {
@@ -53,40 +53,35 @@ this.qurey=params['qurey']
 
 
     headers.append('Content-Type', 'application/json');
-    // this.http.get(Config.api + 'data_against_zipcode/' + this.zip_code + '', { headers: headers }),
+   
     this.http.post(Config.api +'reset_password/', {'pass1':this.pass1,
     'pass2':this.pass2,
     'code': this.qurey
   }, { headers: headers })
 
 
-      //   // this.http.post(Config.api + 'signup/'+ this.zip_code +'', {"premiseid": this.premiseID +'', {headers: headers})
+     
       .subscribe(Res => {
       
         console.log(Res);
-        // this.next = Res[0].next;
+     
 
       
        
       },
         error => {
           console.log(error);
-        //  this.toastr.error(error, null, {toastLife: 5000});
+      
           swal(
             'Invalid',
             'May be Some error!',
             'error'
           )
-
-          //     //    this.state = Res[0].state;
-          //     //this.sg['products'] = Res.json()['Results'];
-          //     //this.data.changeProducts(this.sg['products']);
-          //   f.resetForm();
         });
    
 
 
-    //}
+    
 
 
   }

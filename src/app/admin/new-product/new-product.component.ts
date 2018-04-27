@@ -10,7 +10,7 @@ import { SimpleGlobal } from 'ng2-simple-global';
 import { ResponseContentType } from '@angular/http/src/enums';
 import { FormBuilder, Validators, NgControl, RadioControlValueAccessor, FormControl, FormGroup } from '@angular/forms';
 import { HttpClient, HttpResponse, HttpHeaders } from "@angular/common/http";
-// import swal from 'sweetalert2';
+ import swal from 'sweetalert2';
 import { MatSelect } from '@angular/material';
 @Component({
   selector: 'app-new-product',
@@ -36,7 +36,7 @@ export class NewProductComponent implements OnInit {
   //constructor() { }
   
   ngOnInit() {
-    // this.company();
+    
     localStorage.setItem('username', this.username);
   //  this.username = localStorage.getItem('username')
     console.log(this.username)
@@ -66,22 +66,7 @@ export class NewProductComponent implements OnInit {
     });
   }
   check(e){}
-  // sweetalertsignup1() {s
-  //   swal({
-  //       text: "Register Successflluy!",
-  //       title: "Choice Genie",
-  //       type: "success",
-  //       showConfirmButton: false,
-  //       //     confirmButtonColor: "#DD6B55",
-  //       timer: 1200,
-  //       confirmButtonText: "OK",
-
-
-  //   })
-  //   // . then
-
-  //   // window.location.reload();
-  // }
+  
 
   onSubmit(f) {
     f.resetForm();
@@ -92,80 +77,57 @@ export class NewProductComponent implements OnInit {
 
     let headers = new HttpHeaders();
     headers.append('Content-Type', 'application/json');
-    // this.http.get(Config.api + 'data_against_zipcode/' + this.zip_code + '', { headers: headers }),
+    
     this.http.post(Config.api+'addproduct/', this.model, { headers: headers })
       .subscribe(Res => {
         console.log(Res);
         // this.next = Res[0].next;
         console.log(this.model);
-        // swal({
-        // text: "Register Successflluy!",
-        // title: "Choice Genie",
-        // type: "success",
-        // showConfirmButton: false,
-        // //     confirmButtonColor: "#DD6B55",
-        // timer: 1200,
-        // confirmButtonText: "OK",
+        swal({
+        text: "Register Successflluy!",
+        title: "Choice Genie",
+        type: "success",
+        showConfirmButton: false,
+        //     confirmButtonColor: "#DD6B55",
+        timer: 1200,
+        confirmButtonText: "OK",
 
-        // })
+        })
         console.log(this.model);
         //  this.router.navigate(['/pages/login'])
       },
 
         error => {
-          // console.log(error);
-          // this.toastr.error(error, null, {toastLife: 5000});
-          // swal(
-          // 'Invalid',
-          // 'Please Try Again!',
-          // 'error'
-          // )
+          console.log(error);
+         // this.toastr.error(error, null, {toastLife: 5000});
+          swal(
+          'Invalid',
+          'Please Try Again!',
+          'error'
+          )
 
-          //     //    this.state = Res[0].state;
-          //     //this.sg['products'] = Res.json()['Results'];
-          //     //this.data.changeProducts(this.sg['products']);
-          //   f.resetForm();
+              
+            // f.resetForm();
         });
-    //}
-
-    //    this.state = Res[0].state;
-    //this.sg['products'] = Res.json()['Results'];
-    //this.data.changeProducts(this.sg['products']);
-
-
-    //}
-
 
   }
 
-
-
-
-  //     //    this.state = Res[0].state;
-  //     //this.sg['products'] = Res.json()['Results'];
-  //     //this.data.changeProducts(this.sg['products']);
-
-
-
   title;
   company() {
-    // alert(this.premiseID.toString().length)
-    //  alert('hello');
-    // if(this.premiseID&&this.premiseID.toString().length===17) {
+   
     let headers = new HttpHeaders();
     headers.append('Content-Type', 'application/json');
-    // this.http.get(Config.api + 'data_against_zipcode/' + this.zip_code + '', { headers: headers }),
+    
     this.http.get(Config.api +'companytitle/', { headers: headers })
 
-      //  this.http.get(Config.api + 'signup/'+ this.zip_code +'', {headers: headers})
+    
       .subscribe(Res => {
         console.log(Res);
-        //     this.state= Res[0].state;
-        //  Res[0].state=this.model;
+      
         this.title = Res;
 
 
-        // this.data.changeProducts(this.sg['products']);
+      
 
       });
   }
