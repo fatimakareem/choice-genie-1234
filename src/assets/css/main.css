@@ -4038,10 +4038,19 @@ footer p a:hover { color:#333; border-bottom-color: #333; }
 .form-zip-height{
   height: 160px;
 }
+.compare-input{
+  display: inline-block;
+}
 .compare-rates-button{
   font-size: 15px !important;
-  padding: 15px 5px;
+  padding: 12px 18px !important;
   margin-top: 20px;
+
+
+}
+.compare-button{
+  display: inline-block ;
+  width: 48% !important;
 }
 #main-bg-slider .item::after {
   content: "";
