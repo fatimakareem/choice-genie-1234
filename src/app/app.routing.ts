@@ -15,6 +15,8 @@ import { SuperloginComponent } from './pages/superlogin/superlogin.component';
 import { SuperadminComponent } from './layouts/superadmin/superadmin.component';
 import { ActivateaccountComponent } from './activateaccount/activateaccount.component';
 import { AuthguardService } from './authguard.service';
+import { ConsumeradminComponent } from './layouts/consumeradmin/consumeradmin.component';
+// import { UsersdashboardComponent } from './layouts/usersdashboard/usersdashboard.component';
 
 
 export const AppRoutes: Routes = [
@@ -170,6 +172,28 @@ export const AppRoutes: Routes = [
     //     path: 'dashboard',
     //     redirectTo: 'dashboard'
     // },
+    {
+        path: '',
+        component: ConsumeradminComponent,
+        children: [
+            {
+                path: 'consumerdashboard',
+                loadChildren: './consumerdashboard/consumerdashboard.module#ConsumerDashboardModule'
+            }
+            // {
+            //     path: 'SuperChangePassword',
+            //     loadChildren: './superchangepassword/superchangepassword.module#ChangePasswordModule'
+            // },
+            // {
+            //     path: 'superviewcontact',
+            //     loadChildren: './superviewcontact/superviewcontact.module#superviewcontactModule'
+            // },//superviewbecomeModuleng superpartnerModule
+            // {
+            //     path: 'sviewapartner',
+            //     loadChildren: './sviewapartner/sviewapartner.module#partnerModule'
+            // }
+        ]
+    },
     {
         path: '',
         component: SuperadminComponent,
