@@ -1,3 +1,4 @@
+
 <app-loader></app-loader>
 <app-header></app-header>
 <div class="wrapper">
@@ -43,13 +44,13 @@
       <div class="form-home">
         <div class="container-fluid container-margin">
           <form (ngSubmit)="onSubmit(f)" #f="ngForm" class="form-zip">
-            <div class="card wow fadeInRight margintop form-zip-height" data-wow-duration="2s" >
+            <div class="card row wow fadeInRight margintop form-zip-height" data-wow-duration="2s" >
               <div class="card-header card-header-text wow fadeInLeft card-responsive " data-wow-duration="2s" data-background-color="rose">
                 <h4 class="card-title">Compare Rates Now!</h4>
               </div>
-              <div class="clearfix">
-                <div class="col-md-6 col-sm-6">
-                  <div class="form-group label-floating">
+              <div class="clearfix">  </div>
+                <div class="col-md-6 col-sm-6 col-xs-6 compare-input">
+                  <div class="form-group label-floating ">
                     <mat-form-field>
                       <input matInput placeholder="Zip Code" [formControl]="zip_code" [(ngModel)]=zipCode #zip name="zipCode" />
                       <mat-error *ngIf="zip_code.hasError('pattern')">
@@ -58,12 +59,11 @@
                     </mat-form-field>
                   </div>
                 </div>
-                <div class="col-md-6 col-sm-6 pull-right text-right">
+                <div class="col-md-6 col-sm-6 col-xs-6 compare-button ">
                   <div class="form-group">
                     <button type="submit" class="btn btn-rose compare-rates-button">Compare Now</button>
                   </div>
                 </div>
-              </div>
             </div>
           </form>
         </div>
@@ -171,7 +171,7 @@
         <h3 class="text-center choiecegenie-offers wow fadeInLeft">ChoiceGenie Offers</h3>
         <ul class="fourcolumns">
 
-          <li class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+          <li class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
             <div class="holder icons wow  fadeInRight cg-offers" >
               <!-- <img src="../../assets/img/Billing-icon.png"/> -->
               <a class="img-holder">
@@ -184,7 +184,7 @@
 
             </div>
           </li>
-          <li class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+          <li class="col-lg-3 col-md-3  col-sm-6 col-xs-6">
             <div class="holder icons wow  fadeInUp cg-offers" >
               <a class="img-holder">
                 <i class="material-icons">face</i>
@@ -196,7 +196,7 @@
 
             </div>
           </li>
-          <li class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+          <li class="col-lg-3 col-md-3  col-sm-6 col-xs-6">
             <div class="holder icons  wow  fadeInUp cg-offers">
               <a class="img-holder">
                 <i class="material-icons">autorenew</i>
@@ -208,7 +208,7 @@
 
             </div>
           </li>
-          <li class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+          <li class="col-lg-3 col-md-3  col-sm-6 col-xs-6">
             <div class="holder icons   wow  fadeInLeft cg-offers" >
               <a class="img-holder">
                 <i class="material-icons">home</i>
