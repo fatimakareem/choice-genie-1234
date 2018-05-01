@@ -13,7 +13,7 @@ import {NewProduct} from './new-product.routing';
         CommonModule,
         RouterModule.forChild(NewProduct),
         FormsModule,
-        MaterialModule
+        MaterialModule,ReactiveFormsModule
     ],
     declarations: [
       NewProductComponent,

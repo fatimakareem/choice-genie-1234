@@ -47,8 +47,8 @@ export class UsersignupComponent implements OnInit {
 
     // this.city();
     this.signupForm = this.fb.group({
-      'fname': ['', Validators.compose([Validators.required])],
-      'lname': ['', Validators.compose([Validators.required])],
+      'Name': ['', Validators.compose([Validators.required])],
+      'service_zip': ['', Validators.compose([Validators.required])],
 
       // 'zipcode': ['', Validators.compose([Validators.required, , Validators.pattern(this.digitsOnly)])],
       // 'utilityarea': ['', Validators.compose([Validators.required])],
@@ -56,14 +56,18 @@ export class UsersignupComponent implements OnInit {
       'username': ['', Validators.compose([Validators.required, Validators.pattern(/^[a-zA-Z_\- ]+$/)])],
       //'username': ['', Validators.compose([Validators.required, Validators.pattern(this.usernameOnly)])],
       // username: ['', Validators.compose([Validators.required, Validators.pattern(this.usernameOnly)])],
-      'phone': ['', Validators.compose([Validators.required, Validators.pattern(this.digitsOnly)])],
+      'phone_no': ['', Validators.compose([Validators.required, Validators.pattern(this.digitsOnly)])],
       'dob': ['', Validators.compose([Validators.required])],
-      'state': ['', Validators.compose([Validators.required, Validators.pattern(this.normalPattern)])],
-      'country': ['', Validators.compose([Validators.required, Validators.pattern(this.normalPattern)])],
-      'city': ['', Validators.compose([Validators.required, Validators.pattern(this.normalPattern)])],
+      'service_state': ['', Validators.compose([Validators.required, Validators.pattern(this.normalPattern)])],
+      'service_address': ['', Validators.compose([Validators.required, Validators.pattern(this.normalPattern)])],
+      'service_city': ['', Validators.compose([Validators.required, Validators.pattern(this.normalPattern)])],
+      'billing_address': ['', Validators.compose([Validators.required, Validators.pattern(this.normalPattern)])],
       'password': ['', Validators.compose([Validators.required, Validators.minLength(6)])],
       'confirmpassword': ['', Validators.compose([Validators.required, Validators.minLength(6)])],
-
+       'billing_city': ['', Validators.compose([Validators.required, Validators.pattern(this.normalPattern)])],
+       'billing_state': ['', Validators.compose([Validators.required, Validators.pattern(this.normalPattern)])],
+       'billing_zip':['', Validators.compose([Validators.required, Validators.pattern(this.normalPattern)])],
+       'Market':['', Validators.compose([Validators.required, Validators.pattern(this.normalPattern)])],
     },
   {
     validator: PasswordValidation.MatchPassword // your validation method

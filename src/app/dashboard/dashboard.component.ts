@@ -137,9 +137,15 @@ export class DashboardComponent implements OnInit, AfterViewInit {
         //Calling Delete Service
         this.newService.DeleteTodoList(id).subscribe(data => {
             console.log(data);
-
+            swal({
+                type: 'success',
+                title: 'Successfully deleted',
+                showConfirmButton: false,
+                timer: 1500
+              })
          
                 this.setPage(this.title,1)
+
                
         }, error => {
         });
@@ -189,7 +195,7 @@ console.log("TS OBJECT",updatedtitle,updatedsign_up,updatedphone,updatedterms_of
             console.log(data);
             swal({
                 type: 'success',
-                title: 'Updated Your Profile',
+                title: 'Successfully updated',
                 showConfirmButton: false,
                 timer: 1500
               })

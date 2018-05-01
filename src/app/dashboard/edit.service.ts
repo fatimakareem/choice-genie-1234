@@ -9,7 +9,7 @@ export class EditService {
   
 
 editTodoList(id,updatedtitle,updatedsign_up,updatedphone,updatedterms_of_service,updatedfact_sheet,updatedcancelation_fee,updatedprice_rate,updatedplan_information,updatedrating_logo,updatedprofile_logo,updatedprofileurl) {
-  console.log('mmmmmmmmmmmmmmmmmmmmm');
+  
   console.log(" service object",id,updatedtitle,updatedsign_up,updatedphone,updatedterms_of_service,updatedfact_sheet,updatedcancelation_fee,updatedprice_rate,updatedplan_information,updatedrating_logo,updatedprofile_logo,updatedprofileurl)
   const headers = new Headers();
   headers.append('Content-Type', 'application/json');

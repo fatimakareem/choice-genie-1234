@@ -16,6 +16,9 @@ public username;
       else {
       return false;    }
   }
+  move(){
+    this.router.navigate(['/dashboard/'+this.username]);
+  }
   ngOnInit() {
     this.username = localStorage.getItem('username')
     console.log(this.username);

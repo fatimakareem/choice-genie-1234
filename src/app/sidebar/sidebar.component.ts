@@ -183,6 +183,9 @@ export class SidebarComponent implements OnInit {
         this.router.navigate(['/']);
     
       }
+      move(){
+        this.router.navigate(['/dashboard/'+this.username]);
+      }
     fetchProducts() {
        
         let headers = new Headers();

@@ -128,7 +128,7 @@
       <header>
         <ng-container class="card" *ngFor="let data of sg['products']; let i = index">
           <div *ngIf="i<1" class="sidebar-profile-img">
-            <a href="/dashboard/{{data.title}}">
+            <a (click)="move()">
               <img src="{{data.profile_logo}}" >
             </a>
           </div>

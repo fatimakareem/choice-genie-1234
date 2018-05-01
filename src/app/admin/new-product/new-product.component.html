@@ -5,166 +5,304 @@
 
   <div class="row">
     <!-- <form   *ngif="signupForm"> -->
-    <form class="new-product-form" method="" action="" (ngSubmit)="onSubmit(f)" #f="ngForm">
-      <div class="col-md-6 col-sm-6">
-        <div class="form-group">
-          <mat-form-field>
-            <!-- <input matInput placeholder="First Name" [formControl]="signupForm.controls['fname']" required [(ngModel)]="model.fname"> -->
+    <form method="" action="" (ngSubmit)="onSubmit(f)" #f="ngForm">
+      <mat-horizontal-stepper [linear]="isLinear">
+        <mat-step [stepControl]="signupForm">
+          <div [formGroup]="signupForm">
+            <ng-template matStepLabel>Switching or Moving</ng-template>
+            <div class="card">
+              <div class="card-header card-header-icon" data-background-color="rose">
+                <i class="material-icons">mail_outline</i>
+              </div>
+              <div class="card-content">
+                <h4 class="card-title">Are you MOVING or SWITCHING providers at the selected service location ?</h4>
+                <div class="row">
+                  <div class="col-sm-6">
+                    <div class="form-group">
+                      <mat-form-field>
+                        <!-- <input matInput placeholder="First Name" [formControl]="signupForm.controls['fname']" required [(ngModel)]="model.fname"> -->
 
-            <input matInput placeholder="Zipcode" required [(ngModel)]="model.zipcode" name="zipcode">
-          </mat-form-field>
-        </div>
-      </div>
-      <div class="col-md-6 col-sm-6">
-        <div class="form-group">
-          <mat-form-field>
-            <input matInput placeholder="Utility Area" required [(ngModel)]="model.utilityarea" name="utilityarea">
-          </mat-form-field>
-        </div>
-      </div>
-      <div class="col-md-6 col-sm-6">
-        <div class="form-group">
-          <mat-form-field>
-            <!-- <mat-select placeholder="Company Title" (ngModelChange)="check($event)" required [(ngModel)]="model.title"name="title">
+                        <input matInput placeholder="Zipcode" required [(ngModel)]="zipcode" formControlName="zipcode">
+                      </mat-form-field>
+                    </div>
+                    <div class="form-group">
+                      <mat-form-field>
+                        <input matInput placeholder="Utility Area" required [(ngModel)]="utilityarea" formControlName="utilityarea">
+                      </mat-form-field>
+                    </div>
 
-  <mat-option *ngFor="let t of title" [value]="t.title">
-  {{t.title}}
 
-  </mat-option>
 
-  </mat-select> -->
-            <input matInput placeholder="Company Name" required [(ngModel)]="model.title" name="title">
-          </mat-form-field>
-        </div>
-      </div>
-      <!-- <div class="col-md-8 col-sm-6">
-  <div class="form-group">
-  <mat-form-field>
-  <input matInput placeholder="Profile URL"   required  [(ngModel)]="model.profileurl"name="profileurl">
-  </mat-form-field>
-  </div>
-  </div> -->
-      <div class="col-md-6 col-sm-6">
-        <div class="form-group">
-          <mat-form-field>
-            <input matInput placeholder="Profile Logo" required [(ngModel)]="model.profile_logo" name="profile_logo">
-          </mat-form-field>
-        </div>
-      </div>
-      <div class="col-md-12 col-sm-12">
-        <div class="form-group">
-          <mat-form-field>
-            <input matInput placeholder="Rating Logo" required [(ngModel)]="model.rating_logo" name="rating_logo">
-          </mat-form-field>
-        </div>
-      </div>
-      <div class="col-md-6 col-sm-6">
-        <div class="form-group">
-          <mat-form-field>
-            <input matInput placeholder="Plan Information" [(ngModel)]="model.plan_information" name="plan_information">
-          </mat-form-field>
-        </div>
-      </div>
-      <div class="col-md-6 col-sm-6">
-        <div class="form-group">
-          <mat-form-field>
-            <input matInput placeholder="Price Details" [(ngModel)]="model.price_rate" name="price_rate">
-          </mat-form-field>
-        </div>
-      </div>
-      <div class="col-md-6 col-sm-6">
-        <div class="form-group">
-          <mat-form-field>
-            <input matInput placeholder="Company Profile Link" [(ngModel)]="model.profileurl" name="profileurl">
-          </mat-form-field>
-        </div>
-      </div>
-      <div class="col-md-6 col-sm-6">
-        <div class="form-group">
-          <mat-form-field>
-            <input matInput placeholder="Cancelation Fee" required [(ngModel)]="model.cancelation_fee" name="cencelation_fee">
-          </mat-form-field>
-        </div>
-      </div>
-      <div class="col-md-6 col-sm-6">
-        <div class="form-group">
-          <mat-form-field>
-            <input matInput placeholder="Terms of Service " [(ngModel)]="model.terms_of_service" name="terms_of_service">
-          </mat-form-field>
-        </div>
-      </div>
-      <div class="col-md-6 col-sm-6">
-        <div class="form-group">
-          <mat-form-field>
-            <input matInput placeholder="Fact Sheet " [(ngModel)]="model.fact_sheet" name="fact_sheet">
-          </mat-form-field>
-        </div>
-      </div>
-      <div class="col-md-6 col-sm-6">
-        <div class="form-group">
-          <mat-form-field>
-            <input matInput placeholder="Contact Number" required [(ngModel)]="model.phone" name="phone">
-          </mat-form-field>
-        </div>
-      </div>
-      <div class="col-md-6 col-sm-6">
-        <div class="form-group">
-          <mat-form-field>
-            <input matInput placeholder="Sign up Company" [(ngModel)]="model.sign_up" name="sign_up">
-          </mat-form-field>
-        </div>
-      </div>
-      <div class="col-md-6 col-sm-6">
-        <div class="form-group">
-          <mat-form-field>
-            <input matInput placeholder="minimum_usage_fee" [(ngModel)]="model.minimum_usage_fee" name="minimum_usage_fee">
-          </mat-form-field>
-        </div>
-      </div>
-      <div class="col-md-6 col-sm-6">
-        <div class="form-group">
-          <mat-form-field>
-            <input matInput placeholder="Renewable price" [(ngModel)]="model.renewable" name="renewable">
-          </mat-form-field>
-        </div>
-      </div>
-      <div class="col-md-4 col-sm-6">
-        <div class="form-group">
-          <mat-form-field>
-            <input matInput placeholder="Special Terms" [(ngModel)]="model.spectialterms" name="specialterms">
-          </mat-form-field>
-        </div>
-      </div>
-      <div class="col-md-4 col-sm-6">
-        <div class="form-group">
-          <mat-form-field>
-            <input matInput placeholder="Price of 500 KWH" required [(ngModel)]="model.price_500_kwh" name="price_500_kwh">
-          </mat-form-field>
-        </div>
-      </div>
-      <div class="col-md-4 col-sm-6">
-        <div class="form-group">
-          <mat-form-field>
-            <input matInput placeholder="Price of 1000 KWH" required [(ngModel)]="model.price_1000_kwh" name="price_1000_kwh">
-          </mat-form-field>
-        </div>
-      </div>
-      <div class="col-md-4 col-sm-6">
-        <div class="form-group">
-          <mat-form-field>
-            <input matInput placeholder="Price of 2000 KWH" required [(ngModel)]="model.price_2000_kwh" name="price_2000_kwh">
-          </mat-form-field>
-        </div>
-      </div>
-      <div class="clearfix"></div>
-      <div class="col-md-12 col-sm-12">
-        <div class="form-group">
-          <button class="btn btn-lrg btn-rose btn-fill btn-wd" style="width:100%; border-radius:50px;font-size:24px !important;" type="submit"
-            (click)="signupuserdata()">Add New Product </button>
-        </div>
-      </div>
+                    <!-- <mat-error *ngIf="firstFormGroup.controls['serviceType'].invalid"><strong>One statement must be selected</strong></mat-error> -->
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <mat-form-field>
+                      <!-- <mat-select placeholder="Company Title" (ngModelChange)="check($event)" required [(ngModel)]="model.title"name="title">
+                      
+                        <mat-option *ngFor="let t of title" [value]="t.title">
+                        {{t.title}}
+                      
+                        </mat-option>
+                      
+                        </mat-select> -->
+                      <input matInput placeholder="Company Name" required [(ngModel)]="title" formControlName="title">
+                    </mat-form-field>
+                  </div>
+
+
+
+                </div>
+               
+              </div>
+              <div class="text-right">
+                <button mat-button matStepperNext class="btn btn-fill btn-rose">Next</button>
+              </div>
+            </div>
+          </div>
+
+        </mat-step>
+
+        <mat-step [stepControl]="secondFormGroup">
+          <div  [formGroup]="secondFormGroup">
+            <ng-template matStepLabel>About</ng-template>
+            <div class="card">
+              <div class="card-header card-header-icon" data-background-color="rose">
+                <i class="material-icons">mail_outline</i>
+              </div>
+              <div class="card-content">
+                <label class="control-label">
+                  <i>
+                    <u>This will appear as the name of your bill</u>
+                  </i>
+                </label>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                          <mat-form-field>
+                            <input matInput placeholder="Profile url" required [(ngModel)]="profileurl" formControlName="profileurl">
+                          </mat-form-field>
+                        </div>
+    
+                      </div>
+                  <div class="col-sm-6">
+                    <div class="form-group">
+                      <mat-form-field>
+                        <input matInput placeholder="Profile Logo" required [(ngModel)]="profile_logo" formControlName="profile_logo">
+                      </mat-form-field>
+                    </div>
+
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="form-group">
+                      <mat-form-field>
+                        <input matInput placeholder="Rating Logo" required [(ngModel)]="rating_logo" formControlName="rating_logo">
+                      </mat-form-field>
+                    </div>
+                  </div>
+                  <br class="clearfix" />
+                  <div class="col-sm-6">
+                    <div class="form-group">
+                      <mat-form-field>
+                        <input matInput placeholder="Plan Information" [(ngModel)]="plan_information" formControlName="plan_information">
+                      </mat-form-field>
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="form-group">
+                      <mat-form-field>
+                        <input matInput placeholder="Price Details" [(ngModel)]="price_rate" formControlName="price_rate">
+                      </mat-form-field>
+                    </div>
+                  </div>
+
+                  <div class="col-sm-6">
+                      <div class="form-group">
+                          <mat-form-field>
+                            <input matInput placeholder="Cancelation Fee" required [(ngModel)]="cancelation_fee" formControlName="cancelation_fee">
+                          </mat-form-field>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="text-right">
+                  <button mat-button matStepperPrevious class="btn btn-fill btn-rose">Back</button>
+                  <button mat-button matStepperNext class="btn btn-fill btn-rose">Next</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </mat-step>
+        <mat-step [stepControl]="thirdFormGroup">
+          <div  [formGroup]="thirdFormGroup">
+            <ng-template matStepLabel>Identity / Security</ng-template>
+            <div class="card">
+              <div class="card-header card-header-icon" data-background-color="rose">
+                <i class="material-icons">mail_outline</i>
+              </div>
+              <div class="card-content">
+
+                <label class="control-label">
+                  <i>
+                    <u>
+                      You must enter your Social Security Number if you would like to use a credit card to access weather a deposit is required
+                    </u>
+                  </i>
+                </label>
+                <div class="row">
+                 
+
+                  <br class="clearfix" />
+                  <div class="col-sm-6">
+                    <div class="form-group">
+                      <mat-form-field>
+                        <input matInput placeholder="Terms of Service " [(ngModel)]="terms_of_service" formControlName="terms_of_service">
+                      </mat-form-field>
+                    </div>
+
+
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="form-group">
+                      <mat-form-field>
+                        <input matInput placeholder="Fact Sheet " [(ngModel)]="fact_sheet" formControlName="fact_sheet">
+                      </mat-form-field>
+                    </div>
+
+
+                  </div>
+                  <br class="clearfix" />
+                  <div class="col-sm-6">
+                    <div class="form-group">
+                      <mat-form-field>
+                        <input matInput placeholder="Contact Number" required [(ngModel)]="phone" formControlName="phone">
+                      </mat-form-field>
+                    </div>
+
+
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="form-group">
+                      <mat-form-field>
+                        <input matInput placeholder="Sign up Company" [(ngModel)]="sign_up" formControlName="sign_up">
+                      </mat-form-field>
+                    </div>
+                  </div>
+                  <!-- <div class="col-sm-6">
+                      <div class="form-group">
+                        <label class="control-label">Security Question</label>
+                        <mat-form-field>
+                          <mat-select placeholder="Select Your Question">
+                            <mat-option *ngFor="let q of sQuestion" [value]="q.value" [(ngModel)]="model.security_question">
+                              {{ q.value }}
+                            </mat-option>
+                          </mat-select>
+                        </mat-form-field>
+                      </div>
+                    </div> -->
+
+
+                  <br class="clearfix" />
+                  <div class="col-sm-6">
+                    <div class="form-group">
+                      <mat-form-field>
+                        <input matInput placeholder="minimum_usage_fee" [(ngModel)]="minimum_usage_fee" formControlName="minimum_usage_fee">
+                      </mat-form-field>
+                    </div>
+
+
+
+                  </div>
+                  <br class="clearfix" />
+                  <div class="col-sm-6">
+                    <div class="form-group">
+                      <mat-form-field>
+                        <input matInput placeholder="Renewable price" [(ngModel)]="renewable" formControlName="renewable">
+                      </mat-form-field>
+                    </div>
+
+
+
+                  </div>
+                </div>
+                <div class="text-right">
+                  <button mat-button matStepperPrevious class="btn btn-fill btn-rose">Back</button>
+                  <button mat-button matStepperNext class="btn btn-fill btn-rose">Next</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </mat-step>
+        <mat-step [stepControl]="fourthFormGroup">
+          <div [formGroup]="fourthFormGroup">
+            <ng-template matStepLabel>Others</ng-template>
+            <div class="card">
+              <div class="card-header card-header-icon" data-background-color="rose">
+                <i class="material-icons">mail_outline</i>
+              </div>
+              <div class="card-content">
+                <h4 class="card-title">Other Checks</h4>
+                <h3 class="title">
+                  <strong>Special Requests</strong>
+                </h3>
+                <label class="control-label">
+                  <i>
+                    <u>
+                      Choose if a resident at the selected address requires Life Support
+                    </u>
+                  </i>
+                </label>
+                <div class="row">
+                  <div class="col-sm-6">
+
+
+                    <div class="form-group">
+                      <mat-form-field>
+                        <input matInput placeholder="Special Terms" [(ngModel)]="spectialterms" formControlName="specialterms">
+                      </mat-form-field>
+                    </div>
+
+                  </div>
+
+                  <div class="col-sm-6">
+                    <div class="form-group">
+                      <mat-form-field>
+                        <input matInput placeholder="Price of 500 KWH" required [(ngModel)]="price_500_kwh" formControlName="price_500_kwh">
+                      </mat-form-field>
+                    </div>
+
+                  </div>
+
+                  <div class="col-sm-6">
+                    <div class="form-group">
+                      <mat-form-field>
+                        <input matInput placeholder="Price of 1000 KWH" required [(ngModel)]="price_1000_kwh" formControlName="price_1000_kwh">
+                      </mat-form-field>
+                    </div>
+
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="form-group">
+                      <mat-form-field>
+                        <input matInput placeholder="Price of 2000 KWH" required [(ngModel)]="price_2000_kwh" formControlName="price_2000_kwh">
+                      </mat-form-field>
+                    </div>
+
+                  </div>
+                </div>
+                <div class="text-right">
+                  <button mat-button matStepperPrevious class="btn btn-fill btn-rose">Back</button>
+                  <button type="submit" mat-button matStepperNext (click)="signupuserdata(zipcode,utilityarea,title,profileurl,profile_logo,plan_information,price_rate,cancelation_fee,fact_sheet,terms_of_service,phone,sign_up,minimum_usage_fee,renewable,specialterms,price_1000_kwh,price_500_kwh,price_2000_kwh)" class="btn btn-fill btn-rose">Done</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </mat-step>
+
+      </mat-horizontal-stepper>
+
 
     </form>
   </div>
-
 </div>

@@ -61,6 +61,9 @@ export class NavbarComponent implements OnInit {
           else {
           return false;    }
       }
+      move(){
+        this.router.navigate(['/dashboard/'+this.username]);
+      }
     logout(){
         localStorage.clear();
         this.router.navigate(['/']);

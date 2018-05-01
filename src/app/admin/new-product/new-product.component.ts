@@ -1,5 +1,5 @@
 
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit , Directive, Input } from '@angular/core';
 import { Headers, Http, Response } from '@angular/http';
 import 'rxjs/add/operator/map'
 
@@ -12,6 +12,9 @@ import { FormBuilder, Validators, NgControl, RadioControlValueAccessor, FormCont
 import { HttpClient, HttpResponse, HttpHeaders } from "@angular/common/http";
  import swal from 'sweetalert2';
 import { MatSelect } from '@angular/material';
+
+import { modelGroupProvider } from '@angular/forms/src/directives/ng_model_group';
+// import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-new-product',
   templateUrl: './new-product.component.html'
@@ -29,8 +32,12 @@ export class NewProductComponent implements OnInit {
   flag = true;
   date = new FormControl(new Date());
 
-  emailexist: boolean = false;
 
+  emailexist: boolean = false;
+  isLinear = true;
+  secondFormGroup: FormGroup;
+  thirdFormGroup: FormGroup;
+  fourthFormGroup: FormGroup;
   constructor(public router: Router, private fb: FormBuilder, private http: HttpClient, private route: ActivatedRoute, private sg: SimpleGlobal) { }
 
   //constructor() { }
@@ -44,25 +51,30 @@ export class NewProductComponent implements OnInit {
       'zipcode': ['', Validators.compose([Validators.required, Validators.pattern(this.normalPattern)])],
       'utilityarea': ['', Validators.compose([Validators.required, Validators.pattern(this.normalPattern)])],
       'title': ['', Validators.compose([Validators.required, Validators.pattern(this.normalPattern)])],
+     
+
+    });
+    this.secondFormGroup = this.fb.group({
       'profileurl': ['', Validators.compose([Validators.required])],
       'profile_logo': ['', Validators.compose([Validators.required])],
       'rating_logo': ['', Validators.compose([Validators.required])],
       'plan_information': ['', Validators.compose([Validators.required, Validators.pattern(this.normalPattern)])],
       'price_rate': ['', Validators.compose([Validators.required, Validators.pattern(this.normalPattern)])],
       'cancelation_fee': ['', Validators.compose([Validators.required])],
+    });
+    this.thirdFormGroup = this.fb.group({
       'fact_sheet': ['', Validators.compose([Validators.required, Validators.pattern(this.normalPattern)])],
       'terms_of_service': ['', Validators.compose([Validators.required, Validators.pattern(this.normalPattern)])],
       'phone': ['', Validators.compose([Validators.required])],
       'sign_up': ['', Validators.compose([Validators.required, Validators.pattern(this.normalPattern)])],
       'minimum_usage_fee': ['', Validators.compose([Validators.required])],
-      // 'specialterms':['', Validators.compose([Validators.required])],
       'renewable': ['', Validators.compose([Validators.required, Validators.pattern(this.normalPattern)])],
+    });
+    this.fourthFormGroup = this.fb.group({
       'specialterms': ['', Validators.compose([Validators.required])],
       'price_1000_kwh': ['', Validators.compose([Validators.required, Validators.pattern(this.normalPattern)])],
       'price_500_kwh': ['', Validators.compose([Validators.required, Validators.pattern(this.normalPattern)])],
       'price_2000_kwh': ['', Validators.compose([Validators.required, Validators.pattern(this.normalPattern)])],
-
-
     });
   }
   check(e){}
@@ -71,20 +83,40 @@ export class NewProductComponent implements OnInit {
   onSubmit(f) {
     f.resetForm();
   }
-  signupuserdata() {
+  signupuserdata(zipcode,utilityarea,title,profileurl,profile_logo,plan_information,price_rate,cancelation_fee,fact_sheet,terms_of_service,phone,sign_up,minimum_usage_fee,renewable,specialterms,price_1000_kwh,price_500_kwh,price_2000_kwh) {
     //alert('hello');
-    console.log("CHOICE GENIE", this.model);
+    console.log(zipcode,utilityarea,title,profileurl,profile_logo,plan_information,price_rate,cancelation_fee,fact_sheet,terms_of_service,phone,sign_up,minimum_usage_fee,renewable,specialterms,price_1000_kwh,price_500_kwh,price_2000_kwh);
 
     let headers = new HttpHeaders();
     headers.append('Content-Type', 'application/json');
     
-    this.http.post(Config.api+'addproduct/', this.model, { headers: headers })
+    this.http.post(Config.api+'addproduct/', {
+      "zipcode":zipcode,
+      "utilityarea":utilityarea,
+      "title":title,
+      "profileurl":profileurl,
+      "profile_logo":profile_logo,
+      "plan_information":plan_information,
+      "price_rate":price_rate,
+      "cancelation_fee":cancelation_fee,
+      "fact_sheet":fact_sheet,
+      "terms_of_service":terms_of_service,
+      "phone":phone,
+      "sign_up":sign_up,
+      "minimum_usage_fee":minimum_usage_fee,
+      "renewable":renewable,
+      "specialterms":specialterms,
+      "price_1000_kwh":price_1000_kwh,
+      "price_500_kwh":price_500_kwh,
+      "price_2000_kwh":price_2000_kwh
+
+    }, { headers: headers })
       .subscribe(Res => {
         console.log(Res);
         // this.next = Res[0].next;
         console.log(this.model);
         swal({
-        text: "Register Successflluy!",
+        text: "Successfully Added!",
         title: "Choice Genie",
         type: "success",
         showConfirmButton: false,
@@ -106,8 +138,8 @@ export class NewProductComponent implements OnInit {
           'error'
           )
 
-              
-            // f.resetForm();
+        
+          //  f.resetForm();
         });
 
   }

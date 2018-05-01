@@ -65,7 +65,12 @@ this.qurey=params['qurey']
       
         console.log(Res);
      
-
+        swal({
+          type: 'success',
+          title: 'Successfully updated your password',
+          showConfirmButton: false,
+          timer: 1500
+        })
       
        
       },
