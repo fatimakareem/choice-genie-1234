@@ -102,8 +102,15 @@ import { SuperupdateService } from './superdashboard/superupdate.service';
 import { DeletesuperdashboardService } from './superdashboard/deletesuperdashboard.service';
 import { DataloginService } from './pages/login/datalogin.service';
 import { AuthguardService } from './authguard.service';
+<<<<<<< HEAD
 
 // import { ActivateaccountComponent } from './activateaccount/activateaccount.component';
+=======
+import { ConsumersidebarComponent } from './consumersidebar/consumersidebar.component';
+import { ConsumeradminComponent } from './layouts/consumeradmin/consumeradmin.component';
+import { ConsumerdashboardComponent } from './consumerdashboard/consumerdashboard.component';
+
+>>>>>>> 1dd6fa39c00ab7b0ca6b8f44c00c09ce577192fc
 @NgModule({
   exports: [
     MatAutocompleteModule,
@@ -183,8 +190,15 @@ export class MaterialModule {}
     UserSidebarComponent,
     SupersiderbarComponent,
     AboutComponent,
+    ConsumersidebarComponent,
+    ConsumeradminComponent,
     // ChangePasswordComponent,
     StepperOverviewExample,
+    // UsersdashboardComponent
+ 
+    
+    
+
     
       ],
   providers: [
