@@ -3,7 +3,7 @@
     <ul>
       <li>
         <div class="text-center">
-          <button type="button" class="btn btn-rose" (click)="nullplan(); fullplan();fetchmutimonth(months1,months2,months3,months4,months5,months6,months7)">
+          <button type="button" class="btn btn-rose" (click)=" plantype(fixed,vari,index);nopaidplan();prepaidplan();nullplan(); fullplan();fetchmutimonth(months1,months2,months3,months4,months5,months6,months7)">
             Search
             <i class="material-icons" title="Use these filters to set your preferences. Get rid of the plans you don’t want to see and only show those that fit your needs.">search</i>
           </button>
@@ -16,7 +16,7 @@
         </h5>
 
         <div class="form-group label-floating">
-         
+
           <b>
             <input type="text" class="form-control" [(ngModel)]="zip_code" name="zipcode" style="font-size: 20px">
           </b>
@@ -99,81 +99,81 @@
       <!-- </div> -->
       <!-- </li> -->
       <li>
-        
-         <h5>  Contract Length</h5>
-        
-         
-            <!-- ngRepeat: term in filters.terms -->
-          
-            <!-- end ngRepeat: term in filters.terms -->
-            <div>
-              <label >
-                <input type="checkbox"   class="form-control" name="months1"  [(ngModel)]=months1 />36 Months
-              </label>
 
-            </div>
-            <!-- end ngRepeat: term in filters.terms -->
-            <div>
-              <label >
-                <input type="checkbox"  class="form-control" name="24 Months" [(ngModel)]=months2 />24 Months
-              </label>
-
-            </div>
-            <div>
-                <label >
-                  <input type="checkbox" class="form-control" name="18 Months"  [(ngModel)]=months3 >18 Months
-                </label>
-  
-              </div>
-            <!-- end ngRepeat: term in filters.terms -->
-            <div>
-              <label >
-                <input type="checkbox" class="form-control" name="14 Months"[(ngModel)]=months4>14 Months
-              </label>
-
-            </div>
-            <!-- end ngRepeat: term in filters.terms -->
-            <div>
-              <label>
-                <input type="checkbox" class="form-control" name="12 Months" [(ngModel)]=months5>12 Months
-              </label>
-
-            </div>
-            <!-- end ngRepeat: term in filters.terms -->
-            <div>
-              <label >
-                <input type="checkbox" class="form-control"name="6 Months" [(ngModel)]=months6>6 Months
-              </label>
-
-            </div>
-            <!-- end ngRepeat: term in filters.terms -->
-            <div>
-              <label>
-                <input type="checkbox" class="form-control"name="4 Months" [(ngModel)]=months7>4 Months
-              </label>
+        <h5> Contract Length</h5>
 
 
-            </div>
-          </li>
-            <!--  /.filter-category__heading -->
-          
-          <!-- <h5>Contract Length &nbsp;&nbsp;&nbsp;
+        <!-- ngRepeat: term in filters.terms -->
+
+        <!-- end ngRepeat: term in filters.terms -->
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" name="months1" [(ngModel)]=months1 (ngModelChange)="check($event)">36 Months
+          </label>
+
+        </div>
+        <!-- end ngRepeat: term in filters.terms -->
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" name="24 Months" [(ngModel)]=months2 (ngModelChange)="check($event)">24 Months
+          </label>
+
+        </div>
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" name="18 Months" [(ngModel)]=months3 (ngModelChange)="check($event)">18 Months
+          </label>
+
+        </div>
+        <!-- end ngRepeat: term in filters.terms -->
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" name="14 Months" [(ngModel)]=months4 (ngModelChange)="check($event)">14 Months
+          </label>
+
+        </div>
+        <!-- end ngRepeat: term in filters.terms -->
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" name="12 Months" [(ngModel)]=months5 (ngModelChange)="check($event)">12 Months
+          </label>
+
+        </div>
+        <!-- end ngRepeat: term in filters.terms -->
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" name="6 Months" [(ngModel)]=months6 (ngModelChange)="check($event)">6 Months
+          </label>
+
+        </div>
+        <!-- end ngRepeat: term in filters.terms -->
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" name="4 Months" [(ngModel)]=months7 (ngModelChange)="check($event)">4 Months
+          </label>
+
+
+        </div>
+      </li>
+      <!--  /.filter-category__heading -->
+
+      <!-- <h5>Contract Length &nbsp;&nbsp;&nbsp;
           <i class="fa fa-info-circle" aria-hidden="true" title="If you choose a plan with a long contract period, you may be subject to an early cancellation fee if you decide to change plans prior to the expiration of the contract period.Plans that are shorter give you more flexibility to switch, but they only lock in your set rate for a short amount of time.Month-to-Month plans are usually Variable or Indexed offers.."></i>
         </h5> -->
-          <!-- <mat-form-field> -->
-          <!-- <mat-select placeholder="In Months" (ngModelChange)="check($event)" [(ngModel)]="selectedvalue"  >
+      <!-- <mat-form-field> -->
+      <!-- <mat-select placeholder="In Months" (ngModelChange)="check($event)" [(ngModel)]="selectedvalue"  >
           <mat-option value="5 Months" style="font-size: 20px">5 Months</mat-option>
           <mat-option value="6 Months" style="font-size: 20px">6 Months</mat-option>
           <mat-option value="12 Months" style="font-size: 20px">12 Months</mat-option>
           <mat-option value="18 Months" style="font-size: 20px">18 Months</mat-option>
           <mat-option value="24 Months" style="font-size: 20px">24 Months</mat-option>
           <mat-option value="36 Months" style="font-size: 20px">36 Months</mat-option> -->
-          <!-- <mat-option *ngFor="let x of usage" [value]="x.value">
+      <!-- <mat-option *ngFor="let x of usage" [value]="x.value">
   {{ x.viewValue }}
   </mat-option> -->
-          <!-- </mat-select> -->
-          <!-- </mat-form-field> -->
-     
+      <!-- </mat-select> -->
+      <!-- </mat-form-field> -->
+
       <!-- <li>
   <h5>Company Name
   
@@ -198,12 +198,12 @@
         </h5>
         <div class="radio">
           <label>
-            <input type="radio" id="chckbx"  (change)="aChecked = $event.target.checked">  Plans without minimum usage Fee/Credits
+            <input type="radio" id="chckbx" (change)="aChecked = $event.target.checked"> Plans without minimum usage Fee/Credits
           </label>
         </div>
         <div class="radio">
           <label>
-            <input type="radio"id="chckbx"  (change)="bChecked = $event.target.checked">Show All Plans
+            <input type="radio" id="chckbx" (change)="bChecked = $event.target.checked">Show All Plans
           </label>
         </div>
       </li>
@@ -213,18 +213,18 @@
         </h5>
         <div class="checkbox">
           <label>
-            <input type="checkbox" name="planType_fixedRate" (ngModelChange)="check($event)"> Fixed Rate
+            <input type="checkbox" name="fixed" [(ngModel)]=fixed (ngModelChange)="check($event)"> Fixed Rate
           </label>
         </div>
         <div class="checkbox">
           <label>
-            <input type="checkbox" name="planType_variable" (ngModelChange)="check($event)"> Variable
+            <input type="checkbox" name="vari (Changing Rate)" [(ngModel)]=vari (ngModelChange)="check($event)"> Variable
             <small>(changing rate)</small>
           </label>
         </div>
         <div class="checkbox">
           <label>
-            <input type="checkbox" name="planType_Indexed" (ngModelChange)="check($event)"> Indexed
+            <input type="checkbox" name="index (Market Rate)" [(ngModel)]=index (ngModelChange)="check($event)"> Indexed
             <small>(market rate)</small>
           </label>
         </div>
@@ -240,12 +240,12 @@
         </div>
         <div class="radio">
           <label>
-            <input type="radio" name="prepaidPlans" (ngModelChange)="check($event)"> Show only Prepaid Plans
+            <input type="radio" name="prepaidPlans" (change)="preplanChecked = $event.target.checked"> Show only Prepaid Plans
           </label>
         </div>
         <div class="radio">
           <label>
-            <input type="radio" name="prepaidPlans" (ngModelChange)="check($event)"> Do not show Prepaid Plans
+            <input type="radio" name="prepaidPlans" (change)="noplanChecked = $event.target.checked"> Do not show Prepaid Plans
           </label>
         </div>
       </li>
@@ -255,23 +255,25 @@
         </h5>
         <div class="radio">
           <label>
-            <input type="radio" name="timeOfUse" checked="true" (ngModelChange)="check($event)"> Show All Plans
+            <input type="radio" id="chckbx" checked="true" (ngModelChange)="check($event)"> Show All Plans
           </label>
         </div>
         <div class="radio">
           <label>
-            <input type="radio" name="timeOfUse" (ngModelChange)="check($event)"> Show only Time Of Use Plans
+            <input type="radio" id="chckbx" (ngModelChange)="check($event)"> Show only Time Of Use Plans
           </label>
         </div>
         <div class="radio">
           <label>
-            <input type="radio" name="timeOfUse" (ngModelChange)="check($event)"> Do not show Time Of Use Plans
+            <input type="radio" id="chckbx" (ngModelChange)="check($event)"> Do not show Time Of Use Plans
           </label>
         </div>
       </li>
+     
+
       <li>
         <div class="text-center">
-          <button type="button" class="btn btn-rose" (click)="fetchProducts();fetchrenewable();fetchzip()"> Search
+          <button type="button" class="btn btn-rose"> Search
             <i class="material-icons" title="Use these filters to set your preferences. Get rid of the plans you don’t want to see and only show those that fit your needs.">search</i>
           </button>
         </div>
@@ -282,4 +284,4 @@
   </li> -->
     </ul>
   </nav>
-  </div>
+</div>

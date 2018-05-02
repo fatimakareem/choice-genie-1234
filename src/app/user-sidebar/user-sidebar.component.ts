@@ -244,6 +244,44 @@ name = 'Pardeep Jain';
     }
 
     });}
+    fixed="Fixed Rate";
+    vari="Variable (Changing Rate)";
+    index="Indexed (Market Rate)";
+    plantype(fixed,vari,index) {
+    
+      this.fixed="Fixed Rate";
+      this.vari="Variable (Changing Rate)";
+      this.index="Indexed (Market Rate)";
+    
+      console.log(fixed,vari,index);
+      // this.route.params.subscribe(params => {
+      //   let zip =  this.sg['product_zipcode'];
+     console.log(fixed,vari,index,'tttttttttttt');
+      let headers = new Headers();
+      headers.append('Content-Type', 'application/json');
+      // this.http.get(Config.api + 'data_against_zipcode/' + this.zip_code + '', { headers: headers }),
+      this.http.post('http://192.168.30.193:9000/choice/plantype/'+ this.zip_code, JSON.stringify({
+        "plan_type1": fixed,
+        "plan_type2": index, 
+        "plan_type3": vari,
+        }
+        ),{ headers: headers })
+   
+      // this.http.post(Config.api + 'monthly/' + this.zip_code + '/' + this.months + '',{"month": this.months+" Month","custom":"['2','8']"},{ headers: headers })
+      .subscribe(Res => {
+        console.log(Res)
+         //console.log(selectedvalue)
+        // console.log(plan_information)
+      this.sg['products'] = Res.json()['Results'];
+      this.data.changeProducts(this.sg['products']);
+      for (let prod of this.sg['products']) {
+      // console.log(prod["plan_information"])
+      // console.log(prod["price_rate"])
+      prod["plan_information"] = prod["plan_information"].split(',,', 3000);
+      prod["price_rate"] = prod["price_rate"].split('..', 3000);
+      }
+  
+      });}
     aChecked:boolean = false;
     bChecked:boolean = false;
     nullplan(){
@@ -279,7 +317,74 @@ name = 'Pardeep Jain';
     );
     
       }
+      preplanChecked:boolean = false;
+      prepaidplan(){
+        console.log(this.preplanChecked)
+         // this.route.params.subscribe(params => {
+         //   let zip =  this.sg['product_zipcode'];
+         if(this.preplanChecked){
+         let headers = new Headers();
+         headers.append('Content-Type', 'application/json');
+         this.http.get('http://192.168.30.193:9000/choice/onlyprepaidplans/' + this.zip_code + '', { headers: headers })
+         //this.http.get(Config.api + 'monthly/' + this.zip_code + '',{ headers: headers })
+         // this.http.get(Config.api + 'filter/' + this.zip_code + '',{ headers: headers })
+         
+         //  this.http.post(Config.api + 'filter/' + this.zip_code + '', {"month": this.months+" Month", "custom":"['2','8']"},{ headers: headers })
+         .subscribe(Res => {
+           console.log(Res,'hhhhhhhhhhhhhhhhhhh')
+         this.sg['products'] = Res.json()['Results'];
+         this.data.changeProducts(this.sg['products']);
+         this.allItems = this.sg['products'];
+         for (let prod of this.sg['products']) {
+         console.log(prod["plan_information"])
+         console.log(prod["minumum_usage_fee"])
+         prod["plan_information"] = prod["plan_information"].split(',,', 3000);
+         prod["price_rate"] = prod["price_rate"].split('..', 3000);
+         }
+         });
+        
+       }else(error=>{
+         console.log(error)
+        
+       }
       
+       );
+       
+         }
+         noplanChecked:boolean = false;
+         nopaidplan(){
+           console.log(this.noplanChecked)
+            // this.route.params.subscribe(params => {
+            //   let zip =  this.sg['product_zipcode'];
+            if(this.noplanChecked){
+            let headers = new Headers();
+            headers.append('Content-Type', 'application/json');
+            this.http.get('http://192.168.30.193:9000/choice/noprepaidplans/' + this.zip_code + '', { headers: headers })
+            //this.http.get(Config.api + 'monthly/' + this.zip_code + '',{ headers: headers })
+            // this.http.get(Config.api + 'filter/' + this.zip_code + '',{ headers: headers })
+            
+            //  this.http.post(Config.api + 'filter/' + this.zip_code + '', {"month": this.months+" Month", "custom":"['2','8']"},{ headers: headers })
+            .subscribe(Res => {
+              console.log(Res,'hhhhhhhhhhhhhhhhhhh')
+            this.sg['products'] = Res.json()['Results'];
+            this.data.changeProducts(this.sg['products']);
+            this.allItems = this.sg['products'];
+            for (let prod of this.sg['products']) {
+            console.log(prod["plan_information"])
+            console.log(prod["minumum_usage_fee"])
+            prod["plan_information"] = prod["plan_information"].split(',,', 3000);
+            prod["price_rate"] = prod["price_rate"].split('..', 3000);
+            }
+            });
+           
+          }else(error=>{
+            console.log(error)
+           
+          }
+         
+          );
+          
+            }
       fullplan() {
      console.log(this.bChecked)
 if(this.bChecked){

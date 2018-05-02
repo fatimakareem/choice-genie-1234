@@ -207,6 +207,10 @@ export const AppRoutes: Routes = [
                 path: "new-product",
                 loadChildren: './admin/new-product/new-product.module#NewProductModule'
             },
+            {
+                path: 'company-profile',
+                loadChildren: './com-profile/com-profile.module#ComProfileModule'
+            },
             
             {
                 path: 'components',
