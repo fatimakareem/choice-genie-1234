@@ -62,7 +62,8 @@ export class NavbarComponent implements OnInit {
           return false;    }
       }
       move(){
-        this.router.navigate(['/company-profile/']);
+        this.router.navigate(['/userprofile/']);
+        // this.router.navigate(['/company-profile/']);
       }
     logout(){
         localStorage.clear();

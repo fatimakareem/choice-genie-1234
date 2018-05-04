@@ -132,6 +132,7 @@ export class SuperdashboardComponent implements OnInit {
         //   window.location.reload();
 
     }
+
     catagoryId = "";
     zipcode = "";
     utilityarea = "";
@@ -164,11 +165,11 @@ export class SuperdashboardComponent implements OnInit {
 
     //Event Binding of PopUp Delete Modal
     // item.id,item.zipcode,item.utilityarea,item.title,item.Phone,item.state,item.country,item.status,item.user
-    editClick(updatedzipcode,updatedutilityarea,updatedtitle,updatedphone,updatedstate,updatedcountry,updatedstatus,updateduser) {
-        console.log('edit' + updatedzipcode,updatedutilityarea,updatedtitle,updatedphone,updatedstate,updatedcountry,updatedstatus,updateduser);
-        console.log("TS OBJECT",updatedzipcode,updatedutilityarea,updatedtitle,updatedphone,updatedstate,updatedcountry,updatedstatus,updateduser);
+    editClick(updatedrepname,updatedrepcertificateid,updatedcontactname,updatedcontactphone,updatedmarket,updatedstatus,updateduser) {
+        console.log('edit' + updatedrepname,updatedrepcertificateid,updatedcontactname,updatedcontactphone,updatedmarket,updatedstatus,updateduser);
+        console.log("TS OBJECT",updatedrepname,updatedrepcertificateid,updatedcontactname,updatedcontactphone,updatedmarket,updatedstatus,updateduser);
         //Calling Delete Service
-        this.serve.editTodoList(this.catagoryId,updatedzipcode,updatedutilityarea,updatedtitle,updatedphone,updatedstate,updatedcountry,updatedstatus,updateduser).subscribe(data => {
+        this.serve.editTodoList(this.catagoryId,updatedrepname,updatedrepcertificateid,updatedcontactname,updatedcontactphone,updatedmarket,updatedstatus,updateduser).subscribe(data => {
             console.log(data);
             swal({
                 type: 'success',

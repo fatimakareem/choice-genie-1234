@@ -179,6 +179,10 @@ export const AppRoutes: Routes = [
             {
                 path: 'consumerdashboard',
                 loadChildren: './consumerdashboard/consumerdashboard.module#ConsumerDashboardModule'
+            },
+            {
+                path: 'userprofile',
+                loadChildren: './user-profile/user-profile.module#UserModule'
             }
             // {
             //     path: 'SuperChangePassword',

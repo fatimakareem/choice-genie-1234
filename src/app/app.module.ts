@@ -107,6 +107,11 @@ import { AuthguardService } from './authguard.service';
 import { ConsumersidebarComponent } from './consumersidebar/consumersidebar.component';
 import { ConsumeradminComponent } from './layouts/consumeradmin/consumeradmin.component';
 import { ConsumerdashboardComponent } from './consumerdashboard/consumerdashboard.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
+import { UsernavbarComponent } from './shared/usernavbar/usernavbar.component';
+import { UserNavbarModule } from './shared/usernavbar/usernavbar.module';
+import { UpdateService } from './user-profile/update.service';
+
 
 @NgModule({
   exports: [
@@ -164,6 +169,7 @@ export class MaterialModule {}
     MatNativeDateModule,
     SidebarModule,
     NavbarModule,
+    UserNavbarModule,
     FooterModule,
     // Ng2CarouselamosModule,
     FooterModule,
@@ -219,6 +225,7 @@ export class MaterialModule {}
     DeletesuperdashboardService,
     DataloginService,
     AuthguardService,
+  UpdateService,
     
 
 RandomService,
