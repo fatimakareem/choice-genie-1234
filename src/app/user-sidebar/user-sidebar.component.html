@@ -3,7 +3,7 @@
     <ul>
       <li>
         <div class="text-center">
-          <button type="button" class="btn btn-rose" (click)=" plantype(fixed,vari,index);nopaidplan();prepaidplan();nullplan(); fullplan();fetchmutimonth(months1,months2,months3,months4,months5,months6,months7)">
+          <button type="button" class="btn btn-rose" (click)=" renewableenergy(energy);notime();showtime();companydata();plantype(fixed,vari,index);nopaidplan();prepaidplan();nullplan(); fullplan();fetchmutimonth(months1,months2,months3,months4,months5,months6,months7)">
             Search
             <i class="material-icons" title="Use these filters to set your preferences. Get rid of the plans you don’t want to see and only show those that fit your needs.">search</i>
           </button>
@@ -207,27 +207,32 @@
           </label>
         </div>
       </li>
-      <li>
+      <li> 
+        
         <h5>Plan Type &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           <i class="fa fa-info-circle" aria-hidden="true" title="Prepaid plans provide service on a “pay-as-you-go” basis. These plans require close monitoring or accurately estimating your monthly electric use to avoid disconnection.."></i>
         </h5>
+        
         <div class="checkbox">
           <label>
-            <input type="checkbox" name="fixed" [(ngModel)]=fixed (ngModelChange)="check($event)"> Fixed Rate
+             
+            <input  type="checkbox" name="fixed" checked="true" [(ngModel)]=fixed (ngModelChange)="check($event)"> Fixed Rate
+          
           </label>
         </div>
         <div class="checkbox">
           <label>
-            <input type="checkbox" name="vari (Changing Rate)" [(ngModel)]=vari (ngModelChange)="check($event)"> Variable
+            <input type="checkbox" name="vari (Changing Rate)"checked="false" [(ngModel)]=vari (ngModelChange)="check($event)"> Variable
             <small>(changing rate)</small>
           </label>
         </div>
         <div class="checkbox">
           <label>
-            <input type="checkbox" name="index (Market Rate)" [(ngModel)]=index (ngModelChange)="check($event)"> Indexed
+            <input  type="checkbox" name="index (Market Rate)" checked="false" [(ngModel)]=index (ngModelChange)="check($event)"> Indexed
             <small>(market rate)</small>
           </label>
         </div>
+      
       </li>
       <li>
         <h5>Prepaid Plans &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -255,25 +260,116 @@
         </h5>
         <div class="radio">
           <label>
-            <input type="radio" id="chckbx" checked="true" (ngModelChange)="check($event)"> Show All Plans
+            <input type="radio" name="timeofuseplan" checked="true" (ngModelChange)="check($event)" > Show All Plans
           </label>
         </div>
         <div class="radio">
           <label>
-            <input type="radio" id="chckbx" (ngModelChange)="check($event)"> Show only Time Of Use Plans
+            <input type="radio" name="timeofuseplan" (change)="onlyChecked = $event.target.checked"> Show only Time Of Use Plans
           </label>
         </div>
         <div class="radio">
           <label>
-            <input type="radio" id="chckbx" (ngModelChange)="check($event)"> Do not show Time Of Use Plans
+            <input type="radio" name="timeofuseplan" (change)="notChecked = $event.target.checked"> Do not show Time Of Use Plans
           </label>
         </div>
       </li>
-     
+      <li>
+        <mat-select  placeholder="Renewable" (ngModelChange)="check($event)" required [(ngModel)]="energy"name="energy">
+          <mat-option value="100">100% RENEWABLE</mat-option>
+          <mat-option value="76,99">76% To 99%</mat-option>
+          <mat-option value="51,75">51% To 75%</mat-option>
+          <mat-option value="26,50">26% To 50%</mat-option>
+          <mat-option value="0,25">0% To 25%</mat-option>
+          <mat-option value="" selected="selected">N/A</mat-option>
+        </mat-select>
+      </li>
+      <li>
+         <!-- <a  title="" data-original-title="Energy Companies:  Also called retail electric providers or REPs. They sell and bill electricity and provide customer service.">Info</a> -->
+          <h5>Electric Companies</h5>
+          <!-- <div class="select-f-sackers-heavy select-area" style="width: 160px;"> -->
+          <!-- <span class="left"></span> -->
+          <mat-form-field>
+                  
+            <mat-select  placeholder="Company" (ngModelChange)="check($event)" required [(ngModel)]="name"name="name" >
+
+              <mat-option *ngFor="let data of title" [value]="data.title.split(' ',3000)[1]" >
+                {{data.title}}
+                
+              </mat-option>
+           
+            </mat-select>
+          </mat-form-field>
+        <!-- <mat-form-field>
+        
+          <mat-select tabindex="28" id="companies" name="companies" selected="selected"(ngModelChange)="check($event)" required [(ngModel)]="title"name="title">
+              
+                  <mat-option *ngFor="let s of com;let i=index" [value]="s.title">
+                    {{s.title}}
+
+                  </mat-option> -->
+               
+            <!-- <mat-option value="">All</mat-option>
+            <mat-option value="4CHANGE ENERGY">4CHANGE ENERGY</mat-option>
+            <mat-option value="AMBIT ENERGY">AMBIT ENERGY</mat-option>
+            <mat-option value="AMIGO ENERGY">AMIGO ENERGY</mat-option>
+            <mat-option value="AP GAS &amp; ELECTRIC (TX) LLC">AP GAS &amp; ELECTRIC (TX) LLC</mat-option>
+            <mat-option value="BOUNCE ENERGY INC">BOUNCE ENERGY INC</mat-option>
+            <mat-option value="BREEZE ENERGY LLC">BREEZE ENERGY LLC</mat-option>
+            <mat-option value="CHAMPION ENERGY SERVICES LLC">CHAMPION ENERGY SERVICES LLC</mat-option>
+            <mat-option value="CIRRO ENERGY">CIRRO ENERGY</mat-option>
+            <mat-option value="CONSERVICE ENERGY">CONSERVICE ENERGY</mat-option>
+            <mat-option value="CPL RETAIL ENERGY">CPL RETAIL ENERGY</mat-option>
+            <mat-option value="Circular Energy">Circular Energy</mat-option>
+            <mat-option value="DIRECT ENERGY">DIRECT ENERGY</mat-option>
+            <mat-option value="DISCOUNT POWER">DISCOUNT POWER</mat-option>
+            <mat-option value="ENTRUST ENERGY INC">ENTRUST ENERGY INC</mat-option>
+            <mat-option value="Energy Rewards">Energy Rewards</mat-option>
+            <mat-option value="Express Energy">Express Energy</mat-option>
+            <mat-option value="FIRST CHOICE POWER">FIRST CHOICE POWER </mat-option>
+            <mat-option value="FRONTIER UTILITIES">FRONTIER UTILITIES</mat-option>
+            <mat-option value="GEXA ENERGY">GEXA ENERGY</mat-option>
+            <mat-option value="GREEN MOUNTAIN ENERGY COMPANY">GREEN MOUNTAIN ENERGY COMPANY</mat-option>
+            <mat-option value="Hello Energy">Hello Energy</mat-option>
+            <mat-option value="IGS ENERGY">IGS ENERGY</mat-option>
+            <mat-option value="INFINITE ENERGY">INFINITE ENERGY</mat-option>
+            <mat-option value="INFUSE ENERGY LLC">INFUSE ENERGY LLC</mat-option>
+            <mat-option value="JUST ENERGY">JUST ENERGY</mat-option>
+            <mat-option value="LIFEENERGY LLC">LIFEENERGY LLC</mat-option>
+            <mat-option value="MIDAMERICAN ENERGY SERVICES LLC">MIDAMERICAN ENERGY SERVICES LLC</mat-option>
+            <mat-option value="NEC Co-op Energy">NEC Co-op Energy</mat-option>
+            <mat-option value="OUR ENERGY LLC">OUR ENERGY LLC</mat-option>
+            <mat-option value="PAYLESS POWER">PAYLESS POWER</mat-option>
+            <mat-option value="PENNYWISE POWER">PENNYWISE POWER </mat-option>
+            <mat-option value="PIONEER ENERGY">PIONEER ENERGY</mat-option>
+            <mat-option value="POWER EXPRESS">POWER EXPRESS</mat-option>
+            <mat-option value="PRONTO POWER">PRONTO POWER </mat-option>
+            <mat-option value="Pogo Energy">Pogo Energy</mat-option>
+            <mat-option value="RELIANT">RELIANT</mat-option>
+            <mat-option value="SOUTHWEST POWER &amp; LIGHT">SOUTHWEST POWER &amp; LIGHT</mat-option>
+            <mat-option value="SPARK ENERGY LLC">SPARK ENERGY LLC</mat-option>
+            <mat-option value="STARTEX POWER">STARTEX POWER</mat-option>
+            <mat-option value="STREAM ENERGY">STREAM ENERGY</mat-option>
+            <mat-option value="SUMMER ENERGY LLC">SUMMER ENERGY LLC</mat-option>
+            <mat-option value="TARA ENERGY">TARA ENERGY</mat-option>
+            <mat-option value="TEXPO ENERGY">TEXPO ENERGY</mat-option>
+            <mat-option value="THINK ENERGY">THINK ENERGY</mat-option>
+            <mat-option value="TRIEAGLE ENERGY LP">TRIEAGLE ENERGY LP</mat-option>
+            <mat-option value="TXU ENERGY">TXU ENERGY</mat-option>
+            <mat-option value="V247 POWER CORPORATION">V247 POWER CORPORATION</mat-option>
+            <mat-option value="VETERAN ENERGY LLC">VETERAN ENERGY LLC</mat-option>
+            <mat-option value="VOLT ELECTRICITY PROVIDER LP">VOLT ELECTRICITY PROVIDER LP</mat-option>
+            <mat-option value="VOLTERRA ENERGY">VOLTERRA ENERGY</mat-option>
+            <mat-option value="Viridian Energy">Viridian Energy</mat-option>
+            <mat-option value="WINDROSE ENERGY">WINDROSE ENERGY</mat-option>
+            <mat-option value="YEP">YEP</mat-option> -->
+          <!-- </mat-select>
+        </mat-form-field> -->
+      </li>
 
       <li>
         <div class="text-center">
-          <button type="button" class="btn btn-rose"> Search
+          <button type="button" class="btn btn-rose" (click)="companydata(); plantype(fixed,vari,index);nopaidplan();prepaidplan();nullplan(); fullplan();fetchmutimonth(months1,months2,months3,months4,months5,months6,months7)"> Search
             <i class="material-icons" title="Use these filters to set your preferences. Get rid of the plans you don’t want to see and only show those that fit your needs.">search</i>
           </button>
         </div>

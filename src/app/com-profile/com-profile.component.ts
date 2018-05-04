@@ -14,6 +14,7 @@ import { FormBuilder, Validators, NgControl, RadioControlValueAccessor, FormCont
 import { HttpClient, HttpResponse, HttpHeaders } from "@angular/common/http";
  import swal from 'sweetalert2'; 
 import { MatSelect } from '@angular/material'; 
+import { ProfileService } from './profile.service';
 
 @Component({
   selector: 'app-com-profile',
@@ -23,14 +24,28 @@ import { MatSelect } from '@angular/material';
 export class ComProfileComponent implements OnInit {
 public username;
 data:any=[];
-  constructor(private https:Http,public router: Router, private fb: FormBuilder, private http: HttpClient, private route: ActivatedRoute, private sg: SimpleGlobal) { }
+  constructor(private serve:ProfileService,private https:Http,public router: Router, private fb: FormBuilder, private http: HttpClient, private route: ActivatedRoute, private sg: SimpleGlobal) { }
 
   ngOnInit() { this.username = localStorage.getItem('username');
-  this.fetchzip()
+  this.profile();
+  console.log(this.username)
+  this. fetchProducts();
   }
-  fetchzip() {
-    // this.route.params.subscribe(params => {
-    //   let zip =  this.sg['product_zipcode'];
+  fetchProducts() {
+       
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    
+    
+    this.https.get(Config.api +'mydata/'+ this.username +'/' ,{ headers: headers })
+    .subscribe(Res => {
+    this.sg['products'] = Res.json()['Results'];
+    
+    });
+    
+    } 
+  profile() {
+    
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     this.https.get('http://192.168.30.41:9000/comprofile/' + this.username + '/', { headers: headers })
@@ -41,4 +56,24 @@ data:any=[];
     });
     
     }
+    onRegister(updatedid,updatedREP,updatedREPid,updatedName,updatedphone,updatedmarket,updatedstatus,updateduser) {
+      console.log('edit' +updatedid,updatedREP,updatedREPid,updatedName,updatedphone,updatedmarket,updatedstatus,updateduser);
+
+      //Calling Delete Service
+      this.serve.updata( updatedid,updatedREP,updatedREPid,updatedName,updatedphone,updatedmarket,updatedstatus,updateduser).subscribe(data => {
+          console.log(data);
+          swal({
+              type: 'success',
+              title: 'Successfully updated',
+              showConfirmButton: false,
+              timer: 1500
+            })
+         
+
+      }, error => {
+      });
+    //  window.location.reload();
+
+  }
+
 }

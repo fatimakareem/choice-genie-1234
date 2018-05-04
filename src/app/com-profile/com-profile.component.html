@@ -1,167 +1,206 @@
-<div class="container" style="padding-left: 3in">
-    <div class="row">
-        <div class="col-xs-12 col-md-6">
-            <div class="well well-sm">
-                <div class="row">
-                    <div class="col-xs-12 col-md-6 text-center">
-                        <h1 class="rating-num">
-                            4.0</h1>
-                        <div class="rating">
-                            <span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star">
-                            </span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star">
-                            </span><span class="glyphicon glyphicon-star-empty"></span>
+<main id="main" role="main">
+    <div class="main-content signup-main">
+        <div class="container">
+            <!-- <h3 class="text-center">Tell Us About <strong>Yourself</strong></h3> -->
+            <!-- <hr> -->
+            <div class="alert alert-rose alert-with-icon" data-notify="container">
+                <i class="material-icons" data-notify="icon">notifications</i>
+                <span data-notify="message">The information below is intended for internal use only and will not be shared with other site members. The
+                    information gathered will help us serve you better.
+
+                </span>
+            </div>
+            <div class="col-sm-12">
+                <div class="card">
+                    <form class="example-form">
+
+                    </form>
+                    <form [formGroup]="register">
+                        <div class="card-header card-header-icon" data-background-color="rose">
+                            <i class="material-icons">mail_outline</i>
                         </div>
-                        <div>
-                            <span class="glyphicon glyphicon-user"></span>1,050,008 total
+
+
+                        <div class="card-content">
+                            <h4 class="card-title">Edit Profile</h4>
+                            <div class="row">
+                                    <div class="col-sm-6">
+
+                                            <div>
+                                                <mat-form-field>
+                                                    <input matInput placeholder="ID" type="text" value="{{data.id}}" #updatedid>
+        
+        
+                                                </mat-form-field>
+        
+                                            </div>
+                                        </div>
+                                <div class="col-sm-6">
+
+                                    <div>
+                                        <mat-form-field>
+                                            <input matInput placeholder="REP Name" type="text" value="{{data.REP_name}}" #updatedREP>
+
+
+                                        </mat-form-field>
+
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+
+                                        <div>
+                                            <mat-form-field>
+                                                <input matInput placeholder="REP_certificate_id" type="text" value="{{data.REP_certificate_id}}" #updatedREPid>
+    
+    
+                                            </mat-form-field>
+    
+                                        </div>
+                                    </div>
+    
+                                <div class="col-sm-6">
+                                    <div>
+
+                                        <mat-form-field>
+                                            <input matInput placeholder="Contact Name" type="text" value="{{data.Contact_Name}}" #updatedName>
+
+
+                                        </mat-form-field>
+
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                        <div>
+    
+                                            <mat-form-field>
+                                                <input matInput placeholder="Contact Phone" type="text" value="{{data.Contact_Phone}}" #updatedphone>
+    
+    
+                                            </mat-form-field>
+    
+                                        </div>
+                                    </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div>
+
+                                        <mat-form-field>
+                                            <input matInput placeholder="Market" type="text" value="{{data.Market}}" #updatedmarket>
+
+                                        </mat-form-field>
+
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                        <div>
+    
+                                            <mat-form-field>
+                                                <input matInput placeholder="Status" type="text" value="{{data.status}}" #updatedstatus>
+    
+                                            </mat-form-field>
+    
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                            <div>
+        
+                                                <mat-form-field>
+                                                    <input matInput placeholder="User" type="text" value="{{data.user}}" #updateduser>
+        
+                                                </mat-form-field>
+        
+                                            </div>
+                                        </div>
+    
+    
+
+                               
+                            </div>
+                           
+                          
+
+                           
+
+
+                            <div class="form-footer text-right">
+                                
+                                <div class="form-group">
+                                    <button type="submit" style="width:100%; border-radius:50px" class="btn btn-lrg btn-rose btn-fill btn-wd" (click)="onRegister(updatedid.value,updatedREP.value,updatedREPid.value,updatedName.value,updatedphone.value,updatedmarket.value,updatedstatus.value,updateduser.value)">Update</button>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-xs-12 col-md-6">
-                        <div class="row rating-desc">
-                            <div class="col-xs-3 col-md-3 text-right">
-                                <span class="glyphicon glyphicon-star"></span>5
-                            </div>
-                            <div class="col-xs-8 col-md-9">
-                                <div class="progress progress-striped">
-                                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="20"
-                                        aria-valuemin="0" aria-valuemax="100" style="width: 80%">
-                                        <span class="sr-only">80%</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- end 5 -->
-                            <div class="col-xs-3 col-md-3 text-right">
-                                <span class="glyphicon glyphicon-star"></span>4
-                            </div>
-                            <div class="col-xs-8 col-md-9">
-                                <div class="progress">
-                                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="20"
-                                        aria-valuemin="0" aria-valuemax="100" style="width: 60%">
-                                        <span class="sr-only">60%</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- end 4 -->
-                            <div class="col-xs-3 col-md-3 text-right">
-                                <span class="glyphicon glyphicon-star"></span>3
-                            </div>
-                            <div class="col-xs-8 col-md-9">
-                                <div class="progress">
-                                    <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20"
-                                        aria-valuemin="0" aria-valuemax="100" style="width: 40%">
-                                        <span class="sr-only">40%</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- end 3 -->
-                            <div class="col-xs-3 col-md-3 text-right">
-                                <span class="glyphicon glyphicon-star"></span>2
-                            </div>
-                            <div class="col-xs-8 col-md-9">
-                                <div class="progress">
-                                    <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="20"
-                                        aria-valuemin="0" aria-valuemax="100" style="width: 20%">
-                                        <span class="sr-only">20%</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- end 2 -->
-                            <div class="col-xs-3 col-md-3 text-right">
-                                <span class="glyphicon glyphicon-star"></span>1
-                            </div>
-                            <div class="col-xs-8 col-md-9">
-                                <div class="progress">
-                                    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="80"
-                                        aria-valuemin="0" aria-valuemax="100" style="width: 15%">
-                                        <span class="sr-only">15%</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- end 1 -->
-                        </div>
-                        <!-- end row -->
-                    </div>
+                    </form>
+
                 </div>
             </div>
         </div>
     </div>
-</div>
-<div class="container" style="padding-left: 7in">
- 
-  <div class="row">
-   
-<div class="card">
+    <!-- <div class="container" style="padding-left: 7in">
 
-    <div class="col-sm-12">
+        <div class="row">
 
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h4>Vendor Profile</h4>
-        </div>
-        <div class="panel-body">
+            <div class="card">
 
-          <div class="box box-info">
+                <div class="col-sm-12">
 
-            <div class="box-body" >
-              <div class="col-sm-6">
-                <div align="center">
-                    <ng-container class="card" *ngFor="let data of sg['products']; let i = index">
-                        <div *ngIf="i<1" class="sidebar-profile-img">
-                          <a>
-                            <img src="{{data.profile_logo}}" >
-                          </a>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4>Vendor Profile</h4>
                         </div>
-                      </ng-container>
-<!-- 
-                  <input id="profile-image-upload" class="hidden" type="file">
-                  <div style="color:#999;">click here to change profile image</div> -->
-                  <!--Upload Image Js And Css-->
+                        <div class="panel-body">
+
+                            <div class="box box-info">
+
+                                <div class="box-body">
+                                    <div class="col-sm-6">
+                                        <div align="center">
+                                            <ng-container class="card" *ngFor="let data of sg['products']; let i = index">
+                                                <div *ngIf="i<1" class="sidebar-profile-img">
+                                                    <a>
+                                                        <img src="{{data.profile_logo}}">
+                                                    </a>
+                                                </div>
+                                            </ng-container>
+
+                                        </div>
+                                        <div class="col-sm-6">
+                                            
+                                            <input matinput type="text" value="{{data.REP_name}}">
+                                            <h4 style="color:#00b1b1;">{{data.REP_name}} </h4>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                        <hr style="margin:5px 0 5px 0;">
+
+
+                                        <div class="col-sm-5 col-xs-6 tital ">Contact Name:</div>
+                                        <div class="col-sm-7 col-xs-6 ">{{data.Contact_Name}}</div>
+                                        <div class="clearfix"></div>
+                                        <div class="bot-border"></div>
+
+                                        <div class="col-sm-5 col-xs-6 tital ">Contact Phone:</div>
+                                        <div class="col-sm-7"> {{data.Contact_Phone}}</div>
+                                        <div class="clearfix"></div>
+                                        <div class="bot-border"></div>
+
+                                        <div class="col-sm-5 col-xs-6 tital ">Market:</div>
+                                        <div class="col-sm-7"> {{data.Market}}</div>
+                                        <div class="clearfix"></div>
+                                        <div class="bot-border"></div>
 
 
 
+                                   
+                                    </div>
+                                 
+
+                                </div>
 
 
-
-
+                            </div>
+                        </div>
+                    </div>
                 </div>
-
-                <br>
-
-                <!-- /input-group -->
-              </div>
-              <div class="col-sm-6">
-                <!-- <h4>REP Name:</h4> -->
-                <h4 style="color:#00b1b1;">{{data.REP_name}} </h4>
-              </div>
-              <div class="clearfix"></div>
-              <hr style="margin:5px 0 5px 0;">
-
-
-              <div class="col-sm-5 col-xs-6 tital ">Contact Name:</div>
-              <div class="col-sm-7 col-xs-6 ">{{data.Contact_Name}}</div>
-              <div class="clearfix"></div>
-              <div class="bot-border"></div>
-
-              <div class="col-sm-5 col-xs-6 tital ">Contact Phone:</div>
-              <div class="col-sm-7"> {{data.Contact_Phone}}</div>
-              <div class="clearfix"></div>
-              <div class="bot-border"></div>
-
-              <div class="col-sm-5 col-xs-6 tital ">Market:</div>
-              <div class="col-sm-7"> {{data.Market}}</div>
-              <div class="clearfix"></div>
-              <div class="bot-border"></div>
-
-             
-
-              <!-- /.box-body -->
             </div>
-            <!-- /.box -->
-
-          </div>
-
-
-        </div>
-      </div>
-    </div>
-  </div>
-</div></div>
+        </div> -->
