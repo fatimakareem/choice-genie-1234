@@ -7,40 +7,44 @@
         </mat-select>
         </mat-form-field> -->
 
+
 <div class="main-content custom">
   <!-- <div class="container-fluid"> -->
-  <div class="row">
-    <div class="col-sm-12">
+  <div class="row"></div>
+    <div class="col-sm-12" style="padding:0px;">
 
       <div class="page-title">
         <span>Product Search</span>
       </div>
+      
+    
       <!-- </div> -->
       <!-- <mat-paginator [length]="100" [pageSize]="20" [pageSizeOptions]="[5, 10, 25, 100]" (change)="_changePageSize($event.value)">
       </mat-paginator> -->
 
 
       <div class="products-area-products" *ngIf="prod_loaded;else no_data_templ">
-        <div class="card" *ngFor="let data of sg['products']; let i = index">
+        <div class="custom card" *ngFor="let data of sg['products']; let i = index">
           <div class="row">
 
-            <div class="col-sm-12">
+            <div class="col-sm-12" style="padding:0px;">
               <div class="card-header card-header-text position-abs" data-background-color="rose">
 
                 <h4 class="card-title">{{data.title}} </h4>
 
               </div>
 
-              <div class="card-content">
+              <div class="card-content" >
                 <!-- <input type="checkbox" [(ngModel)]="id" value="{{data.id}}" name="{{data.id}}" [checked]="data.id" />{{data.id}} -->
                 <div class="col-md-4  col-sm-3 col-xs-5 plan-detail text-center">
                   <a href="{{data.profileurl}}" target="_blank" class="display-b margin-top">
 
-                    <img src="{{data.profile_logo}}" alt="{{data.title}}" class="width-lg" />
+                    <img src="{{data.profile_logo}}" alt="{{data.title}}" style="width: 70%;
+                    margin-top: 16%;" />
                   </a>
 
 
-                  <img src="{{data.rating_logo}}" />
+                  <!-- <img src="{{data.rating_logo}}" /> -->
 
 
                   <!-- <br> <star-rating-comp [size]="'large'" [starType]="'svg'" [rating]="" [(ngModel)]="rating"></star-rating-comp>  -->
@@ -49,38 +53,47 @@
 
 
 
-                <div class="col-md-4 col-sm-5 col-xs-5 rate" style="width: 450px">
+                <div class="col-md-4 col-sm-5 col-xs-5 rate" style="text-align:center">
                   <h3 style=" text-align: center">
-                    <b> Price</b>
+                    <b> Price Detail</b>
                   </h3>
 
                   <!-- <div class="holder white"> -->
                   <!--class="product-price"-->
-                  <div class="">
-
-                    <h3 *ngFor="let items of data.price_rate" class="text-center">
-                      {{items}}¢
-                    </h3>
-                  </div>
+                  <div style="text-align:center; padding-top:10px;">
+                      price_500_kwh 
+                      <b class="price-style"> {{data.price_500_kwh}}</b>
+                    
+                    </div>
+                    <div class="add-price grid-element">
+                        <div class="unit">price_1000_kwh <span class="price-style"> {{data.price_1000_kwh}} </span></div>
+                        <div class="unit">price_2000_kwh <span class="price-style"> {{data.price_2000_kwh}} </span></div>
+                       
+                    </div>
+                   <a > <label class="view-plan-details" (click)="btnEditClick(data.id,data.title,data.sign_up,data.phone,data.terms_of_service,data.fact_sheet,data.cancelation_fee,data.price_1000_kwh,data.price_500_kwh,data.price_2000_kwh,data.plan_information,data.rating_logo,data.profile_logo,data.profileurl)"
+                    data-toggle="modal" data-target="#myModal2">Plan Information</label></a>
+                  
                   <!-- </div> -->
                   <!-- <small>{{data.display_uom}}</small> -->
                   <!-- <br /> -->
 
                   <!-- <small><b>$69.99 </b></small> -->
+                 
                 </div>
-                <br>
+                
                 <div class="col-md-4 col-sm-3 col-xs-7 term">
 
                   <h3 class="text-center">
                     <b> Call now</b>
                   </h3>
-                  <h3 class="text-center">{{data.phone}}</h3>
+                  <p class="text-center">{{data.phone}}</p>
                   <!-- (click)="openDialog(data.id)" -->
                   <button class="btn btn-rose" style="display:block; margin: 0 auto;">
                     <a style="color:white" href="{{data.profileurl}}" target="_blank">Signup </a>
                     <i class="material-icons">bubble_chart</i>
                   </button>
-
+                 
+                  
                 </div>
                 <!-- <div class="col-md-3 col-sm-3 col-xs-7 term top-margin-25">
 (click)="signUp(data.product_id)"
@@ -89,247 +102,112 @@
 
 </div> -->
                 <div class="col-sm-12">
-                  <a href="#p-pane-{{i}}" class="view-more collapsed" data-toggle="collapse">
+                  <!-- <a href="#p-pane-{{i}}" class="view-more collapsed" data-toggle="collapse">
                     View more
                     <i class="material-icons">arrow_drop_down</i>
-                  </a>
+                  </a> -->
                 </div>
               </div>
             </div>
           </div>
-          <i style="padding:center;
-                          font-size: 29px;
-                          color: red;
-                          " class="fa fa-edit" type="submit" value="Edit" type="submit" (click)="btnEditClick(data.id,data.title,data.sign_up,data.phone,data.terms_of_service.value,data.fact_sheet,data.cancelation_fee,data.price_rate,data.plan_information,data.rating_logo,data.profile_logo,data.profileurl)"
-            data-toggle="modal" data-target="#myModal2">
-
-          </i>
+         
           <div class="modal fade" id="myModal2" role="dialog">
             <div class="modal-dialog">
               <!-- Modal content-->
-              <div class="modal-content" style="margin-top:25%; width:119%;">
-                <div class="modal-header">
-                  <button type="button" class="close" data-dismiss="modal" style="    color: white;
-              opacity: 1;">&times;</button>
-
-                </div>
+              <div class="modal-content popupmodel">
+                  
                 <div class="modal-body" style="font-size: 18px;
-              text-align: center;">
+                background: #ffffff;
+                padding: 20px;
+                margin: 15px;
+                position: relative;">
+                <div class="popup-close-button"  data-dismiss="modal">X</div>
+                  <div class="row">
+                    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 " style="border-bottom: 1px #4f4f4f solid;">
+                      <p class=" modal-v2__main-heading"> {{title}}</p>
+                     
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3" style="border-bottom: 1px #4f4f4f solid;">
+                        <div class="popup-image">
+                            <a href="{{profileurl}}" target="_blank" class="display-b margin-top">
+                          <img src="{{profile_logo}}" /></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+                        <div class="plan-information__heading">Price Rate</div>
+                        <table>
+                            <tbody><tr class="plan-information__row">
+                              <td class="plan-information__cell">price_1000_kwh</td>
+                              <td class="plan-information__cell plan-information__cell--last ">{{price_1000_kwh}}</td>
+                            </tr>
+                            <tr class="plan-information__row">
+                              <td class="plan-information__cell">price_500_kwh</td>
+                              <td class="plan-information__cell plan-information__cell--last ">{{price_500_kwh}}</td>
+                            </tr>
+                            <tr class="plan-information__row">
+                              <td class="plan-information__cell">price_2000_kwh</td>
+                              <td class="plan-information__cell plan-information__cell--last ">{{price_2000_kwh}}</td>
+                            </tr>
+                            </tbody>
+                          </table>
+                          <table>
+                        <tbody>
+                       
+                       
+                            <tr class="plan-information__row plan-information__row--last">
+                              <td class="plan-information__cell">Documents</td>
+                              <td class="plan-information__cell plan-information__cell--last">
+                                  <a style="color:rgba(0,0,0, 0.87)" href="{{fact_sheet}}" target="_blank">
+                                      <i style="color:#25B7D3" class="material-icons">picture_as_pdf</i>
+                                <a>Fact Sheet</a><br></a>
+                                <a style="color:rgba(0,0,0, 0.87)" href="{{terms_of_service}}" target="_blank">
+                                    <i style="color:#25B7D3" class="material-icons">picture_as_pdf</i>
+                                    Terms of service
+                                  </a>
+                              
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        <div class="plan-description">
+                            <div class="plan-description__heading">Cancelation Fee</div>
+                            <div class="plan-description__content" >
+                                  
+                                <h4 *ngIf="data.cancelation_fee;else no_data_temp2">
+                                    &nbsp;&nbsp;&nbsp;&nbsp; {{data.cancelation_fee.split(' ',3000)[2]}}
+                                  </h4>
+                    
+                                  <ng-template #no_data_temp2>
+                    
+                                    <!-- <img src="../../assets/img/no_Record.png" style="width: 250px;height:200px" > -->
+                                    <h4>&nbsp;&nbsp;&nbsp;&nbsp; ---</h4>
+                                  </ng-template>
+                              <!-- <p class="ng-binding">A great low rate with guaranteed price protection for 1 full year. Exclusive online offer available to new customers.</p> -->
+                            </div>
+                          </div>
+                    </div>
+                    <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7">
+                        <div class="plan-description">
+                            <div class="plan-description__heading">Plan Information</div>
+                            <div class="plan-description__content">
+                              <ul><li *ngFor="let data of plan_information">{{data}}</li></ul>
+                              
 
-                  <!-- (ngSubmit)="onSubmit(f)" #f="ngForm" class="form-zip" -->
-                  <!-- <div class="card card-login"> -->
-                  <div class="card-header text-center" data-background-color="rose">
-                    <h4 class="card-title"> {{title}}</h4>
-
-
+                            </div>
+                          </div>
+                    </div>
+                  </div>
                   </div>
 
-                  <!-- <div class="card-content"> -->
-                  <!-- <lable>{{data.id}}</lable> -->
-                  <!-- <div class="col-md-6 col-sm-6">
-                                        <div class="input-group">
-              
-              
-              
-              
-                                          <mat-form-field>
-                                            <input matInput placeholder="ID" name="id" [(ngModel)]=id />
-              
-                                          </mat-form-field>
-                                        </div>
-                                      </div> -->
-                  <div class="col-md-6 col-sm-6">
-
-
-                    <img src="{{profile_logo}}" />
-
-                  </div>
-
-
-                  <div class="col-md-6 col-sm-6">
-                    <img src="{{rating_logo}}" />
-
-                  </div>
-                 
-                    <h4>Plan information</h4>
-                    <div *ngFor="let data of plan_information">
-                      {{data}}
-                    </div>
-
-                    <div class="col-md-6 col-sm-6">
-                      <h4>price Detail</h4>
-                      {{price_rate}}
-
-                    </div>
-                    <div class="col-md-6 col-sm-6">
-                      {{cancelation_fee}}
-
-                    </div>
-                    <h3>Plan Document</h3>
-                    <ul>
-                      <li style="color:transparent">
-                        <a style="color:rgba(0,0,0, 0.87)" href="{{terms_of_service}}" target="_blank">
-                          <i style="color:#25B7D3" class="material-icons">picture_as_pdf</i>
-                          Terms of service
-                        </a>
-                      </li>
-
-                      <li style="color:transparent">
-                        <a style="color:rgba(0,0,0, 0.87)" href="{{fact_sheet}}" target="_blank">
-                          <i style="color:#25B7D3" class="material-icons">picture_as_pdf</i>
-                          Fact Sheet
-                        </a>
-                      </li>
-
-                    </ul>
-                    <div class="col-md-6 col-sm-6">
-                      <h3>Call now</h3>
-                      {{phone}}
-
-                    </div>
-                    <!-- <div class="col-md-6 col-sm-6">
-                                          {{sign_up}}
-                                       
-                                      </div> -->
-                    <div class="col-md-6 col-sm-6">
-                      <button class="btn btn-rose" style="display:block; margin: 0 auto;">
-                        <a style="color:white" href="{{profileurl}}" target="_blank">Signup </a>
-                        <i class="material-icons">bubble_chart</i>
-                      </button>
-
-                    </div>
-                    <!-- <div class="col-md-6 col-sm-6">
-                                        <div class="input-group"> -->
-
-
-                    <!-- <input class="form-control" type="text" > -->
-                    <!-- <mat-form-field>
-                                        <input matInput placeholder="Zipcode" name="data.zipcode" class="form-control" value="{{data.zipcode}}" #zipcode />
-              
-                                      </mat-form-field>
-                                    </div>
-                                  </div> -->
-                    <!-- </div> -->
-
-                    <!-- </div> -->
-
-                 
-
-                </div>
+               <div style="display:inline-block; text-align:center;">
+                 <a href="{{sign_up}}" target="_blank">
+                 <button class="btn btn-rose">Order Online</button></a>
+                 <div style="display:inline-block; padding:24px;"><span style="font-size:24px; font-weight:600px">OR CALL <b> {{phone}} </b> </span></div>
+               </div>
               </div>
             </div>
-            <div class="clearfix"></div>
-            <div id="p-pane-{{i}}" class="panel-details collapse">
-              <br />
-              <div class="row">
-                <div class="col-sm-6">
-                  <h3 style="padding:0 20px;background:#cecece">Plan Information</h3>
-                  <div class="text-justify">
-
-                    <p *ngFor="let itemss of data.plan_information">
-                      {{itemss}}
-                    </p>
-                  </div>
-                </div>
-                <div class="col-sm-6">
-                  <h3 style="padding:0 20px;background:#cecece">
-                    Cancellation Fee
-                    <!-- <b>{{data.cancelation_fee}}</b> -->
-                  </h3>
-
-                  <h4 *ngIf="data.cancelation_fee;else no_data_temp2">
-                    &nbsp;&nbsp;&nbsp;&nbsp; {{data.cancelation_fee.split(' ',3000)[2]}}
-                  </h4>
-
-                  <ng-template #no_data_temp2>
-
-                    <!-- <img src="../../assets/img/no_Record.png" style="width: 250px;height:200px" > -->
-                    <h4>&nbsp;&nbsp;&nbsp;&nbsp; ---</h4>
-                  </ng-template>
-
-                  <!-- <hr/> -->
-
-                  <h3 style="padding:0 20px;background:#cecece">Plan Document</h3>
-                  <ul>
-                    <li style="color:transparent">
-                      <a style="color:rgba(0,0,0, 0.87)" href="{{data.terms_of_service}}" target="_blank">
-                        <i style="color:#25B7D3" class="material-icons">picture_as_pdf</i>
-                        Terms of service
-                      </a>
-                    </li>
-
-                    <li style="color:transparent">
-                      <a style="color:rgba(0,0,0, 0.87)" href="{{data.fact_sheet}}" target="_blank">
-                        <i style="color:#25B7D3" class="material-icons">picture_as_pdf</i>
-                        Fact Sheet
-                      </a>
-                    </li>
-
-                  </ul>
-                </div>
-
-                <br>
-
-                <div class="col-sm-12 ">
-                  <h3>Minimum Usage Fee</h3>
-                  <p *ngIf="data.minumum_usage_fee;else no_data_temp6">
-                    {{data.minumum_usage_fee}}
-                  </p>
-                  <ng-template #no_data_temp6>
-
-                    <!-- <img src="../../assets/img/no_Record.png" style="width: 250px;height:200px" > -->
-                    <h4>&nbsp;&nbsp;&nbsp;&nbsp; -------------</h4>
-                  </ng-template>
-                  <h3>Special Terms</h3>
-                  <p *ngIf="data.specialterms;else no_data_temp2">
-                    {{data.specialterms}}
-                  </p>
-
-                  <ng-template #no_data_temp2>
-
-                    <!-- <img src="../../assets/img/no_Record.png" style="width: 250px;height:200px" > -->
-                    <h4>&nbsp;&nbsp;&nbsp;&nbsp; -------------</h4>
-                  </ng-template>
-                </div>
-
-                <div class="col-sm-12">
-                  <!--<h4>Rates Detail:</h4>-->
-                  <div class="table">
-                    <!-- <table class="table-normal">
-                      <thead>
-                        <tr>
-                          <td>
-                            Average Monthly Use
-                          </td>
-                          <td>
-                            Average Price per kWh
-                          </td> -->
-                    <!-- </tr>
-                      </thead>
-
-                      <tbody *ngFor="let items of data.price_rate">
-                        <tr>
-
-                          <td>
-                            <h2 style="font-size: 20px">{{ items.split(' ',3000)[0]}} KWH </h2>
-                          </td>
-                          <td>
-                            <h2 style="font-size: 20px"> {{ items.split(' ',3000)[2]}} $</h2>
-                          </td> -->
-                    <!-- <td><h4>$ 15.20</h4></td> -->
-                    <!-- </tr> -->
-                    <!-- <tr>
-<td><h4>1000 kWh</h4></td>
-<td><h4>$ 13.60</h4></td>
-</tr> -->
-                    <!-- </tbody>
-                    </table> -->
-
-                  </div>
-                </div>
-
-              </div>
-            </div>
+            <!-- <div class="clearfix"></div> -->
+           
 
             <!-- <div class="col-sm-12 col-md-6">
 <h4>Get your year-pass savings:</h4>
@@ -436,3 +314,4 @@ Fact Sheet
   [matTooltip]="_intl.nextPageLabel" [matTooltipPosition]="'above'" [disabled]="!hasNextPage()">
   <div class="mat-paginator-decrement"></div>
 </button> -->
+

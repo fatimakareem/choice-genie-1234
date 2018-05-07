@@ -91,73 +91,74 @@
                         </div>
                       </div>
         
-                      <div class="col-md-4 col-sm-5 col-xs-5 rate" style="width: 450px">
-                        <h3 style=" text-align: center">
-                          <b> Price</b>
-                        </h3>
-        
-                        <!-- <div class="holder white"> -->
-                        <!--class="product-price"-->
-                        <div class="">
-        
-                          <h3 *ngFor="let items of data.price_rate" class="text-center">
-                            {{items}}¢
+                      <div class="col-md-4 col-sm-5 col-xs-5 rate" style="text-align:center">
+                          <h3 style=" text-align: center">
+                            <b> Price Detail</b>
                           </h3>
+        
+                          <!-- <div class="holder white"> -->
+                          <!--class="product-price"-->
+                          <div style="text-align:center; padding-top:10px;">
+                              price_500_kwh 
+                              <b class="price-style"> {{data.price_500_kwh}}</b>
+                            
+                            </div>
+                            <div class="add-price grid-element">
+                                <div class="unit">price_1000_kwh <span class="price-style"> {{data.price_1000_kwh}} </span></div>
+                                <div class="unit">price_2000_kwh <span class="price-style"> {{data.price_2000_kwh}} </span></div>
+                               
+                            </div>
+                           <a > <label class="view-plan-details" (click)="btnshowClick(data.id,data.title,data.sign_up,data.phone,data.terms_of_service,data.fact_sheet,data.cancelation_fee,data.price_1000_kwh,data.price_500_kwh,data.price_2000_kwh,data.plan_information,data.rating_logo,data.profile_logo,data.profileurl)"
+                            data-toggle="modal" data-target="#myModal4">Plan Information</label></a>
+                          
+                        
+                         
                         </div>
-                        <!-- </div> -->
-                        <!-- <small>{{data.display_uom}}</small> -->
-                        <!-- <br /> -->
         
-                        <!-- <small><b>$69.99 </b></small> -->
-                      </div>
-        
-        
-        
-        
+                       
         
         
         
                       <div class="modal fade" id="myModal2" role="dialog">
                         <div class="modal-dialog">
                           <!-- Modal content-->
-                          <div class="modal-content" style="margin-top:25%; width:119%;">
+                          <div class="modal-content popupmodel" >
                             <div class="modal-header">
-                              <button type="button" class="close" data-dismiss="modal" style="    color: white;
-        opacity: 1;">&times;</button>
+                              
         
                             </div>
                             <div class="modal-body" style="font-size: 18px;
-        text-align: center;">
+                            background: #ffffff;
+                            padding: 20px;
+                            margin: 15px;
+                            position: relative;">
+                            <div class="popup-close-button"  data-dismiss="modal">X</div>
+                            <div class="row">
+                            <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 " style="border-bottom: 1px #4f4f4f solid;">
+                                <p class=" modal-v2__main-heading"> {{data.title}}</p>
+                               
+                              </div>
+                              <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3" style="border-bottom: 1px #4f4f4f solid;">
+                                  <div class="popup-image">
+                                      <a href="{{data.profileurl}}" target="_blank" class="display-b margin-top">
+                                    <img src="{{data.profile_logo}}" /></a>
+                                  </div>
+                              </div>
                               <form (ngSubmit)="onSubmit(f)" #f="ngForm">
-                                <!-- (ngSubmit)="onSubmit(f)" #f="ngForm" class="form-zip" -->
-                                <!-- <div class="card card-login"> -->
-                                <div class="card-header text-center" data-background-color="rose">
+                              
+                                <!-- <div class="card-header text-center" data-background-color="rose"style="text-align:center; padding-top:10px;">
                                   <h4 class="card-title">Edit Your product</h4>
         
         
-                                </div>
-        
-                                <!-- <div class="card-content"> -->
-                                <!-- <lable>{{data.id}}</lable> -->
-                                <!-- <div class="col-md-6 col-sm-6">
-                                  <div class="input-group">
-        
-        
-        
-        
-                                    <mat-form-field>
-                                      <input matInput placeholder="ID" name="id" [(ngModel)]=id />
-        
-                                    </mat-form-field>
-                                  </div>
                                 </div> -->
+        
                                 <div class="col-md-6 col-sm-6">
                                   <div class="input-group">
         
         
         
-                                    <!-- <input class="form-control" type="text" > -->
-                                    <mat-form-field >
+                                 
+                                    <mat-form-field hidden=true>
                                       <input matInput   placeholder="Title" readonly name="data.title"value="{{data.title}}"   required  #updatedtitle/>
         
                                     </mat-form-field>
@@ -169,7 +170,7 @@
         
         
                                     <!-- <input class="form-control" type="text" > -->
-                                    <mat-form-field>
+                                    <mat-form-field hidden=true>
                                       <input matInput placeholder="Profile url" readonly name="data.profileurl"value="{{data.profileurl}}" #updatedprofileurl/>
         
                                     </mat-form-field>
@@ -181,7 +182,7 @@
         
         
                                     <!-- <input class="form-control" type="text" > -->
-                                    <mat-form-field>
+                                    <mat-form-field hidden=true>
                                       <input matInput placeholder="Profile Logo" readonly name="data.profile_logo"value="{{data.profile_logo}}" #updatedprofile_logo />
         
                                     </mat-form-field>
@@ -193,7 +194,7 @@
         
         
                                     <!-- <input class="form-control" type="text" > -->
-                                    <mat-form-field>
+                                    <mat-form-field hidden=true>
                                       <input matInput placeholder="Rating_logo" readonly name="data.rating_logo"value="{{data.rating_logo}}"  #updatedrating_logo />
         
                                     </mat-form-field>
@@ -228,7 +229,7 @@
         
         
                                     <!-- <input class="form-control" type="text" > -->
-                                    <mat-form-field>
+                                    <mat-form-field hidden=true>
                                       <input matInput placeholder="Cancelation Fee" readonly name="data.cancelation_fee" value="{{data.cancelation_fee}}"  #updatedcancelation_fee/>
         
                                     </mat-form-field>
@@ -239,7 +240,7 @@
         
         
                                     <!-- <input class="form-control" type="text" > -->
-                                    <mat-form-field>
+                                    <mat-form-field hidden=true>
                                       <input matInput placeholder="Fact Sheet" readonly name="data.fact_sheet"value="{{data.fact_sheet}}"  #updatedfact_sheet/>
         
                                     </mat-form-field>
@@ -250,7 +251,7 @@
         
         
                                     <!-- <input class="form-control" type="text" > -->
-                                    <mat-form-field>
+                                    <mat-form-field hidden=true>
                                       <input matInput placeholder="Term of Service" readonly name="data.terms_of_service"  value="{{data.terms_of_service}}" #updatedterms_of_service />
         
                                     </mat-form-field>
@@ -261,7 +262,7 @@
         
         
                                     <!-- <input class="form-control" type="text" > -->
-                                    <mat-form-field>
+                                    <mat-form-field hidden=true>
                                       <input matInput placeholder="Phone No" name="data.phone" readonly value="{{data.phone}}"#updatedphone/>
         
                                     </mat-form-field>
@@ -272,8 +273,8 @@
         
         
                                     <!-- <input class="form-control" type="text" > -->
-                                    <mat-form-field>
-                                      <input matInput placeholder="Sign Up" name="data.sign_up" readonly value="{{data.sign_up}}" #updatedsign_up />
+                                    <mat-form-field hidden=true>
+                                      <input matInput placeholder="Sign Up" name="data.sign_up" readonly value="{{data.sign_up}}"  #updatedsign_up />
         
                                     </mat-form-field>
                                   </div>
@@ -299,7 +300,12 @@
                                 <!-- </div> -->
                               </form>
                             </div>
-        
+                          </div>
+                          <div style="display:inline-block; text-align:center;">
+                              <a href="{{data.sign_up}}" target="_blank">
+                              <button class="btn btn-rose">Order Online</button></a>
+                              <div style="display:inline-block; padding:24px;"><span style="font-size:24px; font-weight:600px">OR CALL <b> {{data.phone}} </b> </span></div>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -313,7 +319,7 @@
                       <br>
                       <div class="col-md-4 col-sm-3 col-xs-7 term">
                         <div  class="text-center">
-                          <i style="
+                            <i style="
                             font-size: 29px;
                             color: red;
                            "
@@ -349,130 +355,106 @@
         
         
               </div> -->
-                      <div class="col-sm-12">
-                        <a href="#p-pane-{{i}}" class="view-more collapsed" data-toggle="collapse">
-                          View more
-                          <i class="material-icons">arrow_drop_down</i>
-                        </a>
-                      </div>
+                     
                     </div>
                   </div>
                 </div>
-                <div class="clearfix"></div>
-                <div id="p-pane-{{i}}" class="panel-details collapse">
-                  <br />
-                  <div class="row">
-                    <div class="col-sm-6">
-                      <h3 style="padding:0 20px;background:#cecece">Plan Information</h3>
-                      <div class="text-justify" >
+                <div class="modal fade" id="myModal4" role="dialog">
+                    <div class="modal-dialog">
+                      <!-- Modal content-->
+                      <div class="modal-content popupmodel">
+                          
+                        <div class="modal-body" style="font-size: 18px;
+                        background: #ffffff;
+                        padding: 20px;
+                        margin: 15px;
+                        position: relative;">
+                        <div class="popup-close-button"  data-dismiss="modal">X</div>
+                          <div class="row">
+                            <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 " style="border-bottom: 1px #4f4f4f solid;">
+                              <p class=" modal-v2__main-heading"> {{title}}</p>
+                             
+                            </div>
+                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3" style="border-bottom: 1px #4f4f4f solid;">
+                                <div class="popup-image">
+                                    <a href="{{profileurl}}" target="_blank" class="display-b margin-top">
+                                  <img src="{{profile_logo}}" /></a>
+                                </div>
+                            </div>
+                            <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+                                <div class="plan-information__heading">Price Rate</div>
+                                <table>
+                                    <tbody><tr class="plan-information__row">
+                                      <td class="plan-information__cell">price_1000_kwh</td>
+                                      <td class="plan-information__cell plan-information__cell--last ">{{price_1000_kwh}}</td>
+                                    </tr>
+                                    <tr class="plan-information__row">
+                                      <td class="plan-information__cell">price_500_kwh</td>
+                                      <td class="plan-information__cell plan-information__cell--last ">{{price_500_kwh}}</td>
+                                    </tr>
+                                    <tr class="plan-information__row">
+                                      <td class="plan-information__cell">price_2000_kwh</td>
+                                      <td class="plan-information__cell plan-information__cell--last ">{{price_2000_kwh}}</td>
+                                    </tr>
+                                    </tbody>
+                                  </table>
+                                  <table>
+                                <tbody>
+                               
+                               
+                                    <tr class="plan-information__row plan-information__row--last">
+                                      <td class="plan-information__cell">Documents</td>
+                                      <td class="plan-information__cell plan-information__cell--last">
+                                          <a style="color:rgba(0,0,0, 0.87)" href="{{fact_sheet}}" target="_blank">
+                                              <i style="color:#25B7D3" class="material-icons">picture_as_pdf</i>
+                                        <a>Fact Sheet</a><br></a>
+                                        <a style="color:rgba(0,0,0, 0.87)" href="{{terms_of_service}}" target="_blank">
+                                            <i style="color:#25B7D3" class="material-icons">picture_as_pdf</i>
+                                            Terms of service
+                                          </a>
+                                      
+                                      </td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                                <div class="plan-description">
+                                    <div class="plan-description__heading">Cancelation Fee</div>
+                                    <div class="plan-description__content" >
+                                          
+                                        <h4 *ngIf="data.cancelation_fee;else no_data_temp2">
+                                            &nbsp;&nbsp;&nbsp;&nbsp; {{cancelation_fee.split(' ',3000)[2]}}
+                                          </h4>
+                            
+                                          <ng-template #no_data_temp2>
+                            
+                                            <!-- <img src="../../assets/img/no_Record.png" style="width: 250px;height:200px" > -->
+                                            <h4>&nbsp;&nbsp;&nbsp;&nbsp; ---</h4>
+                                          </ng-template>
+                                      <!-- <p class="ng-binding">A great low rate with guaranteed price protection for 1 full year. Exclusive online offer available to new customers.</p> -->
+                                    </div>
+                                  </div>
+                            </div>
+                            <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7">
+                                <div class="plan-description">
+                                    <div class="plan-description__heading">Plan Information</div>
+                                    <div class="plan-description__content">
+                                      <ul><li *ngFor="let data of plan_information">{{data}}</li></ul>
+                                      
         
-                        <p *ngFor="let itemss of data?.plan_information">
-                          {{itemss}}
-                        </p>
+                                    </div>
+                                  </div>
+                            </div>
+                          </div>
+                          </div>
+        
+                       <div style="display:inline-block; text-align:center;">
+                         <a href="{{sign_up}}" target="_blank">
+                         <button class="btn btn-rose">Order Online</button></a>
+                         <div style="display:inline-block; padding:24px;"><span style="font-size:24px; font-weight:600px">OR CALL <b> {{phone}} </b> </span></div>
+                       </div>
                       </div>
                     </div>
-                    <div class="col-sm-6">
-                      <h3 style="padding:0 20px;background:#cecece">
-                        Cancellation Fee
-                        <!-- <b>{{data.cancelation_fee}}</b> -->
-                      </h3>
-        
-                      <h4 *ngIf="data.cancelation_fee;else no_data_temp2">
-                        &nbsp;&nbsp;&nbsp;&nbsp; {{data.cancelation_fee.split(' ',3000)[2]}}
-                      </h4>
-        
-                      <ng-template #no_data_temp2>
-        
-                        <!-- <img src="../../assets/img/no_Record.png" style="width: 250px;height:200px" > -->
-                        <h4>&nbsp;&nbsp;&nbsp;&nbsp; ---</h4>
-                      </ng-template>
-        
-                      <!-- <hr/> -->
-        
-                      <h3 style="padding:0 20px;background:#cecece">Plan Document</h3>
-                      <ul>
-                        <li style="color:transparent">
-                          <a style="color:rgba(0,0,0, 0.87)" href="{{data.terms_of_service}}" target="_blank">
-                            <i style="color:#25B7D3" class="material-icons">picture_as_pdf</i>
-                            Terms of service
-                          </a>
-                        </li>
-        
-                        <li style="color:transparent">
-                          <a style="color:rgba(0,0,0, 0.87)" href="{{data.fact_sheet}}" target="_blank">
-                            <i style="color:#25B7D3" class="material-icons">picture_as_pdf</i>
-                            Fact Sheet
-                          </a>
-                        </li>
-        
-                      </ul>
-                    </div>
-        
-                    <br>
-        
-                    <div class="col-sm-6 ">
-                      <h3 style="padding:0 20px;background:#cecece">Minimum Usage Fee</h3>
-                      <p *ngIf="data.minumum_usage_fee;else no_data_temp6">
-                        {{data.minumum_usage_fee}}
-                      </p>
-                      <ng-template #no_data_temp6>
-        
-                        <!-- <img src="../../assets/img/no_Record.png" style="width: 250px;height:200px" > -->
-                        <h4>&nbsp;&nbsp;&nbsp;&nbsp; -------------</h4>
-                      </ng-template>
-        
-                    </div>
-                    <div class="col-sm-6 ">
-                      <h3 style="padding:0 20px;background:#cecece">Special Terms</h3>
-                      <p *ngIf="data.specialterms;else no_data_temp2">
-                        {{data.specialterms}}
-                      </p>
-        
-                      <ng-template #no_data_temp2>
-        
-                        <!-- <img src="../../assets/img/no_Record.png" style="width: 250px;height:200px" > -->
-                        <h4>&nbsp;&nbsp;&nbsp;&nbsp; -------------</h4>
-                      </ng-template>
-                    </div>
-        
-                    <div class="col-sm-12">
-                      <!--<h4>Rates Detail:</h4>-->
-                      <div class="table">
-                        <!-- <table class="table-normal">
-                                    <thead>
-                                      <tr>
-                                        <td>
-                                          Average Monthly Use
-                                        </td>
-                                        <td>
-                                          Average Price per kWh
-                                        </td> -->
-                        <!-- </tr>
-                                    </thead>
-        
-                                    <tbody *ngFor="let items of data.price_rate">
-                                      <tr>
-        
-                                        <td>
-                                          <h2 style="font-size: 20px">{{ items.split(' ',3000)[0]}} KWH </h2>
-                                        </td>
-                                        <td>
-                                          <h2 style="font-size: 20px"> {{ items.split(' ',3000)[2]}} $</h2>
-                                        </td> -->
-                        <!-- <td><h4>$ 15.20</h4></td> -->
-                        <!-- </tr> -->
-                        <!-- <tr>
-              <td><h4>1000 kWh</h4></td>
-              <td><h4>$ 13.60</h4></td>
-              </tr> -->
-                        <!-- </tbody>
-                                  </table> -->
-        
-                      </div>
-                    </div>
-        
-                  </div>
-                </div>
+
         
                 <!-- <div class="col-sm-12 col-md-6">
               <h4>Get your year-pass savings:</h4>
@@ -563,22 +545,4 @@
         
         
         
-        <!-- <div class="mat-paginator-page-size">
-                  <div class="mat-paginator-page-size-label">{{_intl.itemsPerPageLabel}}</div>
-                  <mat-form-field *ngIf="_displayedPageSizeOptions.length > 1" class="mat-paginator-page-size-select">
-                    <mat-select [value]="pageSize" [aria-label]="_intl.itemsPerPageLabel" (change)="_changePageSize($event.value)">
-                      <mat-option *ngFor="let pageSizeOption of _displayedPageSizeOptions" [value]="pageSizeOption">{{pageSizeOption}}</mat-option>
-                    </mat-select>
-                  </mat-form-field>
-                  <div *ngIf="_displayedPageSizeOptions.length <= 1">{{pageSize}}</div>
-                </div>
-                <div class="mat-paginator-range-label">{{_intl.getRangeLabel(pageIndex, pageSize, length)}}</div>
-                <button mat-icon-button type="button" class="mat-paginator-navigation-previous"
-                  (click)="previousPage()" [attr.aria-label]="_intl.previousPageLabel" [matTooltip]="_intl.previousPageLabel" [matTooltipPosition]="'above'"
-                  [disabled]="!hasPreviousPage()">
-                  <div class="mat-paginator-increment"></div>
-                </button>
-                <button mat-icon-button type="button" class="mat-paginator-navigation-next" (click)="nextPage()" [attr.aria-label]="_intl.nextPageLabel"
-                  [matTooltip]="_intl.nextPageLabel" [matTooltipPosition]="'above'" [disabled]="!hasNextPage()">
-                  <div class="mat-paginator-decrement"></div>
-                </button> -->
+       
