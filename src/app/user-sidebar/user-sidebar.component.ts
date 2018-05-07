@@ -212,34 +212,34 @@ export class UserSidebarComponent implements OnInit, AfterContentInit {
 
   }
   company;
-  months1 = "36 Months";
-  months2 = '24 Months';
-  months3 = '18 Months';
-  months4 = '14 Months';
-  months5 = '12 Months';
-  months6 = '6 Months';
-  months7 = '5 Months';
- 
-  fetchmutimonth(months1, months2, months3, months4, months5, months6, months7) {
+  months1 ="36 Months";
+  months2 = "24 Months";
+  months3 = "18 Months";
+  months4 = "14 Months";
+  months5 = "12 Months";
+  months6 = "6 Months";
+  months7 = "5 Months";
+  
+  fetchmutimonth(months1,months2,months3,months4,months5,months6,months7) {
 
-    this.months1 = "36 Months"
-    this.months2 = "24 Months"
-    this.months3 = "18 Months"
-    this.months4 = "14 Months"
-    this.months5 = "12 Months"
-    this.months6 = "6 Months"
-    this.months7 = "5 Months"
-    console.log(this.months1)
+    months1 = "36 Months";
+    months2 = "24 Months";
+    months3 = "18 Months";
+    months4 = "14 Months";
+    months5 = "12 Months";
+    months6 = "6 Months";
+    months7 = "5 Months";
+    
     // this.route.params.subscribe(params => {
     //   let zip =  this.sg['product_zipcode'];
-    console.log(months1, months2, months3, months4, months5, months6, months7, 'tttttttttttt')
+    console.log(months1,months2,months3,months4,months5,months6,months7, 'tttttttttttt')
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     // this.http.get(Config.api + 'data_against_zipcode/' + this.zip_code + '', { headers: headers }),
     this.http.post(Config.api + 'multimonth/' + this.zip_code + '/', JSON.stringify({
       "plan_information1": months1,
       "plan_information2": months2,
-      "plan_information3": months3,
+      "plan_information3":months3,
       "plan_information4": months4,
       "plan_information5": months5,
       "plan_information6": months6,
@@ -290,14 +290,14 @@ export class UserSidebarComponent implements OnInit, AfterContentInit {
 
       });
   }
-  fixed = "Fixed Rate";
-  vari = "Variable (Changing Rate)";
+  fixed ="Fixed Rate";
+  vari ="Variable (Changing Rate)";
   index = "Indexed (Market Rate)";
   plantype(fixed, vari, index) {
 
-    this.fixed = "Fixed Rate";
-    this.vari = "Variable (Changing Rate)";
-    this.index = "Indexed (Market Rate)";
+   
+  //   this.vari= "Variable (Changing Rate)";
+  //  this.index = "Indexed (Market Rate)";
    console.log(fixed, vari, index,'tttttttttttt');
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');

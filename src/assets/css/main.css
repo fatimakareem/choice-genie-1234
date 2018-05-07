@@ -693,6 +693,9 @@ background: goldenrod;
 }
 /* .product-price > * {
 } */
+.custom.card{
+  margin: 14px 0px;
+}
 .products-area {
   font-size: 15px;
   line-height: 19px;
@@ -726,7 +729,9 @@ background: goldenrod;
       align-items: stretch;
       -webkit-flex-wrap: wrap;
       -ms-flex-wrap: wrap;
-      flex-wrap: wrap; }
+      flex-wrap: wrap;
+      padding:0px;
+    }
     .products-area .card .rate {
       border-right: 1px solid #ccc;
       border-left: 1px solid #ccc;
@@ -829,7 +834,7 @@ background: goldenrod;
 
 .page-title {
   margin: 0 0 50px;
-   /*text-align: center;*/
+   /* text-align: center; */
 }
   .page-title span {
     font-size: 30px;
@@ -3997,7 +4002,126 @@ footer p a:hover { color:#333; border-bottom-color: #333; }
   margin: 5px 5px;
   border-radius: 100%;
 }
+.plan-information__heading {
+  padding: 10px;
+  font-family: "Open Sans",sans-serif;
+  font-weight: 300;
+  color: #4f4f4f;
+  background: #ebebeb;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+.plan-information table {
+  width: 368px;
+}
+.plan-description__content p {
+  line-height: 20px;
+  text-align: left;
+}
+.plan-information__row {
+  border-bottom: 1px solid #ebebeb;
+}
+.plan-information__cell {
+  border-right: 1px solid #ebebeb;
+  width: 50%;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 5px 0;
+}
+.plan-information__cell--last {
+  border-right: none;
+  padding-left: 10px;
+}
+.plan-description__heading{
+  padding: 10px;
+  font-family: "Open Sans",sans-serif;
+  font-weight: 300;
+  color: #4f4f4f;
+  background: #ebebeb;
+  margin-bottom: 5px;
+  margin-top: 10px;
+}
+.modal-v2__main-heading {
+  color: #4f4f4f;
+  font-family: "Open Sans",sans-serif;
+  font-weight: 300;
+  font-size: 40px;
+  float: left;
+ 
+}
+.plan-information__cell > a{
+  color:#000;
+}
+.plan-information__cell > a:hover{
+  color:#cc0000;
+}
+.modal .modal-dialog{
+  margin-top: 60px !important;
+}
+.popupmodel {
+  /* margin-top: 25%; */
+  width: 1000px !important;
+  right: 40%;
+  background: #ebebeb !important;
+}
+.popup__heading{
+  border-bottom: 1px #4f4f4f solid;
+  overflow: hidden;
+  font-size: 40px
+}
+.popup-close-button {
+  width: 76px;
+  height: 76px;
+  border-radius: 38px;
+  background: #cc0000;
+  position: absolute;
+  top: -44px;
+  right: -44px;
+  cursor: pointer;
+  transition: all .1s ease-in-out;
+  color: #fff;
+  font-size: 40px;
+  font-family: "Open Sans",sans-serif;
+  font-weight: 700;
+  text-align: center;
+  line-height: 1.9;
+}
+.popup-close-button:hover{
+  background-color:#ff1b1b ;
+}
+.plan-details-button {
+  background-color: #cc0000;
+  text-align: center;
+  border-radius: 3px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 3px 0;
+  position: absolute;
+  text-transform: uppercase;
+  width: 80%;
+  cursor: pointer;
 
+}
+.card-content h3 {
+  margin: 0px !important;
+  padding: 0px !important;
+}
+.view-plan-details{
+  padding: 20px 0px;
+  font-size: 21px;
+  font-weight: 800;
+  cursor: pointer;
+  color: #000;
+  text-decoration: underline;
+  
+}
+.view-plan-details:hover{
+  color: #cc0000;
+}
+.plan-description__content >ul >li{
+  list-style: none;
+}
 
 
 @media screen and (max-width: 740px) {
@@ -4124,6 +4248,21 @@ section#boody{
     line-height: 19px;
     width: 98%;
     float: right;
+}
+.price-style {
+  display: block;
+  text-align: center;
+  font: bold 30px/24px Georgia, "Times New Roman", Times, serif;
+}
+.add-price {
+  width: 100%;
+  overflow: hidden;
+  padding: 18px 0 0;
+}
+.unit {
+  float: left;
+  width: 50%;
+  text-align: center;
 }
 /*
  * --------------------------------------------------

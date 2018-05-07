@@ -117,6 +117,47 @@ export class DashboardComponent implements OnInit, AfterViewInit {
         });
       
     }
+    catagoryId = '';
+    title='';
+    cancelation_fee='';
+             fact_sheet='';
+             phone='';
+             plan_information='';
+             price_rate='';
+             profile_logo='';
+             profileurl='';
+             rating_logo='';
+             sign_up='';
+             terms_of_service='';
+             price_1000_kwh='';
+             price_500_kwh='';
+             price_2000_kwh='';
+     //Event Binding of Delete Buttons
+     btnshowClick(id,val1,val2,val3,val4,val5,val6,val12,val13,val7,val8,val9,val10,val11) {
+         this.catagoryId = id;
+         console.log(this.plan_information)
+         this.title=val1;
+         this.sign_up=val2;
+         this.phone=val3;
+         this.terms_of_service=val4;
+         this.plan_information=val8;
+         this.fact_sheet=val5;
+         this.cancelation_fee=val6;
+         this.price_1000_kwh=val7;
+         this.price_500_kwh=val12;
+
+                  this.price_2000_kwh=val13;
+
+         this.rating_logo=val9;
+         this.profile_logo=val10;
+         this.profileurl=val11;
+        
+         
+        
+        
+         console.log(val1,val2,val3,val4,val5,val6,val7,val8,val9,val10,val11)
+         console.log('id : ' + this.catagoryId );
+     }
     data;
    // public title;
    
@@ -152,19 +193,19 @@ export class DashboardComponent implements OnInit, AfterViewInit {
      //   window.location.reload();
 
     }
-    catagoryId = '';
-   // list = 'Hello';
-   title;
-   cancelation_fee='';
-            fact_sheet='';
-            phone='';
-            plan_information='';
-            price_rate='';
-            profile_logo='';
-            profileurl='';
-            rating_logo='';
-            sign_up='';
-            terms_of_service='';
+//     catagoryId = '';
+//    // list = 'Hello';
+//    title;
+//    cancelation_fee='';
+//             fact_sheet='';
+//             phone='';
+//             plan_information='';
+//             price_rate='';
+//             profile_logo='';
+//             profileurl='';
+//             rating_logo='';
+//             sign_up='';
+//             terms_of_service='';
           
     //Event Binding of Delete Buttons
     btnEditClick(id,val1,val2,val3,val4,val5,val6,val7,val8,val9,val10,val11) {
