@@ -7,10 +7,10 @@ export class SuperupdateService {
 
   constructor(private http: Http) { }
    // item.id,item.zipcode,item.utilityarea,item.title,item.Phone,item.state,item.country,item.status,item.user
-
-editTodoList(id,updatedzipcode,updatedutilityarea,updatedtitle,updatedphone,updatedstate,updatedcountry,updatedstatus,updateduser) {
+//id,updatedrepname,updatedrepcertificateid,updatedcontactname,updatedcontactphone,updatedmarket,updatedstate,updateduser
+editTodoList(id,updatedrepname,updatedrepcertificateid,updatedcontactname,updatedcontactphone,updatedmarket,updatedstatus,updateduser) {
   console.log('Approve user');
-  console.log(" service object",id,updatedzipcode,updatedutilityarea,updatedtitle,updatedphone,updatedstate,updatedcountry,updatedstatus,updateduser)
+  console.log(" service object",id,updatedrepname,updatedrepcertificateid,updatedcontactname,updatedcontactphone,updatedmarket,updatedstatus,updateduser)
   const headers = new Headers();
   headers.append('Content-Type', 'application/json');
   // return this.http.put('http://192.168.30.193:9000/choice/dashboardstatus/'+ id , JSON.stringify({
@@ -18,14 +18,22 @@ editTodoList(id,updatedzipcode,updatedutilityarea,updatedtitle,updatedphone,upda
  // return this.http.put(Config.api+'dataup/'+ id , JSON.stringify({
    
    
-    "zipcode": updatedzipcode,
-    "utilityarea": updatedutilityarea,
-    "title":updatedtitle,   
-    "Phone": updatedphone,
-    "state": updatedstate, 
-    "country": updatedcountry,
-    "status": updatedstatus,
-    "user":updateduser
+
+  "REP_name": updatedrepname,
+  "REP_certificate_id": updatedrepcertificateid,
+  "Contact_Name": updatedcontactname,
+  "Contact_Phone": updatedcontactphone,
+  "Market": updatedmarket,
+  "status": updatedstatus,
+  "user": updateduser
+    // "zipcode": updatedzipcode,
+    // "utilityarea": updatedutilityarea,
+    // "title":updatedtitle,   
+    // "Phone": updatedphone,
+    // "state": updatedstate, 
+    // "country": updatedcountry,
+    // "status": updatedstatus,
+
  
     
   }), 
