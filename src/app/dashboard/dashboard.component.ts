@@ -200,7 +200,7 @@ export class DashboardComponent implements OnInit, AfterViewInit {
 //             fact_sheet='';
 //             phone='';
 //             plan_information='';
-//             price_rate='';
+            // price_rate='';
 //             profile_logo='';
 //             profileurl='';
 //             rating_logo='';
@@ -208,21 +208,21 @@ export class DashboardComponent implements OnInit, AfterViewInit {
 //             terms_of_service='';
           
     //Event Binding of Delete Buttons
-    btnEditClick(id,val1,val2,val3,val4,val5,val6,val7,val8,val9,val10,val11) {
+    btnEditClick(id,tit,sup,call,tservice,fsheet,cfee,prate,pinformation,rlogo,plogo,purl) {
         this.catagoryId = id;
-        this.title=val1;
-        this.cancelation_fee=val2;
-        this.fact_sheet=val3;
-        this.phone=val4;
-        this.plan_information=val5;
-        this.price_rate=val6;
-        this.profile_logo=val7;
-        this.profileurl=val8;
-        this.rating_logo=val9;
-        this.sign_up=val10;
-        this.terms_of_service=val11;
+        this.title=tit;
+        this.cancelation_fee=cfee;
+        this.fact_sheet=fsheet;
+        this.phone=call;
+        this.plan_information=pinformation;
+        this.price_rate=prate;
+        this.profile_logo=plogo;
+        this.profileurl=purl;
+        this.rating_logo=rlogo;
+        this.sign_up=sup;
+        this.terms_of_service=tservice;
        
-        console.log(val1,val2,val3,val4,val5,val6,val7,val8,val9,val10,val11)
+        console.log(id,tit,sup,call,tservice,fsheet,cfee,prate,pinformation,rlogo,plogo,purl)
         console.log('id : ' + this.catagoryId );
     }
 

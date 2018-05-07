@@ -60,17 +60,38 @@
         
                         <div class="modal fade" id="myModal3" role="dialog">
                           <div class="modal-dialog">
+                             
                             <!-- Modal content-->
-                            <div class="modal-content" style="margin-top:25%; width:119%;">
-                              <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                <h4 class="modal-title" style="text-align: center;
-                                color: red;
-                                font-size: 30px;">Confirmation Alert</h4>
-                              </div>
+                            <div class="modal-content popupmodel">
+                              <!-- <div class="modal-header">
+                               
+                               
+                              </div> -->
                               <div class="modal-body" style="font-size: 18px;
-                                text-align: center;">
-                                <p>Do you want to Delete this Task?</p>
+                              background: #ffffff;
+                              padding: 20px;
+                              margin: 15px;
+                              position: relative;">
+                              <div class="popup-close-button"  data-dismiss="modal">X</div>
+                              <div class="row">
+                              <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 " style="border-bottom: 1px #4f4f4f solid;">
+                                  <p class=" modal-v2__main-heading"> {{data.title}}</p>
+                                 
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3" style="border-bottom: 1px #4f4f4f solid;">
+                                    <div class="popup-image">
+                                        <a href="{{data.profileurl}}" target="_blank" class="display-b margin-top">
+                                      <img src="{{data.profile_logo}}" /></a>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h4 class="modal-title" style="text-align: center;
+                                    color: red;
+                                    font-size: 30px;">Confirmation Alert</h4>
+                                   <p>Do you want to Delete this Product?</p>
+                                  </div>
+                               
+                              </div>
                               </div>
                               <div class="modal-footer">
                                 <button type="button" class="btn btn-rose" (click)="deleteClick(dataId)" data-dismiss="modal" style="
@@ -108,7 +129,7 @@
                                 <div class="unit">price_2000_kwh <span class="price-style"> {{data.price_2000_kwh}} </span></div>
                                
                             </div>
-                           <a > <label class="view-plan-details" (click)="btnshowClick(data.id,data.title,data.sign_up,data.phone,data.terms_of_service,data.fact_sheet,data.cancelation_fee,data.price_1000_kwh,data.price_500_kwh,data.price_2000_kwh,data.plan_information,data.rating_logo,data.profile_logo,data.profileurl)"
+                           <a> <label class="view-plan-details" (click)="btnshowClick(data.id,data.title,data.sign_up,data.phone,data.terms_of_service,data.fact_sheet,data.cancelation_fee,data.price_1000_kwh,data.price_500_kwh,data.price_2000_kwh,data.plan_information,data.rating_logo,data.profile_logo,data.profileurl)"
                             data-toggle="modal" data-target="#myModal4">Plan Information</label></a>
                           
                         
@@ -158,8 +179,8 @@
         
         
                                  
-                                    <mat-form-field hidden=true>
-                                      <input matInput   placeholder="Title" readonly name="data.title"value="{{data.title}}"   required  #updatedtitle/>
+                                    <mat-form-field >
+                                      <input matInput   placeholder="Title" readonly name="title"value="{{title}}"   required  #updatedtitle/>
         
                                     </mat-form-field>
                                   </div>
@@ -170,32 +191,8 @@
         
         
                                     <!-- <input class="form-control" type="text" > -->
-                                    <mat-form-field hidden=true>
-                                      <input matInput placeholder="Profile url" readonly name="data.profileurl"value="{{data.profileurl}}" #updatedprofileurl/>
-        
-                                    </mat-form-field>
-                                  </div>
-                                </div>
-                                <div class="col-md-6 col-sm-6">
-                                  <div class="input-group">
-        
-        
-        
-                                    <!-- <input class="form-control" type="text" > -->
-                                    <mat-form-field hidden=true>
-                                      <input matInput placeholder="Profile Logo" readonly name="data.profile_logo"value="{{data.profile_logo}}" #updatedprofile_logo />
-        
-                                    </mat-form-field>
-                                  </div>
-                                </div>
-                                <div class="col-md-6 col-sm-6">
-                                  <div class="input-group">
-        
-        
-        
-                                    <!-- <input class="form-control" type="text" > -->
-                                    <mat-form-field hidden=true>
-                                      <input matInput placeholder="Rating_logo" readonly name="data.rating_logo"value="{{data.rating_logo}}"  #updatedrating_logo />
+                                    <mat-form-field >
+                                      <input matInput placeholder="Profile url" readonly name="profileurl"value="{{profileurl}}" #updatedprofileurl/>
         
                                     </mat-form-field>
                                   </div>
@@ -207,7 +204,19 @@
         
                                     <!-- <input class="form-control" type="text" > -->
                                     <mat-form-field>
-                                      <input matInput placeholder="Plan_Information" name="data.plan_information"  value="{{data.plan_information}}"#updatedplan_information />
+                                      <input matInput placeholder="Profile Logo" readonly name="profile_logo"value="{{profile_logo}}" #updatedprofile_logo />
+        
+                                    </mat-form-field>
+                                  </div>
+                                </div>
+                                <div class="col-md-6 col-sm-6">
+                                  <div class="input-group">
+        
+        
+        
+                                    <!-- <input class="form-control" type="text" > -->
+                                    <mat-form-field >
+                                      <input matInput placeholder="Rating_logo" readonly name="rating_logo"value="{{rating_logo}}"  #updatedrating_logo />
         
                                     </mat-form-field>
                                   </div>
@@ -219,7 +228,19 @@
         
                                     <!-- <input class="form-control" type="text" > -->
                                     <mat-form-field>
-                                      <input matInput placeholder="Price Rate" name="data.price_rate" value="{{data.price_rate}}" #updatedprice_rate/>
+                                      <input matInput placeholder="Plan_Information" name="plan_information"  value="{{plan_information}}"#updatedplan_information />
+        
+                                    </mat-form-field>
+                                  </div>
+                                </div>
+                                <div class="col-md-6 col-sm-6">
+                                  <div class="input-group">
+        
+        
+        
+                                    <!-- <input class="form-control" type="text" > -->
+                                    <mat-form-field>
+                                      <input matInput placeholder="Price Rate" name="price_rate" value="{{price_rate}}" #updatedprice_rate/>
         
                                     </mat-form-field>
                                   </div>
@@ -229,8 +250,8 @@
         
         
                                     <!-- <input class="form-control" type="text" > -->
-                                    <mat-form-field hidden=true>
-                                      <input matInput placeholder="Cancelation Fee" readonly name="data.cancelation_fee" value="{{data.cancelation_fee}}"  #updatedcancelation_fee/>
+                                    <mat-form-field >
+                                      <input matInput placeholder="Cancelation Fee" readonly name="cancelation_fee" value="{{cancelation_fee}}"  #updatedcancelation_fee/>
         
                                     </mat-form-field>
                                   </div>
@@ -240,8 +261,8 @@
         
         
                                     <!-- <input class="form-control" type="text" > -->
-                                    <mat-form-field hidden=true>
-                                      <input matInput placeholder="Fact Sheet" readonly name="data.fact_sheet"value="{{data.fact_sheet}}"  #updatedfact_sheet/>
+                                    <mat-form-field>
+                                      <input matInput placeholder="Fact Sheet" readonly name="fact_sheet"value="{{fact_sheet}}"  #updatedfact_sheet/>
         
                                     </mat-form-field>
                                   </div>
@@ -251,8 +272,8 @@
         
         
                                     <!-- <input class="form-control" type="text" > -->
-                                    <mat-form-field hidden=true>
-                                      <input matInput placeholder="Term of Service" readonly name="data.terms_of_service"  value="{{data.terms_of_service}}" #updatedterms_of_service />
+                                    <mat-form-field >
+                                      <input matInput placeholder="Term of Service" readonly name="terms_of_service"  value="{{terms_of_service}}" #updatedterms_of_service />
         
                                     </mat-form-field>
                                   </div>
@@ -262,8 +283,8 @@
         
         
                                     <!-- <input class="form-control" type="text" > -->
-                                    <mat-form-field hidden=true>
-                                      <input matInput placeholder="Phone No" name="data.phone" readonly value="{{data.phone}}"#updatedphone/>
+                                    <mat-form-field >
+                                      <input matInput placeholder="Phone No" name="phone" readonly value="{{phone}}"#updatedphone/>
         
                                     </mat-form-field>
                                   </div>
@@ -273,8 +294,8 @@
         
         
                                     <!-- <input class="form-control" type="text" > -->
-                                    <mat-form-field hidden=true>
-                                      <input matInput placeholder="Sign Up" name="data.sign_up" readonly value="{{data.sign_up}}"  #updatedsign_up />
+                                    <mat-form-field >
+                                      <input matInput placeholder="Sign Up" name="sign_up" readonly value="{{sign_up}}"  #updatedsign_up />
         
                                     </mat-form-field>
                                   </div>
@@ -319,22 +340,22 @@
                       <br>
                       <div class="col-md-4 col-sm-3 col-xs-7 term">
                         <div  class="text-center">
-                            <i style="
+                            <button style="
                             font-size: 29px;
                             color: red;
                            "
                              class="fa fa-trash-o" type="submit" value="Delete" (click)="btnDeleteClick(data.id)" data-toggle="modal" data-target="#myModal3"
                           >
-                          </i>
+                        </button>
         
-                          <i style="padding:center;
+                          <button style="padding:center;
                           font-size: 29px;
                           color: red;
                           "
-                             class="fa fa-edit" type="submit" value="Edit" type="submit"  (click)="btnEditClick(data.id,data.title,data.sign_up,data.phone,data.terms_of_service.value,data.fact_sheet,data.cancelation_fee,data.price_rate,data.plan_information,data.rating_logo,data.profile_logo,data.profileurl)" data-toggle="modal"
+                             class="fa fa-edit" type="submit" value="Edit" type="submit"  (click)="btnEditClick(data.id,data.title,data.sign_up,data.phone,data.terms_of_service,data.fact_sheet,data.cancelation_fee,data.price_rate,data.plan_information,data.rating_logo,data.profile_logo,data.profileurl)" data-toggle="modal"
                              data-target="#myModal2">
         
-                          </i>
+                          </button>
                         </div>
                         <h3 class="text-center">
                           <b> Call now</b>
@@ -456,37 +477,7 @@
                     </div>
 
         
-                <!-- <div class="col-sm-12 col-md-6">
-              <h4>Get your year-pass savings:</h4>
-              <ul>
-              <li>Keep your bills mild when the weather gets wild, and get a low rate in between.*</li>
-              <li>In summer and winter months, see the Season Pass Savings right on your bill.
-        
-              </li>
-              </ul>
-              <h5>Plan Documents</h5>
-              <ul class="list-normal">
-              <li>
-              <a href="{{data.terms_of_service}}" target="_blank">
-              <i class="material-icons">picture_as_pdf</i>
-              Terms of service
-              </a>
-              </li>
-              <li>
-              <a href="#">
-              <i class="material-icons">picture_as_pdf</i>
-              Your rights as a Customer
-              </a>
-              </li>
-              <li>
-              <a href="{{data.fact_sheet}}" target="_blank">
-              <i class="material-icons">picture_as_pdf</i>
-              Fact Sheet
-              </a>
-              </li>
-              </ul>
-              </div> -->
-        
+              
         
               </div>
             </div>
