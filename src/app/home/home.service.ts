@@ -10,7 +10,9 @@ export class HomeService {
 
   searchProducts(id,page) {
     console.log(id)
+    // return this.http.get('http://192.168.30.52:9000/choice/zipcodedata/' + id +'?page='+page).map((response: Response) => response.json());
+  
    return this.http.get(Config.api+'zipcodedata/' + id +'?page='+page).map((response: Response) => response.json());
-   // return this.http.get('http://192.168.30.52:9000/choice/zipcodedata/'+id+'?page='+page).map((response: Response) => response.json());
+  //  return this.http.get('http://192.168.30.193:9000/choice/zipcodedata/'+id+'?page='+page).map((response: Response) => response.json());
   }
 }
