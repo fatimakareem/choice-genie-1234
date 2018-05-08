@@ -48,7 +48,7 @@ data:any=[];
     
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    this.https.get('http://192.168.30.41:9000/comprofile/' + this.username + '/', { headers: headers })
+    this.https.get('http://127.0.0.1:8000/comprofile/' + this.username + '/', { headers: headers })
     
     .subscribe(Res => {
     this.data=Res.json();
@@ -68,7 +68,7 @@ data:any=[];
               showConfirmButton: false,
               timer: 1500
             })
-         
+            this.profile();
 
       }, error => {
       });

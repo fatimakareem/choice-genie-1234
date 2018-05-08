@@ -8,6 +8,8 @@ import { FormsModule, ReactiveFormsModule, NgForm, FormBuilder, FormGroup, Valid
 import { CommonModule } from '@angular/common';
 import {MatFormFieldModule} from '@angular/material/form-field';
 // import { SweetAlertService } from 'ng2-sweetalert2';
+import { ProfileService } from './com-profile/profile.service';
+
 import {
   MatAutocompleteModule,
   MatButtonModule,
@@ -216,6 +218,7 @@ export class MaterialModule {}
     ResidentialService,
     EditService,
     DeleteService,
+    ProfileService,
     ActiveService,
     ChangepasswordService,
     DeletecontactService,

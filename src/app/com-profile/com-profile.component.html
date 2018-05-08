@@ -1,143 +1,143 @@
-<main id="main" role="main">
-    <div class="main-content signup-main">
-        <div class="container">
-            <!-- <h3 class="text-center">Tell Us About <strong>Yourself</strong></h3> -->
-            <!-- <hr> -->
-            <div class="alert alert-rose alert-with-icon" data-notify="container">
-                <i class="material-icons" data-notify="icon">notifications</i>
-                <span data-notify="message">The information below is intended for internal use only and will not be shared with other site members. The
-                    information gathered will help us serve you better.
+<div class="container-fluid">
 
-                </span>
-            </div>
-            <div class="col-sm-12">
-                <div class="card">
-                    <form class="example-form">
+<div class="container" style="padding-left:150px">
+    <!-- <h3 class="text-center">Tell Us About <strong>Yourself</strong></h3> -->
+    <!-- <hr> -->
+    <div class="vander-signup-heading" data-notify="container">
+        <i class="material-icons" data-notify="icon">notifications</i>
+        <span data-notify="message">The information below is intended for internal use only and will not be shared with other site members. The information
+            gathered will help us serve you better.
 
-                    </form>
-                    <form [formGroup]="register">
-                        <div class="card-header card-header-icon" data-background-color="rose">
-                            <i class="material-icons">mail_outline</i>
-                        </div>
+        </span>
+    </div>
+    <div class="col-sm-12">
+        <div class="card">
+            <form class="example-form">
 
-
-                        <div class="card-content">
-                            <h4 class="card-title">Edit Profile</h4>
-                            <div class="row">
-                                    <div class="col-sm-6">
-
-                                            <div>
-                                                <mat-form-field>
-                                                    <input matInput placeholder="ID" type="text" value="{{data.id}}" #updatedid>
-        
-        
-                                                </mat-form-field>
-        
-                                            </div>
-                                        </div>
-                                <div class="col-sm-6">
-
-                                    <div>
-                                        <mat-form-field>
-                                            <input matInput placeholder="REP Name" type="text" value="{{data.REP_name}}" #updatedREP>
-
-
-                                        </mat-form-field>
-
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
-
-                                        <div>
-                                            <mat-form-field>
-                                                <input matInput placeholder="REP_certificate_id" type="text" value="{{data.REP_certificate_id}}" #updatedREPid>
-    
-    
-                                            </mat-form-field>
-    
-                                        </div>
-                                    </div>
-    
-                                <div class="col-sm-6">
-                                    <div>
-
-                                        <mat-form-field>
-                                            <input matInput placeholder="Contact Name" type="text" value="{{data.Contact_Name}}" #updatedName>
-
-
-                                        </mat-form-field>
-
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
-                                        <div>
-    
-                                            <mat-form-field>
-                                                <input matInput placeholder="Contact Phone" type="text" value="{{data.Contact_Phone}}" #updatedphone>
-    
-    
-                                            </mat-form-field>
-    
-                                        </div>
-                                    </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col-sm-6">
-                                    <div>
-
-                                        <mat-form-field>
-                                            <input matInput placeholder="Market" type="text" value="{{data.Market}}" #updatedmarket>
-
-                                        </mat-form-field>
-
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
-                                        <div>
-    
-                                            <mat-form-field>
-                                                <input matInput placeholder="Status" type="text" value="{{data.status}}" #updatedstatus>
-    
-                                            </mat-form-field>
-    
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-6">
-                                            <div>
-        
-                                                <mat-form-field>
-                                                    <input matInput placeholder="User" type="text" value="{{data.user}}" #updateduser>
-        
-                                                </mat-form-field>
-        
-                                            </div>
-                                        </div>
-    
-    
-
-                               
-                            </div>
-                           
-                          
-
-                           
-
-
-                            <div class="form-footer text-right">
-                                
-                                <div class="form-group">
-                                    <button type="submit" style="width:100%; border-radius:50px" class="btn btn-lrg btn-rose btn-fill btn-wd" (click)="onRegister(updatedid.value,updatedREP.value,updatedREPid.value,updatedName.value,updatedphone.value,updatedmarket.value,updatedstatus.value,updateduser.value)">Update</button>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
-
+            </form>
+            <form>
+                <div class="card-header card-header-icon" data-background-color="rose">
+                    <i class="material-icons">mail_outline</i>
                 </div>
-            </div>
+
+
+                <div class="card-content">
+                    <h4 class="card-title">Edit Profile</h4>
+                    <div class="row">
+                        <div class="col-sm-6">
+
+                            <div>
+                                <mat-form-field>
+                                    <input matInput placeholder="ID" type="text" value="{{data.id}}" name="data.id" #updatedid>
+
+
+                                </mat-form-field>
+
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+
+                            <div>
+                                <mat-form-field>
+                                    <input matInput placeholder="REP Name" type="text" value="{{data.REP_name}}" #updatedREP>
+
+
+                                </mat-form-field>
+
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+
+                            <div>
+                                <mat-form-field>
+                                    <input matInput placeholder="REP_certificate_id" type="text" value="{{data.REP_certificate_id}}" #updatedREPid>
+
+
+                                </mat-form-field>
+
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <div>
+
+                                <mat-form-field>
+                                    <input matInput placeholder="Contact Name" type="text" value="{{data.Contact_Name}}" #updatedName>
+
+
+                                </mat-form-field>
+
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div>
+
+                                <mat-form-field>
+                                    <input matInput placeholder="Contact Phone" type="text" value="{{data.Contact_Phone}}" #updatedphone>
+
+
+                                </mat-form-field>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div>
+
+                                <mat-form-field>
+                                    <input matInput placeholder="Market" type="text" value="{{data.Market}}" #updatedmarket>
+
+                                </mat-form-field>
+
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div>
+
+                                <mat-form-field>
+                                    <input matInput placeholder="Status" type="text" value="{{data.status}}" #updatedstatus>
+
+                                </mat-form-field>
+
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div>
+
+                                <mat-form-field>
+                                    <input matInput placeholder="User" type="text" value="{{data.user}}" #updateduser>
+
+                                </mat-form-field>
+
+                            </div>
+                        </div>
+
+
+
+
+                    </div>
+
+
+
+
+
+
+                    <div class="form-footer text-right">
+
+                        <div class="form-group">
+                            <button type="submit" style="width:100%; border-radius:50px" class="btn btn-lrg btn-rose btn-fill btn-wd" (click)="onRegister(updatedid.value,updatedREP.value,updatedREPid.value,updatedName.value,updatedphone.value,updatedmarket.value,updatedstatus.value,updateduser.value)">Update</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+
         </div>
     </div>
-    <!-- <div class="container" style="padding-left: 7in">
+</div>
+</div>
+<!-- <div class="container" style="padding-left: 7in">
 
         <div class="row">
 
