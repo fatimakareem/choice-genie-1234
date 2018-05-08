@@ -50,7 +50,6 @@ export class UserloginComponent implements OnInit {
   public username;
   password;
   hide=true;
-  public usersdashboard;
  
 
   constructor(public router: Router, private element: ElementRef, private http: Http, private route: ActivatedRoute,
@@ -93,7 +92,7 @@ export class UserloginComponent implements OnInit {
              // this.router.navigate(['/dashboard/'+ this.username]);
               this.router.navigate(['/consumerdashboard']);
               localStorage.setItem('username', this.username);
-               
+
             },
             error => {
               console.log(error);
