@@ -20,8 +20,8 @@ export class ConsumeradminComponent implements OnInit {
  url: string;
  location: Location;
 
- @ViewChild('consumersidebar') sidebar: any;
- @ViewChild(UsernavbarComponent) navbar: UsernavbarComponent;
+ @ViewChild('sidebar') sidebar: any;
+ @ViewChild(NavbarComponent) navbar: NavbarComponent;
  constructor( private router: Router, location: Location ) {
    this.location = location;
  }
