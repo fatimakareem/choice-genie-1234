@@ -200,6 +200,10 @@ export class SidebarComponent implements OnInit {
         
         } 
     private Sub: Subscription;
+    // pro(){
+    //     this.router.navigate(['/userprofile/']);
+    //     // this.router.navigate(['/company-profile/']);
+    //   }
     ngOnInit() {
        
        

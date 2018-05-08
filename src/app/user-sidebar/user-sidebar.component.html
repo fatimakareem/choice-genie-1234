@@ -23,17 +23,7 @@
         </div>
 
       </li>
-      <!-- <li>
-  <h5>Items per Page</h5>
-  <mat-form-field >
-  <mat-select  (ngModelChange)="check($event)" [(ngModel)]="items"  >
-  <mat-option value="10" style="font-size: 20px">10</mat-option>
-  <mat-option value="20" style="font-size: 20px">20 </mat-option>
-  <mat-option value="30" style="font-size: 20px">30 </mat-option>
-  </mat-select>
-  </mat-form-field>
   
-  </li> -->
       <li>
         <h5>Estimated Usage&nbsp;&nbsp;&nbsp;
           <i class="fa fa-info-circle" aria-hidden="true" title="If you choose a plan with a long contract period, you may be subject to an early cancellation fee if you decide to change plans prior to the expiration of the contract period.  Plans that are shorter give you more flexibility to switch, but they only lock in your set rate for a short amount of time.Month-to-Month plans are usually Variable or Indexed offers."></i>
@@ -49,76 +39,31 @@
         </mat-form-field>
       </li>
       <li>
+         
           <h5>Price/kWh
               <i class="fa fa-info-circle" aria-hidden="true" title="Price per kilowatt hour: A kilowatt hour is equal to 1 kilowatt (1kW) of power used for 1 hour (1h) of time."></i>
 
           </h5>
-         
+          <div class="text-center">
+              <b>
           <input  placeholder="price_from" type="text" required name="price_from" [(ngModel)]="price_from"  style="font-size: 20px" >
-         
+              </b>
+        </div>
           <span><b>to</b></span>
-        
+          <div class="text-center">
+              <b>
           <input  placeholder="price_to"  type="text" required name="price_to" [(ngModel)]="price_to" style="font-size: 20px"  >
-         
+              </b>        
+        </div>
       </li>
 
-      <!-- <li>
-  <h5>Renewable Energy</h5>
-  <mat-form-field >
-  <mat-select (ngModelChange)="check($event)" [(ngModel)]="renewable"  >
-  <mat-option value="100">100% RENEWABLE</mat-option>
-                    <mat-option value="75">76% To 99%</mat-option>
-                    <mat-option value="50">51% To 75%</mat-option>
-                    <mat-option value="25">26% To 50%</mat-option>
-                    <mat-option value="5">0% To 25%</mat-option>
-                    <mat-option value="" selected="selected">N/A</mat-option>
-  </mat-select>
-  </mat-form-field>
-  
-  </li> -->
-
-
-
-
-
-
-
-
-      <!-- <li>
-  <h5> Price/kWh </h5>
-  <div class="form-group label-floating">
-  <label class="control-label">Min Price</label>
-  <input   tabindex="2" maxlength="5"  type="text" class="form-control" [(ngModel)]="min"  name="min" >
-  <span class="to"><b>To</b></span>
-  
-  
-  
-  
-  </div>
-  </li>
-  <li>
-  <div class="form-group label-floating">
-  <label class="control-label">Max Price</label>
-  <input   tabindex="3" maxlength="5"  type="text" class="form-control" [(ngModel)]="max"  name="max">
-  </div>
-  </li> -->
-
-
-      <!-- <li> -->
-      <!-- <h5>Custom Usage&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-info-circle" aria-hidden="true" title=""></i></h5> -->
-      <!-- <div class="form-group label-floating"> -->
-      <!-- <label class="control-label">Add Custom Usage</label> -->
-      <!-- <input type="text" class="form-control"[(ngModel)]="Custom_Usage" name="Custom_Usage"> -->
-      <!-- </div> -->
-      <!-- </li> -->
+    
       <li>
 
         <h5> Contract Length</h5>
 
 
-        <!-- ngRepeat: term in filters.terms -->
-
-        <!-- end ngRepeat: term in filters.terms -->
+    
         <div class="checkbox">
           <label>
             <input type="checkbox"  name="months1" [(ngModel)]=months1 (ngModelChange)="check($event)">36 Months
@@ -145,7 +90,7 @@
           </label>
 
         </div>
-        <!-- end ngRepeat: term in filters.terms -->
+    
         <div class="checkbox">
           <label>
             <input type="checkbox" name="months5" [(ngModel)]=months5 (ngModelChange)="check($event)">12 Months
@@ -168,43 +113,7 @@
 
         </div>
       </li>
-      <!--  /.filter-category__heading -->
-
-      <!-- <h5>Contract Length &nbsp;&nbsp;&nbsp;
-          <i class="fa fa-info-circle" aria-hidden="true" title="If you choose a plan with a long contract period, you may be subject to an early cancellation fee if you decide to change plans prior to the expiration of the contract period.Plans that are shorter give you more flexibility to switch, but they only lock in your set rate for a short amount of time.Month-to-Month plans are usually Variable or Indexed offers.."></i>
-        </h5> -->
-      <!-- <mat-form-field> -->
-      <!-- <mat-select placeholder="In Months" (ngModelChange)="check($event)" [(ngModel)]="selectedvalue"  >
-          <mat-option value="5 Months" style="font-size: 20px">5 Months</mat-option>
-          <mat-option value="6 Months" style="font-size: 20px">6 Months</mat-option>
-          <mat-option value="12 Months" style="font-size: 20px">12 Months</mat-option>
-          <mat-option value="18 Months" style="font-size: 20px">18 Months</mat-option>
-          <mat-option value="24 Months" style="font-size: 20px">24 Months</mat-option>
-          <mat-option value="36 Months" style="font-size: 20px">36 Months</mat-option> -->
-      <!-- <mat-option *ngFor="let x of usage" [value]="x.value">
-  {{ x.viewValue }}
-  </mat-option> -->
-      <!-- </mat-select> -->
-      <!-- </mat-form-field> -->
-
-      <!-- <li>
-  <h5>Company Name
-  
-  </h5>
- 
-  <mat-form-field>
-  <mat-select placeholder="Company Title" (ngModelChange)="check($event)" required [(ngModel)]="title"name="title">
-  
-  <mat-option *ngFor="let t of title" [value]="t.title">
-  {{t.title}}
-  
-  </mat-option>
-  
-  </mat-select>
- 
-  </mat-form-field>
-  
-  </li> -->
+    
       <li>
         <h5>Pricing and Billing &nbsp;
           <i class="fa fa-info-circle" aria-hidden="true" title="This filter allows you to view plans that do not have any recurring fees or credits included in the average per kWh price. If you choose to view plans with fees/credits included in the average per kWh price, you need to be aware that the average per kWh price may vary significantly from your actual billed price per kWh. Please review the fact sheets for these plans carefully before enrolling in a product."></i>
