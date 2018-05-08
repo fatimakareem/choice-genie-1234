@@ -545,6 +545,79 @@ export class UserSidebarComponent implements OnInit, AfterContentInit {
 
   }
 
+  pricerate(price,price_from, price_to) {
+    console.log(price)
+if(price=500){
+  console.log(price_from, price_to,'tttttttttttt');
+  let headers = new Headers();
+  headers.append('Content-Type', 'application/json');
+  this.http.post('http://192.168.30.193:9000/choice/pricerange/' + this.zip_code, JSON.stringify({
+  
+   "price_500_kwh_min_price": price_from,
+   "price_500_kwh_max_price":price_to,
+   
+        }
+  ), { headers: headers })
 
+    .subscribe(Res => {
+      console.log(Res)
+      this.sg['products'] = Res.json()['Results'];
+      this.data.changeProducts(this.sg['products']);
+      for (let prod of this.sg['products']) {
+        prod["plan_information"] = prod["plan_information"].split(',,', 3000);
+        prod["price_rate"] = prod["price_rate"].split('..', 3000);
+      }
+
+    });
+
+}
+else if (price=1000){
+    //   this.vari= "Variable (Changing Rate)";
+    //  this.index = "Indexed (Market Rate)";
+     console.log(price_from, price_to,'tttttttttttt');
+      let headers = new Headers();
+      headers.append('Content-Type', 'application/json');
+      this.http.post('http://192.168.30.193:9000/choice/pricerange/' + this.zip_code, JSON.stringify({
+        "price_1000_kwh_min_price": price_from,
+        "price_1000_kwh_max_price": price_to,
+      
+            }
+      ), { headers: headers })
+  
+        .subscribe(Res => {
+          console.log(Res)
+          this.sg['products'] = Res.json()['Results'];
+          this.data.changeProducts(this.sg['products']);
+          for (let prod of this.sg['products']) {
+            prod["plan_information"] = prod["plan_information"].split(',,', 3000);
+            prod["price_rate"] = prod["price_rate"].split('..', 3000);
+          }
+  
+        });
+    }
+    else if (price=2000){
+      console.log(price_from, price_to,'tttttttttttt');
+      let headers = new Headers();
+      headers.append('Content-Type', 'application/json');
+      this.http.post('http://192.168.30.193:9000/choice/pricerange/' + this.zip_code, JSON.stringify({
+       
+       "price_2000_kwh_min_price":price_from,
+       "price_2000_kwh_max_price":price_to
+            }
+      ), { headers: headers })
+  
+        .subscribe(Res => {
+          console.log(Res)
+          this.sg['products'] = Res.json()['Results'];
+          this.data.changeProducts(this.sg['products']);
+          for (let prod of this.sg['products']) {
+            prod["plan_information"] = prod["plan_information"].split(',,', 3000);
+            prod["price_rate"] = prod["price_rate"].split('..', 3000);
+          }
+  
+        });
+    };
+
+  }
 
 }

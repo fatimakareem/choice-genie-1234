@@ -129,7 +129,7 @@
             </ul>
           </div>
           </li>
-          <li class="vanders"*ngIf="!check_login()">
+          <li class="vanders" *ngIf="!check_login()">
             <a>
               <i class="material-icons">
                 lock_open
@@ -170,13 +170,18 @@
                 <i class="fa fa-apple"></i>
               </a>
             </li>
-            <li class="vanders"*ngIf="check_login()">
-                <a (click)="move()">
-                  <i class="material-icons">account_circle</i> My Profile
+            <li class="vanders" *ngIf="check_login()">
+                <a>
+                  <i class="material-icons">account_circle</i>My ChoiceGenie
                 </a>
                 <div  class="drop-downs">
                   <ul class="nav-vanders  why-choiegenie-sublist">
                       <li>
+                          <a (click)="move()">
+                            <i class="material-icons">unarchive</i> My Profile
+                          </a>
+                        </li>
+                        <li>
                           <a>
                             <i class="material-icons">unarchive</i> <input style="font-size: 20px; margin-left: 5px;" type="text" [value]="username" readonly>
                           </a>

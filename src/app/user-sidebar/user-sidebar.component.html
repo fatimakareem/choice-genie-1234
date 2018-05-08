@@ -3,7 +3,7 @@
     <ul>
       <li>
         <div class="text-center">
-          <button type="button" class="btn btn-rose" (click)=" renewableenergy(energy);notime();showtime();companydata();plantype(fixed,vari,index);nopaidplan();prepaidplan();nullplan(); fullplan();fetchmutimonth(months1,months2,months3,months4,months5,months6,months7)">
+          <button type="button" class="btn btn-rose" (click)="pricerate(price,price_from, price_to);renewableenergy(energy);notime();showtime();companydata();plantype(fixed,vari,index);nopaidplan();prepaidplan();nullplan(); fullplan();fetchmutimonth(months1,months2,months3,months4,months5,months6,months7)">
             Search
             <i class="material-icons" title="Use these filters to set your preferences. Get rid of the plans you don’t want to see and only show those that fit your needs.">search</i>
           </button>
@@ -40,13 +40,26 @@
         </h5>
         <mat-form-field>
           <!-- <label class="control-label"style="font-size: 18px">KWh</label> -->
-          <mat-select (ngModelChange)="check($event)" [(ngModel)]="eUsage">
+          <mat-select placeholder="Kwh" (ngModelChange)="check($event)" (ngModelChange)="check($event)" required [(ngModel)]="price" name="price">
 
             <mat-option value="500" style="font-size: 20px">500 kWh</mat-option>
             <mat-option value="1000" style="font-size: 20px">1000 kWh</mat-option>
             <mat-option value="2000" style="font-size: 20px">2000 kWh</mat-option>
           </mat-select>
         </mat-form-field>
+      </li>
+      <li>
+          <h5>Price/kWh
+              <i class="fa fa-info-circle" aria-hidden="true" title="Price per kilowatt hour: A kilowatt hour is equal to 1 kilowatt (1kW) of power used for 1 hour (1h) of time."></i>
+
+          </h5>
+         
+          <input  placeholder="price_from" type="text" required name="price_from" [(ngModel)]="price_from"  style="font-size: 20px" >
+         
+          <span><b>to</b></span>
+        
+          <input  placeholder="price_to"  type="text" required name="price_to" [(ngModel)]="price_to" style="font-size: 20px"  >
+         
       </li>
 
       <!-- <li>
@@ -275,7 +288,8 @@
         </div>
       </li>
       <li>
-        <mat-select  placeholder="Renewable" (ngModelChange)="check($event)" required [(ngModel)]="energy"name="energy">
+        <h5>Renewable</h5>
+        <mat-select placeholder="Renewable" (ngModelChange)="check($event)" required [(ngModel)]="energy"name="energy">
           <mat-option value="100">100% RENEWABLE</mat-option>
           <mat-option value="76,99">76% To 99%</mat-option>
           <mat-option value="51,75">51% To 75%</mat-option>
