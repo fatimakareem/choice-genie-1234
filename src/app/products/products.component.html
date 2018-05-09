@@ -23,7 +23,7 @@
       </mat-paginator> -->
 
 
-      <div class="products-area-products" *ngIf="prod_loaded;else no_data_templ">
+      <div class="products-area-products" *ngIf="prod_loaded">
         <div class="custom card" *ngFor="let data of sg['products']; let i = index">
           <div class="row">
 

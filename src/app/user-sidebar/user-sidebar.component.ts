@@ -30,8 +30,10 @@ export class UserSidebarComponent implements OnInit, AfterContentInit {
   localVar;
   renewable;
   model;
-
-
+price;
+energy;
+price_from;
+price_to;
 
   // min;
   // max;

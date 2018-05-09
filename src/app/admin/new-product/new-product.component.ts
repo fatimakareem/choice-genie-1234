@@ -31,8 +31,24 @@ export class NewProductComponent implements OnInit {
   public username;
   flag = true;
   date = new FormControl(new Date());
-
-
+  zipcode;
+  utilityarea;
+  profileurl;
+  profile_logo;
+  rating_logo;
+  plan_information;
+  price_rate;
+  cancelation_fee;
+  terms_of_service;
+  phone;
+  sign_up;
+  minimum_usage_fee;
+  renewable;
+  fact_sheet;
+  spectialterms;
+  price_1000_kwh;
+  price_500_kwh;
+  price_2000_kwh
   emailexist: boolean = false;
   isLinear = true;
   secondFormGroup: FormGroup;
