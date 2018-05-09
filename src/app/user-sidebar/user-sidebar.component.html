@@ -23,14 +23,31 @@
         </div>
 
       </li>
-  
+      <li>
+        <div class="select-page-size-dropdown select-f-sackers-heavy select-area" style="width: 123px;">
+          <span class="left"></span>
+          <h5>Product per Page</h5>
+          <a class="select-opener"></a>
+          <mat-form-field>
+          <mat-select placeholder="10 PER PAGE" selected="10"  (change)="fetchitem(items)"  required [(ngModel)]="items"
+          name="items" >
+            <mat-option value="10" selected="true">10 PER PAGE</mat-option>
+            <mat-option value="20">20 PER PAGE</mat-option>
+            <mat-option value="40">40 PER PAGE</mat-option>
+            <mat-option value="556">SEE ALL</mat-option>
+          </mat-select>
+        </mat-form-field>
+        </div>
+      </li>
+
       <li>
         <h5>Estimated Usage&nbsp;&nbsp;&nbsp;
           <i class="fa fa-info-circle" aria-hidden="true" title="If you choose a plan with a long contract period, you may be subject to an early cancellation fee if you decide to change plans prior to the expiration of the contract period.  Plans that are shorter give you more flexibility to switch, but they only lock in your set rate for a short amount of time.Month-to-Month plans are usually Variable or Indexed offers."></i>
         </h5>
         <mat-form-field>
           <!-- <label class="control-label"style="font-size: 18px">KWh</label> -->
-          <mat-select placeholder="Kwh" (ngModelChange)="check($event)" (ngModelChange)="check($event)" required [(ngModel)]="price" name="price">
+          <mat-select placeholder="Kwh" (ngModelChange)="check($event)" required [(ngModel)]="price"
+            name="price">
 
             <mat-option value="500" style="font-size: 20px">500 kWh</mat-option>
             <mat-option value="1000" style="font-size: 20px">1000 kWh</mat-option>
@@ -39,34 +56,36 @@
         </mat-form-field>
       </li>
       <li>
-         
-          <h5>Price/kWh
-              <i class="fa fa-info-circle" aria-hidden="true" title="Price per kilowatt hour: A kilowatt hour is equal to 1 kilowatt (1kW) of power used for 1 hour (1h) of time."></i>
 
-          </h5>
-          <div class="text-center">
-              <b>
-          <input  placeholder="price_from" type="text" required name="price_from" [(ngModel)]="price_from"  style="font-size: 20px" >
-              </b>
+        <h5>Price/kWh
+          <i class="fa fa-info-circle" aria-hidden="true" title="Price per kilowatt hour: A kilowatt hour is equal to 1 kilowatt (1kW) of power used for 1 hour (1h) of time."></i>
+
+        </h5>
+        <div class="text-center">
+          <b>
+            <input placeholder="price_from" type="text" required name="price_from" [(ngModel)]="price_from" style="font-size: 20px">
+          </b>
         </div>
-          <span><b>to</b></span>
-          <div class="text-center">
-              <b>
-          <input  placeholder="price_to"  type="text" required name="price_to" [(ngModel)]="price_to" style="font-size: 20px"  >
-              </b>        
+        <span>
+          <b>to</b>
+        </span>
+        <div class="text-center">
+          <b>
+            <input placeholder="price_to" type="text" required name="price_to" [(ngModel)]="price_to" style="font-size: 20px">
+          </b>
         </div>
       </li>
 
-    
+
       <li>
 
         <h5> Contract Length</h5>
 
 
-    
+
         <div class="checkbox">
           <label>
-            <input type="checkbox"  name="months1" [(ngModel)]=months1 (ngModelChange)="check($event)">36 Months
+            <input type="checkbox" name="months1" [(ngModel)]=months1 (ngModelChange)="check($event)">36 Months
           </label>
 
         </div>
@@ -86,11 +105,11 @@
         <!-- end ngRepeat: term in filters.terms -->
         <div class="checkbox">
           <label>
-            <input type="checkbox"  name="months4" [(ngModel)]=months4 (ngModelChange)="check($event)">14 Months
+            <input type="checkbox" name="months4" [(ngModel)]=months4 (ngModelChange)="check($event)">14 Months
           </label>
 
         </div>
-    
+
         <div class="checkbox">
           <label>
             <input type="checkbox" name="months5" [(ngModel)]=months5 (ngModelChange)="check($event)">12 Months
@@ -107,13 +126,13 @@
         <!-- end ngRepeat: term in filters.terms -->
         <div class="checkbox">
           <label>
-            <input type="checkbox"  name="months7" [(ngModel)]=months7 (ngModelChange)="check($event)">4 Months
+            <input type="checkbox" name="months7" [(ngModel)]=months7 (ngModelChange)="check($event)">5 Months
           </label>
 
 
         </div>
       </li>
-    
+
       <li>
         <h5>Pricing and Billing &nbsp;
           <i class="fa fa-info-circle" aria-hidden="true" title="This filter allows you to view plans that do not have any recurring fees or credits included in the average per kWh price. If you choose to view plans with fees/credits included in the average per kWh price, you need to be aware that the average per kWh price may vary significantly from your actual billed price per kWh. Please review the fact sheets for these plans carefully before enrolling in a product."></i>
@@ -129,32 +148,32 @@
           </label>
         </div>
       </li>
-      <li> 
-        
+      <li>
+
         <h5>Plan Type &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           <i class="fa fa-info-circle" aria-hidden="true" title="Prepaid plans provide service on a “pay-as-you-go” basis. These plans require close monitoring or accurately estimating your monthly electric use to avoid disconnection.."></i>
         </h5>
-        
+
         <div class="checkbox">
           <label>
-             
-            <input  type="checkbox" name="fixed" [(ngModel)]=fixed (ngModelChange)="check($event)"> Fixed Rate
-          
+
+            <input type="checkbox" name="fixed" [(ngModel)]=fixed (ngModelChange)="check($event)"> Fixed Rate
+
           </label>
         </div>
         <div class="checkbox">
           <label>
-            <input type="checkbox"  name="vari (Changing Rate)" [(ngModel)]=vari (ngModelChange)="check($event)"> Variable
+            <input type="checkbox" name="vari (Changing Rate)" [(ngModel)]=vari (ngModelChange)="check($event)"> Variable
             <small>(changing rate)</small>
           </label>
         </div>
         <div class="checkbox">
           <label>
-            <input  type="checkbox" name="index (Market Rate)" [(ngModel)]=index (ngModelChange)="check($event)"> Indexed
+            <input type="checkbox" name="index (Market Rate)" [(ngModel)]=index (ngModelChange)="check($event)"> Indexed
             <small>(market rate)</small>
           </label>
         </div>
-      
+
       </li>
       <li>
         <h5>Prepaid Plans &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -182,7 +201,7 @@
         </h5>
         <div class="radio">
           <label>
-            <input type="radio" name="timeofuseplan" checked="true" (ngModelChange)="check($event)" > Show All Plans
+            <input type="radio" name="timeofuseplan" checked="true" (ngModelChange)="check($event)"> Show All Plans
           </label>
         </div>
         <div class="radio">
@@ -198,7 +217,7 @@
       </li>
       <li>
         <h5>Renewable</h5>
-        <mat-select placeholder="Renewable" (ngModelChange)="check($event)" required [(ngModel)]="energy"name="energy">
+        <mat-select placeholder="Renewable" (ngModelChange)="check($event)" required [(ngModel)]="energy" name="energy">
           <mat-option value="100">100% RENEWABLE</mat-option>
           <mat-option value="76,99">76% To 99%</mat-option>
           <mat-option value="51,75">51% To 75%</mat-option>
@@ -208,21 +227,21 @@
         </mat-select>
       </li>
       <li>
-         <!-- <a  title="" data-original-title="Energy Companies:  Also called retail electric providers or REPs. They sell and bill electricity and provide customer service.">Info</a> -->
-          <h5>Electric Companies</h5>
-          <!-- <div class="select-f-sackers-heavy select-area" style="width: 160px;"> -->
-          <!-- <span class="left"></span> -->
-          <mat-form-field>
-                  
-            <mat-select  placeholder="Company" (ngModelChange)="check($event)" required [(ngModel)]="name"name="name" >
+        <!-- <a  title="" data-original-title="Energy Companies:  Also called retail electric providers or REPs. They sell and bill electricity and provide customer service.">Info</a> -->
+        <h5>Electric Companies</h5>
+        <!-- <div class="select-f-sackers-heavy select-area" style="width: 160px;"> -->
+        <!-- <span class="left"></span> -->
+        <mat-form-field>
 
-              <mat-option *ngFor="let data of title" [value]="data.title.split(' ',3000)[1]" >
-                {{data.title}}
-                
-              </mat-option>
-           
-            </mat-select>
-          </mat-form-field>
+          <mat-select placeholder="Company" (ngModelChange)="check($event)" required [(ngModel)]="name" name="name">
+
+            <mat-option *ngFor="let data of title" [value]="data.title.split(' ',3000)[1]">
+              {{data.title}}
+
+            </mat-option>
+
+          </mat-select>
+        </mat-form-field>
         <!-- <mat-form-field>
         
           <mat-select tabindex="28" id="companies" name="companies" selected="selected"(ngModelChange)="check($event)" required [(ngModel)]="title"name="title">
@@ -231,8 +250,8 @@
                     {{s.title}}
 
                   </mat-option> -->
-               
-            <!-- <mat-option value="">All</mat-option>
+
+        <!-- <mat-option value="">All</mat-option>
             <mat-option value="4CHANGE ENERGY">4CHANGE ENERGY</mat-option>
             <mat-option value="AMBIT ENERGY">AMBIT ENERGY</mat-option>
             <mat-option value="AMIGO ENERGY">AMIGO ENERGY</mat-option>
@@ -286,13 +305,14 @@
             <mat-option value="Viridian Energy">Viridian Energy</mat-option>
             <mat-option value="WINDROSE ENERGY">WINDROSE ENERGY</mat-option>
             <mat-option value="YEP">YEP</mat-option> -->
-          <!-- </mat-select>
+        <!-- </mat-select>
         </mat-form-field> -->
       </li>
 
       <li>
         <div class="text-center">
-          <button type="button" class="btn btn-rose" (click)="companydata(); plantype(fixed,vari,index);nopaidplan();prepaidplan();nullplan(); fullplan();fetchmutimonth(months1,months2,months3,months4,months5,months6,months7)"> Search
+          <button type="button" class="btn btn-rose" (click)="companydata(); plantype(fixed,vari,index);nopaidplan();prepaidplan();nullplan(); fullplan();fetchmutimonth(months1,months2,months3,months4,months5,months6,months7)">
+          Search
             <i class="material-icons" title="Use these filters to set your preferences. Get rid of the plans you don’t want to see and only show those that fit your needs.">search</i>
           </button>
         </div>
