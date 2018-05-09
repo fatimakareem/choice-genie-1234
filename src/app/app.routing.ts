@@ -73,10 +73,10 @@ export const AppRoutes: Routes = [
             path: 'Faqs',
             loadChildren: './faqs/faqs.module#FaqsModule'
         },
-        {
-            path: 'ChangePassword',
-            loadChildren: './changepassword/changepassword.module#ChangePasswordModule'
-        },
+        // {
+        //     path: 'ChangePassword',
+        //     loadChildren: './changepassword/changepassword.module#ChangePasswordModule'
+        // },
         // {
         //     path: 'changepassword',
         //     loadChildren: './change-password/change-password.module#ChangePasswordModule'
@@ -238,6 +238,10 @@ export const AppRoutes: Routes = [
             {
                 path: 'company-profile',
                 loadChildren: './com-profile/com-profile.module#ComProfileModule'
+            },
+            {
+                path: 'ChangePassword',
+                loadChildren: './changepassword/changepassword.module#ChangePasswordModule'
             },
             
             {

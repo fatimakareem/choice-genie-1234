@@ -145,6 +145,11 @@ export class ConsumersidebarComponent implements OnInit {
   };
   public username;
   private Sub: Subscription;
+  logout(){
+    localStorage.clear();
+    this.router.navigate(['/']);
+  //  console.log("logout"); 
+  }
   ngOnInit() {
      
          

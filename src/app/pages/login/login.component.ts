@@ -184,10 +184,10 @@ Email;
     if (this.login.valid) {
       // console.log(this.login.value);
       // console.log('form submitted');
-      this._serv.login_authenticate(this.login.value.username,this.login.value.password,this.login.value.title).subscribe(
+      this._serv.login_authenticate(this.login.value.username,this.login.value.password).subscribe(
         data => {
       //  console.log("user",data);
-         this._serv.login(this.login.value.username,this.login.value.password,this.login.value.title).subscribe(
+         this._serv.login(this.login.value.username,this.login.value.password).subscribe(
            data => {
     // console.log(data);
     swal({
@@ -201,8 +201,11 @@ Email;
     //this._nav.navigate([url]);
     // this._nav.navigate(['/dashboard/'+ this.title]);
     // localStorage.setItem('username', this.title);
-    this._nav.navigate(['/dashboard/'+ this.title]);
-    localStorage.setItem('username', this.title);
+    // this._nav.navigate(['/dashboard/'+ this.title]);
+    // localStorage.setItem('username', this.title);
+    this._nav.navigate(['/dashboard/'+ this.username]);
+    localStorage.setItem('username', this.username);
+    
     
            },
       error => {
@@ -304,7 +307,7 @@ Email;
       username: ['', Validators.compose([Validators.required])],
       // We can use more than one validator per field. If we want to use more than one validator we have to wrap our array of validators with a Validators.compose function. Here we are using a required, minimum length and maximum length validator.
       password: ['', Validators.compose([Validators.required])],
-      title: ['', Validators.compose([Validators.required])],
+      // title: ['', Validators.compose([Validators.required])],
      Email:['', Validators.compose([])],
    });
     var navbar: HTMLElement = this.element.nativeElement;
