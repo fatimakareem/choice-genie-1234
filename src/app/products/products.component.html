@@ -29,7 +29,7 @@
 
             <div class="col-sm-12" style="padding:0px;">
               <div class="card-header card-header-text position-abs" data-background-color="rose">
-
+                <!-- {{data.id}}  -->
                 <h4 class="card-title">{{data.title}} </h4>
 
               </div>
@@ -62,12 +62,12 @@
                   <!--class="product-price"-->
                   <div style="text-align:center; padding-top:10px;">
                       price_500_kwh 
-                      <b class="price-style"> {{data.price_500_kwh}}</b>
+                      <b class="price-style"> {{data.price_500_kwh}}¢</b>
                     
                     </div>
                     <div class="add-price grid-element">
-                        <div class="unit">price_1000_kwh <span class="price-style"> {{data.price_1000_kwh}} </span></div>
-                        <div class="unit">price_2000_kwh <span class="price-style"> {{data.price_2000_kwh}} </span></div>
+                        <div class="unit">price_1000_kwh <span class="price-style"> {{data.price_1000_kwh}}¢ </span></div>
+                        <div class="unit">price_2000_kwh <span class="price-style"> {{data.price_2000_kwh}}¢ </span></div>
                        
                     </div>
                    <a > <label class="view-plan-details" (click)="btnEditClick(data.id,data.title,data.sign_up,data.phone,data.terms_of_service,data.fact_sheet,data.cancelation_fee,data.price_1000_kwh,data.price_500_kwh,data.price_2000_kwh,data.plan_information,data.rating_logo,data.profile_logo,data.profileurl)"
@@ -138,15 +138,15 @@
                         <table>
                             <tbody><tr class="plan-information__row">
                               <td class="plan-information__cell">price_1000_kwh</td>
-                              <td class="plan-information__cell plan-information__cell--last ">{{price_1000_kwh}}</td>
+                              <td class="plan-information__cell plan-information__cell--last ">{{price_1000_kwh}}¢</td>
                             </tr>
                             <tr class="plan-information__row">
                               <td class="plan-information__cell">price_500_kwh</td>
-                              <td class="plan-information__cell plan-information__cell--last ">{{price_500_kwh}}</td>
+                              <td class="plan-information__cell plan-information__cell--last ">{{price_500_kwh}}¢</td>
                             </tr>
                             <tr class="plan-information__row">
                               <td class="plan-information__cell">price_2000_kwh</td>
-                              <td class="plan-information__cell plan-information__cell--last ">{{price_2000_kwh}}</td>
+                              <td class="plan-information__cell plan-information__cell--last ">{{price_2000_kwh}}¢</td>
                             </tr>
                             </tbody>
                           </table>
@@ -201,7 +201,7 @@
 
                <div style="display:inline-block; text-align:center;">
                  <a href="{{sign_up}}" target="_blank">
-                 <button class="btn btn-rose">Order Online</button></a>
+                 <button class="btn btn-rose">Signup Now</button></a>
                  <div style="display:inline-block; padding:24px;"><span style="font-size:24px; font-weight:600px">OR CALL <b> {{phone}} </b> </span></div>
                </div>
               </div>
