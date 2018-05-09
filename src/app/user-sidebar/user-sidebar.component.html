@@ -23,22 +23,7 @@
         </div>
 
       </li>
-      <li>
-        <div class="select-page-size-dropdown select-f-sackers-heavy select-area" style="width: 123px;">
-          <span class="left"></span>
-          <h5>Product per Page</h5>
-          <a class="select-opener"></a>
-          <mat-form-field>
-          <mat-select placeholder="10 PER PAGE" selected="10"  (change)="fetchitem(items)"  required [(ngModel)]="items"
-          name="items" >
-            <mat-option value="10" selected="true">10 PER PAGE</mat-option>
-            <mat-option value="20">20 PER PAGE</mat-option>
-            <mat-option value="40">40 PER PAGE</mat-option>
-            <mat-option value="556">SEE ALL</mat-option>
-          </mat-select>
-        </mat-form-field>
-        </div>
-      </li>
+
 
       <li>
         <h5>Estimated Usage&nbsp;&nbsp;&nbsp;
@@ -63,7 +48,9 @@
         </h5>
         <div class="text-center">
           <b>
-            <input placeholder="price_from" type="text" required name="price_from" [(ngModel)]="price_from" style="font-size: 20px">
+            <input  type="text" class="form-control" placeholder="price_from" type="text" required name="price_from" [(ngModel)]="price_from" style="font-size: 20px">
+         
+            <!-- <input type="text" class="form-control" [(ngModel)]="zip_code" name="zipcode" style="font-size: 20px"> -->
           </b>
         </div>
         <span>
@@ -308,7 +295,22 @@
         <!-- </mat-select>
         </mat-form-field> -->
       </li>
-
+      <li>
+        <div class="select-page-size-dropdown select-f-sackers-heavy select-area" style="width: 123px;">
+          <span class="left"></span>
+          <h5>Product per Page</h5>
+          <a class="select-opener"></a>
+          <mat-form-field>
+          <mat-select placeholder="10 PER PAGE" selected="10"  (change)="fetchitem(items)"  required [(ngModel)]="items"
+          name="items" >
+            <mat-option value="10" selected="true">10 PER PAGE</mat-option>
+            <mat-option value="20">20 PER PAGE</mat-option>
+            <mat-option value="40">40 PER PAGE</mat-option>
+            <mat-option value="556">SEE ALL</mat-option>
+          </mat-select>
+        </mat-form-field>
+        </div>
+      </li>
       <li>
         <div class="text-center">
           <button type="button" class="btn btn-rose" (click)="companydata(); plantype(fixed,vari,index);nopaidplan();prepaidplan();nullplan(); fullplan();fetchmutimonth(months1,months2,months3,months4,months5,months6,months7)">
