@@ -9,8 +9,8 @@ export class HeaderComponent implements OnInit {
 public username;
   constructor( private router: Router) { }
   check_login() {
-    if (localStorage.getItem('username')) {
-      let local = localStorage.getItem('username');
+    if (localStorage.getItem('user')) {
+      let local = localStorage.getItem('user');
       return true;
     }
       else {
@@ -20,7 +20,7 @@ public username;
     this.router.navigate(['/dashboard/'+this.username]);
   }
   ngOnInit() {
-    this.username = localStorage.getItem('username')
+    this.username = localStorage.getItem('user')
     console.log(this.username);
   }
   logout(){

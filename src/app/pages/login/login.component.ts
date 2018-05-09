@@ -179,6 +179,7 @@ Email;
   //     this.validateAllFormFields(this.login);
   //   }
   // }
+  result:any=[];
   onLogin() {
     // console.log(this.login);
     if (this.login.valid) {
@@ -189,6 +190,8 @@ Email;
       //  console.log("user",data);
          this._serv.login(this.login.value.username,this.login.value.password).subscribe(
            data => {
+            this.result=data;
+            console.log(this.result)
     // console.log(data);
     swal({
         type: 'success',
@@ -196,6 +199,7 @@ Email;
         showConfirmButton: false,
         timer: 1500
         });
+     
     // this.toastr.success('Successfully!', 'Logged in',{toastLife: 5000});   
     //let url = 'find-bids';
     //this._nav.navigate([url]);
@@ -204,7 +208,7 @@ Email;
     // this._nav.navigate(['/dashboard/'+ this.title]);
     // localStorage.setItem('username', this.title);
     this._nav.navigate(['/dashboard/'+ this.username]);
-    localStorage.setItem('username', this.username);
+    // localStorage.setItem('username', this.username);
     
     
            },

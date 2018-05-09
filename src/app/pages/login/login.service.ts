@@ -13,7 +13,9 @@ import { Config } from '../../Config';
 export class LoginService {
 
     constructor(private _http5: Http) { }
-
+hel:any=[];
+tit:any=[];
+word;
     loaded: boolean = false;
     login(username: string, password: string) {
         const headers = new Headers();
@@ -24,6 +26,16 @@ export class LoginService {
         return this._http5.post( 'http://192.168.30.193:9000/choice/loginCompany/',
             JSON.stringify({ username: username, password: password }), { headers: headers })
             .map((response: Response) => {
+                console.log(response.json()['Results']);
+this.hel=response.json()['Results'];
+console.log(this.hel);
+this.tit=this.hel[0];
+console.log(this.tit);
+this.word=this.tit.title;
+console.log(this.word);
+localStorage.setItem('user', this.word);
+                localStorage.setItem('username', this.word.split(' ',3000)[1]);
+             
                 let user = { username: username, token: response.json().token };
 
                 if (user && user.token) {

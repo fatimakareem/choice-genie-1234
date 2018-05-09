@@ -204,10 +204,11 @@ export class SidebarComponent implements OnInit {
     //     this.router.navigate(['/userprofile/']);
     //     // this.router.navigate(['/company-profile/']);
     //   }
+    public user;
     ngOnInit() {
        
        
-     
+        this.user = localStorage.getItem('user')
         this.username = localStorage.getItem('username')
         console.log(this.username)
        this. fetchProducts()
