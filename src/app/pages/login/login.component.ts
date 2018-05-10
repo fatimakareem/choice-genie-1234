@@ -208,7 +208,7 @@ Email;
     // this._nav.navigate(['/dashboard/'+ this.title]);
     // localStorage.setItem('username', this.title);
     this._nav.navigate(['/dashboard/'+ this.username]);
-    // localStorage.setItem('username', this.username);
+    localStorage.setItem('change', this.username);
     
     
            },

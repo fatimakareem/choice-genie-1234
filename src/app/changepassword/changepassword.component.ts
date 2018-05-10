@@ -14,7 +14,7 @@ public username;
   pass1='';
   pass2='';
   ngOnInit() {
-    this.username = localStorage.getItem('username')
+    this.username = localStorage.getItem('change')
     console.log(this.username)
   }
   editClick(oldpass,pass1,pass2) {

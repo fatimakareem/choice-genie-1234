@@ -81,6 +81,14 @@ export const AppRoutes: Routes = [
         //     path: 'changepassword',
         //     loadChildren: './change-password/change-password.module#ChangePasswordModule'
         // },
+        {
+            path: 'blog',
+            loadChildren: './blog/blog.module#BlogModule'
+        },
+        {
+            path: 'blog1',
+            loadChildren: './blog1/blog1.module#Blog1Module'
+        },
        
         {
             path: 'Why-Choice-Genie',
