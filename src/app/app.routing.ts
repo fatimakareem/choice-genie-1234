@@ -88,8 +88,49 @@ export const AppRoutes: Routes = [
         {
             path: 'blog1',
             loadChildren: './blog1/blog1.module#Blog1Module'
+            // loadChildren: './pages/login/login.module#LoginModule'
         },
-       
+        {
+            path: 'blog21',
+            loadChildren: './Blogchoicegenie/blog21/blog21.module#Blog21Module'
+        },
+        {
+            path: 'blog22',
+            loadChildren: './Blogchoicegenie/blog22/blog22.module#Blog22Module'
+        },
+        {
+            path: 'blog23',
+            loadChildren: './Blogchoicegenie/blog23/blog23.module#Blog23Module'
+        },
+        {
+            path: 'blog24',
+            loadChildren: './Blogchoicegenie/blog24/blog24.module#Blog24Module'
+        },
+         
+        {
+            path: 'blog25',
+            loadChildren: './Blogchoicegenie/blog25/blog25.module#Blog25Module'
+        },
+        {
+            path: 'blog26',
+            loadChildren: './Blogchoicegenie/blog26/blog26.module#Blog26Module'
+        },
+        {
+            path: 'blog27',
+            loadChildren: './Blogchoicegenie/blog27/blog27.module#Blog27Module'
+        },
+        //{
+         //   path: 'blog28',
+        //     loadChildren: './Blogchoicegenie/blog28/blog28.module#Blog27Module'
+        // },
+        // {
+        //     path: 'blog29',
+        //     loadChildren: './Blogchoicegenie/blog29/blog29.module#Blog27Module'
+        // },
+        // {
+        //     path: 'blog30',
+        //     loadChildren: './Blogchoicegenie/blog30/blog30.module#Blog27Module'
+        // },
         {
             path: 'Why-Choice-Genie',
             loadChildren: './why-chocie-genie/whychoicegenie.module#WhyModule'

@@ -113,7 +113,8 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 import { UsernavbarComponent } from './shared/usernavbar/usernavbar.component';
 import { UserNavbarModule } from './shared/usernavbar/usernavbar.module';
 import { UpdateService } from './user-profile/update.service';
-import { MindBogglingComponent } from './bolg/mind-boggling/mind-boggling.component';
+ 
+ 
 
 
 @NgModule({
@@ -152,7 +153,7 @@ import { MindBogglingComponent } from './bolg/mind-boggling/mind-boggling.compon
     FormsModule,
     MatFormFieldModule
   ],
-  declarations: [MindBogglingComponent],
+  declarations: [ ],
 
 })
 export class MaterialModule {}
