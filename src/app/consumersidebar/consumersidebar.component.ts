@@ -150,13 +150,15 @@ export class ConsumersidebarComponent implements OnInit {
     this.router.navigate(['/']);
   //  console.log("logout"); 
   }
+  public user;
   ngOnInit() {
      
          
           //  alert("junaid");
           // this.data.currentProducts.subscribe(products => this.sg['products'] = products)
           // this.data.currentProducts
-         
+          this.user = localStorage.getItem('username')
+        // this.username = localStorage.getItem('username')
       this.menuItems = ROUTES.filter(menuItem => menuItem);
       
                   console.log(this.menuItems);
