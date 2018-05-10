@@ -89,7 +89,22 @@ export const AppRoutes: Routes = [
             path: 'blog1',
             loadChildren: './blog1/blog1.module#Blog1Module'
         },
-       
+        {
+            path: 'blog2',
+            loadChildren: './blog2/blog2.module#Blog2Module'
+        },
+        {
+            path: 'blog3',
+            loadChildren: './blog3/blog3.module#Blog3Module'
+        },
+        {
+            path: 'blog4',
+            loadChildren: './blog4/blog4.module#Blog4Module'
+        },
+        {
+            path: 'blog5',
+            loadChildren: './blog5/blog5.module#Blog5Module'
+        },
         {
             path: 'Why-Choice-Genie',
             loadChildren: './why-chocie-genie/whychoicegenie.module#WhyModule'
