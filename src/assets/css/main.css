@@ -4126,6 +4126,22 @@ footer p a:hover { color:#333; border-bottom-color: #333; }
   width: 33% !important;
   cursor: pointer;
 }
+.pric-range-box input {
+  width: 65px;
+  border-radius: 4px;
+  background: #fff !important;
+  height: 30px;
+  padding: 0 !important;
+  text-align: right;
+  height: 34px !important;
+  width:65px  !important;
+  font-family: FontAwesome, 'Roboto';
+  font-size: 26px;
+  border: solid 1px #bfbcbc !important;
+
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
 
 @media screen and (max-width: 740px) {
 
