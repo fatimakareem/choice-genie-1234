@@ -2,18 +2,18 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 // import { MdModule } from '../md/md.module';
-import { MaterialModule } from '../app.module';
+import { MaterialModule } from '../../app.module';
 
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatDatepickerModule} from "@angular/material";
 import { HttpClientModule } from '@angular/common/http';
-import { Blog4Routes } from './blog4.routing';
-import { Blog4Component } from './blog4.component';
+import { Blog1Routes } from './blog1.routing';
+import { Blog1Component } from './blog1.component';
 
 @NgModule({
     imports: [
         CommonModule,
-        RouterModule.forChild(Blog4Routes),
+        RouterModule.forChild(Blog1Routes),
         // MdModule,
         MaterialModule,
         FormsModule,
@@ -22,11 +22,11 @@ import { Blog4Component } from './blog4.component';
         HttpClientModule
     ],
     declarations: [
-        Blog4Component
+        Blog1Component
     ],
     providers: [
 
     ]
 })
 
-export class Blog4Module {}
+export class Blog1Module {}
