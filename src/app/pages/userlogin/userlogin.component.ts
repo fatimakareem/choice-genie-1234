@@ -83,11 +83,12 @@ export class UserloginComponent implements OnInit {
           this._serv.login(this.login.value.username, this.login.value.password).subscribe(
             data => {
               console.log(data);
-              swal(
-                'Successfully! Logged in',
-                '',
-                'success'
-              )
+              swal({
+                type: 'success',
+                title: 'Successfully Logged in',
+                showConfirmButton: false,
+                timer: 1500
+                });
               // this.toastr.success('Successfully!', 'Logged in',{toastLife: 5000});
              // this.router.navigate(['/dashboard/'+ this.username]);
               this.router.navigate(['/consumerdashboard']);
