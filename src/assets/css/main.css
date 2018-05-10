@@ -4122,7 +4122,10 @@ footer p a:hover { color:#333; border-bottom-color: #333; }
 .plan-description__content >ul >li{
   list-style: none;
 }
-
+.blog li{
+  width: 33% !important;
+  cursor: pointer;
+}
 
 @media screen and (max-width: 740px) {
 
