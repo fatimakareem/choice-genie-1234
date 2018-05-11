@@ -48,7 +48,6 @@ export class UserloginComponent implements OnInit {
   private sidebarVisible: boolean;
   private nativeElement: Node;
   public username;
-  public userdashboard;
   password;
   hide=true;
  
@@ -94,7 +93,6 @@ export class UserloginComponent implements OnInit {
              // this.router.navigate(['/dashboard/'+ this.username]);
               this.router.navigate(['/consumerdashboard']);
               localStorage.setItem('username', this.username);
-              localStorage.setItem('userdashboard', this.username);
 
             },
             error => {
@@ -119,7 +117,18 @@ export class UserloginComponent implements OnInit {
           )
           }
         );
-   
+       // },
+        // error => {
+        //   // console.log("eer",error);
+
+        //   //  this.toastr.error(error.status, null, {toastLife: 5000});
+        //   swal(
+        //     'Error',
+        //     'User Does not exist',
+        //     'error'
+        //   )
+        // }
+      //);
     }
     else {
       this.validateAllFormFields(this.login);
