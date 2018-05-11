@@ -41,7 +41,7 @@ export class NavbarComponent implements OnInit {
     private toggleButton: any;
     private sidebarVisible: boolean;
     public username :any;
-
+    public userdashboard :any;
     @ViewChild('app-navbar-cmp') button: any;
     constructor(private route: ActivatedRoute, private https: HttpClient, 
         private location: Location, private router: Router, private http: Http,    
@@ -61,9 +61,18 @@ export class NavbarComponent implements OnInit {
           else {
           return false;    }
       }
+
       move(){
         this.router.navigate(['/userprofile/']);
         // this.router.navigate(['/company-profile/']);
+      }
+      check_loginUsers() {
+        if (localStorage.getItem('userdashboard')) {
+          let local = localStorage.getItem('userdashboard');
+          return true;
+        }
+          else {
+          return false;    }
       }
     logout(){
         localStorage.clear();
@@ -73,6 +82,8 @@ export class NavbarComponent implements OnInit {
     ngOnInit() {
         this.username = localStorage.getItem('user')
         console.log(this.username);
+        this.userdashboard = localStorage.getItem('userdashboard')
+        console.log(this.userdashboard);
 
         this.listTitles = ROUTES.filter(listTitle => listTitle);
 

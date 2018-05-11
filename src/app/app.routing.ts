@@ -119,6 +119,21 @@ export const AppRoutes: Routes = [
             path: 'blog27',
             loadChildren: './Blogchoicegenie/blog27/blog27.module#Blog27Module'
         },
+<<<<<<< HEAD
+=======
+        //{
+         //   path: 'blog28',
+        //     loadChildren: './Blogchoicegenie/blog28/blog28.module#Blog27Module'
+        // },
+        // {
+        //     path: 'blog29',
+        //     loadChildren: './Blogchoicegenie/blog29/blog29.module#Blog27Module'
+        // },
+        // {
+        //     path: 'blog30',
+        //     loadChildren: './Blogchoicegenie/blog30/blog30.module#Blog27Module'
+        // },
+>>>>>>> 168303c795fefe6095437272b073d2418a27dec2
         {
             path: 'blog2',
             loadChildren: './Blogchoicegenie/blog2/blog2.module#Blog2Module'
