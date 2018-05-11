@@ -119,8 +119,6 @@ export const AppRoutes: Routes = [
             path: 'blog27',
             loadChildren: './Blogchoicegenie/blog27/blog27.module#Blog27Module'
         },
-<<<<<<< HEAD
-=======
         //{
          //   path: 'blog28',
         //     loadChildren: './Blogchoicegenie/blog28/blog28.module#Blog27Module'
@@ -133,7 +131,6 @@ export const AppRoutes: Routes = [
         //     path: 'blog30',
         //     loadChildren: './Blogchoicegenie/blog30/blog30.module#Blog27Module'
         // },
->>>>>>> 30a490931fb629dc461455612aebe9c42ebe09f1
         {
             path: 'blog2',
             loadChildren: './Blogchoicegenie/blog2/blog2.module#Blog2Module'
