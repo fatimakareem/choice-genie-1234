@@ -191,7 +191,7 @@ price_to;
 
   }
   name;
-  companydata() {
+  companydata(name) {
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     this.http.get('http://192.168.30.193:9000/choice/company/' + this.zip_code + '/' + this.name, { headers: headers })
@@ -3879,7 +3879,7 @@ months6="6 Months";
   bChecked: boolean = false;
   nullplan() {
     console.log(this.aChecked)
-    if (this.aChecked) {
+    // if (this.aChecked) {
       let headers = new Headers();
       headers.append('Content-Type', 'application/json');
       this.http.get(Config.api + 'planmin/' + this.zip_code + '', { headers: headers })
@@ -3897,12 +3897,12 @@ months6="6 Months";
           }
         });
 
-    } else (error => {
-      console.log(error)
+    // } else (error => {
+    //   console.log(error)
 
-    }
+    // }
 
-    );
+    // );
 
   }
   preplanChecked: boolean = false;
@@ -3910,7 +3910,7 @@ months6="6 Months";
     console.log(this.preplanChecked)
     // this.route.params.subscribe(params => {
     //   let zip =  this.sg['product_zipcode'];
-    if (this.preplanChecked) {
+   // if (this.preplanChecked) {
       let headers = new Headers();
       headers.append('Content-Type', 'application/json');
       this.http.get('http://192.168.30.193:9000/choice/onlyprepaidplans/' + this.zip_code + '', { headers: headers })
@@ -3928,18 +3928,18 @@ months6="6 Months";
           }
         });
 
-    } else (error => {
-      console.log(error)
+    // } else (error => {
+    //   console.log(error)
 
-    }
+    // }
 
-    );
+    // );
 
   }
   noplanChecked: boolean = false;
   nopaidplan() {
     console.log(this.noplanChecked)
-    if (this.noplanChecked) {
+    // if (this.noplanChecked) {
       let headers = new Headers();
       headers.append('Content-Type', 'application/json');
       this.http.get('http://192.168.30.193:9000/choice/noprepaidplans/' + this.zip_code + '', { headers: headers })
@@ -3957,18 +3957,18 @@ months6="6 Months";
           }
         });
 
-    } else (error => {
-      console.log(error)
+    // } else (error => {
+    //   console.log(error)
 
-    }
+    // }
 
-    );
+    // );
 
   }
   autocomplete = "off";
   fullplan() {
     console.log(this.bChecked)
-    if (this.bChecked) {
+    //if (this.bChecked) {
 
       let headers = new Headers();
       headers.append('Content-Type', 'application/json');
@@ -3988,11 +3988,11 @@ months6="6 Months";
 
           }
         });
-    } else (error => {
-      console.log(error)
-    }
+    // } else (error => {
+    //   console.log(error)
+    // }
 
-    );
+    // );
   }
 
   fetchrenewable() {
@@ -4022,7 +4022,7 @@ months6="6 Months";
     console.log(this.notChecked)
     // this.route.params.subscribe(params => {
     //   let zip =  this.sg['product_zipcode'];
-    if (this.notChecked) {
+    // if (this.notChecked) {
       let headers = new Headers();
       headers.append('Content-Type', 'application/json');
       this.http.get('http://192.168.30.193:9000/choice/notimeuseplans/' + this.zip_code + '', { headers: headers })
@@ -4038,14 +4038,14 @@ months6="6 Months";
             prod["plan_information"] = prod["plan_information"].split(',,', 3000);
             prod["price_rate"] = prod["price_rate"].split('..', 3000);
           }
-        });
+       });
 
-    } else (error => {
-      console.log(error)
+    // } else (error => {
+    //   console.log(error)
 
-    }
+    // }
 
-    );
+    // );
 
   }
 
@@ -4055,7 +4055,7 @@ months6="6 Months";
     console.log(this.onlyChecked)
     // this.route.params.subscribe(params => {
     //   let zip =  this.sg['product_zipcode'];
-    if (this.onlyChecked) {
+    // if (this.onlyChecked) {
       let headers = new Headers();
       headers.append('Content-Type', 'application/json');
       this.http.get('http://192.168.30.193:9000/choice/onlytimeuseplans/' + this.zip_code + '', { headers: headers })
@@ -4073,12 +4073,13 @@ months6="6 Months";
           }
         });
 
-    } else (error => {
-      console.log(error)
+    // } 
+    // else (error => {
+    //   console.log(error)
 
-    }
+    // }
 
-    );
+    // );
 
   }
 
