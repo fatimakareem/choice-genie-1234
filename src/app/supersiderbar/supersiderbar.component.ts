@@ -213,6 +213,7 @@ export class SupersiderbarComponent implements OnInit {
       return true;
   };
   public username;
+  public user;
   private Sub: Subscription;
   ngOnInit() {
      
@@ -220,7 +221,7 @@ export class SupersiderbarComponent implements OnInit {
           //  alert("junaid");
           // this.data.currentProducts.subscribe(products => this.sg['products'] = products)
           // this.data.currentProducts
-         
+          this.user = localStorage.getItem('user')
       this.menuItems = ROUTES.filter(menuItem => menuItem);
       
                   console.log(this.menuItems);

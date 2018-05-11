@@ -113,6 +113,7 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 import { UsernavbarComponent } from './shared/usernavbar/usernavbar.component';
 import { UserNavbarModule } from './shared/usernavbar/usernavbar.module';
 import { UpdateService } from './user-profile/update.service';
+import { SuperdashboardmainComponent } from './superdashboardmain/superdashboardmain.component';
  
  
 
