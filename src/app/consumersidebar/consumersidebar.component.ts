@@ -157,7 +157,7 @@ export class ConsumersidebarComponent implements OnInit {
           //  alert("junaid");
           // this.data.currentProducts.subscribe(products => this.sg['products'] = products)
           // this.data.currentProducts
-          this.user = localStorage.getItem('user')
+          this.user = localStorage.getItem('custum')
         // this.username = localStorage.getItem('username')
       this.menuItems = ROUTES.filter(menuItem => menuItem);
       

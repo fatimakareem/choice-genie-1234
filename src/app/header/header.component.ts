@@ -6,22 +6,43 @@ import { Router, ActivatedRoute } from '@angular/router';
   templateUrl: './header.component.html'
 })
 export class HeaderComponent implements OnInit {
-public username;
+  public customer;
+    public username;
+
   constructor( private router: Router) { }
-  check_login() {
+  checked_login() {
+    if (localStorage.getItem('custum')) {
+      let local = localStorage.getItem('custum');
+      return true;
+    }
+    // else if(localStorage.getItem('custom')) {
+    //     return true;
+    // }
+      else {
+      return false;    }
+  }
+check_login() {
     if (localStorage.getItem('user')) {
       let local = localStorage.getItem('user');
       return true;
     }
+    // else if(localStorage.getItem('custom')) {
+    //     let local = localStorage.getItem('custom');
+    //     return true;
+    // }
       else {
       return false;    }
   }
   move(){
-    this.router.navigate(['/dashboard/'+this.username]);
+    this.router.navigate(['/consumerdashboard/']);
+  }
+  moving(){
+    this.router.navigate(['/dashboard/'+ this.username]);
   }
   ngOnInit() {
     this.username = localStorage.getItem('user')
     console.log(this.username);
+this.customer=localStorage.getItem('custum')
   }
   logout(){
     localStorage.clear();

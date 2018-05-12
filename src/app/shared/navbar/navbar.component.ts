@@ -40,8 +40,8 @@ export class NavbarComponent implements OnInit {
     private nativeElement: Node;
     private toggleButton: any;
     private sidebarVisible: boolean;
-    public username :any;
-
+    public customer;
+    public username;
     @ViewChild('app-navbar-cmp') button: any;
     constructor(private route: ActivatedRoute, private https: HttpClient, 
         private location: Location, private router: Router, private http: Http,    
@@ -53,11 +53,26 @@ export class NavbarComponent implements OnInit {
         this.nativeElement = element.nativeElement;
         this.sidebarVisible = false;
     }
+    checked_login() {
+        if (localStorage.getItem('custum')) {
+          let local = localStorage.getItem('custum');
+          return true;
+        }
+        // else if(localStorage.getItem('custom')) {
+        //     return true;
+        // }
+          else {
+          return false;    }
+      }
     check_login() {
         if (localStorage.getItem('user')) {
           let local = localStorage.getItem('user');
           return true;
         }
+        // else if(localStorage.getItem('custom')) {
+        //     let local = localStorage.getItem('custom');
+        //     return true;
+        // }
           else {
           return false;    }
       }
@@ -70,10 +85,11 @@ export class NavbarComponent implements OnInit {
         this.router.navigate(['/']);
       //  console.log("logout"); 
       }
+     
     ngOnInit() {
         this.username = localStorage.getItem('user')
         console.log(this.username);
-
+this.customer=localStorage.getItem('custum')
         this.listTitles = ROUTES.filter(listTitle => listTitle);
 
         const navbar: HTMLElement = this.element.nativeElement;

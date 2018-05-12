@@ -193,8 +193,45 @@
                           </a>
                         </li> -->
                         <li>
-                          <a>
+                          <a (click)="moving()">
                              <input style="font-size: 20px; margin-left: 5px;" type="text" [value]="username" readonly>
+                          </a>
+                        </li>
+                       
+                      <!-- <li>
+                          <a routerLink="/ChangePassword">
+                            <i class=" fa fa-group"></i> Change Password
+                          </a>
+                        </li> -->
+                    <li>
+                      <a (click) = "logout()">
+                        <i class="material-icons">lock</i>Logout
+                      </a>
+                    </li>
+                    
+                    <!-- <li>
+                      <a routerLink="/mycourses">
+                        <i class="material-icons">library_books</i> My Library
+                      </a>
+                    </li> -->
+                    </ul>
+                </div>
+              </li>
+              <li class="vanders" *ngIf="checked_login()">
+                <a>
+                  <i class="material-icons">account_circle</i>My ChoiceGenie
+                </a>
+                <div  class="drop-downs">
+                  <ul class="nav-vanders  why-choiegenie-sublist">
+                      <!-- <li>
+                          <a (click)="move()">
+                            <i class="material-icons">unarchive</i> My Profile
+                          </a>
+                        </li> -->
+                        
+                        <li>
+                          <a (click)="move()">
+                             <input style="font-size: 20px; margin-left: 5px;" type="text" [value]="customer" readonly>
                           </a>
                         </li>
                       <!-- <li>

@@ -92,7 +92,7 @@ export class UserloginComponent implements OnInit {
               // this.toastr.success('Successfully!', 'Logged in',{toastLife: 5000});
              // this.router.navigate(['/dashboard/'+ this.username]);
               this.router.navigate(['/consumerdashboard']);
-              localStorage.setItem('user', this.username);
+              localStorage.setItem('custum', this.username);
 
             },
             error => {
