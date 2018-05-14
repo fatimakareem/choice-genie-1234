@@ -32,7 +32,7 @@
               <div class="form-group">
 
                 <mat-form-field>
-                  <input matInput placeholder="First Name" [formControl]="signupForm.controls['Name']" required [(ngModel)]="model.Name">
+                  <input matInput placeholder="  Name" [formControl]="signupForm.controls['Name']" required [(ngModel)]="model.Name">
                 </mat-form-field>
               </div>
             </div>
@@ -42,8 +42,16 @@
 
                 <mat-form-field>
                   <input matInput placeholder="Service ZipCode" [formControl]="signupForm.controls['service_zip']" required [(ngModel)]="model.service_zip">
-                  <!-- <mat-error *ngIf="secondFormGroup.controls.lName.value == ''"><strong>Cannot be empty</strong></mat-error>
-<mat-error *ngIf="secondFormGroup.controls.lName.dirty && !secondFormGroup.controls.lName.value"> Special characters not allowed</mat-error> -->
+                  </mat-form-field>
+              </div>
+            </div>
+            <br class="clearfix" />
+            <div class="col-sm-6">
+              <div class="form-group">
+
+                <mat-form-field>
+                  <input matInput placeholder="Service_Address" [formControl]="signupForm.controls['service_address']" required [(ngModel)]="model.service_address">
+                  <!-- <mat-error *ngIf="secondFormGroup.controls.Country.dirty && !secondFormGroup.controls.Country.value"> Special characters not allowed</mat-error> -->
                 </mat-form-field>
               </div>
             </div>
@@ -52,12 +60,23 @@
               <div class="form-group">
 
                 <mat-form-field>
-                  <input matInput placeholder="Billing Address" [formControl]="signupForm.controls['billing_address']" required [(ngModel)]="model.billing_address">
-                  <!-- <mat-error *ngIf="secondFormGroup.controls.lName.value == ''"><strong>Cannot be empty</strong></mat-error>
-<mat-error *ngIf="secondFormGroup.controls.lName.dirty && !secondFormGroup.controls.lName.value"> Special characters not allowed</mat-error> -->
+                  <input matInput placeholder="Service City" [formControl]="signupForm.controls['service_city']" required [(ngModel)]="model.service_city">
+                  <mat-error *ngIf="signupForm.controls.service_city.value == ''">
+                    <strong>City cannot be empty</strong>
+                  </mat-error>
+                  <!-- <mat-error *ngIf="secondFormGroup.controls.Country.dirty && !secondFormGroup.controls.Country.value"> Special characters not allowed</mat-error> -->
                 </mat-form-field>
               </div>
             </div>
+            <!-- <br class="clearfix" />
+            <div class="col-sm-6">
+              <div class="form-group">
+
+                <mat-form-field>
+                  <input matInput placeholder="Billing Address" [formControl]="signupForm.controls['billing_address']" required [(ngModel)]="model.billing_address">
+                   </mat-form-field>
+              </div>
+            </div> -->
             <br class="clearfix" />
             <div class="col-sm-6">
               <div class="form-group">
@@ -110,30 +129,8 @@
                 </mat-form-field>
               </div>
             </div>
-
-            <br class="clearfix" />
-            <div class="col-sm-6">
-              <div class="form-group">
-
-                <mat-form-field>
-                  <input matInput placeholder="Service_Address" [formControl]="signupForm.controls['service_address']" required [(ngModel)]="model.service_address">
-                  <!-- <mat-error *ngIf="secondFormGroup.controls.Country.dirty && !secondFormGroup.controls.Country.value"> Special characters not allowed</mat-error> -->
-                </mat-form-field>
-              </div>
-            </div>
-            <br class="clearfix" />
-            <div class="col-sm-6">
-              <div class="form-group">
-
-                <mat-form-field>
-                  <input matInput placeholder="Service City" [formControl]="signupForm.controls['service_city']" required [(ngModel)]="model.service_city">
-                  <mat-error *ngIf="signupForm.controls.service_city.value == ''">
-                    <strong>City cannot be empty</strong>
-                  </mat-error>
-                  <!-- <mat-error *ngIf="secondFormGroup.controls.Country.dirty && !secondFormGroup.controls.Country.value"> Special characters not allowed</mat-error> -->
-                </mat-form-field>
-              </div>
-            </div>
+<!-- 
+           
             <br class="clearfix" />
             <div class="col-sm-6">
               <div class="form-group">
@@ -143,11 +140,10 @@
                   <mat-error *ngIf="signupForm.controls.billing_city.value == ''">
                     <strong>City cannot be empty</strong>
                   </mat-error>
-                  <!-- <mat-error *ngIf="secondFormGroup.controls.Country.dirty && !secondFormGroup.controls.Country.value"> Special characters not allowed</mat-error> -->
-                </mat-form-field>
+                  </mat-form-field>
               </div>
-            </div>
-            <br class="clearfix" />
+            </div> -->
+            <!-- <br class="clearfix" />
             <div class="col-sm-6">
               <div class="form-group">
 
@@ -156,11 +152,10 @@
                   <mat-error *ngIf="signupForm.controls.billing_state.value == ''">
                     <strong>City cannot be empty</strong>
                   </mat-error>
-                  <!-- <mat-error *ngIf="secondFormGroup.controls.Country.dirty && !secondFormGroup.controls.Country.value"> Special characters not allowed</mat-error> -->
-                </mat-form-field>
+                   </mat-form-field>
               </div>
-            </div>
-            <br class="clearfix" />
+            </div> -->
+            <!-- <br class="clearfix" />
             <div class="col-sm-6">
               <div class="form-group">
 
@@ -169,10 +164,9 @@
                   <mat-error *ngIf="signupForm.controls.billing_zip.value == ''">
                     <strong>City cannot be empty</strong>
                   </mat-error>
-                  <!-- <mat-error *ngIf="secondFormGroup.controls.Country.dirty && !secondFormGroup.controls.Country.value"> Special characters not allowed</mat-error> -->
-                </mat-form-field>
+                   </mat-form-field>
               </div>
-            </div>
+            </div> -->
             <br class="clearfix" />
             <div class="col-sm-6">
               <div class="form-group">
