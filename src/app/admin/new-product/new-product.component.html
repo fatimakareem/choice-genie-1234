@@ -5,6 +5,7 @@
 
   <div class="row">
     <!-- <form   *ngif="signupForm"> -->
+     
     <form method="" action="" (ngSubmit)="onSubmit(f)" #f="ngForm">
       <mat-horizontal-stepper [linear]="isLinear">
         <mat-step [stepControl]="signupForm">
@@ -15,7 +16,7 @@
                 <i class="material-icons">mail_outline</i>
               </div>
               <div class="card-content">
-                <h4 class="card-title">Are you MOVING or SWITCHING providers at the selected service location ?</h4>
+                <h4 class="card-title"></h4>
                 <div class="row">
                   <div class="col-sm-6">
                     <div class="form-group">
@@ -37,7 +38,7 @@
                   </div>
                 </div>
                 <div class="col-sm-6">
-                  <div class="form-group">
+                  <div class="form-group" hidden=true>
                     <mat-form-field>
                       <!-- <mat-select placeholder="Company Title" (ngModelChange)="check($event)" required [(ngModel)]="model.title"name="title">
                       
@@ -47,7 +48,7 @@
                         </mat-option>
                       
                         </mat-select> -->
-                      <input matInput placeholder="Company Name" required [(ngModel)]="title" formControlName="title">
+                      <input matInput placeholder="Company Name" required [value]="only" [(ngModel)]="title" formControlName="title">
                     </mat-form-field>
                   </div>
 
@@ -74,32 +75,32 @@
               <div class="card-content">
                 <label class="control-label">
                   <i>
-                    <u>This will appear as the name of your bill</u>
+                    
                   </i>
                 </label>
                 <div class="row">
-                    <div class="col-sm-6">
-                        <div class="form-group">
+                    
+                        <div class="form-group" hidden=true>
                           <mat-form-field>
-                            <input matInput placeholder="Profile url" required [(ngModel)]="profileurl" formControlName="profileurl">
+                            <input matInput placeholder="Profile url" required value="{{word.profileurl}}" [(ngModel)]="profileurl" formControlName="profileurl">
                           </mat-form-field>
-                        </div>
+                      
     
                       </div>
-                  <div class="col-sm-6">
-                    <div class="form-group">
+                 
+                    <div class="form-group" hidden=true>
                       <mat-form-field>
-                        <input matInput placeholder="Profile Logo" required [(ngModel)]="profile_logo" formControlName="profile_logo">
+                        <input matInput placeholder="Profile Logo" required [(ngModel)]="profile_logo" value="{{word.profile_logo}}" formControlName="profile_logo">
                       </mat-form-field>
-                    </div>
+                  
 
                   </div>
-                  <div class="col-sm-6">
-                    <div class="form-group">
+                 
+                    <div class="form-group" hidden=true>
                       <mat-form-field>
-                        <input matInput placeholder="Rating Logo" required [(ngModel)]="rating_logo" formControlName="rating_logo">
+                        <input matInput placeholder="Rating Logo" required [(ngModel)]="rating_logo" value="{{word.rating_logo}}" formControlName="rating_logo">
                       </mat-form-field>
-                    </div>
+                  
                   </div>
                   <br class="clearfix" />
                   <div class="col-sm-6">
@@ -144,31 +145,27 @@
               <div class="card-content">
 
                 <label class="control-label">
-                  <i>
-                    <u>
-                      You must enter your Social Security Number if you would like to use a credit card to access weather a deposit is required
-                    </u>
-                  </i>
+                  
                 </label>
                 <div class="row">
                  
 
                   <br class="clearfix" />
-                  <div class="col-sm-6">
-                    <div class="form-group">
+                 
+                    <div class="form-group" hidden=true>
                       <mat-form-field>
-                        <input matInput placeholder="Terms of Service " [(ngModel)]="terms_of_service" formControlName="terms_of_service">
+                        <input matInput placeholder="Terms of Service " [(ngModel)]="terms_of_service" value="{{word.terms_of_service}}" formControlName="terms_of_service">
                       </mat-form-field>
                     </div>
 
 
-                  </div>
-                  <div class="col-sm-6">
-                    <div class="form-group">
+                 
+                  
+                    <div class="form-group" hidden=true>
                       <mat-form-field>
-                        <input matInput placeholder="Fact Sheet " [(ngModel)]="fact_sheet" formControlName="fact_sheet">
+                        <input matInput placeholder="Fact Sheet " [(ngModel)]="fact_sheet" value="{{word.fact_sheet}}" formControlName="fact_sheet">
                       </mat-form-field>
-                    </div>
+                    
 
 
                   </div>
@@ -182,13 +179,13 @@
 
 
                   </div>
-                  <div class="col-sm-6">
-                    <div class="form-group">
+                  
+                    <div class="form-group" hidden=true>
                       <mat-form-field>
-                        <input matInput placeholder="Sign up Company" [(ngModel)]="sign_up" formControlName="sign_up">
+                        <input matInput placeholder="Sign up Company" [(ngModel)]="sign_up" value="{{word.sign_up}}" formControlName="sign_up">
                       </mat-form-field>
                     </div>
-                  </div>
+                 
                   <!-- <div class="col-sm-6">
                       <div class="form-group">
                         <label class="control-label">Security Question</label>
@@ -242,16 +239,12 @@
                 <i class="material-icons">mail_outline</i>
               </div>
               <div class="card-content">
-                <h4 class="card-title">Other Checks</h4>
+                <h4 class="card-title"></h4>
                 <h3 class="title">
-                  <strong>Special Requests</strong>
+                 
                 </h3>
                 <label class="control-label">
-                  <i>
-                    <u>
-                      Choose if a resident at the selected address requires Life Support
-                    </u>
-                  </i>
+                 
                 </label>
                 <div class="row">
                   <div class="col-sm-6">
@@ -304,5 +297,6 @@
 
 
     </form>
+      
   </div>
 </div>

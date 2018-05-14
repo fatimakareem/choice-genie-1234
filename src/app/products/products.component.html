@@ -36,7 +36,7 @@
 
               <div class="card-content" >
                 <!-- <input type="checkbox" [(ngModel)]="id" value="{{data.id}}" name="{{data.id}}" [checked]="data.id" />{{data.id}} -->
-                <div class="col-md-4  col-sm-3 col-xs-5 plan-detail text-center">
+                <div class="col-md-3  col-sm-3 col-xs-3 plan-detail text-center">
                   <a href="{{data.profileurl}}" target="_blank" class="display-b margin-top">
 
                     <img src="{{data.profile_logo}}" alt="{{data.title}}" style="width: 70%;
@@ -50,10 +50,26 @@
                   <!-- <br> <star-rating-comp [size]="'large'" [starType]="'svg'" [rating]="" [(ngModel)]="rating"></star-rating-comp>  -->
 
                 </div>
+                <div class="col-md-3  col-sm-3 col-xs-3 plan-detail text-center">
+                   
+                    <h3 style=" text-align: center">
+                        <b> Plan Detail</b>
+                      </h3>
+    
+                      <!-- <div class="holder white"> -->
+                      <!--class="product-price"-->
+                      <div style="text-align:center; padding-top:10px;">
+                         
+                         
+                          <p *ngFor="let item of data.plan_information">
+                              {{item}}
+                          </p>
+                        
+                        </div>
+                  </div>
 
 
-
-                <div class="col-md-4 col-sm-5 col-xs-5 rate" style="text-align:center">
+                <div class="col-md-3 col-sm-3 col-xs-3 rate" style="text-align:center">
                   <h3 style=" text-align: center">
                     <b> Price Detail</b>
                   </h3>
@@ -81,7 +97,7 @@
                  
                 </div>
                 
-                <div class="col-md-4 col-sm-3 col-xs-7 term">
+                <div class="col-md-3 col-sm-3 col-xs-3 term">
 
                   <h3 class="text-center">
                     <b> Call now</b>

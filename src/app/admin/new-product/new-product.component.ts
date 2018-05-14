@@ -54,35 +54,41 @@ export class NewProductComponent implements OnInit {
   secondFormGroup: FormGroup;
   thirdFormGroup: FormGroup;
   fourthFormGroup: FormGroup;
-  constructor(public router: Router, private fb: FormBuilder, private http: HttpClient, private route: ActivatedRoute, private sg: SimpleGlobal) { }
-
+  constructor(private https:Http,public router: Router, private fb: FormBuilder, private http: HttpClient, private route: ActivatedRoute, private sg: SimpleGlobal) { }
+title;
+// profileurl;
+// profile_logo;
+// rating_logo;
   //constructor() { }
-  
+  public user;
   ngOnInit() {
-    
-    localStorage.setItem('username', this.username);
+    this.user = localStorage.getItem('user')
+    this.username = localStorage.getItem('username')
+    console.log(this.username)
+   this. fetchProducts()
+   // localStorage.setItem('username', this.username);
   //  this.username = localStorage.getItem('username')
     console.log(this.username)
     this.signupForm = this.fb.group({
       'zipcode': ['', Validators.compose([Validators.required, Validators.pattern(this.normalPattern)])],
       'utilityarea': ['', Validators.compose([Validators.required, Validators.pattern(this.normalPattern)])],
-      'title': ['', Validators.compose([Validators.required, Validators.pattern(this.normalPattern)])],
+      // 'title': [],
      
 
     });
     this.secondFormGroup = this.fb.group({
-      'profileurl': ['', Validators.compose([Validators.required])],
-      'profile_logo': ['', Validators.compose([Validators.required])],
-      'rating_logo': ['', Validators.compose([Validators.required])],
+     // 'profileurl': ['', Validators.compose([Validators.required])],
+      // 'profile_logo': ['', Validators.compose([Validators.required])],
+      // 'rating_logo': ['', Validators.compose([Validators.required])],
       'plan_information': ['', Validators.compose([Validators.required, Validators.pattern(this.normalPattern)])],
       'price_rate': ['', Validators.compose([Validators.required, Validators.pattern(this.normalPattern)])],
       'cancelation_fee': ['', Validators.compose([Validators.required])],
     });
     this.thirdFormGroup = this.fb.group({
-      'fact_sheet': ['', Validators.compose([Validators.required, Validators.pattern(this.normalPattern)])],
-      'terms_of_service': ['', Validators.compose([Validators.required, Validators.pattern(this.normalPattern)])],
+     // 'fact_sheet': ['', Validators.compose([Validators.required, Validators.pattern(this.normalPattern)])],
+      //'terms_of_service': ['', Validators.compose([Validators.required, Validators.pattern(this.normalPattern)])],
       'phone': ['', Validators.compose([Validators.required])],
-      'sign_up': ['', Validators.compose([Validators.required, Validators.pattern(this.normalPattern)])],
+     // 'sign_up': ['', Validators.compose([Validators.required, Validators.pattern(this.normalPattern)])],
       'minimum_usage_fee': ['', Validators.compose([Validators.required])],
       'renewable': ['', Validators.compose([Validators.required, Validators.pattern(this.normalPattern)])],
     });
@@ -94,7 +100,28 @@ export class NewProductComponent implements OnInit {
     });
   }
   check(e){}
-  
+  data:any=[];
+  word:any=[];
+  tit;
+  only;
+  fetchProducts() {
+       
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    
+    
+    this.https.get(Config.api +'mydata/'+ this.username +'/' ,{ headers: headers })
+    .subscribe(Res => {
+    this.sg['products'] = Res.json()['Results'];
+    this.data=this.sg['products'];
+    console.log(this.data);
+this.word=this.data[0];
+this.tit=this.word.title;
+this.only=this.tit.trim()
+console.log(this.tit)
+    });
+    
+    } 
 
   onSubmit(f) {
     f.resetForm();
@@ -160,7 +187,7 @@ export class NewProductComponent implements OnInit {
 
   }
 
-  title;
+
   company() {
    
     let headers = new HttpHeaders();

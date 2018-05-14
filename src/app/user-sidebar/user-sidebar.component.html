@@ -60,14 +60,14 @@
 
         <div class="pric-range-box">
           <span>¢</span>
-          <input type="number" class="ng-valid ng-dirty ng-touched" required name="price_from" [(ngModel)]="price_from"
+          <input type="text" class="ng-valid ng-dirty ng-touched" required name="min" [(ngModel)]="min"
             style="font-size: 20px">
           <span>to</span>
           <span>¢</span>
-          <input type="number" class="ng-valid ng-dirty ng-touched" required name="price_to" [(ngModel)]="price_to"
-            style="font-size: 20px">
+          <input type="text" class="ng-valid ng-dirty ng-touched" required name="max" [(ngModel)]="max"
+            style="font-size:20px">
 
-            <button class="price-range-submit" (click)="pricerate(price,price_from, price_to)"> <i class="fa fa-chevron-right"></i> </button>
+            <button class="price-range-submit" (click)="pricerate(min,max)"> <i class="fa fa-chevron-right"></i> </button>
 
         </div>
 

@@ -4083,16 +4083,16 @@ months6="6 Months";
 
   }
 
-  pricerate(price, price_from, price_to) {
-    console.log(price)
-    if (price = 500) {
-      console.log(price_from, price_to, 'tttttttttttt');
+  pricerate( min, max) {
+    console.log(this.price)
+    if (this.price == 500) {
+      console.log(min, max, 'tttttttttttt');
       let headers = new Headers();
       headers.append('Content-Type', 'application/json');
       this.http.post('http://192.168.30.193:9000/choice/pricerange/' + this.zip_code, JSON.stringify({
 
-        "price_500_kwh_min_price": price_from,
-        "price_500_kwh_max_price": price_to,
+        "price_500_kwh_min_price": min,
+        "price_500_kwh_max_price": max
 
       }
       ), { headers: headers })
@@ -4109,15 +4109,15 @@ months6="6 Months";
         });
 
     }
-    else if (price = 1000) {
+    else if (this.price == 1000) {
       //   this.vari= "Variable (Changing Rate)";
       //  this.index = "Indexed (Market Rate)";
-      console.log(price_from, price_to, 'tttttttttttt');
+      console.log(min, max, 'tttttttttttt');
       let headers = new Headers();
       headers.append('Content-Type', 'application/json');
       this.http.post('http://192.168.30.193:9000/choice/pricerange/' + this.zip_code, JSON.stringify({
-        "price_1000_kwh_min_price": price_from,
-        "price_1000_kwh_max_price": price_to,
+        "price_1000_kwh_min_price": min,
+        "price_1000_kwh_max_price": max
 
       }
       ), { headers: headers })
@@ -4133,14 +4133,14 @@ months6="6 Months";
 
         });
     }
-    else if (price = 2000) {
-      console.log(price_from, price_to, 'tttttttttttt');
+    else if (this.price == 2000) {
+      console.log(min, max, 'tttttttttttt');
       let headers = new Headers();
       headers.append('Content-Type', 'application/json');
       this.http.post('http://192.168.30.193:9000/choice/pricerange/' + this.zip_code, JSON.stringify({
 
-        "price_2000_kwh_min_price": price_from,
-        "price_2000_kwh_max_price": price_to
+        "price_2000_kwh_min_price": min,
+        "price_2000_kwh_max_price": max
       }
       ), { headers: headers })
 
