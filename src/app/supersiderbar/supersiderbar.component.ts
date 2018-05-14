@@ -239,5 +239,9 @@ export class SupersiderbarComponent implements OnInit {
   //     }
   //     return bool;
   // }
-
+  logout(){
+    localStorage.clear();
+    this.router.navigate(['/']);
+  //  console.log("logout"); 
+  }
 }

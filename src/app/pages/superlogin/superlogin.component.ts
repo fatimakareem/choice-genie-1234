@@ -80,7 +80,7 @@ export class SuperloginComponent implements OnInit {
       '',
       'success'
     )
-    this.router.navigate(['/superdashboard']);
+    this.router.navigate(['/supermaindashboard']);
     localStorage.setItem('user', this.username);
     // localStorage.setItem('username', this.username);
    
