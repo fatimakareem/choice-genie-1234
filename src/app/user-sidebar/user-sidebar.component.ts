@@ -56,6 +56,8 @@ price_to;
   private zip: any;
   id;
   public zipCode: any;
+  min;
+  max;
 
 
   ngOnInit() {
@@ -71,6 +73,8 @@ price_to;
 
     //this.months();
     this.companytitle();
+ this.fetchzip();
+
   }
   ngAfterContentInit() {
     // console.log(this.eUsage);
@@ -158,7 +162,7 @@ price_to;
     //   let zip =  this.sg['product_zipcode'];
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    this.http.get(Config.api + 'data_against_zipcode/' + this.zip_code + '', { headers: headers })
+    this.http.get(Config.api + 'zipcodedata/' + this.zip_code + '', { headers: headers })
       //this.http.get(Config.api + 'monthly/' + this.zip_code + '',{ headers: headers })
       // this.http.get(Config.api + 'filter/' + this.zip_code + '',{ headers: headers })
 
