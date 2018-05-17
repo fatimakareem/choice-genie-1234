@@ -94,38 +94,23 @@ price_to;
     { value: 'other-2', viewValue: 'Other' }
   ];
   check(e) {
-    // this.fetchitem();
-    // this.route.params.subscribe(params => {
-    // let headers = new Headers();
-    // headers.append('Content-Type', 'application/json');
-    // this.http.get(Config.api + '/price_range/price_' + e + '_kwh/5.6/6.1/' + this.zip_code + '/', { headers: headers })
-    //   .subscribe(Res => {
-    //     this.sg['products'] = Res.json()['Results'];
-    //     this.data.changeProducts(this.sg['products']);
-
-    //   });
-    //  });
+    
 
   }
     fetchitem(items) {
-      // this.route.params.subscribe(params => {
-     //   let zip =  this.sg['product_zipcode'];
+     
       let headers = new Headers();
       headers.append('Content-Type', 'application/json')
      this.http.get(Config.api + 'items_perpage/title/asc/' + items , { headers: headers })
-    //this.http.get(Config.api + 'monthly/' + this.zip_code + '',{ headers: headers })
-   // this.http.get(Config.api + 'filter/' + this.zip_code + '',{ headers: headers })
-
-   //  this.http.post(Config.api + 'filter/' + this.zip_code + '', {"month": this.months+" Month", "custom":"['2','8']"},{ headers: headers })
+    
         .subscribe(Res => {
           console.log(Res.json()['results'])
           this.sg['products'] = Res.json()['results'];
           this.data.changeProducts(this.sg['products']);
-        //  this.allItems = this.sg['products'];
+     
           console.log(this.sg['products'])
           for (let prod of this.sg['products']) {
-            // console.log(prod["plan_information"])
-            // console.log(prod["price_rate"])
+           
             prod["plan_information"] = prod["plan_information"].split(',,', 3000);
             prod["price_rate"] = prod["price_rate"].split('..', 3000);
           }
@@ -134,22 +119,17 @@ price_to;
       }
   months;
   fetchProducts() {
-    // this.route.params.subscribe(params => {
-    //   let zip =  this.sg['product_zipcode'];
+  
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    // this.http.get(Config.api + 'data_against_zipcode/' + this.zip_code + '', { headers: headers }),
-    //this.http.get(Config.api + 'monthly/' + this.zip_code + '',{ headers: headers })
-    // this.http.get(Config.api + 'filter/' + this.zip_code + '',{ headers: headers })
-
+   
     this.http.post(Config.api + 'filter/' + this.zip_code + '', this.months, { headers: headers })
       .subscribe(Res => {
         this.sg['products'] = Res.json()['Results'];
         this.data.changeProducts(this.sg['products']);
         this.allItems = this.sg['products'];
         for (let prod of this.sg['products']) {
-          // console.log(prod["plan_information"])
-          // console.log(prod["price_rate"])
+         
           prod["plan_information"] = prod["plan_information"].split(',,', 3000);
           prod["price_rate"] = prod["price_rate"].split('..', 3000);
         }
@@ -158,22 +138,17 @@ price_to;
   }
 
   fetchzip() {
-    // this.route.params.subscribe(params => {
-    //   let zip =  this.sg['product_zipcode'];
+   
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     this.http.get(Config.api + 'zipcodedata/' + this.zip_code + '', { headers: headers })
-      //this.http.get(Config.api + 'monthly/' + this.zip_code + '',{ headers: headers })
-      // this.http.get(Config.api + 'filter/' + this.zip_code + '',{ headers: headers })
-
-      //  this.http.post(Config.api + 'filter/' + this.zip_code + '', {"month": this.months+" Month", "custom":"['2','8']"},{ headers: headers })
+     
       .subscribe(Res => {
         this.sg['products'] = Res.json()['Results'];
         this.data.changeProducts(this.sg['products']);
         this.allItems = this.sg['products'];
         for (let prod of this.sg['products']) {
-          // console.log(prod["plan_information"])
-          // console.log(prod["price_rate"])
+      
           prod["plan_information"] = prod["plan_information"].split(',,', 3000);
           prod["price_rate"] = prod["price_rate"].split('..', 3000);
         }
@@ -182,8 +157,7 @@ price_to;
   }
 
   companytitle() {
-    // this.route.params.subscribe(params => {
-    //   let zip =  this.sg['product_zipcode'];
+   
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     this.http.get('http://192.168.30.193:9000/choice/companytitle/', { headers: headers })
@@ -199,10 +173,7 @@ price_to;
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     this.http.get('http://192.168.30.193:9000/choice/company/' + this.zip_code + '/' + this.name, { headers: headers })
-      //this.http.get(Config.api + 'monthly/' + this.zip_code + '',{ headers: headers })
-      // this.http.get(Config.api + 'filter/' + this.zip_code + '',{ headers: headers })
-
-      //  this.http.post(Config.api + 'filter/' + this.zip_code + '', {"month": this.months+" Month", "custom":"['2','8']"},{ headers: headers })
+     
       .subscribe(Res => {
         console.log(Res, 'hhhhhhhhhhhhhhhhhhh')
         this.sg['products'] = Res.json()['Results'];
@@ -243,7 +214,7 @@ months7="5 Months";
       console.log(months1,months2, months3, months4,months5,months6,months7,'tttttttttttt')
       let headers = new Headers();
       headers.append('Content-Type', 'application/json');
-      // this.http.get(Config.api + 'data_against_zipcode/' + this.zip_code + '', { headers: headers }),
+   
       this.http.post(Config.api + 'multimonth/' + this.zip_code + '/', JSON.stringify({
         "plan_information1": months1,
         "plan_information2": months2,
@@ -255,16 +226,13 @@ months7="5 Months";
       }
       ), { headers: headers })
 
-        // this.http.post(Config.api + 'monthly/' + this.zip_code + '/' + this.months + '',{"month": this.months+" Month","custom":"['2','8']"},{ headers: headers })
         .subscribe(Res => {
           console.log(Res)
-          //console.log(selectedvalue)
-          // console.log(plan_information)
+          
           this.sg['products'] = Res.json()['Results'];
           this.data.changeProducts(this.sg['products']);
           for (let prod of this.sg['products']) {
-            // console.log(prod["plan_information"])
-            // console.log(prod["price_rate"])
+          
             prod["plan_information"] = prod["plan_information"].split(',,', 3000);
             prod["price_rate"] = prod["price_rate"].split('..', 3000);
           }

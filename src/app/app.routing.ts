@@ -175,7 +175,7 @@ export const AppRoutes: Routes = [
             path: 'admin/search-customer',
             loadChildren: './admin/search-customer/search-customer.module#SearchCustomerModule'
           },  {
-            path: 'superlogin',
+            path: 'adminlogin',
             loadChildren: './pages/superlogin/superlogin.module#LoginModule'
           },
           {
@@ -214,7 +214,11 @@ export const AppRoutes: Routes = [
         {
             path: 'forget_password/:qurey',
             loadChildren: './forget_password/forget_password.module#ForgetpasswordModule'
-        }
+        },
+        {
+            path: 'ChangePassword',
+            loadChildren: './changepassword/changepassword.module#ChangePasswordModule'
+        },
         ]
     },
      
@@ -296,10 +300,7 @@ export const AppRoutes: Routes = [
                 path: 'company-profile',
                 loadChildren: './com-profile/com-profile.module#ComProfileModule'
             },
-            {
-                path: 'ChangePassword',
-                loadChildren: './changepassword/changepassword.module#ChangePasswordModule'
-            },
+            
             
             {
                 path: 'components',
