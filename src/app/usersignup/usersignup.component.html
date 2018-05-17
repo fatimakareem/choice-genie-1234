@@ -1,5 +1,5 @@
 <div class="container-fluid">
-  <div class="container" style="padding: 50px 0px">
+  <div class="container" style="padding:25px 0px 50px 0px">
     <h3 class="text-center">Tell Us About
       <strong>Yourself</strong>
     </h3>
@@ -29,7 +29,7 @@
 
           <div class="row">
             <div class="col-sm-6">
-              <div class="form-group">
+              <div class="form-group margin">
 
                 <mat-form-field>
                   <input matInput placeholder="  Name" [formControl]="signupForm.controls['Name']" required [(ngModel)]="model.Name">
@@ -38,7 +38,7 @@
             </div>
             <br class="clearfix" />
             <div class="col-sm-6">
-              <div class="form-group">
+              <div class="form-group margin">
 
                 <mat-form-field>
                   <input matInput placeholder="Service ZipCode" [formControl]="signupForm.controls['service_zip']" required [(ngModel)]="model.service_zip">
@@ -47,7 +47,7 @@
             </div>
             <br class="clearfix" />
             <div class="col-sm-6">
-              <div class="form-group">
+              <div class="form-group margin">
 
                 <mat-form-field>
                   <input matInput placeholder="Service_Address" [formControl]="signupForm.controls['service_address']" required [(ngModel)]="model.service_address">
@@ -57,7 +57,7 @@
             </div>
             <br class="clearfix" />
             <div class="col-sm-6">
-              <div class="form-group">
+              <div class="form-group margin">
 
                 <mat-form-field>
                   <input matInput placeholder="Service City" [formControl]="signupForm.controls['service_city']" required [(ngModel)]="model.service_city">
@@ -79,7 +79,7 @@
             </div> -->
             <br class="clearfix" />
             <div class="col-sm-6">
-              <div class="form-group">
+              <div class="form-group margin">
 
                 <mat-form-field>
                   <input matInput placeholder="Email" required [formControl]="signupForm.controls['email']" #email1 (ngModelChange)="emailCheck(email1.value)"
@@ -100,7 +100,7 @@
 
             <br class="clearfix" />
             <div class="col-sm-6">
-              <div class="form-group">
+              <div class="form-group margin">
 
                 <mat-form-field>
                   <input matInput placeholder="Phone No" [formControl]="signupForm.controls['phone_no']" required [(ngModel)]="model.phone_no">
@@ -110,7 +110,7 @@
             </div>
             <br class="clearfix" />
             <div class="col-sm-6">
-              <div class="form-group">
+              <div class="form-group margin">
 
 
                 <!-- <mat-form-field>
@@ -169,7 +169,7 @@
             </div> -->
             <br class="clearfix" />
             <div class="col-sm-6">
-              <div class="form-group">
+              <div class="form-group margin">
 
                 <mat-form-field>
                   <mat-select placeholder="Market" (ngModelChange)="check($event)" [(ngModel)]="model.Market" [formControl]="signupForm.controls['Market']">
@@ -185,8 +185,8 @@
               </div>
             </div>
             <br class="clearfix" />
-            <div class="col-sm-6">
-              <div class="form-group">
+            <div class="col-sm-4">
+              <div class="form-group margin">
                 <mat-form-field>
 
                   <input matInput placeholder="User name " [formControl]="signupForm.controls['username']" (ngModelChange)="usernameCheck(username1.value)"
@@ -208,8 +208,8 @@
             </div>
 
             <br class="clearfix" />
-            <div class="col-sm-6">
-              <div class="form-group">
+            <div class="col-sm-4">
+              <div class="form-group margin">
 
                 <mat-form-field>
                   <input matInput placeholder="Password" type="password" [type]="hide ? 'password' : 'text'" [formControl]="signupForm.controls['password']"
@@ -221,8 +221,8 @@
               </div>
             </div>
             <br class="clearfix" />
-            <div class="col-sm-6">
-              <div class="form-group">
+            <div class="col-sm-4">
+              <div class="form-group margin">
 
                 <mat-form-field>
                   <input matInput placeholder="Confirm Password" type="password" [type]="hide ? 'password' : 'text'" [formControl]="signupForm.controls['confirmpassword']"

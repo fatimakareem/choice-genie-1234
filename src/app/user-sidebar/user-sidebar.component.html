@@ -1,16 +1,32 @@
 <div class="sidebar-user">
   <nav>
     <ul>
+        <li style="margin-bottom: 0px">
+            <div class="panel-title">
+              <a>
+                <h5>Enter Zip Code &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <i class="fa fa-info-circle" aria-hidden="true" title="Enter zipcode."></i>
+                </h5>
+              </a>
+            </div>
+            <div class="form-group label-floating">
+    
+              <b>
+                <input type="text" class="form-control" [(ngModel)]="zip_code" name="zipcode" style="font-size: 20px">
+              </b>
+            </div>
+    
+          </li>
       <li>
         <div class="text-center">
-          <button type="button" class="btn btn-rose" (click)="plantype(fixed,vari,index);fetchmutimonth(months1,months2,months3,months4,months5,months6,months7);fetchzip();companytitle()">
+          <button type="button" class="btn btn-rose" (click)="plantype(fixed,vari,index);fetchmutimonth(months1,months2,months3,months4,months5,months6,months7);fetchzip();companytitle()" style="margin: 0px;">
             Search
             <i class="material-icons" title="Use these filters to set your preferences. Get rid of the plans you don’t want to see and only show those that fit your needs.">search</i>
           </button>
         </div>
       </li>
 
-      <li>
+      <!-- <li>
         <div class="panel-title">
           <a>
             <h5>Enter Zip Code &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -25,10 +41,10 @@
           </b>
         </div>
 
-      </li>
+      </li> -->
 
 
-      <li>
+      <li style="margin-bottom: 0px;">
         <div class="panel-title">
           <a>
             <h5>Estimated Usage&nbsp;&nbsp;&nbsp;
@@ -82,48 +98,48 @@
         </div>
 
         <div class="checkbox">
-          <label>
+          <label class="checkbox-font">
             <input type="checkbox" name="months1" [(ngModel)]=months1 (ngModelChange)="check($event)">36 Months
           </label>
 
         </div>
         <!-- end ngRepeat: term in filters.terms -->
         <div class="checkbox">
-          <label>
+          <label class="checkbox-font">
             <input type="checkbox" name="months2" [(ngModel)]=months2 (ngModelChange)="check($event)">24 Months
           </label>
 
         </div>
         <div class="checkbox">
-          <label>
+          <label class="checkbox-font">
             <input type="checkbox" name="months3" [(ngModel)]=months3 (ngModelChange)="check($event)">18 Months
           </label>
 
         </div>
         <!-- end ngRepeat: term in filters.terms -->
         <div class="checkbox">
-          <label>
+          <label class="checkbox-font">
             <input type="checkbox" name="months4" [(ngModel)]=months4 (ngModelChange)="check($event)">14 Months
           </label>
 
         </div>
 
         <div class="checkbox">
-          <label>
+          <label class="checkbox-font">
             <input type="checkbox" name="months5" [(ngModel)]=months5 (ngModelChange)="check($event)">12 Months
           </label>
 
         </div>
         <!-- end ngRepeat: term in filters.terms -->
         <div class="checkbox">
-          <label>
+          <label class="checkbox-font">
             <input type="checkbox" name="months6" [(ngModel)]=months6 (ngModelChange)="check($event)">6 Months
           </label>
 
         </div>
         <!-- end ngRepeat: term in filters.terms -->
         <div class="checkbox">
-          <label>
+          <label class="checkbox-font">
             <input type="checkbox" name="months7" [(ngModel)]=months7 (ngModelChange)="check($event)">5 Months
           </label>
 
@@ -141,12 +157,12 @@
           </a>
         </div>
         <div class="radio">
-          <label>
+          <label class="checkbox-font">
             <input type="radio" name="showallplans" id="chckbx" (change)="nullplan()"> Plans without minimum usage Fee/Credits
           </label>
         </div>
         <div class="radio">
-          <label>
+          <label class="checkbox-font">
             <input type="radio" name="showallplans" id="chckbx" (change)="fullplan()">Show All Plans
           </label>
         </div>
@@ -160,20 +176,20 @@
           </a>
         </div>
         <div class="checkbox">
-          <label>
+          <label class="checkbox-font">
 
             <input type="checkbox" name="fixed" [(ngModel)]=fixed (ngModelChange)="check($event)"> Fixed Rate
 
           </label>
         </div>
         <div class="checkbox">
-          <label>
+          <label class="checkbox-font">
             <input type="checkbox" name="vari (Changing Rate)" [(ngModel)]=vari (ngModelChange)="check($event)"> Variable
             <small>(changing rate)</small>
           </label>
         </div>
         <div class="checkbox">
-          <label>
+          <label class="checkbox-font">
             <input type="checkbox" name="index (Market Rate)" [(ngModel)]=index (ngModelChange)="check($event)"> Indexed
             <small>(market rate)</small>
           </label>
@@ -189,17 +205,17 @@
           </a>
         </div>
         <div class="radio">
-          <label>
+          <label class="checkbox-font">
             <input type="radio" name="prepaidPlans" checked="true" (ngModelChange)="check($event)"> Show All Plans
           </label>
         </div>
         <div class="radio">
-          <label>
+          <label class="checkbox-font">
             <input type="radio" name="prepaidPlans" (change)="prepaidplan()"> Show only Prepaid Plans
           </label>
         </div>
         <div class="radio">
-          <label>
+          <label class="checkbox-font">
             <input type="radio" name="prepaidPlans" (change)="nopaidplan()"> Do not show Prepaid Plans
           </label>
         </div>
@@ -213,17 +229,17 @@
           </a>
         </div>
         <div class="radio">
-          <label>
+          <label class="checkbox-font">
             <input type="radio" name="timeofuseplan" checked="true" (ngModelChange)="check($event)"> Show All Plans
           </label>
         </div>
         <div class="radio">
-          <label>
+          <label class="checkbox-font">
             <input type="radio" name="timeofuseplan" (change)="showtime()"> Show only Time Of Use Plans
           </label>
         </div>
         <div class="radio">
-          <label>
+          <label class="checkbox-font">
             <input type="radio" name="timeofuseplan" (change)="notime()"> Do not show Time Of Use Plans
           </label>
         </div>
@@ -285,7 +301,7 @@
       </li>
       <li>
         <div class="text-center">
-          <button type="button" class="btn btn-rose" (click)="plantype(fixed,vari,index);fetchmutimonth(months1,months2,months3,months4,months5,months6,months7)">
+          <button type="button" class="btn btn-rose" (click)="plantype(fixed,vari,index);fetchmutimonth(months1,months2,months3,months4,months5,months6,months7);fetchzip();companytitle()">
             Search
             <i class="material-icons" title="Use these filters to set your preferences. Get rid of the plans you don’t want to see and only show those that fit your needs.">search</i>
           </button>

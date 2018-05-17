@@ -3,7 +3,13 @@
   margin: 0;
   list-style: none;
  }
-
+.margin{
+  margin-top: -30px !important;
+}
+.padding{
+  padding-right: 81px;
+  padding-left: 40px;
+}
 
 app-my-app:after,
 router-outlet:after,
@@ -636,11 +642,12 @@ background: goldenrod;
   padding: 10px 10px 20px;
   color: #212121; }
   .sidebar-user h5 {
+    padding: 0px;
     margin: 0;
     font-weight: 500; }
   .sidebar-user ul li {
     display: block;
-    margin: 0 0 20px; }
+    margin: 0 0 8px; }
   .sidebar-user mat-slider {
     width: 100%; }
   .sidebar-user .btn {
@@ -662,8 +669,16 @@ background: goldenrod;
   background: #ffffff;
   overflow-y: scroll;
   overflow-x: hidden; }
+.top-margin{
+  margin-top: 90px;
+}
   .sidebar.custom label {
-    color: #212121; }
+    color: #212121; 
+    font-weight: 600;
+  }
+  .checkbox-font{
+    font-size: 18px !important;
+  }
   .sidebar.custom .logo {
     padding: 10px; }
 
@@ -1503,10 +1518,14 @@ h3 {
   }
 .newsletter-p{
   color: #7c7c7c;
-  font-size: 12px !important;
+  font-size: 14px !important;
   text-align: justify;
   line-height: 18px;
   font-weight: 600 !important;
+}
+.font{
+  text-align: left;
+  font-size: 17px !important;
 }
   .footer-upper {
   padding: 50px 0;
@@ -2045,7 +2064,7 @@ section {
   /* width: calc(100% - 320px);
   margin: 0 30px 0 0;
   float: right;  */
-  width: calc(100% - 291px);
+  width: calc(100% - 301px);
   margin: 0px 16px 0 0;
   float: right;
 }
@@ -2597,6 +2616,12 @@ section {
   color: #f80000;
   text-align: center;
   font-weight: 700;
+}
+.font-size{
+  font-size: 34px;
+}
+.line-height{
+ line-height: 24px;
 }
 .about-text {
   font-size: 18px;
@@ -4510,7 +4535,7 @@ section#boody{
 }
 .add-price {
   width: 100%;
-  overflow: hidden;
+  /* overflow: hidden; */
   padding: 18px 0 0;
 }
 .unit {
@@ -4518,6 +4543,100 @@ section#boody{
   width: 50%;
   text-align: center;
 }
+
+
+
+
+/*Start Home*/
+.play-store-icons-wrapper{
+  background: rgba(242,246,248,1);
+  background: -webkit-gradient(linear,left top,left bottom,from(rgba(242,246,248,1)),color-stop(16%,rgba(242,246,248,1)),color-stop(80%,rgba(194,195,199,1)),to(rgba(224,239,249,1)));
+  background: linear-gradient(to bottom,rgba(242,246,248,1) 0,rgba(242,246,248,1) 16%,rgba(194,195,199,1) 80%,rgba(224,239,249,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f6f8', endColorstr='#e0eff9', GradientType=0 );
+  margin: 0 0 10px;
+  padding: 25px 0;
+}
+
+.play-store-inner{
+  text-align: center;
+}
+
+.play-store-inner h4{
+  font-size: 30px;
+  line-height: 50px;
+}
+
+.play-store-inner span{
+  font-size: 50px;
+  color: #c00;
+}
+
+.play-store-img li{
+  display: inline;
+  padding-right: 10px;
+}
+
+/*End Home*/
+
+/*Start Products */
+.cards-itme{
+  padding: 10px 15px 0px 15px !important;
+  margin-bottom: 8px !important;
+}
+
+.items-detail{
+  line-height: 31px;
+  font-weight: 600;
+}
+.plan-detail{
+  min-height: 205px !important;
+    border-right: 1px solid #000000;
+}
+.sortBy-bar{
+  float: right !important;
+}
+
+.product-label{
+  font-size: 17px;
+    font-weight: 500;
+    padding-top: 25px;
+    color: #6b6b6b;
+}
+.icon-bar{
+  margin-top: 25px;
+}
+.mat-option.mat-selected:hover {
+  background-color: #cc0000 !important;
+  color: #FFFFFF !important;
+}
+
+.mat-option:hover {
+  -webkit-box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(156, 39, 176, 0.4);
+  box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(156, 39, 176, 0.4);
+  background: #9c27b0 !important;
+  color: #FFFFFF !important;
+}
+
+.mat-option.mat-active {
+  background: transparent !important;
+}
+.mat-option.mat-active {
+  background: rgba(0,0,0,.04);
+  color: rgba(0,0,0,.87);
+}
+.mat-option:hover {
+  -webkit-box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(156, 39, 176, 0.4);
+  box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(156, 39, 176, 0.4);
+  background: #cc0000 !important;
+  color: #FFFFFF !important;
+}
+/* End Products */
+
+
+
+
+
+
 /*
  * --------------------------------------------------
  * 3. Responsiveness/media queries
@@ -4613,6 +4732,9 @@ section#boody{
   app-header {
     position: static !important;
   }
+  .plan-detail{
+    margin-bottom: 20px;
+  }
 }
 @media (max-width: 425px) {
   /* Small devices (425px and down) */
@@ -4695,6 +4817,15 @@ section#boody{
   }
   .container-margin {
     margin-top: 24%;
+  }
+  .plan-detail{
+    border-right: none; 
+  }
+}
+@media (max-width: 991px) {
+  /* Large devices (992px and down) */
+  .top-margin{
+    margin-top: 0px;
   }
 }
 @media (max-width: 1024px) {
