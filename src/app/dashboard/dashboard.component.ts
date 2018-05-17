@@ -208,31 +208,36 @@ export class DashboardComponent implements OnInit, AfterViewInit {
 //             terms_of_service='';
           
     //Event Binding of Delete Buttons
-    btnEditClick(id,tit,sup,call,tservice,fsheet,cfee,prate,pinformation,rlogo,plogo,purl) {
+    btnEditClick(id,val1,val2,val3,val4,val5,val6,val12,val13,val7,val8,val9,val10,val11) {
         this.catagoryId = id;
-        this.title=tit;
-        this.cancelation_fee=cfee;
-        this.fact_sheet=fsheet;
-        this.phone=call;
-        this.plan_information=pinformation;
-        this.price_rate=prate;
-        this.profile_logo=plogo;
-        this.profileurl=purl;
-        this.rating_logo=rlogo;
-        this.sign_up=sup;
-        this.terms_of_service=tservice;
+        console.log(this.plan_information)
+        this.title=val1;
+        this.sign_up=val2;
+        this.phone=val3;
+        this.terms_of_service=val4;
+        this.plan_information=val8;
+        this.fact_sheet=val5;
+        this.cancelation_fee=val6;
+        this.price_1000_kwh=val7;
+        this.price_500_kwh=val12;
+
+                 this.price_2000_kwh=val13;
+
+        this.rating_logo=val9;
+        this.profile_logo=val10;
+        this.profileurl=val11;
        
-        console.log(id,tit,sup,call,tservice,fsheet,cfee,prate,pinformation,rlogo,plogo,purl)
+        console.log(id,val1,val2,val3,val4,val5,val6,val12,val13,val7,val8,val9,val10,val11)
         console.log('id : ' + this.catagoryId );
     }
 
     //Event Binding of PopUp Delete Modal
 
-    editClick(updatedtitle,updatedsign_up,updatedphone,updatedterms_of_service,updatedfact_sheet,updatedcancelation_fee,updatedprice_rate,updatedplan_information,updatedrating_logo,updatedprofile_logo,updatedprofileurl) {
-        console.log('edit' +updatedtitle,updatedsign_up,updatedphone,updatedterms_of_service,updatedfact_sheet,updatedcancelation_fee,updatedprice_rate,updatedplan_information,updatedrating_logo,updatedprofile_logo,updatedprofileurl);
-console.log("TS OBJECT",updatedtitle,updatedsign_up,updatedphone,updatedterms_of_service,updatedfact_sheet,updatedcancelation_fee,updatedprice_rate,updatedplan_information,updatedrating_logo,updatedprofile_logo,updatedprofileurl);
+    editClick(updatedtitle,updatedsign_up,updatedphone,updatedterms_of_service,updatedfact_sheet,updatedcancelation_fee,updatedprice500kwh,updatedprice1000kwh,updatedprice2000kwh,updatedplan_information,updatedrating_logo,updatedprofile_logo,updatedprofileurl) {
+        console.log('edit' +updatedtitle,updatedsign_up,updatedphone,updatedterms_of_service,updatedfact_sheet,updatedcancelation_fee,updatedprice500kwh,updatedprice1000kwh,updatedprice2000kwh,updatedplan_information,updatedrating_logo,updatedprofile_logo,updatedprofileurl);
+console.log("TS OBJECT",updatedtitle,updatedsign_up,updatedphone,updatedterms_of_service,updatedfact_sheet,updatedcancelation_fee,updatedprice500kwh,updatedprice1000kwh,updatedprice2000kwh,updatedplan_information,updatedrating_logo,updatedprofile_logo,updatedprofileurl);
         //Calling Delete Service
-        this.serve.editTodoList( this.catagoryId,updatedtitle,updatedsign_up,updatedphone,updatedterms_of_service,updatedfact_sheet,updatedcancelation_fee,updatedprice_rate,updatedplan_information,updatedrating_logo,updatedprofile_logo,updatedprofileurl).subscribe(data => {
+        this.serve.editTodoList( this.catagoryId,updatedtitle,updatedsign_up,updatedphone,updatedterms_of_service,updatedfact_sheet,updatedcancelation_fee,updatedprice500kwh,updatedprice1000kwh,updatedprice2000kwh,updatedplan_information,updatedrating_logo,updatedprofile_logo,updatedprofileurl).subscribe(data => {
             console.log(data);
             swal({
                 type: 'success',
