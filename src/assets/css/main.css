@@ -4549,9 +4549,35 @@ section#boody{
   text-align: center;
 }
 
+.layer-content {
+    background: #fafbfd none repeat scroll 0 0 !important;
+    border: 1px solid #c4cdd7;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    color: #ee0b0b;
+    padding: 0px !important;
+}
+.layer-content button{
+  background: #cc0000;
+}
+.layer-content h2{
+  font-size: 28px;
+  color:#000;
+  margin: 0px !important;
+  padding: 10px;
+}
+.layer-content p{
+color: #646464;
+font-weight: 500;
+}
+.layer-content img{
+  width: 100%;
+}
 
-
-
+.blog-layout-content{
+padding: 5px 10px;
+text-align: center;
+}
 /*Start Home*/
 .play-store-icons-wrapper{
   background: rgba(242,246,248,1);
