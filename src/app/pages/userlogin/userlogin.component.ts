@@ -10,6 +10,7 @@ import { Console } from '@angular/core/src/console';
 import swal from 'sweetalert2';
 import { TOUCHEND_HIDE_DELAY } from '@angular/material';
 // import { HomeRoutes } from '../../home/home.routing';
+import { RecaptchaComponent } from 'recaptcha-blackgeeks';
 
 import { FormBuilder, FormGroup, Validators, FormControl, AbstractControl } from '@angular/forms';
 import { PasswordValidation } from './password-validator.component';

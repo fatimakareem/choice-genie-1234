@@ -17,7 +17,7 @@ import { PasswordValidation } from './password-validator.component';
 import { LoginService } from './login.service';
 import { DataService } from '../../data.service';
 import { DataloginService } from './datalogin.service';
-
+import { RecaptchaComponent } from 'recaptcha-blackgeeks';
 declare var $: any;
 declare interface ValidatorFn {
   (c: AbstractControl): {
@@ -41,7 +41,7 @@ declare interface User {
 })
 
 export class LoginComponent implements OnInit {
-  @ViewChild('username') el:ElementRef;
+  @ViewChild('username') el:ElementRef; captcha: RecaptchaComponent
   statuslogin:any;
   // focusin: boolean = true;
   // rForm: FormGroup;

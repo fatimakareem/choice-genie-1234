@@ -114,7 +114,7 @@ import { UsernavbarComponent } from './shared/usernavbar/usernavbar.component';
 import { UserNavbarModule } from './shared/usernavbar/usernavbar.module';
 import { UpdateService } from './user-profile/update.service';
 import { SuperdashboardmainComponent } from './superdashboardmain/superdashboardmain.component';
- 
+import { BlackgeeksRecaptchaModule } from 'recaptcha-blackgeeks';
  
 
 
@@ -164,6 +164,7 @@ export class MaterialModule {}
     BrowserModule.withServerTransition({ appId: 'PlugExp' }),
     BrowserTransferStateModule,
     CommonModule,
+    BlackgeeksRecaptchaModule,
     BrowserAnimationsModule,
     FormsModule, ReactiveFormsModule,
     RouterModule.forRoot(AppRoutes),

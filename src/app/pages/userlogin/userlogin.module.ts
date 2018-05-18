@@ -13,6 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { LoginRoutes } from './userlogin.routing';
 import { DataService } from '../../data.service';
 import { UserloginComponent } from './userlogin.component';
+import { BlackgeeksRecaptchaModule } from 'recaptcha-blackgeeks';
 
 
 
@@ -20,6 +21,8 @@ import { UserloginComponent } from './userlogin.component';
     imports: [
         CommonModule,
         RouterModule.forChild(LoginRoutes),
+        BlackgeeksRecaptchaModule,
+
         MaterialModule,
         FormsModule,
         ReactiveFormsModule,

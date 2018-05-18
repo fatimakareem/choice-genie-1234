@@ -27,6 +27,9 @@
             <mat-checkbox>
               Stay signed in
             </mat-checkbox>
+          
+            <blackgeeks-recaptcha></blackgeeks-recaptcha>
+          
             <button type="submit" (click)="onLogin()">Login</button>
             <a  value="Delete" data-toggle="modal" data-target="#myModal3">Forgot Password?</a>
             <div class="modal fade" id="myModal3" role="dialog">
@@ -42,7 +45,12 @@
                   <h3>Enter Your Email</h3>
                   <input type="text" placeholder="Enter Your Email" class="form-control" [(ngModel)]="Email" formControlName="Email" style="font-size: 20px">
                   </div>
+                 
+                  
+                    
+                   
                   <div class="modal-footer">
+                      
                     <button type="button" class="btn btn-rose"  data-dismiss="modal" style="
                   color: white;
                  
