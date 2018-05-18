@@ -15,173 +15,54 @@
   </div>
 </div>
 </div> -->
-<section class="pw-solutions">
-  <div class="container">
-    <h3 class="text-center choiecegenie-offers wow fadeInLeft"> BLOG </h3>
-    <ul class="fourcolumns blog">
 
-      <li class="col-lg-4 col-md-4 col-sm-6 col-xs-6" routerLink="/blog1">
-        <div class="holder icons wow  fadeInRight cg-offers"   >
-          <!-- <img src="../../assets/img/Billing-icon.png"/> -->
-         
-          <h3>Become Energy Efficient with these 4 Smart Hacks</h3>
-          <div class="txt-holder">
-            <p>Who couldn’t use a little extra cash?In this economy, people are seen saving a buck or two wherever possible.All those small savings add up over time and come handy when faced with a nasty electric bill! </p>
-          </div>
 
-        </div>
-      </li>
-      <li class="col-lg-4 col-md-4 col-sm-6 col-xs-6" routerLink="/blog2">
-        <div class="holder icons wow  fadeInRight cg-offers"   >
-          <!-- <img src="../../assets/img/Billing-icon.png"/> -->
-         
-          <h3>12 Easy Hacks: For Next Power Outage – Continued</h3>
-          <div class="txt-holder">
-            <p>No power yet again? ChoiceGenie has your covered you as promised!Let’s continue to our no-blackout tricks.</p>
-          </div>
 
-        </div>
-      </li>
-      <li class="col-lg-4 col-md-4 col-sm-6 col-xs-6" routerLink="/blog3">
-        <div class="holder icons wow  fadeInRight cg-offers"   >
-          <!-- <img src="../../assets/img/Billing-icon.png"/> -->
-         
-          <h3>12 Easy Hacks: For Next Power Outage</h3>
-          <div class="txt-holder">
-            <p>The  most  wonderful  time  of  the  year  has  no  more  wonderment  factor  in some of its aspects!The oh-so-obvious aspect: No electricity and water!The coming of winter storms and constant lack of electricity and water make it question your eye-sight.</p>
-          </div>
-
-        </div>
-      </li>
-      <li class="col-lg-4 col-md-4 col-sm-6 col-xs-6" routerLink="/blog4">
-        <div class="holder icons wow  fadeInRight cg-offers"   >
-          <!-- <img src="../../assets/img/Billing-icon.png"/> -->
-         
-          <h3>4 Clever Hacks: Save Big On Energy Usage</h3>
-          <div class="txt-holder">
-            <p>The  thick  heat  of  summer  is  the  beginning  of  a  series  of  very  heavy electricity bills.Hadn’t  you  have  to  kick  on  the  air  conditioning  a  few  times  already? Thought so!Did  you  know,  a  central  air  conditioning  unit  uses about  of  3k  watts  of energy.</p>
-          </div>
-
-        </div>
-      </li>
-      <li class="col-lg-4 col-md-4 col-sm-6 col-xs-6" routerLink="/blog5">
-        <div class="holder icons wow  fadeInRight cg-offers"   >
-          <!-- <img src="../../assets/img/Billing-icon.png"/> -->
-         
-          <h3>Why Switch your Electricity Plan – Continued</h3>
-          <div class="txt-holder">
-            <p>As promised, ChoiceGenie will continue urging you to switch to plans that better suit your budget and needs, - being reasonable is the goal!</p>
-          </div>
-
-        </div>
-      </li>
-      <li class="col-lg-4 col-md-4 col-sm-6 col-xs-6" routerLink="/blog21">
-      
-          <div class="holder icons wow  fadeInRight cg-offers"   >
-            <!-- <img src="../../assets/img/Billing-icon.png"/> -->
-           
-            <h3>Mind-Boggling Hacks to Save Money on Energy</h3>
-            <h3></h3>
+<!-- <section class="pw-solutions">
+  <div class="container-fluid">
+      <h3 class="text-center choiecegenie-offers wow fadeInLeft"> BLOG </h3>
+    <div class="row">
+    <ul class="card-box" *ngFor="let item of data;let i=index">
+      <li class="col-lg-3 col-md-3 col-sm-6 col-xs-6"  routerLink="/blog1/{{item.heading1}}">
+        <div class="holder icons wow  fadeInRight cg-offers">
+          <a routerLink="/blog1/{{item.heading1}}" style="cursor: pointer" class="font-main font-weight-normal color-additional">
+            <img src="{{item.Ch_image}}">
+          </a>
+          <div class="detail">
+            <h3>{{item.heading1}}</h3>
             <div class="txt-holder">
-              <p>Saving money on energy is not only good for your pocket, but it also favors the environment!. With these awesome hacks, you can potentially save hundreds of dollars just by making a few easy changes. <b>– ChoiceGenie</b>.</p>
-              <p></p>
+              <p>{{item.content1 | slice:0:100}}...</p>
             </div>
-  
+            <a target="" class="element element_2 read_more" routerLink="/blog1/{{item.heading1}}">
+            <button class="btn btn-rose" style="text-align:center">
+           Read more
+          </button>
+        </a>
           </div>
-        </li>
-        <li class="col-lg-4 col-md-4 col-sm-6 col-xs-6" routerLink="/blog22">
-    
-            <div class="holder icons wow  fadeInRight cg-offers"   >
-              <!-- <img src="../../assets/img/Billing-icon.png"/> -->
-             
-              <h3>Easy Hacks to Make Energy Bill Lower & Pockets Heavier</h3>
-              <h3></h3>
-              <div class="txt-holder">
-                <p>
-                  ChoiceGenie makes it unbelievably easy for you to reduce your energy consumption and lower your bills.</p>
-            <p>We will not talk about reducing your electric bill illegally with aluminum foil or magnets!</p>
-                <p></p>
-              </div>
-    
-            </div>
-          </li>
-          <li class="col-lg-4 col-md-4 col-sm-6 col-xs-6" routerLink="/blog23">
-    
-            <div class="holder icons wow  fadeInRight cg-offers"   >
-              <!-- <img src="../../assets/img/Billing-icon.png"/> -->
-             
-              <h3>DIY Hacks To Save Energy</h3>
-              <h3></h3>
-              <div class="txt-holder">
-                <p>
-                  You think you’re being smart about your energy consumption, yet every month your electric bill never fails to shock you!</p>
-          <p>Come to think of it, how high it could go in the summer months.</p>
-          <!-- <p>You have to cool off not only you but your apartment too during the scorching mid-July. </p> -->
-                <p></p>
-              </div>
-    
-            </div>
-          </li>
-          <li class="col-lg-4 col-md-4 col-sm-6 col-xs-6" routerLink="/blog24">
-         
-            <div class="holder icons wow  fadeInRight cg-offers"   >
-              <!-- <img src="../../assets/img/Billing-icon.png"/> -->
-             
-              <h3>Six Hacks: How to Reduce Electricity Consumption </h3>
-              <h3></h3>
-              <div class="txt-holder">
-                <p> Did you know, U.S. Energy Information Administration (EIA) stated that the average residential monthly electric bill was calculated as $114.03 in 2015?</p>
-                <p></p>
-              </div>
-    
-            </div>
-          </li>
-          <li class="col-lg-4 col-md-4 col-sm-6 col-xs-6" routerLink="/blog25">
-         
-            <div class="holder icons wow  fadeInRight cg-offers"   >
-              <!-- <img src="../../assets/img/Billing-icon.png"/> -->
-             
-              <h3>Save Dollars On Your Energy Bill Over the Holidays</h3>
-              <h3></h3>
-              <div class="txt-holder">
-                <p>We luxuriously spend money on food, decorations, gifts, and travels. But the cost most likely to trip us is none other than those energy bills!</p>
-                <p></p>
-              </div>
-    
-            </div>
-          </li>
-          <li class="col-lg-4 col-md-4 col-sm-6 col-xs-6" routerLink="/blog26">
-         
-            <div class="holder icons wow  fadeInRight cg-offers"   >
-              <!-- <img src="../../assets/img/Billing-icon.png"/> -->
-             
-              <h3>Reduce Energy Cost Using Window Light Shelves</h3>
-              <h3></h3>
-              <div class="txt-holder">
-                <p>ChoiceGenie encourages using window light shelf, as it is one of the great ways not only to enhance your home but also a gateway to a complete energy saving upgrades. </p>
-                <p></p>
-              </div>
-    
-            </div>
-          </li>
-          <li class="col-lg-4 col-md-4 col-sm-6 col-xs-6" routerLink="/blog27">
-   
-            <div class="holder icons wow  fadeInRight cg-offers"   >
-              <!-- <img src="../../assets/img/Billing-icon.png"/> -->
-             
-              <h3>Money Saving Hacks for your Electricity Bill</h3>
-              <h3></h3>
-              <div class="txt-holder">
-                <p> Does not matter what season we’re in, the crazy electricity bill seems to be getting out of control every time</p>
-                <p></p>
-              </div>
-    
-            </div>
-          </li>
-     
-     
-      
-
+        </div>
+      </li>
     </ul>
   </div>
-</section>
+  </div>
+</section> -->
+
+    
+
+      <div class="container-fluid" style="padding: 100px 100px">
+          <h3 class="text-center choiecegenie-offers wow fadeInLeft"> BLOG </h3>
+        <div class="row">
+          <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 " *ngFor="let data of data;let i=index"> 
+            <div class="layer-content">
+              <div>
+                <img src="{{data.Ch_image}}" alt="ChoiceGenie">
+              </div>
+              <div class="blog-layout-content">
+                <h2>{{data.heading1}}</h2>
+                <p>{{data.content1 | slice:0:106}}..</p>
+                <a  routerLink="/blog1/{{data.heading1}}">
+                <button class="btn btn-rose" type="submit">Read more..</button></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
