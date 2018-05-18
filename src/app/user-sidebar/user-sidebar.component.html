@@ -2,17 +2,17 @@
   <nav>
     <ul>
         <li style="margin-bottom: 0px">
-            <div class="panel-title">
+            <!-- <div class="panel-title">
               <a>
-                <h5>Enter Zip Code &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                  <i class="fa fa-info-circle" aria-hidden="true" title="Enter zipcode."></i>
+                <h5>Enter Zip Code
+                  <i class="fa fa-info-circle float" aria-hidden="true" title="Enter zipcode."></i>
                 </h5>
               </a>
-            </div>
-            <div class="form-group label-floating">
+            </div> -->
+            <div class="form-group label-floating custom-style">
     
               <b>
-                <input type="text" class="form-control" [(ngModel)]="zip_code" name="zipcode" style="font-size: 20px">
+                <input type="text" class="form-control" [(ngModel)]="zip_code" name="zipcode" style="font-size: 27px;">
               </b>
             </div>
     
@@ -48,7 +48,7 @@
         <div class="panel-title">
           <a>
             <h5>Estimated Usage&nbsp;&nbsp;&nbsp;
-              <i class="fa fa-info-circle" aria-hidden="true" title="If you choose a plan with a long contract period, you may be subject to an early cancellation fee if you decide to change plans prior to the expiration of the contract period.  Plans that are shorter give you more flexibility to switch, but they only lock in your set rate for a short amount of time.Month-to-Month plans are usually Variable or Indexed offers."></i>
+              <i class="fa fa-info-circle float" aria-hidden="true" title="If you choose a plan with a long contract period, you may be subject to an early cancellation fee if you decide to change plans prior to the expiration of the contract period.  Plans that are shorter give you more flexibility to switch, but they only lock in your set rate for a short amount of time.Month-to-Month plans are usually Variable or Indexed offers."></i>
           
           </h5>
         </a>
@@ -62,12 +62,13 @@
             <mat-option value="2000" style="font-size: 20px">2000 kWh</mat-option>
           </mat-select>
         </mat-form-field>
+        
       </li>
       <li>
         <div class="panel-title">
           <a>
-            <h5 class="cat-title"> Price Range
-              <i class="fa fa-info-circle" aria-hidden="true" title="Price per kilowatt hour: A kilowatt hour is equal to 1 kilowatt (1kW) of power used for 1 hour (1h) of time."></i>
+            <h5 class="cat-title" style="margin-bottom: 15px;"> Price Range
+              <i class="fa fa-info-circle float" aria-hidden="true" title="Price per kilowatt hour: A kilowatt hour is equal to 1 kilowatt (1kW) of power used for 1 hour (1h) of time."></i>
             </h5>
           </a>
         </div>
@@ -86,14 +87,16 @@
             <button class="price-range-submit" (click)="pricerate(min,max)"> <i class="fa fa-chevron-right"></i> </button>
 
         </div>
-
+        <hr style="margin-top: 20px !important;">
       </li>
 
 
       <li>
         <div class="panel-title">
           <a>
-            <h5> Contract Length</h5>
+            <h5> Contract Length
+              <i class="fa fa-info-circle float" aria-hidden="true" title="Price per kilowatt hour: A kilowatt hour is equal to 1 kilowatt (1kW) of power used for 1 hour (1h) of time."></i>
+            </h5>
           </a>
         </div>
 
@@ -145,13 +148,15 @@
 
 
         </div>
+
+        <hr>
       </li>
 
       <li>
         <div class="panel-title">
           <a>
             <h5>Pricing and Billing &nbsp;
-              <i class="fa fa-info-circle" aria-hidden="true" title="This filter allows you to view plans that do not have any recurring fees or credits included in the average per kWh price. If you choose to view plans with fees/credits included in the average per kWh price, you need to be aware that the average per kWh price may vary significantly from your actual billed price per kWh. Please review the fact sheets for these plans carefully before enrolling in a product."></i>
+              <i class="fa fa-info-circle float" aria-hidden="true" title="This filter allows you to view plans that do not have any recurring fees or credits included in the average per kWh price. If you choose to view plans with fees/credits included in the average per kWh price, you need to be aware that the average per kWh price may vary significantly from your actual billed price per kWh. Please review the fact sheets for these plans carefully before enrolling in a product."></i>
 
             </h5>
           </a>
@@ -166,12 +171,14 @@
             <input type="radio" name="showallplans" id="chckbx" (change)="fullplan()">Show All Plans
           </label>
         </div>
+
+        <hr>
       </li>
       <li>
         <div class="panel-title">
           <a>
             <h5>Plan Type &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              <i class="fa fa-info-circle" aria-hidden="true" title="Prepaid plans provide service on a “pay-as-you-go” basis. These plans require close monitoring or accurately estimating your monthly electric use to avoid disconnection.."></i>
+              <i class="fa fa-info-circle float" aria-hidden="true" title="Prepaid plans provide service on a “pay-as-you-go” basis. These plans require close monitoring or accurately estimating your monthly electric use to avoid disconnection.."></i>
             </h5>
           </a>
         </div>
@@ -194,13 +201,13 @@
             <small>(market rate)</small>
           </label>
         </div>
-
+        <hr>
       </li>
       <li>
         <div class="panel-title">
           <a>
             <h5>Prepaid Plans &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              <i class="fa fa-info-circle" aria-hidden="true" title="Prepaid plans provide service on a “pay-as-you-go” basis. These plans require close monitoring or accurately estimating your monthly electric use to avoid disconnection.."></i>
+              <i class="fa fa-info-circle float" aria-hidden="true" title="Prepaid plans provide service on a “pay-as-you-go” basis. These plans require close monitoring or accurately estimating your monthly electric use to avoid disconnection.."></i>
             </h5>
           </a>
         </div>
@@ -219,12 +226,14 @@
             <input type="radio" name="prepaidPlans" (change)="nopaidplan()"> Do not show Prepaid Plans
           </label>
         </div>
+
+        <hr>
       </li>
       <li>
         <div class="panel-title">
           <a>
             <h5>Time of Use Plans &nbsp;
-              <i class="fa fa-info-circle" aria-hidden="true" title="Time-of-Use plans include incentives to use power during certain periods such as nights or weekends.  The average prices shown for Time-of-Use Plans are based on the REP’s estimate of energy used during discounted and non-discounted times.  Please note that the average price you pay will vary depending on your actual usage of energy during the discounted and non-discounted times.  See the glossary for details."></i>
+              <i class="fa fa-info-circle float" aria-hidden="true" title="Time-of-Use plans include incentives to use power during certain periods such as nights or weekends.  The average prices shown for Time-of-Use Plans are based on the REP’s estimate of energy used during discounted and non-discounted times.  Please note that the average price you pay will vary depending on your actual usage of energy during the discounted and non-discounted times.  See the glossary for details."></i>
             </h5>
           </a>
         </div>
@@ -243,11 +252,15 @@
             <input type="radio" name="timeofuseplan" (change)="notime()"> Do not show Time Of Use Plans
           </label>
         </div>
+
+        <hr>
       </li>
       <li>
         <div class="panel-title">
           <a>
-            <h5>Renewable</h5>
+            <h5 style="margin-bottom: 15px;">Renewable
+              <i class="fa fa-info-circle float" aria-hidden="true" title="Time-of-Use plans include incentives to use power during certain periods such as nights or weekends.  The average prices shown for Time-of-Use Plans are based on the REP’s estimate of energy used during discounted and non-discounted times.  Please note that the average price you pay will vary depending on your actual usage of energy during the discounted and non-discounted times.  See the glossary for details."></i>
+            </h5>
           </a>
         </div>
         <mat-select placeholder="Renewable" (ngModelChange)="check($event)" (change)="renewableenergy(energy)" required [(ngModel)]="energy" name="energy">
@@ -258,12 +271,17 @@
           <mat-option value="0,25">0% To 25%</mat-option>
           <mat-option value="" selected="selected">N/A</mat-option>
         </mat-select>
+
+        <hr style="margin-top: 20px !important;">
       </li>
       <li>
         <div class="panel-title">
           <a>
             <!-- <a  title="" data-original-title="Energy Companies:  Also called retail electric providers or REPs. They sell and bill electricity and provide customer service.">Info</a> -->
-            <h5>Electric Companies</h5>
+            <h5>Electric Companies
+                <i class="fa fa-info-circle float" aria-hidden="true" title="Time-of-Use plans include incentives to use power during certain periods such as nights or weekends.  The average prices shown for Time-of-Use Plans are based on the REP’s estimate of energy used during discounted and non-discounted times.  Please note that the average price you pay will vary depending on your actual usage of energy during the discounted and non-discounted times.  See the glossary for details."></i>
+            
+            </h5>
           </a>
         </div>
         <!-- <div class="select-f-sackers-heavy select-area" style="width: 160px;"> -->
@@ -279,14 +297,17 @@
 
           </mat-select>
         </mat-form-field>
-       
+        <hr>
       </li>
 
       <li>
 
         <div class="panel-title">
           <a>
-            <h5>Product per Page</h5>
+            <h5>Product per Page
+                <i class="fa fa-info-circle float" aria-hidden="true" title="Time-of-Use plans include incentives to use power during certain periods such as nights or weekends.  The average prices shown for Time-of-Use Plans are based on the REP’s estimate of energy used during discounted and non-discounted times.  Please note that the average price you pay will vary depending on your actual usage of energy during the discounted and non-discounted times.  See the glossary for details."></i>
+            
+            </h5>
           </a>
         </div>
         <mat-form-field>
@@ -297,7 +318,7 @@
             <mat-option value="556">SEE ALL</mat-option>
           </mat-select>
         </mat-form-field>
-
+        
       </li>
       <li>
         <div class="text-center">

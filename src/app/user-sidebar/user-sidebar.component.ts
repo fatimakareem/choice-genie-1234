@@ -225,7 +225,7 @@ months7="5 Months";
         "plan_information7": months7,
       }
       ), { headers: headers })
-
+ 
         .subscribe(Res => {
           console.log(Res)
           
