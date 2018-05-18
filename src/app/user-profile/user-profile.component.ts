@@ -74,7 +74,7 @@ usernameexist;
    
  
   ngOnInit() 
-  { this.username = localStorage.getItem('username');
+  { this.username = localStorage.getItem('custum');
    this.fetchzip()
   this.signupForm = this.fb.group({
     'name': ['', Validators.compose([Validators.required])],

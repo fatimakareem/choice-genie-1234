@@ -644,7 +644,9 @@ background: goldenrod;
   .sidebar-user h5 {
     padding: 0px;
     margin: 0;
-    font-weight: 500; }
+    font-weight: 600 !important;
+    font-size: 23px;
+  }
   .sidebar-user ul li {
     display: block;
     margin: 0 0 8px; }
@@ -1885,6 +1887,9 @@ h3 {
 }
 .android-icon {
   height: 60px;
+}
+.appstore-icon {
+  height: 53px;
 }
   /* footer css end */
 
@@ -4627,6 +4632,7 @@ text-align: center;
     font-weight: 500;
     padding-top: 25px;
     color: #6b6b6b;
+    text-align: right;
 }
 .icon-bar{
   margin-top: 25px;
@@ -4656,9 +4662,30 @@ text-align: center;
   background: #cc0000 !important;
   color: #FFFFFF !important;
 }
+.float-r{
+  float: right;
+}
 /* End Products */
 
-
+/* Start user Sidebar */
+.float{
+  float: right;
+  margin-top: 6px;
+}
+.custom-style{
+  width: 34%;
+  height: 36px;
+  margin: 0 auto !important;
+  border: 1px solid rgb(188, 188, 188);
+  border-bottom: 1px solid rgb(188, 188, 188) !important;
+  margin-bottom: 11px !important;
+}
+hr{
+  margin: 0px !important;
+  height: 1px !important;
+  background: #dadada;
+}
+/* End user Siderbar */
 
 
 
