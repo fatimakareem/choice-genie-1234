@@ -43,44 +43,26 @@
       <div class="products-area-products" *ngIf="prod_loaded">
         <div class="row">
           <div class="col-lg-12">
-          <div class="custom card" style="float: right;">
-                <div class="">
+          <div class="custom card col-lg-12" style="float: right;">
+                <div class="col-sm-12">
                   <div class="sortBy-bar col-lg-8 col-sm-12">
-                      <div class="product-page-bar">
-                        <label class="product-label">SORT BY:</label>
-                        
-                            <button type="button" class="sort-btn" (click)="fetchrenewable(zip)">
-                               RENEWABLE
-                               <i class="fa fa-sort-down down-icon"></i>
-                                <!-- <i class="material-icons" title="Use these filters to set your preferences. Get rid of the plans you don’t want to see and only show those that fit your needs.">search</i> -->
-                              </button>
-                          <!-- <i class="fa fa-sort-down down-icon"></i> -->
-                       
-                          <button type="button" class="sort-btn" (click)="fetchprice() ">
-                             Price KW/h
-                             <i class="fa fa-sort-down down-icon"></i>
-                              <!-- <i class="material-icons" title="Use these filters to set your preferences. Get rid of the plans you don’t want to see and only show those that fit your needs.">search</i> -->
-                            </button>
-                            <button type="button" class="sort-btn" (click)=" fetchcompany( )">
-                                Company
-                                <i class="fa fa-sort-down down-icon"></i>
-                                <!-- <i class="material-icons" title="Use these filters to set your preferences. Get rid of the plans you don’t want to see and only show those that fit your needs.">search</i> -->
-                              </button>
-                        <!-- <div class="col-md-6" style="padding: 0px">
+                      <div class="product-page-bar col-lg-6">
+                        <label class="col-md-6 product-label">Sort By</label>
+                        <div class="col-md-6" style="padding: 0px">
                             <mat-form-field style="padding: 0px" >
-                                <mat-select placeholder="sortrenewable"   (change)="fetchitempages(zip)" required [(ngModel)]="items" name="items">
+                                <mat-select placeholder="sortrenewable" selected="sortrenewable" (change)="fetchitempages(zip)" required [(ngModel)]="items" name="items">
                                   <mat-option value="sortrenewable" style="font-size: 20px">sortrenewable</mat-option>
                                   <mat-option value="10" style="font-size: 20px">10 </mat-option>
                                   <mat-option value="20" style="font-size: 20px">20 </mat-option>
                                 </mat-select>
                                 </mat-form-field>
                                      
-                        </div> -->
+                        </div>
               </div>
 
 
 
-                      <!-- <div class="product-page-bar col-lg-6">
+                      <div class="product-page-bar col-lg-6">
                           <label class="col-md-6 product-label">Product per Page</label>
 
                           <div class="col-md-6" style="padding: 0px">
@@ -94,7 +76,7 @@
                                   </mat-form-field>
                                        
                           </div>
-                      </div> -->
+                      </div>
                       <!-- <div class="col-lg-2 icon-bar">
                           <a target="_blank" href="javascript:;" onclick="window.print();" class="print-grid-temp" title="Print plan results">
                               <img alt="print" src="http://www.powertochoose.org/Content/images/printer.png" width="16" height="16">
