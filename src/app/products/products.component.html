@@ -45,27 +45,38 @@
           <div class="col-lg-12">
           <div class="custom card" style="float: right;">
                 <div class="">
-                  <div class="sortBy-bar col-lg-8 col-sm-12">
+                  <div class="sortBy-bar">
                       <div class="product-page-bar">
-                        <label class="product-label">SORT BY:</label>
-                        
-                            <button type="button" class="sort-btn" (click)="fetchrenewable(zip)">
+                        <div class="col-md-3 col-sm-4 col-xs-12">
+                        <label class="product-label ">SORT BY:</label>
+                      </div>
+
+                      <div class="col-md-3 col-sm-4 col-xs-12">
+                            <button type="button" class="sort-btn " (click)="fetchrenewable(zip)">
                                RENEWABLE
                                <i class="fa fa-sort-down down-icon"></i>
                                 <!-- <i class="material-icons" title="Use these filters to set your preferences. Get rid of the plans you don’t want to see and only show those that fit your needs.">search</i> -->
                               </button>
                           <!-- <i class="fa fa-sort-down down-icon"></i> -->
-                       
-                          <button type="button" class="sort-btn" (click)="fetchprice() ">
+                        </div>
+
+
+                        <div class="col-md-3 col-sm-4 col-xs-12">
+                          <button type="button" class="sort-btn " (click)="fetchprice() ">
                              Price KW/h
                              <i class="fa fa-sort-down down-icon"></i>
                               <!-- <i class="material-icons" title="Use these filters to set your preferences. Get rid of the plans you don’t want to see and only show those that fit your needs.">search</i> -->
                             </button>
-                            <button type="button" class="sort-btn" (click)=" fetchcompany( )">
+
+                          </div>
+
+                          <div class="col-md-3 col-sm-4 col-xs-12">
+                            <button type="button" class="sort-btn " (click)=" fetchcompany( )">
                                 Company
                                 <i class="fa fa-sort-down down-icon"></i>
                                 <!-- <i class="material-icons" title="Use these filters to set your preferences. Get rid of the plans you don’t want to see and only show those that fit your needs.">search</i> -->
                               </button>
+                            </div>
                         <!-- <div class="col-md-6" style="padding: 0px">
                             <mat-form-field style="padding: 0px" >
                                 <mat-select placeholder="sortrenewable"   (change)="fetchitempages(zip)" required [(ngModel)]="items" name="items">
