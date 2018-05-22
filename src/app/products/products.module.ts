@@ -11,6 +11,7 @@ import {ProductsComponent, plandetailDialog} from "./products.component";
 import {ProductsRoutes} from './products.routing';
 import {PremiseDialog} from './products.component';
 //import {  plandetailDialog} from './products.component';
+import { AngularcliStarRatingModule } from 'angularcli-star-rating'
 
 import { HomeService } from '../home/home.service';
 import { SimpleGlobal } from 'ng2-simple-global';
@@ -21,6 +22,7 @@ import { SimpleGlobal } from 'ng2-simple-global';
         CommonModule,
         RouterModule.forChild(ProductsRoutes),
         FormsModule,
+        AngularcliStarRatingModule,
         // MdModule,
         MaterialModule,
       HttpClientModule

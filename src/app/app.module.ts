@@ -9,6 +9,9 @@ import { CommonModule } from '@angular/common';
 import {MatFormFieldModule} from '@angular/material/form-field';
 // import { SweetAlertService } from 'ng2-sweetalert2';
 import { ProfileService } from './com-profile/profile.service';
+import { DeleteBlogService } from './Blogchoicegenie/blog3/delete-blog.service';
+import { EditBlogService } from './Blogchoicegenie/blog3/edit-blog.service';
+import { AngularcliStarRatingModule } from 'angularcli-star-rating'
 
 import {
   MatAutocompleteModule,
@@ -166,6 +169,7 @@ export class MaterialModule {}
     CommonModule,
     BlackgeeksRecaptchaModule,
     BrowserAnimationsModule,
+    AngularcliStarRatingModule,
     FormsModule, ReactiveFormsModule,
     RouterModule.forRoot(AppRoutes),
     HttpModule,
@@ -220,6 +224,7 @@ export class MaterialModule {}
     UserLoginService,
     SuperLoginService,
     ResidentialService,
+    DeleteBlogService,
     EditService,
     DeleteService,
     ProfileService,
@@ -233,6 +238,7 @@ export class MaterialModule {}
     DataloginService,
     AuthguardService,
   UpdateService,
+  EditBlogService,
     
 
 RandomService,

@@ -86,7 +86,7 @@ export const AppRoutes: Routes = [
             loadChildren: './blog/blog.module#BlogModule'
         },
         {
-            path: 'blog1/:heading1',
+            path: 'blog/:heading1',
             loadChildren: './Blogchoicegenie/blog1/blog1.module#Blog1Module'
             // loadChildren: './pages/login/login.module#LoginModule'
         },
@@ -123,10 +123,7 @@ export const AppRoutes: Routes = [
             path: 'blog2',
             loadChildren: './Blogchoicegenie/blog2/blog2.module#Blog2Module'
         },
-        {
-            path: 'blog3',
-            loadChildren: './Blogchoicegenie/blog3/blog3.module#Blog3Module'
-        },
+        
         {
             path: 'blog4',
             loadChildren: './Blogchoicegenie/blog4/blog4.module#Blog4Module'
@@ -262,6 +259,10 @@ export const AppRoutes: Routes = [
             {
                 path: 'superdashboard',
                 loadChildren: './superdashboard/superdashboard.module#SuperDashboardModule'
+            },
+            {
+                path: 'superadmin/blog',
+                loadChildren: './Blogchoicegenie/blog3/blog3.module#Blog3Module'
             },
             {
                 path: 'SuperChangePassword',

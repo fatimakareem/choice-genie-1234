@@ -4394,7 +4394,7 @@ canvas {
 .heading-bottom >h4 >a{
   color: #30a5ff;
 }
-.heading-bottom p{
+.heading-bottom p {
   line-hight:24px;
 }
 .heading-bottom >h4 {
@@ -4687,7 +4687,16 @@ hr{
 }
 /* End user Siderbar */
 
-
+.product-list__star-list{
+  list-style: none;
+  display: flex;
+  margin: 10px 66px;
+ 
+}
+.product-list__star-list i{
+  color: #cc0000;
+  font-size: 28px;
+}
 
 
 /*

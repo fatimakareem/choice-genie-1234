@@ -47,14 +47,15 @@
                 <div class="col-sm-12">
                   <div class="sortBy-bar col-lg-8 col-sm-12">
                       <div class="product-page-bar col-lg-6">
+                        
                         <label class="col-md-6 product-label">Sort By</label>
                         <div class="col-md-6" style="padding: 0px">
                             <mat-form-field style="padding: 0px" >
-                                <mat-select placeholder="sortrenewable" selected="sortrenewable" (change)="fetchitempages(zip)" required [(ngModel)]="items" name="items">
-                                  <mat-option value="sortrenewable" style="font-size: 20px">sortrenewable</mat-option>
-                                  <mat-option value="10" style="font-size: 20px">10 </mat-option>
-                                  <mat-option value="20" style="font-size: 20px">20 </mat-option>
-                                </mat-select>
+                                <mat-select (change)="sortby(sort)" required [(ngModel)]="sort" name="sort">
+                                    <mat-option value="Renewable" style="font-size: 20px">Renewable</mat-option>
+                                    <mat-option value="Price" style="font-size: 20px">Price </mat-option>
+                                    <mat-option value="Company" style="font-size: 20px">Company</mat-option>
+                                  </mat-select>
                                 </mat-form-field>
                                      
                         </div>
@@ -116,8 +117,38 @@
                     <img src="{{data.profile_logo}}" alt="{{data.title}}" style="width: 90%;
                     margin-top: 16%;" />
                   </a>
-
-
+             <!-- <input  class="fa fa-star" aria-hidden="true" type="radio" value="1" (change)="reviews(rating,data.id)" [(ngModel)]="rating" name="rating">
+             <ul class="product-list__star-list">
+                <li>
+                  <a>
+                      <label title="Pretty good" (click)='reviews(rating,data.id)'> <i class="fa fa-star" aria-hidden="true"></i></label>
+                   
+                  </a>
+                </li>
+                <li>
+                  <a>
+                      <input type="radio" value="2" (change)="reviews(rating,data.id)" [(ngModel)]="rating" name="rating">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                  </a>
+                </li>
+              </ul> -->
+                  <cli-star-rating (click)="reviews(data.id)" [starReadonly]="false" [rating]="rating"></cli-star-rating>
+                 
                   <!-- <img src="{{data.rating_logo}}" /> -->
 
 

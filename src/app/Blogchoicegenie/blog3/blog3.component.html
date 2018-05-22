@@ -1,65 +1,299 @@
-<div class="terms-container-wrapper">
+<div class="container-fluid" style="padding-left:4in">
+    <h3 class="text-center choiecegenie-offers wow fadeInLeft"> BLOG </h3>
   <div class="row">
-    <div class="col-md-12 col-sm-12 col-xs-12">
-      <div class="terms-condition-wrapper container">
-          <h1>12 Easy Hacks: For Next Power Outage</h1>
-            <hr>
-            <h2> Introduction </h2>
-            <!-- <h3>This Terms of Service Agreement (“TOS”) is a legal agreement between you and ChoiceGenie (“ChoiceGenie” or “us”), and governs how you may use our website (“Site”) and the ChoiceGenie Service defined in Section 1. When you utilize our Service, you are confirming your understanding of and agreeing with these Terms and the license granted herein.  By visiting or using the Site in any way, you agree to accept notices of any kind from ChoiceGenie in electronic form.  Notices from ChoiceGenie intended for your receipt shall be deemed delivered and effective when sent by email to any email address you provide to us.  Any rights not expressly granted herein are reserved by ChoiceGenie.
-            </h3>
+    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 " *ngFor="let data of data;let i=index"> 
+      <div class="layer-content">
+          <button style="
+          font-size: 29px;
+          color: red;
+         " class="fa fa-trash-o" type="submit" value="Delete" (click)="btnDeleteClick(data.id)" data-toggle="modal"
+data-target="#myModal3">
+</button>
+<button style="padding:center;
+                          font-size: 29px;
+                          color: red;
+                          " class="fa fa-edit" type="submit" value="Edit" type="submit" (click)="btnEditClick(data.id,data.heading1,data.content1,data.Ch_image,data.heading2,data.content2,data.heading3,data.content3,data.heading4,data.content4,data.heading5,data.content5,data.heading6,data.content6)"
+                data-toggle="modal" data-target="#myModal2">
 
-            <h3>For all questions about how we use the information we obtain through your use of the Site and Services, please review our Privacy Policy. By using the Site and Service, you agree to also be bound to the Privacy Policy.
-            </h3>
-            <h2>Service Description</h2> -->
-            <p>
-              The  most  wonderful  time  of  the  year  has  no  more  wonderment  factor  in some of its aspects!</p>
-        <p>The oh-so-obvious aspect: No electricity and water!</p>
-        <p> The coming of winter storms and constant lack of electricity and water make it question your eye-sight.</p>
-              <p>Not only that, it gets difficult to stay warm and feed the family!
-            </p>
-            <p>ChoiceGenie has come up with solutions to this – threatening – problem, let’s delve into it!</p>
-            <h2>Blackout Solution # 1: Freezer: Check!</h2>
-            <p>Heard of quarter-in-a-cup-of-ice trick?
-            </p>
+              </button>
+              <div class="modal fade" id="myModal2" role="dialog">
+                  <div class="modal-dialog">
+                    <!-- Modal content-->
+                    <div class="modal-content popupmodel">
+                      <div class="modal-header">
       
-        <p>Well, the name suggests it!</p>
-             <p>Apply this and you no longer have to worry whether your food is safe to eat when there is a power outage.</p>
-            <p>Trick  #  1:  Food  is  defrosted,  if  and  when  the  quarter  has  fallen  to  the bottom of the cup.</p>
-           <p>Trick # 2: Food is perfectly edible when the quarter remains either on the top or in the middle of the cup.</p>
-           
-           <h2>Blackout Solution # 2: Create It Yourself Lantern!</h2>
-        <p>Oh, it is pretty interesting</p>
-             <p>Requirements:<p>
-        <p>(1) Headlamp or flashlight.
-            </p>
-            <p>(2) Jug of water</p>
-            <p>Procedure:</p>
-            <p>Strap the headlamp or flashlight – if it is feasible – to a jug of water.</p>
-            <p>Voilà! You have an instant ambient light at your disposal!</p>
-            <h2>Blackout Solution # 3: Glow Sticks: In the Making!</h2>
-        <p>A pretty brilliant trick to light up your way!</p>
-        <p>Glow sticks come in handy when the lights go out.Use them to line dark hallways in the blackout.</p>
-        <h2>Blackout Solution # 4: DIY a Heater!</h2>
-        <p>Make a flower pot heater! </p>
-        <p> Hold your horses, whether or not it actually works, is up for the debate.Just to assure you folks, plenty of people have affirmed it on YouTube.A  hint:  The thermal  energy  of  the  candles  is  better  absorbed  using Clay/terra-cotta pots. It brilliantly converts into a radiant space heat.</p>
-       
-        <h2>Blackout Solution # 5: Washer or Ice Cooler? You Decide!</h2>
-          <p>Start with filling your washer with ice/snow.</p>
-        <p>You would notice, it works as a cooler to keep food cold.</p>
-        <p>The trick is: as the ice melts, the washer will drain.</p>
-        <p>Don’t you find it a safer option than throwing food out in the snow?</p>
-        <p>Bonus Point: easily monitored and will not attract animals.</p>
-            <h2>Blackout Solution # 6: Candle Heat Tea!</h2>
+      
+                      </div>
+                      <div class="modal-body" style="font-size: 18px;
+                                  background: #ffffff;
+                                  padding: 20px;
+                                  margin: 15px;
+                                  position: relative;">
+                        <div class="popup-close-button" data-dismiss="modal">X</div>
+                        <div class="row">
+                          <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 " style="border-bottom: 1px #4f4f4f solid;">
+                            <p class=" modal-v2__main-heading"> {{data.heading1}}</p>
+      
+                          </div>
+                          <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3" style="border-bottom: 1px #4f4f4f solid;">
+                            <div class="popup-image">
+                              <a routerLink="/blog/{{data.heading1}}" target="_blank" class="display-b margin-top">
+                                <img src="{{data.Ch_image}}" />
+                              </a>
+                            </div>
+                          </div>
+                          <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+      
+                            <!-- <div class="card-header text-center" data-background-color="rose"style="text-align:center; padding-top:10px;">
+                                        <h4 class="card-title">Edit Your product</h4>
+              
+              
+                                      </div> -->
+      
+                            <div class="col-md-6 col-sm-6">
+                              <div class="input-group">
+      
+      
+      
+      
+                                <mat-form-field>
+                                  <input matInput placeholder="Heading"  name="heading1" value="{{heading1}}" required #updatedheading1/>
+      
+                                </mat-form-field>
+                              </div>
+                            </div>
+                            <div class="col-md-6 col-sm-6">
+                              <div class="input-group">
+      
+      
+      
+                                <!-- <input class="form-control" type="text" > -->
+                                <mat-form-field>
+                                  <input matInput placeholder="Content"  name="content1" value="{{content1}}" #updatedcontent1/>
+      
+                                </mat-form-field>
+                              </div>
+                            </div>
+                            <div class="col-md-6 col-sm-6">
+                              <div class="input-group">
+      
+      
+      
+                                <!-- <input class="form-control" type="text" > -->
+                                <mat-form-field>
+                                  <input matInput placeholder="Image url" readonly name="Ch_image" value="{{Ch_image}}" #updatedCh_image />
+      
+                                </mat-form-field>
+                              </div>
+                            </div>
+                            <div class="col-md-6 col-sm-6">
+                              <div class="input-group">
+      
+      
+      
+                                <!-- <input class="form-control" type="text" > -->
+                                <mat-form-field>
+                                  <input matInput placeholder="Heading"  name="heading2" value="{{heading2}}" #updatedheading2 />
+      
+                                </mat-form-field>
+                              </div>
+                            </div>
+                            <div class="col-md-6 col-sm-6">
+                              <div class="input-group">
+      
+      
+      
+                                <!-- <input class="form-control" type="text" > -->
+                                <mat-form-field>
+                                  <input matInput placeholder="Content" name="content2" value="{{content2}}" #updatedcontent2
+                                  />
+      
+                                </mat-form-field>
+                              </div>
+                            </div>
+      
+                            <div class="col-md-6 col-sm-6">
+                              <div class="input-group">
+      
+      
+      
+                                <!-- <input class="form-control" type="text" > -->
+                                <mat-form-field>
+                                  <input matInput placeholder="Heading" name="heading3" value="{{heading3}}" #updatedheading3/>
+      
+                                </mat-form-field>
+                              </div>
+                            </div>
+                            <div class="col-md-6 col-sm-6">
+                              <div class="input-group">
+      
+      
+      
+                                <!-- <input class="form-control" type="text" > -->
+                                <mat-form-field>
+                                  <input matInput placeholder="Content" name="content3" value="{{content3}}" #updatedcontent3 />
+      
+                                </mat-form-field>
+                              </div>
+                            </div>
+                            <div class="col-md-6 col-sm-6">
+                              <div class="input-group">
+      
+      
+      
+                                <!-- <input class="form-control" type="text" > -->
+                                <mat-form-field>
+                                  <input matInput placeholder="Heading" name="heading4" value="{{heading4}}" #updatedheading4/>
+      
+                                </mat-form-field>
+                              </div>
+                            </div>
+                            <div class="col-md-6 col-sm-6">
+                              <div class="input-group">
+      
+      
+                                <!-- <input class="form-control" type="text" > -->
+                                <mat-form-field>
+                                  <input matInput placeholder="Content"  name="content4" value="{{content4}}" #updatedcontent4/>
+      
+                                </mat-form-field>
+                              </div>
+                            </div>
+                            <div class="col-md-6 col-sm-6">
+                              <div class="input-group">
+      
+      
+                                <!-- <input class="form-control" type="text" > -->
+                                <mat-form-field>
+                                  <input matInput placeholder="Heading" name="heading5" value="{{heading5}}" #updatedheading5/>
+      
+                                </mat-form-field>
+                              </div>
+                            </div>
+                            <div class="col-md-6 col-sm-6">
+                              <div class="input-group">
+      
+      
+                                <!-- <input class="form-control" type="text" > -->
+                                <mat-form-field>
+                                  <input matInput placeholder="Content" name="content5" value="{{content5}}" #updatedcontent5
+                                  />
+      
+                                </mat-form-field>
+                              </div>
+                            </div>
+                            <div class="col-md-6 col-sm-6">
+                              <div class="input-group">
+      
+      
+                                <!-- <input class="form-control" type="text" > -->
+                                <mat-form-field>
+                                  <input matInput placeholder="Heading" name="heading6" readonly value="{{heading6}}" #updatedheading6/>
+      
+                                </mat-form-field>
+                              </div>
+                            </div>
+                            <div class="col-md-6 col-sm-6">
+                              <div class="input-group">
+      
+      
+                                <!-- <input class="form-control" type="text" > -->
+                                <mat-form-field>
+                                  <input matInput placeholder="Content" name="content6" readonly value="{{content6}}" #updatedcontent6 />
+      
+                                </mat-form-field>
+                              </div>
+                            </div>
+                            <!-- <div class="col-md-6 col-sm-6">
+                                        <div class="input-group"> -->
+      
+      
+                            <!-- <input class="form-control" type="text" > -->
+                            <!-- <mat-form-field>
+                                        <input matInput placeholder="Zipcode" name="data.zipcode" class="form-control" value="{{data.zipcode}}" #zipcode />
+              
+                                      </mat-form-field>
+                                    </div>
+                                  </div> -->
+                            <!-- </div> -->
+                            <div class=" text-center">
+                              <button type="submit" class="btn btn-rose" (click)="editClick(updatedheading1.value,updatedcontent1.value,updatedCh_image.value,updatedheading2.value,updatedcontent2.value,updatedheading3.value,updatedcontent3.value,updatedheading4.value,updatedcontent4.value,updatedheading5.value,updatedcontent5.value,updatedheading6.value,updatedcontent6.value)"
+                                data-dismiss="modal">Update</button>
+      
+                              <button type="button" class="btn btn-rose" data-dismiss="modal">Cancel</button>
+                              <!-- <button class="btn btn-rose btn-wd btn-lg" type="submit" (click)="onSubmit()" >Search</button> -->
+                            </div>
+                            <!-- </div> -->
+                          </form>
+                        </div>
+                      </div>
+                      
+                    </div>
+                  </div>
+                </div>
+<div class="modal fade" id="myModal3" role="dialog">
+    <div class="modal-dialog">
 
-              <p>Heat tea over a candle!</p>
-              <p>If  you  do  not  have  a  gas  oven  and  some  Sterno,  we  let you borrow thishack.
-              </p>
-              <p>You’re welcome!</p>
-              <p>That’s about it for today, folks!</p>
-              <p>Subscribe  to ChoiceGenie  for  more  interesting  hacks  to  brave  the  next winter storm.</p>
-<p>Until then, Stay warm!</p>
+      <!-- Modal content-->
+      <div class="modal-content popupmodel">
+        <!-- <div class="modal-header">
+                     
+                     
+                    </div> -->
+        <div class="modal-body" style="font-size: 18px;
+                    background: #ffffff;
+                    padding: 20px;
+                    margin: 15px;
+                    position: relative;">
+          <div class="popup-close-button" data-dismiss="modal">X</div>
+          <div class="row">
+            <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 " style="border-bottom: 1px #4f4f4f solid;">
+              <p class=" modal-v2__main-heading">{{data.heading1}}</p>
+
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3" style="border-bottom: 1px #4f4f4f solid;">
+              <div class="popup-image">
+                <a routerLink="/blog/{{data.heading1}}" target="_blank" class="display-b margin-top">
+                  <img src="{{data.Ch_image}}" />
+                </a>
+              </div>
+            </div>
+            <div>
+              <h4 class="modal-title" style="text-align: center;
+                          color: red;
+                          font-size: 30px;">Confirmation Alert</h4>
+              <p>Do you want to Delete this Blog?</p>
+            </div>
+
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-rose" (click)="deleteClick(dataId)" data-dismiss="modal" style="
+                      color: white;
+
+                      width: 20%;
+                      height: 45px;
+                      font-size: 18px;">Delete</button>
+          <button type="button" class="btn btn-rose" data-dismiss="modal" style="
+                      color: white;
+
+                      width: 20%;
+                      height: 45px;
+                      font-size: 18px;">Cancel</button>
+        </div>
+      </div>
+    </div>
+  </div>
+        <div>
+          <img src="{{data.Ch_image}}" alt="ChoiceGenie">
+        </div>
+        <div class="blog-layout-content">
+          <h2>{{data.heading1}}</h2>
+          <p>{{data.content1 | slice:0:106}}..</p>
+          <a  routerLink="/blog/{{data.heading1}}">
+          <button class="btn btn-rose" type="submit">Read more..</button></a>
+        </div>
       </div>
     </div>
   </div>
 </div>
-
