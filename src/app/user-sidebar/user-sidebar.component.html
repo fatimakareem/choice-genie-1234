@@ -55,7 +55,7 @@
         </div>
         <mat-form-field>
           <!-- <label class="control-label"style="font-size: 18px">KWh</label> -->
-          <mat-select placeholder="Kwh" (ngModelChange)="check($event)" required [(ngModel)]="price" name="price">
+          <mat-select class="select-list" placeholder="Kwh" (ngModelChange)="check($event)" required [(ngModel)]="price" name="price">
 
             <mat-option value="500" style="font-size: 20px">500 kWh</mat-option>
             <mat-option value="1000" style="font-size: 20px">1000 kWh</mat-option>
@@ -78,11 +78,11 @@
         <div class="pric-range-box">
           <span>¢</span>
           <input type="text" class="ng-valid ng-dirty ng-touched" required name="min" [(ngModel)]="min"
-            style="font-size: 20px">
+            style="font-size: 20px;border-radius: 5px;">
           <span>to</span>
           <span>¢</span>
           <input type="text" class="ng-valid ng-dirty ng-touched" required name="max" [(ngModel)]="max"
-            style="font-size:20px">
+            style="font-size:20px;border-radius: 5px;">
 
             <button class="price-range-submit" (click)="pricerate(min,max)"> <i class="fa fa-chevron-right"></i> </button>
 
@@ -263,7 +263,7 @@
             </h5>
           </a>
         </div>
-        <mat-select placeholder="Renewable" (ngModelChange)="check($event)" (change)="renewableenergy(energy)" required [(ngModel)]="energy" name="energy">
+        <mat-select class="select-list" placeholder="Renewable" (ngModelChange)="check($event)" (change)="renewableenergy(energy)" required [(ngModel)]="energy" name="energy">
           <mat-option value="100">100% RENEWABLE</mat-option>
           <mat-option value="76,99">76% To 99%</mat-option>
           <mat-option value="51,75">51% To 75%</mat-option>
@@ -288,7 +288,7 @@
         <!-- <span class="left"></span> -->
         <mat-form-field>
 
-          <mat-select placeholder="Company" (ngModelChange)="check($event)"(change)="companydata(name)" required [(ngModel)]="name" name="name">
+          <mat-select class="select-list" placeholder="Company" (ngModelChange)="check($event)"(change)="companydata(name)" required [(ngModel)]="name" name="name">
 
             <mat-option *ngFor="let data of title" [value]="data.title.split(' ',3000)[1]">
               {{data.title}}
@@ -311,7 +311,7 @@
           </a>
         </div>
         <mat-form-field>
-          <mat-select placeholder="10 PER PAGE" selected="10" (change)="fetchitem(items)" required [(ngModel)]="items" name="items">
+          <mat-select class="select-list" placeholder="10 PER PAGE" selected="10" (change)="fetchitem(items)" required [(ngModel)]="items" name="items">
             <mat-option value="10" selected="true">10 PER PAGE</mat-option>
             <mat-option value="20">20 PER PAGE</mat-option>
             <mat-option value="40">40 PER PAGE</mat-option>
