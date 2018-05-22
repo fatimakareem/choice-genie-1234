@@ -160,8 +160,9 @@ price_to;
    
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    this.http.get('http://192.168.30.193:9000/choice/companytitle/', { headers: headers })
-
+    //http://192.168.29.193:9000/choice/companytitle/
+    this.http.get('http://192.168.29.193:9000/choice/companytitle/', { headers: headers })
+                                                  
       .subscribe(Res => {
         this.title = Res.json();
         console.log(this.title)
