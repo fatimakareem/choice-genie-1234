@@ -4709,7 +4709,6 @@ text-align: center;
     padding-top: 25px;
     color: #6b6b6b;
     text-align: right;
-<<<<<<< HEAD
 }
 .sort-btn{
   background: none;
@@ -4717,8 +4716,6 @@ text-align: center;
     /* margin: 0px 40px; */
     font-size: 17px;
     font-weight: bold;
-=======
->>>>>>> eeb8b84fa4e7b101fb0947ab22f28c607eb2a930
 }
 .icon-bar{
   margin-top: 25px;
@@ -4779,7 +4776,7 @@ hr{
     font-size: 17px;
     font-weight: bold;
 }
-@ -4700,8 +4700,58 @@ text-align: center;
+
 hr{
   margin: 0px !important;
   height: 1px !important;
