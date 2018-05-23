@@ -38,6 +38,7 @@
     <!-- <mat-paginator [length]="100" [pageSize]="20" [pageSizeOptions]="[5, 10, 25, 100]" (change)="_changePageSize($event.value)">
       </mat-paginator> -->
 
+<<<<<<< HEAD
 
 
     <div class="products-area-products" *ngIf="prod_loaded">
@@ -60,6 +61,30 @@
 
                   </div>
                 </div>
+=======
+      
+      
+      <div class="products-area-products" *ngIf="prod_loaded">
+        <div class="row">
+          <div class="col-lg-12">
+          <div class="custom card col-lg-12" style="float: right;">
+                <div class="col-sm-12">
+                  <div class="sortBy-bar col-lg-8 col-sm-12">
+                      <div class="product-page-bar col-lg-6">
+                        
+                        <label class="col-md-6 product-label">Sort By</label>
+                        <div class="col-md-6" style="padding: 0px">
+                            <mat-form-field style="padding: 0px" >
+                                <mat-select (change)="sortby(sort)" required [(ngModel)]="sort" name="sort">
+                                    <mat-option value="Renewable" style="font-size: 20px">Renewable</mat-option>
+                                    <mat-option value="Price" style="font-size: 20px">Price </mat-option>
+                                    <mat-option value="Company" style="font-size: 20px">Company</mat-option>
+                                  </mat-select>
+                                </mat-form-field>
+                                     
+                        </div>
+              </div>
+>>>>>>> eeb8b84fa4e7b101fb0947ab22f28c607eb2a930
 
 
 

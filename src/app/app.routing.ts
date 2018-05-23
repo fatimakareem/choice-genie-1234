@@ -263,6 +263,10 @@ export const AppRoutes: Routes = [
             {
                 path: 'superadmin/blog',
                 loadChildren: './Blogchoicegenie/blog3/blog3.module#Blog3Module'
+            },//addblogModule
+            {
+                path: 'addnewblog',
+                loadChildren: './addblog/addblog.module#addblogModule'
             },
             {
                 path: 'SuperChangePassword',

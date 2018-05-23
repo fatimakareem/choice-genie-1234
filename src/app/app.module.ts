@@ -118,6 +118,7 @@ import { UserNavbarModule } from './shared/usernavbar/usernavbar.module';
 import { UpdateService } from './user-profile/update.service';
 import { SuperdashboardmainComponent } from './superdashboardmain/superdashboardmain.component';
 import { BlackgeeksRecaptchaModule } from 'recaptcha-blackgeeks';
+import { AddblogComponent } from './addblog/addblog.component';
  
 
 

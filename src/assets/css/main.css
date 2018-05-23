@@ -4709,6 +4709,7 @@ text-align: center;
     padding-top: 25px;
     color: #6b6b6b;
     text-align: right;
+<<<<<<< HEAD
 }
 .sort-btn{
   background: none;
@@ -4716,6 +4717,8 @@ text-align: center;
     /* margin: 0px 40px; */
     font-size: 17px;
     font-weight: bold;
+=======
+>>>>>>> eeb8b84fa4e7b101fb0947ab22f28c607eb2a930
 }
 .icon-bar{
   margin-top: 25px;
@@ -4766,6 +4769,21 @@ text-align: center;
 hr{
   margin: 0px !important;
   height: 1px !important;
+  background: #dadada;
+}
+.sort-btn{
+  background: none;
+    border: none;
+    margin: 0px 40px;
+    /* margin: 0px 40px; */
+    font-size: 17px;
+    font-weight: bold;
+}
+@ -4700,8 +4700,58 @@ text-align: center;
+hr{
+  margin: 0px !important;
+  height: 1px !important;
+  background: #dadada;
   background: #cc0000;
 }
  .custom-style{
@@ -4863,22 +4881,17 @@ background: linear-gradient(to bottom, #eaeaea 0%,#c6c6c6 50%,#999a9b 100%); /* 
 
 
 /* max-width */
-
-
 @media (max-width: 320px) {
   .fixed-width{
     width: 100%;
   }
-  
   .choice-saving  h2{
     font-size: 32px;
   }
 }
 @media (max-width: 575px) {
   /* Small devices (575px and down) */
-  .sort-btn{
-    font-size: 11px;
-  }
+
 
 }
 
@@ -5026,12 +5039,6 @@ background: linear-gradient(to bottom, #eaeaea 0%,#c6c6c6 50%,#999a9b 100%); /* 
   /* Large devices (992px and down) */
   .top-margin{
     margin-top: 0px;
-  }
-  .main-panel .main-content{
-    margin-top: 40px !important;
-  }
-  .card .card-header.card-header-text{
-    display: inline-block !important;
   }
 }
 @media (max-width: 1024px) {
