@@ -35,7 +35,7 @@ public heading1;
     headers.append('Content-Type', 'application/json');
     
     
-    this.http.get('http://192.168.30.41:9000/Gettingblog/'+ heading1 +'/' ,{ headers: headers })
+    this.http.get('http://192.168.30.41:9000/filterblog/'+ heading1 +'/' ,{ headers: headers })
     .subscribe(Res => {
     this.data = Res.json()[0];
     console.log(this.data);
