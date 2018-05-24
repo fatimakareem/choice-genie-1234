@@ -117,59 +117,98 @@
                   <img src="{{data.profile_logo}}" alt="{{data.title}}" style="width: 90%;
                     margin-top: 16%;" />
                 </a>
-                <!-- <fieldset class="rating">
-                      <input type="radio" 
-                          value="5" 
-                          [name]="inpustName"
-                          [checked]="rating===5" />
-                      <label title="Rocks!" (click)='reviews(5,data.id)'>5 stars</label>
-                   
-                      <input type="radio" 
-                          value="4" 
-                          [name]="inpustName"
-                          [checked]="rating===4" />
-                      <label title="Pretty good" (click)='reviews(4,data.id)'>4 stars</label>
-                   
-                      <input type="radio" 
-                          value="3" 
-                          [name]="inpustName"
-                          [checked]="rating===3" />
-                      <label title="Meh" (click)='reviews(3,data.id)'>3 stars</label>
-                   
-                      <input type="radio" 
-                          value="2" 
-                          [name]="inpustName"
-                          [checked]="rating===2" />
-                      <label title="Kinda bad" (click)='reviews(2,data.id)'>2 stars</label>
-                   
-                      <input type="radio" 
-                          value="1" 
-                          [name]="inpustName"
-                          [checked]="rating===1" />
-                      <label title="Sucks big time" (click)='reviews(1,data.id)'>1 star</label>
-                  </fieldset> -->
-                <fieldset class="ratingq move-to-center">
-                  <input type="radio" id="star5q" name="rating" value="5" (click)="reviews(5,data.id)" />
-                  <label class="full" for="star5q" title="Awesome - 5 stars"></label>
-                  <input type="radio" id="star4halfq" name="rating" value="4 and a half" (click)="reviews(4.5,data.id)" />
-                  <label class="half" for="star4halfq" title="Pretty good - 4.5 stars"></label>
-                  <input type="radio" id="starq" name="rating" value="4" (click)="reviews(4,data.id)" />
-                  <label class="full" for="starq" title="Pretty good - 4 stars"></label>
-                  <input type="radio" id="star3halfq" name="rating" value="3 and a half" (click)="reviews(3.5,data.id)" />
-                  <label class="half" for="star3halfq" title="Meh - 3.5 stars"></label>
-                  <input type="radio" id="star3q" name="rating" value="3" (click)="reviews(3,data.id)" />
-                  <label class="full" for="star3q" title="Meh - 3 stars"></label>
-                  <input type="radio" id="star2halfq" name="rating" value="2 and a half" (click)="reviews(2.5,data.id)" />
-                  <label class="half" for="star2halfq" title="Kinda bad - 2.5 stars"></label>
-                  <input type="radio" id="star2q" name="rating" value="2" (click)="reviews(2,data.id)" />
-                  <label class="full" for="star2q" title="Kinda bad - 2 stars"></label>
-                  <input type="radio" id="star1halfq" name="rating" value="1 and a half" (click)="reviews(1.5,data.id)" />
-                  <label class="half" for="star1halfq" title="Meh - 1.5 stars"></label>
-                  <input type="radio" id="star1q" name="rating" value="1" (click)="reviews(1,data.id)" />
-                  <label class="full" for="star1q" title="Sucks big time - 1 star"></label>
-                  <input type="radio" id="starhalfq" (click)="reviews(0.5,data.id)" name="rating" value="half" />
-                  <label class="half" for="starhalfq" title="Sucks big time - 0.5 stars"></label>
-                </fieldset>
+               
+                 
+                     
+                          <h1 class="rating-num">4.0</h1>
+                          <div class="rating">
+                            <span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star-empty"></span>
+                          </div>
+                          <div>
+                            <span class="glyphicon glyphicon-user"></span>1,050,008 total
+                          </div>
+                        
+                       
+                    
+                <button *ngIf="checked_login()" class="btn btn-rose" (click)="btnDeleteClick(data.id,data.title,data.profileurl,data.profile_logo)"
+                  data-toggle="modal" data-target="#myModal3"> Leave a Review
+                </button>
+                <div class="modal fade" id="myModal3" role="dialog">
+                  <div class="modal-dialog">
+
+                    <!-- Modal content-->
+                    <div class="modal-content popupmodel">
+                      <!-- <div class="modal-header">
+                                       
+                                       
+                                      </div> -->
+                      <div class="modal-body" style="font-size: 18px;
+                                      background: #ffffff;
+                                      padding: 20px;
+                                      margin: 15px;
+                                      position: relative;">
+                        <div class="popup-close-button" data-dismiss="modal">X</div>
+                        <div class="row">
+                          <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 " style="border-bottom: 1px #4f4f4f solid;">
+                            <p class=" modal-v2__main-heading"> {{title}}</p>
+
+                          </div>
+                          <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3" style="border-bottom: 1px #4f4f4f solid;">
+                            <div class="popup-image">
+                              <a href="{{profileurl}}" target="_blank" class="display-b margin-top">
+                                <img src="{{profile_logo}}" />
+                              </a>
+                            </div>
+                          </div>
+                          <div>
+
+                            <h4 class="modal-title" style="text-align: center;
+                                         
+                                            font-size: 30px;">Based on what you've seen so far, how would you rate this Product?</h4>
+                            <fieldset class="ratingq move-to-center" style="padding-left:3.5in">
+                              <input type="radio" id="star5q" name="rating" value="5" (click)="reviews(5,id)" />
+                              <label class="full" for="star5q" title="Awesome - 5 stars"></label>
+                              <input type="radio" id="star4halfq" name="rating" value="4 and a half" (click)="reviews(4.5,id)" />
+                              <label class="half" for="star4halfq" title="Pretty good - 4.5 stars"></label>
+                              <input type="radio" id="starq" name="rating" value="4" (click)="reviews(4,id)" />
+                              <label class="full" for="starq" title="Pretty good - 4 stars"></label>
+                              <input type="radio" id="star3halfq" name="rating" value="3 and a half" (click)="reviews(3.5,id)" />
+                              <label class="half" for="star3halfq" title="Meh - 3.5 stars"></label>
+                              <input type="radio" id="star3q" name="rating" value="3" (click)="reviews(3,id)" />
+                              <label class="full" for="star3q" title="Meh - 3 stars"></label>
+                              <input type="radio" id="star2halfq" name="rating" value="2 and a half" (click)="reviews(2.5,id)" />
+                              <label class="half" for="star2halfq" title="Kinda bad - 2.5 stars"></label>
+                              <input type="radio" id="star2q" name="rating" value="2" (click)="reviews(2,id)" />
+                              <label class="full" for="star2q" title="Kinda bad - 2 stars"></label>
+                              <input type="radio" id="star1halfq" name="rating" value="1 and a half" (click)="reviews(1.5,id)" />
+                              <label class="half" for="star1halfq" title="Meh - 1.5 stars"></label>
+                              <input type="radio" id="star1q" name="rating" value="1" (click)="reviews(1,id)" />
+                              <label class="full" for="star1q" title="Sucks big time - 1 star"></label>
+                              <input type="radio" id="starhalfq" (click)="reviews(0.5,id)" name="rating" value="half" />
+                              <label class="half" for="starhalfq" title="Sucks big time - 0.5 stars"></label>
+                            </fieldset>
+                          </div>
+
+                        </div>
+                        <p>Your review will be publicly visible within 1 Second.</p>
+                      </div>
+                     
+                      <div class="modal-footer">
+
+                        <button type="button" class="btn btn-rose" data-dismiss="modal" style="
+                                        color: white;
+                
+                                        width: 20%;
+                                        height: 45px;
+                                        font-size: 18px;">Cancel</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
 
                 <!-- <input  class="fa fa-star" aria-hidden="true" type="radio" value="1" (change)="reviews(rating,data.id)" [(ngModel)]="rating" name="rating">
              <ul class="product-list__star-list">
