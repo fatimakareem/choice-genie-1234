@@ -14,7 +14,7 @@
         </header>
 
         <nav id="mainnav">
-            <ul>
+            <ul class="super-sidebar-list">
                 <li>
                     <a href="/supermaindashboard">
                         Dashboard
@@ -41,19 +41,20 @@
                         Blogs
                     </a>
                 </li>
+
                 <li>
-                    <!-- <li>
+                    <a (click)="logout()">
+                        Logout
+                    </a>
+                </li>
+
+                <!-- <li>
                         <a href="/superadmin/blog">
                             Blogs
                         </a>
                     </li> -->
-                    <li>
-                        <a (click)="logout()">
-                            Logout
-                        </a>
-                    </li>
 
-                    <!-- <li>
+                <!-- <li>
                 <a href="/SuperChangePassword">
                   Change Password
                 </a>
