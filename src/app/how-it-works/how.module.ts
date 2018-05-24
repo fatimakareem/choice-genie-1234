@@ -3,7 +3,7 @@ import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 // import { MdModule } from '../md/md.module';
 import { MaterialModule } from '../app.module';
-
+import {LoaderModule} from '../loader/loader.module';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatDatepickerModule} from "@angular/material";
 import { HttpClientModule } from '@angular/common/http';
@@ -19,7 +19,8 @@ import { HowItWorksComponent } from './how-it-works.component';
         FormsModule,
         ReactiveFormsModule,
         MatDatepickerModule,
-        HttpClientModule
+        HttpClientModule,
+        LoaderModule
     ],
     declarations: [
         HowItWorksComponent

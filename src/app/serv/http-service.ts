@@ -4,7 +4,7 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/throw';
 import 'rxjs/Rx';
 import { PreloaderService } from './preloader-service';
-import { Config } from '../Config';
+import { Config2 } from '../config-2';
 
 @Injectable()
 export class HttpService extends Http {
@@ -122,7 +122,7 @@ export class HttpService extends Http {
    * @returns {string}
    */
   private getFullUrl(str): string {
-    return Config.api + str;
+    return Config2.api + str;
   }
 
   /**

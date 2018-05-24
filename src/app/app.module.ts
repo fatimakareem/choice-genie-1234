@@ -12,7 +12,7 @@ import { ProfileService } from './com-profile/profile.service';
 import { DeleteBlogService } from './Blogchoicegenie/blog3/delete-blog.service';
 import { EditBlogService } from './Blogchoicegenie/blog3/edit-blog.service';
 import { AngularcliStarRatingModule } from 'angularcli-star-rating'
-
+import {LoaderModule} from '../app/loader/loader.module';
 import {
   MatAutocompleteModule,
   MatButtonModule,
@@ -93,7 +93,6 @@ import { WhyChocieGenieComponent } from './why-chocie-genie/why-chocie-genie.com
 import { RandomService } from './random.service';
 import { ActiveService } from './active.service';
  
-import { LoaderModule } from './loader/loader.module';
 import { SuperviewcontactComponent } from './superviewcontact/superviewcontact.component';
 import { SviewapartnerComponent } from './sviewapartner/sviewapartner.component';
  

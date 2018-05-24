@@ -20,11 +20,11 @@ import { ConsumeradminComponent } from './layouts/consumeradmin/consumeradmin.co
 
 
 export const AppRoutes: Routes = [
-    {
-        path: '',
-        redirectTo: 'home',
-        pathMatch: 'full',
-    },
+    // {
+    //     path: '',
+    //     redirectTo: 'home',
+    //     pathMatch: 'full',
+    // },
     {path: "", component: HomeComponent},
     
     // {path: "usersignup", component: UsersignupComponent},

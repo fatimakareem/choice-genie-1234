@@ -13,6 +13,7 @@ import { ResponseContentType } from '@angular/http/src/enums';
 import { FormBuilder, Validators, NgControl, RadioControlValueAccessor, FormControl, FormGroup } from '@angular/forms';
 import { HttpClient, HttpResponse, HttpHeaders } from "@angular/common/http";
  import swal from 'sweetalert2'; 
+ import {HttpService} from '../serv/http-service';
 import { MatSelect } from '@angular/material'; 
 @Component({
   selector: 'app-blog',
@@ -21,7 +22,7 @@ import { MatSelect } from '@angular/material';
 })
 export class BlogComponent implements OnInit {
 
-  constructor(private https:Http,public router: Router, private fb: FormBuilder, private http: HttpClient, private route: ActivatedRoute, private sg: SimpleGlobal) { }
+  constructor(private https:HttpService,public router: Router, private fb: FormBuilder, private http: HttpClient, private route: ActivatedRoute, private sg: SimpleGlobal) { }
 data:any=[];
   ngOnInit() {
     this. profile();
@@ -30,7 +31,7 @@ data:any=[];
     
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    this.https.get('http://127.0.0.1:8000/Gettingblog/' , { headers: headers })
+    this.https.get('http://192.168.30.135:9000/Gettingblog/' , { headers: headers })
     
     .subscribe(Res => {
     this.data=Res.json();
