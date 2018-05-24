@@ -36,6 +36,9 @@ export class AddblogComponent implements OnInit {
   hide=true;
   emailexist: boolean = true;
   usernameexist: boolean = true;
+  result: any = [];
+  url: any = 'JPG, GIF, PNG';
+  Ch_image;
 
   constructor(private _serv: LoginService, public router: Router, private fb: FormBuilder, private http: HttpClient, private route: ActivatedRoute, private sg: SimpleGlobal) { }
 
@@ -43,19 +46,108 @@ export class AddblogComponent implements OnInit {
 
   ngOnInit() {
     this.signupForm = this.fb.group({
-      'Name': ['', Validators.compose([Validators.required])],
-      'service_zip': ['', Validators.compose([Validators.required])],
-
-      // 'zipcode': ['', Validators.compose([Validators.required, , Validators.pattern(this.digitsOnly)])],
-      // 'utilityarea': ['', Validators.compose([Validators.required])],
-      'email': ['', Validators.compose([Validators.required, Validators.pattern(this.email)])],
-      'username': ['', Validators.compose([Validators.required, Validators.pattern(/^[a-zA-Z_\- ]+$/)])],
-      //'username': ['', Validators.compose([Validators.required, Validators.pattern(this.usernameOnly)])],
-      // username: ['', Validators.compose([Validators.required, Validators.pattern(this.usernameOnly)])],
-      'phone_no': ['', Validators.compose([Validators.required, Validators.pattern(this.digitsOnly)])],
-      'dob': ['', Validators.compose([Validators.required])],
+      'Ch_image':['', Validators.compose([Validators.required])],
+      'heading1': ['', Validators.compose([Validators.required])],
+      'content1': ['', Validators.compose([Validators.required])],  
+      'heading2': ['', Validators.compose([Validators.required])],
+      'content2': ['', Validators.compose([Validators.required])],  
+      'heading3': ['', Validators.compose([Validators.required])],
+      'content3': ['', Validators.compose([Validators.required])],  
+      'heading4': ['', Validators.compose([Validators.required])],
+      'content4': ['', Validators.compose([Validators.required])], 
+      'heading5': ['', Validators.compose([Validators.required])],
+      'content5': ['', Validators.compose([Validators.required])],     
+      'heading6': ['', Validators.compose([Validators.required])],
+      'content6': ['', Validators.compose([Validators.required])],    
   
     });
+    }
+    // onChange(event) {
+    //   this.Ch_image = event.target.files[0];
+    // }
+    onChange(event: EventTarget) {
+      this.Ch_image = new FormData();
+      const eventObj: MSInputMethodContext = <MSInputMethodContext> event;
+      const target: HTMLInputElement = <HTMLInputElement> eventObj.target;
+      this.Ch_image.append('fileToUpload', target.files[0]);
+      console.log(this.Ch_image);
+      alert(this.Ch_image);
+    }
+    
+  
+    readUrl(event: any) {
+      if (event.target.files && event.target.files[0]) {
+        const reader = new FileReader();
+  
+        reader.onload = (e: any) => {
+          this.url = e.target.result;
+          console.log(this.url);
+        };
+        // this.img=this.url;
+        reader.readAsDataURL(event.target.files[0]);
+      }
+    }
+
+    upload(){
+      alert('Image Object ' + this.Ch_image);
+
+this.http.post(
+Config.Imageurlupload,
+this.Ch_image, {responseType: 'text'}).subscribe(data => {
+if(data==="Sorry, not a valid Image.Sorry, only JPG, JPEG, PNG & GIF files are allowed.Sorry, your file was not uploaded.")
+{
+// EditCourseDialogComponent.ImageUploadFailer();
+// this.CourseFailure();
+}
+else {
+
+// this.CourseSuccess();
+// this.course_image = data;
+// alert(this.course_image);
+//              this.ifImageUpload();            }
+console.log(data);
+alert(data);
+this.model.Ch_image = data;
+// this.model.course_content = data;
+this.signupuserdata();
+}
+});
+
+
+
+    }
+
+    signupuserdata() {
+      //alert('hello');
+      //console.log("main form",this.signupForm.value)
+      console.log("CHOICE GENIE", this.model.Ch_image);
+      let headers = new HttpHeaders();
+      headers.append('Content-Type', 'application/json');
+      this.http.post( 'http://192.168.30.135:9000/postingblog/', this.model, { headers: headers })
+        .subscribe(Res => {
+          console.log(Res);
+          console.log(this.model);
+          swal({
+            text: "Blogs Save  Successflluy!",
+            title: "Choice Genie",
+            type: "success",
+            showConfirmButton: false,
+            //     confirmButtonColor: "#DD6B55",
+            timer: 1200,
+            confirmButtonText: "OK",
+  
+          })
+          //  f.resetForm();
+           
+        },
+          error => {
+            //this.validateAllFormFields(this.model);
+            console.log(error);
+  
+           
+            //   f.resetForm();
+          });
+  
     }
   
 
