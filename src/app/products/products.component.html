@@ -117,21 +117,13 @@
                   <img src="{{data.profile_logo}}" alt="{{data.title}}" style="width: 90%;
                     margin-top: 16%;" />
                 </a>
+
+
+
                
-                 
-                     
-                          <h1 class="rating-num">4.0</h1>
-                          <div class="rating">
-                            <span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span>
-                            <span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span>
-                            <span class="glyphicon glyphicon-star-empty"></span>
-                          </div>
-                          <div>
-                            <span class="glyphicon glyphicon-user"></span>1,050,008 total
-                          </div>
-                        
-                       
-                    
+
+
+
                 <button *ngIf="checked_login()" class="btn btn-rose" (click)="btnDeleteClick(data.id,data.title,data.profileurl,data.profile_logo)"
                   data-toggle="modal" data-target="#myModal3"> Leave a Review
                 </button>
@@ -168,33 +160,47 @@
                                          
                                             font-size: 30px;">Based on what you've seen so far, how would you rate this Product?</h4>
                             <fieldset class="ratingq move-to-center" style="padding-left:3.5in">
-                              <input type="radio" id="star5q" name="rating" value="5" (click)="reviews(5,id)" />
+                              <input type="radio" id="star5q" name="rating" value="5" (click)="get(5)" />
                               <label class="full" for="star5q" title="Awesome - 5 stars"></label>
-                              <input type="radio" id="star4halfq" name="rating" value="4 and a half" (click)="reviews(4.5,id)" />
+                              <input type="radio" id="star4halfq" name="rating" value="4.5" (click)="get(4.5)" />
                               <label class="half" for="star4halfq" title="Pretty good - 4.5 stars"></label>
-                              <input type="radio" id="starq" name="rating" value="4" (click)="reviews(4,id)" />
+                              <input type="radio" id="starq" name="rating" value="4" (click)="get(4)"  />
                               <label class="full" for="starq" title="Pretty good - 4 stars"></label>
-                              <input type="radio" id="star3halfq" name="rating" value="3 and a half" (click)="reviews(3.5,id)" />
+                              <input type="radio" id="star3halfq" name="rating" value="3.5" (click)="get(3.5)"  />
                               <label class="half" for="star3halfq" title="Meh - 3.5 stars"></label>
-                              <input type="radio" id="star3q" name="rating" value="3" (click)="reviews(3,id)" />
+                              <input type="radio" id="star3q" name="rating" value="3" (click)="get(3)"  />
                               <label class="full" for="star3q" title="Meh - 3 stars"></label>
-                              <input type="radio" id="star2halfq" name="rating" value="2 and a half" (click)="reviews(2.5,id)" />
+                              <input type="radio" id="star2halfq" name="rating" value="2.5" (click)="get(2.5)"  />
                               <label class="half" for="star2halfq" title="Kinda bad - 2.5 stars"></label>
-                              <input type="radio" id="star2q" name="rating" value="2" (click)="reviews(2,id)" />
+                              <input type="radio" id="star2q" name="rating" value="2" (click)="get(2)"  />
                               <label class="full" for="star2q" title="Kinda bad - 2 stars"></label>
-                              <input type="radio" id="star1halfq" name="rating" value="1 and a half" (click)="reviews(1.5,id)" />
+                              <input type="radio" id="star1halfq" name="rating" value="1.5" (click)="get(1.5)"  />
                               <label class="half" for="star1halfq" title="Meh - 1.5 stars"></label>
-                              <input type="radio" id="star1q" name="rating" value="1" (click)="reviews(1,id)" />
+                              <input type="radio" id="star1q" name="rating" value="1" (click)="get(1)" />
                               <label class="full" for="star1q" title="Sucks big time - 1 star"></label>
-                              <input type="radio" id="starhalfq" (click)="reviews(0.5,id)" name="rating" value="half" />
+                              <input type="radio" id="starhalfq" name="rating" value="0.5" (click)="get(0.5)" />
                               <label class="half" for="starhalfq" title="Sucks big time - 0.5 stars"></label>
                             </fieldset>
-                          </div>
 
+                          </div>
+                          <div class="modal-title" style="text-align: center;padding-left:3in">
+                          <h3 style="
+                                         
+                          font-size: 30px;">Why Did You Leaving This Review?</h3></div>
+                         <br>
+                         <br>
+                              <mat-form-field>
+                            <textarea matInput placeholder="Share your Opinion about the quality of this product." matAutosizeMinRows="10" matAutosizeMaxRows="5"
+                              style="height: 40px !important;width:920px !important;" name="comt" [(ngModel)]="comt">
+
+                              </textarea>
+
+                            </mat-form-field>
+                         
                         </div>
                         <p>Your review will be publicly visible within 1 Second.</p>
                       </div>
-                     
+
                       <div class="modal-footer">
 
                         <button type="button" class="btn btn-rose" data-dismiss="modal" style="
@@ -203,6 +209,8 @@
                                         width: 20%;
                                         height: 45px;
                                         font-size: 18px;">Cancel</button>
+                                        <button type="button" class="btn btn-rose" (click)="reviews(rating,comt,id)" >Done</button>
+
                       </div>
                     </div>
                   </div>
@@ -289,7 +297,7 @@
 
                 </div>
                 <a>
-                  <label class="view-plan-details" (click)="btnEditClick(data.id,data.title,data.sign_up,data.phone,data.terms_of_service,data.fact_sheet,data.cancelation_fee,data.price_1000_kwh,data.price_500_kwh,data.price_2000_kwh,data.plan_information,data.rating_logo,data.profile_logo,data.profileurl)"
+                  <label class="view-plan-details" (click)="btnEditClick(data.id,data.title,data.sign_up,data.phone,data.terms_of_service,data.fact_sheet,data.cancelation_fee,data.price_1000_kwh,data.price_500_kwh,data.price_2000_kwh,data.plan_information,data.rating_logo,data.profile_logo,data.profileurl); getreview(data.id); avereview(data.id)"
                     data-toggle="modal" data-target="#myModal2" style="    padding-bottom: 0px; margin-bottom: 0px;">Plan Information</label>
                 </a>
 
@@ -413,7 +421,19 @@
                         <ul>
                           <li *ngFor="let data of plan_information">{{data}}</li>
                         </ul>
-
+                        <h3>Avrage Reviews</h3>
+                        <h4>{{avrage}}</h4>
+                        <div class="rating">
+                          <span class="glyphicon glyphicon-star"></span>
+                          <span class="glyphicon glyphicon-star"></span>
+                          <span class="glyphicon glyphicon-star"></span>
+                          <span class="glyphicon glyphicon-star"></span>
+                          <span class="glyphicon glyphicon-star-empty"></span>
+                        </div>
+                        <div>
+                          <h3>Total Reviews</h3>
+                          <span class="glyphicon glyphicon-user" ></span>{{rev}}
+                        </div>
 
                       </div>
                     </div>

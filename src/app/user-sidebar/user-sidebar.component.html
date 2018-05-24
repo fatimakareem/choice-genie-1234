@@ -290,7 +290,7 @@
 
           <mat-select placeholder="Company" (ngModelChange)="check($event)"(change)="companydata(name)" required [(ngModel)]="name" name="name">
 
-            <mat-option *ngFor="let data of title" [value]="data.title.split(' ',3000)[1]">
+            <mat-option *ngFor="let data of title" [value]="data.title">
               {{data.title}}
 
             </mat-option>
