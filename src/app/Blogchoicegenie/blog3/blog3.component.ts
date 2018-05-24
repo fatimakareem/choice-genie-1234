@@ -33,7 +33,7 @@ export class Blog3Component implements OnInit {
       
       let headers = new Headers();
       headers.append('Content-Type', 'application/json');
-      this.https.get('http://192.168.30.135:9000/Gettingblog/' , { headers: headers })
+      this.https.get('http://127.0.0.1:8000/Gettingblog/' , { headers: headers })
       
       .subscribe(Res => {
       this.data=Res.json();
