@@ -33,7 +33,7 @@ export class Blog3Component implements OnInit {
       
       let headers = new Headers();
       headers.append('Content-Type', 'application/json');
-      this.https.get('http://127.0.0.1:8000/Gettingblog/' , { headers: headers })
+      this.https.get('http://192.168.30.41:9000/Gettingblog/' , { headers: headers })
       
       .subscribe(Res => {
       this.data=Res.json();
@@ -41,11 +41,16 @@ export class Blog3Component implements OnInit {
       });
       
       }
+      id='';
+      btnDeleteClick(id) {
+        this.id = id;
+        console.log('id : ' + this.id);
+    }
       deleteClick(id) {
         console.log('delete' + id);
 
         //Calling Delete Service
-        this.newService.DeleteTodoList(id).subscribe(data => {
+        this.newService.DeleteTodoList(this.id).subscribe(data => {
             console.log(data);
             swal({
                 type: 'success',
@@ -111,7 +116,7 @@ console.log("TS OBJECT",updatedheading1,updatedcontent1,updatedCh_image,updatedh
               showConfirmButton: false,
               timer: 1500
             })
-         
+            this. profile();
 
       }, error => {
       });

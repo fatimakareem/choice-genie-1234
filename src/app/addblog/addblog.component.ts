@@ -123,7 +123,7 @@ this.signupuserdata();
       console.log("CHOICE GENIE", this.model.Ch_image);
       let headers = new HttpHeaders();
       headers.append('Content-Type', 'application/json');
-      this.http.post( 'http://192.168.30.135:9000/postingblog/', this.model, { headers: headers })
+      this.http.post( 'http://192.168.30.41:9000/postingblog/', this.model, { headers: headers })
         .subscribe(Res => {
           console.log(Res);
           console.log(this.model);
