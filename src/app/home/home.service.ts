@@ -11,15 +11,9 @@ export class HomeService {
 
   searchProducts(id,page) {
     console.log(id)
-<<<<<<< HEAD
-   // return this.http.get(Config.api + '/zipcodedata/' + id +'?page='+page +'/').map((response: Response) => response.json());
-
-    return this.http.get('http://192.168.30.193:9000/choice/zipcodedata/' + id +'?page='+page +'/').map((response: Response) => response.json());
-=======
     // return this.http.get(Config.api + '/zipcodedata/' + id +'?page='+page +'/').map((response: Response) => response.json());
 //http://192.168.30.193:9000/choice/zipcodedata/77971
    return this.http.get('http://192.168.30.193:9000/choice/zipcodedata/' + id +'?page='+page +'/').map((response: Response) => response.json());
->>>>>>> 26db456c5b201066e1f443e4ddf6390383414e99
    // return this.http.get('http://192.168.30.52:9000/choice/zipcodedata/'+id+'?page='+page).map((response: Response) => response.json());
   }
 }

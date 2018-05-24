@@ -90,7 +90,7 @@ export const AppRoutes: Routes = [
             loadChildren: './Blogchoicegenie/blog1/blog1.module#Blog1Module'
             // loadChildren: './pages/login/login.module#LoginModule'
         },
-        
+    
         
         {
             path: 'blog2',
