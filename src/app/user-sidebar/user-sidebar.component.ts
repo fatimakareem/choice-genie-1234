@@ -164,6 +164,7 @@ price_to;
 
       .subscribe(Res => {
         this.title = Res.json();
+        this.title=this.title
         console.log(this.title)
       });
 
