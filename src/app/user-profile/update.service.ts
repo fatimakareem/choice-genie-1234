@@ -6,7 +6,7 @@ import {Config} from "../Config";
 export class UpdateService {
 public username;
   constructor(private http: Http) { 
-    this.username = localStorage.getItem('username');
+    this.username = localStorage.getItem('custum');
   }
 
    // item.id,item.zipcode,item.utilityarea,item.title,item.Phone,item.state,item.country,item.status,item.user
@@ -18,7 +18,7 @@ editTodoList(updateid,updatename,updatecontact,updateserviceaddress,updateservic
   updatebillingaddress,updatebillingcity,updatebillingstate,updatebillingZipcode,updateauthenticationcode,updateacountactive,updateuserid)
   const headers = new Headers();
   headers.append('Content-Type', 'application/json');
-  return this.http.put('http://127.0.0.1:8000/users_profile/'+ this.username + '/' , JSON.stringify({
+  return this.http.put('http://192.168.30.135:9000/users_profile/'+ this.username + '/' , JSON.stringify({
   // return this.http.put(Config.api +'dashboardstatus/'+ id , JSON.stringify({
  // return this.http.put(Config.api+'dataup/'+ id , JSON.stringify({
    
