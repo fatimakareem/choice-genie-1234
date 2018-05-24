@@ -21,6 +21,7 @@ export function httpServiceFactory(backend: XHRBackend, defaultOptions: RequestO
   ],
   providers: [
     PreloaderService,
+
     {
       provide: HttpService,
       useFactory: httpServiceFactory,

@@ -8,7 +8,6 @@ import { Http, Response, Headers } from '@angular/http';
 import { applyRedirects } from "@angular/router/src/apply_redirects";
 import { Router } from "@angular/router";
 
-
 import { Config } from "../Config";
 import { ActivatedRoute, RouterModule } from "@angular/router";
 
