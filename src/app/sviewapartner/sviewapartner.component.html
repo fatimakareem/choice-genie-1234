@@ -18,11 +18,12 @@
 <table class="table table-bordered tablefixed" style="background-color:#ffffff">
   <thead>
   <tr>
-    <th class="text-center">User ID</th>
+    <th class="text-center"><User id=""></User></th>
     <th class="text-center">Partner Name</th>
     <th class="text-center">Email</th>
     <th class="text-center">Partner Company</th>
     <th class="text-center">Description</th>
+    <th class="text-center">status</th>
     <!-- <th class="text-center">Phone</th>
     <th class="text-center">State</th>
     <th class="text-center">Email</th>
@@ -36,14 +37,28 @@
     <td style="font-size: 20px;">{{item.email}}</td>
     <td style="font-size: 20px;">{{item.partnername}}</td>
     <td style="font-size: 20px;">{{item.desc}}</td>
+    <td style="font-size: 20px;">{{item.activepartner}}</td>
     <td style="font-size: 20px;">
-      <button  class="btn btn-default" data-target="#myModal3" data-toggle="modal" style=" width: 100%; height: 100%; color: red; background-color: #ffffff !important; " type="submit" value="Delete">
+    <form>
+      <!-- updatedname,updatedemail,updatedpartnername,updateddesc,updateduser -->
+      <!-- updatedname,updatedemail,updatedpartnername,updateddesc,updatedactivepartner -->
+   <input matInput name="item.name" value="{{item.name}}"[hidden]="true" required #updatedname/>
+    <input matInput  name="item.email" value="{{item.email}}"[hidden]="true" required #updatedemail/>
+    <input matInput  name="item.partnername" value="{{item.partnername}}" required [hidden]="true" #updatedpartnername/>
+    <input matInput  name="item.desc" value="{{item.desc}}" required [hidden]="true" #updateddesc/>
+    <input matInput  name="item.activepartner" [value]="status" required [hidden]="true" #updatedactivepartner/>
+     
+
+    <button type="submit" class="btn btn-default" style="background-color: #ffffff !important;  width: 100%; height: 100%"  
+    (click)="btnEditClick(item.id,item.name,item.email,item.partnername,item.desc,item.activepartner);editClick(updatedname.value,updatedemail.value,updatedpartnername.value,updateddesc.value,updatedactivepartner.value)"><i class="fa fa-check"></i> </button>
+  </form>
+  </td>
+ 
+    <td style="font-size: 20px;">
+      <button  class="btn btn-default" data-target="#myModal3" data-toggle="modal" style=" width: 100%; height: 100%; color: red; background-color: #ffffff !important; " type="submit" value="Delete"(click)="btnDeleteClick(item.id)" >
         <i  class="fa fa-times"></i> </button>
     </td>
-    <!-- <td style="font-size: 20px;">{{item.Phone}}</td>
-    <td style="font-size: 20px;">{{item.state}}</td>
-    <td style="font-size: 20px;">{{item.email}}</td>
-    <td style="font-size: 20px;">{{item.country}}</td> -->
+ 
   </tr>
   </tbody>
 </table>
@@ -122,70 +137,3 @@
 </div>
 </div>
 </div>
-<!--
-<div class="main-content custom"> -->
-
-<!-- <div class="container-fluid"> -->
-<!-- <div class="row">
-<div class="col-sm-12">
-
-<div class="page-title">
-  <span>Product Search </span>
-
-</div>
--->
-
-<!--
-<div class="products-area" *ngIf="data;else no_data_templ">
-  <div class="card"*ngFor="let item of data; let i = index">
-    <div class="row">
-
-      <div class="col-sm-12" >
-        <div class="card-header card-header-text" data-background-color="rose">
-
-          <h4 class="card-title">{{item.zipcode}} aaa</h4>
-
-        </div> -->
-
-
-
-<!--
-      </div>
-    </div>
-
-
-  </div>
-</div>
-</div>
-<div>
-              <div> -->
-
-
-
-
-
-
-
-
-
-
-<!-- <div class="mat-paginator-page-size">
-            <div class="mat-paginator-page-size-label">{{_intl.itemsPerPageLabel}}</div>
-            <mat-form-field *ngIf="_displayedPageSizeOptions.length > 1" class="mat-paginator-page-size-select">
-              <mat-select [value]="pageSize" [aria-label]="_intl.itemsPerPageLabel" (change)="_changePageSize($event.value)">
-                <mat-option *ngFor="let pageSizeOption of _displayedPageSizeOptions" [value]="pageSizeOption">{{pageSizeOption}}</mat-option>
-              </mat-select>
-            </mat-form-field>
-            <div *ngIf="_displayedPageSizeOptions.length <= 1">{{pageSize}}</div>
-          </div>
-          <div class="mat-paginator-range-label">{{_intl.getRangeLabel(pageIndex, pageSize, length)}}</div>
-          <button mat-icon-button type="button" class="mat-paginator-navigation-previous"
-            (click)="previousPage()" [attr.aria-label]="_intl.previousPageLabel" [matTooltip]="_intl.previousPageLabel" [matTooltipPosition]="'above'"
-            [disabled]="!hasPreviousPage()">
-            <div class="mat-paginator-increment"></div>
-          </button>
-          <button mat-icon-button type="button" class="mat-paginator-navigation-next" (click)="nextPage()" [attr.aria-label]="_intl.nextPageLabel"
-            [matTooltip]="_intl.nextPageLabel" [matTooltipPosition]="'above'" [disabled]="!hasNextPage()">
-            <div class="mat-paginator-decrement"></div>
-          </button> -->
-
