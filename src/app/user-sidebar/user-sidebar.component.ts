@@ -157,10 +157,10 @@ price_to;
   }
 
   companytitle() {
-   
+    // http://192.168.30.193:9000/choice/companytitle/
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    this.http.get('http://192.168.30.193:9000/choice/companytitle/', { headers: headers })
+    this.http.get(Config.api+'companytitle/', { headers: headers })
 
       .subscribe(Res => {
         this.title = Res.json();
@@ -170,10 +170,11 @@ price_to;
 
   }
   name;
+  // 'http://192.168.30.193:9000/choice/company/
   companydata(name) {
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    this.http.get('http://192.168.30.193:9000/choice/company/' + this.zip_code + '/' + this.name, { headers: headers })
+    this.http.get(Config.api+'company/' + this.zip_code + '/' + this.name, { headers: headers })
      
       .subscribe(Res => {
         console.log(Res, 'hhhhhhhhhhhhhhhhhhh')
