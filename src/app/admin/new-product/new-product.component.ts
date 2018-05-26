@@ -70,7 +70,7 @@ title;
   //  this.username = localStorage.getItem('username')
     console.log(this.username)
     this.signupForm = this.fb.group({
-      'zipcode': ['', Validators.compose([Validators.required, Validators.pattern(this.normalPattern)])],
+     // 'zipcode': ['', Validators.compose([Validators.required, Validators.pattern(this.normalPattern)])],
       'utilityarea': ['', Validators.compose([Validators.required, Validators.pattern(this.normalPattern)])],
       // 'title': [],
      
@@ -85,8 +85,8 @@ title;
       'cancelation_fee': ['', Validators.compose([Validators.required])],
     });
     this.thirdFormGroup = this.fb.group({
-     // 'fact_sheet': ['', Validators.compose([Validators.required, Validators.pattern(this.normalPattern)])],
-      //'terms_of_service': ['', Validators.compose([Validators.required, Validators.pattern(this.normalPattern)])],
+      'fact_sheet': ['', Validators.compose([Validators.required, Validators.pattern(this.normalPattern)])],
+      'terms_of_service': ['', Validators.compose([Validators.required, Validators.pattern(this.normalPattern)])],
       'phone': ['', Validators.compose([Validators.required])],
      // 'sign_up': ['', Validators.compose([Validators.required, Validators.pattern(this.normalPattern)])],
       'minimum_usage_fee': ['', Validators.compose([Validators.required])],
@@ -104,18 +104,30 @@ title;
   word:any=[];
   tit;
   only;
+  prourl;
+  prologo;
+  sign;
   fetchProducts() {
        
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     
     
-    this.https.get(Config.api +'mydata/'+ this.username +'/' ,{ headers: headers })
+    this.https.get('http://192.168.30.193:9000/choice/mydata/'+ this.username +'/' ,{ headers: headers })
     .subscribe(Res => {
     this.sg['products'] = Res.json()['Results'];
     this.data=this.sg['products'];
     console.log(this.data);
 this.word=this.data[0];
+this.prourl=this.word.profileurl;
+console.log(this.prourl)
+
+this.prologo=this.word.profile_logo;
+console.log(this.prologo)
+
+this.sign=this.word.sign_up;
+console.log(this.sign)
+
 this.tit=this.word.title;
 this.only=this.tit.trim()
 console.log(this.tit)
@@ -126,16 +138,16 @@ console.log(this.tit)
   onSubmit(f) {
     f.resetForm();
   }
-  signupuserdata(zipcode,utilityarea,title,profileurl,profile_logo,plan_information,price_rate,cancelation_fee,fact_sheet,terms_of_service,phone,sign_up,minimum_usage_fee,renewable,specialterms,price_1000_kwh,price_500_kwh,price_2000_kwh) {
+  signupuserdata(utilityarea,title,profileurl,profile_logo,plan_information,price_rate,cancelation_fee,fact_sheet,terms_of_service,phone,sign_up,minimum_usage_fee,renewable,specialterms,price_1000_kwh,price_500_kwh,price_2000_kwh) {
     //alert('hello');
-    console.log(zipcode,utilityarea,title,profileurl,profile_logo,plan_information,price_rate,cancelation_fee,fact_sheet,terms_of_service,phone,sign_up,minimum_usage_fee,renewable,specialterms,price_1000_kwh,price_500_kwh,price_2000_kwh);
+    console.log(utilityarea,title,profileurl,profile_logo,plan_information,price_rate,cancelation_fee,fact_sheet,terms_of_service,phone,sign_up,minimum_usage_fee,renewable,specialterms,price_1000_kwh,price_500_kwh,price_2000_kwh);
 
     let headers = new HttpHeaders();
     headers.append('Content-Type', 'application/json');
     
-    this.http.post(Config.api+'addproduct/', {
-      "zipcode":zipcode,
-      "utilityarea":utilityarea,
+    this.http.post('http://192.168.30.193:9000/choice/addproduct/', {
+     
+      "serviceareaname":utilityarea,
       "title":title,
       "profileurl":profileurl,
       "profile_logo":profile_logo,
@@ -146,7 +158,7 @@ console.log(this.tit)
       "terms_of_service":terms_of_service,
       "phone":phone,
       "sign_up":sign_up,
-      "minimum_usage_fee":minimum_usage_fee,
+      "minumum_usage_fee":minimum_usage_fee,
       "renewable":renewable,
       "specialterms":specialterms,
       "price_1000_kwh":price_1000_kwh,

@@ -173,7 +173,7 @@ price_to;
   companydata(name) {
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    this.http.get('http://192.168.30.193:9000/choice/company/' + this.zip_code + '/' + this.name, { headers: headers })
+    this.http.get('http://192.168.30.193:9000/choice/company/' + this.zip_code + '/' + name, { headers: headers })
      
       .subscribe(Res => {
         console.log(Res, 'hhhhhhhhhhhhhhhhhhh')

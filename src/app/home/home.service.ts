@@ -5,15 +5,22 @@ import {Config} from "../Config";
 import {HttpService} from '../serv/http-service';
 @Injectable()
 export class HomeService {
-
+public username;
   months:any[];
-  constructor(private http: HttpService) { }
+  constructor(private http: HttpService) {this.username = localStorage.getItem('username'); }
 
   searchProducts(id,page) {
     console.log(id)
     // return this.http.get(Config.api + '/zipcodedata/' + id +'?page='+page +'/').map((response: Response) => response.json());
 
    return this.http.get('http://192.168.30.193:9000/choice/zipcodedata/' + id +'?page='+page +'/').map((response: Response) => response.json());
+   // return this.http.get('http://192.168.30.52:9000/choice/zipcodedata/'+id+'?page='+page).map((response: Response) => response.json());
+  }
+  inactiveproduct(title,page){
+    console.log(title)
+    // return this.http.get(Config.api + '/zipcodedata/' + id +'?page='+page +'/').map((response: Response) => response.json());
+
+   return this.http.get('http://192.168.30.193:9000/choice/inactive/' + this.username +'?page='+page +'/').map((response: Response) => response.json());
    // return this.http.get('http://192.168.30.52:9000/choice/zipcodedata/'+id+'?page='+page).map((response: Response) => response.json());
   }
 }
