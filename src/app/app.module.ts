@@ -1,4 +1,4 @@
-import { NgModule, CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; // this is needed!
 import { RouterModule } from '@angular/router';
 import { HttpModule } from '@angular/http';
@@ -6,13 +6,13 @@ import { HttpModule } from '@angular/http';
 import { APP_BASE_HREF } from '@angular/common';
 import { FormsModule, ReactiveFormsModule, NgForm, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import {MatFormFieldModule} from '@angular/material/form-field';
+import { MatFormFieldModule } from '@angular/material/form-field';
 // import { SweetAlertService } from 'ng2-sweetalert2';
 import { ProfileService } from './com-profile/profile.service';
 import { DeleteBlogService } from './Blogchoicegenie/blog3/delete-blog.service';
 import { EditBlogService } from './Blogchoicegenie/blog3/edit-blog.service';
 import { AngularcliStarRatingModule } from 'angularcli-star-rating'
-import {LoaderModule} from '../app/loader/loader.module';
+import { LoaderModule } from '../app/loader/loader.module';
 import {
   MatAutocompleteModule,
   MatButtonModule,
@@ -52,7 +52,7 @@ import { AppComponent } from './app.component';
 import { SimpleGlobal } from 'ng2-simple-global';
 import { SidebarModule } from './sidebar/sidebar.module';
 import { FooterModule } from './shared/footer/footer.module';
-import { NavbarModule} from './shared/navbar/navbar.module';
+import { NavbarModule } from './shared/navbar/navbar.module';
 import { AdminLayoutComponent } from './layouts/admin/admin-layout.component';
 import { AuthLayoutComponent } from './layouts/auth/auth-layout.component';
 import { CustomerLayoutComponent } from './layouts/customer/customer-layout.component';
@@ -64,12 +64,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { UserSidebarComponent } from './user-sidebar/user-sidebar.component';
 import { AboutComponent } from './about/about.component';
 // import {StepperOverviewExample} from "./signup/stepper-overview-example";
-import {HomeService} from './home/home.service';
-import {BrowserModule, BrowserTransferStateModule} from "@angular/platform-browser";
+import { HomeService } from './home/home.service';
+import { BrowserModule, BrowserTransferStateModule } from "@angular/platform-browser";
 import { DataService } from './data.service';
 // import { Ng2CarouselamosModule } from 'ng2-carouselamos';
 // import { RegisteredComponent } from './registered/registered.component';
-import {LoginComponent } from './../app/pages/login/login.component';
+import { LoginComponent } from './../app/pages/login/login.component';
 import { LoginService } from './pages/login/login.service';
 import { ResidentialService } from './residential/residential-dialog2/residential.service';
 import { ContactusComponent } from './contactus/contactus.component';
@@ -83,7 +83,7 @@ import { UserLoginService } from './pages/userlogin/userlogin.service';
 import { SuperloginComponent } from './pages/superlogin/superlogin.component';
 import { SuperLoginService } from './pages/superlogin/superlogin.service';
 import { DeleteService } from './dashboard/delete.service';
-import {EditService} from './dashboard/edit.service';
+import { EditService } from './dashboard/edit.service';
 import { OverviewComponent } from './overview/overview.component';
 import { HowItWorksComponent } from './how-it-works/how-it-works.component';
 import { FaqsComponent } from './faqs/faqs.component';
@@ -92,10 +92,10 @@ import { ChoiceandsavingComponent } from './choiceandsaving/choiceandsaving.comp
 import { WhyChocieGenieComponent } from './why-chocie-genie/why-chocie-genie.component';
 import { RandomService } from './random.service';
 import { ActiveService } from './active.service';
- 
+
 import { SuperviewcontactComponent } from './superviewcontact/superviewcontact.component';
 import { SviewapartnerComponent } from './sviewapartner/sviewapartner.component';
- 
+
 import { ChangepasswordComponent } from './changepassword/changepassword.component';
 import { SuperchangepasswordComponent } from './superchangepassword/superchangepassword.component';
 import { ChangepasswordService } from './changepassword.service';
@@ -118,7 +118,8 @@ import { UpdateService } from './user-profile/update.service';
 import { SuperdashboardmainComponent } from './superdashboardmain/superdashboardmain.component';
 import { BlackgeeksRecaptchaModule } from 'recaptcha-blackgeeks';
 import { AddblogComponent } from './addblog/addblog.component';
- 
+import { UpdatepartnerService } from './sviewapartner/updatepartner.service';
+
 
 
 @NgModule({
@@ -157,10 +158,10 @@ import { AddblogComponent } from './addblog/addblog.component';
     FormsModule,
     MatFormFieldModule
   ],
-  declarations: [ ],
+  declarations: [],
 
 })
-export class MaterialModule {}
+export class MaterialModule { }
 
 @NgModule({
   imports: [
@@ -187,8 +188,8 @@ export class MaterialModule {}
     BrowserModule,
     LoaderModule,
 
-   //IonicModule.forRoot(AppRoutes),
-  //  HttpClientModule
+    //IonicModule.forRoot(AppRoutes),
+    //  HttpClientModule
   ],
   declarations: [
     AppComponent,
@@ -208,12 +209,12 @@ export class MaterialModule {}
     // ChangePasswordComponent,
     StepperOverviewExample,
     // UsersdashboardComponent
- 
-    
-    
 
-    
-      ],
+
+
+
+
+  ],
   providers: [
     HomeService,
     CompanyService,
@@ -237,11 +238,10 @@ export class MaterialModule {}
     DeletesuperdashboardService,
     DataloginService,
     AuthguardService,
-  UpdateService,
-  EditBlogService,
-    
-
-RandomService,
+    UpdateService,
+    EditBlogService,
+    UpdatepartnerService,
+    RandomService,
   ],
   bootstrap: [AppComponent],
   schemas: [
