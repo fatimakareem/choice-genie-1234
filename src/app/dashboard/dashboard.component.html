@@ -40,10 +40,10 @@
             </a>
 
 
-            <div class="stars">
+            <!-- <div class="stars">
 
               <img src="{{data.rating_logo}}" />
-            </div>
+            </div> -->
             <!-- <input type="checkbox"value="{{data.id}}"name="id"[(ngModel)]=id>{{data.id}} -->
             <!-- <br> <star-rating-comp [size]="'large'" [starType]="'svg'" [rating]="" [(ngModel)]="rating"></star-rating-comp>  -->
             <!-- <mat-checkbox name="deleteid"[(ngModel)]=deleteid value="{{data.id}}">{{data.deleteid}}</mat-checkbox> -->
@@ -88,24 +88,66 @@
                         <h4 class="modal-title" style="text-align: center;
                                     color: red;
                                     font-size: 30px;">Confirmation Alert</h4>
-                        <p>Do you want to Delete this Product?</p>
+                        <p>Do you want to Inactive this Product?</p>
                       </div>
 
                     </div>
                   </div>
                   <div class="modal-footer">
-                    <button type="button" class="btn btn-rose" (click)="deleteClick(dataId)" data-dismiss="modal" style="
-                                color: white;
-        
-                                width: 20%;
-                                height: 45px;
-                                font-size: 18px;">Delete</button>
-                    <button type="button" class="btn btn-rose" data-dismiss="modal" style="
-                                color: white;
-        
-                                width: 20%;
-                                height: 45px;
-                                font-size: 18px;">Cancel</button>
+                      <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+
+                   
+                          <input matInput placeholder="Title" readonly name="title" value="{{title}}" [hidden]="true" required #updatedtitle/>
+  
+                         <input matInput placeholder="Profile url" readonly name="profileurl" value="{{profileurl}}" [hidden]="true" #updatedprofileurl/>
+  
+                       
+                            <input matInput placeholder="Status" readonly name="active" [value]="status" [hidden]="true"  #upactive/>
+  
+                        
+                          <input matInput placeholder="Profile Logo" readonly name="profile_logo" [hidden]="true" value="{{profile_logo}}" #updatedprofile_logo />
+  
+                       
+                          <input matInput placeholder="Rating_logo" [hidden]="true" readonly name="rating_logo" value="{{rating_logo}}" #updatedrating_logo />
+  
+                      
+                          <input matInput placeholder="Plan_Information" name="plan_information" [hidden]="true" value="{{plan_information}}" #updatedplan_information
+                          />
+  
+                      
+                          <input matInput placeholder="price 500 kwh" name="price_500_kwh" value="{{price_500_kwh}}" [hidden]="true" #updatedprice500kwh/>
+  
+                       
+                          <input matInput placeholder="price 1000 kwh" name="price_1000_kwh" value="{{price_1000_kwh}}" [hidden]="true" #updatedprice1000kwh/>
+  
+                       
+                          <input matInput placeholder="price 2000 kwh" name="price_2000_kwh" value="{{price_2000_kwh}}" [hidden]="true" #updatedprice2000kwh/>
+  
+                       
+                          <input matInput placeholder="Cancelation Fee" readonly name="cancelation_fee" value="{{cancelation_fee}}" #updatedcancelation_fee/>
+  
+                          <input matInput placeholder="Fact Sheet" readonly name="fact_sheet" value="{{fact_sheet}}" [hidden]="true" #updatedfact_sheet/>
+  
+                      
+                          <input matInput placeholder="Term of Service" readonly name="terms_of_service" [hidden]="true" value="{{terms_of_service}}" #updatedterms_of_service
+                          />
+  
+                          <input matInput placeholder="Phone No" name="phone" readonly [hidden]="true" value="{{phone}}" #updatedphone/>
+  
+                       
+                          <input matInput placeholder="Sign Up" name="sign_up" readonly [hidden]="true" value="{{sign_up}}" #updatedsign_up />
+  
+                      
+                    <!-- <input matInput placeholder="status" [formControl]="signupForm.controls['status']" required [value]="status" [(ngModel)]="model.status" hidden="true"> -->
+                    <div class=" text-center">
+                        <button type="submit" class="btn btn-rose" (click)="activeClick(updatedtitle.value,updatedsign_up.value,updatedphone.value,updatedterms_of_service.value,updatedfact_sheet.value,updatedcancelation_fee.value,updatedprice500kwh.value,updatedprice1000kwh.value,updatedprice2000kwh.value,updatedplan_information.value,updatedrating_logo.value,updatedprofile_logo.value,updatedprofileurl.value,upactive.value)"
+                          data-dismiss="modal">Inactive</button>
+  
+                        <button type="button" class="btn btn-rose" data-dismiss="modal">Cancel</button>
+                        <!-- <button class="btn btn-rose btn-wd btn-lg" type="submit" (click)="onSubmit()" >Search</button> -->
+                      </div>
+                  </form>
+                   
                   </div>
                 </div>
               </div>
@@ -204,6 +246,18 @@
                           </mat-form-field>
                         </div>
                       </div>
+                      <div class="col-md-6 col-sm-6">
+                          <div class="input-group" hidden=true>
+  
+  
+  
+                            <!-- <input class="form-control" type="text" > -->
+                            <mat-form-field>
+                              <input matInput placeholder="Status" readonly name="active" value="{{active}}" #upactive/>
+  
+                            </mat-form-field>
+                          </div>
+                        </div>
                       <div class="col-md-6 col-sm-6">
                         <div class="input-group" hidden=true>
 
@@ -380,18 +434,19 @@
           <br>
           <div class="col-md-4 col-sm-3 col-xs-7 term">
             <div class="text-center">
-              <button style="
-                            font-size: 29px;
-                            color: red;
-                           " class="fa fa-trash-o" type="submit" value="Delete" (click)="btnDeleteClick(data.id)" data-toggle="modal"
-                data-target="#myModal3">
-              </button>
+                
+                <button style="padding:center;
+                font-size: 29px;
+                color: red;
+                " class="fa fa-edit" type="submit" value="Edit" type="submit" (click)="btnEditClick(data.id,data.title,data.sign_up,data.phone,data.terms_of_service,data.fact_sheet,data.cancelation_fee,data.price_1000_kwh,data.price_500_kwh,data.price_2000_kwh,data.plan_information,data.rating_logo,data.profile_logo,data.profileurl,data.active)"
+      data-toggle="modal" data-target="#myModal2">
 
+    </button>
               <button style="padding:center;
                           font-size: 29px;
                           color: red;
-                          " class="fa fa-edit" type="submit" value="Edit" type="submit" (click)="btnEditClick(data.id,data.title,data.sign_up,data.phone,data.terms_of_service,data.fact_sheet,data.cancelation_fee,data.price_1000_kwh,data.price_500_kwh,data.price_2000_kwh,data.plan_information,data.rating_logo,data.profile_logo,data.profileurl)"
-                data-toggle="modal" data-target="#myModal2">
+                          "  type="submit"type="submit" (click)="btnactiveClick(data.id,data.title,data.sign_up,data.phone,data.terms_of_service,data.fact_sheet,data.cancelation_fee,data.price_1000_kwh,data.price_500_kwh,data.price_2000_kwh,data.plan_information,data.rating_logo,data.profile_logo,data.profileurl)"
+                data-toggle="modal" data-target="#myModal3"><i class="fa fa-check"></i>
 
               </button>
             </div>

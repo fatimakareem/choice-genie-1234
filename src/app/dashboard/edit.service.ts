@@ -8,12 +8,12 @@ export class EditService {
   constructor(private http: Http) { }
   
 
-editTodoList(id,updatedtitle,updatedsign_up,updatedphone,updatedterms_of_service,updatedfact_sheet,updatedcancelation_fee,updatedprice500kwh,updatedprice1000kwh,updatedprice2000kwh,updatedplan_information,updatedrating_logo,updatedprofile_logo,updatedprofileurl) {
+editTodoList(id,updatedtitle,updatedsign_up,updatedphone,updatedterms_of_service,updatedfact_sheet,updatedcancelation_fee,updatedprice500kwh,updatedprice1000kwh,updatedprice2000kwh,updatedplan_information,updatedrating_logo,updatedprofile_logo,updatedprofileurl,active) {
   
-  console.log(" service object",id,updatedtitle,updatedsign_up,updatedphone,updatedterms_of_service,updatedfact_sheet,updatedcancelation_fee,updatedprice500kwh,updatedprice1000kwh,updatedprice2000kwh,updatedplan_information,updatedrating_logo,updatedprofile_logo,updatedprofileurl)
+  console.log(" service object",id,updatedtitle,updatedsign_up,updatedphone,updatedterms_of_service,updatedfact_sheet,updatedcancelation_fee,updatedprice500kwh,updatedprice1000kwh,updatedprice2000kwh,updatedplan_information,updatedrating_logo,updatedprofile_logo,updatedprofileurl,active)
   const headers = new Headers();
   headers.append('Content-Type', 'application/json');
-  return this.http.put(Config.api+'dataup/'+ id , JSON.stringify({
+  return this.http.put('http://192.168.30.193:9000/choice/dataup/'+ id , JSON.stringify({
    
     "cancelation_fee":updatedcancelation_fee,
     "fact_sheet":updatedfact_sheet,
@@ -27,8 +27,8 @@ editTodoList(id,updatedtitle,updatedsign_up,updatedphone,updatedterms_of_service
     "rating_logo":updatedrating_logo,
     "sign_up":updatedsign_up,
     "terms_of_service":updatedterms_of_service,
-    "title":updatedtitle
-    
+    "title":updatedtitle,
+    "active":active
   }), 
   {headers: headers}).map((response: Response) => response.json());
   }

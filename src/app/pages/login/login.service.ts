@@ -22,8 +22,8 @@ word;
       //  const headers = new Headers({'Authorization': 'JWT ' + username.token});
         headers.append('Content-Type', 'application/json');
         //return this.http.get(Config.api+'data_against_zipcode/'+id+'?page='+page).map((response: Response) => response.json());
-        // return this._http5.post(Config.api+'user-token-auth/',http://192.168.29.193:9000/choice/loginCompany/
-        return this._http5.post( Config.api+'loginCompany/',
+        // return this._http5.post(Config.api+'user-token-auth/',
+        return this._http5.post( 'http://192.168.30.193:9000/choice/loginCompany/',
             JSON.stringify({ username: username, password: password }), { headers: headers })
             .map((response: Response) => {
                 console.log(response.json()['Results']);
@@ -56,7 +56,7 @@ localStorage.setItem('user', this.word);
     
     
     login_authenticate(username: string, password: string){
-        return this._http5.post(Config.api+'loginCompany/',{
+        return this._http5.post('http://192.168.30.193:9000/choice/loginCompany/',{
             'username':username,
             'password': password,
             // 'title': title

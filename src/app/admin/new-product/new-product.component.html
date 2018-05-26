@@ -6,7 +6,7 @@
   <div class="row">
     <!-- <form   *ngif="signupForm"> -->
      
-    <form method="" action="" (ngSubmit)="onSubmit(f)" #f="ngForm">
+    <form method="" action="" (ngSubmit)="onSubmit(f)" #f="ngForm" novalidate>
       <mat-horizontal-stepper [linear]="isLinear">
         <mat-step [stepControl]="signupForm">
           <div [formGroup]="signupForm">
@@ -19,13 +19,7 @@
                 <h4 class="card-title"></h4>
                 <div class="row">
                   <div class="col-sm-6">
-                    <div class="form-group">
-                      <mat-form-field>
-                        <!-- <input matInput placeholder="First Name" [formControl]="signupForm.controls['fname']" required [(ngModel)]="model.fname"> -->
-
-                        <input matInput placeholder="Zipcode" required [(ngModel)]="zipcode" formControlName="zipcode">
-                      </mat-form-field>
-                    </div>
+                    
                     <div class="form-group">
                       <mat-form-field>
                         <input matInput placeholder="Utility Area" required [(ngModel)]="utilityarea" formControlName="utilityarea">
@@ -38,7 +32,7 @@
                   </div>
                 </div>
                 <div class="col-sm-6">
-                  <div class="form-group" hidden=true>
+                  <div class="form-group" hidden="true">
                     <mat-form-field>
                       <!-- <mat-select placeholder="Company Title" (ngModelChange)="check($event)" required [(ngModel)]="model.title"name="title">
                       
@@ -48,7 +42,7 @@
                         </mat-option>
                       
                         </mat-select> -->
-                      <input matInput placeholder="Company Name" required [value]="only" [(ngModel)]="title" formControlName="title">
+                      <input matInput placeholder="Company Name" required [value]="only" name="title" #title>
                     </mat-form-field>
                   </div>
 
@@ -80,25 +74,25 @@
                 </label>
                 <div class="row">
                     
-                        <div class="form-group" hidden=true>
+                        <div class="form-group" hidden="true">
                           <mat-form-field>
-                            <input matInput placeholder="Profile url" required value="{{word.profileurl}}" [(ngModel)]="profileurl" formControlName="profileurl">
+                            <input matInput placeholder="Profile url" required [value]="prourl" name="profileurl" #profileurl>
                           </mat-form-field>
                       
     
                       </div>
                  
-                    <div class="form-group" hidden=true>
+                    <div class="form-group" hidden="true">
                       <mat-form-field>
-                        <input matInput placeholder="Profile Logo" required [(ngModel)]="profile_logo" value="{{word.profile_logo}}" formControlName="profile_logo">
+                        <input matInput placeholder="Profile Logo" required  [value]="prologo" name="profile_logo" #profile_logo>
                       </mat-form-field>
                   
 
                   </div>
                  
-                    <div class="form-group" hidden=true>
+                    <div class="form-group" hidden="true">
                       <mat-form-field>
-                        <input matInput placeholder="Rating Logo" required [(ngModel)]="rating_logo" value="{{word.rating_logo}}" formControlName="rating_logo">
+                        <input matInput placeholder="Rating Logo" required  value="{{word.rating_logo}}" name="rating_logo" #rating_logo>
                       </mat-form-field>
                   
                   </div>
@@ -152,18 +146,18 @@
 
                   <br class="clearfix" />
                  
-                    <div class="form-group" hidden=true>
+                    <div class="form-group" >
                       <mat-form-field>
-                        <input matInput placeholder="Terms of Service " [(ngModel)]="terms_of_service" value="{{word.terms_of_service}}" formControlName="terms_of_service">
+                        <input matInput placeholder="Terms of Service " [(ngModel)]="terms_of_service"  formControlName="terms_of_service">
                       </mat-form-field>
                     </div>
 
 
                  
                   
-                    <div class="form-group" hidden=true>
+                    <div class="form-group" >
                       <mat-form-field>
-                        <input matInput placeholder="Fact Sheet " [(ngModel)]="fact_sheet" value="{{word.fact_sheet}}" formControlName="fact_sheet">
+                        <input matInput placeholder="Fact Sheet " [(ngModel)]="fact_sheet"  formControlName="fact_sheet">
                       </mat-form-field>
                     
 
@@ -180,9 +174,9 @@
 
                   </div>
                   
-                    <div class="form-group" hidden=true>
+                    <div class="form-group" hidden="true">
                       <mat-form-field>
-                        <input matInput placeholder="Sign up Company" [(ngModel)]="sign_up" value="{{word.sign_up}}" formControlName="sign_up">
+                        <input matInput placeholder="Sign up Company" [value]="sign" name="sign_up" #sign_up>
                       </mat-form-field>
                     </div>
                  
@@ -286,7 +280,7 @@
                 </div>
                 <div class="text-right">
                   <button mat-button matStepperPrevious class="btn btn-fill btn-rose">Back</button>
-                  <button type="submit" mat-button matStepperNext (click)="signupuserdata(zipcode,utilityarea,title,profileurl,profile_logo,plan_information,price_rate,cancelation_fee,fact_sheet,terms_of_service,phone,sign_up,minimum_usage_fee,renewable,spectialterms,price_1000_kwh,price_500_kwh,price_2000_kwh)" class="btn btn-fill btn-rose">Done</button>
+                  <button type="submit" mat-button matStepperNext (click)="signupuserdata(utilityarea,title.value,profileurl.value,profile_logo.value,plan_information,price_rate,cancelation_fee,fact_sheet,terms_of_service,phone,sign_up.value,minimum_usage_fee,renewable,spectialterms,price_1000_kwh,price_500_kwh,price_2000_kwh)" class="btn btn-fill btn-rose">Done</button>
                 </div>
               </div>
             </div>
