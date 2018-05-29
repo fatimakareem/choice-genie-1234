@@ -26,7 +26,7 @@ import { RecaptchaComponent } from 'recaptcha-blackgeeks';
 })
 
 export class UsersignupComponent implements OnInit {
-  // @ViewChild(RecaptchaComponent) captcha: RecaptchaComponent;
+  @ViewChild(RecaptchaComponent) captcha: RecaptchaComponent;
   // @ViewChild('username') el:ElementRef; captcha: RecaptchaComponent
   state;
   city;
@@ -45,10 +45,13 @@ export class UsersignupComponent implements OnInit {
   emailexist: boolean = true;
   usernameexist: boolean = true;
   service_zip;
-  constructor(private _serv: LoginService, public router: Router, private fb: FormBuilder, private http: HttpClient, private route: ActivatedRoute, private sg: SimpleGlobal) { }
+  constructor(private _serv: LoginService, public router: Router, private fb: FormBuilder, private http: HttpClient, private route: ActivatedRoute, private sg: SimpleGlobal) {
+    // this.captcha.reset();
+    // let status = this.captcha.getResponse();
+   }
 
   ngOnInit() {
-   
+    
 
     // this.city();
     this.signupForm = this.fb.group({
@@ -77,6 +80,8 @@ export class UsersignupComponent implements OnInit {
   {
     validator: PasswordValidation.MatchPassword // your validation method
 });
+this.captcha.reset();
+    let status = this.captcha.getResponse();
   }
 
   onChange(e) {

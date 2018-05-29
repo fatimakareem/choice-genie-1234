@@ -1,10 +1,10 @@
-import { Component, OnInit, ElementRef,ViewChild } from '@angular/core';
+import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { Headers, Http, Response } from '@angular/http';
 import 'rxjs/add/operator/map';
 import { Config } from '../../Config';
 import { HttpClient, HttpResponse, HttpHeaders } from "@angular/common/http";
 
-import { ActivatedRoute, Router, RouterModule,NavigationExtras } from "@angular/router";
+import { ActivatedRoute, Router, RouterModule, NavigationExtras } from "@angular/router";
 import { SimpleGlobal } from 'ng2-simple-global';
 import { ResponseContentType } from '@angular/http/src/enums';
 import { Console } from '@angular/core/src/console';
@@ -41,8 +41,8 @@ declare interface User {
 })
 
 export class LoginComponent implements OnInit {
-  @ViewChild('username') el:ElementRef; captcha: RecaptchaComponent
-  statuslogin:any;
+  @ViewChild('username') el: ElementRef; captcha: RecaptchaComponent
+  statuslogin: any;
   // focusin: boolean = true;
   // rForm: FormGroup;
   // post:any;  
@@ -50,8 +50,8 @@ export class LoginComponent implements OnInit {
   // passwordAlert:string="Please fill password";
   // loginAlert:string;
   // loginError:boolean=false;
-   returnUrl: string;
- hide=true;
+  returnUrl: string;
+  hide = true;
   public typeValidation: User;
   register: FormGroup;
   login: FormGroup;
@@ -60,27 +60,26 @@ export class LoginComponent implements OnInit {
   private toggleButton: any;
   private sidebarVisible: boolean;
   private nativeElement: Node;
-public username;
-public title;
+  public username;
+  public title;
   //username?: string; 
- // login : FormGroup; 
-Email;
+  // login : FormGroup; 
+  Email;
 
   password;
 
 
   constructor(public router: Router, private element: ElementRef, private http: Http, private route: ActivatedRoute,
     private sg: SimpleGlobal, private _nav: Router, private _serv: LoginService, private fb: FormBuilder, private https: HttpClient,
-    private authenticationservice:DataloginService ) 
+    private authenticationservice: DataloginService) {
+    // this.rForm = fb.group({
+    //   'username' : [null, Validators.required],
+    //   'password' : [null, Validators.required],
+    // });
+
     {
-      // this.rForm = fb.group({
-      //   'username' : [null, Validators.required],
-      //   'password' : [null, Validators.required],
-      // });
-     
-    {
-    this.nativeElement = element.nativeElement;
-    this.sidebarVisible = false;
+      this.nativeElement = element.nativeElement;
+      this.sidebarVisible = false;
     }
 
   }
@@ -100,7 +99,7 @@ Email;
   //        if(res.status == true)
   //          {
   //             this.router.navigate([this.returnUrl]);
-             
+
   //          }else{
   //            this.loginError = true
   //            this.loginAlert = res.message;
@@ -113,14 +112,14 @@ Email;
   //               'error'
   //             )
   //        return err;
-         
-           
+
+
   //      }
   //    );
- 
+
   //  }
-  
-   
+
+
   // onLogin() {
   //   alert("loginis ture");
   //   // console.log(this.login);
@@ -134,8 +133,8 @@ Email;
   //                 //    {
   //                   //  this._nav.navigate(['/dashboard/'+ this.username]);
   //                     //this.router.navigate([this.returnUrl]);
-                     
-                    
+
+
   //    //console.log("user",data);
   //        this._serv.login(this.login.value.username,this.login.value.password).subscribe(
   //          data => {
@@ -147,22 +146,22 @@ Email;
   //       showConfirmButton: false,
   //       timer: 1500
   //       });
-        
+
   //   // this.toastr.success('Successfully!', 'Logged in',{toastLife: 5000});   
   //  // let url = '/';
   //   //this._nav.navigate(['/dashboard/'+ this.username]);
   //   this.router.navigate(['/dashboard/'+ this.username]);
   //          localStorage.setItem('username', this.username);
-    
+
   //          },
   //     error => {
-        
+
   //       swal(
   //         'Invalid',
   //         'Username OR Password',
   //         'error'
   //       )
-       
+
   //     });
   //   //}
   //     //},
@@ -173,70 +172,70 @@ Email;
   //         'error'
   //       )
   //       }
-      
+
   //     }
   //         else {
   //     this.validateAllFormFields(this.login);
   //   }
   // }
-  result:any=[];
+  result: any = [];
   onLogin() {
     // console.log(this.login);
     if (this.login.valid) {
       // console.log(this.login.value);
       // console.log('form submitted');
-      this._serv.login_authenticate(this.login.value.username,this.login.value.password).subscribe(
+      this._serv.login_authenticate(this.login.value.username, this.login.value.password).subscribe(
         data => {
-      //  console.log("user",data);
-         this._serv.login(this.login.value.username,this.login.value.password).subscribe(
-           data => {
-            this.result=data;
-            console.log(this.result)
-    // console.log(data);
-    swal({
-        type: 'success',
-        title: 'Successfully Logged in',
-        showConfirmButton: false,
-        timer: 1500
-        });
-     
-    // this.toastr.success('Successfully!', 'Logged in',{toastLife: 5000});   
-    //let url = 'find-bids';
-    //this._nav.navigate([url]);
-    // this._nav.navigate(['/dashboard/'+ this.title]);
-    // localStorage.setItem('username', this.title);
-    // this._nav.navigate(['/dashboard/'+ this.title]);
-    // localStorage.setItem('username', this.title);
-    this._nav.navigate(['/dashboard/'+ this.username]);
-    localStorage.setItem('change', this.username);
-    
-    
-           },
-      error => {
-        // console.log(error);
-        // this.toastr.error(error, null, {toastLife: 5000});
-        swal(
-          'Invalid',
-          'Username OR Password',
-          'error'
-        )
-       
-      });
- 
-         },
+          //  console.log("user",data);
+          this._serv.login(this.login.value.username, this.login.value.password).subscribe(
+            data => {
+              this.result = data;
+              console.log(this.result)
+              // console.log(data);
+              swal({
+                type: 'success',
+                title: 'Successfully Logged in',
+                showConfirmButton: false,
+                timer: 1500
+              });
+
+              // this.toastr.success('Successfully!', 'Logged in',{toastLife: 5000});   
+              //let url = 'find-bids';
+              //this._nav.navigate([url]);
+              // this._nav.navigate(['/dashboard/'+ this.title]);
+              // localStorage.setItem('username', this.title);
+              // this._nav.navigate(['/dashboard/'+ this.title]);
+              // localStorage.setItem('username', this.title);
+              this._nav.navigate(['/dashboard/' + this.username]);
+              localStorage.setItem('change', this.username);
+
+
+            },
+            error => {
+              // console.log(error);
+              // this.toastr.error(error, null, {toastLife: 5000});
+              swal(
+                'Invalid',
+                'Username OR Password',
+                'error'
+              )
+
+            });
+
+        },
         error => {
           // console.log("eer",error);
-        
-         //  this.toastr.error(error.status, null, {toastLife: 5000});
-         swal(
-           'Error',
-          'User does not exist',
-          'error'
-        )
+
+          //  this.toastr.error(error.status, null, {toastLife: 5000});
+          swal(
+            'Error',
+            'User does not exist',
+            'error'
+          )
         }
       );
-      }
-          else {
+    }
+    else {
       this.validateAllFormFields(this.login);
     }
   }
@@ -250,9 +249,9 @@ Email;
 
     headers.append('Content-Type', 'application/json');
     // this.http.get(Config.api + 'data_against_zipcode/' + this.zip_code + '', { headers: headers }),
-   // this.https.post(Config.api +'forget_password/' + this.username , JSON.stringify({ "email":Email}), { headers: headers })
-    this.https.post(Config.api +'forget_password/' + this.username ,{ "email":Email}, { headers: headers })
-   
+    // this.https.post(Config.api +'forget_password/' + this.username , JSON.stringify({ "email":Email}), { headers: headers })
+    this.https.post(Config.api + 'forget_password/' + this.username, { "email": Email }, { headers: headers })
+
       //   // this.http.post(Config.api + 'signup/'+ this.zip_code +'', {"premiseid": this.premiseID +'', {headers: headers})
       .subscribe(Res => {
         this.router.navigate(['/forgetpassword/']);
@@ -260,11 +259,11 @@ Email;
         // this.next = Res[0].next;
 
         console.log(this.username);
-       
+
       },
         error => {
           console.log(error);
-        //  this.toastr.error(error, null, {toastLife: 5000});
+          //  this.toastr.error(error, null, {toastLife: 5000});
           swal(
             'Invalid',
             'User Already Exist! or May be Some Error!',
@@ -288,8 +287,8 @@ Email;
 
   }
 
- 
- 
+
+
 
   validateAllFormFields(formGroup: FormGroup) {
     Object.keys(formGroup.controls).forEach(field => {
@@ -304,16 +303,16 @@ Email;
   }
 
   ngOnInit() {
-   // this.authenticationservice.logout();
-   // this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/index';
+    // this.authenticationservice.logout();
+    // this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/index';
     this.login = this.fb.group({
       // To add a validator, we must first convert the string value into an array. The first item in the array is the default value if any, then the next item in the array is the validator. Here we are adding a required validator meaning that the firstName attribute must have a value in it.
       username: ['', Validators.compose([Validators.required])],
       // We can use more than one validator per field. If we want to use more than one validator we have to wrap our array of validators with a Validators.compose function. Here we are using a required, minimum length and maximum length validator.
       password: ['', Validators.compose([Validators.required])],
       // title: ['', Validators.compose([Validators.required])],
-     Email:['', Validators.compose([])],
-   });
+      Email: ['', Validators.compose([])],
+    });
     var navbar: HTMLElement = this.element.nativeElement;
     this.toggleButton = navbar.getElementsByClassName('navbar-toggle')[0];
 
