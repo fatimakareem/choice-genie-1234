@@ -39,11 +39,11 @@ export class UsersignupComponent implements OnInit {
   hide=true;
   emailexist: boolean = true;
   usernameexist: boolean = true;
-
+  service_zip;
   constructor(private _serv: LoginService, public router: Router, private fb: FormBuilder, private http: HttpClient, private route: ActivatedRoute, private sg: SimpleGlobal) { }
 
   ngOnInit() {
-    this.states();
+   
 
     // this.city();
     this.signupForm = this.fb.group({
@@ -138,21 +138,25 @@ export class UsersignupComponent implements OnInit {
 
 
   }
- 
-  states() {
+ zip:any=[];
+  states(zip) {
     // alert(this.premiseID.toString().length)
     //  alert('hello');
     // if(this.premiseID&&this.premiseID.toString().length===17) {
     let headers = new HttpHeaders();
     headers.append('Content-Type', 'application/json');
-    this.http.get(Config.api + 'state/', { headers: headers })
+    this.http.get('http://192.168.30.193:9000/choice/zipcodewithstatecity/'+zip, { headers: headers })
 
       //  this.http.get(Config.api + 'signup/'+ this.zip_code +'', {headers: headers})
       .subscribe(Res => {
         console.log(Res);
         //     this.state= Res[0].state;
         //  Res[0].state=this.model;
-        this.state = Res;
+        this.zip = Res;
+        this.state=this.zip.state;
+        console.log(this.state);
+        this.city=this.zip.city;
+        console.log(this.city);
       });
   }
   cities() {

@@ -92,6 +92,8 @@ import { ChoiceandsavingComponent } from './choiceandsaving/choiceandsaving.comp
 import { WhyChocieGenieComponent } from './why-chocie-genie/why-chocie-genie.component';
 import { RandomService } from './random.service';
 import { ActiveService } from './active.service';
+import { EditreviewService } from './superreviews/editreview.service';
+import { DeletereviewService } from './superreviews/deletereview.service';
 
 import { SuperviewcontactComponent } from './superviewcontact/superviewcontact.component';
 import { SviewapartnerComponent } from './sviewapartner/sviewapartner.component';
@@ -160,7 +162,7 @@ import { SuperreviewsComponent } from './superreviews/superreviews.component';
     FormsModule,
     MatFormFieldModule
   ],
-  declarations: [SuperreviewsComponent],
+  declarations: [],
 
 })
 export class MaterialModule { }
@@ -231,6 +233,8 @@ export class MaterialModule { }
     EditService,
     DeleteService,
     ProfileService,
+    DeletereviewService,
+    EditreviewService,
     ActiveService,
     ChangepasswordService,
     DeletecontactService,

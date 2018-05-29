@@ -1,5 +1,29 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit, Inject } from '@angular/core';
+import { Config } from "../Config";
+import { Subscription } from 'rxjs/Subscription';
+import { ActivatedRoute, Router } from "@angular/router";
+import { HomeService } from "../home/home.service";
+import { ErrorStateMatcher, MAT_DIALOG_DATA, MatDialog, MatDialogRef } from "@angular/material";
+import { NgForm, FormControl, Validators, FormGroupDirective } from "@angular/forms";
+import { SimpleGlobal } from 'ng2-simple-global';
+import { DataService } from '../data.service';
+import * as _ from 'underscore';
+import { PagerService } from '../pager.service';
+import { Pipe, PipeTransform } from "@angular/core";
+// import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
+import { Headers, Http, Response } from '@angular/http';
 
+// import {Config} from "../Config";
+import { HttpClient, HttpResponse, HttpHeaders } from "@angular/common/http";
+import { jsonpCallbackContext } from '@angular/common/http/src/module';
+// import { ValueUnwrapper } from '@angular/core/src/change_detection/change_detection_util';
+//import { Http } from '@angular/http/src/http';
+import { PageEvent } from '@angular/material';
+// import { SSL_OP_NO_TICKET } from 'constants';
+import { EditreviewService } from './editreview.service';
+import { DeletereviewService } from './deletereview.service';
+
+import swal from 'sweetalert2'; 
 @Component({
   selector: 'app-superreviews',
   templateUrl: './superreviews.component.html',
@@ -7,9 +31,95 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SuperreviewsComponent implements OnInit {
 
-  constructor() { }
-
+  rev:any=[];
+  id;
+  private Sub: Subscription;
+    constructor(private route: ActivatedRoute,private http: Http,private newService: DeletereviewService,private serve:EditreviewService) { }
   ngOnInit() {
+    this.getreview()
+  }
+  getreview() {
+    
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    this.http.get('http://192.168.30.193:9000/choice/getallreviewssuperdashboard/', { headers: headers })
+    .subscribe(Res => {
+    this.rev=Res.json()['Results'];
+    console.log(this.rev)
+// this.rate=this.rev['rate'];
+//     console.log(this.rate);
+  
+    });
+    
+    }
+    dataId = '';
+    btnDeleteClick(id) {
+      this.dataId = id;
+      console.log('id : ' + this.dataId);
   }
 
+  //Event Binding of PopUp Delete Modal
+
+  deleteClick(dataId) {
+      console.log('delete' + this.dataId);
+
+      //Calling Delete Service
+      this.newService.DeleteTodoList(this.dataId).subscribe(data => {
+          console.log(data);
+          swal({
+              type: 'success',
+              title: 'Successfully deleted',
+              showConfirmButton: false,
+              timer: 1500
+            })
+       
+              // this. getreview()
+
+             
+      }, error => {
+      });
+   //   window.location.reload();
+
+  }
+  catagoryId:'';
+  rate:"";
+  productid: "";
+  zipcode: "";
+  comment: "";
+  username: "";
+  reviewactive:'';
+  btnactiveClick(id,rate,proid,zip,comt,user,status) {
+    this.catagoryId=id
+  this.rate=rate;
+     this.productid=proid;
+     this.zipcode=zip;
+     this.comment=comt;
+     this.username=user;
+     this.reviewactive=status;
+   
+    console.log(id,rate,proid,zip,comt,user,status)
+    console.log('id : ' + this.catagoryId );
+}
+
+//Event Binding of PopUp Delete Modal
+
+activeClick(uprate,upproid,upstatus,upzip,upcomt,upuser) {
+    console.log('edit' +uprate,upproid,upstatus,upzip,upcomt,upuser);
+console.log("TS OBJECT",uprate,upproid,upstatus,upzip,upcomt,upuser);
+    //Calling Delete Service
+    this.serve.editTodoList( this.catagoryId,uprate,upproid,upstatus,upzip,upcomt,upuser).subscribe(data => {
+        console.log(data);
+        swal({
+            type: 'success',
+            title: 'Successfully updated',
+            showConfirmButton: false,
+            timer: 1500
+          })
+         
+
+    }, error => {
+    });
+  //  window.location.reload();
+
+}
 }
