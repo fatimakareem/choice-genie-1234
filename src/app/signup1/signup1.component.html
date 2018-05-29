@@ -41,7 +41,7 @@
         <div class="col-sm-6">
           <div class="form-group margin">
             <mat-form-field>
-              <input matInput placeholder="Rep Name" [formControl]="signupForm.controls['REP_name']" required [(ngModel)]="model.REP_name">
+              <input matInput placeholder="Rep Name" [formControl]="signupForm.controls['REP_name']" required [(ngModel)]="REP_name">
               <!-- <mat-error *ngIf="secondFormGroup.controls.lName.value == ''"><strong>Cannot be empty</strong></mat-error>
 <mat-error *ngIf="secondFormGroup.controls.lName.dirty && !secondFormGroup.controls.lName.value"> Special characters not allowed</mat-error> -->
             </mat-form-field>
@@ -51,7 +51,7 @@
         <div class="col-sm-6">
           <div class="form-group margin">
             <mat-form-field>
-              <input matInput placeholder="REP certificate #" [formControl]="signupForm.controls['REP_certificate_id']" required [(ngModel)]="model.REP_certificate_id">
+              <input matInput placeholder="REP certificate #" [formControl]="signupForm.controls['REP_certificate_id']" #REP_certificate_id1 (ngModelChange)="Checkzipcode(REP_certificate_id1.value)" required [(ngModel)]="model.REP_certificate_id">
               <!-- <mat-error *ngIf="secondFormGroup.controls.lName.value == ''"><strong>Cannot be empty</strong></mat-error>
 <mat-error *ngIf="secondFormGroup.controls.lName.dirty && !secondFormGroup.controls.lName.value"> Special characters not allowed</mat-error> -->
             </mat-form-field>
@@ -125,12 +125,11 @@
 
           </div>
         </div>
-        <br class="clearfix" />
+        <!-- <br class="clearfix" />
         <div class="col-sm-6">
           <div class="form-group margin">
             <mat-form-field>
-              <!-- <input matInput placeholder="Market" [formControl]="signupForm.controls['Market']" required [(ngModel)]="model.Market"> -->
-              <mat-select placeholder="Market" (ngModelChange)="check($event)" [(ngModel)]="model.Market" [formControl]="signupForm.controls['Market']" required>
+                 <mat-select placeholder="Market" (ngModelChange)="check($event)" [(ngModel)]="model.Market" [formControl]="signupForm.controls['Market']" required>
                 <mat-option value="E" style="font-size: 20px">ERCOT</mat-option>
                 <mat-option value="P" style="font-size: 20px">PJM</mat-option>
 
@@ -140,11 +139,10 @@
               </mat-select>
              
              
-              <!-- <mat-error *ngIf="secondFormGroup.controls.Country.dirty && !secondFormGroup.controls.Country.value"> Special characters not allowed</mat-error> -->
-            </mat-form-field>
+                </mat-form-field>
 
           </div>
-        </div>
+        </div> -->
         <!-- <br class="clearfix" />
         <div class="col-sm-6">
           <div class="form-group">

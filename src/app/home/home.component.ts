@@ -10,12 +10,12 @@ import { Router } from "@angular/router";
 
 import { Config } from "../Config";
 import { ActivatedRoute, RouterModule } from "@angular/router";
-
+import swal from 'sweetalert2';
 import { SimpleGlobal } from 'ng2-simple-global';
 import { DataService } from '../data.service';
 // import { ICarouselConfig, AnimationConfig } from 'angular4-carousel';
 //import { setTimeout } from 'timers';
-// import { HttpClient, HttpResponse, HttpHeaders } from "@angular/common/http";
+import { HttpClient, HttpResponse, HttpHeaders } from "@angular/common/http";
 // import { Http } from '@angular/http/src/http';
 
 declare var $;
@@ -47,10 +47,11 @@ export class HomeComponent implements OnInit {
     state;
     items;
     private sub: Subscription;
-
+    model: any = {};
+    zipcodeexist;
     public products: any;
 
-    constructor(private obj: HomeService, private router: Router, private route: ActivatedRoute, public sg: SimpleGlobal, private data: DataService, private Http: Http) {
+    constructor(private obj: HomeService, private router: Router, private route: ActivatedRoute,private http: HttpClient, public sg: SimpleGlobal, private data: DataService, private Http: Http) {
 
     }
 
@@ -133,7 +134,52 @@ export class HomeComponent implements OnInit {
         //alert("i am here")
 
     }
+    Checkzipcode(zipcode1) {
+        //alert('hello');
+        console.log("CHOICE GENIE", this.model.zipcode1    );
+        // alert("REP_certificate_id1"+this.REP_certificate_id);
+    
+        let headers = new HttpHeaders();
+    
+    
+        headers.append('Content-Type', 'application/json');
+        // this.http.get(Config.api + 'data_against_zipcode/' + this.zip_code + '', { headers: headers }),
+        this.http.get('http://192.168.30.193:9000/choice/zipcodecheck/' + zipcode1 , { headers: headers })
+    
+    
+          //   // this.http.post(Config.api + 'signup/'+ this.zip_code +'', {"premiseid": this.premiseID +'', {headers: headers})
+          .subscribe(data => {
+            console.log(data);
+            // this.next = Res[0].next;
+            console.log(data['message'], 'hhhhhhhhhhhhhhh')
 
+            this.zipcodeexist = data['message']
+         if(this.zipcodeexist =="InValid Zipcode"){
+          swal({
+          text: "InValid Zipcode",
+          title: "Choice Genie",
+          type: "error",
+          showConfirmButton: false,
+          //     confirmButtonColor: "#DD6B55",
+          timer: 1200,
+          confirmButtonText: "OK",
+
+        })
+    }
+             
+            //  console.log(this.usernameexist);
+    
+          },
+            error => {
+              //   this.usernameexist=error['status']
+              console.log(error);
+              
+              //   f.resetForm();
+            });
+         
+    
+    
+      }
     // premiseIdData() {
 
     //     let headers = new Headers();

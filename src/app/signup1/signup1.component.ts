@@ -32,6 +32,7 @@ export class Signup1Component implements OnInit {
   date = new FormControl(new Date());
   emailexist: boolean = true;
   hide = true;
+  REP_name;
   constructor(public router: Router, private fb: FormBuilder, private http: HttpClient, private route: ActivatedRoute,
      private sg: SimpleGlobal) { }
   ngOnInit() {
@@ -245,6 +246,41 @@ export class Signup1Component implements OnInit {
     
     
     });
+    }
+
+    Checkzipcode(REP_certificate_id1) {
+      //alert('hello');
+      console.log("CHOICE GENIE", this.model.REP_certificate_id);
+      // alert("REP_certificate_id1"+this.REP_certificate_id);
+  
+      let headers = new HttpHeaders();
+  
+  
+      headers.append('Content-Type', 'application/json');
+      // this.http.get(Config.api + 'data_against_zipcode/' + this.zip_code + '', { headers: headers }),
+      this.http.get('http://192.168.30.193:9000/choice/repname/' + REP_certificate_id1 , { headers: headers })
+  
+  
+        //   // this.http.post(Config.api + 'signup/'+ this.zip_code +'', {"premiseid": this.premiseID +'', {headers: headers})
+        .subscribe(data => {
+          console.log(data);
+          // this.next = Res[0].next;
+          console.log(data['REP_Name'], 'hhhhhhhhhhhhhhh')
+          // if ( this.usernameexist=false){
+          this.REP_name = data['REP_Name']
+          // }
+          //  console.log(this.usernameexist);
+  
+        },
+          error => {
+            //   this.usernameexist=error['status']
+            console.log(error);
+            
+            //   f.resetForm();
+          });
+       
+  
+  
     }
  usernameexist:boolean = true;
 // usernameexist;

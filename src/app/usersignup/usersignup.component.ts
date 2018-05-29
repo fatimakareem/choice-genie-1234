@@ -131,29 +131,14 @@ export class UsersignupComponent implements OnInit {
         error => {
           //   this.usernameexist=error['status']
           console.log(error);
-          //  this.toastr.error(error, null, {toastLife: 5000});
-          // swal(
-          //   'Invalid',
-          //   'User Already Exist! or May be Some Error!',
-          //   'error'
-          // )
-
-          //     //    this.state = Res[0].state;
-          //     //this.sg['products'] = Res.json()['Results'];
-          //     //this.data.changeProducts(this.sg['products']);
+          
           //   f.resetForm();
         });
-    //}
-
-    //    this.state = Res[0].state;
-    //this.sg['products'] = Res.json()['Results'];
-    //this.data.changeProducts(this.sg['products']);
-
-
-    //}
+     
 
 
   }
+ 
   states() {
     // alert(this.premiseID.toString().length)
     //  alert('hello');
@@ -224,7 +209,7 @@ export class UsersignupComponent implements OnInit {
     console.log("CHOICE GENIE", this.model);
     let headers = new HttpHeaders();
     headers.append('Content-Type', 'application/json');
-    this.http.post( 'http://192.168.30.89:9000/userregister/', this.model, { headers: headers })
+    this.http.post( Config.api+'userregister/', this.model, { headers: headers })
       .subscribe(Res => {
         console.log(Res);
         console.log(this.model);

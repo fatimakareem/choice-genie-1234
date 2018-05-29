@@ -670,9 +670,10 @@ background: goldenrod;
   box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.3);
   background: #ffffff;
   overflow-y: scroll;
-  overflow-x: hidden; }
+  overflow-x: hidden; 
+}
 .top-margin{
-  margin-top: 90px;
+  margin-top: 80px;
 }
   .sidebar.custom label {
     color: #212121;
@@ -740,7 +741,7 @@ background: goldenrod;
       display: -webkit-flex;
       display: -ms-flexbox;
       display: flex;
-      -webkit-box-align: stretch;
+      -webkit-box-align : stretch;
       -webkit-align-items: stretch;
       -ms-flex-align: stretch;
       align-items: stretch;
@@ -4136,10 +4137,11 @@ footer p a:hover { color:#333; border-bottom-color: #333; }
 .card-content h3 {
   margin: 0px !important;
   padding: 0px !important;
+  font-size: 21px !important;
 }
 .view-plan-details{
-  padding: 20px 0px;
-  font-size: 21px;
+  padding: 2px 0px;
+  font-size: 18px;
   font-weight: 800;
   cursor: pointer;
   color: #000;
@@ -4617,11 +4619,12 @@ section#boody{
   display: block;
   text-align: center;
   font: bold 30px/24px Georgia, "Times New Roman", Times, serif;
+  font-size: 20px;
 }
 .add-price {
   width: 100%;
   /* overflow: hidden; */
-  padding: 18px 0 0;
+  /* padding: 18px 0 0; */
 }
 .unit {
   float: left;
@@ -4703,23 +4706,27 @@ text-align: center;
 }
 
 .items-detail{
-  line-height: 31px;
+  line-height: 23px;
   font-weight: 600;
+  font-size: 18px;
 }
 .plan-detail{
-  min-height: 205px !important;
+  /* min-height: 205px !important; */
     border-right: 1px solid #000000;
 }
 .sortBy-bar{
   float: right !important;
 }
-
+.product-page-bar {
+  padding: 2px 0px;
+  display: flex;
+}
 .product-label{
   font-size: 17px;
     font-weight: 500;
-    padding-top: 25px;
+    /* padding-top: 25px; */
     color: #6b6b6b;
-    text-align: right;
+    /* text-align: right; */
 }
 .sort-btn{
   background: none;
@@ -4727,6 +4734,7 @@ text-align: center;
     /* margin: 0px 40px; */
     font-size: 17px;
     font-weight: bold;
+    margin: 0px;
 }
 .icon-bar{
   margin-top: 25px;
@@ -4759,6 +4767,13 @@ text-align: center;
 .float-r{
   float: right;
 }
+.position{
+  position: fixed !important;
+  z-index: 111;
+}
+.margin-up{
+  margin-top: -20px !important;
+}
 /* End Products */
 
 /* Start user Sidebar */
@@ -4767,7 +4782,7 @@ text-align: center;
   margin-top: 6px;
 }
 .custom-style{
-  width: 34%;
+  width: 46%;
   height: 36px;
   margin: 0 auto !important;
   border: 1px solid rgb(188, 188, 188);
@@ -4779,15 +4794,10 @@ hr{
   height: 1px !important;
   background: #dadada;
 }
-.sort-btn{
-  background: none;
-    border: none;
-    margin: 0px 40px;
-    /* margin: 0px 40px; */
-    font-size: 17px;
-    font-weight: bold;
+.align{
+  text-align: left;
+  margin-top: 3px;
 }
-
 hr{
   margin: 0px !important;
   height: 1px !important;
@@ -5156,14 +5166,6 @@ background: linear-gradient(to bottom, #eaeaea 0%,#c6c6c6 50%,#999a9b 100%); /* 
     font-weight: 500;
   }
 
-}
-.sort-btn{
-  background: none;
-    border: none;
-    margin: 0px 40px;
-    /* margin: 0px 40px; */
-    font-size: 17px;
-    font-weight: bold;
 }
  /* text-align: center; */
 hr{
