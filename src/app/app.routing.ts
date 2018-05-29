@@ -238,6 +238,10 @@ export const AppRoutes: Routes = [
                 loadChildren: './superdashboard/superdashboard.module#SuperDashboardModule'
             },
             {
+                path: 'admin/reviews',
+                loadChildren: './superreviews/superreviews.module#SuperreviewsModule'
+            },
+            {
                 path: 'superadmin/blog',
                 loadChildren: './Blogchoicegenie/blog3/blog3.module#Blog3Module'
             },//addblogModule
