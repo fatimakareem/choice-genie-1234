@@ -140,9 +140,10 @@ price_to;
   fetchzip() {
    
     let headers = new Headers();
-    headers.append('Content-Type', 'application/json');
+    // alert("your zip code are show "+this.zip_code);
+   headers.append('Content-Type', 'application/json');
     this.http.get(Config.api + 'zipcodedata/' + this.zip_code + '', { headers: headers })
-     
+      
       .subscribe(Res => {
         this.sg['products'] = Res.json()['Results'];
         this.data.changeProducts(this.sg['products']);
