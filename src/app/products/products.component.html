@@ -43,56 +43,56 @@
     <div class="products-area-products" *ngIf="prod_loaded">
       <div class="row">
 
-          <div class="col-lg-12">
-              <div class="custom card position" style="float: right; margin-top: 4px;">
-                    <div class="">
-                      <div class="">
-                          <div class="product-page-bar">
-                            <div class="col-md-1 col-sm-4 col-xs-12 align">
-                            <label class="product-label ">SORT BY:</label>
-                          </div>
-    
-                          <div class="col-md-2 col-sm-4 col-xs-12 align" style="margin-top: 5px">
-                                <button class="sort-btn " type="button">
-                                   RENEWABLE
-                                   <i class="fa fa-sort-down down-icon"></i>
-                                    
-                                  </button>
-                              
-                            </div>
-    
-    
-                            <div class="col-md-2 col-sm-4 col-xs-12 align" style="margin-top: 5px">
-                              <button class="sort-btn " type="button">
-                                 Price KW/h
-                                 <i class="fa fa-sort-down down-icon"></i>
-                                  
-                                </button>
-    
-                              </div>
-    
-                              <div class="col-md-2 col-sm-4 col-xs-12 align" style="margin-top: 5px">
-                                <button class="sort-btn " type="button">
-                                    Company
-                                    <i class="fa fa-sort-down down-icon"></i>
-                                    
-                                  </button>
-                                </div>
-                            
-                  </div>
-    
-    
-    
-                          
-                          
-    
-                          
-                      </div>
-                    </div>
-                  </div>
+        <div class="col-lg-12">
+          <div class="custom card position" style="float: right; margin-top: 4px;">
+            <div class="">
+              <div class="">
+                <div class="product-page-bar">
+                  <div class="col-md-1 col-sm-4 col-xs-12 align">
+                    <label class="product-label ">SORT BY:</label>
                   </div>
 
-          <div style="height: 50px;" ></div>
+                  <div class="col-md-2 col-sm-4 col-xs-12 align" style="margin-top: 5px">
+                    <button class="sort-btn " type="button"(click)="Renewable()">
+                      RENEWABLE
+                      <i class="fa fa-sort-down down-icon"></i>
+
+                    </button>
+
+                  </div>
+
+
+                  <div class="col-md-2 col-sm-4 col-xs-12 align" style="margin-top: 5px">
+                    <button class="sort-btn " type="button" (click)="Price()">
+                      Price KW/h
+                      <i class="fa fa-sort-down down-icon"></i>
+
+                    </button>
+
+                  </div>
+
+                  <div class="col-md-2 col-sm-4 col-xs-12 align" style="margin-top: 5px">
+                    <button class="sort-btn " type="button" (click)="company()">
+                      Company
+                      <i class="fa fa-sort-down down-icon"></i>
+
+                    </button>
+                  </div>
+
+                </div>
+
+
+
+
+
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div style="height: 50px;"></div>
 
 
         <!-- <div class="col-lg-12">
@@ -173,7 +173,7 @@
 
 
 
-               
+
 
                 <a>
                    
@@ -218,17 +218,17 @@
                               <label class="full" for="star5q" title="Awesome - 5 stars"></label>
                               <input type="radio" id="star4halfq" name="rating" value="4.5" (click)="get(4.5)" />
                               <label class="half" for="star4halfq" title="Pretty good - 4.5 stars"></label>
-                              <input type="radio" id="starq" name="rating" value="4" (click)="get(4)"  />
+                              <input type="radio" id="starq" name="rating" value="4" (click)="get(4)" />
                               <label class="full" for="starq" title="Pretty good - 4 stars"></label>
-                              <input type="radio" id="star3halfq" name="rating" value="3.5" (click)="get(3.5)"  />
+                              <input type="radio" id="star3halfq" name="rating" value="3.5" (click)="get(3.5)" />
                               <label class="half" for="star3halfq" title="Meh - 3.5 stars"></label>
-                              <input type="radio" id="star3q" name="rating" value="3" (click)="get(3)"  />
+                              <input type="radio" id="star3q" name="rating" value="3" (click)="get(3)" />
                               <label class="full" for="star3q" title="Meh - 3 stars"></label>
-                              <input type="radio" id="star2halfq" name="rating" value="2.5" (click)="get(2.5)"  />
+                              <input type="radio" id="star2halfq" name="rating" value="2.5" (click)="get(2.5)" />
                               <label class="half" for="star2halfq" title="Kinda bad - 2.5 stars"></label>
-                              <input type="radio" id="star2q" name="rating" value="2" (click)="get(2)"  />
+                              <input type="radio" id="star2q" name="rating" value="2" (click)="get(2)" />
                               <label class="full" for="star2q" title="Kinda bad - 2 stars"></label>
-                              <input type="radio" id="star1halfq" name="rating" value="1.5" (click)="get(1.5)"  />
+                              <input type="radio" id="star1halfq" name="rating" value="1.5" (click)="get(1.5)" />
                               <label class="half" for="star1halfq" title="Meh - 1.5 stars"></label>
                               <input type="radio" id="star1q" name="rating" value="1" (click)="get(1)" />
                               <label class="full" for="star1q" title="Sucks big time - 1 star"></label>
@@ -238,19 +238,20 @@
 
                           </div>
                           <div class="modal-title" style="text-align: center;padding-left:3in">
-                          <h3 style="
+                            <h3 style="
                                          
-                          font-size: 30px;">Why Did You Leaving This Review?</h3></div>
-                         <br>
-                         <br>
-                              <mat-form-field>
+                          font-size: 30px;">Why Did You Leaving This Review?</h3>
+                          </div>
+                          <br>
+                          <br>
+                          <mat-form-field>
                             <textarea matInput placeholder="Share your Opinion about the quality of this product." matAutosizeMinRows="10" matAutosizeMaxRows="5"
                               style="height: 40px !important;width:920px !important;" name="comt" [(ngModel)]="comt">
 
                               </textarea>
 
-                            </mat-form-field>
-                         
+                          </mat-form-field>
+
                         </div>
                         <p>Your review will be publicly visible within 1 Second.</p>
                       </div>
@@ -263,12 +264,12 @@
                                         width: 20%;
                                         height: 45px;
                                         font-size: 18px;">Cancel</button>
-                                        <button type="button" style="
+                        <button type="button" style="
                                         color: white;
                 
                                         width: 20%;
                                         height: 45px;
-                                        font-size: 18px;" class="btn btn-rose" (click)="reviews(rating,comt,id)" data-dismiss="modal" >Done</button>
+                                        font-size: 18px;" class="btn btn-rose" (click)="reviews(rating,comt,id)" data-dismiss="modal">Done</button>
 
                       </div>
                     </div>
@@ -317,58 +318,60 @@
               </div>
               <div class="col-md-3  col-sm-6 col-xs-12 plan-detail text-center margin-up">
                 <h3 style=" text-align: center">
-                    <b> Price Details</b>
-                  </h3>
-  
-                  <!-- <div class="holder white"> -->
-                  <!--class="product-price"-->
-                  <div style="text-align:center;">
-                    500 kWh
-                    <b class="price-style"> {{data.price_500_kwh}}¢</b>
-  
+                  <b> Price Details</b>
+                </h3>
+
+                <!-- <div class="holder white"> -->
+                <!--class="product-price"-->
+                <div style="text-align:center;">
+                  500 kWh
+                  <b class="price-style"> {{data.price_500_kwh}}¢</b>
+
+                </div>
+                <div class="add-price grid-element">
+                  <div class="unit">1,000 kWh
+                    <span class="price-style"> {{data.price_1000_kwh}}¢ </span>
                   </div>
-                  <div class="add-price grid-element">
-                    <div class="unit">1,000 kWh
-                      <span class="price-style"> {{data.price_1000_kwh}}¢ </span>
-                    </div>
-                    <div class="unit">2,000 kWh
-                      <span class="price-style"> {{data.price_2000_kwh}}¢ </span>
-                    </div>
-  
+                  <div class="unit">2,000 kWh
+                    <span class="price-style"> {{data.price_2000_kwh}}¢ </span>
                   </div>
-                  <a>
-                    <label class="view-plan-details" (click)="btnEditClick(data.id,data.title,data.sign_up,data.phone,data.terms_of_service,data.fact_sheet,data.cancelation_fee,data.price_1000_kwh,data.price_500_kwh,data.price_2000_kwh,data.plan_information,data.rating_logo,data.profile_logo,data.profileurl); getreview(data.id); avereview(data.id)"
-                      data-toggle="modal" data-target="#myModal2" style="    padding-bottom: 0px; margin-bottom: 0px;">Plan Information</label>
-                  </a>
+
+                </div>
+                <a>
+                  <label class="view-plan-details" (click)="btnEditClick(data.id,data.title,data.sign_up,data.phone,data.terms_of_service,data.fact_sheet,data.cancelation_fee,data.price_1000_kwh,data.price_500_kwh,data.price_2000_kwh,data.plan_information,data.rating_logo,data.profile_logo,data.profileurl); getreview(data.id); avereview(data.id)"
+                    data-toggle="modal" data-target="#myModal2" style="    padding-bottom: 0px; margin-bottom: 0px;">Plan Information</label>
+                </a>
               </div>
 
 
               <div class="col-md-3 col-sm-6 col-xs-12 rate plan-detail margin-up" style="text-align:center">
-                  <h3 style=" text-align: center">
-                      <b> Plan Details</b>
-                    </h3>
-    
-                    <!-- <div class="holder white"> -->
-                    <!--class="product-price"-->
-                    <div style="text-align:center; padding-top:10px;">
-    
-    
-                      <p *ngFor="let item of data.plan_information" class="items-detail">
-                        {{item}}
-                      </p>
-    
-                    </div>
+                <h3 style=" text-align: center">
+                  <b> Plan Details</b>
+                </h3>
+
+                <!-- <div class="holder white"> -->
+                <!--class="product-price"-->
+                <div style="text-align:center; padding-top:10px;">
+
+
+                  <p *ngFor="let item of data.plan_information" class="items-detail">
+                    {{item}}
+                  </p>
+
+                </div>
 
 
               </div>
 
-              <div class="col-md-3 col-sm-6 col-xs-12 term margin-up">
+              <div class="col-md-3 col-sm-6 col-xs-12 term text-center">
 
-                <h3 class="text-center">
+                <h3 class="text-center" style="margin-top: -22px !important;">
                   <b> Call now</b>
                 </h3>
                 <p class="text-center">
-                  <a  href="skype:{{data.phone}}?call">{{data.phone}}</a>
+                  <a href="skype:+{{data.phone}}?call">
+                      <!-- <input type="text" id="phone" value="{{data.phone}}"  name="phone"  > -->
+                    {{data.phone}}</a>
                 </p>
                 <!-- (click)="openDialog(data.id)" -->
                 <button class="btn btn-rose" style="display:block; margin: 0 auto;">
@@ -376,7 +379,8 @@
                   <!-- <i class="material-icons">bubble_chart</i> -->
                 </button>
                 <a href="Review/{{data.id}}">
-                <label  class="view-plan-details" style="padding-bottom: 0px; margin-bottom: 0px;">Reviews</label></a>
+                <label  class="view-plan-details" style="padding-bottom: 0px; margin-bottom: 0px;">Reviews</label>
+                </a>
                 <!-- <a href="Review/{{data.id}}"><div  class="rating">
                     <p >
                           <i class="fa fa-star"></i>
@@ -491,80 +495,86 @@
                           <li *ngFor="let data of plan_information">{{data}}</li>
                         </ul>
                         <div class="well well-sm">
-                            <div class="row">
-                              <div class="col-xs-12 col-md-3 text-center">
-                                <h1 class="rating-num">{{avrage}}</h1>
-                                <div class="rating">
-                                  <span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span>
-                                  <span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span>
-                                  <span class="glyphicon glyphicon-star-empty"></span>
-                                </div>
-                                <div>
-                                  <span class="glyphicon glyphicon-user"></span>{{rev}} total
-                                </div>
+                          <div class="row">
+                            <div class="col-xs-12 col-md-3 text-center">
+                              <h1 class="rating-num">{{avrage}}</h1>
+                              <div class="rating">
+                                <span class="glyphicon glyphicon-star"></span>
+                                <span class="glyphicon glyphicon-star"></span>
+                                <span class="glyphicon glyphicon-star"></span>
+                                <span class="glyphicon glyphicon-star"></span>
+                                <span class="glyphicon glyphicon-star-empty"></span>
                               </div>
-                              <div class="col-xs-12 col-md-9">
-                                <div class="row rating-desc">
-                                  <div class="col-xs-4 col-md-2 text-right">
-                                    <span class="glyphicon glyphicon-star"></span>5
-                                  </div>
-                                  <div class="col-xs-8 col-md-10">
-                                    <div class="progress progress-striped">
-                                      <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
-                                        <span class="sr-only">80%</span>
-                                      </div>
-                                    </div>
-                                  </div>
-                                  <!-- end 5 -->
-                                  <div class="col-xs-4 col-md-2 text-right">
-                                    <span class="glyphicon glyphicon-star"></span>4
-                                  </div>
-                                  <div class="col-xs-8 col-md-10">
-                                    <div class="progress">
-                                      <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
-                                        <span class="sr-only">60%</span>
-                                      </div>
-                                    </div>
-                                  </div>
-                                  <!-- end 4 -->
-                                  <div class="col-xs-4 col-md-2 text-right">
-                                    <span class="glyphicon glyphicon-star"></span>3
-                                  </div>
-                                  <div class="col-xs-8 col-md-10">
-                                    <div class="progress">
-                                      <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
-                                        <span class="sr-only">40%</span>
-                                      </div>
-                                    </div>
-                                  </div>
-                                  <!-- end 3 -->
-                                  <div class="col-xs-4 col-md-2 text-right">
-                                    <span class="glyphicon glyphicon-star"></span>2
-                                  </div>
-                                  <div class="col-xs-8 col-md-10">
-                                    <div class="progress">
-                                      <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
-                                        <span class="sr-only">20%</span>
-                                      </div>
-                                    </div>
-                                  </div>
-                                  <!-- end 2 -->
-                                  <div class="col-xs-4 col-md-2 text-right">
-                                    <span class="glyphicon glyphicon-star"></span>1
-                                  </div>
-                                  <div class="col-xs-8 col-md-10">
-                                    <div class="progress">
-                                      <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 15%">
-                                        <span class="sr-only">15%</span>
-                                      </div>
-                                    </div>
-                                  </div>
-                                  <!-- end 1 -->
-                                </div>
-                                <!-- end row -->
+                              <div>
+                                <span class="glyphicon glyphicon-user"></span>{{rev}} total
                               </div>
                             </div>
+                            <div class="col-xs-12 col-md-9">
+                              <div class="row rating-desc">
+                                <div class="col-xs-4 col-md-2 text-right">
+                                  <span class="glyphicon glyphicon-star"></span>5
+                                </div>
+                                <div class="col-xs-8 col-md-10">
+                                  <div class="progress progress-striped">
+                                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"
+                                      style="width: 80%">
+                                      <span class="sr-only">80%</span>
+                                    </div>
+                                  </div>
+                                </div>
+                                <!-- end 5 -->
+                                <div class="col-xs-4 col-md-2 text-right">
+                                  <span class="glyphicon glyphicon-star"></span>4
+                                </div>
+                                <div class="col-xs-8 col-md-10">
+                                  <div class="progress">
+                                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"
+                                      style="width: 60%">
+                                      <span class="sr-only">60%</span>
+                                    </div>
+                                  </div>
+                                </div>
+                                <!-- end 4 -->
+                                <div class="col-xs-4 col-md-2 text-right">
+                                  <span class="glyphicon glyphicon-star"></span>3
+                                </div>
+                                <div class="col-xs-8 col-md-10">
+                                  <div class="progress">
+                                    <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+                                      <span class="sr-only">40%</span>
+                                    </div>
+                                  </div>
+                                </div>
+                                <!-- end 3 -->
+                                <div class="col-xs-4 col-md-2 text-right">
+                                  <span class="glyphicon glyphicon-star"></span>2
+                                </div>
+                                <div class="col-xs-8 col-md-10">
+                                  <div class="progress">
+                                    <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"
+                                      style="width: 20%">
+                                      <span class="sr-only">20%</span>
+                                    </div>
+                                  </div>
+                                </div>
+                                <!-- end 2 -->
+                                <div class="col-xs-4 col-md-2 text-right">
+                                  <span class="glyphicon glyphicon-star"></span>1
+                                </div>
+                                <div class="col-xs-8 col-md-10">
+                                  <div class="progress">
+                                    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"
+                                      style="width: 15%">
+                                      <span class="sr-only">15%</span>
+                                    </div>
+                                  </div>
+                                </div>
+                                <!-- end 1 -->
+                              </div>
+                              <!-- end row -->
+                            </div>
                           </div>
+                        </div>
 
                       </div>
                     </div>

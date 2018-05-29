@@ -1,3 +1,25 @@
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #cc0000;
+}
+
+
+
 .nav-home ul, .interest-area ul, .pw-solutions ul, .choose-criteria ul, .in-your-area a .overlay ul, .sidebar-user ul, .list-normal {
   padding: 0;
   margin: 0;
@@ -670,7 +692,7 @@ background: goldenrod;
   box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.3);
   background: #ffffff;
   overflow-y: scroll;
-  overflow-x: hidden; 
+  overflow-x: hidden;
 }
 .top-margin{
   margin-top: 80px;
@@ -717,7 +739,7 @@ background: goldenrod;
 .products-area {
   font-size: 15px;
   line-height: 19px;
-  padding: 3% 2%;
+  padding: 1% 2%;
   width: 79%;
   float: right;}
   .products-area .card-title small {
@@ -3895,7 +3917,7 @@ header div.tagline a {
 /** body **/
 section#body {
   padding: 0;
-  background: #282828;
+  background: #000000;
 }
 
 
@@ -3936,18 +3958,20 @@ nav#mainnav li.selected-item a:hover {
 }
 nav#mainnav li a:hover {
   background:#d20000;
-  color: #eee;
+  color: #ffffff;
   text-decoration:none;
+  border-left: 2px solid #ffffff;
 }
 nav#mainnav li a {
-  color: #ccc;
+  color: #ffffff;
   display: block;
   padding: 22px 17px;
-  text-align: center;
+  text-align: left;
   text-transform: uppercase;
   font-weight: bold;
   text-decoration: none;
   letter-spacing: 0.5px;
+  transition: 0.5s;
 }
 
 aside#sidebar h4 {
@@ -4602,8 +4626,8 @@ section#boody{
 #mainnav >ul >li >input{
   font-size: 30px;
   font-weight: 400;
-
-  padding: 5% 15%;
+  text-align: center;
+  padding: 5% 0%;
   color: #ffffff;
 }
 .ng-star-inserted{
@@ -4769,10 +4793,21 @@ text-align: center;
 }
 .position{
   position: fixed !important;
-  z-index: 111;
+  z-index: 1;
 }
 .margin-up{
   margin-top: -20px !important;
+}
+.display{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.padding-btm{
+  padding: 9px !important;
+}
+.font{
+  font-size: 18px !important;
 }
 /* End Products */
 
@@ -4863,6 +4898,9 @@ background: linear-gradient(to bottom, #eaeaea 0%,#c6c6c6 50%,#999a9b 100%); /* 
   width:20%;
   height: 665px;
   overflow-y: scroll;
+}
+.super-sidebar-list li{
+  margin-bottom: 0px;
 }
 .super-sidebar-list li{
   margin-bottom: 0px;

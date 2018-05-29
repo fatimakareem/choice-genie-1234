@@ -32,20 +32,20 @@ export class Signup1Component implements OnInit {
   date = new FormControl(new Date());
   emailexist: boolean = true;
   hide = true;
-  REP_name;
+  repname;
   constructor(public router: Router, private fb: FormBuilder, private http: HttpClient, private route: ActivatedRoute,
      private sg: SimpleGlobal) { }
   ngOnInit() {
     this.states();
     // this.city();
     this.signupForm = this.fb.group({
-      'REP_certificate_id': ['', Validators.compose([Validators.required, , Validators.pattern(this.digitsOnly)])],
-      'REP_name': ['', Validators.compose([Validators.required])],
+      'repid': ['', Validators.compose([Validators.required, , Validators.pattern(this.digitsOnly)])],
+      'repname': ['', Validators.compose([Validators.required])],
       'email': ['', Validators.compose([Validators.required, Validators.pattern(this.email)])],
       'username': ['', Validators.compose([Validators.required, Validators.pattern(/^[a-zA-Z_\- ]+$/)])],
-      'Contact_Phone': ['', Validators.compose([Validators.required, Validators.pattern(this.digitsOnly)])],
-       'Market': ['', Validators.compose([Validators.required])],
-       'Contact_Name': ['', Validators.compose([Validators.required])],
+      'contactphone': ['', Validators.compose([Validators.required, Validators.pattern(this.digitsOnly)])],
+      //  'Market': ['', Validators.compose([Validators.required])],
+       'contactname': ['', Validators.compose([Validators.required])],
       // 'state': ['', Validators.compose([Validators.required, Validators.pattern(this.normalPattern)])],
       // 'country': ['', Validators.compose([Validators.required, Validators.pattern(this.normalPattern)])],
       // 'status': ['', Validators.compose([])],
@@ -182,7 +182,7 @@ export class Signup1Component implements OnInit {
     // this.http.get(Config.api + 'data_against_zipcode/' + this.zip_code + '', { headers: headers }),
     //this.http.post('http://192.168.30.193:9000/choice/companysignin/', this.model, { headers: headers })
 
-    this.http.post(Config.api+'companysignup/', this.model, { headers: headers })
+    this.http.post('http://192.168.30.193:9000/choice/companysignup/', this.model, { headers: headers })
       //   // this.http.post(Config.api + 'signup/'+ this.zip_code +'', {"premiseid": this.premiseID +'', {headers: headers})
       .subscribe(Res => {
         console.log(Res);
@@ -267,7 +267,7 @@ export class Signup1Component implements OnInit {
           // this.next = Res[0].next;
           console.log(data['REP_Name'], 'hhhhhhhhhhhhhhh')
           // if ( this.usernameexist=false){
-          this.REP_name = data['REP_Name']
+          this.model['repname'] = data['REP_Name']
           // }
           //  console.log(this.usernameexist);
   

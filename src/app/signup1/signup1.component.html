@@ -41,7 +41,7 @@
         <div class="col-sm-6">
           <div class="form-group margin">
             <mat-form-field>
-              <input matInput placeholder="Rep Name" [formControl]="signupForm.controls['REP_name']" required [(ngModel)]="REP_name">
+              <input matInput placeholder="Rep Name" [formControl]="signupForm.controls['repname']" #repname required [(ngModel)]="model.repname">
               <!-- <mat-error *ngIf="secondFormGroup.controls.lName.value == ''"><strong>Cannot be empty</strong></mat-error>
 <mat-error *ngIf="secondFormGroup.controls.lName.dirty && !secondFormGroup.controls.lName.value"> Special characters not allowed</mat-error> -->
             </mat-form-field>
@@ -51,7 +51,7 @@
         <div class="col-sm-6">
           <div class="form-group margin">
             <mat-form-field>
-              <input matInput placeholder="REP certificate #" [formControl]="signupForm.controls['REP_certificate_id']" #REP_certificate_id1 (ngModelChange)="Checkzipcode(REP_certificate_id1.value)" required [(ngModel)]="model.REP_certificate_id">
+              <input matInput placeholder="REP certificate #" [formControl]="signupForm.controls['repid']" #REP_certificate_id1 (ngModelChange)="Checkzipcode(REP_certificate_id1.value)" required [(ngModel)]="model.repid">
               <!-- <mat-error *ngIf="secondFormGroup.controls.lName.value == ''"><strong>Cannot be empty</strong></mat-error>
 <mat-error *ngIf="secondFormGroup.controls.lName.dirty && !secondFormGroup.controls.lName.value"> Special characters not allowed</mat-error> -->
             </mat-form-field>
@@ -80,7 +80,7 @@
         <div class="col-sm-6">
           <div class="form-group margin">
             <mat-form-field>
-              <input matInput placeholder="Contact #" [formControl]="signupForm.controls['Contact_Phone']" required [(ngModel)]="model.Contact_Phone">
+              <input matInput placeholder="Contact #" [formControl]="signupForm.controls['contactphone']" required [(ngModel)]="model.contactphone">
               
             </mat-form-field>
           </div>
@@ -119,7 +119,7 @@
         <div class="col-sm-6">
           <div class="form-group margin">
             <mat-form-field>
-              <input matInput placeholder="Contact Name" [formControl]="signupForm.controls['Contact_Name']" required [(ngModel)]="model.Contact_Name">
+              <input matInput placeholder="Contact Name" [formControl]="signupForm.controls['contactname']" required [(ngModel)]="model.contactname">
               <!-- <mat-error *ngIf="secondFormGroup.controls.Country.dirty && !secondFormGroup.controls.Country.value"> Special characters not allowed</mat-error> -->
             </mat-form-field>
 

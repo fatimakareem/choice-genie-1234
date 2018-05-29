@@ -123,49 +123,50 @@
 
 
 <section id="body" class="width">
-    <aside id="sidebar sticky" class="column-left">
-  
-      <header>
-        <ng-container class="card" *ngFor="let data of sg['products']; let i = index">
-          <div *ngIf="i<1" class="sidebar-profile-img">
-            <a (click)="move()">
-              <img src="{{data.profile_logo}}" >
-            </a>
-          </div>
-        </ng-container>
-      </header>
-  
-      <nav id="mainnav">
-        <ul>
-          <li><input type="text" [value]="user" readonly></li>
-          <li>
-            <a href="/company-profile">
-              <span class="sidebar-normal">My Profile</span>
-            </a>
-            </li>
-          <li>
-          <a href="/new-product">
-            <span class="sidebar-normal">Add New Product</span>
+  <aside id="sidebar sticky" class="column-left">
+
+    <header>
+      <ng-container class="card" *ngFor="let data of sg['products']; let i = index">
+        <div *ngIf="i<1" class="sidebar-profile-img">
+          <a (click)="move()">
+            <img src="{{data.profile_logo}}" >
+          </a>
+        </div>
+      </ng-container>
+    </header>
+
+    <nav id="mainnav">
+      <ul class="super-sidebar-list">
+        <li><input type="text" [value]="user" readonly></li>
+        <li>
+          <a href="/company-profile">
+            <span class="sidebar-normal">My Profile</span>
           </a>
           </li>
-          <li>
-            <a href="/ChangePassword" >Change Password</a>
-  
+        <li>
+        <a href="/new-product">
+          <span class="sidebar-normal">Add New Product</span>
+        </a>
+        </li>
+        <li>
+          <a href="/ChangePassword" >Change Password</a>
+
+        </li>
+        <li>
+            <a href="/inactive-product" >Inactive Products</a>
+
           </li>
-          <li>
-              <a href="/inactive-product" >Inactive Products</a>
-    
-            </li>
-          <li>
-              <a (click) = "logout()" >logout</a>
-    
-            </li>
-        </ul>
-      </nav>
-  
-  
-  
-    </aside>
-  </section>
+        <li>
+            <a (click) = "logout()" >logout</a>
+
+          </li>
+      </ul>
+    </nav>
+
+
+
+  </aside>
+</section>
+
   
   
