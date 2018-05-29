@@ -64,7 +64,7 @@ export class SuperreviewsComponent implements OnInit {
       console.log('delete' + this.dataId);
 
       //Calling Delete Service
-      this.newService.DeleteTodoList(this.dataId).subscribe(data => {
+      this.newService.Delete(this.dataId).subscribe(data => {
           console.log(data);
           swal({
               type: 'success',
@@ -73,7 +73,7 @@ export class SuperreviewsComponent implements OnInit {
               timer: 1500
             })
        
-              // this. getreview()
+              this. getreview()
 
              
       }, error => {
@@ -88,7 +88,8 @@ export class SuperreviewsComponent implements OnInit {
   comment: "";
   username: "";
   reviewactive:'';
-  btnactiveClick(id,rate,proid,zip,comt,user,status) {
+  user:'';
+  btnactiveClick(id,rate,proid,zip,comt,user,status,User) {
     this.catagoryId=id
   this.rate=rate;
      this.productid=proid;
@@ -96,18 +97,18 @@ export class SuperreviewsComponent implements OnInit {
      this.comment=comt;
      this.username=user;
      this.reviewactive=status;
-   
-    console.log(id,rate,proid,zip,comt,user,status)
+   this.user=User;
+    console.log(id,rate,proid,zip,comt,user,status,User)
     console.log('id : ' + this.catagoryId );
 }
 
 //Event Binding of PopUp Delete Modal
 
-activeClick(uprate,upproid,upstatus,upzip,upcomt,upuser) {
-    console.log('edit' +uprate,upproid,upstatus,upzip,upcomt,upuser);
-console.log("TS OBJECT",uprate,upproid,upstatus,upzip,upcomt,upuser);
+activeClick(uprate,upproid,upstatus,upzip,upcomt,upuser,updateduser) {
+    console.log('edit' +uprate,upproid,upstatus,upzip,upcomt,upuser,updateduser);
+console.log("TS OBJECT",uprate,upproid,upstatus,upzip,upcomt,upuser,updateduser);
     //Calling Delete Service
-    this.serve.editTodoList( this.catagoryId,uprate,upproid,upstatus,upzip,upcomt,upuser).subscribe(data => {
+    this.serve.editTodoList( this.catagoryId,uprate,upproid,upstatus,upzip,upcomt,upuser,updateduser).subscribe(data => {
         console.log(data);
         swal({
             type: 'success',
@@ -116,7 +117,7 @@ console.log("TS OBJECT",uprate,upproid,upstatus,upzip,upcomt,upuser);
             timer: 1500
           })
          
-
+          this.getreview()
     }, error => {
     });
   //  window.location.reload();

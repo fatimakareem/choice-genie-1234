@@ -8,7 +8,7 @@ export class DeletereviewService {
   constructor(private http: Http) { }
   objGlobalvariables;
 
-DeleteTodoList(id) {
+Delete(id) {
  // console.log('mmmmmmmmmmmmmmmmmmmmm');
   console.log(id)
   const headers = new Headers();
