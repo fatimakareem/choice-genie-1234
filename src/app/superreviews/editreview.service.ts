@@ -8,9 +8,9 @@ export class EditreviewService {
   constructor(private http: Http) { }
   
 
-editTodoList(id,uprate,upproid,upstatus,upzip,upcomt,upuser) {
+editTodoList(id,uprate,upproid,upstatus,upzip,upcomt,upuser,updateduser) {
   
-  console.log(" service object",id,uprate,upproid,upstatus,upzip,upcomt,upuser)
+  console.log(" service object",id,uprate,upproid,upstatus,upzip,upcomt,upuser,updateduser)
   const headers = new Headers();
   headers.append('Content-Type', 'application/json');
   return this.http.put('http://192.168.30.193:9000/choice/reviewchangestatus/'+ id , JSON.stringify({
@@ -22,8 +22,8 @@ editTodoList(id,uprate,upproid,upstatus,upzip,upcomt,upuser) {
       "zipcode": upzip,
       "comment": upcomt,
       "username": upuser,
-      "reviewactive": upstatus
-  
+      "reviewactive": upstatus,
+  "user":updateduser
   }), 
   {headers: headers}).map((response: Response) => response.json());
   }
