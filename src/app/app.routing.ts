@@ -65,6 +65,10 @@ export const AppRoutes: Routes = [
             path: 'privacy',
             loadChildren: './privacy/privacy.module#PrivacyModule'
         },
+        {
+            path: 'Review/:id',
+            loadChildren: './getreview/getreview.module#GetreviewModule'
+        },
           {
             path: 'Become-a-partner',
             loadChildren: './becomeapartner/becomeapartner.module#BecomeapartnerModule'

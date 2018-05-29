@@ -1,0 +1,119 @@
+<div >
+    <div *ngFor="let item of rev" class="product-review">
+      <div>
+
+        <div class="review-content">
+
+          <h3>{{item.username}}</h3>
+          <div class="media-info">
+              <div  class="rating"*ngIf="item.rate==5.00">
+                  <p >Reviews: &nbsp;
+                    <i class="fa fa-star"></i>
+                    <i  class="fa fa-star"></i>
+                    <i  class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i  class="fa fa-star"></i>
+                </p></div>
+                <div  class="rating"*ngIf="item.rate==4.5">
+                    <p >Reviews: &nbsp;
+                      <i class="fa fa-star"></i>
+                      <i  class="fa fa-star"></i>
+                      <i  class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                      <i  class="fa fa-star-half-o"></i>
+                  </p></div>
+              <div  class="rating"*ngIf="item.rate==4.00">
+                  <p >Reviews: &nbsp;
+                    <i class="fa fa-star"></i>
+                    <i  class="fa fa-star"></i>
+                    <i  class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i  class="fa fa-star-o"></i>
+                </p></div>
+                <div  class="rating"*ngIf="item.rate==3.5">
+                    <p >Reviews: &nbsp;
+                      <i class="fa fa-star"></i>
+                      <i  class="fa fa-star"></i>
+                      <i  class="fa fa-star"></i>
+                      <i class="fa fa-star-half-o"></i>
+                      <i  class="fa fa-star-o"></i>
+                  </p></div>
+                  <div  class="rating"*ngIf="item.rate==3.00">
+                      <p >Reviews: &nbsp;
+                        <i class="fa fa-star"></i>
+                        <i  class="fa fa-star"></i>
+                        <i  class="fa fa-star"></i>
+                        <i class="fa fa-star-o"></i>
+                        <i  class="fa fa-star-o"></i>
+                    </p></div>
+                    <div  class="rating"*ngIf="item.rate==2.5">
+                        <p >Reviews: &nbsp;
+                          <i class="fa fa-star"></i>
+                          <i  class="fa fa-star"></i>
+                          <i  class="fa fa-star-half-o"></i>
+                          <i class="fa fa-star-o"></i>
+                          <i  class="fa fa-star-o"></i>
+                      </p></div>
+                      <div  class="rating"*ngIf="item.rate==2.00">
+                          <p >Reviews: &nbsp;
+                            <i class="fa fa-star"></i>
+                            <i  class="fa fa-star"></i>
+                            <i  class="fa fa-star-o"></i>
+                            <i class="fa fa-star-o"></i>
+                            <i  class="fa fa-star-o"></i>
+                        </p></div>
+                        <div  class="rating"*ngIf="item.rate==1.5">
+                            <p >Reviews: &nbsp;
+                              <i class="fa fa-star"></i>
+                              <i  class="fa fa-star-half-o"></i>
+                              <i  class="fa fa-star-o"></i>
+                              <i class="fa fa-star-o"></i>
+                              <i  class="fa fa-star-o"></i>
+                          </p></div>
+                          <div  class="rating"*ngIf="item.rate==1.00">
+                              <p >Reviews: &nbsp;
+                                <i class="fa fa-star"></i>
+                                <i  class="fa fa-star-o"></i>
+                                <i  class="fa fa-star-o"></i>
+                                <i class="fa fa-star-o"></i>
+                                <i  class="fa fa-star-o"></i>
+                            </p></div>
+                            <div  class="rating"*ngIf="item.rate==0.5">
+                                <p >Reviews: &nbsp;
+                                  <i class="fa fa-star-half-o"></i>
+                                  <i  class="fa fa-star-o"></i>
+                                  <i  class="fa fa-star-o"></i>
+                                  <i class="fa fa-star-o"></i>
+                                  <i  class="fa fa-star-o"></i>
+                              </p></div>
+            <!-- <ul class="rating">
+              <li *ngFor=" let i of [1,2,3,4,5]">
+                <span *ngIf="i<=item.rate && item.rate!=0" aria-hidden="true" class="icon-star customColor"></span>
+
+                <span *ngIf="i>item.rate && item.rate!=0" class="icon-star customColor"></span>
+              </li>
+
+            </ul> -->
+
+            <!--<ul class="rating rating-width">-->
+            <!---->
+
+            <!--</ul>-->
+
+          </div>
+          <!-- End .media-info -->
+          <br>
+          <p style="display: -webkit-inline-box">{{item.comment}}</p>
+
+
+        </div>
+        <!-- End .review-content -->
+      </div>
+    </div>
+    <!-- End .product-review -->
+    <!-- <div class="col-lg-12" style="text-align: center;">
+      <a *ngIf="overallrating!==50" [routerLink]="['/details']" [queryParams]="{ Model: modelNo, Name:name   }" (click)="loadmorereviews()"
+        mat-raised-button class="btn button-additional font-additional font-weight-normal text-uppercase hvr-rectangle-out hover-focus-bg before-bg"
+        style="font-size: 18px;margin-top:10px; color: white;">Load more reviews</a>
+    </div> -->
+  </div>

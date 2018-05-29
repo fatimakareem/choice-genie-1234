@@ -119,6 +119,8 @@ import { SuperdashboardmainComponent } from './superdashboardmain/superdashboard
 import { BlackgeeksRecaptchaModule } from 'recaptcha-blackgeeks';
 import { AddblogComponent } from './addblog/addblog.component';
 import { UpdatepartnerService } from './sviewapartner/updatepartner.service';
+import { GetreviewComponent } from './getreview/getreview.component';
+import { SuperreviewsComponent } from './superreviews/superreviews.component';
 
 
 
@@ -158,7 +160,7 @@ import { UpdatepartnerService } from './sviewapartner/updatepartner.service';
     FormsModule,
     MatFormFieldModule
   ],
-  declarations: [],
+  declarations: [SuperreviewsComponent],
 
 })
 export class MaterialModule { }
