@@ -81,6 +81,7 @@ export class SuperreviewsComponent implements OnInit {
    //   window.location.reload();
 
   }
+ 
   catagoryId:'';
   rate:"";
   productid: "";
@@ -89,6 +90,7 @@ export class SuperreviewsComponent implements OnInit {
   username: "";
   reviewactive:'';
   user:'';
+  
   btnactiveClick(id,rate,proid,zip,comt,user,status,User) {
     this.catagoryId=id
   this.rate=rate;
