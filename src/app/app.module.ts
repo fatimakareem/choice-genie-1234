@@ -118,7 +118,7 @@ import { UsernavbarComponent } from './shared/usernavbar/usernavbar.component';
 import { UserNavbarModule } from './shared/usernavbar/usernavbar.module';
 import { UpdateService } from './user-profile/update.service';
 import { SuperdashboardmainComponent } from './superdashboardmain/superdashboardmain.component';
-import { BlackgeeksRecaptchaModule } from 'recaptcha-blackgeeks';
+
 import { AddblogComponent } from './addblog/addblog.component';
 import { UpdatepartnerService } from './sviewapartner/updatepartner.service';
 import { GetreviewComponent } from './getreview/getreview.component';
@@ -172,7 +172,7 @@ export class MaterialModule { }
     BrowserModule.withServerTransition({ appId: 'PlugExp' }),
     BrowserTransferStateModule,
     CommonModule,
-    BlackgeeksRecaptchaModule,
+    
     BrowserAnimationsModule,
     AngularcliStarRatingModule,
     FormsModule, ReactiveFormsModule,

@@ -1,5 +1,5 @@
 
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef } from '@angular/core';
 import { Headers, Http, Response } from '@angular/http';
 import 'rxjs/add/operator/map'
 
@@ -9,10 +9,13 @@ import { SimpleGlobal } from 'ng2-simple-global';
 import { ResponseContentType } from '@angular/http/src/enums';
 import { FormBuilder, Validators, NgControl, RadioControlValueAccessor, FormControl, FormGroup } from '@angular/forms';
 import { HttpClient, HttpResponse, HttpHeaders } from "@angular/common/http";
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import swal from 'sweetalert2';
 import { MatSelect } from '@angular/material';
 import { LoginService } from '../pages/login/login.service';
 import { PasswordValidation } from './password-validator.component';
+import { ViewChild } from '@angular/core';
+import { RecaptchaComponent } from 'recaptcha-blackgeeks';
 
 
 
@@ -21,8 +24,10 @@ import { PasswordValidation } from './password-validator.component';
   templateUrl: './usersignup.component.html',
   styleUrls: ['./usersignup.component.scss']
 })
-export class UsersignupComponent implements OnInit {
 
+export class UsersignupComponent implements OnInit {
+  @ViewChild(RecaptchaComponent) captcha: RecaptchaComponent;
+  // @ViewChild('username') el:ElementRef; captcha: RecaptchaComponent
   state;
   city;
   username;
@@ -40,10 +45,13 @@ export class UsersignupComponent implements OnInit {
   emailexist: boolean = true;
   usernameexist: boolean = true;
   service_zip;
-  constructor(private _serv: LoginService, public router: Router, private fb: FormBuilder, private http: HttpClient, private route: ActivatedRoute, private sg: SimpleGlobal) { }
+  constructor(private _serv: LoginService, public router: Router, private fb: FormBuilder, private http: HttpClient, private route: ActivatedRoute, private sg: SimpleGlobal) {
+    // this.captcha.reset();
+    // let status = this.captcha.getResponse();
+   }
 
   ngOnInit() {
-   
+    
 
     // this.city();
     this.signupForm = this.fb.group({
@@ -72,6 +80,8 @@ export class UsersignupComponent implements OnInit {
   {
     validator: PasswordValidation.MatchPassword // your validation method
 });
+this.captcha.reset();
+    let status = this.captcha.getResponse();
   }
 
   onChange(e) {
