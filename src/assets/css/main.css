@@ -5126,7 +5126,9 @@ background: linear-gradient(to bottom, #eaeaea 0%,#c6c6c6 50%,#999a9b 100%); /* 
  width: 100%;
  z-index: 9999;
 }
-
+.recaptcha-wrap input[type=text]{
+  background-color: #fff;
+}
 
 
 

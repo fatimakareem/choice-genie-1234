@@ -41,17 +41,17 @@ export class UsersignupComponent implements OnInit {
   usernameOnly = '[a-zA-Z0-9_.]+';
   flag = true;
   date = new FormControl(new Date());
-  hide=true;
+  hide = true;
   emailexist: boolean = true;
   usernameexist: boolean = true;
   service_zip;
   constructor(private _serv: LoginService, public router: Router, private fb: FormBuilder, private http: HttpClient, private route: ActivatedRoute, private sg: SimpleGlobal) {
     // this.captcha.reset();
     // let status = this.captcha.getResponse();
-   }
+  }
 
   ngOnInit() {
-    
+
 
     // this.city();
     this.signupForm = this.fb.group({
@@ -72,15 +72,15 @@ export class UsersignupComponent implements OnInit {
       'billing_address': ['', Validators.compose([Validators.required, Validators.pattern(this.normalPattern)])],
       'password': ['', Validators.compose([Validators.required, Validators.minLength(6)])],
       'confirmpassword': ['', Validators.compose([Validators.required, Validators.minLength(6)])],
-       'billing_city': ['', Validators.compose([Validators.required, Validators.pattern(this.normalPattern)])],
-       'billing_state': ['', Validators.compose([Validators.required, Validators.pattern(this.normalPattern)])],
-       'billing_zip':['', Validators.compose([Validators.required, Validators.pattern(this.normalPattern)])],
-       'Market':['', Validators.compose([Validators.required, Validators.pattern(this.normalPattern)])],
+      'billing_city': ['', Validators.compose([Validators.required, Validators.pattern(this.normalPattern)])],
+      'billing_state': ['', Validators.compose([Validators.required, Validators.pattern(this.normalPattern)])],
+      'billing_zip': ['', Validators.compose([Validators.required, Validators.pattern(this.normalPattern)])],
+      'Market': ['', Validators.compose([Validators.required, Validators.pattern(this.normalPattern)])],
     },
-  {
-    validator: PasswordValidation.MatchPassword // your validation method
-});
-this.captcha.reset();
+      {
+        validator: PasswordValidation.MatchPassword // your validation method
+      });
+    this.captcha.reset();
     let status = this.captcha.getResponse();
   }
 
@@ -92,7 +92,7 @@ this.captcha.reset();
   }
 
   email1;
-  
+
   emailCheck(email1) {
     // alert(this.premiseID.toString().length)
     //  alert('hello');
@@ -113,7 +113,7 @@ this.captcha.reset();
 
       });
   }
- 
+
   // usernameexist;
   usernameCheck(username1) {
     //alert('hello');
@@ -141,21 +141,21 @@ this.captcha.reset();
         error => {
           //   this.usernameexist=error['status']
           console.log(error);
-          
+
           //   f.resetForm();
         });
-     
+
 
 
   }
- zip:any=[];
+  zip: any = [];
   states(zip) {
     // alert(this.premiseID.toString().length)
     //  alert('hello');
     // if(this.premiseID&&this.premiseID.toString().length===17) {
     let headers = new HttpHeaders();
     headers.append('Content-Type', 'application/json');
-    this.http.get('http://192.168.30.193:9000/choice/zipcodewithstatecity/'+zip, { headers: headers })
+    this.http.get('http://192.168.30.193:9000/choice/zipcodewithstatecity/' + zip, { headers: headers })
 
       //  this.http.get(Config.api + 'signup/'+ this.zip_code +'', {headers: headers})
       .subscribe(Res => {
@@ -163,9 +163,9 @@ this.captcha.reset();
         //     this.state= Res[0].state;
         //  Res[0].state=this.model;
         this.zip = Res;
-        this.state=this.zip.state;
+        this.state = this.zip.state;
         console.log(this.state);
-        this.city=this.zip.city;
+        this.city = this.zip.city;
         console.log(this.city);
       });
   }
@@ -216,14 +216,14 @@ this.captcha.reset();
       }
     });
   }
- 
+
   signupuserdata() {
     //alert('hello');
     //console.log("main form",this.signupForm.value)
     console.log("CHOICE GENIE", this.model);
     let headers = new HttpHeaders();
     headers.append('Content-Type', 'application/json');
-    this.http.post( Config.api+'userregister/', this.model, { headers: headers })
+    this.http.post(Config.api + 'userregister/', this.model, { headers: headers })
       .subscribe(Res => {
         console.log(Res);
         console.log(this.model);
@@ -238,7 +238,7 @@ this.captcha.reset();
 
         })
         //  f.resetForm();
-         this.router.navigate(['/userlogin'])
+        this.router.navigate(['/userlogin'])
       },
         error => {
           this.validateAllFormFields(this.model);
