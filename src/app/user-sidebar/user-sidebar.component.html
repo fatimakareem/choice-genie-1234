@@ -288,7 +288,7 @@
         <!-- <span class="left"></span> -->
         <mat-form-field>
 
-          <mat-select placeholder="Company" (ngModelChange)="check($event)"(change)="companydata(name.trim())" required [(ngModel)]="name" name="name">
+          <mat-select placeholder="Company" (ngModelChange)="check($event)"(change)="companydata(name)" required [(ngModel)]="name" name="name">
 
             <mat-option *ngFor="let data of title" [value]="data.title">
               {{data.title}}

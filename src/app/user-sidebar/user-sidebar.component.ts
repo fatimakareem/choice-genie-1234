@@ -165,7 +165,7 @@ price_to;
 
       .subscribe(Res => {
         this.title = Res.json();
-        this.title=this.title
+        this.title=this.title;
         console.log(this.title)
       });
 
@@ -175,7 +175,7 @@ price_to;
   companydata(name) {
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    this.http.get(Config.api+'company/' + this.zip_code + '/' + this.name, { headers: headers })
+    this.http.get(Config.api+'company/' + this.zip_code + '/' + this.name.trim(), { headers: headers })
      
       .subscribe(Res => {
         console.log(Res, 'hhhhhhhhhhhhhhhhhhh')
