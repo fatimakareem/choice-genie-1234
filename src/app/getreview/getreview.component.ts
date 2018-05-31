@@ -39,6 +39,9 @@ private Sub: Subscription;
 
       //  console.log('paramsssssssssss',params['username'])
         this.getreview(params['id']) 
+        this. product(params['id'])
+        this. totalreview(params['id'])
+        this. avereview(params['id'])
       });
       //  alert("junaid");
       // this.data.currentProducts.subscribe(products => this.sg['products'] = products)
@@ -63,4 +66,52 @@ private Sub: Subscription;
     });
     
     }
+    pro:any=[];
+    plan:any=[];    
+    product(id) {
+    
+      let headers = new Headers();
+      headers.append('Content-Type', 'application/json');
+      this.http.get('http://192.168.30.193:9000/choice/dataup/'+ id , { headers: headers })
+      .subscribe(Res => {
+      this.pro=Res.json();
+      console.log(this.pro)
+      this.plan=this.pro.plan_information.split(',,', 3000);
+      console.log(this.plan)
+ 
+      });
+      
+      }
+      totalrev:any=[];
+      totalreview(id) {
+    
+        let headers = new Headers();
+        headers.append('Content-Type', 'application/json');
+        this.http.get('http://192.168.30.193:9000/choice/totalreviews/'+ id , { headers: headers })
+      
+        .subscribe(Res => {
+        this.totalrev=Res.json()['Total Reviews'];
+
+        console.log(this.totalrev);
+      
+        });
+        
+        }
+      
+       avrage:any=[];
+       score:any=[];
+      avereview(id) {
+    
+        let headers = new Headers();
+        headers.append('Content-Type', 'application/json');
+        this.http.get('http://192.168.30.193:9000/choice/reviewsperproduct/'+id , { headers: headers })
+      
+        .subscribe(Res => {
+        this.avrage=Res.json();
+        console.log(this.avrage);
+      this.score= this.avrage['Product Score'];
+      console.log(this.score)
+        });
+        
+        }
 }
