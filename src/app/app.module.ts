@@ -173,7 +173,6 @@ export class MaterialModule { }
     BrowserModule.withServerTransition({ appId: 'PlugExp' }),
     BrowserTransferStateModule,
     CommonModule,
-    
     BrowserAnimationsModule,
     AngularcliStarRatingModule,
     FormsModule, ReactiveFormsModule,
@@ -192,7 +191,6 @@ export class MaterialModule { }
     // CarouselModule.forRoot(),
     BrowserModule,
     LoaderModule,
-
     //IonicModule.forRoot(AppRoutes),
     //  HttpClientModule
   ],
