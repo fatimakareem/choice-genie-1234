@@ -17,9 +17,10 @@ hel:any=[];
 tit:any=[];
 word;
     loaded: boolean = false;
+
     login(username: string, password: string) {
-        const headers = new Headers();
-      //  const headers = new Headers({'Authorization': 'JWT ' + username.token});
+       const headers = new Headers();
+    //    const headers = new Headers({'Authorization': 'JWT ' + username});
         headers.append('Content-Type', 'application/json');
         //return this.http.get(Config.api+'data_against_zipcode/'+id+'?page='+page).map((response: Response) => response.json());
         // return this._http5.post(Config.api+'user-token-auth/',
