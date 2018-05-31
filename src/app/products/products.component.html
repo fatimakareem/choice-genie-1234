@@ -11,7 +11,7 @@
 <div class="main-content custom" style="padding-top: 5px; padding-left: 0px;">
   <!-- <div class="container-fluid"> -->
   <div class="row"></div>
-  <div class="col-sm-12" style="padding:0px;">
+  <div class="col-sm-12 product-main" style="padding:0px;">
 
     <!-- <div class="page-title">
         <span>Product Search</span>
@@ -43,12 +43,12 @@
     <div class="products-area-products" *ngIf="prod_loaded">
       <div class="row">
 
-        <div class="col-lg-12">
-          <div class="custom card position" style="float: right; margin-top: 4px;">
+        <div class="col-lg-12 position">
+          <div class="custom card" style="float: right; margin-top: 4px;">
             <div class="">
               <div class="">
                 <div class="product-page-bar">
-                  <div class="col-md-1 col-sm-4 col-xs-12 align">
+                  <div class=" col-lg-1 col-md-2 col-sm-4 col-xs-12 align">
                     <label class="product-label ">SORT BY:</label>
                   </div>
 
@@ -71,7 +71,7 @@
 
                   </div>
 
-                  <div class="col-md-2 col-sm-4 col-xs-12 align" style="margin-top: 5px">
+                  <div class="col-md-2 col-sm-4 col-xs-12 align space-b" style="margin-top: 5px">
                     <button class="sort-btn " type="button" (click)="company()">
                       Company
                       <i class="fa fa-sort-down down-icon"></i>
@@ -164,11 +164,11 @@
 
             <div class="card-content" style="padding: 0px;">
               <!-- <input type="checkbox" [(ngModel)]="id" value="{{data.id}}" name="{{data.id}}" [checked]="data.id" />{{data.id}} -->
-              <div class="col-md-3  col-sm-6 col-xs-12 plan-detail text-center">
+              <div class="col-md-3  col-sm-6 col-xs-12 plan-detail text-center logo-div">
                 <a href="{{data.profileurl}}" target="_blank" class="display-b margin-top">
 
                   <img src="{{data.profile_logo}}" alt="{{data.title}}" style="width: 90%;
-                    margin-top: 6%;" />
+                  height: 103px;" />
                 </a>
 
 
@@ -369,7 +369,7 @@
                   <b> Call now</b>
                 </h3>
                 <p class="text-center" >
-                  <a href="skype:+{{data.phone}}?call">
+                  <a href="tel:{{data.phone}}">
                       <!-- <input type="text" id="phone" value="{{data.phone}}"  name="phone"  > -->
                     {{data.phone}}</a>
                 </p>
