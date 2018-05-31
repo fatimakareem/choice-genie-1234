@@ -223,7 +223,7 @@ export class UsersignupComponent implements OnInit {
     console.log("CHOICE GENIE", this.model);
     let headers = new HttpHeaders();
     headers.append('Content-Type', 'application/json');
-    this.http.post(Config.api + 'userregister/', this.model, { headers: headers })
+    this.http.post( 'http://192.168.30.237:9000/choice/Usersignup/', this.model, { headers: headers })
       .subscribe(Res => {
         console.log(Res);
         console.log(this.model);
