@@ -123,6 +123,7 @@ import { AddblogComponent } from './addblog/addblog.component';
 import { UpdatepartnerService } from './sviewapartner/updatepartner.service';
 import { GetreviewComponent } from './getreview/getreview.component';
 import { SuperreviewsComponent } from './superreviews/superreviews.component';
+import { HeaderService } from './header/header.service';
 
 
 
@@ -221,6 +222,7 @@ export class MaterialModule { }
   ],
   providers: [
     HomeService,
+    HeaderService,
     CompanyService,
     SimpleGlobal,
     DataService,
