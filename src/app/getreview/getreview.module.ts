@@ -8,7 +8,7 @@ import {MatDatepickerModule} from "@angular/material";
 import { HttpClientModule } from '@angular/common/http';
 import { GetreviewComponent } from './getreview.component';
 import { GetreviewRoutes } from './getreview.routing';
-import { NgCircleProgressModule } from 'ng-circle-progress';
+import {RoundProgressModule} from 'angular-svg-round-progressbar';
 @NgModule({
     imports: [
         CommonModule,
@@ -19,16 +19,8 @@ import { NgCircleProgressModule } from 'ng-circle-progress';
         ReactiveFormsModule,
         MatDatepickerModule,
         HttpClientModule,
-        NgCircleProgressModule.forRoot({
-            // set defaults here
-            radius: 100,
-            outerStrokeWidth: 16,
-            innerStrokeWidth: 8,
-            outerStrokeColor: "#78C000",
-            innerStrokeColor: "#C7E596",
-            animationDuration: 300,
-           
-          })
+            RoundProgressModule
+            
     ],
     declarations: [
         GetreviewComponent

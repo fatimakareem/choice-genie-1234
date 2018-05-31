@@ -30,8 +30,9 @@ import swal from 'sweetalert2';
 export class GetreviewComponent implements OnInit {
 rev:any=[];
 id;
+
 private Sub: Subscription;
-  constructor(private route: ActivatedRoute,private http: Http) { }
+  constructor(private route: ActivatedRoute,private http: Http) {}
 
   ngOnInit() {
     this.route.params.subscribe ( params => {
@@ -100,6 +101,7 @@ private Sub: Subscription;
       
        avrage:any=[];
        score:any=[];
+       ave:any=[];
       avereview(id) {
     
         let headers = new Headers();
@@ -111,6 +113,7 @@ private Sub: Subscription;
         console.log(this.avrage);
       this.score= this.avrage['Product Score'];
       console.log(this.score)
+      this.ave=this.avrage['Avg Reviews Per Product']
         });
         
         }
