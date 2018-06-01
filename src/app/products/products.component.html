@@ -150,7 +150,7 @@
         </div> -->
       </div>
 
-
+<button (click)="Comapreproduct()">Compare</button>
 
       <div class="custom card" *ngFor="let data of sg['products']; let i = index">
         <div class="row">
@@ -161,10 +161,11 @@
               <h4 class="card-title">{{data.title}} </h4>
 
             </div>
-
+            <input type="checkbox" name="id"  #id (change)="checked(data.id,i)">{{data.id}}
             <div class="card-content" style="padding: 0px;">
-              <!-- <input type="checkbox" [(ngModel)]="id" value="{{data.id}}" name="{{data.id}}" [checked]="data.id" />{{data.id}} -->
+             
               <div class="col-md-3  col-sm-6 col-xs-12 plan-detail text-center logo-div">
+                  <!-- <input type="checkbox" value="{{data.id}}" name="comp"  > -->
                 <a href="{{data.profileurl}}" target="_blank" class="display-b margin-top">
 
                   <img src="{{data.profile_logo}}" alt="{{data.title}}" style="width: 90%;

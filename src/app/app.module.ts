@@ -70,6 +70,9 @@ import { DataService } from './data.service';
 // import { Ng2CarouselamosModule } from 'ng2-carouselamos';
 // import { RegisteredComponent } from './registered/registered.component';
 import { LoginComponent } from './../app/pages/login/login.component';
+import { Authgaurd2Service } from './authgaurd2.service';
+import { Authgaurd3Service } from './authgaurd3.service';
+
 import { LoginService } from './pages/login/login.service';
 import { ResidentialService } from './residential/residential-dialog2/residential.service';
 import { ContactusComponent } from './contactus/contactus.component';
@@ -231,6 +234,7 @@ export class MaterialModule { }
     ResidentialService,
     DeleteBlogService,
     EditService,
+    Authgaurd2Service,
     DeleteService,
     ProfileService,
     DeletereviewService,
@@ -244,6 +248,7 @@ export class MaterialModule { }
     DeletesuperdashboardService,
     DataloginService,
     AuthguardService,
+    Authgaurd3Service,
     UpdateService,
     EditBlogService,
     UpdatepartnerService,

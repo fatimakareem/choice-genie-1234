@@ -16,8 +16,10 @@ import { SuperadminComponent } from './layouts/superadmin/superadmin.component';
 import { ActivateaccountComponent } from './activateaccount/activateaccount.component';
 import { AuthguardService } from './authguard.service';
 import { ConsumeradminComponent } from './layouts/consumeradmin/consumeradmin.component';
-// import { UsersdashboardComponent } from './layouts/usersdashboard/usersdashboard.component';
+import { Authgaurd2Service } from './authgaurd2.service';
+import { Authgaurd3Service } from './authgaurd3.service';
 
+// import { UsersdashboardComponent } from './layouts/usersdashboard/usersdashboard.component';
 
 export const AppRoutes: Routes = [
     // {
@@ -189,10 +191,10 @@ export const AppRoutes: Routes = [
             path: 'forget_password/:qurey',
             loadChildren: './forget_password/forget_password.module#ForgetpasswordModule'
         },
-        {
-            path: 'ChangePassword',
-            loadChildren: './changepassword/changepassword.module#ChangePasswordModule'
-        },
+        // {
+        //     path: 'ChangePassword',
+        //     loadChildren: './changepassword/changepassword.module#ChangePasswordModule'
+        // },
         ]
     },
      
@@ -208,13 +210,17 @@ export const AppRoutes: Routes = [
         component: ConsumeradminComponent,
         children: [
             {
-                path: 'consumerdashboard',
+                path: 'consumerdashboard',canActivate: [Authgaurd2Service],
                 loadChildren: './consumerdashboard/consumerdashboard.module#ConsumerDashboardModule'
             },
             {
-                path: 'userprofile',
+                path: 'userprofile',canActivate: [Authgaurd2Service],
                 loadChildren: './user-profile/user-profile.module#UserModule'
-            }
+            },
+            {
+                path: 'ChangePassword',canActivate: [Authgaurd2Service],
+                loadChildren: './changepassword/changepassword.module#ChangePasswordModule'
+            },
             // {
             //     path: 'SuperChangePassword',
             //     loadChildren: './superchangepassword/superchangepassword.module#ChangePasswordModule'
@@ -234,35 +240,35 @@ export const AppRoutes: Routes = [
         component: SuperadminComponent,
         children: [
             {
-                path: 'superdashboard',
+                path: 'superdashboard',canActivate: [Authgaurd3Service],
                 loadChildren: './superdashboard/superdashboard.module#SuperDashboardModule'
             },
             {
-                path: 'admin/reviews',
+                path: 'admin/reviews',canActivate: [Authgaurd3Service],
                 loadChildren: './superreviews/superreviews.module#SuperreviewsModule'
             },
             {
-                path: 'superadmin/blog',
+                path: 'superadmin/blog',canActivate: [Authgaurd3Service],
                 loadChildren: './Blogchoicegenie/blog3/blog3.module#Blog3Module'
             },//addblogModule
             {
-                path: 'addnewblog',
+                path: 'addnewblog',canActivate: [Authgaurd3Service],
                 loadChildren: './addblog/addblog.module#addblogModule'
             },
             {
-                path: 'SuperChangePassword',
+                path: 'SuperChangePassword',canActivate: [Authgaurd3Service],
                 loadChildren: './superchangepassword/superchangepassword.module#ChangePasswordModule'
             },
             {
-                path: 'supermaindashboard',
+                path: 'supermaindashboard',canActivate: [Authgaurd3Service],
                 loadChildren: './superdashboardmain/superdashboardmain.module#SuperDashboardmainModule'
             },
             {
-                path: 'superviewcontact',
+                path: 'superviewcontact',canActivate: [Authgaurd3Service],
                 loadChildren: './superviewcontact/superviewcontact.module#superviewcontactModule'
             },//superviewbecomeModuleng superpartnerModule
             {
-                path: 'sviewapartner',
+                path: 'sviewapartner',canActivate: [Authgaurd3Service],
                 loadChildren: './sviewapartner/sviewapartner.module#partnerModule'
             }
         ]
@@ -273,33 +279,36 @@ export const AppRoutes: Routes = [
       //  canActivate: [AuthguardService], 
         children: [
             {
-                path: 'dashboard/:username',
+                path: 'dashboard/:username',canActivate: [AuthguardService],
                 loadChildren: './dashboard/dashboard.module#DashboardModule',
                // canActivate: [AuthguardService]
             },
           
             {
-                path: "new-product",
+                path: "new-product",canActivate: [AuthguardService],
                 loadChildren: './admin/new-product/new-product.module#NewProductModule'
             },
             {
-                path: "inactive-product",
+                path: "inactive-product",canActivate: [AuthguardService],
                 loadChildren: './inactive-product/inactive-product.module#InactiveProductModule'
             },
             {
-                path: 'company-profile',
+                path: 'company-profile',canActivate: [AuthguardService],
                 loadChildren: './com-profile/com-profile.module#ComProfileModule'
             },
-            
+            {
+                path: 'ChangePassword1',canActivate: [AuthguardService],
+                loadChildren: './changepassword/changepassword.module#ChangePasswordModule'
+            },
             
             {
-                path: 'components',
+                path: 'components',canActivate: [AuthguardService],
                 loadChildren: './components/components.module#ComponentsModule'
             }, {
-                path: 'forms',
+                path: 'forms',canActivate: [AuthguardService],
                 loadChildren: './forms/forms.module#Forms'
             },  {
-                path: 'maps',
+                path: 'maps',canActivate: [AuthguardService],
                 loadChildren: './maps/maps.module#MapsModule'
             }, 
             //  {

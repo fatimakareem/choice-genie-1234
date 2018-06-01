@@ -13,30 +13,30 @@ import { Config } from '../../Config';
 export class LoginService {
 
     constructor(private _http5: Http) { }
-hel:any=[];
-tit:any=[];
-word;
+    hel: any = [];
+    tit: any = [];
+    word;
     loaded: boolean = false;
-
+    currentUser;
     login(username: string, password: string) {
-       const headers = new Headers();
-    //    const headers = new Headers({'Authorization': 'JWT ' + username});
+        const headers = new Headers();
+        //    const headers = new Headers({'Authorization': 'JWT ' + username});
         headers.append('Content-Type', 'application/json');
         //return this.http.get(Config.api+'data_against_zipcode/'+id+'?page='+page).map((response: Response) => response.json());
         // return this._http5.post(Config.api+'user-token-auth/',
-        return this._http5.post( 'http://192.168.30.193:9000/choice/loginCompany/',
+        return this._http5.post('http://192.168.30.193:9000/choice/loginCompany/',
             JSON.stringify({ username: username, password: password }), { headers: headers })
             .map((response: Response) => {
                 console.log(response.json()['Results']);
-this.hel=response.json()['Results'];
-console.log(this.hel);
-this.tit=this.hel[0];
-console.log(this.tit);
-this.word=this.tit.title;
-console.log(this.word);
-localStorage.setItem('user', this.word);
-                localStorage.setItem('username', this.word.split(' ',3000)[1]);
-             
+                this.hel = response.json()['Results'];
+                console.log(this.hel);
+                this.tit = this.hel[0];
+                console.log(this.tit);
+                this.word = this.tit.title;
+                console.log(this.word);
+                localStorage.setItem('user', this.word);
+                localStorage.setItem('username', this.word.split(' ', 3000)[1]);
+
                 let user = { username: username, token: response.json().token };
 
                 if (user && user.token) {
@@ -53,17 +53,17 @@ localStorage.setItem('user', this.word);
     //        // 'password': password
     //     }).map((res: Response) => res.json())
     // }usersignin
-     
-    
-    
-    login_authenticate(username: string, password: string){
-        return this._http5.post('http://192.168.30.193:9000/choice/loginCompany/',{
-            'username':username,
+
+
+
+    login_authenticate(username: string, password: string) {
+        return this._http5.post('http://192.168.30.193:9000/choice/loginCompany/', {
+            'username': username,
             'password': password,
             // 'title': title
-        }).map((res: Response) => res.json() ) 
+        }).map((res: Response) => res.json())
     }
-    
+
 
 
     // post_service(obj) {
@@ -109,12 +109,12 @@ localStorage.setItem('user', this.word);
     activate(uid) {
         console.log(uid)
         let headers = new Headers();
-       return this._http5.get(Config.api+'activate/' + uid,{headers: headers} ).map((response: Response) => response.json());
-       // return this.http.get('http://192.168.30.52:9000/choice/zipcodedata/'+id+'?page='+page).map((response: Response) => response.json());
-      }
-      isactivated(username) {
+        return this._http5.get(Config.api + 'activate/' + uid, { headers: headers }).map((response: Response) => response.json());
+        // return this.http.get('http://192.168.30.52:9000/choice/zipcodedata/'+id+'?page='+page).map((response: Response) => response.json());
+    }
+    isactivated(username) {
         console.log(username)
-       return this._http5.get(Config.api+'isactivated/' + username ).map((response: Response) => response.json());
-       // return this.http.get('http://192.168.30.52:9000/choice/zipcodedata/'+id+'?page='+page).map((response: Response) => response.json());
-      }
+        return this._http5.get(Config.api + 'isactivated/' + username).map((response: Response) => response.json());
+        // return this.http.get('http://192.168.30.52:9000/choice/zipcodedata/'+id+'?page='+page).map((response: Response) => response.json());
+    }
 }

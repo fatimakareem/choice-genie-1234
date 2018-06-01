@@ -50,7 +50,7 @@ export class SuperloginComponent implements OnInit {
   private nativeElement: Node;
   public username="admin";
   hide=true;
-
+user;
   password;
   constructor(public router: Router, private element: ElementRef, private http: Http, private route: ActivatedRoute,
     private sg: SimpleGlobal, private _nav: Router, private _serv: SuperLoginService, private formBuilder: FormBuilder, private https: HttpClient) {
@@ -82,9 +82,12 @@ export class SuperloginComponent implements OnInit {
     )
     this.router.navigate(['/supermaindashboard']);
     localStorage.setItem('user', this.username);
-    // localStorage.setItem('username', this.username);
    
-  }   
+      localStorage.setItem('currentadmin', JSON.stringify(username));
+      // console.log ("junaid",localStorage.getItem('currentUser'))
+  }
+   
+  
            
           else{
             error => {

@@ -26,7 +26,7 @@ export class UserLoginService {
                 let user = { username: username, token: response.json().token };
 
                 if (user && user.token) {
-                    localStorage.setItem('currentUser', JSON.stringify(user));
+                    localStorage.setItem('currentcustomer', JSON.stringify(user));
                     // console.log ("junaid",localStorage.getItem('currentUser'))
                 }
             });
