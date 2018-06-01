@@ -176,7 +176,7 @@ export class UsersignupComponent implements OnInit {
 
     headers.append('Content-Type', 'application/json');
     // this.http.get(Config.api + 'data_against_zipcode/' + this.zip_code + '', { headers: headers }),
-    this.http.get('http://192.168.30.193:9000/choice/zipcodewithstatecity/' + zip, { headers: headers })
+    this.http.get('http://192.168.30.237:9000/choice/zipcodewithstatecity/' + zip, { headers: headers })
 
       .subscribe(data => {
         console.log(data);
