@@ -148,26 +148,59 @@ export class UsersignupComponent implements OnInit {
 
 
   }
-  zip: any = [];
-  states(zip) {
-    // alert(this.premiseID.toString().length)
-    //  alert('hello');
-    // if(this.premiseID&&this.premiseID.toString().length===17) {
-    let headers = new HttpHeaders();
-    headers.append('Content-Type', 'application/json');
-    this.http.get('http://192.168.30.193:9000/choice/zipcodewithstatecity/' + zip, { headers: headers })
+  //zip: any = [];
+  // states(zip) {
+  
+  //   let headers = new HttpHeaders();
+  //   headers.append('Content-Type', 'application/json');
+  //   this.http.get('http://192.168.30.193:9000/choice/zipcodewithstatecity/' + zip, { headers: headers })
 
-      //  this.http.get(Config.api + 'signup/'+ this.zip_code +'', {headers: headers})
-      .subscribe(Res => {
-        console.log(Res);
-        //     this.state= Res[0].state;
-        //  Res[0].state=this.model;
-        this.zip = Res;
-        this.state = this.zip.state;
-        console.log(this.state);
-        this.city = this.zip.city;
-        console.log(this.city);
-      });
+  //        .subscribe(Res => {
+  //       console.log(Res);
+  //         this.zip = Res;
+  //       this.state = this.zip.state;
+  //       console.log(this.state);
+  //       this.city = this.zip.city;
+  //       console.log(this.city);
+  //     });
+  // }
+
+
+  states(zip) {
+    //alert('hello');
+    console.log("CHOICE GENIE", zip);
+    // alert("REP_certificate_id1"+this.REP_certificate_id);
+
+    let headers = new HttpHeaders();
+
+
+    headers.append('Content-Type', 'application/json');
+    // this.http.get(Config.api + 'data_against_zipcode/' + this.zip_code + '', { headers: headers }),
+    this.http.get('http://192.168.30.237:9000/choice/zipcodewithstatecity/' + zip, { headers: headers })
+
+      .subscribe(data => {
+        console.log(data);
+        // this.next = Res[0].next;
+        console.log(data['zipcode'], 'hhhhhhhhhhhhhhh')
+        console.log(data['state'], 'hhhhhhhhhhhhhhh')
+        console.log(data['city'], 'hhhhhhhhhhhhhhh')
+        // if ( this.usernameexist=false){
+       // this.model['zip'] = data['zipcode']
+        this.model['service_state'] = data['state']
+        this.model['service_city'] = data['city']
+        // }
+        //  console.log(this.usernameexist);
+
+      },
+        error => {
+          //   this.usernameexist=error['status']
+          console.log(error);
+
+          //   f.resetForm();
+        });
+
+
+
   }
   cities() {
     // alert(this.premiseID.toString().length)
@@ -223,7 +256,7 @@ export class UsersignupComponent implements OnInit {
     console.log("CHOICE GENIE", this.model);
     let headers = new HttpHeaders();
     headers.append('Content-Type', 'application/json');
-    this.http.post(Config.api + 'userregister/', this.model, { headers: headers })
+    this.http.post( 'http://192.168.30.237:9000/choice/Usersignup/', this.model, { headers: headers })
       .subscribe(Res => {
         console.log(Res);
         console.log(this.model);

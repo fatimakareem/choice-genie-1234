@@ -78,7 +78,10 @@
 
                     </button>
                   </div>
-
+                  <button (click)="onPrint()">Print</button>
+                  
+                  <!-- <a target="_blank"   onclick="window.print();" class="print-grid-temp" title="Print plan results">
+                    <img alt="print" src="/Content/images/printer.png" width="16" height="16"></a> -->
                 </div>
 
 
@@ -372,8 +375,10 @@
                 <p class="text-center" >
                   <a href="tel:{{data.phone}}">
                       <!-- <input type="text" id="phone" value="{{data.phone}}"  name="phone"  > -->
-                    {{data.phone}}</a>
+                    {{data.phone}}</a><br/>
+                    <span>OR</span>
                 </p>
+             
                 <!-- (click)="openDialog(data.id)" -->
                 <button class="btn btn-rose" style="display:block; margin: 0 auto;">
                   <a style="color:white" href="{{data.profileurl}}" target="_blank">Signup </a>
