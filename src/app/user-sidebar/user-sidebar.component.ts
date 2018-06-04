@@ -3646,7 +3646,7 @@ months6="6 Months";
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     // this.http.get(Config.api + 'data_against_zipcode/' + this.zip_code + '', { headers: headers }),
-    this.http.post('http://192.168.30.193:9000/choice/renewableenergy/' + this.zip_code + '', JSON.stringify({
+    this.http.post(Config.api + 'renewableenergy/' + this.zip_code + '', JSON.stringify({
 
       "renewable1": energy
     }
@@ -3678,7 +3678,7 @@ months6="6 Months";
       console.log(fixed, 'tttttttttttt');
       let headers = new Headers();
       headers.append('Content-Type', 'application/json');
-      this.http.post('http://192.168.30.193:9000/choice/plantype/' + this.zip_code, JSON.stringify({
+      this.http.post(Config.api + 'plantype/' + this.zip_code, JSON.stringify({
         "plan_type1": fixed,
         "plan_type2": index,
         "plan_type3": vari,
@@ -3701,7 +3701,7 @@ months6="6 Months";
       console.log(index, 'tttttttttttt');
       let headers = new Headers();
       headers.append('Content-Type', 'application/json');
-      this.http.post('http://192.168.30.193:9000/choice/plantype/' + this.zip_code, JSON.stringify({
+      this.http.post(Config.api + 'plantype/' + this.zip_code, JSON.stringify({
         "plan_type1": fixed,
         "plan_type2": index,
         "plan_type3": vari,
@@ -3726,7 +3726,7 @@ months6="6 Months";
       console.log(vari, 'tttttttttttt');
       let headers = new Headers();
       headers.append('Content-Type', 'application/json');
-      this.http.post('http://192.168.30.193:9000/choice/plantype/' + this.zip_code, JSON.stringify({
+      this.http.post(Config.api + 'plantype/' + this.zip_code, JSON.stringify({
         "plan_type1": fixed,
         "plan_type2": index,
         "plan_type3": vari,
@@ -3751,7 +3751,7 @@ months6="6 Months";
       console.log(fixed, vari, index, 'tttttttttttt');
       let headers = new Headers();
       headers.append('Content-Type', 'application/json');
-      this.http.post('http://192.168.30.193:9000/choice/plantype/' + this.zip_code, JSON.stringify({
+      this.http.post(Config.api + 'plantype/' + this.zip_code, JSON.stringify({
         "plan_type1": fixed,
         "plan_type2": index,
         "plan_type3": vari,
@@ -3777,7 +3777,7 @@ months6="6 Months";
       console.log(fixed, vari, 'tttttttttttt');
       let headers = new Headers();
       headers.append('Content-Type', 'application/json');
-      this.http.post('http://192.168.30.193:9000/choice/plantype/' + this.zip_code, JSON.stringify({
+      this.http.post(Config.api + 'plantype/' + this.zip_code, JSON.stringify({
         "plan_type1": fixed,
         "plan_type2": index,
         "plan_type3": vari,
@@ -3802,7 +3802,7 @@ months6="6 Months";
       console.log(fixed, index, 'tttttttttttt');
       let headers = new Headers();
       headers.append('Content-Type', 'application/json');
-      this.http.post('http://192.168.30.193:9000/choice/plantype/' + this.zip_code, JSON.stringify({
+      this.http.post(Config.api + 'plantype/' + this.zip_code, JSON.stringify({
         "plan_type1": fixed,
         "plan_type2": index,
         "plan_type3": vari,
@@ -3827,7 +3827,7 @@ months6="6 Months";
       console.log(vari, index, 'tttttttttttt');
       let headers = new Headers();
       headers.append('Content-Type', 'application/json');
-      this.http.post('http://192.168.30.193:9000/choice/plantype/' + this.zip_code, JSON.stringify({
+      this.http.post(Config.api + 'plantype/' + this.zip_code, JSON.stringify({
         "plan_type1": fixed,
         "plan_type2": index,
         "plan_type3": vari,
@@ -3888,7 +3888,7 @@ months6="6 Months";
    // if (this.preplanChecked) {
       let headers = new Headers();
       headers.append('Content-Type', 'application/json');
-      this.http.get('http://192.168.30.193:9000/choice/onlyprepaidplans/' + this.zip_code + '', { headers: headers })
+      this.http.get(Config.api + 'onlyprepaidplans/' + this.zip_code + '', { headers: headers })
 
         .subscribe(Res => {
           console.log(Res, 'hhhhhhhhhhhhhhhhhhh')
@@ -3917,7 +3917,7 @@ months6="6 Months";
     // if (this.noplanChecked) {
       let headers = new Headers();
       headers.append('Content-Type', 'application/json');
-      this.http.get('http://192.168.30.193:9000/choice/noprepaidplans/' + this.zip_code + '', { headers: headers })
+      this.http.get(Config.api + 'noprepaidplans/' + this.zip_code + '', { headers: headers })
 
         .subscribe(Res => {
           console.log(Res, 'hhhhhhhhhhhhhhhhhhh')
@@ -4000,7 +4000,7 @@ months6="6 Months";
     // if (this.notChecked) {
       let headers = new Headers();
       headers.append('Content-Type', 'application/json');
-      this.http.get('http://192.168.30.193:9000/choice/notimeuseplans/' + this.zip_code + '', { headers: headers })
+      this.http.get(Config.api + 'notimeuseplans/' + this.zip_code + '', { headers: headers })
 
         .subscribe(Res => {
           console.log(Res, 'hhhhhhhhhhhhhhhhhhh')
@@ -4033,7 +4033,7 @@ months6="6 Months";
     // if (this.onlyChecked) {
       let headers = new Headers();
       headers.append('Content-Type', 'application/json');
-      this.http.get('http://192.168.30.193:9000/choice/onlytimeuseplans/' + this.zip_code + '', { headers: headers })
+      this.http.get(Config.api + 'onlytimeuseplans/' + this.zip_code + '', { headers: headers })
 
         .subscribe(Res => {
           console.log(Res, 'hhhhhhhhhhhhhhhhhhh')
@@ -4064,7 +4064,7 @@ months6="6 Months";
       console.log(min, max, 'tttttttttttt');
       let headers = new Headers();
       headers.append('Content-Type', 'application/json');
-      this.http.post('http://192.168.30.193:9000/choice/pricerange/' + this.zip_code, JSON.stringify({
+      this.http.post(Config.api + 'pricerange/' + this.zip_code, JSON.stringify({
 
         "price_500_kwh_min_price": min,
         "price_500_kwh_max_price": max
@@ -4090,7 +4090,7 @@ months6="6 Months";
       console.log(min, max, 'tttttttttttt');
       let headers = new Headers();
       headers.append('Content-Type', 'application/json');
-      this.http.post('http://192.168.30.193:9000/choice/pricerange/' + this.zip_code, JSON.stringify({
+      this.http.post(Config.api + 'pricerange/' + this.zip_code, JSON.stringify({
         "price_1000_kwh_min_price": min,
         "price_1000_kwh_max_price": max
 
@@ -4112,7 +4112,7 @@ months6="6 Months";
       console.log(min, max, 'tttttttttttt');
       let headers = new Headers();
       headers.append('Content-Type', 'application/json');
-      this.http.post('http://192.168.30.193:9000/choice/pricerange/' + this.zip_code, JSON.stringify({
+      this.http.post(Config.api + 'pricerange/' + this.zip_code, JSON.stringify({
 
         "price_2000_kwh_min_price": min,
         "price_2000_kwh_max_price": max

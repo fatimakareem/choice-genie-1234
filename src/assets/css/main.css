@@ -5244,6 +5244,12 @@ background: linear-gradient(to bottom, #eaeaea 0%,#c6c6c6 50%,#999a9b 100%); /* 
   background-color: #fff;
 }
 
+/*Start Reviews Dashboard */
+.bg th{
+  background: #c00;
+}
+/*End Reviews Dashboard */
+
 
 
 /*

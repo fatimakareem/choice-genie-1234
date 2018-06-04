@@ -30,25 +30,32 @@ import swal from 'sweetalert2';
   styleUrls: ['./superreviews.component.scss']
 })
 export class SuperreviewsComponent implements OnInit {
-
+  private allItems: any[];
+  pager: any = {};
+  home: any = {};
+ 
+  page: any[];
   rev:any=[];
   id;
   private Sub: Subscription;
-    constructor(private route: ActivatedRoute,private http: Http,private newService: DeletereviewService,private serve:EditreviewService) { }
+    constructor( private pagerService: PagerService,private route: ActivatedRoute,private http: Http,private newService: DeletereviewService,private serve:EditreviewService) { }
   ngOnInit() {
-    this.getreview()
+    this.getreview(1)
   }
-  getreview() {
-    
+  getreview(page:number) {
+    if (page < 1 || page > this.pager.totalPages) {
+      return;
+  }
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    this.http.get('http://192.168.30.193:9000/choice/getallreviewssuperdashboard/', { headers: headers })
+    this.http.get('http://192.168.30.193:9000/choice/getallreviewssuperdashboard/'+'?page=' + page, { headers: headers })
     .subscribe(Res => {
     this.rev=Res.json()['Results'];
     console.log(this.rev)
 // this.rate=this.rev['rate'];
 //     console.log(this.rate);
-  
+//this.pager = this.pagerService.getPager(Res['Results'],Res['Total Pages']);
+this.pager = this.pagerService.getPager(Res['Total Result'], page, 5);
     });
     
     }
@@ -73,7 +80,7 @@ export class SuperreviewsComponent implements OnInit {
               timer: 1500
             })
        
-              this. getreview()
+              this. getreview(1)
 
              
       }, error => {
@@ -119,7 +126,7 @@ console.log("TS OBJECT",uprate,upproid,upstatus,upzip,upcomt,upuser,updateduser)
             timer: 1500
           })
          
-          this.getreview()
+          this.getreview(1)
     }, error => {
     });
   //  window.location.reload();

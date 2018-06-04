@@ -20,7 +20,7 @@ export class SuperchangepaswwordService {
     +'/' , JSON.stringify({
      
       "currentPassword":oldpass,
-     " newPassword":pass1, 
+     "newPassword":pass1, 
       "newPassword2":pass2,
       
     }), 

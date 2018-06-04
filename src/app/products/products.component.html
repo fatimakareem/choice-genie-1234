@@ -164,7 +164,7 @@
               <h4 class="card-title">{{data.title}} </h4>
 
             </div>
-            <input type="checkbox" name="id"  #id (change)="checked(data.id,i)">{{data.id}}
+            <input type="checkbox" name="comp"  #comp (change)="checked(data.id,i)">{{data.id}}
             <div class="card-content" style="padding: 0px;">
              
               <div class="col-md-3  col-sm-6 col-xs-12 plan-detail text-center logo-div">
@@ -182,7 +182,7 @@
                 <a>
                    
 
-                <label class="view-plan-details" style="padding-bottom: 0px; margin-bottom: 0px;" *ngIf="checked_login()" (click)="btnDeleteClick(data.id,data.title,data.profileurl,data.profile_logo)"
+                <label class="view-plan-details" style="padding-bottom: 0px; margin-bottom: 0px;"  (click)="btnDeleteClick(data.id,data.title,data.profileurl,data.profile_logo)"
                   data-toggle="modal" data-target="#myModal3"> Leave a Review
                 </label></a>
                 <div class="modal fade" id="myModal3" role="dialog">

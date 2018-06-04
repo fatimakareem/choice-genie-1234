@@ -145,7 +145,7 @@ console.log(this.tit)
     let headers = new HttpHeaders();
     headers.append('Content-Type', 'application/json');
     
-    this.http.post('http://192.168.30.193:9000/choice/addproduct/', {
+    this.http.post(Config.api+'addproduct/', {
      
       "serviceareaname":utilityarea,
       "title":title,

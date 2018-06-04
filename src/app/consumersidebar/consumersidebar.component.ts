@@ -102,41 +102,7 @@ export class ConsumersidebarComponent implements OnInit {
   rating;
   closeResult: string;
 
-  // setPage(username) {
-  //     // alert("username")
-  //     //  console.log("usernameeeeeeeeeeeee",username)
-
-  //     const Results = {}
-
-  //     this.companyService.searchProduct(username).subscribe(Response => {
-  //         // console.log(Response.id);
-  //         // this.id = Response.id;
-  //         console.log('service');       // localStorage.setItem('products',response['Results']);
-  //         this.sg['products'] = Response['Results'];
-  //         console.log(this.sg['products']);
-  //         for (let prod of this.sg['products']) {
-  //             this.id = prod["id"];
-  //             console.log(prod["id"])
-  //             //console.log(prod["plan_information"])
-  //             //console.log(prod["price_rate"])
-  //             prod["plan_information"] = prod["plan_information"].split(',,', 3000);
-  //             prod["price_rate"] = prod["price_rate"].split('..', 3000);
-
-  //         }
-  //         this.dataa.changeProducts(this.sg['products']);
-  //         this.prod_loaded = true;
-  //         this.prods_loaded = true;
-  //         this.allItems = this.sg['products'];
-  //         // console.clear()
-  //         console.log(Response['Total Result']);
-  //         //  this.pager = this.pagerService.getPager(Response['Total Result'], page, 10);
-  //         //this.setPage(1);
-  //         // initialize to page 1
-  //         // console.log(this.sg['products']);
-
-  //     });
-  //     //   this.pagedItems = this.allItems.slice(this.pager.startIndex, this.pager.endIndex + 1);
-  // }
+ 
   isMobileMenu() {
       if ($(window).width() > 991) {
           return false;
@@ -154,26 +120,12 @@ export class ConsumersidebarComponent implements OnInit {
   ngOnInit() {
      
          
-          //  alert("junaid");
-          // this.data.currentProducts.subscribe(products => this.sg['products'] = products)
-          // this.data.currentProducts
+         
           this.user = localStorage.getItem('custum')
         // this.username = localStorage.getItem('username')
       this.menuItems = ROUTES.filter(menuItem => menuItem);
       
                   console.log(this.menuItems);
   }
-  // updatePS(): void  {
-  //     if (window.matchMedia(`(min-width: 960px)`).matches && !this.isMac()) {
-  //         const elemSidebar = <HTMLElement>document.querySelector('.sidebar .sidebar-wrapper');
-  //         let ps = new PerfectScrollbar(elemSidebar, { wheelSpeed: 2, suppressScrollX: true });
-  //     }
-  // }
-  // isMac(): boolean {
-  //     let bool = false;
-  //     if (navigator.platform.toUpperCase().indexOf('MAC') >= 0 || navigator.platform.toUpperCase().indexOf('IPAD') >= 0) {
-  //         bool = true;
-  //     }
-  //     return bool;
-  // }
+ 
 }

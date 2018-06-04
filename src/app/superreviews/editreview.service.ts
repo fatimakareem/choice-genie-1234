@@ -13,7 +13,7 @@ editTodoList(id,uprate,upproid,upstatus,upzip,upcomt,upuser,updateduser) {
   console.log(" service object",id,uprate,upproid,upstatus,upzip,upcomt,upuser,updateduser)
   const headers = new Headers();
   headers.append('Content-Type', 'application/json');
-  return this.http.put('http://192.168.30.193:9000/choice/reviewchangestatus/'+ id , JSON.stringify({
+  return this.http.put(Config.api + 'reviewchangestatus/'+ id , JSON.stringify({
    
     
     

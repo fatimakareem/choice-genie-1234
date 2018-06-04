@@ -1,22 +1,6 @@
-<div  class="container-fluid" style="padding:4in">
+<div  class="container-fluid" >
     <h3 class="text-center choiecegenie-offers wow fadeInLeft"> Reviews </h3>
   <div class="row">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     <div class="modal fade" id="myModal3" role="dialog">
       <div class="modal-dialog">
         <!-- Modal content-->
@@ -135,7 +119,7 @@
 
     <table class="table table-bordered table-striped tablefixed" style="background-color:#ffffff">
       <thead>
-        <tr>
+        <tr class="bg">
           <!-- <th class="text-center">User ID</th>
           <th class="text-center">Product ID</th> -->
           <th class="text-center">Name</th>
@@ -284,3 +268,30 @@
       </tbody>
     </table>
   </div>
+  <div class="container">
+      <div class="text-center">
+        <!-- <h1>Angular 2 - Pagination Example with logic like Google</h1> -->
+
+        <!-- items being paged -->
+        <div *ngFor="let item of pagedItems">{{item.name}}</div>
+
+        <!-- pager -->
+        <ul *ngIf="pager.pages && pager.pages.length" class="pagination">
+          <li [ngClass]="{hide:pager.currentPage === 1}">
+            <a (click)="getreview(1)" class="btn btn-rose">First</a>
+          </li>
+          <li [ngClass]="{hide:pager.currentPage === 1}">
+            <a (click)="getreview(pager.currentPage - 1)" class="btn btn-rose">Previous</a>
+          </li>
+          <li *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}">
+            <a (click)="getreview(page)" class="btn btn-rose">{{page}}</a>
+          </li>
+          <li [ngClass]="{hide:pager.currentPage === pager.totalPages}">
+            <a (click)="getreview(pager.currentPage + 1)" class="btn btn-rose" type="Next">Next</a>
+          </li>
+          <li [ngClass]="{hide:pager.currentPage === pager.totalPages}">
+            <a (click)="getreview(pager.totalPages)" class="btn btn-rose" type="Last">Last</a>
+          </li>
+        </ul>
+      </div>
+    </div>

@@ -26,7 +26,7 @@ public heading1;
       // this.data.currentProducts
       this.Sub = this.route.params.subscribe(params => {
       this.heading1= +params['heading1'] ;
-     // alert(this.username);
+    // alert(this.heading1);
       });
   }
   fetchProducts(heading1) {

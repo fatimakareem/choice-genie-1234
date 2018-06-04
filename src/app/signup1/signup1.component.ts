@@ -152,30 +152,7 @@ export class Signup1Component implements OnInit {
 
       });
   }
-  // Email() {
-  //   // alert(this.premiseID.toString().length)
-  //   //  alert('hello');
-  //   console.log("CHOICE GENIE",this.model);
-
-  //   let headers = new HttpHeaders();
-  //   headers.append('Content-Type', 'application/json');
-  //   // this.http.get(Config.api + 'data_against_zipcode/' + this.zip_code + '', { headers: headers }),
-  //   this.http.put('https:/127.0.0.1:8000/authenticade_code/'+ this.model.state + '',{ headers: headers })
-
-  //       //  this.http.get(Config.api + 'signup/'+ this.zip_code +'', {headers: headers})
-  //       .subscribe(Res => {
-  //           console.log(Res);
-  //           console.log(this.model);
-  //           //  this.sQuestion = Res[0].sQuestion;
-  //           // this.state = Res[0].state;
-
-
-
-  //           // this.data.changeProducts(this.sg['products']);
-
-  //       });
-
-  // }
+ 
   signupuserdata() {
     //alert('hello');
     console.log("CHOICE GENIE", this.model);
@@ -187,7 +164,7 @@ export class Signup1Component implements OnInit {
     // this.http.get(Config.api + 'data_against_zipcode/' + this.zip_code + '', { headers: headers }),
     //this.http.post('http://192.168.30.193:9000/choice/companysignin/', this.model, { headers: headers })
 
-    this.http.post('http://192.168.30.193:9000/choice/companysignup/', this.model, { headers: headers })
+    this.http.post(Config.api + 'companysignup/', this.model, { headers: headers })
       //   // this.http.post(Config.api + 'signup/'+ this.zip_code +'', {"premiseid": this.premiseID +'', {headers: headers})
       .subscribe(Res => {
         console.log(Res);
@@ -221,14 +198,7 @@ export class Signup1Component implements OnInit {
           //     //this.data.changeProducts(this.sg['products']);
           //   f.resetForm();
         });
-    //}
-
-    //    this.state = Res[0].state;
-    //this.sg['products'] = Res.json()['Results'];
-    //this.data.changeProducts(this.sg['products']);
-
-
-    //}
+   
 
 
   }
@@ -263,7 +233,7 @@ export class Signup1Component implements OnInit {
 
     headers.append('Content-Type', 'application/json');
     // this.http.get(Config.api + 'data_against_zipcode/' + this.zip_code + '', { headers: headers }),
-    this.http.get('http://192.168.30.193:9000/choice/repname/' + REP_certificate_id1, { headers: headers })
+    this.http.get(Config.api + 'repname/' + REP_certificate_id1, { headers: headers })
 
 
       //   // this.http.post(Config.api + 'signup/'+ this.zip_code +'', {"premiseid": this.premiseID +'', {headers: headers})

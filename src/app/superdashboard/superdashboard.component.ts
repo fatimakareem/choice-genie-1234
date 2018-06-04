@@ -193,7 +193,7 @@ export class SuperdashboardComponent implements OnInit {
         let headers = new Headers();
         headers.append('Content-Type', 'application/json');
         //   this.http.get(Config.api + 'data_against_zipcode/' + this.zip_code + '', { headers: headers }),
-        this.http.get('http://192.168.30.193:9000/choice/dashboard/' + '?page=' + page, { headers: headers }).subscribe(Res => {
+        this.http.get(Config.api + 'dashboard/' + '?page=' + page, { headers: headers }).subscribe(Res => {
             console.log(Res);
             this.pager = this.pagerService.getPager(Res['Results'], page, 10);
 

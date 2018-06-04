@@ -16,7 +16,7 @@ public username;
     
   let headers = new Headers();
   headers.append('Content-Type', 'application/json');
-  return this._http5.post('http://192.168.30.193:9000/choice/search/',
+  return this._http5.post(Config.api + 'search/',
   {"search":search},
   {headers: headers}).map((response: Response) => response.json());
   
@@ -36,7 +36,7 @@ public username;
     console.log(title)
     // return this.http.get(Config.api + '/zipcodedata/' + id +'?page='+page +'/').map((response: Response) => response.json());
 
-   return this.http.get('http://192.168.30.193:9000/choice/inactive/' + this.username +'?page='+page +'/').map((response: Response) => response.json());
+   return this.http.get(Config.api + 'inactive/' + this.username +'?page='+page +'/').map((response: Response) => response.json());
    // return this.http.get('http://192.168.30.52:9000/choice/zipcodedata/'+id+'?page='+page).map((response: Response) => response.json());
   }
 }

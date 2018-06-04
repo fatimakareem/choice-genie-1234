@@ -14,7 +14,7 @@ editTodoList(id,updatedrepname,updatedrepcertificateid,updatedcontactname,update
   const headers = new Headers();
   headers.append('Content-Type', 'application/json');
   // return this.http.put('http://192.168.30.193:9000/choice/dashboardstatus/'+ id , JSON.stringify({
-  return this.http.put('http://192.168.30.193:9000/choice/dashboardstatus/'+ id , JSON.stringify({
+  return this.http.put(Config.api + 'dashboardstatus/'+ id , JSON.stringify({
  // return this.http.put(Config.api+'dataup/'+ id , JSON.stringify({
    
    

@@ -136,7 +136,7 @@ console.log("TS OBJECT",updatedtitle,updatedsign_up,updatedphone,updatedterms_of
 
         let headers = new Headers();
         headers.append('Content-Type', 'application/json');
-        this.http.get('http://192.168.30.193:9000/choice/totalreviews/'+ id , { headers: headers })
+        this.http.get(Config.api + 'totalreviews/'+ id , { headers: headers })
       
         .subscribe(Res => {
         this.rev=Res.json()['Total Reviews'];
@@ -152,7 +152,7 @@ console.log("TS OBJECT",updatedtitle,updatedsign_up,updatedphone,updatedterms_of
 
             let headers = new Headers();
             headers.append('Content-Type', 'application/json');
-            this.http.get('http://192.168.30.193:9000/choice/reviewsperproduct/'+id , { headers: headers })
+            this.http.get(Config.api + 'reviewsperproduct/'+id , { headers: headers })
           
             .subscribe(Res => {
             this.avrage=Res.json()['Results'];
